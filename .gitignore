@@ -1,0 +1,4 @@
+.DS_Store
+assets/generated-source/
+build-artifacts/
+build-tools/
