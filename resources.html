@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="海外用户运营术语、渠道、数据字段、公开来源、更新记录和公开边界。">
+  <meta name="theme-color" content="#f7f7f5">
+  <link rel="icon" href="data:,">
+  <title>资料与规则｜海外用户运营工作台</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="resources">
+  <a class="skip-link" href="#content">跳到正文</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="工作台导航">
+      <a class="sidebar-head" href="index.html" aria-label="海外用户运营工作台首页"><span class="brand-mark" aria-hidden="true"></span><span class="brand-copy"><strong>海外用户运营</strong><span>OEDRO工作台</span></span></a>
+      <div class="sidebar-search"><input id="page-search" type="search" placeholder="搜索资料" aria-label="搜索资料与规则"><p class="search-hint" id="search-status" aria-live="polite">按 / 快速搜索本页</p></div>
+      <nav class="nav-list" aria-label="主页面">
+        <a href="index.html" data-page="overview"><span>总览</span><span class="nav-index">01</span></a>
+        <a href="playbook.html" data-page="playbook"><span>从零开始怎么做</span><span class="nav-index">02</span></a>
+        <a href="work.html" data-page="work"><span>当前进展</span><span class="nav-index">03</span></a>
+        <a href="research.html" data-page="research"><span>用户研究与参与</span><span class="nav-index">04</span></a>
+        <a href="resources.html" data-page="resources"><span>资料与规则</span><span class="nav-index">05</span></a>
+      </nav>
+      <div class="sidebar-foot">当前公开版本<strong>2026-08-24 · V2</strong></div>
+    </aside>
+    <div class="mobile-overlay" hidden></div>
+    <div class="workspace">
+      <header class="topbar"><button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false">☰</button><div class="breadcrumb">海外用户运营 / <strong>资料与规则</strong></div><div class="topbar-meta" aria-live="polite">更新至 2026-08-24</div></header>
+      <main class="main-content" id="content">
+        <div class="page-heading">
+          <div><h1>资料与规则</h1><p>集中查看工作口径、术语、渠道、数据字段、公开来源和更新记录。</p></div>
+          <span class="page-badge">口径与来源</span>
+        </div>
+        <div class="empty-state" id="page-status" role="status" hidden></div>
+
+        <section class="section" aria-labelledby="company-rule-title">
+          <div class="section-head"><h2 id="company-rule-title">公司口径</h2><p>对外和跨部门沟通统一使用</p></div>
+          <article class="panel" data-searchable><p>赢他官网当前口径：2015年启航，2024年从渠道赋能转向产品驱动。当前四个主要品牌为Cozeware、Arbrest、OEDRO和Hernest。</p><p>OEDRO是汽车改装品牌，公开产品包括脚垫、保险杠、货箱盖和脚踏板，购买路径强调车型适配。</p></article>
+        </section>
+
+        <section class="section" aria-labelledby="terms-title">
+          <div class="section-head"><h2 id="terms-title">术语</h2><p>工作中统一理解</p></div>
+          <div class="panel item-list" id="term-rows"></div>
+        </section>
+
+        <section class="section" aria-labelledby="channels-title">
+          <div class="section-head"><h2 id="channels-title">渠道地图</h2><p>只表示来源和联系路径</p></div>
+          <div class="channel-list" id="channel-list"></div>
+          <p class="section-note">渠道本身不能用来判断用户价值。</p>
+        </section>
+
+        <section class="section" aria-labelledby="fields-title">
+          <div class="section-head"><h2 id="fields-title">用户底账字段</h2><p>缺失时留空，不补推测值</p></div>
+          <div class="field-list" id="field-list"></div>
+        </section>
+
+        <section class="section" aria-labelledby="sources-title">
+          <div class="section-head"><h2 id="sources-title">公开来源</h2><p>打开原始页面核对</p></div>
+          <div class="source-list" id="source-list"></div>
+        </section>
+
+        <section class="section" aria-labelledby="boundary-title">
+          <div class="section-head"><h2 id="boundary-title">公开边界</h2><p>发布和跨部门共享前检查</p></div>
+          <article class="panel" data-searchable><p>本网站不公开以下内容：</p><ul class="compact-list" id="boundary-list"></ul></article>
+        </section>
+
+        <section class="section" aria-labelledby="updates-title">
+          <div class="section-head"><h2 id="updates-title">更新记录</h2><p>旧版本保留状态说明</p></div>
+          <div class="overview-grid">
+            <article class="panel item-list" id="update-list"></article>
+            <div class="data-table-wrap">
+              <table class="data-table update-table"><thead><tr><th scope="col">页面</th><th scope="col">更新时间</th></tr></thead><tbody id="page-update-rows"></tbody></table>
+            </div>
+          </div>
+          <div class="empty-state search-empty" role="status" hidden>没有匹配内容。</div>
+        </section>
+
+        <footer class="page-footer"><span>公开版本不替代内部原始证据。</span><span>最后更新 2026-08-24</span></footer>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

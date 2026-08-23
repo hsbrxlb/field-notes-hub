@@ -2,254 +2,117 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="OEDRO 海外用户运营 Hub：用户研究、用户池、UGC、社群与产品反馈闭环的公开演示。">
-  <meta name="theme-color" content="#f3efe5">
-  <title>OEDRO User Ops Hub</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="赢他海外用户运营工作台总览：公司背景、建设阶段、当前成熟度与资料入口。">
+  <meta name="theme-color" content="#f7f7f5">
+  <link rel="icon" href="data:,">
+  <title>海外用户运营工作台｜总览</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <a class="skip-link" href="#main">跳到正文</a>
-
-  <header class="site-header" aria-label="主导航">
-    <a class="brand" href="#top" aria-label="OEDRO User Ops Hub 首页">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span>OEDRO</span>
-      <small>USER OPS HUB</small>
-    </a>
-    <nav class="nav-track" aria-label="页面章节">
-      <a href="#system">系统</a>
-      <a href="#now">现在</a>
-      <a href="#light-lab">Light Lab</a>
-      <a href="#roadmap">90天</a>
-      <a href="#decisions">协作</a>
-    </nav>
-    <span class="live-state"><i></i> RESEARCH SYSTEM</span>
-  </header>
-
-  <main id="main">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero-grid"></div>
-      <div class="hero-copy reveal">
-        <p class="eyebrow">OEDRO USER OPERATIONS / 2026</p>
-        <h1 id="hero-title">让车主的真实经验，进入产品决定。</h1>
-        <p class="hero-intro">连接车主研究、用户池、UGC与产品反馈，建立可重复、可追溯的海外用户运营体系。</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#now">查看四条主线</a>
-          <a class="button quiet" href="#light-lab">进入 Light Lab <span>↘</span></a>
-        </div>
-        <dl class="hero-meta" aria-label="Hub 状态">
-          <div><dt>当前阶段</dt><dd>机制搭建 / VALIDATION</dd></div>
-          <div><dt>第一业务场景</dt><dd>汽配车主 / OEDRO</dd></div>
-          <div><dt>核心产出</dt><dd>可比较证据 / USER VOICE</dd></div>
-        </dl>
+<body data-page="overview">
+  <a class="skip-link" href="#content">跳到正文</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="工作台导航">
+      <a class="sidebar-head" href="index.html" aria-label="海外用户运营工作台首页">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-copy"><strong>海外用户运营</strong><span>OEDRO工作台</span></span>
+      </a>
+      <div class="sidebar-search">
+        <input id="page-search" type="search" placeholder="搜索本页" aria-label="搜索本页内容">
+        <p class="search-hint" id="search-status" aria-live="polite">按 / 快速搜索本页</p>
       </div>
+      <nav class="nav-list" aria-label="主页面">
+        <a href="index.html" data-page="overview"><span>总览</span><span class="nav-index">01</span></a>
+        <a href="playbook.html" data-page="playbook"><span>从零开始怎么做</span><span class="nav-index">02</span></a>
+        <a href="work.html" data-page="work"><span>当前进展</span><span class="nav-index">03</span></a>
+        <a href="research.html" data-page="research"><span>用户研究与参与</span><span class="nav-index">04</span></a>
+        <a href="resources.html" data-page="resources"><span>资料与规则</span><span class="nav-index">05</span></a>
+      </nav>
+      <div class="sidebar-foot">当前公开版本<strong>2026-08-24 · V2</strong></div>
+    </aside>
+    <div class="mobile-overlay" hidden></div>
 
-      <div class="hero-stage reveal" aria-label="用户运营闭环概念图">
-        <div class="stage-topline"><span>OWNER SIGNAL / 01</span><span>FIELD NOTES</span></div>
-        <div class="truck-scene" aria-hidden="true">
-          <div class="stars"></div>
-          <div class="mountain mountain-far"></div>
-          <div class="mountain mountain-near"></div>
-          <svg class="truck" viewBox="0 0 640 250" role="img" aria-label="皮卡车轮廓概念图">
-            <path class="truck-body" d="M83 162 112 104c8-15 21-26 39-30l146-32c33-7 66-5 96 8l66 30h82c26 0 47 17 52 41l10 47H83Z"/>
-            <path class="truck-window" d="m171 84 126-28c25-5 49-3 72 6l50 21-248 1Z"/>
-            <path class="truck-line" d="M84 161h520M127 113h344l73 17M462 82v79M150 84l-7 77"/>
-            <path class="light-bar" d="M167 72h248"/>
-            <circle class="wheel" cx="179" cy="169" r="52"/><circle class="wheel-core" cx="179" cy="169" r="24"/>
-            <circle class="wheel" cx="505" cy="169" r="52"/><circle class="wheel-core" cx="505" cy="169" r="24"/>
-          </svg>
-          <div class="beam beam-wide"></div>
-          <div class="beam beam-distance"></div>
-          <div class="terrain"></div>
-        </div>
-        <div class="signal-ribbon" aria-hidden="true">
-          <span>车主</span><b>→</b><span>研究</span><b>→</b><span>洞察</span><b>→</b><span>产品</span><b>→</b><span>再参与</span>
-        </div>
-        <p class="concept-note">研究阶段 · 光型尚未测量</p>
-      </div>
-    </section>
+    <div class="workspace">
+      <header class="topbar">
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false">☰</button>
+        <div class="breadcrumb">海外用户运营 / <strong>总览</strong></div>
+        <div class="topbar-meta" aria-live="polite">数据更新至 2026-08-24</div>
+      </header>
 
-    <section class="loop-section section-pad" id="system" aria-labelledby="system-title">
-      <div class="section-head reveal">
-        <p class="eyebrow">THE OPERATING LOOP</p>
-        <h2 id="system-title">一个用户关系闭环，六个可交付环节。</h2>
-        <p>每一环都留下来源、授权、车型、参与记录和下一步，不把粉丝数当成用户资产。</p>
-      </div>
-      <ol class="loop-rail reveal">
-        <li><span>01</span><strong>发现</strong><small>KOL · 官网 · 客服</small></li>
-        <li><span>02</span><strong>识别</strong><small>车型 · 场景 · 意愿</small></li>
-        <li><span>03</span><strong>研究</strong><small>问卷 · 访谈 · 测试</small></li>
-        <li><span>04</span><strong>共创</strong><small>产品 · 内容 · UGC</small></li>
-        <li><span>05</span><strong>回流</strong><small>洞察 · 证据 · 决策</small></li>
-        <li><span>06</span><strong>复访</strong><small>社群 · 任务 · 转介绍</small></li>
-      </ol>
-    </section>
-
-    <section class="workspace section-pad" id="now" aria-labelledby="now-title">
-      <div class="workspace-top reveal">
-        <div>
-          <p class="eyebrow">CURRENT WORKSPACE</p>
-          <h2 id="now-title">现在在搭四条主线。</h2>
-        </div>
-        <div class="legend" aria-label="状态图例"><span><i class="state active"></i>推进</span><span><i class="state input"></i>待输入</span><span><i class="state design"></i>设计中</span></div>
-      </div>
-
-      <div class="work-lines reveal">
-        <article class="work-line">
-          <p class="line-id">01 / RESEARCH</p>
-          <div><h3>车主研究机制</h3><p>把开放回答、概念测试和一对一深访串成同一条证据链。</p></div>
-          <ul><li>固定研究主干</li><li>可追问的原话</li><li>结论置信度</li></ul>
-          <span class="status input">待产品输入</span>
-        </article>
-        <article class="work-line">
-          <p class="line-id">02 / DATA</p>
-          <div><h3>用户池与车型数据</h3><p>把订单、车型、授权状态和参与记录连起来，知道“谁愿意再来”。</p></div>
-          <ul><li>稳定用户ID</li><li>Year / Make / Model</li><li>联系授权</li></ul>
-          <span class="status active">推进</span>
-        </article>
-        <article class="work-line">
-          <p class="line-id">03 / COMMUNITY</p>
-          <div><h3>UGC与社群试跑</h3><p>先给高质量车主明确任务与回报，再决定用Facebook Group还是Discord。</p></div>
-          <ul><li>种子用户</li><li>UGC授权</li><li>二次参与</li></ul>
-          <span class="status design">设计中</span>
-        </article>
-        <article class="work-line emphasis">
-          <p class="line-id">04 / PRODUCT LOOP</p>
-          <div><h3>Light Lab 概念验证</h3><p>用可比较的交互测试产品方向，再挑最有信息量的人做深访。</p></div>
-          <ul><li>安装顾虑</li><li>光型任务</li><li>价格价值</li></ul>
-          <a class="line-link" href="#light-lab">进入 Light Lab ↘</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="field-notes section-pad" id="field" aria-labelledby="field-title">
-      <div class="section-head reveal">
-        <p class="eyebrow">FIELD NOTES / EVIDENCE</p>
-        <h2 id="field-title">产品、安装、车主，必须放在同一张桌上。</h2>
-        <p>只有产品形态没有使用场景，只有用户态度没有安装细节，都不足以支持产品决定。</p>
-      </div>
-      <div class="field-spread reveal">
-        <figure class="object lightbar-object">
-          <img src="assets/transparent/02_lightbar.png" alt="模块化长条灯研究概念素材">
-          <figcaption><span>01 / PRODUCT</span><strong>产品形态</strong><small>概念阶段 · 规格待确认</small></figcaption>
-        </figure>
-        <figure class="object install-object">
-          <img src="assets/transparent/03_install-kit.png" alt="安装支架与线束研究素材">
-          <figcaption><span>02 / INSTALL</span><strong>安装链路</strong><small>支架 · 线束 · 说明</small></figcaption>
-        </figure>
-        <div class="owner-editorial" aria-label="不同车主类型">
-          <img src="assets/transparent/04_owner-outdoor.png" alt="周末户外使用场景车主概念人物">
-          <img src="assets/transparent/05_owner-diy.png" alt="DIY安装场景车主概念人物">
-          <img src="assets/transparent/06_owner-work.png" alt="工作车辆使用场景车主概念人物">
-          <p><span>03 / OWNERS</span><strong>同一产品，三种判断标准。</strong><small>户外使用 · DIY安装 · 工作可靠性</small></p>
-        </div>
-        <figure class="object creator-object">
-          <img src="assets/transparent/08_creator-kit.png" alt="UGC拍摄器材研究素材">
-          <figcaption><span>04 / UGC</span><strong>可信使用证据</strong><small>真实安装 · 真实场景 · 明确授权</small></figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="lab section-pad" id="light-lab" aria-labelledby="lab-title">
-      <div class="lab-copy reveal">
-        <p class="eyebrow">RESEARCH FLOW / LIGHTING</p>
-        <h2 id="lab-title">Light Lab</h2>
-        <p class="lab-lead">先问真实场景，再展示概念。结构化收集可以比较的信息；只有用户独有的经验，才用开放回答和一次追问。</p>
-        <div class="lab-principles">
-          <p><span>01</span>不让AI替用户回答</p>
-          <p><span>02</span>不把概念图当实测性能</p>
-          <p><span>03</span>原始回答与AI标签分开</p>
-        </div>
-      </div>
-
-      <div class="lab-device reveal" aria-label="Light Lab 光型对比交互演示">
-        <div class="device-bar"><span>OEDRO LIGHT LAB</span><span>06 / 10</span></div>
-        <div class="beam-demo" data-mode="wide">
-          <div class="demo-sky"><i></i><i></i><i></i></div>
-          <div class="demo-road"></div>
-          <div class="demo-beam"></div>
-          <div class="demo-horizon"></div>
-          <span class="demo-label">WIDE / TRAIL</span>
-        </div>
-        <div class="beam-controls" role="group" aria-label="光型选择">
-          <button class="beam-button active" data-beam="wide" type="button">Wide / Trail</button>
-          <input id="beam-range" type="range" min="0" max="100" value="18" aria-label="在宽光与远射之间对比">
-          <button class="beam-button" data-beam="distance" type="button">Distance</button>
-        </div>
-        <div class="lab-question">
-          <p>慢速越野、转弯较多时，哪种视野更有帮助？</p>
-          <div class="choice-row" role="group" aria-label="演示问题">
-            <button type="button" data-choice="更宽的近场和路肩">Wide</button>
-            <button type="button" data-choice="更早看清远处">Distance</button>
-            <button type="button" data-choice="要看具体路况">It depends</button>
+      <main class="main-content" id="content">
+        <div class="page-heading">
+          <div>
+            <h1>海外用户运营工作台</h1>
+            <p>公司为什么现在需要海外用户运营、这项能力怎样从零建立，以及当前处于哪个阶段。</p>
           </div>
-          <p class="choice-result" aria-live="polite">请选择更符合真实驾驶判断的一项。</p>
+          <span class="page-badge">总览</span>
         </div>
-        <p class="device-note">光型研究 · 尚未测量</p>
-      </div>
-    </section>
+        <div class="empty-state" id="page-status" role="status" hidden></div>
 
-    <section class="roadmap section-pad" id="roadmap" aria-labelledby="roadmap-title">
-      <div class="section-head reveal">
-        <p class="eyebrow">30 / 60 / 90 DAY DIRECTION</p>
-        <h2 id="roadmap-title">先把一条链跑通，再复制。</h2>
-        <p>建议推进顺序 · 时间与KPI待批准</p>
-      </div>
-      <div class="roadmap-shell reveal">
-        <div class="roadmap-tabs" role="tablist" aria-label="90天阶段">
-          <button role="tab" aria-selected="true" data-phase="30" type="button"><span>0–30</span>定义与基线</button>
-          <button role="tab" aria-selected="false" data-phase="60" type="button"><span>31–60</span>试跑与学习</button>
-          <button role="tab" aria-selected="false" data-phase="90" type="button"><span>61–90</span>复访与复制</button>
-        </div>
-        <div class="roadmap-detail" aria-live="polite">
-          <p class="phase-kicker">PHASE 01</p>
-          <h3>定义研究问题，补齐数据与授权边界。</h3>
-          <ul><li>锁定产品要做的决定</li><li>建立用户与车型字段</li><li>完成首个Light Lab最小版本</li><li>记录当前社媒、UGC、社群基线</li></ul>
-          <p class="phase-exit"><span>退出条件</span> 能说清“问谁、问什么、支持哪个决定”。</p>
-        </div>
-      </div>
-    </section>
+        <section class="section" aria-labelledby="context-title">
+          <div class="section-head"><h2 id="context-title">为什么现在开始做</h2><p>公司背景与岗位起点</p></div>
+          <div class="overview-grid">
+            <article class="panel" data-searchable>
+              <h3 class="panel-title">从分散接触到统一工作方式</h3>
+              <p>赢他2015年启航，2024年从渠道赋能转向产品驱动。过去海外用户接触分散在独立站、EDM、客服、KOL、TikTok、Reddit、论坛、PR、联盟和Discord，没有统一用户档案、授权、研究和再次参与机制。</p>
+              <p>2026年新设专职海外用户运营岗位，从OEDRO汽配业务开始搭建能力。岗位不接管全部站外渠道，重点是把渠道里合适的用户、反馈和内容纳入统一记录和后续工作。</p>
+            </article>
+            <article class="panel" data-searchable>
+              <h3 class="panel-title">当前成熟度</h3>
+              <div id="maturity-panel"></div>
+            </article>
+          </div>
+        </section>
 
-    <section class="measurement section-pad" aria-labelledby="measure-title">
-      <div class="measure-intro reveal">
-        <p class="eyebrow">MEASUREMENT</p>
-        <h2 id="measure-title">成功看三层，不看热闹。</h2>
-      </div>
-      <div class="measure-lines reveal">
-        <article><span>01</span><h3>沉淀</h3><p>有多少车型准确、授权清楚、愿意再次参与的真实车主。</p></article>
-        <article><span>02</span><h3>参与</h3><p>有多少人完成研究、测试、UGC或第二次任务。</p></article>
-        <article><span>03</span><h3>贡献</h3><p>哪些洞察进入产品决定，哪些内容形成可信使用证据。</p></article>
-      </div>
-    </section>
+        <section class="section" aria-labelledby="stages-title">
+          <div class="section-head"><h2 id="stages-title">从零建立的六个阶段</h2><p>查看每阶段的动作与交付</p></div>
+          <div class="stage-strip" id="stage-strip"></div>
+        </section>
 
-    <section class="decisions section-pad" id="decisions" aria-labelledby="decision-title">
-      <div class="decision-panel reveal">
-        <div>
-          <p class="eyebrow">CROSS-FUNCTION INPUTS</p>
-          <h2 id="decision-title">下一轮开始前，需要四类输入。</h2>
-        </div>
-        <ol>
-          <li><span>PRODUCT</span><strong>这轮研究必须支持哪些产品决定？</strong></li>
-          <li><span>DATA</span><strong>用户ID、车型和联系授权在哪里？</strong></li>
-          <li><span>BRAND</span><strong>哪些视觉、功能与表达可以对外展示？</strong></li>
-          <li><span>TECH</span><strong>回答、原始数据与派生标签如何保存？</strong></li>
-        </ol>
-      </div>
-    </section>
+        <section class="section" aria-labelledby="pages-title">
+          <div class="section-head"><h2 id="pages-title">工作入口</h2><p>按需要进入</p></div>
+          <div class="page-links">
+            <a class="page-link" href="playbook.html" data-searchable><strong>从零开始怎么做</strong><span>六个阶段的开始前提、动作、交付和完成标志。</span></a>
+            <a class="page-link" href="work.html" data-searchable><strong>当前进展</strong><span>具体项目、阻塞、等待输入和下一阶段事项。</span></a>
+            <a class="page-link" href="research.html" data-searchable><strong>用户研究与参与</strong><span>调研、测试、UGC、顾问小组和社群的边界。</span></a>
+            <a class="page-link" href="resources.html" data-searchable><strong>资料与规则</strong><span>术语、渠道、字段、来源、更新记录和公开边界。</span></a>
+          </div>
+          <div class="empty-state search-empty" role="status" hidden>没有匹配内容。</div>
+        </section>
 
-    <section class="closing section-pad">
-      <p class="eyebrow">THE POINT</p>
-      <blockquote>已知的决策空间，用结构化交互。<br>只有车主知道的经验，用开放回答。<br>AI只负责问出一个更好的“为什么”。</blockquote>
-      <a class="button primary" href="#top">回到顶部 ↑</a>
-    </section>
-  </main>
+        <section class="section" aria-labelledby="timeline-title">
+          <div class="section-head"><h2 id="timeline-title">公司与能力建设时间线</h2><p>采用赢他官网当前口径</p></div>
+          <div class="timeline" id="company-timeline"></div>
+        </section>
 
-  <footer>
-    <p>OEDRO User Operations · Field Edition 01</p>
-    <p>研究阶段资料：光型与路线图尚待验证，不构成量产承诺、性能声明或正式KPI。</p>
-  </footer>
+        <section class="section" aria-labelledby="maturity-detail-title">
+          <div class="section-head"><h2 id="maturity-detail-title">目前已有基础与主要缺口</h2><p>不把计划写成已完成</p></div>
+          <div class="overview-grid">
+            <article class="panel" data-searchable>
+              <h3 class="panel-title">已有基础</h3>
+              <ul class="compact-list" id="maturity-completed"></ul>
+            </article>
+            <article class="panel" data-searchable>
+              <h3 class="panel-title">主要缺口</h3>
+              <ul class="compact-list muted" id="maturity-missing"></ul>
+            </article>
+          </div>
+        </section>
 
+        <section class="section" aria-labelledby="capabilities-title">
+          <div class="section-head"><h2 id="capabilities-title">六项基础能力</h2><p>每项先完成最小交付</p></div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead><tr><th scope="col">能力</th><th scope="col">解决什么问题</th><th scope="col">最小交付</th></tr></thead>
+              <tbody id="capability-rows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <footer class="page-footer"><span>公开安全版本，不包含个人信息与内部经营数字。</span><span>最后更新 2026-08-24</span></footer>
+      </main>
+    </div>
+  </div>
   <script src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+{
+  "as_of": "2026-08-24",
+  "terms": [
+    {"term": "Panel", "definition": "可重复联系的参与者名单。"},
+    {"term": "用户底账", "definition": "可识别、可筛选、可再次联系的用户记录。"},
+    {"term": "分项授权", "definition": "研究、营销、社群、UGC和短信分别记录，不混用。"},
+    {"term": "洞察记录", "definition": "用户反馈经整理后形成的可追溯结论。"},
+    {"term": "证据日期", "definition": "项目状态所依据的事实日期。"}
+  ],
+  "channels": ["独立站", "EDM", "客服", "KOL", "TikTok", "Reddit", "论坛", "PR", "联盟", "Discord"],
+  "fields": ["用户ID", "来源渠道", "车型", "购买关系", "研究授权", "营销授权", "社群邀请", "UGC许可", "参与历史", "首次购买", "最近购买", "累计订单"],
+  "sources": [
+    {"label": "赢他科技官网", "url": "https://www.yintatech.cn/", "scope": "公司当前战略与品牌口径"},
+    {"label": "OEDRO官网", "url": "https://www.oedro.com/", "scope": "品牌、品类与车型适配"},
+    {"label": "ResearchOps Community", "url": "https://researchops.community/about/", "scope": "研究运营的人员、机制与策略"},
+    {"label": "RealTruck Tailgate Crew", "url": "https://realtruck.com/tailgate-crew/", "scope": "汽配参与者Panel与长期产品测试"},
+    {"label": "Microsoft Feedback Hub", "url": "https://learn.microsoft.com/en-us/windows-insider/feedback-hub/feedback-hub-app", "scope": "反馈状态与官方回复"},
+    {"label": "FTC Endorsement Guides", "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking", "scope": "UGC与利益关系披露"},
+    {"label": "Community Maturity Model", "url": "https://communityroundtable.com/community-manager-role/understanding-patterns-community-maturity/", "scope": "社群从临时尝试到正式运营的成熟度"}
+  ],
+  "public_boundary": ["姓名、邮箱、电话和账号", "密码、token和其他凭据", "本机路径", "经营金额和内部价格", "未批准预算和KPI", "敏感用户数据", "可识别个人的访谈内容"],
+  "updates": [
+    {"date": "2026-08-24", "version": "V2", "detail": "改为内部工作台结构；首页讲公司背景、六阶段与成熟度；具体项目进入二级页。"},
+    {"date": "2026-08-23", "version": "V1（已取代）", "detail": "初版按宣传落地页组织，使用展示型大字和装饰素材。"}
+  ],
+  "page_updates": [
+    {"page": "总览", "date": "2026-08-24"},
+    {"page": "从零开始怎么做", "date": "2026-08-24"},
+    {"page": "当前进展", "date": "2026-08-24"},
+    {"page": "用户研究与参与项目", "date": "2026-08-24"},
+    {"page": "资料与规则", "date": "2026-08-24"}
+  ]
+}
