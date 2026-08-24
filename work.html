@@ -3,81 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="海外用户运营当前项目状态、进展、下一步、依赖和证据日期。">
-  <meta name="theme-color" content="#f7f7f5">
+  <meta name="description" content="OEDRO海外用户运营工作台">
+  <meta name="theme-color" content="#080a08">
   <link rel="icon" href="data:,">
-  <title>当前进展｜海外用户运营工作台</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>OEDRO海外用户运营｜当前进展</title>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="theme.css">
 </head>
 <body data-page="work">
   <a class="skip-link" href="#content">跳到正文</a>
   <div class="app-shell">
     <aside class="sidebar" aria-label="工作台导航">
-      <a class="sidebar-head" href="index.html" aria-label="海外用户运营工作台首页"><span class="brand-mark" aria-hidden="true"></span><span class="brand-copy"><strong>海外用户运营</strong><span>OEDRO工作台</span></span></a>
-      <div class="sidebar-search"><input id="page-search" type="search" placeholder="搜索项目" aria-label="搜索项目内容"><p class="search-hint" id="search-status" aria-live="polite">按 / 快速搜索本页</p></div>
-      <nav class="nav-list" aria-label="主页面">
-        <a href="index.html" data-page="overview"><span>总览</span><span class="nav-index">01</span></a>
-        <a href="playbook.html" data-page="playbook"><span>从零开始怎么做</span><span class="nav-index">02</span></a>
-        <a href="work.html" data-page="work"><span>当前进展</span><span class="nav-index">03</span></a>
-        <a href="research.html" data-page="research"><span>用户研究与参与</span><span class="nav-index">04</span></a>
-        <a href="resources.html" data-page="resources"><span>资料与规则</span><span class="nav-index">05</span></a>
-      </nav>
-      <div class="sidebar-foot">当前公开版本<strong>2026-08-24 · V2</strong></div>
+      <a class="sidebar-head" href="index.html" aria-label="海外用户运营工作台首页">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-copy"><strong id="site-title">海外用户运营</strong><span id="site-subtitle">OEDRO 工作台</span></span>
+      </a>
+      <div class="sidebar-search">
+        <input id="page-search" type="search" placeholder="搜索本页" aria-label="搜索本页内容">
+        <p class="search-hint" id="search-status" aria-live="polite">按 / 搜索本页</p>
+      </div>
+      <nav class="nav-list" id="nav-list" aria-label="主页面"></nav>
     </aside>
     <div class="mobile-overlay" hidden></div>
     <div class="workspace">
-      <header class="topbar"><button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false">☰</button><div class="breadcrumb">海外用户运营 / <strong>当前进展</strong></div><div class="topbar-meta">证据更新至 2026-08-23</div></header>
-      <main class="main-content" id="content">
-        <div class="page-heading">
-          <div><h1>当前进展</h1><p>查看具体项目的状态、已有进展、下一步、依赖和证据日期。</p></div>
-          <span class="page-badge">工作状态</span>
-        </div>
-        <div class="empty-state" id="page-status" role="status" hidden></div>
-
-        <section class="section" aria-labelledby="status-title">
-          <div class="section-head"><h2 id="status-title">状态怎么读</h2><p>讨论和建议不算完成</p></div>
-          <div class="status-guide">
-            <div data-searchable><span class="status status-执行中">执行中</span><p>有明确下一步动作。</p></div>
-            <div data-searchable><span class="status status-探索">探索</span><p>条件已经列明，等依赖项完成。</p></div>
-            <div data-searchable><span class="status status-受阻">受阻</span><p>依赖项未解决，暂时不能继续。</p></div>
-            <div data-searchable><span class="status status-待确认">待确认</span><p>事实或条件还没有核实。</p></div>
-          </div>
-        </section>
-
-        <section class="section" aria-labelledby="focus-title">
-          <div class="section-head"><h2 id="focus-title">当前重点</h2><p>只列需要先推动的事项</p></div>
-          <div class="panel item-list" id="focus-list"></div>
-        </section>
-
-        <section class="section" aria-labelledby="projects-title">
-          <div class="section-head">
-            <h2 id="projects-title">项目台账</h2>
-            <div class="filter-row"><label for="status-filter">状态</label><select id="status-filter"><option>全部</option><option>执行中</option><option>探索</option><option>待确认</option><option>受阻</option></select><span class="count-note" id="project-count"></span></div>
-          </div>
-          <div class="data-table-wrap">
-            <table class="data-table project-table">
-              <thead><tr><th scope="col">项目</th><th scope="col">状态</th><th scope="col">已有进展</th><th scope="col">下一步</th><th scope="col">依赖</th></tr></thead>
-              <tbody id="project-rows"></tbody>
-            </table>
-          </div>
-          <div class="empty-state search-empty" role="status" hidden>没有匹配项目。</div>
-        </section>
-
-        <section class="section" aria-labelledby="blocked-title">
-          <div class="section-head"><h2 id="blocked-title">目前卡在哪里</h2><p>依赖解除后再推进</p></div>
-          <div class="panel item-list" id="blocked-list"></div>
-        </section>
-
-        <section class="section" aria-labelledby="next-title">
-          <div class="section-head"><h2 id="next-title">下一阶段</h2><p>完成当前依赖后进入</p></div>
-          <div class="overview-grid">
-            <article class="panel" data-searchable><h3 class="panel-title">准备推进</h3><ul class="compact-list" id="next-list"></ul></article>
-            <article class="panel" data-searchable><h3 class="panel-title">已有基础</h3><ul class="compact-list" id="foundation-list"></ul></article>
-          </div>
-        </section>
-
-        <footer class="page-footer"><span>状态以可核对的本地记录为准。</span><span>证据日期 2026-08-23</span></footer>
-      </main>
+      <header class="topbar">
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false">☰</button>
+        <div class="breadcrumb">海外用户运营 / <strong id="breadcrumb-page"></strong></div>
+      </header>
+      <main class="main-content" id="content" aria-live="polite"></main>
     </div>
   </div>
   <script src="app.js"></script>

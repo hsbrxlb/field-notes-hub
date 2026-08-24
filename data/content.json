@@ -25,6 +25,11 @@
       "id": "research",
       "label": "用户研究与参与",
       "file": "research.html"
+    },
+    {
+      "id": "topics",
+      "label": "运营专题",
+      "file": "topics.html"
     }
   ],
   "overview": {
@@ -80,7 +85,9 @@
     "capabilities_label": "",
     "entry_title": "按事情找内容",
     "entry_label": "",
-    "entry_text": "想看整体做法，进入“从零开始”；想看具体工作，进入“当前进展”；想看调研和用户参与方式，进入“用户研究与参与”。"
+    "entry_text": "想看整体做法，进入“从零开始”；想看具体工作，进入“当前进展”；想看调研和用户参与方式，进入“用户研究与参与”；想看Discord等单项安排，进入“运营专题”。",
+    "topics_title": "正在准备的运营专题",
+    "topics_text": "专题页集中保存单项工作的现状、启动条件和后续安排。"
   },
   "stages": [
     {
@@ -340,11 +347,11 @@
       },
       {
         "id": "discord-prep",
-        "name": "Discord准备",
+        "name": "OEDRO Discord试跑",
         "status": "待确认",
-        "progress": "权限、频道、首批用户和使用理由需要核对。",
-        "next": "确认目标用户、首批任务和长期维护分工。",
-        "dependency": "需要先建好用户资料和参与规则。"
+        "progress": "频道、验证、工单和内容同步框架已核查，多数公共频道还没有真实用户讨论。",
+        "next": "确认管理权限、核心频道、Bot配置、客服边界、首批车主和首月内容。",
+        "dependency": "需要服务器Owner、用户联系许可和日常维护分工。"
       },
       {
         "id": "f150-data-link",
@@ -509,7 +516,7 @@
     "case_text": "Light Lab 是一套早期交互方案。下面的画面展示了访谈预约、录音授权、AI追问和产品概念测试；开发情况仍需确认。",
     "case_images": [
       {
-        "src": "../shared/assets/light-lab/desktop-concept-test.png",
+        "src": "assets/light-lab/desktop-concept-test.png",
         "alt": "Light Lab 桌面端概念测试界面，展示灯具安装位置、光型、价格和安装方式选择",
         "caption": "桌面端：测试安装位置、光型、价格和安装方式。",
         "orientation": "landscape",
@@ -517,7 +524,7 @@
         "height": 941
       },
       {
-        "src": "../shared/assets/light-lab/desktop-ai-followup.png",
+        "src": "assets/light-lab/desktop-ai-followup.png",
         "alt": "Light Lab 桌面端 AI 追问界面，根据用户的真实使用经历继续提问",
         "caption": "桌面端：根据真实使用经历继续追问。",
         "orientation": "landscape",
@@ -525,7 +532,7 @@
         "height": 941
       },
       {
-        "src": "../shared/assets/light-lab/mobile-booking-consent.png",
+        "src": "assets/light-lab/mobile-booking-consent.png",
         "alt": "Light Lab 手机端访谈预约和录音授权界面",
         "caption": "手机端：选择访谈方式、时间并确认录音授权。",
         "orientation": "portrait",
@@ -533,7 +540,7 @@
         "height": 1672
       },
       {
-        "src": "../shared/assets/light-lab/mobile-ai-followup.png",
+        "src": "assets/light-lab/mobile-ai-followup.png",
         "alt": "Light Lab 手机端 AI 追问界面，根据回答继续询问灯具安装和使用问题",
         "caption": "手机端：根据回答继续追问具体使用问题。",
         "orientation": "portrait",

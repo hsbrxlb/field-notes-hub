@@ -1,0 +1,14 @@
+{
+  "title": "运营专题",
+  "description": "按主题查看目标、当前情况、启动条件和后续安排。",
+  "items": [
+    {
+      "slug": "discord-community",
+      "title": "OEDRO Discord社区",
+      "area": "社群",
+      "status": "待确认",
+      "summary": "频道、验证、工单和内容同步框架已经搭好，下一步确认管理权限、新人路径、首批车主和日常维护分工。",
+      "featured": true
+    }
+  ]
+}

@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="赢他海外用户运营工作台总览：公司背景、建设阶段、当前成熟度与资料入口。">
-  <meta name="theme-color" content="#f7f7f5">
+  <meta name="description" content="OEDRO海外用户运营工作台">
+  <meta name="theme-color" content="#080a08">
   <link rel="icon" href="data:,">
-  <title>海外用户运营工作台｜总览</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>OEDRO海外用户运营总览</title>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="theme.css">
 </head>
 <body data-page="overview">
   <a class="skip-link" href="#content">跳到正文</a>
@@ -15,102 +16,21 @@
     <aside class="sidebar" aria-label="工作台导航">
       <a class="sidebar-head" href="index.html" aria-label="海外用户运营工作台首页">
         <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-copy"><strong>海外用户运营</strong><span>OEDRO工作台</span></span>
+        <span class="brand-copy"><strong id="site-title">海外用户运营</strong><span id="site-subtitle">OEDRO 工作台</span></span>
       </a>
       <div class="sidebar-search">
         <input id="page-search" type="search" placeholder="搜索本页" aria-label="搜索本页内容">
-        <p class="search-hint" id="search-status" aria-live="polite">按 / 快速搜索本页</p>
+        <p class="search-hint" id="search-status" aria-live="polite">按 / 搜索本页</p>
       </div>
-      <nav class="nav-list" aria-label="主页面">
-        <a href="index.html" data-page="overview"><span>总览</span><span class="nav-index">01</span></a>
-        <a href="playbook.html" data-page="playbook"><span>从零开始怎么做</span><span class="nav-index">02</span></a>
-        <a href="work.html" data-page="work"><span>当前进展</span><span class="nav-index">03</span></a>
-        <a href="research.html" data-page="research"><span>用户研究与参与</span><span class="nav-index">04</span></a>
-        <a href="resources.html" data-page="resources"><span>资料与规则</span><span class="nav-index">05</span></a>
-      </nav>
-      <div class="sidebar-foot">当前公开版本<strong>2026-08-24 · V2</strong></div>
+      <nav class="nav-list" id="nav-list" aria-label="主页面"></nav>
     </aside>
     <div class="mobile-overlay" hidden></div>
-
     <div class="workspace">
       <header class="topbar">
         <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false">☰</button>
-        <div class="breadcrumb">海外用户运营 / <strong>总览</strong></div>
-        <div class="topbar-meta" aria-live="polite">数据更新至 2026-08-24</div>
+        <div class="breadcrumb">海外用户运营 / <strong id="breadcrumb-page"></strong></div>
       </header>
-
-      <main class="main-content" id="content">
-        <div class="page-heading">
-          <div>
-            <h1>海外用户运营工作台</h1>
-            <p>公司为什么现在需要海外用户运营、这项能力怎样从零建立，以及当前处于哪个阶段。</p>
-          </div>
-          <span class="page-badge">总览</span>
-        </div>
-        <div class="empty-state" id="page-status" role="status" hidden></div>
-
-        <section class="section" aria-labelledby="context-title">
-          <div class="section-head"><h2 id="context-title">为什么现在开始做</h2><p>公司背景与岗位起点</p></div>
-          <div class="overview-grid">
-            <article class="panel" data-searchable>
-              <h3 class="panel-title">从分散接触到统一工作方式</h3>
-              <p>赢他2015年启航，2024年从渠道赋能转向产品驱动。过去海外用户接触分散在独立站、EDM、客服、KOL、TikTok、Reddit、论坛、PR、联盟和Discord，没有统一用户档案、授权、研究和再次参与机制。</p>
-              <p>2026年新设专职海外用户运营岗位，从OEDRO汽配业务开始搭建能力。岗位不接管全部站外渠道，重点是把渠道里合适的用户、反馈和内容纳入统一记录和后续工作。</p>
-            </article>
-            <article class="panel" data-searchable>
-              <h3 class="panel-title">当前成熟度</h3>
-              <div id="maturity-panel"></div>
-            </article>
-          </div>
-        </section>
-
-        <section class="section" aria-labelledby="stages-title">
-          <div class="section-head"><h2 id="stages-title">从零建立的六个阶段</h2><p>查看每阶段的动作与交付</p></div>
-          <div class="stage-strip" id="stage-strip"></div>
-        </section>
-
-        <section class="section" aria-labelledby="pages-title">
-          <div class="section-head"><h2 id="pages-title">工作入口</h2><p>按需要进入</p></div>
-          <div class="page-links">
-            <a class="page-link" href="playbook.html" data-searchable><strong>从零开始怎么做</strong><span>六个阶段的开始前提、动作、交付和完成标志。</span></a>
-            <a class="page-link" href="work.html" data-searchable><strong>当前进展</strong><span>具体项目、阻塞、等待输入和下一阶段事项。</span></a>
-            <a class="page-link" href="research.html" data-searchable><strong>用户研究与参与</strong><span>调研、测试、UGC、顾问小组和社群的边界。</span></a>
-            <a class="page-link" href="resources.html" data-searchable><strong>资料与规则</strong><span>术语、渠道、字段、来源、更新记录和公开边界。</span></a>
-          </div>
-          <div class="empty-state search-empty" role="status" hidden>没有匹配内容。</div>
-        </section>
-
-        <section class="section" aria-labelledby="timeline-title">
-          <div class="section-head"><h2 id="timeline-title">公司与能力建设时间线</h2><p>采用赢他官网当前口径</p></div>
-          <div class="timeline" id="company-timeline"></div>
-        </section>
-
-        <section class="section" aria-labelledby="maturity-detail-title">
-          <div class="section-head"><h2 id="maturity-detail-title">目前已有基础与主要缺口</h2><p>不把计划写成已完成</p></div>
-          <div class="overview-grid">
-            <article class="panel" data-searchable>
-              <h3 class="panel-title">已有基础</h3>
-              <ul class="compact-list" id="maturity-completed"></ul>
-            </article>
-            <article class="panel" data-searchable>
-              <h3 class="panel-title">主要缺口</h3>
-              <ul class="compact-list muted" id="maturity-missing"></ul>
-            </article>
-          </div>
-        </section>
-
-        <section class="section" aria-labelledby="capabilities-title">
-          <div class="section-head"><h2 id="capabilities-title">六项基础能力</h2><p>每项先完成最小交付</p></div>
-          <div class="data-table-wrap">
-            <table class="data-table">
-              <thead><tr><th scope="col">能力</th><th scope="col">解决什么问题</th><th scope="col">最小交付</th></tr></thead>
-              <tbody id="capability-rows"></tbody>
-            </table>
-          </div>
-        </section>
-
-        <footer class="page-footer"><span>公开安全版本，不包含个人信息与内部经营数字。</span><span>最后更新 2026-08-24</span></footer>
-      </main>
+      <main class="main-content" id="content" aria-live="polite"></main>
     </div>
   </div>
   <script src="app.js"></script>

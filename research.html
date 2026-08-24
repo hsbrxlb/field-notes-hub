@@ -3,95 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="用户研究方法边界、参与项目条件、UGC披露要求和Light Lab案例状态。">
-  <meta name="theme-color" content="#f7f7f5">
+  <meta name="description" content="OEDRO海外用户运营工作台">
+  <meta name="theme-color" content="#080a08">
   <link rel="icon" href="data:,">
-  <title>用户研究与参与｜海外用户运营工作台</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>OEDRO海外用户运营｜用户研究与参与</title>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="theme.css">
 </head>
 <body data-page="research">
   <a class="skip-link" href="#content">跳到正文</a>
   <div class="app-shell">
     <aside class="sidebar" aria-label="工作台导航">
-      <a class="sidebar-head" href="index.html" aria-label="海外用户运营工作台首页"><span class="brand-mark" aria-hidden="true"></span><span class="brand-copy"><strong>海外用户运营</strong><span>OEDRO工作台</span></span></a>
-      <div class="sidebar-search"><input id="page-search" type="search" placeholder="搜索方法与规则" aria-label="搜索研究方法与规则"><p class="search-hint" id="search-status" aria-live="polite">按 / 快速搜索本页</p></div>
-      <nav class="nav-list" aria-label="主页面">
-        <a href="index.html" data-page="overview"><span>总览</span><span class="nav-index">01</span></a>
-        <a href="playbook.html" data-page="playbook"><span>从零开始怎么做</span><span class="nav-index">02</span></a>
-        <a href="work.html" data-page="work"><span>当前进展</span><span class="nav-index">03</span></a>
-        <a href="research.html" data-page="research"><span>用户研究与参与</span><span class="nav-index">04</span></a>
-        <a href="resources.html" data-page="resources"><span>资料与规则</span><span class="nav-index">05</span></a>
-      </nav>
-      <div class="sidebar-foot">当前公开版本<strong>2026-08-24 · V2</strong></div>
+      <a class="sidebar-head" href="index.html" aria-label="海外用户运营工作台首页">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-copy"><strong id="site-title">海外用户运营</strong><span id="site-subtitle">OEDRO 工作台</span></span>
+      </a>
+      <div class="sidebar-search">
+        <input id="page-search" type="search" placeholder="搜索本页" aria-label="搜索本页内容">
+        <p class="search-hint" id="search-status" aria-live="polite">按 / 搜索本页</p>
+      </div>
+      <nav class="nav-list" id="nav-list" aria-label="主页面"></nav>
     </aside>
     <div class="mobile-overlay" hidden></div>
     <div class="workspace">
-      <header class="topbar"><button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false">☰</button><div class="breadcrumb">海外用户运营 / <strong>用户研究与参与</strong></div><div class="topbar-meta">更新至 2026-08-24</div></header>
-      <main class="main-content" id="content">
-        <div class="page-heading">
-          <div><h1>用户研究与参与</h1><p>查看不同方法能回答什么问题，以及项目启动前必须具备哪些条件。</p></div>
-          <span class="page-badge">方法与边界</span>
-        </div>
-
-        <section class="section" aria-labelledby="methods-title">
-          <div class="section-head"><h2 id="methods-title">方法边界</h2><p>先明确要支持的业务决定</p></div>
-          <div class="data-table-wrap">
-            <table class="data-table">
-              <thead><tr><th scope="col">方法</th><th scope="col">适合回答</th><th scope="col">不能代替</th></tr></thead>
-              <tbody>
-                <tr data-searchable><td class="cell-title">桌面研究</td><td>形成市场、法规、竞品和工程假设。</td><td>真实用户反馈或工程验证。</td></tr>
-                <tr data-searchable><td class="cell-title">A/B投票</td><td>比较本次样本对两个明确方案的偏好。</td><td>推广到所有用户。</td></tr>
-                <tr data-searchable><td class="cell-title">用户访谈</td><td>理解过去行为、原因和阻碍。</td><td>准确预测未来购买。</td></tr>
-                <tr data-searchable><td class="cell-title">结构化问卷</td><td>在同一组问题下比较功能、价格和分群差异。</td><td>解释所有答案背后的原因。</td></tr>
-                <tr data-searchable><td class="cell-title">产品测试</td><td>验证适配、任务执行和连续使用反馈。</td><td>没有准确车型和测试协议时的临时试用。</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section class="section" aria-labelledby="programs-title">
-          <div class="section-head"><h2 id="programs-title">五类参与项目</h2><p>Panel是可重复联系的参与者名单</p></div>
-          <div class="data-table-wrap">
-            <table class="data-table participation-table">
-              <thead><tr><th scope="col">类型</th><th scope="col">启动条件</th><th scope="col">用户任务</th><th scope="col">公司回报</th><th scope="col">必须记录</th></tr></thead>
-              <tbody>
-                <tr data-searchable><td class="cell-title">用户调研</td><td>有明确业务决定要回答。</td><td>访谈、问卷、投票。</td><td>激励或报酬。</td><td>研究用途授权与洞察记录。</td></tr>
-                <tr data-searchable><td class="cell-title">产品测试</td><td>有准确车型和测试协议。</td><td>安装、使用、持续反馈。</td><td>产品、补偿或两者。</td><td>测试反馈与素材使用分别授权。</td></tr>
-                <tr data-searchable><td class="cell-title">UGC</td><td>有明确素材用途和披露要求。</td><td>拍摄、写作或发布。</td><td>免费产品、折扣或现金。</td><td>使用平台、范围、期限与利益关系。</td></tr>
-                <tr data-searchable><td class="cell-title">顾问小组</td><td>有持续咨询需求。</td><td>定期讨论和评估。</td><td>固定报酬或权益。</td><td>顾问关系、讨论记录与对应决定。</td></tr>
-                <tr data-searchable><td class="cell-title">社群</td><td>有人长期维护并有参与规则。</td><td>交流、互助和活动。</td><td>信息、权益或归属感。</td><td>社群规则、参与历史和再次邀请条件。</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section class="section" aria-labelledby="rights-title">
-          <div class="section-head"><h2 id="rights-title">激励、录音和素材使用</h2><p>这些许可不能合并成一句同意</p></div>
-          <div class="overview-grid">
-            <article class="panel" data-searchable>
-              <h3 class="panel-title">分别说明</h3>
-              <ul class="compact-list"><li>激励和发放条件。</li><li>录音、转写和保存范围。</li><li>是否允许再次联系。</li><li>素材使用的平台、范围和期限。</li></ul>
-            </article>
-            <article class="panel" data-searchable>
-              <h3 class="panel-title">结论复核</h3>
-              <ul class="compact-list"><li>原始回答与AI整理分开保存。</li><li>AI可辅助转写、编码和初稿。</li><li>最终结论回看原话、反例和样本限制。</li><li>奖励不能要求用户只给正面评价。</li></ul>
-            </article>
-          </div>
-        </section>
-
-        <section class="section" aria-labelledby="case-title">
-          <div class="section-head"><h2 id="case-title">历史案例：Light Lab</h2><p>尚未立项</p></div>
-          <article class="panel" data-searchable><p>Light Lab是交互式研究概念，用于讨论用户如何理解产品、回答开放问题和补充追问。它不是产品演示，也不代表已经确定的开发项目。</p></article>
-        </section>
-
-        <section class="section" aria-labelledby="entry-title">
-          <div class="section-head"><h2 id="entry-title">研究入口</h2><p>当前状态</p></div>
-          <article class="panel" data-searchable><p>统一研究入口尚未建立。研究需求、参与者招募、方法选择、排期、激励、录音、归档和洞察记录目前仍分散处理。</p><p class="next-action"><strong>下一步：</strong>先建立研究需求入口和方法规则，再开放参与者Panel。</p></article>
-          <div class="empty-state search-empty" role="status" hidden>没有匹配内容。</div>
-        </section>
-
-        <footer class="page-footer"><span>研究先服务于明确决定，再选择方法。</span><span>最后更新 2026-08-24</span></footer>
-      </main>
+      <header class="topbar">
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false">☰</button>
+        <div class="breadcrumb">海外用户运营 / <strong id="breadcrumb-page"></strong></div>
+      </header>
+      <main class="main-content" id="content" aria-live="polite"></main>
     </div>
   </div>
   <script src="app.js"></script>
