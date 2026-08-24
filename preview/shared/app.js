@@ -33,7 +33,15 @@ function pageHeading(title, description, label) {
 }
 
 function sectionHead(title, label) {
-  return `<div class="section-head"><h2>${escapeHtml(title)}</h2><p>${escapeHtml(label)}</p></div>`;
+  return `<div class="section-head"><h2>${escapeHtml(title)}</h2>${label ? `<p>${escapeHtml(label)}</p>` : ''}</div>`;
+}
+
+function socialMediaMarkup(data) {
+  const social = data.social_media;
+  return `<div class="social-media-intro"><p>${escapeHtml(social.summary)}</p></div>
+    <ol class="social-media-steps">
+      ${social.steps.map((item, index) => `<li data-searchable><span class="social-step-index">0${index + 1}</span><div><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.description)}</p></div></li>`).join('')}
+    </ol>`;
 }
 
 function renderShell(data) {
@@ -55,7 +63,7 @@ function renderOverview(data) {
   const content = document.querySelector('#content');
   content.innerHTML = `
     ${pageHeading(o.title, o.description, '总览')}
-    <section class="section" data-searchable>${sectionHead(o.why_title, o.why_label)}
+    <section class="section" data-searchable>${sectionHead(o.why_title, '')}
       <div class="grid-two">
         <article class="panel"><span class="panel-label">${escapeHtml(o.why_label)}</span>${o.why_paragraphs.map((item) => `<p>${escapeHtml(item)}</p>`).join('')}</article>
         <article class="panel"><span class="panel-label">${escapeHtml(o.maturity_label)}</span><h3 class="maturity-title">${escapeHtml(o.maturity_title)}</h3><p>${escapeHtml(o.maturity_description)}</p></article>
@@ -76,7 +84,8 @@ function renderOverview(data) {
     </div></section>
     <section class="section">${sectionHead(o.capabilities_title, o.capabilities_label)}<div class="capability-grid">
       ${data.capabilities.map((item) => `<article class="capability-item" data-searchable><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.purpose)}</p><small>${escapeHtml(item.minimum)}</small></article>`).join('')}
-    </div><div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div></section>`;
+    </div></section>
+    <section class="section">${sectionHead(data.social_media.title, '')}${socialMediaMarkup(data)}<div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div></section>`;
 }
 
 function renderPlaybook(data) {
@@ -95,6 +104,7 @@ function renderPlaybook(data) {
           <div><h3>交付内容</h3><ul>${stage.deliverables.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div>
         </div></article>`).join('')}
     </div></section>
+    <section class="section" id="social-media">${sectionHead(data.social_media.title, '')}${socialMediaMarkup(data)}</section>
     <section class="section">${sectionHead(p.results_title, p.results_label)}<div class="result-grid">
       ${p.results.map((item) => `<article class="result" data-searchable><strong>${escapeHtml(item.name)}</strong><span>${escapeHtml(item.description)}</span></article>`).join('')}
     </div><div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div></section>`;
@@ -133,16 +143,18 @@ function renderResearch(data) {
   document.querySelector('meta[name="description"]').content = r.meta_description;
   document.querySelector('#content').innerHTML = `
     ${pageHeading(r.title, r.description, '研究')}
-    <section class="section">${sectionHead(r.methods_title, r.methods_label)}<div class="data-table-wrap"><table class="data-table"><thead><tr><th>方法</th><th>适合回答</th><th>还需配合</th></tr></thead><tbody>
+    <section class="section">${sectionHead(r.methods_title, r.methods_label)}<div class="data-table-wrap"><table class="data-table"><thead><tr><th>方法</th><th>适合用来做什么</th><th>开始前要准备</th></tr></thead><tbody>
       ${r.methods.map((item) => `<tr data-searchable><td class="cell-title">${escapeHtml(item.name)}</td><td>${escapeHtml(item.use)}</td><td>${escapeHtml(item.needs)}</td></tr>`).join('')}
     </tbody></table></div></section>
-    <section class="section">${sectionHead(r.programs_title, r.programs_label)}<div class="data-table-wrap"><table class="data-table"><thead><tr><th>类型</th><th>启动条件</th><th>用户任务</th><th>公司提供</th><th>需要记录</th></tr></thead><tbody>
+    <section class="section">${sectionHead(r.programs_title, r.programs_label)}<div class="data-table-wrap"><table class="data-table"><thead><tr><th>类型</th><th>怎么邀请</th><th>用户要做什么</th><th>能得到什么</th><th>需要记录</th></tr></thead><tbody>
       ${r.programs.map((item) => `<tr data-searchable><td class="cell-title">${escapeHtml(item.name)}</td><td>${escapeHtml(item.start)}</td><td>${escapeHtml(item.task)}</td><td>${escapeHtml(item.return)}</td><td>${escapeHtml(item.record)}</td></tr>`).join('')}
     </tbody></table></div></section>
     <section class="section">${sectionHead(r.rights_title, r.rights_label)}<div class="rights-grid">
       ${r.rights_groups.map((group) => `<article class="rights-group" data-searchable><h3>${escapeHtml(group.title)}</h3><ul>${group.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></article>`).join('')}
     </div></section>
-    <section class="section">${sectionHead(r.case_title, r.case_label)}<article class="panel" data-searchable><p>${escapeHtml(r.case_text)}</p></article></section>
+    <section class="section">${sectionHead(r.case_title, r.case_label)}<article class="panel light-lab-case" data-searchable><p class="light-lab-intro">${escapeHtml(r.case_text)}</p><div class="light-lab-gallery">
+      ${r.case_images.map((item) => `<figure class="light-lab-figure light-lab-${escapeHtml(item.orientation)}"><img src="${escapeHtml(item.src)}" alt="${escapeHtml(item.alt)}" width="${escapeHtml(item.width)}" height="${escapeHtml(item.height)}" loading="lazy" decoding="async"><figcaption>${escapeHtml(item.caption)}</figcaption></figure>`).join('')}
+    </div></article></section>
     <section class="section">${sectionHead(r.entry_title, r.entry_label)}<article class="panel" data-searchable><p>${escapeHtml(r.entry_text)}</p><p class="entry-note"><strong>下一步：</strong>${escapeHtml(r.entry_next)}</p></article><div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div></section>`;
 }
 
