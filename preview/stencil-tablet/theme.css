@@ -2,10 +2,10 @@
 
 :root {
   --page-bg: #E2DCC9;
-  --sidebar-bg: #D5CEBA;
-  --topbar-bg: rgba(226, 220, 201, .95);
-  --surface: #F4EFE0;
-  --input-bg: #ECE4D0;
+  --sidebar-bg: rgba(213, 206, 186, .88);
+  --topbar-bg: rgba(226, 220, 201, .84);
+  --surface: rgba(244, 239, 224, .88);
+  --input-bg: rgba(236, 228, 208, .9);
   --text: #0A0A0A;
   --text-secondary: #2E2B25;
   --text-muted: #625D51;
@@ -42,6 +42,30 @@
   --phase-number-size: 46px;
 }
 
+html { background: #E2DCC9; }
+body { position: relative; isolation: isolate; background: transparent; }
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: #E2DCC9 url('../shared/assets/background-light.png') center / cover no-repeat;
+}
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: rgba(235, 230, 211, .42);
+}
+.app-shell { z-index: 1; }
+.sidebar, .topbar { backdrop-filter: blur(18px); }
+.panel, .stage-link, .page-link, .capability-item, .phase, .result, .status-guide > div, .focus-item, .data-table-wrap, .rights-group, .timeline, .social-media-steps {
+  backdrop-filter: blur(12px);
+}
+
 .brand-copy span, .panel-label, .section-head p, .page-tag, .status, .nav-index { font-family: 'Barlow Condensed', 'Noto Sans SC', sans-serif; letter-spacing: .03em; }
 .stage-link { position: relative; overflow: hidden; border-color: var(--border-strong); }
 .stage-link::after { content: ''; position: absolute; inset: auto 0 0; height: 8px; background: var(--stage-accent, #EE7A2E); }
@@ -60,3 +84,7 @@
 .phase:nth-child(6) { border-left: 10px solid #6F7A2E; }
 .data-table th { font-family: 'Noto Sans SC', sans-serif; font-weight: 900; }
 .page-heading h1, .section-head h2, .phase-head strong { font-weight: 900; }
+
+@media (max-width: 760px) {
+  body::before { background-position: 46% center; }
+}
