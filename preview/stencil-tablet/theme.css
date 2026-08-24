@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;900&family=Noto+Serif+SC:wght@600;700;900&family=Stardos+Stencil:wght@700&display=swap');
+
+:root {
+  --page-bg: #E2DCC9;
+  --sidebar-bg: #D5CEBA;
+  --topbar-bg: rgba(226, 220, 201, .95);
+  --surface: #F4EFE0;
+  --input-bg: #ECE4D0;
+  --text: #0A0A0A;
+  --text-secondary: #2E2B25;
+  --text-muted: #625D51;
+  --border: #817A6B;
+  --border-strong: #0A0A0A;
+  --accent: #A64E28;
+  --nav-hover: #F4EFE0;
+  --nav-active: #EE7A2E;
+  --nav-active-text: #0A0A0A;
+  --tag-bg: #D8A93B;
+  --tag-text: #0A0A0A;
+  --tag-border: #0A0A0A;
+  --table-head-bg: #0A0A0A;
+  --table-head-text: #F4EFE0;
+  --status-pending: #6D5420;
+  --status-pending-bg: #E7CA72;
+  --status-active: #1F6259;
+  --status-active-bg: #D4E2DE;
+  --status-ready: #6F2B51;
+  --status-ready-bg: #E8C3D4;
+  --status-blocked: #8B351E;
+  --status-blocked-bg: #F0C6B4;
+  --status-done: #4E5C1E;
+  --status-done-bg: #D9DEB8;
+  --font-heading: 'Noto Serif SC', 'Songti SC', serif;
+  --font-body: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
+  --font-numeric: 'Stardos Stencil', 'Noto Serif SC', serif;
+  --radius-sm: 7px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --mark-radius: 5px;
+  --border-width: 1.5px;
+  --stage-number-size: 32px;
+  --phase-number-size: 46px;
+}
+
+.brand-copy span, .panel-label, .section-head p, .page-tag, .status, .nav-index { font-family: 'Barlow Condensed', 'Noto Sans SC', sans-serif; letter-spacing: .03em; }
+.stage-link { position: relative; overflow: hidden; border-color: var(--border-strong); }
+.stage-link::after { content: ''; position: absolute; inset: auto 0 0; height: 8px; background: var(--stage-accent, #EE7A2E); }
+.stage-link:nth-child(1), .capability-item:nth-child(1) { --stage-accent: #A06A3C; border-left: 8px solid #A06A3C; }
+.stage-link:nth-child(2), .capability-item:nth-child(2) { --stage-accent: #C73B7A; border-left: 8px solid #C73B7A; }
+.stage-link:nth-child(3), .capability-item:nth-child(3) { --stage-accent: #EE7A2E; border-left: 8px solid #EE7A2E; }
+.stage-link:nth-child(4), .capability-item:nth-child(4) { --stage-accent: #2D7E73; border-left: 8px solid #2D7E73; }
+.stage-link:nth-child(5), .capability-item:nth-child(5) { --stage-accent: #3F73B7; border-left: 8px solid #3F73B7; }
+.stage-link:nth-child(6), .capability-item:nth-child(6) { --stage-accent: #6F7A2E; border-left: 8px solid #6F7A2E; }
+.phase { border-color: var(--border-strong); }
+.phase:nth-child(1) { border-left: 10px solid #A06A3C; }
+.phase:nth-child(2) { border-left: 10px solid #C73B7A; }
+.phase:nth-child(3) { border-left: 10px solid #EE7A2E; }
+.phase:nth-child(4) { border-left: 10px solid #2D7E73; }
+.phase:nth-child(5) { border-left: 10px solid #3F73B7; }
+.phase:nth-child(6) { border-left: 10px solid #6F7A2E; }
+.data-table th { font-family: 'Noto Sans SC', sans-serif; font-weight: 900; }
+.page-heading h1, .section-head h2, .phase-head strong { font-weight: 900; }

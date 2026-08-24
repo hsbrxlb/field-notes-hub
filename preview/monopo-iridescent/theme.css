@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+
+:root {
+  --page-bg: #080A08;
+  --sidebar-bg: rgba(5, 7, 5, .90);
+  --topbar-bg: rgba(5, 7, 5, .86);
+  --surface: rgba(9, 12, 9, .86);
+  --input-bg: rgba(255, 255, 255, .08);
+  --text: #F7F3EA;
+  --text-secondary: #DED8CC;
+  --text-muted: #BEB9AE;
+  --border: rgba(247, 243, 234, .25);
+  --border-strong: rgba(247, 243, 234, .52);
+  --accent: #E3B96D;
+  --nav-hover: rgba(255,255,255,.08);
+  --nav-active: #F7F3EA;
+  --nav-active-text: #080A08;
+  --tag-bg: #E3B96D;
+  --tag-text: #080A08;
+  --tag-border: #E3B96D;
+  --table-head-bg: rgba(247, 243, 234, .94);
+  --table-head-text: #080A08;
+  --status-pending: #F0CD83;
+  --status-pending-bg: rgba(94, 73, 30, .62);
+  --status-active: #9ED0B5;
+  --status-active-bg: rgba(24, 76, 55, .62);
+  --status-ready: #D8B8D1;
+  --status-ready-bg: rgba(82, 45, 73, .62);
+  --status-blocked: #F0A28F;
+  --status-blocked-bg: rgba(92, 39, 28, .68);
+  --status-done: #B6CF8D;
+  --status-done-bg: rgba(54, 75, 30, .65);
+  --font-heading: 'Manrope', 'Noto Sans SC', sans-serif;
+  --font-body: 'Noto Sans SC', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-numeric: 'Manrope', 'Noto Sans SC', sans-serif;
+  --radius-sm: 2px;
+  --radius-md: 5px;
+  --radius-lg: 8px;
+  --mark-radius: 50%;
+  --border-width: 1px;
+  --stage-number-size: 23px;
+  --phase-number-size: 36px;
+}
+
+html { background: #080A08; }
+body { position: relative; isolation: isolate; background: transparent; }
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: #080A08 url('assets/background.png') center / cover no-repeat;
+}
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: rgba(3, 5, 3, .70);
+}
+.app-shell { z-index: 1; }
+.sidebar, .topbar { backdrop-filter: blur(18px); }
+.panel, .stage-link, .page-link, .capability-item, .phase, .result, .status-guide > div, .focus-item, .data-table-wrap, .rights-group, .timeline {
+  backdrop-filter: blur(12px);
+}
+.page-heading { border-bottom-color: rgba(247,243,234,.58); }
+.page-heading h1, .section-head h2, .phase-head strong { font-weight: 600; }
+.stage-link { border-top: 3px solid var(--accent); }
+.stage-link:nth-child(2), .stage-link:nth-child(5), .capability-item:nth-child(2), .capability-item:nth-child(5) { border-top-color: #809A80; }
+.stage-link:nth-child(3), .stage-link:nth-child(6), .capability-item:nth-child(3), .capability-item:nth-child(6) { border-top-color: #B97B45; }
+.phase { border-left: 3px solid var(--accent); }
+.data-table tbody tr:hover { background: rgba(255,255,255,.05); }
+
+@media (max-width: 760px) {
+  body::before { background-position: 55% center; }
+}

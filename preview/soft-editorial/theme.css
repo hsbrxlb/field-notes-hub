@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap');
+
+:root {
+  --page-bg: #F2EEDF;
+  --sidebar-bg: #ECE6D2;
+  --topbar-bg: rgba(242, 238, 223, .94);
+  --surface: #FBF8EC;
+  --input-bg: #F8F3E4;
+  --text: #2A241B;
+  --text-secondary: #4B4337;
+  --text-muted: #6A6153;
+  --border: #CFC6B2;
+  --border-strong: #AFA38D;
+  --accent: #8B536F;
+  --nav-hover: #E8DEC8;
+  --nav-active: #E1A4C2;
+  --nav-active-text: #2A241B;
+  --tag-bg: #D6DD63;
+  --tag-text: #2A241B;
+  --tag-border: #AEB642;
+  --table-head-bg: #E8C9B6;
+  --table-head-text: #2A241B;
+  --status-pending: #745F2A;
+  --status-pending-bg: #F3E9B1;
+  --status-active: #3E6854;
+  --status-active-bg: #DCE8D2;
+  --status-ready: #6F4D63;
+  --status-ready-bg: #EBD5E1;
+  --status-blocked: #8B473F;
+  --status-blocked-bg: #F2D9D3;
+  --status-done: #526A49;
+  --status-done-bg: #DCE7D4;
+  --font-heading: 'Noto Serif SC', 'Songti SC', serif;
+  --font-body: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
+  --font-numeric: 'Cormorant Garamond', 'Noto Serif SC', serif;
+  --radius-sm: 10px;
+  --radius-md: 15px;
+  --radius-lg: 20px;
+  --mark-radius: 50%;
+  --border-width: 1px;
+  --stage-number-size: 22px;
+  --phase-number-size: 34px;
+}
+
+.stage-link:nth-child(1), .capability-item:nth-child(1) { border-top: 7px solid #E1A4C2; }
+.stage-link:nth-child(2), .capability-item:nth-child(2) { border-top: 7px solid #D6DD63; }
+.stage-link:nth-child(3), .capability-item:nth-child(3) { border-top: 7px solid #E8C9B6; }
+.stage-link:nth-child(4), .capability-item:nth-child(4) { border-top: 7px solid #B7C7A8; }
+.stage-link:nth-child(5), .capability-item:nth-child(5) { border-top: 7px solid #C9BEDC; }
+.stage-link:nth-child(6), .capability-item:nth-child(6) { border-top: 7px solid #C9B4A1; }
+.phase:nth-child(odd) { border-left: 8px solid #E1A4C2; }
+.phase:nth-child(even) { border-left: 8px solid #B7C7A8; }
+.page-heading h1, .section-head h2, .phase-head strong { font-weight: 600; }

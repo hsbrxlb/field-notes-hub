@@ -38,3 +38,13 @@ python3 build-artifacts/v2-workbench/tools/sync_public_workspace.py
 ## 部署
 
 推送到`main`后，GitHub Actions把静态文件发布到GitHub Pages。
+
+## 视觉预览
+
+当前根站保持不变。三套候选视觉共用同一份中文文案和项目数据：
+
+- `preview/soft-editorial/`
+- `preview/stencil-tablet/`
+- `preview/monopo-iridescent/`
+
+Oliver选定视觉方向后，再把对应主题提升到根站。模板适配来源见`preview/THIRD_PARTY_NOTICES.md`。
