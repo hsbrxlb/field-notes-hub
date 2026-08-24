@@ -124,7 +124,7 @@ function renderWork(data) {
     </div></section>
     <section class="section"><div class="section-head"><h2>${escapeHtml(w.projects_title)}</h2><div class="filter-row"><label for="status-filter">状态</label><select id="status-filter"><option>全部</option>${w.statuses.map((item) => `<option>${escapeHtml(item.name)}</option>`).join('')}</select><span class="count-note" id="project-count"></span></div></div>
       <div class="data-table-wrap"><table class="data-table project-table"><thead><tr><th>项目</th><th>状态</th><th>当前情况</th><th>下一步</th><th>需要配合</th></tr></thead><tbody id="project-rows">
-        ${w.projects.map((item) => `<tr data-searchable data-status="${escapeHtml(item.status)}"><td class="cell-title">${escapeHtml(item.name)}</td><td>${statusMarkup(item.status)}</td><td>${escapeHtml(item.progress)}</td><td>${escapeHtml(item.next)}</td><td>${escapeHtml(item.dependency)}</td></tr>`).join('')}
+        ${w.projects.map((item) => `<tr data-searchable data-status="${escapeHtml(item.status)}"><td class="cell-title" data-label="项目">${escapeHtml(item.name)}</td><td data-label="状态">${statusMarkup(item.status)}</td><td data-label="当前情况">${escapeHtml(item.progress)}</td><td data-label="下一步">${escapeHtml(item.next)}</td><td data-label="需要配合">${escapeHtml(item.dependency)}</td></tr>`).join('')}
       </tbody></table></div><div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>
     </section>
     <section class="section">${sectionHead(w.blocked_title, w.blocked_label)}<div class="panel item-list">
@@ -144,10 +144,10 @@ function renderResearch(data) {
   document.querySelector('#content').innerHTML = `
     ${pageHeading(r.title, r.description, '研究')}
     <section class="section">${sectionHead(r.methods_title, r.methods_label)}<div class="data-table-wrap"><table class="data-table"><thead><tr><th>方法</th><th>适合用来做什么</th><th>开始前要准备</th></tr></thead><tbody>
-      ${r.methods.map((item) => `<tr data-searchable><td class="cell-title">${escapeHtml(item.name)}</td><td>${escapeHtml(item.use)}</td><td>${escapeHtml(item.needs)}</td></tr>`).join('')}
+      ${r.methods.map((item) => `<tr data-searchable><td class="cell-title" data-label="方法">${escapeHtml(item.name)}</td><td data-label="适合用来做什么">${escapeHtml(item.use)}</td><td data-label="开始前要准备">${escapeHtml(item.needs)}</td></tr>`).join('')}
     </tbody></table></div></section>
     <section class="section">${sectionHead(r.programs_title, r.programs_label)}<div class="data-table-wrap"><table class="data-table"><thead><tr><th>类型</th><th>怎么邀请</th><th>用户要做什么</th><th>能得到什么</th><th>需要记录</th></tr></thead><tbody>
-      ${r.programs.map((item) => `<tr data-searchable><td class="cell-title">${escapeHtml(item.name)}</td><td>${escapeHtml(item.start)}</td><td>${escapeHtml(item.task)}</td><td>${escapeHtml(item.return)}</td><td>${escapeHtml(item.record)}</td></tr>`).join('')}
+      ${r.programs.map((item) => `<tr data-searchable><td class="cell-title" data-label="类型">${escapeHtml(item.name)}</td><td data-label="怎么邀请">${escapeHtml(item.start)}</td><td data-label="用户要做什么">${escapeHtml(item.task)}</td><td data-label="能得到什么">${escapeHtml(item.return)}</td><td data-label="需要记录">${escapeHtml(item.record)}</td></tr>`).join('')}
     </tbody></table></div></section>
     <section class="section">${sectionHead(r.rights_title, r.rights_label)}<div class="rights-grid">
       ${r.rights_groups.map((group) => `<article class="rights-group" data-searchable><h3>${escapeHtml(group.title)}</h3><ul>${group.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></article>`).join('')}
