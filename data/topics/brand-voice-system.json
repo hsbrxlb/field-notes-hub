@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "slug": "brand-voice-system",
+  "title": "OEDRO品牌人格与用户联系",
+  "description": "具体、直接、实用。不同渠道保持同一套事实边界，语气按任务变化。",
+  "area": "品牌声音",
+  "status": "进行中",
+  "version": "1.0.0",
+  "public_safe": true,
+  "sections": [
+    {
+      "id": "current",
+      "title": "当前判断",
+      "paragraphs": [
+        "OEDRO当前采用“有能力的车库伙伴”作为主要方向：懂具体问题，说话直接，给出下一步，也会坦白哪些信息仍需核实。",
+        "这套规则已经通过内部事实与平台边界审查，尚未经过真实用户测试验证，因此不会写成已经胜出的品牌人格。"
+      ]
+    },
+    {
+      "id": "principles",
+      "title": "OEDRO怎么说",
+      "items": [
+        "先写车主正在处理的具体问题，再写OEDRO能提供的下一步。",
+        "车型、适配、安装和产品信息有证据才写；不确定时明确说需要核实。",
+        "把OEDRO已确认的信息与车主经验分开，避免把个体体验写成产品规格。",
+        "尊重收件人的真实关系和车辆信息，不把订阅者自动称为买家，也不靠适配记录猜车型。",
+        "每条消息保留一个清楚、真实的行动入口。"
+      ]
+    },
+    {
+      "id": "channels",
+      "title": "不同渠道怎么变",
+      "items": [
+        "Email保持平静、相关、实用：解释为什么收到，给一个价值和一个行动。",
+        "Discord更短、更暖、更重参与：帮成员找频道、提出具体问题或贡献一个细节。",
+        "Research保持透明和中性：写清目的、时间、自愿参与、录音与跟进范围。",
+        "Support优先解决问题：先识别产品、车辆、证据和下一步，不让人格盖过处理结果。",
+        "Creator与UGC写清合作条件、披露和使用权；在社区发图不自动等于广告授权。",
+        "Facebook和Forum先回答问题并披露品牌身份；TikTok和Instagram可以更有节奏，但不能牺牲事实。"
+      ]
+    },
+    {
+      "id": "donts",
+      "title": "明确不采用",
+      "items": [
+        "不伪装美国本土团队、美国工程、美国制造或资深美国越野玩家。",
+        "只公布已有清楚条款的权益，不使用虚假稀缺或模糊服务承诺。",
+        "不把购买适配某车型的产品写成真实拥有该车型。",
+        "不堆bro、fam、badass、beast等模仿美国车友的词。",
+        "不使用加入奖励、邀请奖励或拉人头机制推动Discord成员数。",
+        "不把用户在社区发布的内容自动拿去官网、社媒或广告。"
+      ]
+    },
+    {
+      "id": "validation",
+      "title": "当前验证状态",
+      "rows": [
+        {
+          "label": "版本",
+          "text": "1.0.0，2026年8月25日形成内部规则。"
+        },
+        {
+          "label": "已完成",
+          "text": "人格候选比较、跨渠道规则、事实与许可边界、公开安全检查。"
+        },
+        {
+          "label": "还没验证",
+          "text": "真实收件人的理解、点击、加入、首次有效动作、7日回访和第二次贡献。"
+        },
+        {
+          "label": "复核条件",
+          "text": "真实用户测试形成稳定信号、渠道能力变化或官方规则更新时复核。"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "Dimensions of Brand Personality",
+      "url": "https://doi.org/10.1177/002224379703400304",
+      "published_or_updated": "1997-08",
+      "supports": "品牌人格可以拆成可识别、可测量的维度；本专题没有机械套用其五维结论。"
+    },
+    {
+      "label": "Brand Community",
+      "url": "https://doi.org/10.1086/319618",
+      "published_or_updated": "2001-03-01",
+      "supports": "品牌社区来自成员之间的社会关系，不等于频道数量或成员数字。"
+    },
+    {
+      "label": "FTC CAN-SPAM Compliance Guide",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+      "published_or_updated": "2023-08-14",
+      "supports": "商业邮件发件人、主题、地址、退订与退出执行要求。"
+    },
+    {
+      "label": "FTC Endorsement Guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "published_or_updated": "2023-06-29",
+      "supports": "Creator重大关系需要清楚显著披露，奖励不能与正面评价绑定。"
+    },
+    {
+      "label": "Discord Community Guidelines",
+      "url": "https://discord.com/guidelines",
+      "published_or_updated": "2025-08-29",
+      "supports": "禁止垃圾群发、虚增成员和操纵互动。"
+    },
+    {
+      "label": "Discord Platform Manipulation Policy",
+      "url": "https://discord.com/safety/platform-manipulation-policy-explainer",
+      "published_or_updated": "2024-03-15",
+      "supports": "禁止用经济奖励诱导加入、invite rewards与虚假互动。"
+    },
+    {
+      "label": "Google Email Sender Guidelines",
+      "url": "https://support.google.com/mail/answer/81126?hl=en",
+      "published_or_updated": "2026-08-25复核",
+      "supports": "批量发件认证、退订和垃圾邮件率要求。"
+    }
+  ]
+}

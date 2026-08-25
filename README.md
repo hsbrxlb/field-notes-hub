@@ -27,6 +27,8 @@ python3 -m http.server 4173
 - `data/content.json`：共用文案和工作数据
 - `data/topics.json`与`data/topics/`：专题索引和专题内容
 
+专题详情支持两种数据结构：旧专题继续使用固定字段；新专题可使用`sections`数组，每个章节包含`title`，并按需要提供`paragraphs`、`items`或`rows`。来源可补`published_or_updated`和`supports`，说明更新时间与链接支持的具体主张。
+
 ## 部署
 
 推送到`main`后，GitHub Actions把静态文件发布到GitHub Pages。

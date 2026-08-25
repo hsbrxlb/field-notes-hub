@@ -122,6 +122,24 @@ function labelledList(title, items) {
   return `<section class="section topic-section" data-searchable>${sectionHead(title, '')}<ul class="topic-points">${items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>`;
 }
 
+function renderGenericTopicSection(section) {
+  const paragraphs = (section.paragraphs || []).map((item) => `<p>${escapeHtml(item)}</p>`).join('');
+  const items = section.items?.length
+    ? `<ul class="topic-points">${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`
+    : '';
+  const rows = section.rows?.length
+    ? `<div class="topic-timeline">${section.rows.map((item, index) => `<div><span>0${index + 1}</span><strong>${escapeHtml(item.label)}</strong><p>${escapeHtml(item.text)}</p></div>`).join('')}</div>`
+    : '';
+  return `<section class="section topic-section" data-searchable>${sectionHead(section.title, '')}${paragraphs}${items}${rows}</section>`;
+}
+
+function renderTopicSources(sources) {
+  return sources.map((item) => {
+    const note = [item.published_or_updated, item.supports].filter(Boolean).join(' · ');
+    return `<li><a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)} ↗</a>${note ? `<p>${escapeHtml(note)}</p>` : ''}</li>`;
+  }).join('');
+}
+
 async function renderTopic(data) {
   const slug = new URLSearchParams(window.location.search).get('slug') || 'discord-community';
   const response = await fetch(`data/topics/${encodeURIComponent(slug)}.json`, { cache: 'no-store' });
@@ -129,18 +147,21 @@ async function renderTopic(data) {
   const topic = await response.json();
   document.title = `${topic.title}｜${data.site.title}`;
   document.querySelector('meta[name="description"]').content = topic.description;
+  const topicBody = topic.sections?.length
+    ? topic.sections.map(renderGenericTopicSection).join('')
+    : `<section class="section topic-section" data-searchable>${sectionHead('当前情况', '')}${topic.summary.map((item) => `<p>${escapeHtml(item)}</p>`).join('')}</section>
+      ${labelledList('这个社区用来做什么', topic.purpose)}
+      ${labelledList('启动前要确认', topic.before_launch)}
+      <section class="section topic-section" data-searchable>${sectionHead('前30天怎么跑', '')}<div class="topic-timeline">${topic.first_month.map((item, index) => `<div><span>0${index + 1}</span><strong>${escapeHtml(item.label)}</strong><p>${escapeHtml(item.text)}</p></div>`).join('')}</div></section>
+      ${labelledList('每周内容安排', topic.weekly)}
+      ${labelledList('怎么判断有没有跑起来', topic.measure)}
+      ${labelledList('服务、研究和内容授权', topic.boundaries)}
+      ${labelledList('当前待确认', topic.pending)}`;
   document.querySelector('#content').innerHTML = `
     ${pageHeading(topic.title, topic.description, topic.area)}
     <section class="section topic-status-line"><div><span class="topic-area">${escapeHtml(topic.area)}</span>${statusMarkup(topic.status)}</div><a href="topics.html">返回运营专题 →</a></section>
-    <section class="section topic-section" data-searchable>${sectionHead('当前情况', '')}${topic.summary.map((item) => `<p>${escapeHtml(item)}</p>`).join('')}</section>
-    ${labelledList('这个社区用来做什么', topic.purpose)}
-    ${labelledList('启动前要确认', topic.before_launch)}
-    <section class="section topic-section" data-searchable>${sectionHead('前30天怎么跑', '')}<div class="topic-timeline">${topic.first_month.map((item, index) => `<div><span>0${index + 1}</span><strong>${escapeHtml(item.label)}</strong><p>${escapeHtml(item.text)}</p></div>`).join('')}</div></section>
-    ${labelledList('每周内容安排', topic.weekly)}
-    ${labelledList('怎么判断有没有跑起来', topic.measure)}
-    ${labelledList('服务、研究和内容授权', topic.boundaries)}
-    ${labelledList('当前待确认', topic.pending)}
-    <section class="section topic-section" data-searchable>${sectionHead('参考资料', '')}<ul class="topic-sources">${topic.sources.map((item) => `<li><a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)} ↗</a></li>`).join('')}</ul></section>
+    ${topicBody}
+    <section class="section topic-section" data-searchable>${sectionHead('参考资料', '')}<ul class="topic-sources">${renderTopicSources(topic.sources)}</ul></section>
     <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>`;
 }
 
