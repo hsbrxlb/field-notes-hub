@@ -1,0 +1,263 @@
+{
+  "schema_version": "1.0",
+  "title": "用户运营内容生产",
+  "description": "把一次活动、研究或社区主题，整理成跨渠道内容包，再逐项检查和批准。",
+  "status": "交互原型",
+  "privacy_notice": "本页不会把输入上传到服务器，版本只保存在当前浏览器。不要输入邮箱、用户名单、账号、未公开销售数据或凭据。",
+  "generation_notice": "当前版本生成的是可编辑的结构草稿和审核包；AI语言生成尚未连接公开站，避免在GitHub Pages暴露密钥和内部资料。",
+  "review_statuses": ["草稿", "待审核", "退回修改", "已批准"],
+  "common_fields": [
+    {
+      "id": "title",
+      "label": "这次内容叫什么",
+      "type": "text",
+      "required": true,
+      "placeholder": "例如：车主安装经验征集",
+      "help": "写事情本身，不写内部项目代号。"
+    },
+    {
+      "id": "goal",
+      "label": "想让用户理解什么",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "例如：知道可以分享安装过程和遇到的问题",
+      "help": "只写一个主要目标。"
+    },
+    {
+      "id": "audience",
+      "label": "面向哪类人",
+      "type": "select",
+      "required": true,
+      "options": ["已核实购买用户", "允许联系的订阅用户", "研究参与者", "社区成员", "Creator或UGC贡献者", "公开社媒受众"],
+      "help": "这是关系类型，不填写姓名或邮箱。"
+    },
+    {
+      "id": "target_action",
+      "label": "希望用户下一步做什么",
+      "type": "text",
+      "required": true,
+      "placeholder": "例如：回复安装中最难的一步",
+      "help": "一份内容包只保留一个主要动作。"
+    },
+    {
+      "id": "channels",
+      "label": "需要哪些渠道版本",
+      "type": "checkboxes",
+      "required": true,
+      "options": ["Email", "Discord", "Instagram / Facebook", "Research follow-up"],
+      "help": "不同渠道会生成不同结构。"
+    },
+    {
+      "id": "confirmed_facts",
+      "label": "已经确认、可以对外写的事实",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "每行一条。没有确认的内容不要补写。",
+      "help": "不要填写联系人、内部金额或未公开产品数据。"
+    },
+    {
+      "id": "permission_status",
+      "label": "联系或参与许可",
+      "type": "select",
+      "required": true,
+      "options": ["已确认", "只做内部草稿", "需要确认"],
+      "help": "未确认时可以做草稿，但不能标记为已批准。"
+    },
+    {
+      "id": "asset_source",
+      "label": "素材来源",
+      "type": "select",
+      "required": true,
+      "options": ["暂时不需要素材", "自有或AI生成素材", "用户或Creator素材，权利已确认", "素材权利需要确认"],
+      "help": "营销部门素材不会自动视为可复用。"
+    },
+    {
+      "id": "constraints",
+      "label": "必须避免或保留什么",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "例如：不承诺礼品；不猜车型；只邀请自愿参与",
+      "help": "写本次任务特有的边界。"
+    }
+  ],
+  "modules": [
+    {
+      "id": "activity",
+      "label": "用户活动",
+      "short": "从邀请到复盘",
+      "description": "为线上活动、车主征集、体验交流或小型参与项目准备一整套内容。",
+      "fields": [
+        {
+          "id": "activity_format",
+          "label": "活动形式",
+          "type": "select",
+          "required": true,
+          "options": ["线上讨论", "问答或分享", "内容征集", "小型体验活动", "其他"],
+          "help": "决定邀请和FAQ要解释哪些内容。"
+        },
+        {
+          "id": "schedule",
+          "label": "时间安排",
+          "type": "text",
+          "required": true,
+          "placeholder": "例如：开放一周；具体日期待确认",
+          "help": "不确定时直接写待确认，不制造截止时间。"
+        },
+        {
+          "id": "participation_value",
+          "label": "用户为什么值得参加",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "例如：比较不同安装方法，帮助后来车主少走弯路",
+          "help": "写真实价值，不用折扣替代价值。"
+        },
+        {
+          "id": "support_route",
+          "label": "问题去哪里处理",
+          "type": "text",
+          "required": true,
+          "placeholder": "例如：订单与保修仍走正式客服",
+          "help": "避免把活动频道写成即时客服。"
+        }
+      ],
+      "outputs": [
+        {"id": "invite_email", "label": "邀请Email", "purpose": "解释为什么联系、活动价值和下一步", "template": "主题：{{title}}\n面向：{{audience}}\n活动目的：{{goal}}\n活动形式：{{activity_format}}\n参与价值：{{participation_value}}\n时间：{{schedule}}\n下一步：{{target_action}}"},
+        {"id": "discord_announcement", "label": "Discord公告", "purpose": "用更短的方式说明活动和参与动作", "template": "【{{title}}】\n{{goal}}\n活动形式：{{activity_format}}\n你可以做什么：{{target_action}}\n时间：{{schedule}}\n支持边界：{{support_route}}"},
+        {"id": "social_teaser", "label": "社媒预告", "purpose": "公开说明活动主题，不带入名单或内部条件", "template": "主题：{{title}}\n一句话价值：{{participation_value}}\n行动：{{target_action}}\n备注：公开版本不得出现未确认权益或用户信息。"},
+        {"id": "faq", "label": "活动FAQ", "purpose": "提前回答参与方式、时间、边界和隐私问题", "template": "1. 这是什么活动？{{goal}}\n2. 谁适合参加？{{audience}}\n3. 需要做什么？{{target_action}}\n4. 时间怎么安排？{{schedule}}\n5. 订单或服务问题怎么办？{{support_route}}"},
+        {"id": "reminder", "label": "活动提醒", "purpose": "只提醒已符合联系条件的人", "template": "提醒：{{title}}\n时间：{{schedule}}\n还需要完成：{{target_action}}\n没有新增承诺，也不制造紧迫感。"},
+        {"id": "recap", "label": "活动复盘模板", "purpose": "记录真实参与、问题和后续动作", "template": "活动：{{title}}\n目标：{{goal}}\n记录：邀请、参与、首次有效动作、反馈主题、问题、后续决定。\n不得把计划人数写成实际结果。"}
+      ],
+      "must_do": ["解释为什么收到或看到这条内容", "只保留一个主要参与动作", "时间和参与价值必须真实", "订单、保修和正式客服边界清楚"],
+      "avoid": ["未批准礼品或折扣", "虚假倒计时和名额", "把参加活动写成保证获得权益", "向许可不明的人发送"]
+    },
+    {
+      "id": "research",
+      "label": "用户研究",
+      "short": "从招募到结果摘要",
+      "description": "围绕一个明确研究问题，准备招募、筛选、访谈和跟进材料。",
+      "fields": [
+        {
+          "id": "research_question",
+          "label": "这次必须回答的研究问题",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "例如：车主安装时最容易在哪一步失去信心",
+          "help": "研究问题不能只是“用户喜不喜欢”。"
+        },
+        {
+          "id": "expected_time",
+          "label": "预计占用用户多久",
+          "type": "text",
+          "required": true,
+          "placeholder": "例如：20–30分钟",
+          "help": "必须是真实预计时间。"
+        },
+        {
+          "id": "recording_state",
+          "label": "录音或录像",
+          "type": "select",
+          "required": true,
+          "options": ["不录制", "会录制，需单独同意", "待确认"],
+          "help": "待确认时审核包会阻止批准。"
+        },
+        {
+          "id": "incentive_state",
+          "label": "参与激励",
+          "type": "select",
+          "required": true,
+          "options": ["没有激励", "已有批准事实", "待确认"],
+          "help": "待确认的金额或礼品不能进入对外稿。"
+        },
+        {
+          "id": "followup_scope",
+          "label": "后续会怎样联系",
+          "type": "text",
+          "required": true,
+          "placeholder": "例如：只联系一次确认时间；研究结束后不自动进入营销名单",
+          "help": "研究许可不等于营销许可。"
+        }
+      ],
+      "outputs": [
+        {"id": "recruitment", "label": "研究招募", "purpose": "说明联系原因、研究问题、时长与自愿参与", "template": "研究主题：{{title}}\n为什么联系：{{goal}}\n研究问题：{{research_question}}\n预计时间：{{expected_time}}\n录制：{{recording_state}}\n激励：{{incentive_state}}\n下一步：{{target_action}}"},
+        {"id": "screener", "label": "筛选问题", "purpose": "只筛选与研究问题真正相关的经历", "template": "筛选目标：{{research_question}}\n问题结构：真实经历、最近一次行为、产品或场景关系、可参与时间。\n不得根据推断车型或身份自动入选。"},
+        {"id": "interview_guide", "label": "访谈提纲", "purpose": "从真实经历进入具体细节，再讨论改进", "template": "1. 最近一次相关经历\n2. 具体步骤与环境\n3. 最困难或不确定的地方\n4. 当时如何判断和解决\n5. 对现有方案的反应\n6. 最重要的改进\n研究核心：{{research_question}}"},
+        {"id": "followup", "label": "跟进邮件", "purpose": "预约、提醒或感谢，不扩大原授权范围", "template": "主题：{{title}}跟进\n预计时间：{{expected_time}}\n录制说明：{{recording_state}}\n后续范围：{{followup_scope}}\n下一步：{{target_action}}"},
+        {"id": "summary", "label": "结果摘要", "purpose": "区分原话、观察、解释和待验证假设", "template": "研究问题：{{research_question}}\n样本与限制：待填写真实完成情况\n原话主题：\n观察：\n解释：\n仍待验证：\n建议动作：\n禁止用计划人数代替完成样本。"}
+      ],
+      "must_do": ["研究问题和用途清楚", "时长、录制、激励和后续范围透明", "参与完全自愿", "原话、观察和解释分开"],
+      "avoid": ["引导性问题", "把研究许可当成营销许可", "保证建议会被采用", "用AI补写用户没有说过的话"]
+    },
+    {
+      "id": "community",
+      "label": "社区内容",
+      "short": "从话题到主持",
+      "description": "为Discord和社媒准备持续讨论、投票、案例征集和管理提示。",
+      "fields": [
+        {
+          "id": "community_topic",
+          "label": "这周讨论什么",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "例如：安装前你最希望确认哪一个尺寸",
+          "help": "问题要具体到成员能用一句真实经历回答。"
+        },
+        {
+          "id": "cadence",
+          "label": "内容节奏",
+          "type": "select",
+          "required": true,
+          "options": ["单次讨论", "一周主题", "连续两周", "待确认"],
+          "help": "待确认时先生成草稿。"
+        },
+        {
+          "id": "participation_prompt",
+          "label": "成员最容易完成的动作",
+          "type": "text",
+          "required": true,
+          "placeholder": "例如：发一张安装点照片，并写下车型年份",
+          "help": "动作越小越容易获得真实参与。"
+        },
+        {
+          "id": "moderation_plan",
+          "label": "出现问题时怎么处理",
+          "type": "textarea",
+          "required": true,
+          "placeholder": "例如：适配结论需官方核实；订单问题转客服；攻击性内容按规则处理",
+          "help": "主持提示必须包含升级和停止条件。"
+        },
+        {
+          "id": "ugc_state",
+          "label": "是否涉及用户图片或视频",
+          "type": "select",
+          "required": true,
+          "options": ["不涉及", "只在社区内查看", "会另行询问复用授权", "待确认"],
+          "help": "成员发图不自动授予官网、社媒或广告使用权。"
+        }
+      ],
+      "outputs": [
+        {"id": "discussion", "label": "每周讨论题", "purpose": "让成员用真实经历回答一个具体问题", "template": "本周主题：{{community_topic}}\n为什么值得聊：{{goal}}\n最小参与动作：{{participation_prompt}}\n主持边界：{{moderation_plan}}"},
+        {"id": "poll", "label": "投票", "purpose": "快速比较明确选项，不推导宏观结论", "template": "投票主题：{{community_topic}}\n选项：根据已确认事实设置2–4个互斥选项。\n投票后追问：为什么？最近一次是什么情况？"},
+        {"id": "owner_case", "label": "车主案例征集", "purpose": "收集setup、安装和真实经验", "template": "征集主题：{{title}}\n请分享：车辆基本信息、装了什么、为什么这样选、最难一步、下次会改什么。\n图片状态：{{ugc_state}}"},
+        {"id": "ugc_invite", "label": "UGC邀请", "purpose": "说明社区参与与外部复用是两件事", "template": "内容主题：{{title}}\n参与动作：{{participation_prompt}}\n图片或视频：{{ugc_state}}\n如需外部复用，将另行说明具体渠道、编辑、期限和广告用途。"},
+        {"id": "host_notes", "label": "主持提示", "purpose": "保证首条回复、事实区分和正确转交", "template": "开场：邀请成员讲真实经历。\n追问：车型、环境、步骤和结果。\n区分：车主经验不等于产品规格。\n转交：{{moderation_plan}}"},
+        {"id": "reply_prompts", "label": "回复提示", "purpose": "帮助运营者继续追问，不冒充技术结论", "template": "可用回复：\n- 能补充一下年份、车型和当时的安装步骤吗？\n- 这是你的实际体验；产品规格仍需要确认。\n- 订单、退款或保修问题请走正式客服。\n- 如果愿意，我们可以围绕这个细节继续讨论。"}
+      ],
+      "must_do": ["问题具体、容易回答", "车主经验和官方信息分开", "有人负责首条回复和转交", "UGC查看与外部复用分开"],
+      "avoid": ["为了人数制造互动", "群发私信和拉人奖励", "把投票当成市场结论", "把Discord写成即时客服"]
+    }
+  ],
+  "review_layout": {
+    "summary": ["内容目的", "受众关系", "目标动作", "渠道", "版本和状态"],
+    "content": ["按渠道分组的可编辑草稿", "每段内容的用途", "事实和素材引用"],
+    "checks": ["事实与承诺", "联系许可", "品牌语气", "平台规则", "素材权利", "仍需确认"],
+    "actions": ["保存新版本", "提交审核", "退回修改", "批准本版", "导出JSON"]
+  },
+  "sources": [
+    {"label": "react-jsonschema-form", "url": "https://github.com/rjsf-team/react-jsonschema-form", "supports": "用JSON Schema生成结构化表单。"},
+    {"label": "JSON Forms", "url": "https://github.com/eclipsesource/jsonforms", "supports": "把数据schema和UI schema分开管理。"},
+    {"label": "Decap CMS Editorial Workflow", "url": "https://decapcms.org/docs/editorial-workflows/", "supports": "用Git分支和Pull Request管理草稿、审核和发布。"},
+    {"label": "Payload Versions and Drafts", "url": "https://payloadcms.com/docs/versions/overview", "supports": "版本历史、差异、恢复、草稿和权限。"},
+    {"label": "Postiz", "url": "https://github.com/gitroomhq/postiz-app", "supports": "未来可用于多平台草稿和排期；当前原型不连接。"}
+  ]
+}

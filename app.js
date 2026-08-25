@@ -48,6 +48,7 @@ function navDescription(data, id) {
   if (id === 'playbook') return data.playbook.description;
   if (id === 'work') return data.work.description;
   if (id === 'research') return data.research.description;
+  if (id === 'studio') return '把用户活动、用户研究和社区内容整理成可检查、可保存的内容包。';
   if (id === 'topics') return '按主题查看目标、当前情况、启动条件和后续安排。';
   return '';
 }
@@ -289,6 +290,7 @@ async function init() {
     if (page === 'playbook') renderPlaybook(data);
     if (page === 'work') renderWork(data);
     if (page === 'research') renderResearch(data);
+    if (page === 'studio') await window.initContentStudio?.(data);
     if (page === 'topics' && window.location.pathname.endsWith('/topics.html')) renderTopics(data, topics);
     if (page === 'topics' && window.location.pathname.endsWith('/topic.html')) await renderTopic(data);
     runSearch();

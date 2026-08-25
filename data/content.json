@@ -27,6 +27,11 @@
       "file": "research.html"
     },
     {
+      "id": "studio",
+      "label": "内容生产",
+      "file": "content-studio.html"
+    },
+    {
       "id": "topics",
       "label": "运营专题",
       "file": "topics.html"

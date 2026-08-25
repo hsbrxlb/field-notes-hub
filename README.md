@@ -22,12 +22,15 @@ python3 -m http.server 4173
 - `playbook.html`：工作方法
 - `work.html`：当前项目与依赖
 - `research.html`：研究方法与参与项目
+- `content-studio.html`：用户活动、用户研究和社区内容的本地需求、结构草稿、审核与版本原型
 - `topics.html`：运营专题列表
 - `topic.html`：通用专题详情页
 - `data/content.json`：共用文案和工作数据
 - `data/topics.json`与`data/topics/`：专题索引和专题内容
 
 专题详情支持两种数据结构：旧专题继续使用固定字段；新专题可使用`sections`数组，每个章节包含`title`，并按需要提供`paragraphs`、`items`或`rows`。来源可补`published_or_updated`和`supports`，说明更新时间与链接支持的具体主张。
+
+内容生产页读取`data/content-studio.json`，由`content-studio.js`在浏览器生成结构草稿、保存版本并记录审核状态。数据只保存在当前浏览器`localStorage`，不上传到GitHub Pages；不要填写PII、名单、账号、凭据或未公开业务数据。公开站不包含AI密钥，语言生成仍需后续私有执行层。
 
 ## 部署
 
