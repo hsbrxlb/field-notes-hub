@@ -11,12 +11,21 @@ const excludedDirectories = new Set(['.git', '.github', 'scripts', 'build-artifa
 const forbiddenRuntime = [/\/api\//i, /localhost/i, /127\.0\.0\.1/i];
 const allowedTopLevel = new Set(['schema_version', 'generated_at', 'method', 'actions']);
 const allowedActionFields = new Set([
-  'action_type', 'title', 'status', 'insight_slug', 'evidence_strength',
+  'action_type', 'public_topic', 'status', 'evidence_strength',
   'source_count', 'independent_voice_count'
 ]);
 const privateFieldPattern = /author|quote|mention|draft|reply|profile|url|question|handle|fact_id/i;
-const privateValuePattern = /(?:original\s+question|question[_\s-]*text|author[_\s-]*(?:id|handle)|fact\s*ids?|(?:FACT|CL|FL)-[A-Z0-9-]+|原始?问题|作者账号|内部编号|回复链接|草稿正文)/i;
-const directIdentifierPattern = /(?:https?:\/\/|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|(?:^|\s)@[A-Za-z0-9_]{2,})/i;
+const allowedActionTypes = new Set([
+  'faq', 'research_question', 'discord_topic', 'product_feedback', 'support_feedback',
+  'content_idea', 'official_site_article_candidate'
+]);
+const allowedPublicTopics = new Set([
+  'tonneau_cover', 'running_boards', 'floor_mats', 'bumper', 'fitment', 'installation',
+  'warranty', 'product_quality', 'shipping_returns', 'support', 'community', 'general'
+]);
+const allowedEvidenceStrengths = new Set([
+  'urgent_single_signal', 'repeated_multi_source', 'single_or_thin_signal', 'single_signal'
+]);
 const errors = [];
 
 function collectRuntimeFiles(directory, prefix = '') {
@@ -85,16 +94,11 @@ function validateVoicePayload(candidate) {
     if (!['approved', 'routed', 'closed'].includes(item.status)) {
       issues.push(`data/user-voice.json: actions[${index}] is not approved`);
     }
+    if (!allowedActionTypes.has(item.action_type)) issues.push(`data/user-voice.json: actions[${index}] has an invalid action type`);
+    if (!allowedPublicTopics.has(item.public_topic)) issues.push(`data/user-voice.json: actions[${index}] has an invalid public topic`);
+    if (!allowedEvidenceStrengths.has(item.evidence_strength)) issues.push(`data/user-voice.json: actions[${index}] has an invalid evidence strength`);
     for (const key of ['source_count', 'independent_voice_count']) {
       if (!Number.isInteger(item[key]) || item[key] < 0) issues.push(`data/user-voice.json: actions[${index}].${key} is invalid`);
-    }
-    for (const value of Object.values(item)) {
-      if (typeof value === 'string' && directIdentifierPattern.test(value)) {
-        issues.push(`data/user-voice.json: actions[${index}] contains a direct identifier`);
-      }
-    }
-    if (privateValuePattern.test(String(item.title || '')) || privateValuePattern.test(String(item.insight_slug || ''))) {
-      issues.push(`data/user-voice.json: actions[${index}] contains private-looking content`);
     }
   }
   return issues;

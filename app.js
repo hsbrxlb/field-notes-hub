@@ -249,6 +249,11 @@ function renderUserVoice(data, voice) {
     urgent_single_signal: '需优先关注', repeated_multi_source: '多来源重复出现',
     single_or_thin_signal: '证据仍少', single_signal: '单一信号'
   };
+  const topicLabels = {
+    tonneau_cover: '货箱盖', running_boards: '脚踏板', floor_mats: '脚垫', bumper: '保险杠',
+    fitment: '车型适配', installation: '安装', warranty: '保修', product_quality: '产品质量',
+    shipping_returns: '配送与退换', support: '售后支持', community: '社区', general: '通用问题'
+  };
   document.title = `${copy.title || '用户声音'}｜${data.site.title}`;
   document.querySelector('meta[name="description"]').content = copy.meta_description || 'OEDRO海外用户运营公开用户洞察汇总。';
   document.querySelector('#content').innerHTML = `
@@ -264,7 +269,7 @@ function renderUserVoice(data, voice) {
       <div class="voice-insights" id="voice-insights">
         ${insights.map((item) => `<article class="voice-insight" data-searchable>
           <div><span class="eyebrow">${escapeHtml(actionLabels[item.action_type] || item.action_type)}</span></div>
-          <div><h3>${escapeHtml(item.title)}</h3><p class="voice-evidence">${escapeHtml(strengthLabels[item.evidence_strength] || item.evidence_strength)} · ${Number(item.source_count) || 0} 个公开来源 · ${Number(item.independent_voice_count) || 0} 个独立声音</p></div>
+          <div><h3>${escapeHtml(topicLabels[item.public_topic] || item.public_topic)} · ${escapeHtml(actionLabels[item.action_type] || item.action_type)}</h3><p class="voice-evidence">${escapeHtml(strengthLabels[item.evidence_strength] || item.evidence_strength)} · ${Number(item.source_count) || 0} 个公开来源 · ${Number(item.independent_voice_count) || 0} 个独立声音</p></div>
         </article>`).join('')}
       </div>
       <div class="empty-state voice-empty" id="voice-empty"${insights.length ? ' hidden' : ''}><strong>${escapeHtml(copy.empty_message || '暂无可公开洞察')}</strong><span>${escapeHtml(copy.empty_detail || '')}</span></div>

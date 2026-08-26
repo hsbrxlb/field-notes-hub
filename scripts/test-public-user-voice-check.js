@@ -9,9 +9,8 @@ const valid = {
   method: 'human_reviewed_user_voice',
   actions: [{
     action_type: 'faq',
-    title: 'Clarify fitment',
+    public_topic: 'fitment',
     status: 'approved',
-    insight_slug: 'fitment',
     evidence_strength: 'repeated_multi_source',
     source_count: 2,
     independent_voice_count: 3
@@ -30,10 +29,14 @@ assert.ok(validateVoicePayload(withReply).some((error) => error.includes('approv
 
 const withUrlValue = structuredClone(valid);
 withUrlValue.actions[0].title = 'Read https://example.com/private';
-assert.ok(validateVoicePayload(withUrlValue).some((error) => error.includes('direct identifier')));
+assert.ok(validateVoicePayload(withUrlValue).some((error) => error.includes('approved schema')));
 
 const withPrivateContent = structuredClone(valid);
-withPrivateContent.actions[0].title = 'Synthetic original question from @private_owner using FACT-001';
-assert.ok(validateVoicePayload(withPrivateContent).some((error) => error.includes('private-looking content')));
+withPrivateContent.actions[0].title = 'Does it fit?';
+assert.ok(validateVoicePayload(withPrivateContent).some((error) => error.includes('approved schema')));
+
+const withUncontrolledTopic = structuredClone(valid);
+withUncontrolledTopic.actions[0].public_topic = 'does-it-fit';
+assert.ok(validateVoicePayload(withUncontrolledTopic).some((error) => error.includes('invalid public topic')));
 
 console.log('Public user voice rejection tests passed');
