@@ -23,16 +23,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Validate public user voice boundary
+      - name: Test public user voice boundary
+        run: node scripts/test-public-user-voice-check.js
+      - name: Build public artifact
         run: |
-          node scripts/check-public-user-voice.js
-          node scripts/test-public-user-voice-check.js
+          mkdir public-dist
+          cp .nojekyll *.html *.js *.css public-dist/
+          cp -R assets data preview public-dist/
+      - name: Validate complete public artifact
+        run: PUBLIC_SITE_ROOT=public-dist node scripts/check-public-user-voice.js
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: public-dist
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

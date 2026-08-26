@@ -3,16 +3,11 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const root = path.resolve(__dirname, '..');
-const runtimeFiles = [
-  'user-voice.html',
-  'app.js',
-  'base.css',
-  'theme.css',
-  'data/content.json',
-  'data/topics.json',
-  'data/user-voice.json'
-];
+const root = process.env.PUBLIC_SITE_ROOT
+  ? path.resolve(process.env.PUBLIC_SITE_ROOT)
+  : path.resolve(__dirname, '..');
+const runtimeExtensions = new Set(['.html', '.js', '.css', '.json']);
+const excludedDirectories = new Set(['.git', '.github', 'scripts', 'build-artifacts']);
 const forbiddenRuntime = [/\/api\//i, /localhost/i, /127\.0\.0\.1/i];
 const allowedTopLevel = new Set(['schema_version', 'generated_at', 'method', 'actions']);
 const allowedActionFields = new Set([
@@ -20,7 +15,23 @@ const allowedActionFields = new Set([
   'source_count', 'independent_voice_count'
 ]);
 const privateFieldPattern = /author|quote|mention|draft|reply|profile|url|question|handle|fact_id/i;
+const privateValuePattern = /(?:original\s+question|question[_\s-]*text|author[_\s-]*(?:id|handle)|fact\s*ids?|(?:FACT|CL|FL)-[A-Z0-9-]+|原始?问题|作者账号|内部编号|回复链接|草稿正文)/i;
+const directIdentifierPattern = /(?:https?:\/\/|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|(?:^|\s)@[A-Za-z0-9_]{2,})/i;
 const errors = [];
+
+function collectRuntimeFiles(directory, prefix = '') {
+  const files = [];
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    if (entry.isDirectory() && excludedDirectories.has(entry.name)) continue;
+    const relativePath = path.join(prefix, entry.name);
+    const absolutePath = path.join(directory, entry.name);
+    if (entry.isDirectory()) files.push(...collectRuntimeFiles(absolutePath, relativePath));
+    else if (runtimeExtensions.has(path.extname(entry.name).toLowerCase())) files.push(relativePath);
+  }
+  return files.sort();
+}
+
+const runtimeFiles = collectRuntimeFiles(root);
 
 function read(relativePath) {
   const absolutePath = path.join(root, relativePath);
@@ -78,9 +89,12 @@ function validateVoicePayload(candidate) {
       if (!Number.isInteger(item[key]) || item[key] < 0) issues.push(`data/user-voice.json: actions[${index}].${key} is invalid`);
     }
     for (const value of Object.values(item)) {
-      if (typeof value === 'string' && /https?:\/\//i.test(value)) {
-        issues.push(`data/user-voice.json: actions[${index}] contains a URL`);
+      if (typeof value === 'string' && directIdentifierPattern.test(value)) {
+        issues.push(`data/user-voice.json: actions[${index}] contains a direct identifier`);
       }
+    }
+    if (privateValuePattern.test(String(item.title || '')) || privateValuePattern.test(String(item.insight_slug || ''))) {
+      issues.push(`data/user-voice.json: actions[${index}] contains private-looking content`);
     }
   }
   return issues;

@@ -30,6 +30,10 @@ assert.ok(validateVoicePayload(withReply).some((error) => error.includes('approv
 
 const withUrlValue = structuredClone(valid);
 withUrlValue.actions[0].title = 'Read https://example.com/private';
-assert.ok(validateVoicePayload(withUrlValue).some((error) => error.includes('contains a URL')));
+assert.ok(validateVoicePayload(withUrlValue).some((error) => error.includes('direct identifier')));
+
+const withPrivateContent = structuredClone(valid);
+withPrivateContent.actions[0].title = 'Synthetic original question from @private_owner using FACT-001';
+assert.ok(validateVoicePayload(withPrivateContent).some((error) => error.includes('private-looking content')));
 
 console.log('Public user voice rejection tests passed');
