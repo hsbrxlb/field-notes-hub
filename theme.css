@@ -4,12 +4,11 @@
   --page-bg: #070907;
   --sidebar-bg: rgba(4, 6, 4, .94);
   --topbar-bg: rgba(5, 7, 5, .9);
-  --canvas-bg: rgba(5, 8, 6, .78);
   --input-bg: rgba(255, 255, 255, .07);
   --text: #F7F3EA;
-  --text-secondary: #DDD7CC;
-  --text-muted: #AAA69E;
-  --text-faint: #7F7C76;
+  --text-secondary: #EEE9DF;
+  --text-muted: #D4CEC4;
+  --text-faint: #AEA89F;
   --border: rgba(247, 243, 234, .15);
   --border-strong: rgba(247, 243, 234, .36);
   --accent: #E4B862;
@@ -40,20 +39,8 @@ body::before {
   pointer-events: none;
   background: #080A08 url('assets/background.png') 54% center / cover no-repeat;
 }
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(90deg, rgba(2,4,2,.72) 0%, rgba(2,4,2,.24) 36%, rgba(2,4,2,.48) 100%),
-    linear-gradient(180deg, rgba(2,4,2,.36), rgba(2,4,2,.58));
-}
 .app-shell { z-index: 1; }
 
 @media (max-width: 760px) {
   body::before { background-position: 57% center; }
-  body::after { background: rgba(2, 4, 2, .62); }
-  .main-content { background: rgba(5, 8, 6, .84); }
 }

@@ -54,8 +54,9 @@ p, ul, ol, dl, figure { margin-top: 0; }
   min-height: calc(100vh - 48px);
   margin: 0 auto;
   padding: 22px 32px 64px;
-  background: var(--canvas-bg);
-  backdrop-filter: blur(4px);
+  /* Site invariant: page copy sits directly on assets/background.png. */
+  background: transparent;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .82), 0 2px 8px rgba(0, 0, 0, .48);
 }
 .studio-main { width: min(1220px, calc(100% - 40px)); }
 .page-heading { min-height: 66px; display: flex; flex-direction: column; justify-content: center; padding: 4px 0 18px; }
