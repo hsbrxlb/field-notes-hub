@@ -1,8 +1,28 @@
 {
   "schema_version": "1.0",
   "title": "内容生产",
-  "privacy_notice": "数据只保存在当前浏览器；不要填写联系人、账号、凭据或未公开业务数据。",
+  "privacy_notice": "只保存在当前浏览器。不要填写姓名、邮箱、账号或凭据。",
   "review_statuses": ["草稿", "待审核", "退回修改", "已批准"],
+  "quick_steps": [
+    {
+      "id": "topic",
+      "label": "具体事情",
+      "description": "写清这次要处理的主题。",
+      "fields": ["title"]
+    },
+    {
+      "id": "people_action",
+      "label": "联系对象与希望动作",
+      "description": "选择关系，再写希望对方完成的一件事。",
+      "fields": ["audience", "target_action"]
+    },
+    {
+      "id": "facts",
+      "label": "已确认事实",
+      "description": "只写已经核实、可以用于草稿的内容。",
+      "fields": ["confirmed_facts"]
+    }
+  ],
   "common_fields": [
     {
       "id": "title",
@@ -83,6 +103,11 @@
       "label": "用户活动",
       "short": "从邀请到复盘",
       "description": "为线上活动、车主征集、体验交流或小型参与项目准备一整套内容。",
+      "quick_defaults": {
+        "goal": "把活动说明清楚，让合适的用户知道如何参与。",
+        "channels": ["Email", "Discord", "Instagram / Facebook"],
+        "permission_status": "只做内部草稿"
+      },
       "fields": [
         {
           "id": "activity_format",
@@ -133,6 +158,13 @@
       "label": "用户研究",
       "short": "从招募到结果摘要",
       "description": "围绕一个明确研究问题，准备招募、筛选、访谈和跟进材料。",
+      "quick_defaults": {
+        "goal": "邀请合适的用户参与研究，并说明用途、时间和后续联系。",
+        "channels": ["Email", "Research follow-up"],
+        "permission_status": "只做内部草稿",
+        "recording_state": "待确认",
+        "incentive_state": "待确认"
+      },
       "fields": [
         {
           "id": "research_question",
@@ -190,6 +222,13 @@
       "label": "社区内容",
       "short": "从话题到主持",
       "description": "为Discord和社媒准备持续讨论、投票、案例征集和管理提示。",
+      "quick_defaults": {
+        "goal": "发起一个具体话题，让社区成员知道可以怎样参与。",
+        "channels": ["Discord", "Instagram / Facebook"],
+        "permission_status": "只做内部草稿",
+        "cadence": "单次讨论",
+        "ugc_state": "待确认"
+      },
       "fields": [
         {
           "id": "community_topic",

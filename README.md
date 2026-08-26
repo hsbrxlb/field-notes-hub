@@ -23,7 +23,7 @@ python3 -m http.server 4173
 - `work.html`：当前项目与依赖
 - `research.html`：当前研究、研究方法、参与方式、用户权利和Light Lab
 - `user-voice.html`：人工批准的公开用户洞察与处理流程
-- `content-studio.html`：三步需求表单、结构草稿、审核和浏览器本地版本
+- `content-studio.html`：快速模板、内部草稿、审核和浏览器本地版本
 - `topics.html`：运营专题列表
 - `topic.html`：通用专题详情页
 - `data/content.json`：共用文案和工作数据
@@ -32,7 +32,9 @@ python3 -m http.server 4173
 
 专题详情支持两种数据结构：旧专题继续使用固定字段；新专题可使用`sections`数组，每个章节包含`title`，并按需要提供`paragraphs`、`items`或`rows`。来源可补`published_or_updated`和`supports`，说明更新时间与链接支持的具体主张。
 
-内容生产页读取`data/content-studio.json`，由`content-studio.js`在浏览器生成结构草稿、保存版本并记录审核状态。数据只保存在当前浏览器`localStorage`；原有`oedro-content-studio-jobs-v1`记录继续兼容。它也能导入本机`oedro_user_voice export-content-task`生成的已批准任务包，只预填通过审核的问题和事实，仍需补齐联系对象、渠道和模块条件。不要填写PII、名单、账号、凭据或未公开业务数据。
+内容生产页读取`data/content-studio.json`。默认只问具体事情、联系对象与希望动作、已确认事实，再用本机模板生成内部草稿；渠道、许可、素材和模块条件放在“更多设置”与批准前检查中。生成、保存和审核都在浏览器完成，不使用API Key、不调用大模型，也不会启动Codex App。
+
+数据只保存在当前浏览器`localStorage`。原有`oedro-content-studio-jobs-v1`继续读取；未完成内容另存为`oedro-content-studio-draft-v2`。页面支持整库备份、单项导出及恢复，换浏览器、换电脑或清除网站数据前应先导出备份。它也能导入本机`oedro_user_voice export-content-task`生成的已批准任务包。不要填写PII、名单、账号、凭据或未公开业务数据。
 
 “从外部渠道到长期用户关系”专题说明公开评论怎样进入人工核对、重复问题、具体动作和自愿参与流程，并连接内容生产、Discord社区和品牌声音专题。
 
@@ -50,6 +52,6 @@ python3 -m http.server 4173
 
 ## 视觉
 
-根站保留深色流体背景。正文文字必须直接排在`assets/background.png`上，`.main-content`长期保持透明；不得再增加覆盖正文区域或整页底图的canvas、scrim、veil、半透明底板或暗色蒙层。需要提高可读性时，优先调整文字颜色、字号、字重、文字阴影、排版位置或底图裁切。
+根站保留深色流体背景。正文文字必须直接排在`assets/background.png`上，`.main-content`长期保持透明；不得再增加覆盖正文区域或整页底图的canvas、scrim、veil、半透明底板或暗色蒙层。常用文字不得小于12px，表单文字与placeholder不得小于14px；优先使用纯白或高亮白、深色文字阴影、字重、排版位置和底图裁切提高可读性。
 
 侧栏、顶部导航、输入框、状态提示和弹出层可以保留完成交互所需的局部表面。不同页面按任务使用项目表、步骤切换、标签页、分步表单或详情导航。旧深色预览地址保留跳转，来源说明见`preview/THIRD_PARTY_NOTICES.md`。
