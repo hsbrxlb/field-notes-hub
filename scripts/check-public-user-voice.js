@@ -72,7 +72,7 @@ function validateVoicePayload(candidate) {
   if (rootKeys.length !== allowedTopLevel.size || rootKeys.some((key) => !allowedTopLevel.has(key))) {
     issues.push('data/user-voice.json: top-level fields do not match the approved schema');
   }
-  if (candidate?.schema_version !== 1 || candidate?.method !== 'human_reviewed_user_voice') {
+  if (candidate?.schema_version !== 2 || candidate?.method !== 'human_reviewed_user_voice') {
     issues.push('data/user-voice.json: metadata is invalid');
   }
   if (typeof candidate?.generated_at !== 'string' || !candidate.generated_at.trim()) {

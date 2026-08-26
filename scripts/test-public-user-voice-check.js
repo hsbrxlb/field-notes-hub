@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const { validateVoicePayload } = require('./check-public-user-voice.js');
 
 const valid = {
-  schema_version: 1,
+  schema_version: 2,
   generated_at: '2026-08-26T00:00:00+00:00',
   method: 'human_reviewed_user_voice',
   actions: [{
