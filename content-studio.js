@@ -744,7 +744,7 @@
     try {
       const packet = JSON.parse(await file.text());
       if (!packet || !['approved', 'routed'].includes(packet.status) || !packet.title || !packet.action_type) {
-        throw new Error('请选择由用户声音流程导出的已批准任务包。');
+        throw new Error('请选择由问题与反馈流程导出的已批准任务包。');
       }
       const moduleMap = {
         research_question: 'research',
@@ -791,7 +791,7 @@
       </div>
       <details class="studio-secondary-tools">
         <summary>更多操作</summary>
-        <div><label class="studio-button" for="studio-import-task">导入用户声音任务包</label><input id="studio-import-task" type="file" accept="application/json,.json" hidden><span class="studio-import-status" id="studio-import-status" role="status" aria-live="polite"></span></div>
+        <div><label class="studio-button" for="studio-import-task">导入问题与反馈任务包</label><input id="studio-import-task" type="file" accept="application/json,.json" hidden><span class="studio-import-status" id="studio-import-status" role="status" aria-live="polite"></span></div>
       </details>
       <section class="studio-form-shell" id="studio-form-view">
         <nav class="studio-progress" id="studio-progress" aria-label="填写步骤"></nav>

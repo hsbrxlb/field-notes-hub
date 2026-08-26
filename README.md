@@ -22,12 +22,12 @@ python3 -m http.server 4173
 - `playbook.html`：六个工作阶段，按步骤切换查看
 - `work.html`：当前项目与依赖
 - `research.html`：当前研究、研究方法、参与方式、用户权利和Light Lab
-- `user-voice.html`：人工批准的公开用户洞察与处理流程
+- `user-voice.html`：公开问题与反馈的洞察与处理流程
 - `content-studio.html`：快速模板、内部草稿、审核和浏览器本地版本
 - `topics.html`：运营专题列表
 - `topic.html`：通用专题详情页
 - `data/content.json`：共用文案和工作数据
-- `data/user-voice.json`：本机用户声音流程导出的公开安全汇总
+- `data/user-voice.json`：本机问题与反馈流程导出的公开安全汇总
 - `data/topics.json`与`data/topics/`：专题索引和专题内容
 
 专题详情支持两种数据结构：旧专题继续使用固定字段；新专题可使用`sections`数组，每个章节包含`title`，并按需要提供`paragraphs`、`items`或`rows`。来源可补`published_or_updated`和`supports`，说明更新时间与链接支持的具体主张。
@@ -38,7 +38,7 @@ python3 -m http.server 4173
 
 “从外部渠道到长期用户关系”专题说明公开评论怎样进入人工核对、重复问题、具体动作和自愿参与流程，并连接内容生产、Discord社区和品牌声音专题。
 
-用户声音页只接受本机`oedro_user_voice export-public`生成的固定字段。发布前运行`node scripts/check-public-user-voice.js`和`node scripts/test-public-user-voice-check.js`；出现原问题、作者、草稿、回复链接或本机地址时停止发布。
+问题与反馈页只接受本机`oedro_user_voice export-public`生成的固定字段。发布前运行`node scripts/check-public-user-voice.js`和`node scripts/test-public-user-voice-check.js`；出现原问题、作者、草稿、回复链接或本机地址时停止发布。
 
 ## 实现取舍
 

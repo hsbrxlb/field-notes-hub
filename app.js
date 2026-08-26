@@ -254,10 +254,10 @@ function renderUserVoice(data, voice) {
     fitment: '车型适配', installation: '安装', warranty: '保修', product_quality: '产品质量',
     shipping_returns: '配送与退换', support: '售后支持', community: '社区', general: '通用问题'
   };
-  document.title = `${copy.title || '用户声音'}｜${data.site.title}`;
-  document.querySelector('meta[name="description"]').content = copy.meta_description || 'OEDRO海外用户运营公开用户洞察汇总。';
+  document.title = `${copy.title || '问题与反馈'}｜${data.site.title}`;
+  document.querySelector('meta[name="description"]').content = copy.meta_description || 'OEDRO海外用户运营公开问题与反馈汇总。';
   document.querySelector('#content').innerHTML = `
-    ${pageHeading(copy.title || '用户声音', copy.description || '')}
+    ${pageHeading(copy.title || '问题与反馈', copy.description || '')}
     <section class="section">
       <div class="section-head"><h2>${escapeHtml(copy.workflow_title || '处理流程')}</h2></div>
       <div class="voice-workflow">
