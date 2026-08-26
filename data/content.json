@@ -27,6 +27,11 @@
       "file": "research.html"
     },
     {
+      "id": "voice",
+      "label": "用户声音",
+      "file": "user-voice.html"
+    },
+    {
       "id": "studio",
       "label": "内容生产",
       "file": "content-studio.html"
@@ -370,9 +375,9 @@
         "id": "oedro-listening-agent",
         "name": "OEDRO公开问题监听与回复准备",
         "status": "进行中",
-        "progress": "本机私有监听、事实阻断、人工审核和回复记录V1已经搭建；公开站不保存用户资料。",
-        "next": "完成免费搜索入口配置并运行14天只读与人工复核试跑。",
-        "dependency": "需要持续复核产品事实与免费搜索来源覆盖。"
+        "progress": "本机私有监听、事实阻断、人工审核和回复记录V1已经运行；免费网页与YouTube入口已配置，公开站不保存用户资料。",
+        "next": "运行14天只读与人工复核试跑，核对召回率、有效队列率和额度。",
+        "dependency": "需要持续复核产品事实、来源覆盖和具体答复负责人。"
       },
       {
         "id": "ai-tool-support",
@@ -565,6 +570,43 @@
     "entry_label": "",
     "entry_text": "把用户招募、参与记录和研究结果放在同一处，后续工作更容易继续使用。",
     "entry_next": "先确定统一入口和记录方式；新的产品测试还要等产品、方案、权益和履约获批。"
+  },
+  "user_voice": {
+    "meta_description": "OEDRO公开用户问题的人工核对流程与可公开洞察汇总。",
+    "title": "用户声音",
+    "description": "汇总公开渠道中的用户问题，经过去重、事实核对和人工审核后，只公开可复用的结论。",
+    "workflow_title": "处理流程",
+    "workflow": [
+      {
+        "name": "发现",
+        "description": "从公开网页、论坛、YouTube和合规公开入口收集问题，先去重，再判断是否值得回复。"
+      },
+      {
+        "name": "核实",
+        "description": "涉及适配、安装、保修等产品事实时核对官方资料；证据不足就停止确定性回答。"
+      },
+      {
+        "name": "人工处理",
+        "description": "系统只准备回复草稿，审核、复制和平台发布始终由人完成。"
+      }
+    ],
+    "public_title": "可公开洞察",
+    "public_description": "这里只展示经过人工批准的重复问题汇总、证据强度和行动方向。原问题、作者、账号、内部编号、草稿和运行状态保留在本机。",
+    "empty_message": "暂无可公开洞察",
+    "empty_detail": "还没有通过审核的公开汇总。",
+    "related_title": "接着处理",
+    "related": [
+      {
+        "label": "用户研究",
+        "description": "查看研究方法、参与方式和用户权利。",
+        "file": "research.html"
+      },
+      {
+        "label": "内容生产",
+        "description": "把已批准的洞察转成活动、研究或社区内容草稿。",
+        "file": "content-studio.html"
+      }
+    ]
   },
   "social_media": {
     "title": "社交媒体接手后要先做什么",

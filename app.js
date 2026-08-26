@@ -48,6 +48,7 @@ function navDescription(data, id) {
     playbook: '六个阶段和每一步的完成标准',
     work: '项目状态、下一步和所需配合',
     research: '当前研究、方法、参与方式和用户权利',
+    voice: '人工批准的公开用户洞察汇总',
     studio: '生成活动、研究和社区内容草稿',
     topics: 'Discord、品牌声音等单项安排'
   })[id] || data[id]?.description || '';
@@ -234,6 +235,49 @@ function renderResearch(data) {
   }));
 }
 
+function renderUserVoice(data, voice) {
+  const copy = data.user_voice || {};
+  const insights = Array.isArray(voice.actions)
+    ? voice.actions.filter((item) => item && ['approved', 'routed', 'closed'].includes(item.status))
+    : [];
+  const actionLabels = {
+    faq: '常见问题', research_question: '研究问题', discord_topic: '社群话题',
+    product_feedback: '产品反馈', support_feedback: '支持反馈', content_idea: '内容方向',
+    official_site_article_candidate: '官网内容'
+  };
+  const strengthLabels = {
+    urgent_single_signal: '需优先关注', repeated_multi_source: '多来源重复出现',
+    single_or_thin_signal: '证据仍少', single_signal: '单一信号'
+  };
+  document.title = `${copy.title || '用户声音'}｜${data.site.title}`;
+  document.querySelector('meta[name="description"]').content = copy.meta_description || 'OEDRO海外用户运营公开用户洞察汇总。';
+  document.querySelector('#content').innerHTML = `
+    ${pageHeading(copy.title || '用户声音', copy.description || '')}
+    <section class="section">
+      <div class="section-head"><h2>${escapeHtml(copy.workflow_title || '处理流程')}</h2></div>
+      <div class="voice-workflow">
+        ${(copy.workflow || []).map((item, index) => `<div><span>${String(index + 1).padStart(2, '0')}</span><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.description)}</p></div>`).join('')}
+      </div>
+    </section>
+    <section class="section user-voice-surface">
+      <div class="section-head"><div><h2>${escapeHtml(copy.public_title || '可公开洞察')}</h2><p>${escapeHtml(copy.public_description || '')}</p></div></div>
+      <div class="voice-insights" id="voice-insights">
+        ${insights.map((item) => `<article class="voice-insight" data-searchable>
+          <div><span class="eyebrow">${escapeHtml(actionLabels[item.action_type] || item.action_type)}</span></div>
+          <div><h3>${escapeHtml(item.title)}</h3><p class="voice-evidence">${escapeHtml(strengthLabels[item.evidence_strength] || item.evidence_strength)} · ${Number(item.source_count) || 0} 个公开来源 · ${Number(item.independent_voice_count) || 0} 个独立声音</p></div>
+        </article>`).join('')}
+      </div>
+      <div class="empty-state voice-empty" id="voice-empty"${insights.length ? ' hidden' : ''}><strong>${escapeHtml(copy.empty_message || '暂无可公开洞察')}</strong><span>${escapeHtml(copy.empty_detail || '')}</span></div>
+      <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>
+    </section>
+    <section class="section">
+      <div class="section-head"><h2>${escapeHtml(copy.related_title || '接着处理')}</h2></div>
+      <nav class="workspace-links" aria-label="相关入口">
+        ${(copy.related || []).map((item) => `<a href="${escapeHtml(item.file)}"><span>${escapeHtml(item.label)}</span><small>${escapeHtml(item.description)}</small><b aria-hidden="true">→</b></a>`).join('')}
+      </nav>
+    </section>`;
+}
+
 function renderTopics(data, topics) {
   document.title = `${topics.title}｜${data.site.title}`;
   document.querySelector('meta[name="description"]').content = 'OEDRO海外用户运营专题与当前状态。';
@@ -353,17 +397,23 @@ document.addEventListener('keydown', (event) => {
 });
 
 async function init() {
-  const [dataResponse, topicsResponse] = await Promise.all([
+  const [dataResponse, topicsResponse, voiceResponse] = await Promise.all([
     fetch('data/content.json', { cache: 'no-store' }),
-    fetch('data/topics.json', { cache: 'no-store' })
+    fetch('data/topics.json', { cache: 'no-store' }),
+    page === 'voice' ? fetch('data/user-voice.json', { cache: 'no-store' }) : Promise.resolve(null)
   ]);
-  if (!dataResponse.ok || !topicsResponse.ok) throw new Error('页面数据加载失败');
-  const [data, topics] = await Promise.all([dataResponse.json(), topicsResponse.json()]);
+  if (!dataResponse.ok || !topicsResponse.ok || (page === 'voice' && !voiceResponse?.ok)) throw new Error('页面数据加载失败');
+  const [data, topics, voice] = await Promise.all([
+    dataResponse.json(),
+    topicsResponse.json(),
+    voiceResponse ? voiceResponse.json() : Promise.resolve(null)
+  ]);
   renderShell(data);
   if (page === 'overview') renderOverview(data, topics);
   if (page === 'playbook') renderPlaybook(data);
   if (page === 'work') renderWork(data);
   if (page === 'research') renderResearch(data);
+  if (page === 'voice') renderUserVoice(data, voice);
   if (page === 'topics' && location.pathname.endsWith('topics.html')) renderTopics(data, topics);
   if (page === 'topics' && location.pathname.endsWith('topic.html')) await renderTopic(data);
   if (page === 'studio') await window.initContentStudio?.();
