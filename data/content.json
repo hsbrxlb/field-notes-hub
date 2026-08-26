@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "OEDRO 海外用户运营工作台",
-    "subtitle": "海外用户运营的现状、工作安排和研究资料。",
+    "subtitle": "工作进展、计划与成果记录。",
     "search_hint": "搜索当前页面",
     "no_match": "换个关键词试试"
   },
@@ -10,11 +10,6 @@
       "id": "overview",
       "label": "总览",
       "file": "index.html"
-    },
-    {
-      "id": "playbook",
-      "label": "工作方法",
-      "file": "playbook.html"
     },
     {
       "id": "work",
@@ -33,13 +28,18 @@
     },
     {
       "id": "studio",
-      "label": "内容生产",
+      "label": "内容成果",
       "file": "content-studio.html"
     },
     {
       "id": "topics",
       "label": "运营专题",
       "file": "topics.html"
+    },
+    {
+      "id": "playbook",
+      "label": "工作方法",
+      "file": "playbook.html"
     }
   ],
   "overview": {
@@ -93,11 +93,24 @@
     "stages_label": "",
     "capabilities_title": "这份工作具体管什么",
     "capabilities_label": "",
-    "entry_title": "按事情找内容",
+    "entry_title": "工作入口",
     "entry_label": "",
-    "entry_text": "想看整体做法，进入“从零开始”；想看具体工作，进入“当前进展”；想看调研和用户参与方式，进入“用户研究与参与”；想看Discord等单项安排，进入“运营专题”。",
+    "entry_text": "查看项目状态和下一步，进入当前进展；查看已经形成的内容、研究和方案，进入内容成果；稳定方法与专题记录保留在工作方法和运营专题。",
     "topics_title": "正在准备的运营专题",
-    "topics_text": "专题页集中保存单项工作的现状、启动条件和后续安排。"
+    "topics_text": "专题页集中保存关键决定、稳定方法和需要持续复用的经验。",
+    "decisions_title": "关键决定",
+    "decisions": [
+      {
+        "date": "2026-08-26",
+        "title": "Hub只负责记录与展示",
+        "summary": "研究、分析、内容生成和文件制作继续由本地Codex与现有工具完成。"
+      },
+      {
+        "date": "2026-08-26",
+        "title": "暂不引入在线后端和AI接口",
+        "summary": "没有网页编辑、多人协作或在线私密数据需求前，继续使用GitHub Pages静态架构。"
+      }
+    ]
   },
   "stages": [
     {
@@ -572,9 +585,22 @@
     "entry_next": "先确定统一入口和记录方式；新的产品测试还要等产品、方案、权益和履约获批。"
   },
   "user_voice": {
-    "meta_description": "OEDRO公开用户问题的人工核对流程与可公开洞察汇总。",
+    "meta_description": "OEDRO公开问题与反馈的阶段性工作汇总。",
     "title": "问题与反馈",
-    "description": "汇总公开渠道中的用户问题与反馈，经过去重、事实核对和人工审核后，整理成可复用的结论。",
+    "description": "记录本机问题处理工作的公开汇总、重复主题、结论和后续动作。",
+    "snapshot_title": "最近汇总",
+    "snapshot": [
+      {"label": "已接入来源", "value": "2", "note": "Tavily、YouTube"},
+      {"label": "累计记录", "value": "117", "note": "完整明细保留在本机"},
+      {"label": "当前待处理", "value": "0", "note": "暂无安全候选"},
+      {"label": "已确认公开洞察", "value": "0", "note": "不补写空结果"}
+    ],
+    "findings_title": "当前结论",
+    "findings": [
+      "当前没有证据充分、仍在回复窗口内的真实候选。",
+      "媒体文章、推广内容和无明确问题的视频只保留为覆盖记录，不进入回复队列。",
+      "适配、安装、保修等具体回答继续以官方产品事实为准；证据不足时停止确定性回答。"
+    ],
     "workflow_title": "处理流程",
     "workflow": [
       {
@@ -590,11 +616,11 @@
         "description": "系统只准备回复草稿，审核、复制和平台发布始终由人完成。"
       }
     ],
-    "public_title": "可公开洞察",
-    "public_description": "这里只展示经过人工批准的重复问题汇总、证据强度和行动方向。原问题、作者、账号、内部编号、草稿和运行状态保留在本机。",
-    "empty_message": "暂无可公开洞察",
-    "empty_detail": "还没有通过审核的公开汇总。",
-    "related_title": "接着处理",
+    "public_title": "洞察与行动",
+    "public_description": "有经过核对的重复问题、内容选题、FAQ、产品反馈或研究任务时，记录在这里。逐条原始记录继续留在本机。",
+    "empty_message": "暂无新增洞察或行动",
+    "empty_detail": "当前扫描没有形成需要公开记录的新结论。",
+    "related_title": "相关记录",
     "related": [
       {
         "label": "用户研究",
@@ -602,8 +628,8 @@
         "file": "research.html"
       },
       {
-        "label": "内容生产",
-        "description": "把已批准的洞察转成活动、研究或社区内容草稿。",
+        "label": "内容成果",
+        "description": "查看已经形成的内容、研究、方案和网站成果。",
         "file": "content-studio.html"
       }
     ]

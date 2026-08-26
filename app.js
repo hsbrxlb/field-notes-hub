@@ -45,12 +45,12 @@ function sectionHead(title, action = '') {
 
 function navDescription(data, id) {
   return ({
-    playbook: '六个阶段和每一步的完成标准',
-    work: '项目状态、下一步和所需配合',
+    playbook: '稳定的工作原则和完成标准',
+    work: '项目状态、待办、阻塞和下一步',
     research: '当前研究、方法、参与方式和用户权利',
-    voice: '人工批准的公开用户洞察汇总',
-    studio: '生成活动、研究和社区内容草稿',
-    topics: 'Discord、品牌声音等单项安排'
+    voice: '公开问题处理工作的阶段性汇总',
+    studio: '已经形成的内容、研究、方案和工作成果',
+    topics: '关键决定、稳定方法和专题经验'
   })[id] || data[id]?.description || '';
 }
 
@@ -73,11 +73,11 @@ function renderShell(data) {
   document.querySelector('#breadcrumb-page').textContent = current?.label || '';
 }
 
-function renderOverview(data, topics) {
+function renderOverview(data, topics, results) {
   const o = data.overview;
-  const priorityProjects = [...data.work.projects]
-    .sort((a, b) => Number(b.status === '受阻') - Number(a.status === '受阻'))
-    .slice(0, 4);
+  const recentResults = [...(results?.results || [])]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 3);
   document.title = `海外用户运营｜${data.site.title}`;
   document.querySelector('meta[name="description"]').content = o.meta_description;
   document.querySelector('#content').innerHTML = `
@@ -89,10 +89,18 @@ function renderOverview(data, topics) {
       </div>
     </section>
     <section class="section" data-searchable>
-      ${sectionHead('重点项目')}
-      <div class="project-preview">
-        ${priorityProjects.map((item) => `<a href="work.html" class="project-preview-row"><div><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.next)}</p></div>${statusMarkup(item.status)}</a>`).join('')}
+      ${sectionHead('下一步计划', '<a class="text-link" href="work.html">查看进展与待办 →</a>')}
+      <div class="priority-list">
+        ${data.work.next_items.slice(0, 5).map((item) => `<div class="priority-row"><strong>${escapeHtml(item)}</strong><span class="eyebrow">待推进</span></div>`).join('')}
       </div>
+    </section>
+    <section class="section" data-searchable>
+      ${sectionHead('最近成果', '<a class="text-link" href="content-studio.html">查看全部 →</a>')}
+      <div class="topic-list">${recentResults.map((item) => `<a class="topic-row" href="content-studio.html#${encodeURIComponent(item.id)}"><div><span class="eyebrow">${escapeHtml(item.date)} · ${escapeHtml(item.type)}</span><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.description)}</p></div>${statusMarkup(item.status)}</a>`).join('')}</div>
+    </section>
+    <section class="section" data-searchable>
+      ${sectionHead(o.decisions_title || '关键决定')}
+      <div class="topic-list">${(o.decisions || []).map((item) => `<div class="topic-row"><div><span class="eyebrow">${escapeHtml(item.date)}</span><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.summary)}</p></div></div>`).join('')}</div>
     </section>
     <section class="section" data-searchable>
       ${sectionHead('工作入口')}
@@ -101,7 +109,7 @@ function renderOverview(data, topics) {
       </nav>
     </section>
     <section class="section" data-searchable>
-      ${sectionHead('运营专题', '<a class="text-link" href="topics.html">查看全部 →</a>')}
+      ${sectionHead('专题与经验', '<a class="text-link" href="topics.html">查看全部 →</a>')}
       <div class="topic-list">${topics.items.filter((item) => item.featured).map(topicLink).join('')}</div>
     </section>
     <section class="section">
@@ -170,13 +178,14 @@ function renderWork(data) {
         <div class="filter-row"><label for="status-filter">状态</label><select id="status-filter"><option>全部</option>${w.statuses.map((item) => `<option>${escapeHtml(item.name)}</option>`).join('')}</select><span class="count-note" id="project-count"></span></div>
         ${renderStatusLegend(w.statuses)}
       </div>
-      <div class="pinned-focus" data-searchable><span>当前重点</span>${w.focus.map((item) => `<strong>${escapeHtml(item.title)}</strong>`).join('')}</div>
       <div class="data-table-wrap"><table class="data-table project-table"><thead><tr><th>项目</th><th>状态</th><th>当前情况</th><th>下一步</th><th>需要配合</th></tr></thead><tbody id="project-rows">
         ${w.projects.map((item) => `<tr data-searchable data-status="${escapeHtml(item.status)}"><td class="cell-title" data-label="项目">${escapeHtml(item.name)}</td><td data-label="状态">${statusMarkup(item.status)}</td><td data-label="当前情况">${escapeHtml(item.progress)}</td><td data-label="下一步">${escapeHtml(item.next)}</td><td data-label="需要配合">${escapeHtml(item.dependency)}</td></tr>`).join('')}
       </tbody></table></div>
       <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>
     </section>
-    <section class="section"><details class="disclosure"><summary>补充事项</summary><div class="disclosure-body background-grid" data-searchable><div><h3>后续安排</h3><ul>${w.next_items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div><div><h3>已有基础</h3><ul>${w.foundation_items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div></div></details></section>`;
+    <section class="section" data-searchable>${sectionHead('待办与计划')}<div class="priority-list">${w.next_items.map((item) => `<div class="priority-row"><strong>${escapeHtml(item)}</strong><span class="eyebrow">待推进</span></div>`).join('')}</div></section>
+    <section class="section" data-searchable>${sectionHead('当前阻塞')}<div class="topic-list">${w.blocked.map((item) => `<div class="topic-row"><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.reason)}</p></div>${statusMarkup('受阻')}</div>`).join('')}</div></section>
+    <section class="section"><details class="disclosure"><summary>已有基础</summary><div class="disclosure-body" data-searchable><ul>${w.foundation_items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div></details></section>`;
   document.querySelector('#status-filter')?.addEventListener('change', runSearch);
   runSearch();
 }
@@ -258,11 +267,15 @@ function renderUserVoice(data, voice) {
   document.querySelector('meta[name="description"]').content = copy.meta_description || 'OEDRO海外用户运营公开问题与反馈汇总。';
   document.querySelector('#content').innerHTML = `
     ${pageHeading(copy.title || '问题与反馈', copy.description || '')}
-    <section class="section">
-      <div class="section-head"><h2>${escapeHtml(copy.workflow_title || '处理流程')}</h2></div>
-      <div class="voice-workflow">
-        ${(copy.workflow || []).map((item, index) => `<div><span>${String(index + 1).padStart(2, '0')}</span><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.description)}</p></div>`).join('')}
+    <section class="section" data-searchable>
+      <div class="section-head"><h2>${escapeHtml(copy.snapshot_title || '最近汇总')}</h2></div>
+      <div class="outcome-list">
+        ${(copy.snapshot || []).map((item) => `<div><span class="eyebrow">${escapeHtml(item.label)}</span><strong>${escapeHtml(item.value)}</strong><p>${escapeHtml(item.note)}</p></div>`).join('')}
       </div>
+    </section>
+    <section class="section" data-searchable>
+      <div class="section-head"><h2>${escapeHtml(copy.findings_title || '当前结论')}</h2></div>
+      <div class="priority-list">${(copy.findings || []).map((item) => `<div class="priority-row"><strong>${escapeHtml(item)}</strong></div>`).join('')}</div>
     </section>
     <section class="section user-voice-surface">
       <div class="section-head"><div><h2>${escapeHtml(copy.public_title || '可公开洞察')}</h2><p>${escapeHtml(copy.public_description || '')}</p></div></div>
@@ -274,6 +287,11 @@ function renderUserVoice(data, voice) {
       </div>
       <div class="empty-state voice-empty" id="voice-empty"${insights.length ? ' hidden' : ''}><strong>${escapeHtml(copy.empty_message || '暂无可公开洞察')}</strong><span>${escapeHtml(copy.empty_detail || '')}</span></div>
       <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>
+    </section>
+    <section class="section">
+      <details class="disclosure"><summary>${escapeHtml(copy.workflow_title || '处理方法')}</summary><div class="disclosure-body"><div class="voice-workflow">
+        ${(copy.workflow || []).map((item, index) => `<div><span>${String(index + 1).padStart(2, '0')}</span><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.description)}</p></div>`).join('')}
+      </div></div></details>
     </section>
     <section class="section">
       <div class="section-head"><h2>${escapeHtml(copy.related_title || '接着处理')}</h2></div>
@@ -402,19 +420,21 @@ document.addEventListener('keydown', (event) => {
 });
 
 async function init() {
-  const [dataResponse, topicsResponse, voiceResponse] = await Promise.all([
+  const [dataResponse, topicsResponse, voiceResponse, resultsResponse] = await Promise.all([
     fetch('data/content.json', { cache: 'no-store' }),
     fetch('data/topics.json', { cache: 'no-store' }),
-    page === 'voice' ? fetch('data/user-voice.json', { cache: 'no-store' }) : Promise.resolve(null)
+    page === 'voice' ? fetch('data/user-voice.json', { cache: 'no-store' }) : Promise.resolve(null),
+    page === 'overview' ? fetch('data/content-studio.json', { cache: 'no-store' }) : Promise.resolve(null)
   ]);
-  if (!dataResponse.ok || !topicsResponse.ok || (page === 'voice' && !voiceResponse?.ok)) throw new Error('页面数据加载失败');
-  const [data, topics, voice] = await Promise.all([
+  if (!dataResponse.ok || !topicsResponse.ok || (page === 'voice' && !voiceResponse?.ok) || (page === 'overview' && !resultsResponse?.ok)) throw new Error('页面数据加载失败');
+  const [data, topics, voice, results] = await Promise.all([
     dataResponse.json(),
     topicsResponse.json(),
-    voiceResponse ? voiceResponse.json() : Promise.resolve(null)
+    voiceResponse ? voiceResponse.json() : Promise.resolve(null),
+    resultsResponse ? resultsResponse.json() : Promise.resolve(null)
   ]);
   renderShell(data);
-  if (page === 'overview') renderOverview(data, topics);
+  if (page === 'overview') renderOverview(data, topics, results);
   if (page === 'playbook') renderPlaybook(data);
   if (page === 'work') renderWork(data);
   if (page === 'research') renderResearch(data);
