@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "slug": "external-signals-to-relationships",
+  "title": "从外部渠道到长期用户关系",
+  "description": "说明外部渠道留下的用户信号如何被记录、判断、采用，并在用户主动许可的前提下发展为长期关系。",
+  "area": "用户反馈",
+  "status": "筹备",
+  "public_safe": true,
+  "sections": [
+    {
+      "id": "external-signals",
+      "title": "外部渠道会留下什么",
+      "paragraphs": [
+        "Slickdeals/Deal、Creator、YouTube、Reddit、产品评论、客服和社媒互动会留下几类信息：适配问题、安装困难、使用顾虑、用户实际用词，以及用户自己发布的内容。这些信息散落在不同地方，但都可以作为理解用户的基础材料。"
+      ]
+    },
+    {
+      "id": "comment-handling",
+      "title": "一条评论先怎么处理",
+      "paragraphs": [
+        "看到一条外部评论，第一步是保留原话、上下文、来源链接、时间和内容哈希。原话不能改写，上下文要能说明用户为什么这么说，来源链接用于回溯，时间用于判断新旧，内容哈希用于确认内容没有被改动。",
+        "整理时按车型、产品、场景、问题、动机和用户语言归类。车型和产品帮助定位，场景说明用户在什么情况下遇到问题，问题描述具体困难，动机解释用户想达成什么，用户语言保留他们自己的表达方式。",
+        "AI可以建议标签，但标签必须经过人工核对后才能继续使用。未经核对的标签不能进入后续流程。"
+      ]
+    },
+    {
+      "id": "repeat-issue-threshold",
+      "title": "什么情况算重复问题",
+      "paragraphs": [
+        "普通单条评论只是线索，不代表已经形成重复问题。默认需要3个独立声音且至少来自2个不同来源，才进入重复问题处理。这个数字是内部操作阈值，不是对外承诺，也不是统计结论。",
+        "安全、适配、产品损坏类问题可以单条紧急升级，不受3个独立声音的限制。这类问题一旦出现，需要优先处理。",
+        "只有经过人工确认的重复问题，才能作为可采用认知进入下一步。未经确认的线索不能直接当作结论使用。"
+      ]
+    },
+    {
+      "id": "turning-into-work",
+      "title": "怎样变成实际工作",
+      "paragraphs": [
+        "确认后的问题可以送往FAQ、调研问题、Discord话题、产品反馈、客服反馈、内容选题或官网文章候选。",
+        "每个动作都要记录接收人、处理状态和采用证据。接收人负责跟进，处理状态说明当前进展，采用证据记录这条认知最终用在了哪里。"
+      ]
+    },
+    {
+      "id": "long-term-relationship",
+      "title": "怎样建立长期关系",
+      "paragraphs": [
+        "公开评论可以帮助我们理解用户，但不能直接把用户拉进长期关系。只有用户主动报名并明确许可后，才能继续邀请他们参与研究、社区、产品测试、UGC或营销联系。",
+        "流程是：外部触点→报名入口→分项许可→首次有效参与→7日回访→第二次参与。外部触点可以是任何渠道的公开互动，报名入口由用户自己进入，分项许可让用户选择愿意参与什么，首次有效参与确认用户真的愿意投入，7日回访在参与后一周内进行，第二次参与说明关系在继续。",
+        "用户可以选择加入Discord，也可以只参加调研、产品测试或特定内容项目。每一种参与方式都按用户明确同意的范围执行。"
+      ]
+    },
+    {
+      "id": "weekly-monthly-routine",
+      "title": "每周和每月怎么做",
+      "paragraphs": [
+        "每周查看新增线索、高频问题、紧急问题、待核对事项和已送出的动作。新增线索说明这周出现了什么，高频问题帮助发现集中趋势，紧急问题需要优先响应，待核对事项提醒哪些标签或判断还没确认，已送出的动作追踪之前转出的内容有没有进展。",
+        "每月查看稳定主题、用户实际用词、车型/产品分布、采用情况和仍需研究的问题。稳定主题说明哪些问题持续存在，用户实际用词帮助我们调整表达方式，车型/产品分布显示问题集中在哪些地方，采用情况记录认知被使用的程度，仍需研究的问题列出下一步方向。",
+        "原始证据一直保留，不因整理或采用而删除。"
+      ]
+    },
+    {
+      "id": "rights-and-platform-boundaries",
+      "title": "权利和平台边界",
+      "paragraphs": [
+        "公开评论不能自动变成营销名单。用户公开发言不代表同意接收营销信息。",
+        "研究、营销邮件、社群邀请、UGC复用和短信许可分开管理。用户同意其中一项，不代表同意其他项。",
+        "免费产品、佣金或奖励涉及公开内容时，需要清楚披露。具体披露要求参照FTC Endorsement Guides。",
+        "不绕过登录、API或平台限制。读取公开内容时使用官方接口，例如YouTube Data API的commentThreads.list，Reddit Data API需遵守其数据访问、使用与删除要求。",
+        "不自动回复、私信、发帖或联系用户。所有主动联系必须基于用户明确许可。"
+      ]
+    }
+  ],
+  "related_pages": [
+    {
+      "href": "content-studio.html",
+      "label": "内容生产",
+      "description": "把已经批准的问题和事实整理成活动、研究或社区内容。"
+    },
+    {
+      "href": "topic.html?slug=discord-community",
+      "label": "Discord社区",
+      "description": "查看用户进入社区后的频道、主持和回访安排。"
+    },
+    {
+      "href": "topic.html?slug=brand-voice-system",
+      "label": "品牌人格与用户联系",
+      "description": "查看不同渠道的说话原则、事实边界和许可要求。"
+    }
+  ],
+  "sources": [
+    {
+      "label": "FTC Endorsement Guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "supports": "合作、免费产品、奖励与披露"
+    },
+    {
+      "label": "YouTube Data API commentThreads.list",
+      "url": "https://developers.google.com/youtube/v3/docs/commentThreads/list",
+      "supports": "官方评论读取接口"
+    },
+    {
+      "label": "Reddit Data API Terms",
+      "url": "https://redditinc.com/policies/data-api-terms",
+      "supports": "数据访问、使用与删除要求"
+    },
+    {
+      "label": "Microsoft Feedback Hub",
+      "url": "https://learn.microsoft.com/en-us/windows-insider/feedback",
+      "supports": "反馈需要状态和结果回流"
+    }
+  ]
+}

@@ -285,6 +285,14 @@ function renderTopicSources(sources) {
   }).join('');
 }
 
+function renderRelatedPages(pages = []) {
+  if (!pages.length) return '';
+  return `<section class="topic-content-section topic-related" id="topic-related" data-searchable>
+    <h2>接着去哪里</h2>
+    <div class="related-page-list">${pages.map((item) => `<a href="${escapeHtml(item.href)}"><strong>${escapeHtml(item.label)}</strong><p>${escapeHtml(item.description)}</p><span aria-hidden="true">→</span></a>`).join('')}</div>
+  </section>`;
+}
+
 async function renderTopic(data) {
   const slug = new URLSearchParams(window.location.search).get('slug') || 'discord-community';
   const response = await fetch(`data/topics/${encodeURIComponent(slug)}.json`, { cache: 'no-store' });
@@ -298,9 +306,10 @@ async function renderTopic(data) {
     <div class="topic-status-bar"><div><span class="eyebrow">${escapeHtml(topic.area)}</span>${statusMarkup(topic.status)}</div><a class="text-link" href="topics.html">返回专题列表 →</a></div>
     <div class="topic-layout">
       <article class="topic-body">${sections.map(topicSectionMarkup).join('')}
+        ${renderRelatedPages(topic.related_pages)}
         <details class="disclosure source-disclosure"><summary>来源</summary><div class="disclosure-body"><ul class="source-list">${renderTopicSources(topic.sources)}</ul></div></details>
       </article>
-      <nav class="topic-toc" aria-label="页内导航"><strong>本页内容</strong>${sections.map((section, index) => `<a href="#topic-section-${index}">${escapeHtml(cleanTopicTitle(section.title))}</a>`).join('')}</nav>
+      <nav class="topic-toc" aria-label="页内导航"><strong>本页内容</strong>${sections.map((section, index) => `<a href="#topic-section-${index}">${escapeHtml(cleanTopicTitle(section.title))}</a>`).join('')}${topic.related_pages?.length ? '<a href="#topic-related">接着去哪里</a>' : ''}</nav>
     </div>
     <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>`;
 }

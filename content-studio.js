@@ -484,13 +484,55 @@
     renderSavedJobs();
   }
 
+  async function importContentTask(file) {
+    const status = document.querySelector('#studio-import-status');
+    try {
+      const packet = JSON.parse(await file.text());
+      if (!packet || !['approved', 'routed'].includes(packet.status) || !packet.title || !packet.action_type) {
+        throw new Error('请选择由用户声音流程导出的已批准任务包。');
+      }
+      const moduleMap = {
+        research_question: 'research',
+        discord_topic: 'community',
+        content_idea: 'community'
+      };
+      activeModule = studioConfig.modules.find((module) => module.id === moduleMap[packet.action_type]) || studioConfig.modules[0];
+      const confirmed = [
+        packet.insight_title,
+        packet.insight_summary,
+        packet.evidence_strength ? `证据状态：${packet.evidence_strength}` : ''
+      ].filter(Boolean).join('\n');
+      draftValues = {
+        title: safeText(packet.title),
+        goal: safeText(packet.rationale || packet.insight_summary),
+        audience: '',
+        target_action: '',
+        channels: [],
+        confirmed_facts: confirmed,
+        permission_status: '只做内部草稿',
+        asset_source: '暂时不需要素材',
+        constraints: safeText(packet.instruction)
+      };
+      currentJob = null;
+      activeStep = 0;
+      editingExisting = false;
+      history.replaceState({}, '', `content-studio.html?module=${encodeURIComponent(activeModule.id)}`);
+      updateModuleButtons();
+      showForm();
+      status.textContent = '任务包已载入，请补全联系对象、渠道和模块条件。';
+      document.querySelector('#studio-title')?.focus();
+    } catch (error) {
+      status.textContent = error.message || '任务包读取失败。';
+    }
+  }
+
   function buildPage() {
     const content = document.querySelector('#content');
     content.innerHTML = `
       <header class="page-heading"><h1>${safeText(studioConfig.title)}</h1></header>
       <div class="studio-toolbar">
         <div class="studio-module-nav" id="studio-module-nav" aria-label="内容类型"></div>
-        <span class="studio-privacy">${safeText(studioConfig.privacy_notice)}</span>
+        <div class="studio-toolbar-side"><label class="studio-link-button" for="studio-import-task">导入任务包</label><input id="studio-import-task" type="file" accept="application/json,.json" hidden><span class="studio-privacy">${safeText(studioConfig.privacy_notice)}</span><span class="studio-import-status" id="studio-import-status" role="status" aria-live="polite"></span></div>
       </div>
       <section class="studio-form-shell" id="studio-form-view">
         <nav class="studio-progress" id="studio-progress" aria-label="填写步骤"></nav>
@@ -548,6 +590,11 @@
     document.querySelector('#studio-generate').addEventListener('click', createOrUpdateJob);
     document.querySelector('#studio-edit-request').addEventListener('click', editCurrentJob);
     document.querySelector('#studio-clear-local').addEventListener('click', clearLocalData);
+    document.querySelector('#studio-import-task').addEventListener('change', (event) => {
+      const file = event.target.files?.[0];
+      if (file) importContentTask(file);
+      event.target.value = '';
+    });
     showForm();
     renderSavedJobs();
   }

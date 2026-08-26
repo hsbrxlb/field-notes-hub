@@ -30,7 +30,9 @@ python3 -m http.server 4173
 
 专题详情支持两种数据结构：旧专题继续使用固定字段；新专题可使用`sections`数组，每个章节包含`title`，并按需要提供`paragraphs`、`items`或`rows`。来源可补`published_or_updated`和`supports`，说明更新时间与链接支持的具体主张。
 
-内容生产页读取`data/content-studio.json`，由`content-studio.js`在浏览器生成结构草稿、保存版本并记录审核状态。数据只保存在当前浏览器`localStorage`；原有`oedro-content-studio-jobs-v1`记录继续兼容。不要填写PII、名单、账号、凭据或未公开业务数据。
+内容生产页读取`data/content-studio.json`，由`content-studio.js`在浏览器生成结构草稿、保存版本并记录审核状态。数据只保存在当前浏览器`localStorage`；原有`oedro-content-studio-jobs-v1`记录继续兼容。它也能导入本机`oedro_user_voice export-content-task`生成的已批准任务包，只预填通过审核的问题和事实，仍需补齐联系对象、渠道和模块条件。不要填写PII、名单、账号、凭据或未公开业务数据。
+
+“从外部渠道到长期用户关系”专题说明公开评论怎样进入人工核对、重复问题、具体动作和自愿参与流程，并连接内容生产、Discord社区和品牌声音专题。
 
 ## 实现取舍
 
