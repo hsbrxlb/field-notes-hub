@@ -2,7 +2,7 @@
   "site": {
     "title": "OEDRO 海外用户运营工作台",
     "subtitle": "海外用户运营的现状、工作安排和研究资料。",
-    "search_hint": "搜索项目、工作步骤或研究方式",
+    "search_hint": "搜索当前页面",
     "no_match": "换个关键词试试"
   },
   "nav": [
@@ -13,7 +13,7 @@
     },
     {
       "id": "playbook",
-      "label": "从零开始",
+      "label": "工作方法",
       "file": "playbook.html"
     },
     {
@@ -23,7 +23,7 @@
     },
     {
       "id": "research",
-      "label": "用户研究与参与",
+      "label": "用户研究",
       "file": "research.html"
     },
     {
@@ -39,8 +39,8 @@
   ],
   "overview": {
     "meta_description": "OEDRO海外用户运营工作台总览：背景、当前基础、工作顺序和待补事项。",
-    "title": "海外用户运营总览",
-    "description": "OEDRO海外用户运营的背景、当前基础和接下来的工作。",
+    "title": "海外用户运营",
+    "description": "",
     "why_title": "为什么做海外用户运营",
     "why_label": "背景",
     "why_paragraphs": [
@@ -97,7 +97,7 @@
   "stages": [
     {
       "id": 1,
-      "name": "先把现有情况弄清楚",
+      "name": "摸清现状",
       "summary": "盘点已有渠道、用户来源、协作方和研究方法，明确当前数据和授权缺口。",
       "prerequisite": "需要先整理独立站、EDM、客服、KOL、TikTok、Reddit、论坛、PR、联盟和Discord的现有接触方式。",
       "actions": [
@@ -116,7 +116,7 @@
     },
     {
       "id": 2,
-      "name": "把用户资料整理好",
+      "name": "整理用户资料",
       "summary": "建立统一用户资料，补充车型、分项授权和参与记录。",
       "prerequisite": "完成第一轮渠道和用户来源盘点。",
       "actions": [
@@ -135,7 +135,7 @@
     },
     {
       "id": 3,
-      "name": "持续收集用户反馈",
+      "name": "持续收集反馈",
       "summary": "通过现有渠道和研究方法持续收集用户反馈，形成可追踪的记录。",
       "prerequisite": "用户资料和授权记录可用。",
       "actions": [
@@ -154,7 +154,7 @@
     },
     {
       "id": 4,
-      "name": "邀请用户参加具体项目",
+      "name": "邀请参与",
       "summary": "在联系许可、执行方案和所需权益获批后，启动用户调研、条件式产品测试、用户内容（UGC）、长期用户反馈组和社群等项目。",
       "prerequisite": "已有可用的用户资料和反馈记录。",
       "actions": [
@@ -173,7 +173,7 @@
     },
     {
       "id": 5,
-      "name": "把反馈用到实际工作里",
+      "name": "推动业务改进",
       "summary": "把用户反馈和参与结果用于产品、内容和运营调整。",
       "prerequisite": "已有可用的反馈和参与记录。",
       "actions": [
@@ -191,7 +191,7 @@
     },
     {
       "id": 6,
-      "name": "把有效做法固定下来",
+      "name": "固定有效做法",
       "summary": "把有效做法整理成团队可以重复执行的流程。",
       "prerequisite": "已有至少一轮完整的反馈收集、参与和业务改进。",
       "actions": [
@@ -242,8 +242,8 @@
   ],
   "playbook": {
     "meta_description": "从零开始搭建海外用户运营的步骤和结果，包含用户资料、有效参与和业务改进。",
-    "title": "从零开始",
-    "description": "海外用户运营从零开始时先做什么，接着怎么推进。",
+    "title": "工作方法",
+    "description": "",
     "section_title": "从哪里开始，接着做什么",
     "section_label": "",
     "results_title": "要形成的结果",
@@ -367,6 +367,14 @@
         "dependency": "需要可靠的车型与订单关联字段。"
       },
       {
+        "id": "oedro-listening-agent",
+        "name": "OEDRO公开问题监听与回复准备",
+        "status": "进行中",
+        "progress": "本机私有监听、事实阻断、人工审核和回复记录V1已经搭建；公开站不保存用户资料。",
+        "next": "完成免费搜索入口配置并运行14天只读与人工复核试跑。",
+        "dependency": "需要持续复核产品事实与免费搜索来源覆盖。"
+      },
+      {
         "id": "ai-tool-support",
         "name": "AI工具支持",
         "status": "待确认",
@@ -418,8 +426,8 @@
   },
   "research": {
     "meta_description": "OEDRO海外用户研究与参与，包括研究方法、参与项目、用户权利和Light Lab案例。",
-    "title": "用户研究与参与",
-    "description": "海外用户研究怎么开展，用户可以怎样参与，以及需要尊重哪些权利。",
+    "title": "用户研究",
+    "description": "",
     "methods_title": "研究方法",
     "methods_label": "",
     "methods": [

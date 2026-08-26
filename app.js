@@ -24,38 +24,38 @@ function setSidebar(open) {
   menuButton?.setAttribute('aria-expanded', String(open));
 }
 
+function statusClass(status) {
+  return {
+    待确认: 'pending', 进行中: 'active', 准备中: 'ready', 筹备: 'ready',
+    受阻: 'blocked', 已完成: 'done', 归档: 'archived'
+  }[status] || 'pending';
+}
+
 function statusMarkup(status) {
-  return `<span class="status status-${escapeHtml(status)}">${escapeHtml(status)}</span>`;
+  return `<span class="status status-${statusClass(status)}">${escapeHtml(status)}</span>`;
 }
 
-function pageHeading(title, description, label) {
-  return `<div class="page-heading"><div><h1>${escapeHtml(title)}</h1><p>${escapeHtml(description)}</p></div><span class="page-tag">${escapeHtml(label)}</span></div>`;
+function pageHeading(title, description = '') {
+  return `<header class="page-heading"><h1>${escapeHtml(title)}</h1>${description ? `<p>${escapeHtml(description)}</p>` : ''}</header>`;
 }
 
-function sectionHead(title, label) {
-  return `<div class="section-head"><h2>${escapeHtml(title)}</h2>${label ? `<p>${escapeHtml(label)}</p>` : ''}</div>`;
-}
-
-function socialMediaMarkup(data) {
-  const social = data.social_media;
-  return `<div class="social-media-intro"><p>${escapeHtml(social.summary)}</p></div>
-    <ol class="social-media-steps">
-      ${social.steps.map((item, index) => `<li data-searchable><span class="social-step-index">0${index + 1}</span><div><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.description)}</p></div></li>`).join('')}
-    </ol>`;
+function sectionHead(title, action = '') {
+  return `<div class="section-head"><h2>${escapeHtml(title)}</h2>${action}</div>`;
 }
 
 function navDescription(data, id) {
-  if (id === 'playbook') return data.playbook.description;
-  if (id === 'work') return data.work.description;
-  if (id === 'research') return data.research.description;
-  if (id === 'studio') return '把用户活动、用户研究和社区内容整理成可检查、可保存的内容包。';
-  if (id === 'topics') return '按主题查看目标、当前情况、启动条件和后续安排。';
-  return '';
+  return ({
+    playbook: '六个阶段和每一步的完成标准',
+    work: '项目状态、下一步和所需配合',
+    research: '当前研究、方法、参与方式和用户权利',
+    studio: '生成活动、研究和社区内容草稿',
+    topics: 'Discord、品牌声音等单项安排'
+  })[id] || data[id]?.description || '';
 }
 
 function topicLink(item) {
   return `<a class="topic-row" href="topic.html?slug=${encodeURIComponent(item.slug)}" data-searchable data-status="${escapeHtml(item.status)}">
-    <div><span class="topic-area">${escapeHtml(item.area)}</span><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.summary)}</p></div>
+    <div><span class="eyebrow">${escapeHtml(item.area)}</span><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.summary)}</p></div>
     ${statusMarkup(item.status)}
   </a>`;
 }
@@ -63,10 +63,10 @@ function topicLink(item) {
 function renderShell(data) {
   document.querySelector('#site-title').textContent = '海外用户运营';
   document.querySelector('#site-subtitle').textContent = 'OEDRO 工作台';
-  searchInput.placeholder = data.site.search_hint;
-  document.querySelector('#nav-list').innerHTML = data.nav.map((item, index) => `
+  searchInput.placeholder = '搜索当前页面';
+  document.querySelector('#nav-list').innerHTML = data.nav.map((item) => `
     <a href="${escapeHtml(item.file)}" data-page="${escapeHtml(item.id)}" class="${item.id === page ? 'active' : ''}">
-      <span>${escapeHtml(item.label)}</span><span class="nav-index">0${index + 1}</span>
+      <span>${escapeHtml(item.label)}</span>
     </a>`).join('');
   const current = data.nav.find((item) => item.id === page);
   document.querySelector('#breadcrumb-page').textContent = current?.label || '';
@@ -74,64 +74,208 @@ function renderShell(data) {
 
 function renderOverview(data, topics) {
   const o = data.overview;
-  document.title = `${o.title}｜${data.site.title}`;
+  const priorityProjects = [...data.work.projects]
+    .sort((a, b) => Number(b.status === '受阻') - Number(a.status === '受阻'))
+    .slice(0, 4);
+  document.title = `海外用户运营｜${data.site.title}`;
   document.querySelector('meta[name="description"]').content = o.meta_description;
-  const content = document.querySelector('#content');
-  content.innerHTML = `
-    ${pageHeading(o.title, o.description, '总览')}
-    <section class="section" data-searchable>${sectionHead(o.why_title, '')}
-      <div class="grid-two">
-        <article class="panel"><span class="panel-label">${escapeHtml(o.why_label)}</span>${o.why_paragraphs.map((item) => `<p>${escapeHtml(item)}</p>`).join('')}</article>
-        <article class="panel"><span class="panel-label">${escapeHtml(o.maturity_label)}</span><h3 class="maturity-title">${escapeHtml(o.maturity_title)}</h3><p>${escapeHtml(o.maturity_description)}</p></article>
+  document.querySelector('#content').innerHTML = `
+    ${pageHeading('海外用户运营')}
+    <section class="section overview-focus" data-searchable>
+      ${sectionHead('当前重点', '<a class="text-link" href="work.html">查看全部项目 →</a>')}
+      <div class="priority-list">
+        ${data.work.focus.map((item) => `<div class="priority-row"><strong>${escapeHtml(item.title)}</strong>${statusMarkup(item.status)}</div>`).join('')}
       </div>
     </section>
-    <section class="section">${sectionHead(o.stages_title, o.stages_label)}<div class="stage-strip">
-      ${data.stages.map((stage) => `<a class="stage-link" href="playbook.html#stage-${stage.id}" data-searchable><span class="stage-number">0${stage.id}</span><strong>${escapeHtml(stage.name)}</strong><span>${escapeHtml(stage.summary)}</span></a>`).join('')}
-    </div></section>
-    <section class="section">${sectionHead(o.entry_title, o.entry_label)}<div class="page-links">
-      ${data.nav.filter((item) => item.id !== 'overview').map((item) => `<a class="page-link" href="${escapeHtml(item.file)}" data-searchable><strong>${escapeHtml(item.label)}</strong><span>${escapeHtml(navDescription(data, item.id))}</span></a>`).join('')}
-    </div></section>
-    <section class="section">${sectionHead(o.topics_title, '')}<p class="section-intro">${escapeHtml(o.topics_text)}</p><div class="topic-list">
-      ${topics.items.filter((item) => item.featured).map(topicLink).join('')}
-    </div></section>
-    <section class="section">${sectionHead(o.timeline_title, o.timeline_label)}<div class="timeline">
-      ${o.timeline.map((item) => `<article class="timeline-item" data-searchable><time>${escapeHtml(item.period)}</time><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></article>`).join('')}
-    </div></section>
-    <section class="section">${sectionHead(o.foundations_title, o.foundations_label)}<div class="grid-two">
-      <article class="panel" data-searchable><h3>${escapeHtml(o.foundations_title)}</h3><ul class="compact-list">${o.foundations.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></article>
-      <article class="panel" data-searchable><h3>${escapeHtml(o.gaps_title)}</h3><ul class="compact-list">${o.gaps.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></article>
-    </div></section>
-    <section class="section">${sectionHead(o.capabilities_title, o.capabilities_label)}<div class="capability-grid">
-      ${data.capabilities.map((item) => `<article class="capability-item" data-searchable><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.purpose)}</p><small>${escapeHtml(item.minimum)}</small></article>`).join('')}
-    </div></section>
-    <section class="section">${sectionHead(data.social_media.title, '')}${socialMediaMarkup(data)}<div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div></section>`;
+    <section class="section" data-searchable>
+      ${sectionHead('重点项目')}
+      <div class="project-preview">
+        ${priorityProjects.map((item) => `<a href="work.html" class="project-preview-row"><div><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.next)}</p></div>${statusMarkup(item.status)}</a>`).join('')}
+      </div>
+    </section>
+    <section class="section" data-searchable>
+      ${sectionHead('工作入口')}
+      <nav class="workspace-links" aria-label="工作入口">
+        ${data.nav.filter((item) => item.id !== 'overview').map((item) => `<a href="${escapeHtml(item.file)}"><span>${escapeHtml(item.label)}</span><small>${escapeHtml(navDescription(data, item.id))}</small><b aria-hidden="true">→</b></a>`).join('')}
+      </nav>
+    </section>
+    <section class="section" data-searchable>
+      ${sectionHead('运营专题', '<a class="text-link" href="topics.html">查看全部 →</a>')}
+      <div class="topic-list">${topics.items.filter((item) => item.featured).map(topicLink).join('')}</div>
+    </section>
+    <section class="section">
+      <details class="disclosure">
+        <summary>工作背景</summary>
+        <div class="disclosure-body background-grid" data-searchable>
+          <div>${o.why_paragraphs.map((item) => `<p>${escapeHtml(item)}</p>`).join('')}</div>
+          <div><h3>已有基础</h3><ul>${o.foundations.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul><h3>待补齐</h3><ul>${o.gaps.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div>
+          <div class="background-scope"><h3>工作范围</h3><ul>${data.capabilities.map((item) => `<li><strong>${escapeHtml(item.name)}</strong><span>${escapeHtml(item.purpose)}</span></li>`).join('')}</ul></div>
+        </div>
+      </details>
+    </section>
+    <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>`;
+}
+
+function renderMethodDetail(stage) {
+  const target = document.querySelector('#method-detail');
+  if (!target) return;
+  target.innerHTML = `
+    <header><span class="eyebrow">阶段 ${String(stage.id).padStart(2, '0')}</span><h2>${escapeHtml(stage.name)}</h2><p>${escapeHtml(stage.summary)}</p></header>
+    <div class="method-grid">
+      <section><h3>开始前</h3><p>${escapeHtml(stage.prerequisite)}</p></section>
+      <section><h3>要做的事</h3><ul>${stage.actions.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>
+      <section><h3>产出</h3><ul>${stage.deliverables.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>
+      <section><h3>完成标准</h3><p>${escapeHtml(stage.done_when)}</p></section>
+    </div>`;
+}
+
+function renderPlaybook(data) {
+  const p = data.playbook;
+  document.title = `工作方法｜${data.site.title}`;
+  document.querySelector('meta[name="description"]').content = p.meta_description;
+  document.querySelector('#content').innerHTML = `
+    ${pageHeading('工作方法')}
+    <section class="section method-layout" data-searchable>
+      <nav class="method-rail" aria-label="工作阶段">
+        ${data.stages.map((stage, index) => `<button type="button" data-stage="${stage.id}" class="${index === 0 ? 'active' : ''}"><span>${String(stage.id).padStart(2, '0')}</span><strong>${escapeHtml(stage.name)}</strong></button>`).join('')}
+      </nav>
+      <article class="method-detail" id="method-detail"></article>
+    </section>
+    <section class="section">
+      <details class="disclosure"><summary>最终要形成什么</summary><div class="disclosure-body outcome-list" data-searchable>
+        ${p.results.map((item) => `<div><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.description)}</p></div>`).join('')}
+      </div></details>
+    </section>
+    <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>`;
+  renderMethodDetail(data.stages[0]);
+  document.querySelectorAll('[data-stage]').forEach((button) => button.addEventListener('click', () => {
+    document.querySelectorAll('[data-stage]').forEach((item) => item.classList.toggle('active', item === button));
+    renderMethodDetail(data.stages.find((stage) => String(stage.id) === button.dataset.stage));
+  }));
+}
+
+function renderStatusLegend(statuses) {
+  return `<details class="status-legend"><summary>状态说明</summary><div>${statuses.map((item) => `<p>${statusMarkup(item.name)}<span>${escapeHtml(item.description)}</span></p>`).join('')}</div></details>`;
+}
+
+function renderWork(data) {
+  const w = data.work;
+  document.title = `${w.title}｜${data.site.title}`;
+  document.querySelector('meta[name="description"]').content = w.meta_description;
+  document.querySelector('#content').innerHTML = `
+    ${pageHeading(w.title)}
+    <section class="section work-surface">
+      <div class="table-toolbar">
+        <div class="filter-row"><label for="status-filter">状态</label><select id="status-filter"><option>全部</option>${w.statuses.map((item) => `<option>${escapeHtml(item.name)}</option>`).join('')}</select><span class="count-note" id="project-count"></span></div>
+        ${renderStatusLegend(w.statuses)}
+      </div>
+      <div class="pinned-focus" data-searchable><span>当前重点</span>${w.focus.map((item) => `<strong>${escapeHtml(item.title)}</strong>`).join('')}</div>
+      <div class="data-table-wrap"><table class="data-table project-table"><thead><tr><th>项目</th><th>状态</th><th>当前情况</th><th>下一步</th><th>需要配合</th></tr></thead><tbody id="project-rows">
+        ${w.projects.map((item) => `<tr data-searchable data-status="${escapeHtml(item.status)}"><td class="cell-title" data-label="项目">${escapeHtml(item.name)}</td><td data-label="状态">${statusMarkup(item.status)}</td><td data-label="当前情况">${escapeHtml(item.progress)}</td><td data-label="下一步">${escapeHtml(item.next)}</td><td data-label="需要配合">${escapeHtml(item.dependency)}</td></tr>`).join('')}
+      </tbody></table></div>
+      <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>
+    </section>
+    <section class="section"><details class="disclosure"><summary>补充事项</summary><div class="disclosure-body background-grid" data-searchable><div><h3>后续安排</h3><ul>${w.next_items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div><div><h3>已有基础</h3><ul>${w.foundation_items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div></div></details></section>`;
+  document.querySelector('#status-filter')?.addEventListener('change', runSearch);
+  runSearch();
+}
+
+function researchMethodsMarkup(r) {
+  return `<div class="data-table-wrap"><table class="data-table"><thead><tr><th>方法</th><th>适合回答什么</th><th>开始前</th></tr></thead><tbody>${r.methods.map((item) => `<tr data-searchable><td class="cell-title" data-label="方法">${escapeHtml(item.name)}</td><td data-label="适合回答什么">${escapeHtml(item.use)}</td><td data-label="开始前">${escapeHtml(item.needs)}</td></tr>`).join('')}</tbody></table></div>`;
+}
+
+function researchProgramsMarkup(r) {
+  return `<div class="data-table-wrap"><table class="data-table"><thead><tr><th>类型</th><th>邀请条件</th><th>参与动作</th><th>能获得什么</th><th>需要记录</th></tr></thead><tbody>${r.programs.map((item) => `<tr data-searchable><td class="cell-title" data-label="类型">${escapeHtml(item.name)}</td><td data-label="邀请条件">${escapeHtml(item.start)}</td><td data-label="参与动作">${escapeHtml(item.task)}</td><td data-label="能获得什么">${escapeHtml(item.return)}</td><td data-label="需要记录">${escapeHtml(item.record)}</td></tr>`).join('')}</tbody></table></div>`;
+}
+
+function researchRightsMarkup(r) {
+  return `<div class="rights-list">${r.rights_groups.map((group) => `<section data-searchable><h3>${escapeHtml(group.title)}</h3>${group.items.map((item) => `<p>${escapeHtml(item)}</p>`).join('')}</section>`).join('')}</div>`;
+}
+
+function researchCaseMarkup(r) {
+  return `<p class="tab-intro">${escapeHtml(r.case_text)}</p><div class="light-lab-gallery">${r.case_images.map((item) => `<figure class="light-lab-figure light-lab-${escapeHtml(item.orientation)}"><img src="${escapeHtml(item.src)}" alt="${escapeHtml(item.alt)}" width="${escapeHtml(item.width)}" height="${escapeHtml(item.height)}" loading="lazy" decoding="async"><figcaption>${escapeHtml(item.caption)}</figcaption></figure>`).join('')}</div>`;
+}
+
+function renderResearchPanel(data, tabId) {
+  const r = data.research;
+  const project = data.work.projects.find((item) => item.id === 'work-light-research');
+  const panel = document.querySelector('#research-panel');
+  if (!panel) return;
+  const panels = {
+    current: `<div class="current-research" data-searchable><div><span class="eyebrow">当前项目</span><h2>${escapeHtml(project.name)}</h2>${statusMarkup(project.status)}</div><dl><div><dt>当前情况</dt><dd>${escapeHtml(project.progress)}</dd></div><div><dt>下一步</dt><dd>${escapeHtml(project.next)}</dd></div><div><dt>需要配合</dt><dd>${escapeHtml(project.dependency)}</dd></div></dl></div>`,
+    methods: researchMethodsMarkup(r),
+    programs: researchProgramsMarkup(r),
+    rights: researchRightsMarkup(r),
+    lightlab: researchCaseMarkup(r)
+  };
+  panel.innerHTML = panels[tabId] || panels.current;
+}
+
+function renderResearch(data) {
+  const r = data.research;
+  document.title = `用户研究｜${data.site.title}`;
+  document.querySelector('meta[name="description"]').content = r.meta_description;
+  const tabs = [['current', '当前研究'], ['methods', '研究方法'], ['programs', '参与方式'], ['rights', '用户权利'], ['lightlab', 'Light Lab']];
+  document.querySelector('#content').innerHTML = `
+    ${pageHeading('用户研究')}
+    <section class="section research-surface">
+      <div class="tabs" role="tablist" aria-label="用户研究内容">${tabs.map(([id, label], index) => `<button type="button" role="tab" aria-selected="${index === 0}" data-research-tab="${id}" class="${index === 0 ? 'active' : ''}">${label}</button>`).join('')}</div>
+      <div class="research-panel" id="research-panel" role="tabpanel"></div>
+      <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>
+    </section>`;
+  renderResearchPanel(data, 'current');
+  document.querySelectorAll('[data-research-tab]').forEach((button) => button.addEventListener('click', () => {
+    document.querySelectorAll('[data-research-tab]').forEach((item) => {
+      const active = item === button;
+      item.classList.toggle('active', active);
+      item.setAttribute('aria-selected', String(active));
+    });
+    renderResearchPanel(data, button.dataset.researchTab);
+  }));
 }
 
 function renderTopics(data, topics) {
   document.title = `${topics.title}｜${data.site.title}`;
-  document.querySelector('meta[name="description"]').content = 'OEDRO海外用户运营专题：集中查看单项工作的现状、启动条件和后续安排。';
+  document.querySelector('meta[name="description"]').content = 'OEDRO海外用户运营专题与当前状态。';
   document.querySelector('#content').innerHTML = `
-    ${pageHeading(topics.title, topics.description, '专题')}
-    <section class="section"><div class="section-head"><h2>专题列表</h2><div class="filter-row"><label for="topic-filter">状态</label><select id="topic-filter"><option>全部</option><option>筹备</option><option>待确认</option><option>进行中</option><option>受阻</option><option>已完成</option><option>归档</option></select><span class="count-note" id="topic-count"></span></div></div>
+    ${pageHeading(topics.title)}
+    <section class="section topic-index-surface">
+      <div class="table-toolbar"><div class="filter-row"><label for="topic-filter">状态</label><select id="topic-filter"><option>全部</option><option>筹备</option><option>待确认</option><option>进行中</option><option>受阻</option><option>已完成</option><option>归档</option></select><span class="count-note" id="topic-count"></span></div></div>
       <div class="topic-list" id="topic-list">${topics.items.map(topicLink).join('')}</div>
       <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>
     </section>`;
   document.querySelector('#topic-filter')?.addEventListener('change', runSearch);
+  runSearch();
 }
 
-function labelledList(title, items) {
-  return `<section class="section topic-section" data-searchable>${sectionHead(title, '')}<ul class="topic-points">${items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>`;
+const topicTitleMap = {
+  当前判断: '品牌声音', 'OEDRO怎么说': '表达原则', 不同渠道怎么变: '渠道语气',
+  明确不采用: '禁用表达', 当前验证状态: '验证状态'
+};
+
+function cleanTopicTitle(title) {
+  return topicTitleMap[title] || title;
 }
 
-function renderGenericTopicSection(section) {
+function topicSectionMarkup(section, index) {
+  const title = cleanTopicTitle(section.title);
   const paragraphs = (section.paragraphs || []).map((item) => `<p>${escapeHtml(item)}</p>`).join('');
-  const items = section.items?.length
-    ? `<ul class="topic-points">${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`
-    : '';
-  const rows = section.rows?.length
-    ? `<div class="topic-timeline">${section.rows.map((item, index) => `<div><span>0${index + 1}</span><strong>${escapeHtml(item.label)}</strong><p>${escapeHtml(item.text)}</p></div>`).join('')}</div>`
-    : '';
-  return `<section class="section topic-section" data-searchable>${sectionHead(section.title, '')}${paragraphs}${items}${rows}</section>`;
+  const items = section.items?.length ? `<ul>${section.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>` : '';
+  const rows = section.rows?.length ? `<div class="topic-steps">${section.rows.map((item) => `<div><strong>${escapeHtml(item.label)}</strong><p>${escapeHtml(item.text)}</p></div>`).join('')}</div>` : '';
+  return `<section class="topic-content-section" id="topic-section-${index}" data-searchable><h2>${escapeHtml(title)}</h2>${paragraphs}${items}${rows}</section>`;
+}
+
+function discordSections(topic) {
+  return [
+    { title: '当前情况', paragraphs: topic.summary },
+    { title: '用途', items: topic.purpose },
+    { title: '启动条件', items: topic.before_launch },
+    { title: '前30天', rows: topic.first_month },
+    { title: '内容安排', items: topic.weekly },
+    { title: '判断标准', items: topic.measure },
+    { title: '参与边界', items: topic.boundaries },
+    { title: '待确认', items: topic.pending }
+  ];
 }
 
 function renderTopicSources(sources) {
@@ -146,94 +290,19 @@ async function renderTopic(data) {
   const response = await fetch(`data/topics/${encodeURIComponent(slug)}.json`, { cache: 'no-store' });
   if (!response.ok) throw new Error('专题加载失败');
   const topic = await response.json();
+  const sections = topic.sections?.length ? topic.sections : discordSections(topic);
   document.title = `${topic.title}｜${data.site.title}`;
   document.querySelector('meta[name="description"]').content = topic.description;
-  const topicBody = topic.sections?.length
-    ? topic.sections.map(renderGenericTopicSection).join('')
-    : `<section class="section topic-section" data-searchable>${sectionHead('当前情况', '')}${topic.summary.map((item) => `<p>${escapeHtml(item)}</p>`).join('')}</section>
-      ${labelledList('这个社区用来做什么', topic.purpose)}
-      ${labelledList('启动前要确认', topic.before_launch)}
-      <section class="section topic-section" data-searchable>${sectionHead('前30天怎么跑', '')}<div class="topic-timeline">${topic.first_month.map((item, index) => `<div><span>0${index + 1}</span><strong>${escapeHtml(item.label)}</strong><p>${escapeHtml(item.text)}</p></div>`).join('')}</div></section>
-      ${labelledList('每周内容安排', topic.weekly)}
-      ${labelledList('怎么判断有没有跑起来', topic.measure)}
-      ${labelledList('服务、研究和内容授权', topic.boundaries)}
-      ${labelledList('当前待确认', topic.pending)}`;
   document.querySelector('#content').innerHTML = `
-    ${pageHeading(topic.title, topic.description, topic.area)}
-    <section class="section topic-status-line"><div><span class="topic-area">${escapeHtml(topic.area)}</span>${statusMarkup(topic.status)}</div><a href="topics.html">返回运营专题 →</a></section>
-    ${topicBody}
-    <section class="section topic-section" data-searchable>${sectionHead('参考资料', '')}<ul class="topic-sources">${renderTopicSources(topic.sources)}</ul></section>
+    ${pageHeading(topic.title, topic.description)}
+    <div class="topic-status-bar"><div><span class="eyebrow">${escapeHtml(topic.area)}</span>${statusMarkup(topic.status)}</div><a class="text-link" href="topics.html">返回专题列表 →</a></div>
+    <div class="topic-layout">
+      <article class="topic-body">${sections.map(topicSectionMarkup).join('')}
+        <details class="disclosure source-disclosure"><summary>来源</summary><div class="disclosure-body"><ul class="source-list">${renderTopicSources(topic.sources)}</ul></div></details>
+      </article>
+      <nav class="topic-toc" aria-label="页内导航"><strong>本页内容</strong>${sections.map((section, index) => `<a href="#topic-section-${index}">${escapeHtml(cleanTopicTitle(section.title))}</a>`).join('')}</nav>
+    </div>
     <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>`;
-}
-
-function renderPlaybook(data) {
-  const p = data.playbook;
-  document.title = `${p.title}｜${data.site.title}`;
-  document.querySelector('meta[name="description"]').content = p.meta_description;
-  document.querySelector('#content').innerHTML = `
-    ${pageHeading(p.title, p.description, '步骤')}
-    <section class="section">${sectionHead(p.section_title, p.section_label)}<div class="phase-list">
-      ${data.stages.map((stage) => `<article class="phase" id="stage-${stage.id}" data-searchable>
-        <div class="phase-head"><span class="phase-index">0${stage.id}</span><div><strong>${escapeHtml(stage.name)}</strong><p>${escapeHtml(stage.summary)}</p></div></div>
-        <div class="phase-body">
-          <div><h3>开始条件</h3><p>${escapeHtml(stage.prerequisite)}</p></div>
-          <div><h3>完成标准</h3><p>${escapeHtml(stage.done_when)}</p></div>
-          <div><h3>要做的事</h3><ul>${stage.actions.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div>
-          <div><h3>交付内容</h3><ul>${stage.deliverables.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div>
-        </div></article>`).join('')}
-    </div></section>
-    <section class="section" id="social-media">${sectionHead(data.social_media.title, '')}${socialMediaMarkup(data)}</section>
-    <section class="section">${sectionHead(p.results_title, p.results_label)}<div class="result-grid">
-      ${p.results.map((item) => `<article class="result" data-searchable><strong>${escapeHtml(item.name)}</strong><span>${escapeHtml(item.description)}</span></article>`).join('')}
-    </div><div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div></section>`;
-}
-
-function renderWork(data) {
-  const w = data.work;
-  document.title = `${w.title}｜${data.site.title}`;
-  document.querySelector('meta[name="description"]').content = w.meta_description;
-  document.querySelector('#content').innerHTML = `
-    ${pageHeading(w.title, w.description, '工作')}
-    <section class="section">${sectionHead(w.status_title, w.status_label)}<div class="status-guide">
-      ${w.statuses.map((item) => `<div data-searchable>${statusMarkup(item.name)}<p>${escapeHtml(item.description)}</p></div>`).join('')}
-    </div></section>
-    <section class="section">${sectionHead(w.focus_title, w.focus_label)}<div class="focus-list">
-      ${w.focus.map((item) => `<div class="focus-item" data-searchable><strong>${escapeHtml(item.title)}</strong>${statusMarkup(item.status)}</div>`).join('')}
-    </div></section>
-    <section class="section"><div class="section-head"><h2>${escapeHtml(w.projects_title)}</h2><div class="filter-row"><label for="status-filter">状态</label><select id="status-filter"><option>全部</option>${w.statuses.map((item) => `<option>${escapeHtml(item.name)}</option>`).join('')}</select><span class="count-note" id="project-count"></span></div></div>
-      <div class="data-table-wrap"><table class="data-table project-table"><thead><tr><th>项目</th><th>状态</th><th>当前情况</th><th>下一步</th><th>需要配合</th></tr></thead><tbody id="project-rows">
-        ${w.projects.map((item) => `<tr data-searchable data-status="${escapeHtml(item.status)}"><td class="cell-title" data-label="项目">${escapeHtml(item.name)}</td><td data-label="状态">${statusMarkup(item.status)}</td><td data-label="当前情况">${escapeHtml(item.progress)}</td><td data-label="下一步">${escapeHtml(item.next)}</td><td data-label="需要配合">${escapeHtml(item.dependency)}</td></tr>`).join('')}
-      </tbody></table></div><div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>
-    </section>
-    <section class="section">${sectionHead(w.blocked_title, w.blocked_label)}<div class="panel item-list">
-      ${w.blocked.map((item) => `<div class="item-row" data-searchable><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.reason)}</p></div>`).join('')}
-    </div></section>
-    <section class="section">${sectionHead(w.next_title, w.next_label)}<div class="grid-two">
-      <article class="panel" data-searchable><h3>${escapeHtml(w.next_title)}</h3><ul class="compact-list">${w.next_items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></article>
-      <article class="panel" data-searchable><h3>${escapeHtml(w.foundations_title)}</h3><ul class="compact-list">${w.foundation_items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></article>
-    </div></section>`;
-  document.querySelector('#status-filter')?.addEventListener('change', runSearch);
-}
-
-function renderResearch(data) {
-  const r = data.research;
-  document.title = `${r.title}｜${data.site.title}`;
-  document.querySelector('meta[name="description"]').content = r.meta_description;
-  document.querySelector('#content').innerHTML = `
-    ${pageHeading(r.title, r.description, '研究')}
-    <section class="section">${sectionHead(r.methods_title, r.methods_label)}<div class="data-table-wrap"><table class="data-table"><thead><tr><th>方法</th><th>适合用来做什么</th><th>开始前要准备</th></tr></thead><tbody>
-      ${r.methods.map((item) => `<tr data-searchable><td class="cell-title" data-label="方法">${escapeHtml(item.name)}</td><td data-label="适合用来做什么">${escapeHtml(item.use)}</td><td data-label="开始前要准备">${escapeHtml(item.needs)}</td></tr>`).join('')}
-    </tbody></table></div></section>
-    <section class="section">${sectionHead(r.programs_title, r.programs_label)}<div class="data-table-wrap"><table class="data-table"><thead><tr><th>类型</th><th>怎么邀请</th><th>用户要做什么</th><th>能得到什么</th><th>需要记录</th></tr></thead><tbody>
-      ${r.programs.map((item) => `<tr data-searchable><td class="cell-title" data-label="类型">${escapeHtml(item.name)}</td><td data-label="怎么邀请">${escapeHtml(item.start)}</td><td data-label="用户要做什么">${escapeHtml(item.task)}</td><td data-label="能得到什么">${escapeHtml(item.return)}</td><td data-label="需要记录">${escapeHtml(item.record)}</td></tr>`).join('')}
-    </tbody></table></div></section>
-    <section class="section">${sectionHead(r.rights_title, r.rights_label)}<div class="rights-grid">
-      ${r.rights_groups.map((group) => `<article class="rights-group" data-searchable><h3>${escapeHtml(group.title)}</h3><ul>${group.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></article>`).join('')}
-    </div></section>
-    <section class="section">${sectionHead(r.case_title, r.case_label)}<article class="panel light-lab-case" data-searchable><p class="light-lab-intro">${escapeHtml(r.case_text)}</p><div class="light-lab-gallery">
-      ${r.case_images.map((item) => `<figure class="light-lab-figure light-lab-${escapeHtml(item.orientation)}"><img src="${escapeHtml(item.src)}" alt="${escapeHtml(item.alt)}" width="${escapeHtml(item.width)}" height="${escapeHtml(item.height)}" loading="lazy" decoding="async"><figcaption>${escapeHtml(item.caption)}</figcaption></figure>`).join('')}
-    </div></article></section>
-    <section class="section">${sectionHead(r.entry_title, r.entry_label)}<article class="panel" data-searchable><p>${escapeHtml(r.entry_text)}</p><p class="entry-note"><strong>下一步：</strong>${escapeHtml(r.entry_next)}</p></article><div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div></section>`;
 }
 
 function runSearch() {
@@ -251,53 +320,47 @@ function runSearch() {
   });
   const rows = [...document.querySelectorAll('#project-rows tr')];
   const count = document.querySelector('#project-count');
-  if (count) count.textContent = `${rows.filter((row) => !row.hidden).length} 项`;
+  if (count) count.textContent = `共 ${rows.filter((row) => !row.hidden).length} 个项目`;
   const topicRows = [...document.querySelectorAll('#topic-list [data-status]')];
   const topicCount = document.querySelector('#topic-count');
-  if (topicCount) topicCount.textContent = `${topicRows.filter((row) => !row.hidden).length} 个`;
+  if (topicCount) topicCount.textContent = `共 ${topicRows.filter((row) => !row.hidden).length} 个专题`;
   const empty = document.querySelector('.search-empty');
   if (empty) empty.hidden = matches > 0 || !query;
-  searchStatus.textContent = query ? `找到 ${matches} 项` : '按 / 搜索本页';
+  if (searchStatus) searchStatus.textContent = query ? `找到 ${matches} 项` : '按 / 搜索';
 }
 
 menuButton?.addEventListener('click', () => setSidebar(!sidebar?.classList.contains('open')));
 overlay?.addEventListener('click', () => setSidebar(false));
 searchInput?.addEventListener('input', runSearch);
-window.addEventListener('resize', () => { if (window.innerWidth > 760) setSidebar(false); });
 document.addEventListener('keydown', (event) => {
-  if (event.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) {
+  if (event.key === '/' && document.activeElement !== searchInput && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) {
     event.preventDefault();
     searchInput?.focus();
   }
-  if (event.key === 'Escape' && document.activeElement === searchInput) {
-    searchInput.value = '';
-    runSearch();
-    searchInput.blur();
+  if (event.key === 'Escape') {
+    setSidebar(false);
+    if (document.activeElement === searchInput) searchInput.blur();
   }
-  if (event.key === 'Escape' && sidebar?.classList.contains('open')) setSidebar(false);
 });
 
 async function init() {
-  try {
-    const [contentResponse, topicsResponse] = await Promise.all([
-      fetch('data/content.json', { cache: 'no-store' }),
-      fetch('data/topics.json', { cache: 'no-store' })
-    ]);
-    if (!contentResponse.ok || !topicsResponse.ok) throw new Error('内容加载失败');
-    const [data, topics] = await Promise.all([contentResponse.json(), topicsResponse.json()]);
-    renderShell(data);
-    if (page === 'overview') renderOverview(data, topics);
-    if (page === 'playbook') renderPlaybook(data);
-    if (page === 'work') renderWork(data);
-    if (page === 'research') renderResearch(data);
-    if (page === 'studio') await window.initContentStudio?.(data);
-    if (page === 'topics' && window.location.pathname.endsWith('/topics.html')) renderTopics(data, topics);
-    if (page === 'topics' && window.location.pathname.endsWith('/topic.html')) await renderTopic(data);
-    runSearch();
-  } catch (error) {
-    document.querySelector('#content').innerHTML = '<div class="empty-state" role="status">内容加载失败，请刷新页面。</div>';
-    console.error(error);
-  }
+  const [dataResponse, topicsResponse] = await Promise.all([
+    fetch('data/content.json', { cache: 'no-store' }),
+    fetch('data/topics.json', { cache: 'no-store' })
+  ]);
+  if (!dataResponse.ok || !topicsResponse.ok) throw new Error('页面数据加载失败');
+  const [data, topics] = await Promise.all([dataResponse.json(), topicsResponse.json()]);
+  renderShell(data);
+  if (page === 'overview') renderOverview(data, topics);
+  if (page === 'playbook') renderPlaybook(data);
+  if (page === 'work') renderWork(data);
+  if (page === 'research') renderResearch(data);
+  if (page === 'topics' && location.pathname.endsWith('topics.html')) renderTopics(data, topics);
+  if (page === 'topics' && location.pathname.endsWith('topic.html')) await renderTopic(data);
+  if (page === 'studio') await window.initContentStudio?.();
 }
 
-init();
+init().catch((error) => {
+  document.querySelector('#content').innerHTML = `<div class="load-error"><strong>页面暂时无法加载</strong><p>${escapeHtml(error.message)}</p></div>`;
+  console.error(error);
+});

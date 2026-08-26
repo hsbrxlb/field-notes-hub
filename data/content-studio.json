@@ -1,83 +1,80 @@
 {
   "schema_version": "1.0",
-  "title": "用户运营内容生产",
-  "description": "把一次活动、研究或社区主题，整理成跨渠道内容包，再逐项检查和批准。",
-  "status": "交互原型",
-  "privacy_notice": "本页不会把输入上传到服务器，版本只保存在当前浏览器。不要输入邮箱、用户名单、账号、未公开销售数据或凭据。",
-  "generation_notice": "当前版本生成的是可编辑的结构草稿和审核包；AI语言生成尚未连接公开站，避免在GitHub Pages暴露密钥和内部资料。",
+  "title": "内容生产",
+  "privacy_notice": "数据只保存在当前浏览器；不要填写联系人、账号、凭据或未公开业务数据。",
   "review_statuses": ["草稿", "待审核", "退回修改", "已批准"],
   "common_fields": [
     {
       "id": "title",
-      "label": "这次内容叫什么",
+      "label": "内容主题",
       "type": "text",
       "required": true,
       "placeholder": "例如：车主安装经验征集",
-      "help": "写事情本身，不写内部项目代号。"
+      "help": ""
     },
     {
       "id": "goal",
-      "label": "想让用户理解什么",
+      "label": "沟通目标",
       "type": "textarea",
       "required": true,
       "placeholder": "例如：知道可以分享安装过程和遇到的问题",
-      "help": "只写一个主要目标。"
+      "help": "只保留一个主要目标。"
     },
     {
       "id": "audience",
-      "label": "面向哪类人",
+      "label": "联系对象",
       "type": "select",
       "required": true,
       "options": ["已核实购买用户", "允许联系的订阅用户", "研究参与者", "社区成员", "Creator或UGC贡献者", "公开社媒受众"],
-      "help": "这是关系类型，不填写姓名或邮箱。"
+      "help": "选择关系类型，不填写姓名或邮箱。"
     },
     {
       "id": "target_action",
-      "label": "希望用户下一步做什么",
+      "label": "主要动作",
       "type": "text",
       "required": true,
       "placeholder": "例如：回复安装中最难的一步",
-      "help": "一份内容包只保留一个主要动作。"
+      "help": ""
     },
     {
       "id": "channels",
-      "label": "需要哪些渠道版本",
+      "label": "渠道版本",
       "type": "checkboxes",
       "required": true,
       "options": ["Email", "Discord", "Instagram / Facebook", "Research follow-up"],
-      "help": "不同渠道会生成不同结构。"
+      "help": ""
     },
     {
       "id": "confirmed_facts",
-      "label": "已经确认、可以对外写的事实",
+      "label": "已确认事实",
       "type": "textarea",
       "required": true,
-      "placeholder": "每行一条。没有确认的内容不要补写。",
-      "help": "不要填写联系人、内部金额或未公开产品数据。"
+      "placeholder": "例如：活动开放一周",
+      "help": "每行一条；未确认内容不要写入。"
     },
     {
       "id": "permission_status",
-      "label": "联系或参与许可",
+      "label": "联系许可",
       "type": "select",
       "required": true,
       "options": ["已确认", "只做内部草稿", "需要确认"],
-      "help": "未确认时可以做草稿，但不能标记为已批准。"
+      "help": "未确认时只能保留草稿。"
     },
     {
       "id": "asset_source",
-      "label": "素材来源",
+      "label": "素材权利",
       "type": "select",
       "required": true,
       "options": ["暂时不需要素材", "自有或AI生成素材", "用户或Creator素材，权利已确认", "素材权利需要确认"],
-      "help": "营销部门素材不会自动视为可复用。"
+      "help": ""
     },
     {
       "id": "constraints",
-      "label": "必须避免或保留什么",
+      "label": "限制与保留项",
       "type": "textarea",
       "required": false,
       "placeholder": "例如：不承诺礼品；不猜车型；只邀请自愿参与",
-      "help": "写本次任务特有的边界。"
+      "help": ""
     }
   ],
   "modules": [
@@ -93,7 +90,7 @@
           "type": "select",
           "required": true,
           "options": ["线上讨论", "问答或分享", "内容征集", "小型体验活动", "其他"],
-          "help": "决定邀请和FAQ要解释哪些内容。"
+          "help": ""
         },
         {
           "id": "schedule",
@@ -101,23 +98,23 @@
           "type": "text",
           "required": true,
           "placeholder": "例如：开放一周；具体日期待确认",
-          "help": "不确定时直接写待确认，不制造截止时间。"
+          "help": ""
         },
         {
           "id": "participation_value",
-          "label": "用户为什么值得参加",
+          "label": "参与价值",
           "type": "textarea",
           "required": true,
           "placeholder": "例如：比较不同安装方法，帮助后来车主少走弯路",
-          "help": "写真实价值，不用折扣替代价值。"
+          "help": "只写真实价值，不用折扣代替。"
         },
         {
           "id": "support_route",
-          "label": "问题去哪里处理",
+          "label": "支持渠道",
           "type": "text",
           "required": true,
           "placeholder": "例如：订单与保修仍走正式客服",
-          "help": "避免把活动频道写成即时客服。"
+          "help": ""
         }
       ],
       "outputs": [
@@ -139,27 +136,27 @@
       "fields": [
         {
           "id": "research_question",
-          "label": "这次必须回答的研究问题",
+          "label": "研究问题",
           "type": "textarea",
           "required": true,
           "placeholder": "例如：车主安装时最容易在哪一步失去信心",
-          "help": "研究问题不能只是“用户喜不喜欢”。"
+          "help": ""
         },
         {
           "id": "expected_time",
-          "label": "预计占用用户多久",
+          "label": "预计用时",
           "type": "text",
           "required": true,
           "placeholder": "例如：20–30分钟",
-          "help": "必须是真实预计时间。"
+          "help": ""
         },
         {
           "id": "recording_state",
-          "label": "录音或录像",
+          "label": "录制安排",
           "type": "select",
           "required": true,
           "options": ["不录制", "会录制，需单独同意", "待确认"],
-          "help": "待确认时审核包会阻止批准。"
+          "help": ""
         },
         {
           "id": "incentive_state",
@@ -171,7 +168,7 @@
         },
         {
           "id": "followup_scope",
-          "label": "后续会怎样联系",
+          "label": "后续联系",
           "type": "text",
           "required": true,
           "placeholder": "例如：只联系一次确认时间；研究结束后不自动进入营销名单",
@@ -196,11 +193,11 @@
       "fields": [
         {
           "id": "community_topic",
-          "label": "这周讨论什么",
+          "label": "本周主题",
           "type": "textarea",
           "required": true,
           "placeholder": "例如：安装前你最希望确认哪一个尺寸",
-          "help": "问题要具体到成员能用一句真实经历回答。"
+          "help": ""
         },
         {
           "id": "cadence",
@@ -208,31 +205,31 @@
           "type": "select",
           "required": true,
           "options": ["单次讨论", "一周主题", "连续两周", "待确认"],
-          "help": "待确认时先生成草稿。"
+          "help": ""
         },
         {
           "id": "participation_prompt",
-          "label": "成员最容易完成的动作",
+          "label": "参与动作",
           "type": "text",
           "required": true,
           "placeholder": "例如：发一张安装点照片，并写下车型年份",
-          "help": "动作越小越容易获得真实参与。"
+          "help": ""
         },
         {
           "id": "moderation_plan",
-          "label": "出现问题时怎么处理",
+          "label": "异常处理",
           "type": "textarea",
           "required": true,
           "placeholder": "例如：适配结论需官方核实；订单问题转客服；攻击性内容按规则处理",
-          "help": "主持提示必须包含升级和停止条件。"
+          "help": "包含升级和停止条件。"
         },
         {
           "id": "ugc_state",
-          "label": "是否涉及用户图片或视频",
+          "label": "用户图片或视频",
           "type": "select",
           "required": true,
           "options": ["不涉及", "只在社区内查看", "会另行询问复用授权", "待确认"],
-          "help": "成员发图不自动授予官网、社媒或广告使用权。"
+          "help": "成员发图不代表同意外部复用。"
         }
       ],
       "outputs": [
@@ -252,12 +249,5 @@
     "content": ["按渠道分组的可编辑草稿", "每段内容的用途", "事实和素材引用"],
     "checks": ["事实与承诺", "联系许可", "品牌语气", "平台规则", "素材权利", "仍需确认"],
     "actions": ["保存新版本", "提交审核", "退回修改", "批准本版", "导出JSON"]
-  },
-  "sources": [
-    {"label": "react-jsonschema-form", "url": "https://github.com/rjsf-team/react-jsonschema-form", "supports": "用JSON Schema生成结构化表单。"},
-    {"label": "JSON Forms", "url": "https://github.com/eclipsesource/jsonforms", "supports": "把数据schema和UI schema分开管理。"},
-    {"label": "Decap CMS Editorial Workflow", "url": "https://decapcms.org/docs/editorial-workflows/", "supports": "用Git分支和Pull Request管理草稿、审核和发布。"},
-    {"label": "Payload Versions and Drafts", "url": "https://payloadcms.com/docs/versions/overview", "supports": "版本历史、差异、恢复、草稿和权限。"},
-    {"label": "Postiz", "url": "https://github.com/gitroomhq/postiz-app", "supports": "未来可用于多平台草稿和排期；当前原型不连接。"}
-  ]
+  }
 }
