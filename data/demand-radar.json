@@ -1,30 +1,30 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-28T07:13:15+00:00",
-  "last_attempt_at": "2026-08-28T07:13:15+00:00",
-  "last_success_at": "2026-08-28T07:13:15+00:00",
+  "generated_at": "2026-08-28T07:17:32+00:00",
+  "last_attempt_at": "2026-08-28T07:17:32+00:00",
+  "last_success_at": "2026-08-28T07:17:32+00:00",
   "method": "deterministic_external_signal_scan",
   "status": "success",
   "stale_after_hours": 36,
   "truth_status": "blocked",
   "metrics": {
-    "raw_discovered": 72,
-    "accepted": 28,
-    "filtered": 44,
-    "new_actionable": 7,
-    "duplicate_actionable": 0,
-    "open_items": 9
+    "raw_discovered": 67,
+    "accepted": 20,
+    "filtered": 47,
+    "new_actionable": 0,
+    "duplicate_actionable": 2,
+    "open_items": 3
   },
   "sources": [
     {
       "source": "tavily",
       "status": "ok",
-      "accepted_count": 12
+      "accepted_count": 13
     },
     {
       "source": "youtube",
       "status": "ok",
-      "accepted_count": 16
+      "accepted_count": 7
     },
     {
       "source": "official_facts",
@@ -33,6 +33,28 @@
     }
   ],
   "items": [
+    {
+      "signal_id": "8d1d3a98b97a0d94f1f9cc927d197dec89cb180c0da3e26c164ed2100a6aeb74",
+      "topic": "complaint",
+      "source_family": "reddit",
+      "source_link": "https://www.reddit.com/r/f150/comments/1qyjgj7/hard_tonneau_worth_it",
+      "reason_code": "direct_oedro_question",
+      "next_action": "verify_product_facts",
+      "triage_status": "NEEDS_FACTS",
+      "observed_at": "2026-08-28T07:17:37+00:00",
+      "last_seen_at": "2026-08-28T07:17:32+00:00"
+    },
+    {
+      "signal_id": "bbce254d17b9e88daedf9d72278198ed351daf8c078f75f855f5f3763ae892f8",
+      "topic": "recommendation",
+      "source_family": "reddit",
+      "source_link": "https://www.reddit.com/r/chevycolorado/comments/1scctq2/oedro_running_boards",
+      "reason_code": "direct_oedro_question",
+      "next_action": "verify_product_facts",
+      "triage_status": "NEEDS_FACTS",
+      "observed_at": "2026-08-28T07:17:37+00:00",
+      "last_seen_at": "2026-08-28T07:17:32+00:00"
+    },
     {
       "signal_id": "c22db03dfdbf6d235cbc4d7a73984ce6f684c2cb2410592d238e2c1775f2cb58",
       "topic": "complaint",
@@ -43,94 +65,6 @@
       "triage_status": "NEEDS_FACTS",
       "observed_at": "2026-08-28T07:13:22+00:00",
       "last_seen_at": "2026-08-28T07:13:15+00:00"
-    },
-    {
-      "signal_id": "061745ec0ad0d88fe6f0f1f09571d3529e331c8bad295ca5b9aa8b652be93780",
-      "topic": "bumper",
-      "source_family": "forum",
-      "source_link": "https://www.ramforum.com/threads/rear-bumper-rust-post-accident-repair.225237",
-      "reason_code": "relevant_product_question",
-      "next_action": "verify_product_facts",
-      "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-08-28T07:13:33+00:00",
-      "last_seen_at": "2026-08-28T07:13:15+00:00"
-    },
-    {
-      "signal_id": "e57358c6ee382a804064dc7bc84eccb563a67d658e4809c5c0806bf6781cd986",
-      "topic": "running_boards",
-      "source_family": "forum",
-      "source_link": "https://www.tundras.com/threads/all-weather-floor-mats.154833",
-      "reason_code": "relevant_product_question",
-      "next_action": "verify_product_facts",
-      "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-08-28T07:13:30+00:00",
-      "last_seen_at": "2026-08-28T07:13:15+00:00"
-    },
-    {
-      "signal_id": "7b76a77ce23b6682fed76d4265bcf44ea78094493c6bf52c4ff927308a0e4a94",
-      "topic": "running_boards",
-      "source_family": "reddit",
-      "source_link": "https://www.reddit.com/r/ToyotaTundra/comments/1rqw1lt/which_running_boards",
-      "reason_code": "relevant_product_question",
-      "next_action": "verify_product_facts",
-      "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-08-28T07:13:25+00:00",
-      "last_seen_at": "2026-08-28T07:13:15+00:00"
-    },
-    {
-      "signal_id": "aa11f0489773b2013c6eff6fc8792991f3078ef50245f787e977c727b3275bcf",
-      "topic": "running_boards",
-      "source_family": "reddit",
-      "source_link": "https://www.reddit.com/r/ToyotaTundra/comments/1qtibcr/which_side_stepsrunning_boards",
-      "reason_code": "relevant_product_question",
-      "next_action": "verify_product_facts",
-      "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-08-28T07:13:25+00:00",
-      "last_seen_at": "2026-08-28T07:13:15+00:00"
-    },
-    {
-      "signal_id": "4628d08493aa3e0c0db6eda9360754b56a5f5340d2fccd6c6907c0f474cfe21e",
-      "topic": "running_boards",
-      "source_family": "reddit",
-      "source_link": "https://www.reddit.com/r/ToyotaTundra/comments/1sxmcv3/running_boards",
-      "reason_code": "relevant_product_question",
-      "next_action": "verify_product_facts",
-      "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-08-28T07:13:25+00:00",
-      "last_seen_at": "2026-08-28T07:13:15+00:00"
-    },
-    {
-      "signal_id": "2da2e72ad2469933ed61d47efb2a5eaa818611f5f67923c6db5ad6f8c0133add",
-      "topic": "running_boards",
-      "source_family": "reddit",
-      "source_link": "https://www.reddit.com/r/ToyotaTacoma/comments/1t28s5e/running_boards_on_or_off_im_indecisive",
-      "reason_code": "relevant_product_question",
-      "next_action": "verify_product_facts",
-      "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-08-28T07:13:25+00:00",
-      "last_seen_at": "2026-08-28T07:13:15+00:00"
-    },
-    {
-      "signal_id": "8d1d3a98b97a0d94f1f9cc927d197dec89cb180c0da3e26c164ed2100a6aeb74",
-      "topic": "complaint",
-      "source_family": "reddit",
-      "source_link": "https://www.reddit.com/r/f150/comments/1qyjgj7/hard_tonneau_worth_it",
-      "reason_code": "direct_oedro_question",
-      "next_action": "verify_product_facts",
-      "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-08-28T07:07:57+00:00",
-      "last_seen_at": "2026-08-28T07:07:56+00:00"
-    },
-    {
-      "signal_id": "bbce254d17b9e88daedf9d72278198ed351daf8c078f75f855f5f3763ae892f8",
-      "topic": "recommendation",
-      "source_family": "reddit",
-      "source_link": "https://www.reddit.com/r/chevycolorado/comments/1scctq2/oedro_running_boards",
-      "reason_code": "direct_oedro_question",
-      "next_action": "verify_product_facts",
-      "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-08-28T07:07:57+00:00",
-      "last_seen_at": "2026-08-28T07:07:56+00:00"
     }
   ]
 }
