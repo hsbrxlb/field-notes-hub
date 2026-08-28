@@ -1,8 +1,96 @@
 {
   "schema_version": 1,
-  "updated_at": null,
+  "updated_at": "2026-08-28T07:07:56+00:00",
   "query_plan_revision": "b534cfa6f7b26e233a4b093d3bfdf6bb188c8af7",
-  "cursors": {},
-  "seen": {},
-  "last_run": null
+  "cursors": {
+    "query-plan:tavily:full|brand_depth": 1,
+    "query-plan:tavily:full|forum_f150_maverick": 1,
+    "query-plan:tavily:full|forum_jeep": 1,
+    "query-plan:tavily:full|forum_ram_gm": 1,
+    "query-plan:tavily:full|forum_toyota": 1,
+    "query-plan:tavily:full|matrix_cover_mats": 1,
+    "query-plan:tavily:full|matrix_steps_bumper": 1,
+    "query-plan:tavily:full|open_web_questions": 1,
+    "query-plan:tavily:full|reddit_brand": 1,
+    "query-plan:tavily:full|reddit_trucks": 1,
+    "query-plan:youtube:full|youtube_brand": 1,
+    "query-plan:youtube:full|youtube_cover_mats": 1,
+    "query-plan:youtube:full|youtube_owner_questions": 1,
+    "query-plan:youtube:full|youtube_steps_bumper": 1
+  },
+  "seen": {
+    "eea4d63f313f609e0bd4f4eda5e7bcf70330555a3b5bed67973b53fa68daaafa": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    },
+    "dd9a4657f5c62316316e4afbe1e2fa2049d3b192ec5ef518b1daf6b7bfb326f0": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    },
+    "d0086d9f870907296a291fe9b6bd23ad04ef77f6d2669065b7f715d2238bd2c8": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    },
+    "cf17a860a6dd81a6f86c596d20ec82e6813f0afb6aa3ffcddc90f9f67e8ff340": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    },
+    "caecf45f91089d7c38da29e580fa87370e7570964ccf476b4845279f685c122f": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    },
+    "bd2eedcb329e072caa96e282512f0dfbd23cb8ae87f57d11ed5f6aa108244cdd": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    },
+    "bbce254d17b9e88daedf9d72278198ed351daf8c078f75f855f5f3763ae892f8": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    },
+    "b9f040d6b70e18041703c56a98d0a2e048111f59dfb6d9ab8e6fa280bb2d0ae3": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    },
+    "ae79aa0f12705c211f33ad3d83dca4168b004c3a909b75a50ec00ecc4f3a68f4": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    },
+    "945857d48aecf49f51aa63f275e89f94f9875bec33d1d8a83ba678857fcc927e": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    },
+    "8ff918d23003c912461e6e95c6285d6569d78adcd10b7c8a47a1c8bd930d628f": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    },
+    "8d1d3a98b97a0d94f1f9cc927d197dec89cb180c0da3e26c164ed2100a6aeb74": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    },
+    "3b46c2a9247206af3412d2fbbb28589e3d5216a8ea59c3cd8582784be34e0fbb": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    },
+    "1ced75fe9ecc3b73fcb6a5325ce6da5c96b7a7a5d261b641dacea85cde590561": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    },
+    "0facdd404eee1749953e1824dd7898b32508dfc8c22f845a16f91dd0e8c13d96": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    },
+    "0799614c48b2a31d98bef2f279373cb24327deed754d40af32597e03bf0330ac": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    },
+    "016323e9ac1d78a699eee694a71b20e3fbacb32ea5be12d9ba92c55543cb396a": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-28T07:07:56+00:00"
+    }
+  },
+  "last_run": {
+    "run_id": "run-fcdd66cc588a4ceeb66a3301c3ce8cfc",
+    "status": "success",
+    "attempted_at": "2026-08-28T07:07:56+00:00"
+  }
 }
