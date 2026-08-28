@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-28T08:13:52+00:00",
-  "last_attempt_at": "2026-08-28T08:13:18+00:00",
-  "last_success_at": "2026-08-28T08:13:52+00:00",
+  "generated_at": "2026-08-28T10:15:29+00:00",
+  "last_attempt_at": "2026-08-28T10:14:54+00:00",
+  "last_success_at": "2026-08-28T10:15:29+00:00",
   "method": "deterministic_external_signal_scan",
   "status": "success",
   "stale_after_hours": 36,
   "truth_status": "blocked",
   "metrics": {
-    "raw_discovered": 59,
-    "accepted": 18,
-    "filtered": 41,
+    "raw_discovered": 70,
+    "accepted": 27,
+    "filtered": 43,
     "new_actionable": 0,
     "duplicate_actionable": 1,
     "open_items": 3
@@ -24,7 +24,7 @@
     {
       "source": "youtube",
       "status": "ok",
-      "accepted_count": 7
+      "accepted_count": 16
     },
     {
       "source": "official_facts",
@@ -33,6 +33,17 @@
     }
   ],
   "items": [
+    {
+      "signal_id": "c22db03dfdbf6d235cbc4d7a73984ce6f684c2cb2410592d238e2c1775f2cb58",
+      "topic": "complaint",
+      "source_family": "reddit",
+      "source_link": "https://www.reddit.com/r/chevycolorado/comments/1sh85cx/please_help_me_pick_some_side_railsstepsrunning",
+      "reason_code": "direct_oedro_question",
+      "next_action": "verify_product_facts",
+      "triage_status": "NEEDS_FACTS",
+      "observed_at": "2026-08-28T10:15:02+00:00",
+      "last_seen_at": "2026-08-28T10:15:29+00:00"
+    },
     {
       "signal_id": "bbce254d17b9e88daedf9d72278198ed351daf8c078f75f855f5f3763ae892f8",
       "topic": "recommendation",
@@ -43,17 +54,6 @@
       "triage_status": "NEEDS_FACTS",
       "observed_at": "2026-08-28T08:13:27+00:00",
       "last_seen_at": "2026-08-28T08:13:52+00:00"
-    },
-    {
-      "signal_id": "c22db03dfdbf6d235cbc4d7a73984ce6f684c2cb2410592d238e2c1775f2cb58",
-      "topic": "complaint",
-      "source_family": "reddit",
-      "source_link": "https://www.reddit.com/r/chevycolorado/comments/1sh85cx/please_help_me_pick_some_side_railsstepsrunning",
-      "reason_code": "direct_oedro_question",
-      "next_action": "verify_product_facts",
-      "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-08-28T07:30:35+00:00",
-      "last_seen_at": "2026-08-28T07:30:35+00:00"
     },
     {
       "signal_id": "8d1d3a98b97a0d94f1f9cc927d197dec89cb180c0da3e26c164ed2100a6aeb74",
