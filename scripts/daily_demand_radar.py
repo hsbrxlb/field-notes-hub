@@ -98,6 +98,8 @@ def build_public_item(row: dict[str, Any], key: str, now: str, truth_blocked: bo
         return None
     topic = row.get("category") if row.get("category") in ALLOWED_TOPICS else "general"
     direct = bool(row.get("direct_brand"))
+    if not direct:
+        return None
     triage_status = row.get("status")
     if triage_status not in {"NEEDS_FACTS", "DRAFT_READY"}:
         return None
@@ -110,7 +112,7 @@ def build_public_item(row: dict[str, Any], key: str, now: str, truth_blocked: bo
         "topic": topic,
         "source_family": family,
         "source_link": source_link,
-        "reason_code": "direct_oedro_question" if direct else "relevant_product_question",
+        "reason_code": "direct_oedro_question",
         "next_action": "verify_product_facts" if triage_status == "NEEDS_FACTS" else "review_reply_opportunity",
         "triage_status": triage_status,
         "observed_at": observed_at,
@@ -140,7 +142,11 @@ def merge_items(existing: list[dict[str, Any]], current: list[dict[str, Any]], n
             last_seen = datetime.fromisoformat(item["last_seen_at"].replace("Z", "+00:00"))
         except (KeyError, TypeError, ValueError):
             continue
-        if last_seen >= cutoff and isinstance(item.get("signal_id"), str):
+        if (
+            last_seen >= cutoff
+            and isinstance(item.get("signal_id"), str)
+            and item.get("reason_code") == "direct_oedro_question"
+        ):
             merged[item["signal_id"]] = item
     new_count = 0
     duplicate_count = 0
