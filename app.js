@@ -287,16 +287,16 @@ function renderUserVoice(data, voice, radar) {
     const date = new Date(value);
     return Number.isNaN(date.getTime()) ? '时间无效' : date.toLocaleString('zh-CN', { hour12: false });
   };
-  const radarStatus = radar?.status === 'success' ? '本轮完成' : radar?.status === 'partial' ? '部分来源失败' : radar?.status === 'failed' ? '本轮失败' : '尚未运行';
+  const radarStatus = radar?.status === 'success' ? '检查完成' : radar?.status === 'partial' ? '部分来源失败' : radar?.status === 'failed' ? '检查失败' : '尚未运行';
   document.title = `${copy.title || '问题与反馈'}｜${data.site.title}`;
   document.querySelector('meta[name="description"]').content = 'OEDRO公开问题检查、值得查看的问题和已确认行动汇总。';
   document.querySelector('#content').innerHTML = `
     ${pageHeading(copy.title || '问题与反馈', '查看云端公开问题检查结果、值得处理的线索和已经确认的后续行动。')}
     <section class="section demand-radar-summary" data-searchable>
-      <div class="section-head"><div><h2>最近检查</h2><p>云端每天检查公开问题；这里只显示经过固定规则筛出的研究线索。</p></div><span class="status ${stale ? 'status-blocked' : radar?.status === 'success' ? 'status-done' : 'status-pending'}">${stale ? '数据可能过期' : escapeHtml(radarStatus)}</span></div>
+      <div class="section-head"><div><h2>最近检查</h2><p>云端每天检查公开问题，页面只显示经过固定规则筛出的研究线索。</p></div><span class="status ${stale ? 'status-blocked' : radar?.status === 'success' ? 'status-done' : 'status-pending'}">${stale ? '数据可能过期' : escapeHtml(radarStatus)}</span></div>
       <div class="outcome-list">
         <div><span class="eyebrow">上次成功</span><strong>${escapeHtml(formatTime(radar?.last_success_at))}</strong><p>${escapeHtml(radarStatus)}</p></div>
-        <div><span class="eyebrow">本轮发现</span><strong>${Number(radar?.metrics?.raw_discovered) || 0}</strong><p>筛选后保留 ${Number(radar?.metrics?.accepted) || 0} 条</p></div>
+        <div><span class="eyebrow">最近一次发现</span><strong>${Number(radar?.metrics?.raw_discovered) || 0}</strong><p>筛选后保留 ${Number(radar?.metrics?.accepted) || 0} 条</p></div>
         <div><span class="eyebrow">新增值得查看</span><strong>${Number(radar?.metrics?.new_actionable) || 0}</strong><p>当前共 ${Number(radar?.metrics?.open_items) || 0} 条</p></div>
         <div><span class="eyebrow">产品事实</span><strong>${radar?.truth_status === 'current' ? '可用' : radar?.truth_status === 'blocked' ? '需核对' : '尚未检查'}</strong><p>事实不足时不生成确定性结论</p></div>
       </div>
@@ -317,7 +317,7 @@ function renderUserVoice(data, voice, radar) {
       <div class="empty-state voice-empty"${radarItems.length ? ' hidden' : ''}><strong>暂无值得处理的问题</strong><span>没有安全候选时保持空白，不补写示例内容。</span></div>
     </section>
     <section class="section user-voice-surface">
-      <div class="section-head"><div><h2>已确认的洞察与行动</h2><p>经过人工确认的重复问题、内容选题、FAQ和产品反馈记录在这里。</p></div></div>
+      <div class="section-head"><div><h2>已确认的洞察与行动</h2><p>经过人工确认的重复问题、内容选题、FAQ和产品反馈显示在下方。</p></div></div>
       <div class="voice-insights" id="voice-insights">
         ${insights.map((item) => `<article class="voice-insight" data-searchable>
           <div><span class="eyebrow">${escapeHtml(actionLabels[item.action_type] || item.action_type)}</span></div>
