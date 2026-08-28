@@ -244,7 +244,7 @@ function renderResearch(data) {
   }));
 }
 
-function renderUserVoice(data, voice) {
+function renderUserVoice(data, voice, radar) {
   const copy = data.user_voice || {};
   const insights = Array.isArray(voice.actions)
     ? voice.actions.filter((item) => item && ['approved', 'routed', 'closed'].includes(item.status))
@@ -260,25 +260,64 @@ function renderUserVoice(data, voice) {
   };
   const topicLabels = {
     tonneau_cover: '货箱盖', running_boards: '脚踏板', floor_mats: '脚垫', bumper: '保险杠',
-    fitment: '车型适配', installation: '安装', warranty: '保修', product_quality: '产品质量',
+    complaint: '产品问题', recommendation: '选购建议', fitment: '车型适配', installation: '安装', warranty: '保修', product_quality: '产品质量',
     shipping_returns: '配送与退换', support: '售后支持', community: '社区', general: '通用问题'
   };
+  const sourceLabels = { reddit: 'Reddit', forum: '车型论坛', youtube: 'YouTube' };
+  const sourceStatusLabels = { not_run: '尚未运行', ok: '正常', failed: '失败', disabled: '停用', blocked: '需核对' };
+  const radarTopicTitles = {
+    complaint: '产品问题', support: '售后支持', installation: '安装问题', fitment: '车型适配',
+    recommendation: '选购建议', tonneau_cover: '货箱盖问题', running_boards: '脚踏板问题',
+    floor_mats: '脚垫问题', bumper: '保险杠问题', general: '其他问题'
+  };
+  const reasonLabels = {
+    direct_oedro_question: '明确提到OEDRO，并提出了具体问题',
+    relevant_product_question: '相关车型或产品问题，值得继续研究'
+  };
+  const actionLabelsRadar = {
+    verify_product_facts: '先核对产品事实',
+    review_reply_opportunity: '查看是否值得人工回复'
+  };
+  const radarItems = Array.isArray(radar?.items) ? radar.items : [];
+  const lastSuccess = radar?.last_success_at ? new Date(radar.last_success_at) : null;
+  const staleAfter = Number(radar?.stale_after_hours) || 36;
+  const stale = !lastSuccess || Number.isNaN(lastSuccess.getTime()) || Date.now() - lastSuccess.getTime() > staleAfter * 3600000;
+  const formatTime = (value) => {
+    if (!value) return '尚未成功运行';
+    const date = new Date(value);
+    return Number.isNaN(date.getTime()) ? '时间无效' : date.toLocaleString('zh-CN', { hour12: false });
+  };
+  const radarStatus = radar?.status === 'success' ? '本轮完成' : radar?.status === 'partial' ? '部分来源失败' : radar?.status === 'failed' ? '本轮失败' : '尚未运行';
   document.title = `${copy.title || '问题与反馈'}｜${data.site.title}`;
-  document.querySelector('meta[name="description"]').content = copy.meta_description || 'OEDRO海外用户运营公开问题与反馈汇总。';
+  document.querySelector('meta[name="description"]').content = 'OEDRO公开问题检查、值得查看的问题和已确认行动汇总。';
   document.querySelector('#content').innerHTML = `
-    ${pageHeading(copy.title || '问题与反馈', copy.description || '')}
-    <section class="section" data-searchable>
-      <div class="section-head"><h2>${escapeHtml(copy.snapshot_title || '最近汇总')}</h2></div>
+    ${pageHeading(copy.title || '问题与反馈', '查看云端公开问题检查结果、值得处理的线索和已经确认的后续行动。')}
+    <section class="section demand-radar-summary" data-searchable>
+      <div class="section-head"><div><h2>最近检查</h2><p>云端每天检查公开问题；这里只显示经过固定规则筛出的研究线索。</p></div><span class="status ${stale ? 'status-blocked' : radar?.status === 'success' ? 'status-done' : 'status-pending'}">${stale ? '数据可能过期' : escapeHtml(radarStatus)}</span></div>
       <div class="outcome-list">
-        ${(copy.snapshot || []).map((item) => `<div><span class="eyebrow">${escapeHtml(item.label)}</span><strong>${escapeHtml(item.value)}</strong><p>${escapeHtml(item.note)}</p></div>`).join('')}
+        <div><span class="eyebrow">上次成功</span><strong>${escapeHtml(formatTime(radar?.last_success_at))}</strong><p>${escapeHtml(radarStatus)}</p></div>
+        <div><span class="eyebrow">本轮发现</span><strong>${Number(radar?.metrics?.raw_discovered) || 0}</strong><p>筛选后保留 ${Number(radar?.metrics?.accepted) || 0} 条</p></div>
+        <div><span class="eyebrow">新增值得查看</span><strong>${Number(radar?.metrics?.new_actionable) || 0}</strong><p>当前共 ${Number(radar?.metrics?.open_items) || 0} 条</p></div>
+        <div><span class="eyebrow">产品事实</span><strong>${radar?.truth_status === 'current' ? '可用' : radar?.truth_status === 'blocked' ? '需核对' : '尚未检查'}</strong><p>事实不足时不生成确定性结论</p></div>
+      </div>
+      <div class="radar-source-list" aria-label="来源状态">
+        ${(radar?.sources || []).map((item) => `<span><b>${escapeHtml(item.source === 'official_facts' ? '官方产品事实' : item.source === 'tavily' ? '公开网页与论坛' : 'YouTube')}</b>${escapeHtml(sourceStatusLabels[item.status] || item.status)} · ${Number(item.accepted_count) || 0} 条</span>`).join('')}
       </div>
     </section>
-    <section class="section" data-searchable>
-      <div class="section-head"><h2>${escapeHtml(copy.findings_title || '当前结论')}</h2></div>
-      <div class="priority-list">${(copy.findings || []).map((item) => `<div class="priority-row"><strong>${escapeHtml(item)}</strong></div>`).join('')}</div>
+    <section class="section demand-radar-items" data-searchable>
+      <div class="section-head"><div><h2>值得查看的问题</h2><p>原帖链接会打开公开来源；页面不保存作者名、完整原话或内部回复草稿。</p></div></div>
+      <div class="radar-item-list">
+        ${radarItems.map((item) => `<article class="radar-item">
+          <div class="radar-item-meta"><span class="eyebrow">${escapeHtml(sourceLabels[item.source_family] || item.source_family)}</span><span class="status ${item.triage_status === 'DRAFT_READY' ? 'status-done' : 'status-pending'}">${item.triage_status === 'DRAFT_READY' ? '可评估回复' : '需要事实'}</span></div>
+          <h3>${escapeHtml(radarTopicTitles[item.topic] || topicLabels[item.topic] || item.topic)}</h3>
+          <p>${escapeHtml(reasonLabels[item.reason_code] || item.reason_code)}</p>
+          <div class="radar-item-footer"><strong>${escapeHtml(actionLabelsRadar[item.next_action] || item.next_action)}</strong><a href="${escapeHtml(item.source_link)}" target="_blank" rel="noreferrer">打开原帖 →</a></div>
+        </article>`).join('')}
+      </div>
+      <div class="empty-state voice-empty"${radarItems.length ? ' hidden' : ''}><strong>暂无值得处理的问题</strong><span>没有安全候选时保持空白，不补写示例内容。</span></div>
     </section>
     <section class="section user-voice-surface">
-      <div class="section-head"><div><h2>${escapeHtml(copy.public_title || '可公开洞察')}</h2><p>${escapeHtml(copy.public_description || '')}</p></div></div>
+      <div class="section-head"><div><h2>已确认的洞察与行动</h2><p>经过人工确认的重复问题、内容选题、FAQ和产品反馈记录在这里。</p></div></div>
       <div class="voice-insights" id="voice-insights">
         ${insights.map((item) => `<article class="voice-insight" data-searchable>
           <div><span class="eyebrow">${escapeHtml(actionLabels[item.action_type] || item.action_type)}</span></div>
@@ -420,25 +459,27 @@ document.addEventListener('keydown', (event) => {
 });
 
 async function init() {
-  const [dataResponse, topicsResponse, voiceResponse, resultsResponse] = await Promise.all([
+  const [dataResponse, topicsResponse, voiceResponse, resultsResponse, radarResponse] = await Promise.all([
     fetch('data/content.json', { cache: 'no-store' }),
     fetch('data/topics.json', { cache: 'no-store' }),
     page === 'voice' ? fetch('data/user-voice.json', { cache: 'no-store' }) : Promise.resolve(null),
-    page === 'overview' ? fetch('data/content-studio.json', { cache: 'no-store' }) : Promise.resolve(null)
+    page === 'overview' ? fetch('data/content-studio.json', { cache: 'no-store' }) : Promise.resolve(null),
+    page === 'voice' ? fetch('data/demand-radar.json', { cache: 'no-store' }) : Promise.resolve(null)
   ]);
-  if (!dataResponse.ok || !topicsResponse.ok || (page === 'voice' && !voiceResponse?.ok) || (page === 'overview' && !resultsResponse?.ok)) throw new Error('页面数据加载失败');
-  const [data, topics, voice, results] = await Promise.all([
+  if (!dataResponse.ok || !topicsResponse.ok || (page === 'voice' && (!voiceResponse?.ok || !radarResponse?.ok)) || (page === 'overview' && !resultsResponse?.ok)) throw new Error('页面数据加载失败');
+  const [data, topics, voice, results, radar] = await Promise.all([
     dataResponse.json(),
     topicsResponse.json(),
     voiceResponse ? voiceResponse.json() : Promise.resolve(null),
-    resultsResponse ? resultsResponse.json() : Promise.resolve(null)
+    resultsResponse ? resultsResponse.json() : Promise.resolve(null),
+    radarResponse ? radarResponse.json() : Promise.resolve(null)
   ]);
   renderShell(data);
   if (page === 'overview') renderOverview(data, topics, results);
   if (page === 'playbook') renderPlaybook(data);
   if (page === 'work') renderWork(data);
   if (page === 'research') renderResearch(data);
-  if (page === 'voice') renderUserVoice(data, voice);
+  if (page === 'voice') renderUserVoice(data, voice, radar);
   if (page === 'topics' && location.pathname.endsWith('topics.html')) renderTopics(data, topics);
   if (page === 'topics' && location.pathname.endsWith('topic.html')) await renderTopic(data);
   if (page === 'studio') await window.initContentStudio?.();

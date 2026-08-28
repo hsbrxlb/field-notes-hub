@@ -2,7 +2,7 @@
 
 这是 Oliver 的在线版上班记事本、项目进展仪表盘和工作成果档案。网站通过公开 GitHub Pages 发布，只读展示适合公开的工作摘要和成果。
 
-研究、分析、内容生成、方案和文件制作继续由本地 Codex 与现有本地工具完成。Hub 不调用 AI，不承担业务执行，也不保存完整私有工作数据。
+研究、分析、内容生成、方案和文件制作继续由本地 Codex 与现有本地工具完成。Hub页面不调用AI、不提供在线编辑，也不保存完整私有工作数据；仓库内唯一的云端任务只负责每天检查公开问题并更新公开安全汇总。
 
 ## 当前页面
 
@@ -15,6 +15,11 @@
 - `playbook.html`：工作方法和完成标准
 
 `content-studio.html`路径为兼容旧链接而保留。页面已经改为只读成果档案，读取`data/content-studio.json`；没有填写表单、在线生成、浏览器草稿、版本审核、登录或数据库。
+
+“问题与反馈”同时读取两份用途不同的数据：
+
+- `data/demand-radar.json`：GitHub Actions每天生成的公开问题线索，只含受控分类、来源链接、处理原因和下一步；不含作者、完整原话、内部草稿或产品Fact ID。
+- `data/user-voice.json`：人工确认后的重复问题、FAQ、研究、内容和产品行动汇总。
 
 ## 本地预览
 
@@ -65,6 +70,10 @@ python3 scripts/test-update-hub-record.py
 ## 当前架构决定
 
 当前继续使用静态 HTML、CSS、JavaScript、JSON、GitHub仓库和GitHub Pages。不接Supabase、Firebase、Cloudflare数据库、登录系统或AI API。
+
+公开问题检查由同一仓库的GitHub Actions每天北京时间09:00运行。它调用固定版本的私有OEDRO扫描代码，使用Tavily和YouTube只读API，并在同一次任务中校验、提交公开安全数据和部署Pages。扫描的SQLite、原始批次和日志只存在于临时云端运行目录，不进入Git。
+
+ChatGPT Work云任务已经完成真实预检：能读取仓库，但创建测试分支返回GitHub集成权限拒绝，因此没有建立ChatGPT定时任务。当前只保留GitHub Actions这一条云端路线。
 
 只有出现真实需求——网页直接编辑并永久保存、多人同时协作、不同用户权限，或私密业务数据必须在线存储——才重新评估后端。
 
