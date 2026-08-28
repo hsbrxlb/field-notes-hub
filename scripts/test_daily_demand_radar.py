@@ -71,6 +71,20 @@ def test_merge_deduplicates_by_signal_id() -> None:
     assert duplicate_count == 1
 
 
+def test_truth_gate_downgrades_existing_items() -> None:
+    existing = RADAR.build_public_item(
+        row("https://www.reddit.com/r/f150/comments/abc/question/", status="DRAFT_READY"),
+        KEY,
+        NOW,
+        False,
+    )
+    assert existing is not None
+    assert existing["triage_status"] == "DRAFT_READY"
+    downgraded = RADAR.enforce_truth_gate([existing], True)
+    assert downgraded[0]["triage_status"] == "NEEDS_FACTS"
+    assert downgraded[0]["next_action"] == "verify_product_facts"
+
+
 def test_prune_seen_drops_old_and_caps_size() -> None:
     old = (datetime.fromisoformat(NOW) - timedelta(days=91)).isoformat()
     state = {
@@ -131,6 +145,7 @@ if __name__ == "__main__":
         test_open_web_is_not_public,
         test_generic_product_question_stays_in_aggregate_only,
         test_merge_deduplicates_by_signal_id,
+        test_truth_gate_downgrades_existing_items,
         test_prune_seen_drops_old_and_caps_size,
         test_state_rejects_raw_or_malformed_fields,
         test_failed_attempt_preserves_last_success_and_items,
