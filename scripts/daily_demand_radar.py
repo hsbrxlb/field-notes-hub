@@ -160,6 +160,16 @@ def merge_items(existing: list[dict[str, Any]], current: list[dict[str, Any]], n
     return items, new_count, duplicate_count
 
 
+def enforce_truth_gate(items: list[dict[str, Any]], blocked: bool) -> list[dict[str, Any]]:
+    output = [dict(item) for item in items]
+    if not blocked:
+        return output
+    for item in output:
+        item["triage_status"] = "NEEDS_FACTS"
+        item["next_action"] = "verify_product_facts"
+    return output
+
+
 def _seed_cursors(db_path: Path, cursors: dict[str, int], now: str) -> None:
     with sqlite3.connect(db_path) as conn:
         for key, value in cursors.items():
@@ -244,7 +254,8 @@ def run_live(scanner_root: Path, output_path: Path, state_path: Path, hmac_key: 
         item for item in (build_public_item(row, hmac_key, now, truth_blocked) for row in _candidate_rows(db_path))
         if item is not None
     ]
-    items, new_count, duplicate_count = merge_items(existing.get("items", []), current_items, now)
+    existing_items = enforce_truth_gate(existing.get("items", []), truth_blocked)
+    items, new_count, duplicate_count = merge_items(existing_items, current_items, now)
     scan_status = str(scan_result.get("status", "FAILED")).lower()
     if scan_status not in {"success", "partial", "failed"}:
         scan_status = "failed"
