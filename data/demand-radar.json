@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-28T00:00:00+00:00",
+  "last_attempt_at": null,
+  "last_success_at": null,
+  "method": "deterministic_external_signal_scan",
+  "status": "not_run",
+  "stale_after_hours": 36,
+  "truth_status": "unknown",
+  "metrics": {
+    "raw_discovered": 0,
+    "accepted": 0,
+    "filtered": 0,
+    "new_actionable": 0,
+    "duplicate_actionable": 0,
+    "open_items": 0
+  },
+  "sources": [
+    { "source": "tavily", "status": "not_run", "accepted_count": 0 },
+    { "source": "youtube", "status": "not_run", "accepted_count": 0 },
+    { "source": "official_facts", "status": "not_run", "accepted_count": 0 }
+  ],
+  "items": []
+}
