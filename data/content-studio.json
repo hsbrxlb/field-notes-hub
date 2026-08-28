@@ -9,6 +9,21 @@
   ],
   "results": [
     {
+      "id": "seo-geo-lab",
+      "date": "2026-08-27",
+      "project": "OEDRO独立站增长",
+      "type": "网站与系统",
+      "category": "system",
+      "title": "SEO与AI搜索本机实验系统",
+      "description": "建立公开站点审计、三个品类九页静态Demo、六十条买家问题和分层测量规则。",
+      "purpose": "在没有官网代码权限时先形成可复核、可交给技术部的实现与验收材料。",
+      "status": "进行中",
+      "related_work": "OEDRO SEO与AI搜索可见度",
+      "links": [
+        {"label": "查看专题", "href": "topic.html?slug=seo-geo"}
+      ]
+    },
+    {
       "id": "brand-voice-system",
       "date": "2026-08-25",
       "project": "OEDRO品牌声音",

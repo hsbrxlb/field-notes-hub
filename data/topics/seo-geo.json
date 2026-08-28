@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "slug": "seo-geo",
+  "title": "OEDRO SEO与AI搜索可见度",
+  "description": "需要时再检查OEDRO.com的页面健康、搜索可见度和AI推荐情况；当前成果是本机工具、页面样板与技术协作材料。",
+  "area": "独立站增长",
+  "status": "进行中",
+  "version": "0.1.0",
+  "public_safe": true,
+  "sections": [
+    {
+      "id": "current",
+      "title": "当前阶段",
+      "paragraphs": [
+        "本机已经建立独立的SEO与AI搜索实验项目，目标站点只有OEDRO.com。Oliver需要时，Codex可以检查公开页面、生成搜索问题，并实际使用当时的网页搜索核对OEDRO是否出现、是否被引用和描述是否准确。",
+        "当前没有OEDRO.com的代码、后台或搜索平台权限，因此这些成果是技术验收与协作材料，不代表官网已经完成改造。"
+      ]
+    },
+    {
+      "id": "milestones",
+      "title": "已经形成",
+      "items": [
+        "公开URL、robots、sitemap、页面元数据、canonical、H1、图片alt和结构化数据的本机审计规则。",
+        "皮卡后盖、踏板和脚垫三个品类共九个静态HTML页面Demo。",
+        "六十条美国买家问题，以及按需抽查、完整复测和来源记录方式。",
+        "技术部可移植的页面字段、重定向、结构化数据和验收规则。"
+      ]
+    },
+    {
+      "id": "baseline",
+      "title": "公开技术基线",
+      "paragraphs": [
+        "2026年8月27日，本机两次按公开sitemap完成全量读取。首次为1,333个URL，后来变为1,295个。进一步对比发现，这是44个旧商品网址移出、6个商品网址加入，净少38个。2026年8月28日下午再次读取仍为1,295个，没有继续减少。以下数量使用第二次全量快照。"
+      ],
+      "rows": [
+        {"label": "页面主标题", "text": "1,294个网址的服务器原文没有H1主标题；抽查浏览器加载后的分类页和商品页，主标题仍然没有补上。"},
+        {"label": "商品信息标记", "text": "1,237个商品网址的服务器原文没有Product商品标记；浏览器加载后会补出商品、价格、库存和评分标记，所以这一项对Google的实际影响需要再验证。"},
+        {"label": "分享预览", "text": "1,295个网址缺少完整Open Graph字段，分享到社交平台或聊天软件时可能无法稳定显示正确标题、说明和图片。"},
+        {"label": "标准网址", "text": "81个网址声明的标准网址与访问网址不一致；另发现15组多个网址指向同一个标准网址。"},
+        {"label": "车型年份", "text": "53个页面的title与description出现最高车型年份不一致。"},
+        {"label": "Sitemap", "text": "全部条目使用同一个lastmod日期，需要确认是否反映真实页面更新时间。"}
+      ]
+    },
+    {
+      "id": "latest-check",
+      "title": "8月28日复查",
+      "rows": [
+        {"label": "当前数量", "text": "公开sitemap仍为1,295个网址，从昨晚到今天下午没有继续变化。"},
+        {"label": "移出的44个网址", "text": "目前都会跳回OEDRO首页，而不是显示找不到页面。搜索引擎会难以判断它们真正替代成了什么商品。"},
+        {"label": "新加入的6个网址", "text": "都是商品页，主要是踏板和一个保险杠商品。"},
+        {"label": "检查方式", "text": "所有定时任务已暂停。以后由Oliver需要时让Codex运行轻量或完整检查。"}
+      ]
+    },
+    {
+      "id": "method",
+      "title": "如何判断有效",
+      "items": [
+        "把页面是否被发现、是否被引用、内容是否进入回答和是否带来访问或销售分开记录。",
+        "自动生成内容前先锁定来源、允许事实、禁止声明和最后核验日期。",
+        "正式接入后先做小范围测试与对照，再决定是否扩大，不把行业经验直接当成本站结果。",
+        "AI引用只算可见度信号，不直接当作自然流量或收入。"
+      ]
+    },
+    {
+      "id": "boundaries",
+      "title": "公开边界",
+      "items": [
+        "不公开精确关键词、内部排名、收入、转化、竞争策略或未确认的商品问题。",
+        "不公开待审正文、用户资料、账号、凭据或完整内部审计报告。",
+        "不自动修改、发布或声称已经优化OEDRO.com。",
+        "本页只记录人工批准的公开安全方法、里程碑和结果。"
+      ]
+    },
+    {
+      "id": "next",
+      "title": "下一步",
+      "rows": [
+        {"label": "按需复查", "text": "Oliver需要时让Codex运行轻量检查；只有明确要求时才做全站和完整AI搜索复测。"},
+        {"label": "技术部接入", "text": "获取网站模板或代码仓库、测试环境和上线回滚方式。"},
+        {"label": "数据接入", "text": "申请Search Console、Bing Webmaster和GA4只读权限。"},
+        {"label": "线上试点", "text": "权限具备后，在三个品类中选择匹配的测试与对照页面，按八周观察结果决定是否扩大。"}
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "Google生成式AI搜索优化指南",
+      "url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "published_or_updated": "2026-05",
+      "supports": "传统SEO基础、可抓取结构、独特内容和Search Console仍是生成式搜索可见度的基础。"
+    },
+    {
+      "label": "OpenAI爬虫说明",
+      "url": "https://platform.openai.com/docs/bots",
+      "published_or_updated": "2026-08-27复核",
+      "supports": "OAI-SearchBot负责ChatGPT搜索可见度，与GPTBot训练用途分开控制。"
+    },
+    {
+      "label": "GEO原始研究",
+      "url": "https://arxiv.org/abs/2311.09735",
+      "published_or_updated": "2024",
+      "supports": "生成式搜索可见度可以分解和实验，但论文结果不能直接当成本站流量承诺。"
+    },
+    {
+      "label": "GEO证据综述",
+      "url": "https://arxiv.org/abs/2607.14035",
+      "published_or_updated": "2026-07",
+      "supports": "当前仍缺少稳定、长期、跨平台的自然发现与业务结果因果证据。"
+    }
+  ]
+}

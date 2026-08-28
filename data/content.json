@@ -329,6 +329,14 @@
     "projects_label": "",
     "projects": [
       {
+        "id": "seo-geo-lab",
+        "name": "OEDRO SEO与AI搜索实验",
+        "status": "进行中",
+        "progress": "本机已形成公开技术审计、三个品类九页静态Demo、六十条买家问题和公开结果边界。",
+          "next": "保留按需检查入口；取得技术部代码、测试环境和搜索数据权限后再启动线上试点。",
+        "dependency": "需要网站模板或代码仓库、测试环境、Search Console、Bing Webmaster和GA4只读权限。"
+      },
+      {
         "id": "user-member-profile",
         "name": "用户与会员资料",
         "status": "待确认",

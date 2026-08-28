@@ -3,6 +3,14 @@
   "description": "按主题查看目标、当前情况、启动条件和后续安排。",
   "items": [
     {
+      "slug": "seo-geo",
+      "title": "OEDRO SEO与AI搜索可见度",
+      "area": "独立站增长",
+      "status": "进行中",
+      "summary": "本机已形成公开技术审计、三个品类九页Demo和六十条买家问题；定时任务已暂停，后续按需检查。",
+      "featured": true
+    },
+    {
       "slug": "discord-community",
       "title": "OEDRO Discord社区",
       "area": "社群",
