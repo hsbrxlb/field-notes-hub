@@ -42,7 +42,7 @@
       "next_action": "verify_product_facts",
       "triage_status": "NEEDS_FACTS",
       "observed_at": "2026-08-28T07:30:35+00:00",
-      "last_seen_at": "2026-08-28T07:30:32+00:00"
+      "last_seen_at": "2026-08-28T07:30:35+00:00"
     },
     {
       "signal_id": "8d1d3a98b97a0d94f1f9cc927d197dec89cb180c0da3e26c164ed2100a6aeb74",
@@ -53,7 +53,7 @@
       "next_action": "verify_product_facts",
       "triage_status": "NEEDS_FACTS",
       "observed_at": "2026-08-28T07:17:37+00:00",
-      "last_seen_at": "2026-08-28T07:17:32+00:00"
+      "last_seen_at": "2026-08-28T07:17:37+00:00"
     },
     {
       "signal_id": "bbce254d17b9e88daedf9d72278198ed351daf8c078f75f855f5f3763ae892f8",
@@ -64,7 +64,7 @@
       "next_action": "verify_product_facts",
       "triage_status": "NEEDS_FACTS",
       "observed_at": "2026-08-28T07:17:37+00:00",
-      "last_seen_at": "2026-08-28T07:17:32+00:00"
+      "last_seen_at": "2026-08-28T07:17:37+00:00"
     }
   ]
 }

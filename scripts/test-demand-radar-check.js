@@ -46,6 +46,7 @@ for (const [label, mutate] of [
   ['unsafe scheme', (copy) => { copy.items[0].source_link = 'javascript:alert(1)'; }],
   ['profile path', (copy) => { copy.items[0].source_link = 'https://www.reddit.com/user/example'; }],
   ['wrong host', (copy) => { copy.items[0].source_link = 'https://example.com/post'; }],
+  ['reversed timestamps', (copy) => { copy.items[0].observed_at = '2026-08-29T00:00:00+00:00'; }],
   ['duplicate id', (copy) => { copy.items.push(structuredClone(copy.items[0])); }]
 ]) {
   const copy = structuredClone(valid);

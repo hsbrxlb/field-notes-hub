@@ -117,6 +117,9 @@ function validateDemandRadar(candidate) {
       if (!allowedNextActions.has(item?.next_action)) issues.push(`demand-radar: items[${index}].next_action is invalid`);
       if (!allowedTriage.has(item?.triage_status)) issues.push(`demand-radar: items[${index}].triage_status is invalid`);
       if (!isIso(item?.observed_at) || !isIso(item?.last_seen_at)) issues.push(`demand-radar: items[${index}] timestamps are invalid`);
+      if (isIso(item?.observed_at) && isIso(item?.last_seen_at) && Date.parse(item.observed_at) > Date.parse(item.last_seen_at)) {
+        issues.push(`demand-radar: items[${index}] observed_at is after last_seen_at`);
+      }
     });
   }
   return issues;
