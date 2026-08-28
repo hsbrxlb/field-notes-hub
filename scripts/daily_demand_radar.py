@@ -225,7 +225,7 @@ def _source_entries(scan_result: dict[str, Any], truth_result: dict[str, Any]) -
 
 
 def run_live(scanner_root: Path, output_path: Path, state_path: Path, hmac_key: str) -> dict[str, Any]:
-    now = utc_now()
+    attempted_at = utc_now()
     existing = load_json(output_path)
     state = load_json(state_path)
     validate_state(state)
@@ -244,27 +244,28 @@ def run_live(scanner_root: Path, output_path: Path, state_path: Path, hmac_key: 
     from oedro_agent.truth import sync_truth  # noqa: PLC0415
 
     init_db()
-    _seed_cursors(db_path, state["cursors"], now)
+    _seed_cursors(db_path, state["cursors"], attempted_at)
     truth_result = sync_truth()
     scan_result = scan("full")
     triage_new()
+    completed_at = utc_now()
     truth_blocked = bool(truth_result.get("stale") or truth_result.get("conflicts") or truth_result.get("failures"))
 
     current_items = [
-        item for item in (build_public_item(row, hmac_key, now, truth_blocked) for row in _candidate_rows(db_path))
+        item for item in (build_public_item(row, hmac_key, completed_at, truth_blocked) for row in _candidate_rows(db_path))
         if item is not None
     ]
     existing_items = enforce_truth_gate(existing.get("items", []), truth_blocked)
-    items, new_count, duplicate_count = merge_items(existing_items, current_items, now)
+    items, new_count, duplicate_count = merge_items(existing_items, current_items, completed_at)
     scan_status = str(scan_result.get("status", "FAILED")).lower()
     if scan_status not in {"success", "partial", "failed"}:
         scan_status = "failed"
-    last_success_at = now if scan_status == "success" else existing.get("last_success_at")
+    last_success_at = completed_at if scan_status == "success" else existing.get("last_success_at")
 
     payload = {
         "schema_version": 1,
-        "generated_at": now,
-        "last_attempt_at": now,
+        "generated_at": completed_at,
+        "last_attempt_at": attempted_at,
         "last_success_at": last_success_at,
         "method": "deterministic_external_signal_scan",
         "status": scan_status,
@@ -285,14 +286,14 @@ def run_live(scanner_root: Path, output_path: Path, state_path: Path, hmac_key: 
     previous_seen = state["seen"]
     for url in _all_urls(db_path):
         signal_id = public_signal_id(url, hmac_key)
-        record = previous_seen.get(signal_id, {"first_seen": now, "last_seen": now})
-        record["last_seen"] = now
+        record = previous_seen.get(signal_id, {"first_seen": completed_at, "last_seen": completed_at})
+        record["last_seen"] = completed_at
         previous_seen[signal_id] = record
     state.update({
-        "updated_at": now,
+        "updated_at": completed_at,
         "cursors": _read_cursors(db_path),
-        "seen": prune_seen(previous_seen, now),
-        "last_run": {"run_id": str(scan_result.get("run_id", "")), "status": scan_status, "attempted_at": now},
+        "seen": prune_seen(previous_seen, completed_at),
+        "last_run": {"run_id": str(scan_result.get("run_id", "")), "status": scan_status, "attempted_at": attempted_at},
     })
     atomic_write(output_path, payload)
     atomic_write(state_path, state)
