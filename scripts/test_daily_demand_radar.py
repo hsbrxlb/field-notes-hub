@@ -20,12 +20,12 @@ NOW = "2026-08-28T01:00:00+00:00"
 KEY = "test-key-never-used-outside-fixtures"
 
 
-def row(url: str, *, status: str = "NEEDS_FACTS", family: str = "reddit") -> dict:
+def row(url: str, *, status: str = "NEEDS_FACTS", family: str = "reddit", direct: int = 1) -> dict:
     return {
         "canonical_url": url,
         "category": "fitment",
         "status": status,
-        "direct_brand": 1,
+        "direct_brand": direct,
         "metadata_json": '{"source_family":"%s"}' % family,
         "published_at": NOW,
         "discovered_at": NOW,
@@ -51,6 +51,15 @@ def test_truth_block_downgrades_draft_ready() -> None:
 
 def test_open_web_is_not_public() -> None:
     assert RADAR.build_public_item(row("https://example.com/post", family="open_web"), KEY, NOW, False) is None
+
+
+def test_generic_product_question_stays_in_aggregate_only() -> None:
+    assert RADAR.build_public_item(
+        row("https://www.reddit.com/r/f150/comments/abc/general-question/", direct=0),
+        KEY,
+        NOW,
+        False,
+    ) is None
 
 
 def test_merge_deduplicates_by_signal_id() -> None:
@@ -120,6 +129,7 @@ if __name__ == "__main__":
         test_public_item_is_controlled_and_does_not_copy_source_text,
         test_truth_block_downgrades_draft_ready,
         test_open_web_is_not_public,
+        test_generic_product_question_stays_in_aggregate_only,
         test_merge_deduplicates_by_signal_id,
         test_prune_seen_drops_old_and_caps_size,
         test_state_rejects_raw_or_malformed_fields,
