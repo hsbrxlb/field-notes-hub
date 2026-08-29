@@ -1,30 +1,30 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-28T10:15:29+00:00",
-  "last_attempt_at": "2026-08-28T10:14:54+00:00",
-  "last_success_at": "2026-08-28T10:15:29+00:00",
+  "generated_at": "2026-08-29T07:36:45+00:00",
+  "last_attempt_at": "2026-08-29T07:36:21+00:00",
+  "last_success_at": "2026-08-29T07:36:45+00:00",
   "method": "deterministic_external_signal_scan",
   "status": "success",
   "stale_after_hours": 36,
   "truth_status": "blocked",
   "metrics": {
-    "raw_discovered": 70,
-    "accepted": 27,
-    "filtered": 43,
+    "raw_discovered": 59,
+    "accepted": 19,
+    "filtered": 40,
     "new_actionable": 0,
-    "duplicate_actionable": 1,
+    "duplicate_actionable": 2,
     "open_items": 3
   },
   "sources": [
     {
       "source": "tavily",
       "status": "ok",
-      "accepted_count": 11
+      "accepted_count": 12
     },
     {
       "source": "youtube",
       "status": "ok",
-      "accepted_count": 16
+      "accepted_count": 7
     },
     {
       "source": "official_facts",
@@ -33,6 +33,28 @@
     }
   ],
   "items": [
+    {
+      "signal_id": "bbce254d17b9e88daedf9d72278198ed351daf8c078f75f855f5f3763ae892f8",
+      "topic": "recommendation",
+      "source_family": "reddit",
+      "source_link": "https://www.reddit.com/r/chevycolorado/comments/1scctq2/oedro_running_boards",
+      "reason_code": "direct_oedro_question",
+      "next_action": "verify_product_facts",
+      "triage_status": "NEEDS_FACTS",
+      "observed_at": "2026-08-29T07:36:26+00:00",
+      "last_seen_at": "2026-08-29T07:36:45+00:00"
+    },
+    {
+      "signal_id": "8d1d3a98b97a0d94f1f9cc927d197dec89cb180c0da3e26c164ed2100a6aeb74",
+      "topic": "complaint",
+      "source_family": "reddit",
+      "source_link": "https://www.reddit.com/r/f150/comments/1qyjgj7/hard_tonneau_worth_it",
+      "reason_code": "direct_oedro_question",
+      "next_action": "verify_product_facts",
+      "triage_status": "NEEDS_FACTS",
+      "observed_at": "2026-08-29T07:36:26+00:00",
+      "last_seen_at": "2026-08-29T07:36:45+00:00"
+    },
     {
       "signal_id": "c22db03dfdbf6d235cbc4d7a73984ce6f684c2cb2410592d238e2c1775f2cb58",
       "topic": "complaint",
@@ -43,28 +65,6 @@
       "triage_status": "NEEDS_FACTS",
       "observed_at": "2026-08-28T10:15:02+00:00",
       "last_seen_at": "2026-08-28T10:15:29+00:00"
-    },
-    {
-      "signal_id": "bbce254d17b9e88daedf9d72278198ed351daf8c078f75f855f5f3763ae892f8",
-      "topic": "recommendation",
-      "source_family": "reddit",
-      "source_link": "https://www.reddit.com/r/chevycolorado/comments/1scctq2/oedro_running_boards",
-      "reason_code": "direct_oedro_question",
-      "next_action": "verify_product_facts",
-      "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-08-28T08:13:27+00:00",
-      "last_seen_at": "2026-08-28T08:13:52+00:00"
-    },
-    {
-      "signal_id": "8d1d3a98b97a0d94f1f9cc927d197dec89cb180c0da3e26c164ed2100a6aeb74",
-      "topic": "complaint",
-      "source_family": "reddit",
-      "source_link": "https://www.reddit.com/r/f150/comments/1qyjgj7/hard_tonneau_worth_it",
-      "reason_code": "direct_oedro_question",
-      "next_action": "verify_product_facts",
-      "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-08-28T07:17:37+00:00",
-      "last_seen_at": "2026-08-28T07:17:37+00:00"
     }
   ]
 }
