@@ -71,7 +71,7 @@ python3 scripts/test-update-hub-record.py
 
 当前继续使用静态 HTML、CSS、JavaScript、JSON、GitHub仓库和GitHub Pages。不接Supabase、Firebase、Cloudflare数据库、登录系统或AI API。
 
-公开问题检查由同一仓库的GitHub Actions每天北京时间09:00运行。它调用固定版本的私有OEDRO扫描代码，使用Tavily和YouTube只读API，并在同一次任务中校验、提交公开安全数据和部署Pages。扫描的SQLite、原始批次和日志只存在于临时云端运行目录，不进入Git。
+公开问题检查由同一仓库的GitHub Actions每天北京时间09:17运行。选择非整点是为了降低GitHub Actions整点高负载造成的排队延迟；定时任务仍属于尽力调度，不保证分秒准时。它调用固定版本的私有OEDRO扫描代码，使用Tavily和YouTube只读API，并在同一次任务中校验、提交公开安全数据和部署Pages。扫描的SQLite、原始批次和日志只存在于临时云端运行目录，不进入Git。
 
 ChatGPT Work云任务已经完成真实预检：能读取仓库，但创建测试分支返回GitHub集成权限拒绝，因此没有建立ChatGPT定时任务。当前只保留GitHub Actions这一条云端路线。
 
