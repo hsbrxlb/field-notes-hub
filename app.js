@@ -212,7 +212,7 @@ function smartSurveyMarkup(r) {
       <ol class="smart-survey-steps">${r.case_steps.map((item) => `<li><span>${escapeHtml(item.number)}</span><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.text)}</p></div></li>`).join('')}</ol>
       <p class="smart-survey-note">${escapeHtml(r.case_note)}</p>
     </div>
-    <figure class="smart-survey-visual"><img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="${escapeHtml(image.width)}" height="${escapeHtml(image.height)}" loading="lazy" decoding="async"></figure>
+    <figure class="smart-survey-visual"><img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="${escapeHtml(image.width)}" height="${escapeHtml(image.height)}" loading="eager" decoding="async" fetchpriority="high"></figure>
   </div>`;
 }
 
