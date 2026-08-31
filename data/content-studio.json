@@ -69,18 +69,18 @@
       ]
     },
     {
-      "id": "light-lab-concept",
-      "date": "2026-08-24",
-      "project": "工作灯研究",
+      "id": "ai-smart-survey",
+      "date": "2026-08-31",
+      "project": "AI智能对话问卷",
       "type": "研究与方案",
       "category": "research",
-      "title": "Light Lab概念展示",
-      "description": "保留访谈预约、录音授权、追问和产品概念测试的早期交互展示；它仍是概念，不代表已经上线。",
-      "purpose": "帮助讨论未来研究工具可能支持的业务决定。",
-      "status": "概念",
-      "related_work": "工作灯研究",
+      "title": "AI智能对话问卷",
+      "description": "把问卷目的和背景资料转成由 AI 主持的对话问卷，并保留可追溯的原始回答和整理结果。",
+      "purpose": "记录可复用的问卷制作方向，不局限于单一产品或研究主题。",
+      "status": "进行中",
+      "related_work": "通用 AI智能对话问卷工具",
       "links": [
-        { "label": "查看研究页", "href": "research.html" }
+        { "label": "查看介绍", "href": "research.html" }
       ]
     },
     {

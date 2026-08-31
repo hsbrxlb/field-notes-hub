@@ -202,8 +202,18 @@ function researchRightsMarkup(r) {
   return `<div class="rights-list">${r.rights_groups.map((group) => `<section data-searchable><h3>${escapeHtml(group.title)}</h3>${group.items.map((item) => `<p>${escapeHtml(item)}</p>`).join('')}</section>`).join('')}</div>`;
 }
 
-function researchCaseMarkup(r) {
-  return `<p class="tab-intro">${escapeHtml(r.case_text)}</p><div class="light-lab-gallery">${r.case_images.map((item) => `<figure class="light-lab-figure light-lab-${escapeHtml(item.orientation)}"><img src="${escapeHtml(item.src)}" alt="${escapeHtml(item.alt)}" width="${escapeHtml(item.width)}" height="${escapeHtml(item.height)}" loading="lazy" decoding="async"><figcaption>${escapeHtml(item.caption)}</figcaption></figure>`).join('')}</div>`;
+function smartSurveyMarkup(r) {
+  const image = r.case_image;
+  return `<div class="smart-survey-case" data-searchable>
+    <div class="smart-survey-copy">
+      <span class="eyebrow">${escapeHtml(r.case_label)}</span>
+      <h2>${escapeHtml(r.case_title)}</h2>
+      <p class="tab-intro">${escapeHtml(r.case_text)}</p>
+      <ol class="smart-survey-steps">${r.case_steps.map((item) => `<li><span>${escapeHtml(item.number)}</span><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.text)}</p></div></li>`).join('')}</ol>
+      <p class="smart-survey-note">${escapeHtml(r.case_note)}</p>
+    </div>
+    <figure class="smart-survey-visual"><img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="${escapeHtml(image.width)}" height="${escapeHtml(image.height)}" loading="lazy" decoding="async"></figure>
+  </div>`;
 }
 
 function renderResearchPanel(data, tabId) {
@@ -216,7 +226,7 @@ function renderResearchPanel(data, tabId) {
     methods: researchMethodsMarkup(r),
     programs: researchProgramsMarkup(r),
     rights: researchRightsMarkup(r),
-    lightlab: researchCaseMarkup(r)
+    'smart-survey': smartSurveyMarkup(r)
   };
   panel.innerHTML = panels[tabId] || panels.current;
 }
@@ -225,7 +235,7 @@ function renderResearch(data) {
   const r = data.research;
   document.title = `用户研究｜${data.site.title}`;
   document.querySelector('meta[name="description"]').content = r.meta_description;
-  const tabs = [['current', '当前研究'], ['methods', '研究方法'], ['programs', '参与方式'], ['rights', '用户权利'], ['lightlab', 'Light Lab']];
+  const tabs = [['current', '当前研究'], ['methods', '研究方法'], ['programs', '参与方式'], ['rights', '用户权利'], ['smart-survey', 'AI智能对话问卷']];
   document.querySelector('#content').innerHTML = `
     ${pageHeading('用户研究')}
     <section class="section research-surface">

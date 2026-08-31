@@ -451,7 +451,7 @@
     ]
   },
   "research": {
-    "meta_description": "OEDRO海外用户研究与参与，包括研究方法、参与项目、用户权利和Light Lab案例。",
+    "meta_description": "OEDRO海外用户研究与参与，包括研究方法、参与项目、用户权利和AI智能对话问卷。",
     "title": "用户研究",
     "description": "",
     "methods_title": "研究方法",
@@ -550,43 +550,33 @@
         ]
       }
     ],
-    "case_title": "Light Lab 概念方案",
-    "case_label": "",
-    "case_text": "Light Lab 是一套早期交互方案。下面的画面展示了访谈预约、录音授权、AI追问和产品概念测试；开发情况仍需确认。",
-    "case_images": [
+    "case_title": "AI智能对话问卷",
+    "case_label": "可复用工具方向",
+    "case_text": "把问卷目的和背景资料交给本地 AI，它会生成一套由 AI 主持的智能对话问卷。用户在网页中自然回答，AI 按规则继续追问。完成后，系统保留原始回答，并整理出可追溯的主题、分歧和建议。",
+    "case_steps": [
       {
-        "src": "assets/light-lab/desktop-concept-test.png",
-        "alt": "Light Lab 桌面端概念测试界面，展示灯具安装位置、光型、价格和安装方式选择",
-        "caption": "桌面端：测试安装位置、光型、价格和安装方式。",
-        "orientation": "landscape",
-        "width": 1672,
-        "height": 941
+        "number": "01",
+        "title": "提供问卷目的与资料",
+        "text": "明确要回答的问题、目标用户和可展示材料。"
       },
       {
-        "src": "assets/light-lab/desktop-ai-followup.png",
-        "alt": "Light Lab 桌面端 AI 追问界面，根据用户的真实使用经历继续提问",
-        "caption": "桌面端：根据真实使用经历继续追问。",
-        "orientation": "landscape",
-        "width": 1672,
-        "height": 941
+        "number": "02",
+        "title": "用户完成智能对话问卷",
+        "text": "AI 按固定规则提问和追问，用户用熟悉的语言回答。"
       },
       {
-        "src": "assets/light-lab/mobile-booking-consent.png",
-        "alt": "Light Lab 手机端访谈预约和录音授权界面",
-        "caption": "手机端：选择访谈方式、时间并确认录音授权。",
-        "orientation": "portrait",
-        "width": 941,
-        "height": 1672
-      },
-      {
-        "src": "assets/light-lab/mobile-ai-followup.png",
-        "alt": "Light Lab 手机端 AI 追问界面，根据回答继续询问灯具安装和使用问题",
-        "caption": "手机端：根据回答继续追问具体使用问题。",
-        "orientation": "portrait",
-        "width": 941,
-        "height": 1672
+        "number": "03",
+        "title": "整理原话与结论",
+        "text": "保留原始回答，归纳共同点、分歧和证据不足之处。"
       }
     ],
+    "case_image": {
+      "src": "assets/ai-smart-survey/ai-smart-conversational-survey.png",
+      "alt": "抽象示意图：背景资料进入AI智能对话问卷，用户回答最后整理为可追溯的主题、分歧和建议",
+      "width": 1586,
+      "height": 992
+    },
+    "case_note": "Hub 只记录这项可复用能力，不提供真实问卷入口。",
     "entry_title": "统一研究资料",
     "entry_label": "",
     "entry_text": "把用户招募、参与记录和研究结果放在同一处，后续工作更容易继续使用。",

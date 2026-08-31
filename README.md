@@ -8,7 +8,7 @@
 
 - `index.html`：最近完成、当前重点、下一步、关键决定和成果入口
 - `work.html`：项目状态、待办、阻塞和下一动作
-- `research.html`：研究项目、方法、参与方式、用户权利和概念展示
+- `research.html`：研究项目、方法、参与方式、用户权利和 AI智能对话问卷介绍
 - `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
 - `content-studio.html`：已经形成的内容、研究、方案和工作成果
 - `topics.html`与`topic.html`：专题、稳定方法和经验记录

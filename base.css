@@ -162,7 +162,8 @@ p, ul, ol, dl, figure { margin-top: 0; }
 .project-table th:nth-child(2) { width: 9%; }
 .project-table th:nth-child(3), .project-table th:nth-child(4), .project-table th:nth-child(5) { width: 25.33%; }
 
-.tabs { display: flex; gap: 3px; overflow-x: auto; padding-bottom: 8px; border-bottom: 1px solid var(--border-strong); }
+.tabs { display: flex; gap: 3px; overflow-x: auto; padding-bottom: 8px; border-bottom: 1px solid var(--border-strong); scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
 .tabs button { min-height: 34px; padding: 0 12px; color: var(--text-muted); white-space: nowrap; background: transparent; border: 0; border-radius: 3px; cursor: pointer; }
 .tabs button:hover { color: var(--text); background: var(--nav-hover); }
 .tabs button.active { color: var(--nav-active-text); background: var(--nav-active); }
@@ -179,11 +180,17 @@ p, ul, ol, dl, figure { margin-top: 0; }
 .rights-list section:nth-child(even) { padding-left: 22px; }
 .rights-list p { margin: 0; color: var(--text-muted); }
 .tab-intro { max-width: 760px; color: var(--text-muted); }
-.light-lab-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 18px; }
-.light-lab-figure { margin: 0; }
-.light-lab-figure img { display: block; width: 100%; height: auto; background: #080b0d; border: 1px solid var(--border); border-radius: 4px; }
-.light-lab-portrait img { max-width: 420px; margin: 0 auto; }
-.light-lab-figure figcaption { margin-top: 6px; color: var(--text-muted); font-size: 11px; }
+.smart-survey-case { display: grid; grid-template-columns: minmax(0, .92fr) minmax(360px, 1.08fr); gap: 46px; align-items: start; }
+.smart-survey-copy h2 { max-width: 520px; margin: 7px 0 10px; font-family: var(--font-heading); font-size: 30px; line-height: 1.22; }
+.smart-survey-copy .tab-intro { margin: 0; font-size: 14px; line-height: 1.8; }
+.smart-survey-steps { margin: 26px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--border-strong); }
+.smart-survey-steps li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.smart-survey-steps li > span { padding-top: 2px; color: var(--accent); font-size: 12px; font-weight: 700; }
+.smart-survey-steps strong { display: block; font-size: 14px; }
+.smart-survey-steps p { margin: 4px 0 0; color: var(--text-muted); font-size: 12px; line-height: 1.65; }
+.smart-survey-note { margin: 16px 0 0; color: var(--text-faint); font-size: 12px; }
+.smart-survey-visual { margin: 0; }
+.smart-survey-visual img { display: block; width: 100%; height: auto; background: #080b0d; border: 1px solid var(--border); border-radius: 5px; }
 
 .user-voice-surface { max-width: 980px; }
 .voice-workflow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--border-strong); }
@@ -284,7 +291,7 @@ p, ul, ol, dl, figure { margin-top: 0; }
   .workspace-links small, .method-rail span, .method-grid h3,
   .filter-row label, .count-note, .status-legend > summary,
   .status-legend p span:last-child, .pinned-focus > span, .data-table th,
-  .current-research dt, .light-lab-figure figcaption, .voice-workflow span,
+  .current-research dt, .smart-survey-steps li > span, .voice-workflow span,
   .topic-toc strong, .topic-toc a, .source-list p, .related-page-list p,
   .result-date, .result-facts dt, .result-link-muted, .section-note
 ) { font-size: 12px; }
@@ -337,7 +344,9 @@ p, ul, ol, dl, figure { margin-top: 0; }
   .topic-toc { position: static; display: flex; gap: 10px; overflow-x: auto; padding: 14px 0 4px; border-bottom: 1px solid var(--border); }
   .topic-toc strong { display: none; }
   .topic-toc a { flex: 0 0 auto; padding: 5px 8px; border: 1px solid var(--border); border-radius: 3px; }
-  .light-lab-gallery { grid-template-columns: 1fr; }
+  .smart-survey-case { grid-template-columns: 1fr; gap: 28px; }
+  .smart-survey-copy h2 { font-size: 26px; }
+  .smart-survey-visual { order: -1; }
   .result-entry-head { gap: 12px; }
   .result-entry h2 { font-size: 18px; }
   .result-facts { gap: 9px; }
