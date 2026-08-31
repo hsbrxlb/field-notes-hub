@@ -1,27 +1,111 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-30T06:10:09+00:00",
+  "updated_at": "2026-08-31T06:35:04+00:00",
   "query_plan_revision": "01291bdb03d92280747c7cab646eee5cc8ee9e0b",
   "cursors": {
-    "query-plan:tavily:full|brand_depth": 3,
-    "query-plan:tavily:full|forum_f150_maverick": 2,
-    "query-plan:tavily:full|forum_jeep": 2,
-    "query-plan:tavily:full|forum_ram_gm": 0,
-    "query-plan:tavily:full|forum_toyota": 0,
-    "query-plan:tavily:full|matrix_cover_mats": 2,
-    "query-plan:tavily:full|matrix_steps_bumper": 0,
-    "query-plan:tavily:full|open_web_questions": 0,
-    "query-plan:tavily:full|reddit_brand": 0,
-    "query-plan:tavily:full|reddit_trucks": 0,
-    "query-plan:youtube:full|youtube_brand": 0,
-    "query-plan:youtube:full|youtube_cover_mats": 0,
-    "query-plan:youtube:full|youtube_owner_questions": 0,
-    "query-plan:youtube:full|youtube_steps_bumper": 0
+    "query-plan:tavily:full|brand_depth": 4,
+    "query-plan:tavily:full|forum_f150_maverick": 0,
+    "query-plan:tavily:full|forum_jeep": 0,
+    "query-plan:tavily:full|forum_ram_gm": 1,
+    "query-plan:tavily:full|forum_toyota": 1,
+    "query-plan:tavily:full|matrix_cover_mats": 0,
+    "query-plan:tavily:full|matrix_steps_bumper": 1,
+    "query-plan:tavily:full|open_web_questions": 1,
+    "query-plan:tavily:full|reddit_brand": 1,
+    "query-plan:tavily:full|reddit_trucks": 1,
+    "query-plan:youtube:full|youtube_brand": 1,
+    "query-plan:youtube:full|youtube_cover_mats": 1,
+    "query-plan:youtube:full|youtube_owner_questions": 1,
+    "query-plan:youtube:full|youtube_steps_bumper": 1
   },
   "seen": {
+    "fa07feb4ebbd0e69d5f1d134668aa5a2b41f9b26befbf93c5d0b663fe88754d6": {
+      "first_seen": "2026-08-31T06:35:04+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
     "f6356a99059438f962fd2e197e95a19aa51a7f2f9a20717c675d8278556c3d30": {
       "first_seen": "2026-08-28T07:13:15+00:00",
-      "last_seen": "2026-08-30T06:10:09+00:00"
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "f329a62705f80e67509793eff8ac88a29ed3188df9bbea42ae33532894686d97": {
+      "first_seen": "2026-08-31T06:35:04+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "dd9a4657f5c62316316e4afbe1e2fa2049d3b192ec5ef518b1daf6b7bfb326f0": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "d842877be9331a44a94abe89d648690e171fd20e00b7d8f792516778a2183b82": {
+      "first_seen": "2026-08-31T06:35:04+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "cf17a860a6dd81a6f86c596d20ec82e6813f0afb6aa3ffcddc90f9f67e8ff340": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "caecf45f91089d7c38da29e580fa87370e7570964ccf476b4845279f685c122f": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "bbce254d17b9e88daedf9d72278198ed351daf8c078f75f855f5f3763ae892f8": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "b9f040d6b70e18041703c56a98d0a2e048111f59dfb6d9ab8e6fa280bb2d0ae3": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "b25a7341c14ce2d0d073540976f758d59ab05180ebcd6121d35e7c006a2419f2": {
+      "first_seen": "2026-08-31T06:35:04+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "a90804c7715a12b3c24268787992629b61fad4fd7abc014380dbdff5b81fd7cb": {
+      "first_seen": "2026-08-31T06:35:04+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "995488a95e543740aa17f55ce009641f1f52e3262fd2d60f8f51cb032a95eed4": {
+      "first_seen": "2026-08-31T06:35:04+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "8d1d3a98b97a0d94f1f9cc927d197dec89cb180c0da3e26c164ed2100a6aeb74": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "6f277d1597fe871a4156b8b5cb383c660ae85151e291ebcf27eec6138d26f32d": {
+      "first_seen": "2026-08-28T10:15:29+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "688caf36341e753200b64f8b0772099ec66b2c997de2100bfd65b6d9164ecaad": {
+      "first_seen": "2026-08-31T06:35:04+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "5c5a0e419590728b45d8a67eb87a992e25281d9f51c62c0edbfa54ac874017db": {
+      "first_seen": "2026-08-31T06:35:04+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "444953dddbfccf813bd92a89514ec7e770ae1ebb3bfdc7946dea3143a6e299d9": {
+      "first_seen": "2026-08-29T07:36:45+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "3f1c40a6c0ee5d257308fd7bd0e1d407aeccb3608456a0a75dba1eb0765d6577": {
+      "first_seen": "2026-08-31T06:35:04+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "3b46c2a9247206af3412d2fbbb28589e3d5216a8ea59c3cd8582784be34e0fbb": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "2328ae4e5fb28d90d773a704b7e3f57fcf9550009ef42383853b40c649b26cf3": {
+      "first_seen": "2026-08-28T07:17:32+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "1ced75fe9ecc3b73fcb6a5325ce6da5c96b7a7a5d261b641dacea85cde590561": {
+      "first_seen": "2026-08-28T07:07:56+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
+    },
+    "0efda6a210293180a6367e333cf8b49005c3a0376329e12084f4227f97fb2955": {
+      "first_seen": "2026-08-31T06:35:04+00:00",
+      "last_seen": "2026-08-31T06:35:04+00:00"
     },
     "f422d6300da84b17b57642b2c2a4c62375aa369c6055668169809be9bc0573d8": {
       "first_seen": "2026-08-28T07:13:15+00:00",
@@ -123,26 +207,6 @@
       "first_seen": "2026-08-28T07:07:56+00:00",
       "last_seen": "2026-08-29T07:36:45+00:00"
     },
-    "dd9a4657f5c62316316e4afbe1e2fa2049d3b192ec5ef518b1daf6b7bfb326f0": {
-      "first_seen": "2026-08-28T07:07:56+00:00",
-      "last_seen": "2026-08-29T07:36:45+00:00"
-    },
-    "cf17a860a6dd81a6f86c596d20ec82e6813f0afb6aa3ffcddc90f9f67e8ff340": {
-      "first_seen": "2026-08-28T07:07:56+00:00",
-      "last_seen": "2026-08-29T07:36:45+00:00"
-    },
-    "caecf45f91089d7c38da29e580fa87370e7570964ccf476b4845279f685c122f": {
-      "first_seen": "2026-08-28T07:07:56+00:00",
-      "last_seen": "2026-08-29T07:36:45+00:00"
-    },
-    "bbce254d17b9e88daedf9d72278198ed351daf8c078f75f855f5f3763ae892f8": {
-      "first_seen": "2026-08-28T07:07:56+00:00",
-      "last_seen": "2026-08-29T07:36:45+00:00"
-    },
-    "b9f040d6b70e18041703c56a98d0a2e048111f59dfb6d9ab8e6fa280bb2d0ae3": {
-      "first_seen": "2026-08-28T07:07:56+00:00",
-      "last_seen": "2026-08-29T07:36:45+00:00"
-    },
     "b564da72ddab9b5287edd61071d611ffb6f315616f54f5d661c10c1d67d11175": {
       "first_seen": "2026-08-29T07:36:45+00:00",
       "last_seen": "2026-08-29T07:36:45+00:00"
@@ -155,14 +219,6 @@
       "first_seen": "2026-08-28T07:07:56+00:00",
       "last_seen": "2026-08-29T07:36:45+00:00"
     },
-    "8d1d3a98b97a0d94f1f9cc927d197dec89cb180c0da3e26c164ed2100a6aeb74": {
-      "first_seen": "2026-08-28T07:07:56+00:00",
-      "last_seen": "2026-08-29T07:36:45+00:00"
-    },
-    "444953dddbfccf813bd92a89514ec7e770ae1ebb3bfdc7946dea3143a6e299d9": {
-      "first_seen": "2026-08-29T07:36:45+00:00",
-      "last_seen": "2026-08-29T07:36:45+00:00"
-    },
     "43ae3507e67407b6d91c7ae3f6b20650a5022153ef35136cb313d62ae12be57f": {
       "first_seen": "2026-08-28T07:13:15+00:00",
       "last_seen": "2026-08-29T07:36:45+00:00"
@@ -171,20 +227,12 @@
       "first_seen": "2026-08-29T07:36:45+00:00",
       "last_seen": "2026-08-29T07:36:45+00:00"
     },
-    "3b46c2a9247206af3412d2fbbb28589e3d5216a8ea59c3cd8582784be34e0fbb": {
-      "first_seen": "2026-08-28T07:07:56+00:00",
-      "last_seen": "2026-08-29T07:36:45+00:00"
-    },
     "29261ed2d0efdd5d380e744cc1df4a249e039a1e9a00c94eee5432abedcb85f1": {
       "first_seen": "2026-08-29T07:36:45+00:00",
       "last_seen": "2026-08-29T07:36:45+00:00"
     },
     "1e4c2db6eae7656aa8be64e1abd6469f5d0b744163771ad59b82193f4035b992": {
       "first_seen": "2026-08-29T07:36:45+00:00",
-      "last_seen": "2026-08-29T07:36:45+00:00"
-    },
-    "1ced75fe9ecc3b73fcb6a5325ce6da5c96b7a7a5d261b641dacea85cde590561": {
-      "first_seen": "2026-08-28T07:07:56+00:00",
       "last_seen": "2026-08-29T07:36:45+00:00"
     },
     "0facdd404eee1749953e1824dd7898b32508dfc8c22f845a16f91dd0e8c13d96": {
@@ -203,16 +251,8 @@
       "first_seen": "2026-08-28T10:15:29+00:00",
       "last_seen": "2026-08-28T10:15:29+00:00"
     },
-    "6f277d1597fe871a4156b8b5cb383c660ae85151e291ebcf27eec6138d26f32d": {
-      "first_seen": "2026-08-28T10:15:29+00:00",
-      "last_seen": "2026-08-28T10:15:29+00:00"
-    },
     "3bc532fc9d4e949c94a2fabec8494c0e33e454964005fc3e37e1c6710c6d7670": {
       "first_seen": "2026-08-28T10:15:29+00:00",
-      "last_seen": "2026-08-28T10:15:29+00:00"
-    },
-    "2328ae4e5fb28d90d773a704b7e3f57fcf9550009ef42383853b40c649b26cf3": {
-      "first_seen": "2026-08-28T07:17:32+00:00",
       "last_seen": "2026-08-28T10:15:29+00:00"
     },
     "10ba15231888c6fa94915523a60f71e728ca479765150e6eb09c6bd604a4fe34": {
@@ -277,8 +317,8 @@
     }
   },
   "last_run": {
-    "run_id": "run-80227e76cce14b2496fade5c45a81c3b",
+    "run_id": "run-2826053caff34552a1d89993d2078260",
     "status": "success",
-    "attempted_at": "2026-08-30T06:09:41+00:00"
+    "attempted_at": "2026-08-31T06:34:34+00:00"
   }
 }
