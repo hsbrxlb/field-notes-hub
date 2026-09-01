@@ -19,7 +19,7 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "data" / "demand-radar.json"
 DEFAULT_STATE = ROOT / ".github" / "demand-radar-state.json"
-SCANNER_REVISION = "01291bdb03d92280747c7cab646eee5cc8ee9e0b"
+SCANNER_REVISION = "02da543ebab45747fc34f00af43219414736f6ea"
 ALLOWED_TOPICS = {
     "complaint", "support", "installation", "fitment", "recommendation",
     "tonneau_cover", "running_boards", "floor_mats", "bumper", "general",
@@ -224,6 +224,25 @@ def _source_entries(scan_result: dict[str, Any], truth_result: dict[str, Any]) -
     ]
 
 
+def _youtube_public_metrics(scan_result: dict[str, Any]) -> dict[str, int]:
+    stats = scan_result.get("youtube_fetch_stats", {})
+
+    def count(name: str) -> int:
+        try:
+            return max(0, int(stats.get(name, 0) or 0))
+        except (TypeError, ValueError):
+            return 0
+
+    top_level = count("top_level_comments")
+    replies = count("embedded_replies")
+    return {
+        "youtube_videos_checked": count("videos_returned"),
+        "youtube_comments_checked": top_level + replies,
+        "youtube_replies_checked": replies,
+        "youtube_unavailable_videos": count("unavailable_videos"),
+    }
+
+
 def run_live(scanner_root: Path, output_path: Path, state_path: Path, hmac_key: str) -> dict[str, Any]:
     attempted_at = utc_now()
     existing = load_json(output_path)
@@ -262,6 +281,7 @@ def run_live(scanner_root: Path, output_path: Path, state_path: Path, hmac_key: 
         scan_status = "failed"
     last_success_at = completed_at if scan_status == "success" else existing.get("last_success_at")
 
+    youtube_metrics = _youtube_public_metrics(scan_result)
     payload = {
         "schema_version": 1,
         "generated_at": completed_at,
@@ -278,6 +298,7 @@ def run_live(scanner_root: Path, output_path: Path, state_path: Path, hmac_key: 
             "new_actionable": new_count,
             "duplicate_actionable": duplicate_count,
             "open_items": len(items),
+            **youtube_metrics,
         },
         "sources": _source_entries(scan_result, truth_result),
         "items": items,
@@ -313,6 +334,10 @@ def write_failed_attempt(output_path: Path, attempted_at: str) -> dict[str, Any]
         "new_actionable": 0,
         "duplicate_actionable": 0,
         "open_items": len(existing.get("items", [])),
+        "youtube_videos_checked": 0,
+        "youtube_comments_checked": 0,
+        "youtube_replies_checked": 0,
+        "youtube_unavailable_videos": 0,
     }
     payload["sources"] = [
         {"source": "tavily", "status": "failed", "accepted_count": 0},

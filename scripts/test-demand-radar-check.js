@@ -18,7 +18,11 @@ const valid = {
     filtered: 9,
     new_actionable: 1,
     duplicate_actionable: 0,
-    open_items: 1
+    open_items: 1,
+    youtube_videos_checked: 3,
+    youtube_comments_checked: 21,
+    youtube_replies_checked: 4,
+    youtube_unavailable_videos: 1
   },
   sources: [
     { source: 'tavily', status: 'ok', accepted_count: 2 },

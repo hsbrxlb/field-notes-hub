@@ -13,7 +13,8 @@ const allowedTopLevel = new Set([
 ]);
 const allowedMetricFields = new Set([
   'raw_discovered', 'accepted', 'filtered', 'new_actionable',
-  'duplicate_actionable', 'open_items'
+  'duplicate_actionable', 'open_items', 'youtube_videos_checked',
+  'youtube_comments_checked', 'youtube_replies_checked', 'youtube_unavailable_videos'
 ]);
 const allowedSourceFields = new Set(['source', 'status', 'accepted_count']);
 const allowedItemFields = new Set([

@@ -13,7 +13,11 @@
     "filtered": 20,
     "new_actionable": 0,
     "duplicate_actionable": 0,
-    "open_items": 3
+    "open_items": 3,
+    "youtube_videos_checked": 0,
+    "youtube_comments_checked": 0,
+    "youtube_replies_checked": 0,
+    "youtube_unavailable_videos": 0
   },
   "sources": [
     {
