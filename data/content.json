@@ -572,7 +572,7 @@
     ],
     "case_image": {
       "src": "assets/ai-smart-survey/ai-smart-conversational-survey.webp",
-      "alt": "抽象示意图：背景资料进入AI智能对话问卷，用户回答最后整理为可追溯的主题、分歧和建议",
+      "alt": "三步示意图：提供问卷资料、用户完成AI智能对话问卷、系统整理原话与结论",
       "width": 1586,
       "height": 992
     },
