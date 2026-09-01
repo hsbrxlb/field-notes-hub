@@ -18,7 +18,7 @@
     },
     {
       "id": "research",
-      "label": "用户研究",
+      "label": "用户调研/问卷",
       "file": "research.html"
     },
     {
@@ -451,10 +451,10 @@
     ]
   },
   "research": {
-    "meta_description": "OEDRO海外用户研究与参与，包括研究方法、参与项目、用户权利和AI智能对话问卷。",
-    "title": "用户研究",
+    "meta_description": "OEDRO海外用户调研与问卷，包括调研方法、参与项目、用户权利和AI智能对话问卷。",
+    "title": "用户调研/问卷",
     "description": "",
-    "methods_title": "研究方法",
+    "methods_title": "调研方法",
     "methods_label": "",
     "methods": [
       {
@@ -621,8 +621,8 @@
     "related_title": "相关记录",
     "related": [
       {
-        "label": "用户研究",
-        "description": "查看研究方法、参与方式和用户权利。",
+        "label": "用户调研/问卷",
+        "description": "查看调研方法、参与方式和用户权利。",
         "file": "research.html"
       },
       {

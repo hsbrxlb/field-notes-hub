@@ -47,7 +47,7 @@ function navDescription(data, id) {
   return ({
     playbook: '稳定的工作原则和完成标准',
     work: '项目状态、待办、阻塞和下一步',
-    research: '当前研究、方法、参与方式和用户权利',
+    research: '当前调研、调研方法、参与方式和用户权利',
     voice: '公开问题处理工作的阶段性汇总',
     studio: '已经形成的内容、研究、方案和工作成果',
     topics: '关键决定、稳定方法和专题经验'
@@ -233,13 +233,13 @@ function renderResearchPanel(data, tabId) {
 
 function renderResearch(data) {
   const r = data.research;
-  document.title = `用户研究｜${data.site.title}`;
+  document.title = `用户调研/问卷｜${data.site.title}`;
   document.querySelector('meta[name="description"]').content = r.meta_description;
-  const tabs = [['current', '当前研究'], ['methods', '研究方法'], ['programs', '参与方式'], ['rights', '用户权利'], ['smart-survey', 'AI智能对话问卷']];
+  const tabs = [['current', '当前调研'], ['methods', '调研方法'], ['programs', '参与方式'], ['rights', '用户权利'], ['smart-survey', 'AI智能对话问卷']];
   document.querySelector('#content').innerHTML = `
-    ${pageHeading('用户研究')}
+    ${pageHeading('用户调研/问卷')}
     <section class="section research-surface">
-      <div class="tabs" role="tablist" aria-label="用户研究内容">${tabs.map(([id, label], index) => `<button type="button" role="tab" aria-selected="${index === 0}" data-research-tab="${id}" class="${index === 0 ? 'active' : ''}">${label}</button>`).join('')}</div>
+      <div class="tabs" role="tablist" aria-label="用户调研和问卷内容">${tabs.map(([id, label], index) => `<button type="button" role="tab" aria-selected="${index === 0}" data-research-tab="${id}" class="${index === 0 ? 'active' : ''}">${label}</button>`).join('')}</div>
       <div class="research-panel" id="research-panel" role="tabpanel"></div>
       <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>
     </section>`;
