@@ -1,30 +1,30 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-31T06:35:04+00:00",
-  "last_attempt_at": "2026-08-31T06:34:34+00:00",
-  "last_success_at": "2026-08-31T06:35:04+00:00",
+  "generated_at": "2026-09-01T06:17:02+00:00",
+  "last_attempt_at": "2026-09-01T06:16:31+00:00",
+  "last_success_at": "2026-09-01T06:17:02+00:00",
   "method": "deterministic_external_signal_scan",
   "status": "success",
   "stale_after_hours": 36,
   "truth_status": "blocked",
   "metrics": {
-    "raw_discovered": 61,
-    "accepted": 22,
-    "filtered": 39,
+    "raw_discovered": 54,
+    "accepted": 34,
+    "filtered": 20,
     "new_actionable": 0,
-    "duplicate_actionable": 2,
+    "duplicate_actionable": 0,
     "open_items": 3
   },
   "sources": [
     {
       "source": "tavily",
       "status": "ok",
-      "accepted_count": 15
+      "accepted_count": 18
     },
     {
       "source": "youtube",
       "status": "ok",
-      "accepted_count": 7
+      "accepted_count": 16
     },
     {
       "source": "official_facts",
