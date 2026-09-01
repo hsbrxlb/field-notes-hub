@@ -19,7 +19,7 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "data" / "demand-radar.json"
 DEFAULT_STATE = ROOT / ".github" / "demand-radar-state.json"
-SCANNER_REVISION = "02da543ebab45747fc34f00af43219414736f6ea"
+SCANNER_REVISION = "48962ce6bda3a8cf574130ae4160a2280d50125a"
 ALLOWED_TOPICS = {
     "complaint", "support", "installation", "fitment", "recommendation",
     "tonneau_cover", "running_boards", "floor_mats", "bumper", "general",
@@ -357,11 +357,15 @@ def main() -> None:
     hmac_key = os.getenv("OEDRO_STATE_HMAC_KEY", "")
     if not hmac_key:
         raise SystemExit("OEDRO_STATE_HMAC_KEY is required")
+    failed = False
     try:
         payload = run_live(args.scanner_root.resolve(), args.output.resolve(), args.state.resolve(), hmac_key)
     except Exception:
         payload = write_failed_attempt(args.output.resolve(), utc_now())
+        failed = True
     print(json.dumps({"status": payload["status"], "metrics": payload["metrics"]}, ensure_ascii=False))
+    if failed:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":
