@@ -313,7 +313,7 @@ function renderUserVoice(data, voice, radar) {
       <div class="radar-source-list" aria-label="来源状态">
         ${(radar?.sources || []).map((item) => `<span><b>${escapeHtml(item.source === 'official_facts' ? '官方产品事实' : item.source === 'tavily' ? '公开网页与论坛' : 'YouTube')}</b>${escapeHtml(sourceStatusLabels[item.status] || item.status)} · ${Number(item.accepted_count) || 0} 条</span>`).join('')}
       </div>
-      <p class="muted">YouTube 本轮实际检查 ${Number(radar?.metrics?.youtube_videos_checked) || 0} 个视频、${Number(radar?.metrics?.youtube_comments_checked) || 0} 条评论（其中回复 ${Number(radar?.metrics?.youtube_replies_checked) || 0} 条）；${Number(radar?.metrics?.youtube_unavailable_videos) || 0} 个视频的评论不可读取。</p>
+      <p class="muted">YouTube 本轮得到 ${Number(radar?.metrics?.youtube_videos_checked) || 0} 次视频结果、${Number(radar?.metrics?.youtube_comments_checked) || 0} 条评论结果（其中回复 ${Number(radar?.metrics?.youtube_replies_checked) || 0} 条）；${Number(radar?.metrics?.youtube_unavailable_videos) || 0} 个视频的评论不可读取。不同查询可能命中同一视频或评论。</p>
     </section>
     <section class="section demand-radar-items" data-searchable>
       <div class="section-head"><div><h2>值得查看的问题</h2><p>原帖链接会打开公开来源；页面不保存作者名、完整原话或内部回复草稿。</p></div></div>
