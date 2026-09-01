@@ -1,0 +1,137 @@
+{
+  "title": "Mascot Evolution / 吉祥物迭代",
+  "meta_description": "OEDRO吉祥物从首轮概念到非蓝配色探索的完整迭代历史。",
+  "leader": {
+    "conclusion": "当前建议先看犰狳护板守护者、工作野牛和套筒模块伙伴的氧化橙方案。Round 4 已停止使用蓝色，并把角色结构与颜色比较分开。",
+    "note": "当前没有 Selected 方案。Shortlisted 只表示进入下一轮模型表、商标距离和用户测试。",
+    "recommended": ["R4-F4A", "R4-F1A", "R4-F3A"],
+    "solved": [
+      "停止使用冷蓝、青蓝和蓝色反光，减少工业样机的同质感。",
+      "同一角色保持结构、姿态和镜头不变，只比较三套非蓝配色。",
+      "新增犰狳护板守护者，补充与保护、耐用直接相关的低矮轮廓。"
+    ]
+  },
+  "family_labels": {
+    "parts-spirit": "零件精灵",
+    "dog": "车库狗",
+    "raccoon": "浣熊技师",
+    "bison": "工作野牛",
+    "socket": "套筒模块伙伴",
+    "fitment": "适配连接体",
+    "guard": "越野护板伙伴",
+    "armadillo": "犰狳护板守护者"
+  },
+  "palette_labels": {
+    "blue": "蓝、银、黑",
+    "oxide": "氧化橙",
+    "amber": "工业琥珀",
+    "olive": "苔藓橄榄"
+  },
+  "rounds": [
+    {
+      "id": "round-1",
+      "label": "Round 1",
+      "date": "2026-08-27",
+      "status": "Rejected",
+      "goal": "用三条角色路线快速确认 OEDRO 吉祥物可以从哪里开始。",
+      "overview": "assets/mascot-evolution/overview/round1-overview.webp",
+      "overview_alt": "OEDRO吉祥物第一轮三条方向总览",
+      "palette": ["OEDRO 蓝", "石墨黑", "银色", "少量橙色"],
+      "score": "首轮视觉审查：零件精灵 17/18；车库狗与浣熊技师 14/18。",
+      "issues": ["零件精灵仍带通用机器人语法，手指和关节过于复杂。", "车库狗抬起的前爪被画成人手，动物解剖和工具动作不成立。", "浣熊的大眼、脸形和身体比例偏软萌。"],
+      "change_reason": "第二轮改为九个独立方向，分别修正轮廓、机械覆盖和成年感。",
+      "assets": [
+        { "code": "R1-F1", "title": "零件精灵", "family": "parts-spirit", "palette": "blue", "status": "Rejected", "score": "17/18", "style": "透明概念立绘", "src": "assets/mascot-evolution/round1/R1_F1_Parts_Spirit.webp", "alt": "第一轮零件精灵概念" },
+        { "code": "R1-F2", "title": "车库狗", "family": "dog", "palette": "blue", "status": "Rejected", "score": "14/18", "style": "透明概念立绘", "src": "assets/mascot-evolution/round1/R1_F2_Garage_Dog.webp", "alt": "第一轮车库狗概念" },
+        { "code": "R1-F3", "title": "浣熊技师", "family": "raccoon", "palette": "blue", "status": "Rejected", "score": "14/18", "style": "透明概念立绘", "src": "assets/mascot-evolution/round1/R1_F3_Raccoon.webp", "alt": "第一轮浣熊技师概念" }
+      ]
+    },
+    {
+      "id": "round-2",
+      "label": "Round 2",
+      "date": "2026-08-28",
+      "status": "Rejected",
+      "goal": "把精灵、狗和浣熊拆成九个方向，比较轮廓、机械覆盖和小尺寸表现。",
+      "overview": "assets/mascot-evolution/overview/round2-overview.webp",
+      "overview_alt": "OEDRO吉祥物第二轮九宫格总览",
+      "palette": ["OEDRO 蓝", "石墨黑", "缎面铝", "安全橙"],
+      "score": "五个方案达到内部门槛：1A、1B、2B、2C、3C。最高分为 2B 的 4.14。",
+      "issues": ["九张图混用了扁平、黏土、动画和产品渲染，画风会干扰角色判断。", "部分机器人仍显得通用，狗和浣熊的成年感与 IP 距离仍需验证。", "配色继续被蓝、银、黑主导。"],
+      "change_reason": "第三轮扩大角色家族并统一对比结构，同时把手绘、品牌图形和机械原型分开。",
+      "assets": [
+        { "code": "R2-1A", "title": "圆环精灵", "family": "parts-spirit", "palette": "blue", "status": "Rejected", "score": "4.00", "style": "产品渲染", "src": "assets/mascot-evolution/round2/R2_1A.webp", "alt": "第二轮圆环精灵" },
+        { "code": "R2-1B", "title": "胶囊精灵", "family": "parts-spirit", "palette": "blue", "status": "Rejected", "score": "4.00", "style": "扁平图形", "src": "assets/mascot-evolution/round2/R2_1B.webp", "alt": "第二轮胶囊精灵" },
+        { "code": "R2-1C", "title": "方核精灵", "family": "parts-spirit", "palette": "blue", "status": "Rejected", "score": "3.57", "style": "黏土角色", "src": "assets/mascot-evolution/round2/R2_1C.webp", "alt": "第二轮方核精灵" },
+        { "code": "R2-2A", "title": "轻机械车库狗", "family": "dog", "palette": "blue", "status": "Rejected", "score": "3.57", "style": "角色插画", "src": "assets/mascot-evolution/round2/R2_2A.webp", "alt": "第二轮轻机械车库狗" },
+        { "code": "R2-2B", "title": "半机械车库狗", "family": "dog", "palette": "blue", "status": "Rejected", "score": "4.14", "style": "角色插画", "src": "assets/mascot-evolution/round2/R2_2B.webp", "alt": "第二轮半机械车库狗" },
+        { "code": "R2-2C", "title": "全机械车库狗", "family": "dog", "palette": "blue", "status": "Rejected", "score": "4.00", "style": "产品渲染", "src": "assets/mascot-evolution/round2/R2_2C.webp", "alt": "第二轮全机械车库狗" },
+        { "code": "R2-3A", "title": "轻机械浣熊", "family": "raccoon", "palette": "blue", "status": "Rejected", "score": "3.86", "style": "角色插画", "src": "assets/mascot-evolution/round2/R2_3A.webp", "alt": "第二轮轻机械浣熊" },
+        { "code": "R2-3B", "title": "半机械浣熊", "family": "raccoon", "palette": "blue", "status": "Rejected", "score": "3.86", "style": "角色插画", "src": "assets/mascot-evolution/round2/R2_3B.webp", "alt": "第二轮半机械浣熊" },
+        { "code": "R2-3C", "title": "全机械浣熊", "family": "raccoon", "palette": "blue", "status": "Rejected", "score": "4.00", "style": "机械角色", "src": "assets/mascot-evolution/round2/R2_3C.webp", "alt": "第二轮全机械浣熊" }
+      ]
+    },
+    {
+      "id": "round-3",
+      "label": "Round 3",
+      "date": "2026-08-31",
+      "status": "Rejected",
+      "goal": "比较七个角色家族在手绘、品牌图形和机械原型三种媒介中的表现。",
+      "overview": "assets/mascot-evolution/overview/round3-overview.webp",
+      "overview_alt": "OEDRO吉祥物第三轮七乘三总览",
+      "palette": ["OEDRO 蓝", "石墨黑", "缎面铝", "安全橙"],
+      "score": "最高分为 F4B 工作野牛 4.86；F4A、F4C 与 F5B 为 4.71。",
+      "issues": ["冷蓝、银色和黑色覆盖所有家族，角色像同一机器人公司的不同型号。", "蓝色压过角色性格，整体偏冷、偏硬，领导快速浏览时难以形成记忆点。", "工作野牛、成年犬和套筒结构有继续价值，但第三轮配色不再作为当前候选。"],
+      "change_reason": "Round 4 停止使用蓝色，保留三个有效家族并新增犰狳，以公平矩阵只比较非蓝配色。",
+      "assets": [
+        { "code": "R3-F1A", "title": "模块零件精灵", "family": "parts-spirit", "palette": "blue", "status": "Rejected", "score": "3.71", "style": "车库手绘", "src": "assets/mascot-round3/F1A.webp", "alt": "第三轮模块零件精灵车库手绘" },
+        { "code": "R3-F1B", "title": "模块零件精灵", "family": "parts-spirit", "palette": "blue", "status": "Rejected", "score": "4.00", "style": "品牌图形", "src": "assets/mascot-round3/F1B.webp", "alt": "第三轮模块零件精灵品牌图形" },
+        { "code": "R3-F1C", "title": "模块零件精灵", "family": "parts-spirit", "palette": "blue", "status": "Rejected", "score": "3.71", "style": "机械原型", "src": "assets/mascot-round3/F1C.webp", "alt": "第三轮模块零件精灵机械原型" },
+        { "code": "R3-F2A", "title": "成年车库狗", "family": "dog", "palette": "blue", "status": "Rejected", "score": "4.43", "style": "车库手绘", "src": "assets/mascot-round3/F2A.webp", "alt": "第三轮成年车库狗车库手绘" },
+        { "code": "R3-F2B", "title": "成年车库狗", "family": "dog", "palette": "blue", "status": "Rejected", "score": "4.57", "style": "品牌图形", "src": "assets/mascot-round3/F2B.webp", "alt": "第三轮成年车库狗品牌图形" },
+        { "code": "R3-F2C", "title": "成年车库狗", "family": "dog", "palette": "blue", "status": "Rejected", "score": "4.43", "style": "机械原型", "src": "assets/mascot-round3/F2C.webp", "alt": "第三轮成年车库狗机械原型" },
+        { "code": "R3-F3A", "title": "浣熊技师", "family": "raccoon", "palette": "blue", "status": "Rejected", "score": "4.14", "style": "车库手绘", "src": "assets/mascot-round3/F3A.webp", "alt": "第三轮浣熊技师车库手绘" },
+        { "code": "R3-F3B", "title": "浣熊技师", "family": "raccoon", "palette": "blue", "status": "Rejected", "score": "4.43", "style": "品牌图形", "src": "assets/mascot-round3/F3B.webp", "alt": "第三轮浣熊技师品牌图形" },
+        { "code": "R3-F3C", "title": "浣熊技师", "family": "raccoon", "palette": "blue", "status": "Rejected", "score": "4.14", "style": "机械原型", "src": "assets/mascot-round3/F3C.webp", "alt": "第三轮浣熊技师机械原型" },
+        { "code": "R3-F4A", "title": "工作野牛", "family": "bison", "palette": "blue", "status": "Rejected", "score": "4.71", "style": "车库手绘", "src": "assets/mascot-round3/F4A.webp", "alt": "第三轮工作野牛车库手绘" },
+        { "code": "R3-F4B", "title": "工作野牛", "family": "bison", "palette": "blue", "status": "Rejected", "score": "4.86", "style": "品牌图形", "src": "assets/mascot-round3/F4B.webp", "alt": "第三轮工作野牛品牌图形" },
+        { "code": "R3-F4C", "title": "工作野牛", "family": "bison", "palette": "blue", "status": "Rejected", "score": "4.71", "style": "机械原型", "src": "assets/mascot-round3/F4C.webp", "alt": "第三轮工作野牛机械原型" },
+        { "code": "R3-F5A", "title": "套筒模块伙伴", "family": "socket", "palette": "blue", "status": "Rejected", "score": "4.57", "style": "车库手绘", "src": "assets/mascot-round3/F5A.webp", "alt": "第三轮套筒模块伙伴车库手绘" },
+        { "code": "R3-F5B", "title": "套筒模块伙伴", "family": "socket", "palette": "blue", "status": "Rejected", "score": "4.71", "style": "品牌图形", "src": "assets/mascot-round3/F5B.webp", "alt": "第三轮套筒模块伙伴品牌图形" },
+        { "code": "R3-F5C", "title": "套筒模块伙伴", "family": "socket", "palette": "blue", "status": "Rejected", "score": "4.57", "style": "机械原型", "src": "assets/mascot-round3/F5C.webp", "alt": "第三轮套筒模块伙伴机械原型" },
+        { "code": "R3-F6A", "title": "适配连接体", "family": "fitment", "palette": "blue", "status": "Rejected", "score": "3.86", "style": "车库手绘", "src": "assets/mascot-round3/F6A.webp", "alt": "第三轮适配连接体车库手绘" },
+        { "code": "R3-F6B", "title": "适配连接体", "family": "fitment", "palette": "blue", "status": "Rejected", "score": "4.00", "style": "品牌图形", "src": "assets/mascot-round3/F6B.webp", "alt": "第三轮适配连接体品牌图形" },
+        { "code": "R3-F6C", "title": "适配连接体", "family": "fitment", "palette": "blue", "status": "Rejected", "score": "3.86", "style": "机械原型", "src": "assets/mascot-round3/F6C.webp", "alt": "第三轮适配连接体机械原型" },
+        { "code": "R3-F7A", "title": "越野护板伙伴", "family": "guard", "palette": "blue", "status": "Rejected", "score": "4.14", "style": "车库手绘", "src": "assets/mascot-round3/F7A.webp", "alt": "第三轮越野护板伙伴车库手绘" },
+        { "code": "R3-F7B", "title": "越野护板伙伴", "family": "guard", "palette": "blue", "status": "Rejected", "score": "4.29", "style": "品牌图形", "src": "assets/mascot-round3/F7B.webp", "alt": "第三轮越野护板伙伴品牌图形" },
+        { "code": "R3-F7C", "title": "越野护板伙伴", "family": "guard", "palette": "blue", "status": "Rejected", "score": "4.14", "style": "机械原型", "src": "assets/mascot-round3/F7C.webp", "alt": "第三轮越野护板伙伴机械原型" }
+      ]
+    },
+    {
+      "id": "round-4",
+      "label": "Round 4",
+      "date": "2026-09-01",
+      "status": "Shortlisted",
+      "goal": "停止使用蓝色，用四个家族和三套非蓝配色公平比较角色温度、记忆点和材料层级。",
+      "overview": "assets/mascot-evolution/overview/round4-overview.webp",
+      "overview_alt": "OEDRO吉祥物第四轮四乘三非蓝配色总览",
+      "palette": ["氧化橙", "工业琥珀", "苔藓橄榄", "石墨与暖金属"],
+      "score": "视觉审查 17/18。12 张通过蓝色像素、灰度、轮廓、32px、64px 和明暗背景检查。",
+      "issues": ["野牛和成年犬仍保留较大面积有机皮毛，机械覆盖比例需要下一轮决定。", "工业琥珀的行业识别很强，同时最需要检查工程机械品牌距离。", "当前仍未完成商标、IP、生产成本或真实用户偏好验证。"],
+      "change_reason": "从 F4A、F1A、F3A 中选择 1 到 2 个结构，再制作统一模型表和姿态系统。",
+      "assets": [
+        { "code": "R4-F1A", "title": "工作野牛", "family": "bison", "palette": "oxide", "status": "Shortlisted", "score": "视觉通过", "style": "氧化橙", "src": "assets/mascot-evolution/round4/R4_F1A.webp", "alt": "第四轮工作野牛氧化橙方案" },
+        { "code": "R4-F1B", "title": "工作野牛", "family": "bison", "palette": "amber", "status": "Exploring", "score": "视觉通过", "style": "工业琥珀", "src": "assets/mascot-evolution/round4/R4_F1B.webp", "alt": "第四轮工作野牛工业琥珀方案" },
+        { "code": "R4-F1C", "title": "工作野牛", "family": "bison", "palette": "olive", "status": "Exploring", "score": "视觉通过", "style": "苔藓橄榄", "src": "assets/mascot-evolution/round4/R4_F1C.webp", "alt": "第四轮工作野牛苔藓橄榄方案" },
+        { "code": "R4-F2A", "title": "成年车库狗", "family": "dog", "palette": "oxide", "status": "Exploring", "score": "视觉通过", "style": "氧化橙", "src": "assets/mascot-evolution/round4/R4_F2A.webp", "alt": "第四轮成年车库狗氧化橙方案" },
+        { "code": "R4-F2B", "title": "成年车库狗", "family": "dog", "palette": "amber", "status": "Exploring", "score": "视觉通过", "style": "工业琥珀", "src": "assets/mascot-evolution/round4/R4_F2B.webp", "alt": "第四轮成年车库狗工业琥珀方案" },
+        { "code": "R4-F2C", "title": "成年车库狗", "family": "dog", "palette": "olive", "status": "Exploring", "score": "视觉通过", "style": "苔藓橄榄", "src": "assets/mascot-evolution/round4/R4_F2C.webp", "alt": "第四轮成年车库狗苔藓橄榄方案" },
+        { "code": "R4-F3A", "title": "套筒模块伙伴", "family": "socket", "palette": "oxide", "status": "Shortlisted", "score": "视觉通过", "style": "氧化橙", "src": "assets/mascot-evolution/round4/R4_F3A.webp", "alt": "第四轮套筒模块伙伴氧化橙方案" },
+        { "code": "R4-F3B", "title": "套筒模块伙伴", "family": "socket", "palette": "amber", "status": "Exploring", "score": "视觉通过", "style": "工业琥珀", "src": "assets/mascot-evolution/round4/R4_F3B.webp", "alt": "第四轮套筒模块伙伴工业琥珀方案" },
+        { "code": "R4-F3C", "title": "套筒模块伙伴", "family": "socket", "palette": "olive", "status": "Exploring", "score": "视觉通过", "style": "苔藓橄榄", "src": "assets/mascot-evolution/round4/R4_F3C.webp", "alt": "第四轮套筒模块伙伴苔藓橄榄方案" },
+        { "code": "R4-F4A", "title": "犰狳护板守护者", "family": "armadillo", "palette": "oxide", "status": "Shortlisted", "score": "视觉通过", "style": "氧化橙", "src": "assets/mascot-evolution/round4/R4_F4A.webp", "alt": "第四轮犰狳护板守护者氧化橙方案" },
+        { "code": "R4-F4B", "title": "犰狳护板守护者", "family": "armadillo", "palette": "amber", "status": "Exploring", "score": "视觉通过", "style": "工业琥珀", "src": "assets/mascot-evolution/round4/R4_F4B.webp", "alt": "第四轮犰狳护板守护者工业琥珀方案" },
+        { "code": "R4-F4C", "title": "犰狳护板守护者", "family": "armadillo", "palette": "olive", "status": "Exploring", "score": "视觉通过", "style": "苔藓橄榄", "src": "assets/mascot-evolution/round4/R4_F4C.webp", "alt": "第四轮犰狳护板守护者苔藓橄榄方案" }
+      ]
+    }
+  ]
+}

@@ -32,6 +32,11 @@
       "file": "content-studio.html"
     },
     {
+      "id": "mascot",
+      "label": "吉祥物迭代",
+      "file": "mascot.html"
+    },
+    {
       "id": "topics",
       "label": "运营专题",
       "file": "topics.html"

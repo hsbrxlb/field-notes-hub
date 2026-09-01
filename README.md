@@ -11,6 +11,7 @@
 - `research.html`：研究项目、方法、参与方式、用户权利和 AI智能对话问卷介绍
 - `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
 - `content-studio.html`：已经形成的内容、研究、方案和工作成果
+- `mascot.html`：OEDRO 吉祥物迭代历史，展示 Round 1–4、当前候选、筛选状态和 1254×1254 高清图
 - `topics.html`与`topic.html`：专题、稳定方法和经验记录
 - `playbook.html`：工作方法和完成标准
 

@@ -50,6 +50,7 @@ function navDescription(data, id) {
     research: '当前调研、调研方法、参与方式和用户权利',
     voice: '公开问题处理工作的阶段性汇总',
     studio: '已经形成的内容、研究、方案和工作成果',
+    mascot: '四轮方案、当前候选和改动原因',
     topics: '关键决定、稳定方法和专题经验'
   })[id] || data[id]?.description || '';
 }
@@ -494,6 +495,7 @@ async function init() {
   if (page === 'topics' && location.pathname.endsWith('topics.html')) renderTopics(data, topics);
   if (page === 'topics' && location.pathname.endsWith('topic.html')) await renderTopic(data);
   if (page === 'studio') await window.initContentStudio?.();
+  if (page === 'mascot') await window.initMascot?.();
 }
 
 init().catch((error) => {
