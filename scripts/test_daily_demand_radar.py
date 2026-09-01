@@ -113,6 +113,25 @@ def test_state_rejects_raw_or_malformed_fields() -> None:
         raise AssertionError("raw state field was not rejected")
 
 
+def test_youtube_public_metrics_are_aggregate_only() -> None:
+    metrics = RADAR._youtube_public_metrics({
+        "youtube_fetch_stats": {
+            "videos_returned": 4,
+            "top_level_comments": 17,
+            "embedded_replies": 6,
+            "unavailable_videos": 2,
+            "unavailable_videos_403": 1,
+            "unavailable_videos_404": 1,
+        }
+    })
+    assert metrics == {
+        "youtube_videos_checked": 4,
+        "youtube_comments_checked": 23,
+        "youtube_replies_checked": 6,
+        "youtube_unavailable_videos": 2,
+    }
+
+
 def test_failed_attempt_preserves_last_success_and_items() -> None:
     with tempfile.TemporaryDirectory() as directory:
         output = Path(directory) / "demand-radar.json"
@@ -125,7 +144,18 @@ def test_failed_attempt_preserves_last_success_and_items() -> None:
             "status": "success",
             "stale_after_hours": 36,
             "truth_status": "current",
-            "metrics": {"raw_discovered": 1, "accepted": 1, "filtered": 0, "new_actionable": 1, "duplicate_actionable": 0, "open_items": 1},
+            "metrics": {
+                "raw_discovered": 1,
+                "accepted": 1,
+                "filtered": 0,
+                "new_actionable": 1,
+                "duplicate_actionable": 0,
+                "open_items": 1,
+                "youtube_videos_checked": 1,
+                "youtube_comments_checked": 1,
+                "youtube_replies_checked": 0,
+                "youtube_unavailable_videos": 0,
+            },
             "sources": [],
             "items": [{"signal_id": "a" * 64}],
         }
@@ -148,6 +178,7 @@ if __name__ == "__main__":
         test_truth_gate_downgrades_existing_items,
         test_prune_seen_drops_old_and_caps_size,
         test_state_rejects_raw_or_malformed_fields,
+        test_youtube_public_metrics_are_aggregate_only,
         test_failed_attempt_preserves_last_success_and_items,
     ]:
         function()

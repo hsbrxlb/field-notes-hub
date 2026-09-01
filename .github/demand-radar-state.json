@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_at": "2026-09-01T06:17:02+00:00",
-  "query_plan_revision": "01291bdb03d92280747c7cab646eee5cc8ee9e0b",
+  "query_plan_revision": "02da543ebab45747fc34f00af43219414736f6ea",
   "cursors": {
     "query-plan:tavily:full|brand_depth": 0,
     "query-plan:tavily:full|forum_f150_maverick": 1,

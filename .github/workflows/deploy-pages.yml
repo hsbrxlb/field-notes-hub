@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: Aiiioli/oedro-cloud-listening
-          ref: 01291bdb03d92280747c7cab646eee5cc8ee9e0b
+          ref: 02da543ebab45747fc34f00af43219414736f6ea
           path: .ci/oedro-listening-agent
           token: ${{ secrets.OEDRO_SCANNER_REPO_TOKEN }}
           persist-credentials: false
