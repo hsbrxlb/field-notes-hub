@@ -19,7 +19,7 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "data" / "demand-radar.json"
 DEFAULT_STATE = ROOT / ".github" / "demand-radar-state.json"
-SCANNER_REVISION = "e3169422bab66a4ea92f2ebc26434a1a7b353898"
+SCANNER_REVISION = "d5cd081d257b0cbc2cafe477722847086a253283"
 ALLOWED_TOPICS = {
     "complaint", "support", "installation", "fitment", "recommendation",
     "tonneau_cover", "running_boards", "floor_mats", "bumper", "general",
@@ -217,11 +217,20 @@ def _source_entries(scan_result: dict[str, Any], truth_result: dict[str, Any]) -
     tavily_count = sum(int(counts.get(name, 0) or 0) for name in ("reddit", "forum", "open_web"))
     youtube_count = int(counts.get("youtube", 0) or 0)
     bluesky_count = int(counts.get("bluesky", 0) or 0)
+    bluesky_records = [
+        item for item in scan_result.get("executed_queries", [])
+        if item.get("provider") == "tavily" and item.get("lane") == "bluesky_brand"
+    ]
+    bluesky_failed = (
+        any(item.get("status") == "failed" for item in bluesky_records)
+        if bluesky_records
+        else "tavily" in failures
+    )
     truth_blocked = bool(truth_result.get("stale") or truth_result.get("conflicts") or truth_result.get("failures"))
     return [
         {"source": "tavily", "status": "failed" if "tavily" in failures else "ok", "accepted_count": tavily_count},
         {"source": "youtube", "status": "failed" if "youtube" in failures else "ok", "accepted_count": youtube_count},
-        {"source": "bluesky", "status": "failed" if "bluesky" in failures else "ok", "accepted_count": bluesky_count},
+        {"source": "bluesky", "status": "failed" if bluesky_failed else "ok", "accepted_count": bluesky_count},
         {"source": "official_facts", "status": "blocked" if truth_blocked else "ok", "accepted_count": int(truth_result.get("inserted", 0) or 0)},
     ]
 

@@ -142,6 +142,21 @@ def test_youtube_public_metrics_are_aggregate_only() -> None:
     }
 
 
+def test_bluesky_source_status_tracks_its_tavily_lane() -> None:
+    truth = {"inserted": 0, "stale": False, "conflicts": [], "failures": []}
+    scan = {
+        "source_counts": {"bluesky": 2},
+        "failures": [],
+        "executed_queries": [{"provider": "tavily", "lane": "bluesky_brand", "status": "ok"}],
+    }
+    sources = RADAR._source_entries(scan, truth)
+    bluesky = next(item for item in sources if item["source"] == "bluesky")
+    assert bluesky == {"source": "bluesky", "status": "ok", "accepted_count": 2}
+    scan["executed_queries"][0]["status"] = "failed"
+    sources = RADAR._source_entries(scan, truth)
+    assert next(item for item in sources if item["source"] == "bluesky")["status"] == "failed"
+
+
 def test_failed_attempt_preserves_last_success_and_items() -> None:
     with tempfile.TemporaryDirectory() as directory:
         output = Path(directory) / "demand-radar.json"
@@ -191,6 +206,7 @@ if __name__ == "__main__":
         test_prune_seen_drops_old_and_caps_size,
         test_state_rejects_raw_or_malformed_fields,
         test_youtube_public_metrics_are_aggregate_only,
+        test_bluesky_source_status_tracks_its_tavily_lane,
         test_failed_attempt_preserves_last_success_and_items,
     ]:
         function()
