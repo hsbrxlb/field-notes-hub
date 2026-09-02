@@ -30,8 +30,7 @@
   }
 
   function roundMarkup(round) {
-    const open = round.id === 'round-4' ? ' open' : '';
-    return `<details class="evo-round evo-reveal" data-evo-round="${safe(round.id)}" data-searchable${open}>
+    return `<details class="evo-round evo-reveal" data-evo-round="${safe(round.id)}" data-searchable open>
       <summary>
         <span class="evo-round-index">${safe(round.label)}</span>
         <span class="evo-round-summary"><b>${safe(round.date)}</b><strong>${safe(round.goal)}</strong></span>

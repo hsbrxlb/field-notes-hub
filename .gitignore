@@ -4,3 +4,4 @@ build-artifacts/
 build-tools/
 .playwright-cli/
 output/
+__pycache__/

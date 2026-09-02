@@ -9,6 +9,21 @@
   ],
   "results": [
     {
+      "id": "multiplatform-content-test",
+      "date": "2026-09-02",
+      "project": "OEDRO社媒内容",
+      "type": "内容",
+      "category": "content",
+      "title": "内容测试记录",
+      "description": "按日期保存不同产品和主题的多平台内容、AI检查、返工结果和公开安全摘要；当前从脚垫主题开始。",
+      "purpose": "让后续测试只需增加一条公开安全记录和对应素材，不重复制作整张页面。",
+      "status": "已完成",
+      "related_work": "欧美多社媒内容准备",
+      "links": [
+        {"label": "查看测试记录", "href": "content-pipeline-test.html"}
+      ]
+    },
+    {
       "id": "seo-geo-lab",
       "date": "2026-08-27",
       "project": "OEDRO独立站增长",

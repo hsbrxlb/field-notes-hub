@@ -75,7 +75,11 @@ jobs:
             git push origin HEAD:main
           fi
       - name: Test public user voice boundary
-        run: node scripts/test-public-user-voice-check.js
+        run: |
+          node scripts/test-public-user-voice-check.js
+          node scripts/check-content-pipeline-tests.js
+          node scripts/test-content-pipeline-records.js
+          node scripts/check-public-pages.js
       - name: Test public demand radar boundary
         run: |
           node scripts/check-demand-radar.js
@@ -84,6 +88,7 @@ jobs:
       - name: Validate static work records
         run: |
           node scripts/check-content-studio.js
+          node scripts/check-content-pipeline-tests.js
           node scripts/check-mascot-page.js
           python3 scripts/test-update-hub-record.py
       - name: Build public artifact
@@ -96,6 +101,8 @@ jobs:
           PUBLIC_SITE_ROOT=public-dist node scripts/check-public-user-voice.js
           PUBLIC_SITE_ROOT=public-dist node scripts/check-demand-radar.js
           PUBLIC_SITE_ROOT=public-dist node scripts/check-mascot-page.js
+          PUBLIC_SITE_ROOT=public-dist node scripts/check-content-pipeline-tests.js
+          PUBLIC_SITE_ROOT=public-dist node scripts/check-public-pages.js
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site

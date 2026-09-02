@@ -114,7 +114,7 @@ function renderOverview(data, topics, results) {
       <div class="topic-list">${topics.items.filter((item) => item.featured).map(topicLink).join('')}</div>
     </section>
     <section class="section">
-      <details class="disclosure">
+      <details class="disclosure" open>
         <summary>工作背景</summary>
         <div class="disclosure-body background-grid" data-searchable>
           <div>${o.why_paragraphs.map((item) => `<p>${escapeHtml(item)}</p>`).join('')}</div>
@@ -126,17 +126,15 @@ function renderOverview(data, topics, results) {
     <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>`;
 }
 
-function renderMethodDetail(stage) {
-  const target = document.querySelector('#method-detail');
-  if (!target) return;
-  target.innerHTML = `
+function methodStageMarkup(stage) {
+  return `<article class="method-detail" id="method-stage-${escapeHtml(stage.id)}" data-searchable>
     <header><span class="eyebrow">阶段 ${String(stage.id).padStart(2, '0')}</span><h2>${escapeHtml(stage.name)}</h2><p>${escapeHtml(stage.summary)}</p></header>
     <div class="method-grid">
       <section><h3>开始前</h3><p>${escapeHtml(stage.prerequisite)}</p></section>
       <section><h3>要做的事</h3><ul>${stage.actions.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>
       <section><h3>产出</h3><ul>${stage.deliverables.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>
       <section><h3>完成标准</h3><p>${escapeHtml(stage.done_when)}</p></section>
-    </div>`;
+    </div></article>`;
 }
 
 function renderPlaybook(data) {
@@ -145,27 +143,17 @@ function renderPlaybook(data) {
   document.querySelector('meta[name="description"]').content = p.meta_description;
   document.querySelector('#content').innerHTML = `
     ${pageHeading('工作方法')}
-    <section class="section method-layout" data-searchable>
-      <nav class="method-rail" aria-label="工作阶段">
-        ${data.stages.map((stage, index) => `<button type="button" data-stage="${stage.id}" class="${index === 0 ? 'active' : ''}"><span>${String(stage.id).padStart(2, '0')}</span><strong>${escapeHtml(stage.name)}</strong></button>`).join('')}
-      </nav>
-      <article class="method-detail" id="method-detail"></article>
-    </section>
+    <section class="section method-stack">${data.stages.map(methodStageMarkup).join('')}</section>
     <section class="section">
-      <details class="disclosure"><summary>最终要形成什么</summary><div class="disclosure-body outcome-list" data-searchable>
+      <details class="disclosure" open><summary>最终要形成什么</summary><div class="disclosure-body outcome-list" data-searchable>
         ${p.results.map((item) => `<div><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.description)}</p></div>`).join('')}
       </div></details>
     </section>
     <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>`;
-  renderMethodDetail(data.stages[0]);
-  document.querySelectorAll('[data-stage]').forEach((button) => button.addEventListener('click', () => {
-    document.querySelectorAll('[data-stage]').forEach((item) => item.classList.toggle('active', item === button));
-    renderMethodDetail(data.stages.find((stage) => String(stage.id) === button.dataset.stage));
-  }));
 }
 
 function renderStatusLegend(statuses) {
-  return `<details class="status-legend"><summary>状态说明</summary><div>${statuses.map((item) => `<p>${statusMarkup(item.name)}<span>${escapeHtml(item.description)}</span></p>`).join('')}</div></details>`;
+  return `<div class="status-legend" data-searchable><strong>状态说明</strong><div>${statuses.map((item) => `<p>${statusMarkup(item.name)}<span>${escapeHtml(item.description)}</span></p>`).join('')}</div></div>`;
 }
 
 function renderWork(data) {
@@ -186,7 +174,7 @@ function renderWork(data) {
     </section>
     <section class="section" data-searchable>${sectionHead('待办与计划')}<div class="priority-list">${w.next_items.map((item) => `<div class="priority-row"><strong>${escapeHtml(item)}</strong><span class="eyebrow">待推进</span></div>`).join('')}</div></section>
     <section class="section" data-searchable>${sectionHead('当前阻塞')}<div class="topic-list">${w.blocked.map((item) => `<div class="topic-row"><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.reason)}</p></div>${statusMarkup('受阻')}</div>`).join('')}</div></section>
-    <section class="section"><details class="disclosure"><summary>已有基础</summary><div class="disclosure-body" data-searchable><ul>${w.foundation_items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div></details></section>`;
+    <section class="section"><details class="disclosure" open><summary>已有基础</summary><div class="disclosure-body" data-searchable><ul>${w.foundation_items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div></details></section>`;
   document.querySelector('#status-filter')?.addEventListener('change', runSearch);
   runSearch();
 }
@@ -208,7 +196,6 @@ function smartSurveyMarkup(r) {
   return `<div class="smart-survey-case" data-searchable>
     <div class="smart-survey-copy">
       <span class="eyebrow">${escapeHtml(r.case_label)}</span>
-      <h2>${escapeHtml(r.case_title)}</h2>
       <p class="tab-intro">${escapeHtml(r.case_text)}</p>
       <ol class="smart-survey-steps">${r.case_steps.map((item) => `<li><span>${escapeHtml(item.number)}</span><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.text)}</p></div></li>`).join('')}</ol>
       <p class="smart-survey-note">${escapeHtml(r.case_note)}</p>
@@ -217,11 +204,9 @@ function smartSurveyMarkup(r) {
   </div>`;
 }
 
-function renderResearchPanel(data, tabId) {
+function researchPanelMarkup(data, tabId) {
   const r = data.research;
   const project = data.work.projects.find((item) => item.id === 'work-light-research');
-  const panel = document.querySelector('#research-panel');
-  if (!panel) return;
   const panels = {
     current: `<div class="current-research" data-searchable><div><span class="eyebrow">当前项目</span><h2>${escapeHtml(project.name)}</h2>${statusMarkup(project.status)}</div><dl><div><dt>当前情况</dt><dd>${escapeHtml(project.progress)}</dd></div><div><dt>下一步</dt><dd>${escapeHtml(project.next)}</dd></div><div><dt>需要配合</dt><dd>${escapeHtml(project.dependency)}</dd></div></dl></div>`,
     methods: researchMethodsMarkup(r),
@@ -229,30 +214,20 @@ function renderResearchPanel(data, tabId) {
     rights: researchRightsMarkup(r),
     'smart-survey': smartSurveyMarkup(r)
   };
-  panel.innerHTML = panels[tabId] || panels.current;
+  return panels[tabId] || panels.current;
 }
 
 function renderResearch(data) {
   const r = data.research;
   document.title = `用户调研/问卷｜${data.site.title}`;
   document.querySelector('meta[name="description"]').content = r.meta_description;
-  const tabs = [['current', '当前调研'], ['methods', '调研方法'], ['programs', '参与方式'], ['rights', '用户权利'], ['smart-survey', 'AI智能对话问卷']];
+  const sections = [['current', '当前调研'], ['methods', '调研方法'], ['programs', '参与方式'], ['rights', '用户权利'], ['smart-survey', 'AI智能对话问卷']];
   document.querySelector('#content').innerHTML = `
     ${pageHeading('用户调研/问卷')}
     <section class="section research-surface">
-      <div class="tabs" role="tablist" aria-label="用户调研和问卷内容">${tabs.map(([id, label], index) => `<button type="button" role="tab" aria-selected="${index === 0}" data-research-tab="${id}" class="${index === 0 ? 'active' : ''}">${label}</button>`).join('')}</div>
-      <div class="research-panel" id="research-panel" role="tabpanel"></div>
+      <div class="research-stack">${sections.map(([id, label]) => `<section class="research-expanded-section" data-searchable><h2>${escapeHtml(label)}</h2><div class="research-panel">${researchPanelMarkup(data, id)}</div></section>`).join('')}</div>
       <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>
     </section>`;
-  renderResearchPanel(data, 'current');
-  document.querySelectorAll('[data-research-tab]').forEach((button) => button.addEventListener('click', () => {
-    document.querySelectorAll('[data-research-tab]').forEach((item) => {
-      const active = item === button;
-      item.classList.toggle('active', active);
-      item.setAttribute('aria-selected', String(active));
-    });
-    renderResearchPanel(data, button.dataset.researchTab);
-  }));
 }
 
 function renderUserVoice(data, voice, radar) {
@@ -315,7 +290,7 @@ function renderUserVoice(data, voice, radar) {
         ${(radar?.sources || []).map((item) => `<span><b>${escapeHtml(item.source === 'official_facts' ? '官方产品事实' : item.source === 'tavily' ? '公开网页与论坛' : item.source === 'bluesky' ? 'Bluesky' : 'YouTube')}</b>${escapeHtml(sourceStatusLabels[item.status] || item.status)} · ${Number(item.accepted_count) || 0} 条</span>`).join('')}
       </div>
       <p class="muted">YouTube 本轮得到 ${Number(radar?.metrics?.youtube_videos_checked) || 0} 次视频结果、${Number(radar?.metrics?.youtube_comments_checked) || 0} 条评论结果（其中回复 ${Number(radar?.metrics?.youtube_replies_checked) || 0} 条）；${Number(radar?.metrics?.youtube_unavailable_videos) || 0} 个视频的评论不可读取。不同查询可能命中同一视频或评论。</p>
-      <p class="muted">Bluesky 本轮得到 ${Number(radar?.metrics?.bluesky_posts_checked) || 0} 条公开帖子结果；只读检查，不需要账号、Cookie或付费服务。</p>
+      <p class="muted">Bluesky 本轮得到 ${Number(radar?.metrics?.bluesky_posts_checked) || 0} 条公开帖子结果；只读检查，不需要登录或付费服务。</p>
     </section>
     <section class="section demand-radar-items" data-searchable>
       <div class="section-head"><div><h2>值得查看的问题</h2><p>原帖链接会打开公开来源；页面不保存作者名、完整原话或内部回复草稿。</p></div></div>
@@ -341,7 +316,7 @@ function renderUserVoice(data, voice, radar) {
       <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>
     </section>
     <section class="section">
-      <details class="disclosure"><summary>${escapeHtml(copy.workflow_title || '处理方法')}</summary><div class="disclosure-body"><div class="voice-workflow">
+      <details class="disclosure" open><summary>${escapeHtml(copy.workflow_title || '处理方法')}</summary><div class="disclosure-body"><div class="voice-workflow">
         ${(copy.workflow || []).map((item, index) => `<div><span>${String(index + 1).padStart(2, '0')}</span><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.description)}</p></div>`).join('')}
       </div></div></details>
     </section>
@@ -426,7 +401,7 @@ async function renderTopic(data) {
     <div class="topic-layout">
       <article class="topic-body">${sections.map(topicSectionMarkup).join('')}
         ${renderRelatedPages(topic.related_pages)}
-        <details class="disclosure source-disclosure"><summary>来源</summary><div class="disclosure-body"><ul class="source-list">${renderTopicSources(topic.sources)}</ul></div></details>
+        <details class="disclosure source-disclosure" open><summary>来源</summary><div class="disclosure-body"><ul class="source-list">${renderTopicSources(topic.sources)}</ul></div></details>
       </article>
       <nav class="topic-toc" aria-label="页内导航"><strong>本页内容</strong>${sections.map((section, index) => `<a href="#topic-section-${index}">${escapeHtml(cleanTopicTitle(section.title))}</a>`).join('')}${topic.related_pages?.length ? '<a href="#topic-related">接着去哪里</a>' : ''}</nav>
     </div>
@@ -495,7 +470,8 @@ async function init() {
   if (page === 'voice') renderUserVoice(data, voice, radar);
   if (page === 'topics' && location.pathname.endsWith('topics.html')) renderTopics(data, topics);
   if (page === 'topics' && location.pathname.endsWith('topic.html')) await renderTopic(data);
-  if (page === 'studio') await window.initContentStudio?.();
+  if (page === 'studio' && location.pathname.endsWith('content-pipeline-test.html')) await window.initContentPipelineTests?.();
+  if (page === 'studio' && !location.pathname.endsWith('content-pipeline-test.html')) await window.initContentStudio?.();
   if (page === 'mascot') await window.initMascot?.();
 }
 

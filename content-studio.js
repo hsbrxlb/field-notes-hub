@@ -79,11 +79,18 @@
     const results = visibleResults();
     const total = resultsConfig.results.length;
     const categoryLabel = categories.find((item) => item.id === activeCategory)?.label || '全部';
+    const featured = resultsConfig.results.find((item) => item.id === 'multiplatform-content-test');
     content.innerHTML = `
       <header class="page-heading">
         <h1>${escapeHtml(resultsConfig.title)}</h1>
         <p>${escapeHtml(resultsConfig.intro)}</p>
       </header>
+      ${featured ? `<a class="featured-result" href="content-pipeline-test.html" data-searchable>
+        <span class="eyebrow">最新案例</span>
+        <strong>${escapeHtml(featured.title)}</strong>
+        <p>${escapeHtml(featured.description)}</p>
+        <b>查看内容测试记录 <span aria-hidden="true">→</span></b>
+      </a>` : ''}
       <section class="section results-surface" aria-labelledby="results-list-title">
         <div class="section-head">
           <div><h2 id="results-list-title">已经形成的工作结果</h2><p class="section-note">按类别查看，完整底稿仍保存在本地。</p></div>

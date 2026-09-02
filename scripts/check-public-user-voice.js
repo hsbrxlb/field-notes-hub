@@ -7,7 +7,7 @@ const root = process.env.PUBLIC_SITE_ROOT
   ? path.resolve(process.env.PUBLIC_SITE_ROOT)
   : path.resolve(__dirname, '..');
 const runtimeExtensions = new Set(['.html', '.js', '.css', '.json']);
-const excludedDirectories = new Set(['.git', '.github', 'scripts', 'build-artifacts']);
+const excludedDirectories = new Set(['.git', '.github', '.playwright-cli', 'scripts', 'build-artifacts', 'output']);
 const forbiddenRuntime = [/\/api\//i, /localhost/i, /127\.0\.0\.1/i];
 const allowedTopLevel = new Set(['schema_version', 'generated_at', 'method', 'actions']);
 const allowedActionFields = new Set([
