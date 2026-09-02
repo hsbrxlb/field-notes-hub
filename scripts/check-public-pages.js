@@ -47,7 +47,8 @@ for (const file of codeFiles) {
   const source = fs.readFileSync(file, 'utf8');
   for (const match of source.matchAll(/<details\b[^>]*>/gi)) {
     detailTags.push({ file, tag: match[0] });
-    if (!/\bopen\b/i.test(match[0])) errors.push(path.relative(root, file) + ' 有正文details未默认展开：' + match[0]);
+    const intentionalHistory = /class="[^"]*evo-round/.test(match[0]);
+    if (!intentionalHistory && !/\bopen\b/i.test(match[0])) errors.push(path.relative(root, file) + ' 有正文details未默认展开：' + match[0]);
   }
   for (const match of source.matchAll(/<[^>]+aria-expanded="false"[^>]*>/gi)) {
     if (!/class="[^"]*menu-button/.test(match[0])) errors.push(path.relative(root, file) + ' 有正文aria-expanded=false：' + match[0]);

@@ -1,6 +1,6 @@
 {
   "title": "内容成果",
-  "intro": "这里记录OEDRO海外用户运营已经形成的内容、研究、方案和工作结果。",
+  "intro": "OEDRO 海外用户运营的公开成果。",
   "categories": [
     { "id": "all", "label": "全部" },
     { "id": "content", "label": "内容" },
@@ -14,9 +14,9 @@
       "project": "OEDRO社媒内容",
       "type": "内容",
       "category": "content",
-      "title": "内容测试记录",
-      "description": "按日期保存不同产品和主题的多平台内容、AI检查、返工结果和公开安全摘要；当前从脚垫主题开始。",
-      "purpose": "让后续测试只需增加一条公开安全记录和对应素材，不重复制作整张页面。",
+      "title": "内容样稿",
+      "description": "脚垫主题的 Instagram、Facebook 和 Pinterest 静态图文。",
+      "purpose": "后续测试增加一条公开记录和对应素材即可。",
       "status": "已完成",
       "related_work": "欧美多社媒内容准备",
       "links": [
@@ -75,7 +75,7 @@
       "type": "研究与方案",
       "category": "research",
       "title": "问题与反馈公开汇总",
-      "description": "整理公开问题从发现、核实到形成工作结果的处理方式；当前没有可公开的具体洞察。",
+      "description": "整理公开问题的发现、核实和后续处理；当前没有可公开的具体洞察。",
       "purpose": "记录问题如何进入研究、内容、产品反馈或支持工作。",
       "status": "进行中",
       "related_work": "公开问题与反馈回复准备",

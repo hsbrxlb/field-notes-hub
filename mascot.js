@@ -7,7 +7,8 @@
     .replaceAll("'", '&#039;');
 
   const statusClass = (status) => `evo-status-${String(status).toLowerCase()}`;
-  const statusMarkup = (status) => `<span class="evo-status ${statusClass(status)}">${safe(status)}</span>`;
+  const statusLabels = { Exploring: '探索中', Rejected: '已淘汰', Shortlisted: '候选', Selected: '已选定' };
+  const statusMarkup = (status) => `<span class="evo-status ${statusClass(status)}">${safe(statusLabels[status] || status)}</span>`;
 
   function assetCard(asset, round, eager = false) {
     return `<button class="evo-asset" type="button"
@@ -18,7 +19,7 @@
       data-status="${safe(asset.status)}"
       aria-label="查看${safe(round.label)} ${safe(asset.title)}高清图">
       <span class="evo-asset-image"><img src="${safe(asset.src)}" alt="${safe(asset.alt)}" width="960" height="960" loading="${eager ? 'eager' : 'lazy'}" decoding="async"></span>
-      <span class="evo-asset-copy"><span><b>${safe(asset.code)}</b>${statusMarkup(asset.status)}</span><strong>${safe(asset.title)}</strong><small>${safe(asset.style)} · ${safe(asset.score)}</small></span>
+      <span class="evo-asset-copy"><strong>${safe(asset.title)}</strong></span>
     </button>`;
   }
 
@@ -30,7 +31,7 @@
   }
 
   function roundMarkup(round) {
-    return `<details class="evo-round evo-reveal" data-evo-round="${safe(round.id)}" data-searchable open>
+    return `<details class="evo-round evo-reveal" data-evo-round="${safe(round.id)}" data-searchable>
       <summary>
         <span class="evo-round-index">${safe(round.label)}</span>
         <span class="evo-round-summary"><b>${safe(round.date)}</b><strong>${safe(round.goal)}</strong></span>
@@ -45,11 +46,8 @@
           </button>
         </div>
         <div class="evo-round-story" data-searchable>
-          <section><span class="eyebrow">本轮目标</span><p>${safe(round.goal)}</p></section>
-          <section><span class="eyebrow">配色</span><div class="evo-palette-list">${round.palette.map((item) => `<span>${safe(item)}</span>`).join('')}</div></section>
-          <section><span class="eyebrow">评分</span><p>${safe(round.score)}</p></section>
-          <section><span class="eyebrow">主要问题</span><ul>${round.issues.map((item) => `<li>${safe(item)}</li>`).join('')}</ul></section>
-          <section class="evo-change"><span class="eyebrow">为什么进入下一轮</span><p>${safe(round.change_reason)}</p></section>
+          <section><h3>主要问题</h3><ul>${round.issues.map((item) => `<li>${safe(item)}</li>`).join('')}</ul></section>
+          <section><h3>改动</h3><p>${safe(round.change_reason)}</p></section>
         </div>
         <div class="evo-round-assets" data-round-assets="${safe(round.id)}">${round.assets.map((asset) => assetCard(asset, round)).join('')}</div>
         <p class="evo-round-empty" hidden>这个筛选条件下没有方案。</p>
@@ -76,11 +74,11 @@
     };
     document.querySelectorAll('[data-evo-image]').forEach((button) => button.addEventListener('click', () => {
       const item = assets.find((candidate) => candidate.asset.code === button.dataset.evoImage);
-      if (item) open(item.asset.src, item.asset.alt, `${item.asset.code} · ${item.asset.title}`, `${item.round.label} · ${item.asset.style} · ${item.asset.status}`);
+      if (item) open(item.asset.src, item.asset.alt, item.asset.title, item.round.label);
     }));
     document.querySelectorAll('[data-evo-overview]').forEach((button) => button.addEventListener('click', () => {
       const round = data.rounds.find((item) => item.id === button.dataset.evoOverview);
-      if (round) open(button.dataset.src, button.dataset.alt, `${round.label} 总览`, `${round.date} · ${round.status}`);
+      if (round) open(button.dataset.src, button.dataset.alt, `${round.label} 总览`, round.date);
     }));
     dialog?.querySelector('[data-close]')?.addEventListener('click', () => dialog.close());
     dialog?.addEventListener('click', (event) => {
@@ -147,25 +145,19 @@
     document.querySelector('meta[name="description"]').content = data.meta_description;
     document.querySelector('#content').innerHTML = `
       <header class="page-heading evo-heading">
-        <div><span class="eyebrow">OEDRO MASCOT EVOLUTION</span><h1><span>Mascot Evolution</span><i aria-hidden="true"> / </i><span>吉祥物迭代</span></h1><p>${safe(data.leader.conclusion)}</p></div>
-        <div class="evo-heading-state">${statusMarkup('Shortlisted')}<span>4 Rounds</span><span>45 Images</span></div>
+        <h1>吉祥物迭代</h1>
       </header>
       <section class="section evo-leader" data-searchable>
-        <div class="section-head"><div><h2>当前推荐</h2><p class="section-note">供领导快速浏览。没有方案被标记为 Selected。</p></div></div>
+        <div class="section-head"><h2>当前候选</h2></div>
         <div class="evo-recommended">${recommendedMarkup(data, assets)}</div>
-        <p class="evo-leader-note">${safe(data.leader.note)}</p>
-      </section>
-      <section class="section evo-solved evo-reveal" data-searchable>
-        <div class="section-head"><h2>这一轮解决了什么</h2></div>
-        <ol>${data.leader.solved.map((item, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><p>${safe(item)}</p></li>`).join('')}</ol>
       </section>
       <section class="section evo-history">
-        <div class="section-head"><div><h2>完整迭代历史</h2><p class="section-note">旧轮次保留当时评分，并按当前状态标记是否仍是候选。点击每轮可查看目标、问题、改动原因和高清图。</p></div></div>
+        <div class="section-head"><h2>迭代历史</h2></div>
         <div class="evo-filters" aria-label="筛选吉祥物方案">
-          <label>Round<select id="evo-round-filter"><option value="all">全部轮次</option>${data.rounds.map((round) => optionMarkup(round.id, round.label)).join('')}</select></label>
-          <label>Family<select id="evo-family-filter"><option value="all">全部家族</option>${families.map((id) => optionMarkup(id, data.family_labels[id])).join('')}</select></label>
-          <label>Palette<select id="evo-palette-filter"><option value="all">全部配色</option>${palettes.map((id) => optionMarkup(id, data.palette_labels[id])).join('')}</select></label>
-          <label>Status<select id="evo-status-filter"><option value="all">全部状态</option>${['Exploring', 'Rejected', 'Shortlisted', 'Selected'].map((status) => optionMarkup(status, status)).join('')}</select></label>
+          <label>轮次<select id="evo-round-filter"><option value="all">全部轮次</option>${data.rounds.map((round) => optionMarkup(round.id, round.label)).join('')}</select></label>
+          <label>角色<select id="evo-family-filter"><option value="all">全部角色</option>${families.map((id) => optionMarkup(id, data.family_labels[id])).join('')}</select></label>
+          <label>配色<select id="evo-palette-filter"><option value="all">全部配色</option>${palettes.map((id) => optionMarkup(id, data.palette_labels[id])).join('')}</select></label>
+          <label>状态<select id="evo-status-filter"><option value="all">全部状态</option>${['Exploring', 'Rejected', 'Shortlisted', 'Selected'].map((status) => optionMarkup(status, statusLabels[status])).join('')}</select></label>
           <span id="evo-result-count" aria-live="polite"></span>
         </div>
         <div class="evo-round-list">${data.rounds.map(roundMarkup).join('')}</div>

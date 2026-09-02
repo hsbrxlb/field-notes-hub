@@ -1,46 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
-
 :root {
-  --page-bg: #070907;
-  --sidebar-bg: rgba(4, 6, 4, .94);
-  --topbar-bg: rgba(5, 7, 5, .9);
-  --input-bg: rgba(4, 6, 4, .34);
-  --text: #FFFFFF;
-  --text-secondary: rgba(255, 255, 255, .94);
-  --text-muted: rgba(255, 255, 255, .84);
-  --text-faint: rgba(255, 255, 255, .76);
-  --border: rgba(255, 255, 255, .24);
-  --border-strong: rgba(255, 255, 255, .48);
-  --accent: #E4B862;
-  --nav-hover: rgba(255,255,255,.07);
-  --nav-active: #FFFFFF;
-  --nav-active-text: #080A08;
-  --status-pending: #F0CD83;
-  --status-pending-bg: rgba(94, 73, 30, .38);
-  --status-active: #9ED0B5;
-  --status-active-bg: rgba(24, 76, 55, .4);
-  --status-ready: #D8B8D1;
-  --status-ready-bg: rgba(82, 45, 73, .38);
-  --status-blocked: #F0A28F;
-  --status-blocked-bg: rgba(92, 39, 28, .45);
-  --status-done: #B6CF8D;
-  --status-done-bg: rgba(54, 75, 30, .4);
-  --font-heading: 'Manrope', 'Noto Sans SC', sans-serif;
-  --font-body: 'Noto Sans SC', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  color-scheme: dark;
+  --page-bg: #080a08;
+  --surface: #0d100d;
+  --surface-raised: #131713;
+  --sidebar-bg: #080a08;
+  --topbar-bg: #0b0e0b;
+  --input-bg: #111511;
+  --text: #f4f5f1;
+  --text-secondary: #d8dbd3;
+  --text-muted: #adb3a8;
+  --text-faint: #8f978b;
+  --border: #2c322c;
+  --border-strong: #4b554a;
+  --accent: #e3ba67;
+  --nav-hover: #151a15;
+  --nav-active: #f4f5f1;
+  --nav-active-text: #080a08;
+  --status-pending: #e7c982;
+  --status-pending-bg: #332b18;
+  --status-active: #a7cfb5;
+  --status-active-bg: #183526;
+  --status-ready: #d2b8ca;
+  --status-ready-bg: #332332;
+  --status-blocked: #efa18d;
+  --status-blocked-bg: #3a201b;
+  --status-done: #bed394;
+  --status-done-bg: #26351c;
+  --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --type-body: 15px;
+  --type-meta: 12px;
+  --type-small: 14px;
+  --type-h1: 34px;
+  --type-h1-mobile: 27px;
+  --type-h2: 20px;
+  --line-body: 1.68;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --radius-control: 3px;
+  --touch-size: 44px;
+  --sidebar-width: 208px;
+  --topbar-height: 48px;
+  --content-max: 1080px;
+  --content-wide: 1180px;
+  --content-gallery: 1400px;
+  --page-gutter: 32px;
+  --page-gutter-mobile: 18px;
+  --shadow-focus: 0 0 0 2px var(--page-bg), 0 0 0 4px var(--accent);
+  --motion-fast: 160ms;
+  --motion-standard: 180ms;
+  --motion-slow: 420ms;
 }
 
-html { background: var(--page-bg); }
-body { position: relative; isolation: isolate; background: transparent; }
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: #080A08 url('assets/background.png') 54% center / cover no-repeat;
-}
+html, body { background: var(--page-bg); }
 .app-shell { z-index: 1; }
-
-@media (max-width: 760px) {
-  body::before { background-position: 57% center; }
-}

@@ -1,252 +1,46 @@
 {
-  "title": "内容测试记录",
-  "intro": "不同产品和主题的多平台内容测试保存在这里。最新记录排在最前，每次测试先由AI找错和返工，再交给人继续判断。",
+  "title": "内容样稿",
+  "intro": "Instagram、Facebook 和 Pinterest 静态图文，等待人工确认。",
   "records": [
     {
       "run_id": "2026-09-01-oedro-floor-mats",
       "date": "2026-09-01",
       "product": "OEDRO 2Gen TPE脚垫",
-      "theme": "车型适配与泥水清洁",
-      "platforms": ["Instagram", "TikTok", "Facebook", "YouTube Shorts"],
-      "review_status": "AI复核通过，等待人审",
-      "summary": "用一个真实OEDRO脚垫主题，检验AI能否分别写四个平台的内容，并在交给人以前主动找错和返工。",
+      "review_status": "等待人工确认",
+      "title": "F-250/F-350 脚垫适配与清洁",
+      "source_url": "https://www.oedro.com/products/all-weather-tpe-floor-mats-liners-for-2017-2024-ford-f-250-f-350-super-duty-crew-cab-full-set-liners-p-5361.html",
       "image": {
-        "src": "assets/content-pipeline/oedro-floor-mat-concept.png",
-        "alt": "泥靴踩在带沟槽的黑色脚垫测试用概念图",
-        "width": 1122,
-        "height": 1402,
-        "caption": "测试用概念图。正式发帖仍需换成批准的真实产品图。"
+        "src": "assets/content-pipeline/oedro-floor-mat-official.jpg",
+        "alt": "OEDRO 官方产品页展示的黑色 TPE 前排和后排脚垫",
+        "width": 1000,
+        "height": 1000
       },
-      "overview": {
-        "eyebrow": "测试主题",
-        "title": "先核对车型，再谈泥水怎么清",
-        "text": "内容围绕OEDRO 2Gen黑色TPE脚垫展开。公开案例只保留安全信息，不展示价格、折扣、保修或未经确认的性能承诺。",
-        "facts": [
-          {
-            "label": "车型范围",
-            "value": "2017至2026年Ford F-250 / F-350 Super Duty Crew Cab，前排桶形座椅；具体配置仍需核对产品页。"
-          },
-          {
-            "label": "内容重点",
-            "value": "深沟槽和高边缘用于承接常见泥水污渍；清洁时取出、冲洗，再装回。"
-          },
-          {
-            "label": "最终状态",
-            "value": "AI复核通过，可以交给人继续判断，不代表已经批准发布。"
-          }
-        ]
-      },
+      "facts": [
+        {"label": "车型", "value": "2017至2026年 Ford F-250 / F-350 Super Duty Crew Cab，前排桶形座椅，带座椅下储物空间。具体配置以产品页为准。"},
+        {"label": "结构", "value": "深沟槽和高边缘用于承接常见泥水污渍。"},
+        {"label": "清洁", "value": "取出脚垫，用水冲洗并装回。"}
+      ],
       "variants": [
         {
           "id": "instagram",
-          "index": "01",
           "platform": "Instagram",
-          "angle": "画面先抓住泥水，正文补齐适配条件",
-          "hook_label": "Hook",
           "hook_en": "Mud has a way of finding the one gap you missed.",
-          "hook_zh": "泥水总会钻进你漏掉的那道缝。",
-          "body_label": "Caption",
-          "body_en": "Before you call it a fit, check the truck: model years 2017 through 2026 for the F-250 or F-350 Super Duty Crew Cab, first-row bucket seats, and the exact configuration on the product page. The deep channels and raised edges are meant to keep mud, snow, water, and spills on the liner until you pull it out, hose it off, and put it back.",
-          "body_zh": "确认适配前，先核对车辆：2017至2026年F-250或F-350 Super Duty Crew Cab、前排桶形座椅，以及产品页要求的具体配置。深沟槽和高边缘用于把泥、雪、水和泼洒物留在垫面上，之后可以取出、冲洗，再装回。",
-          "sequence_label": "画面顺序",
-          "sequence_en": "Frame 1: muddy boot and contained water. Frame 2: the raised edge and channel path. Frame 3: a clean rinse, followed by the fitment reminder.",
-          "sequence_zh": "先看泥靴与被承接的水，再看高边缘和沟槽路径，最后用冲洗画面和车型核对提醒收尾。",
-          "cta_en": "Match your truck setup to the product page before you choose the set.",
-          "cta_zh": "选择这套脚垫前，先把车辆配置与产品页逐项核对。",
-          "asset_note": "使用4:5竖图；正式外发前换成批准的真实产品图；适配条件放在正文里，不让AI图片承担产品事实。"
-        },
-        {
-          "id": "tiktok",
-          "index": "02",
-          "platform": "TikTok",
-          "angle": "先给清洗爽点，再提醒适配不能省",
-          "hook_label": "Hook",
-          "hook_en": "The satisfying part is the rinse. The important part comes first.",
-          "hook_zh": "冲洗很解压，但真正重要的是前一步。",
-          "body_label": "Caption",
-          "body_en": "Keep the mess in the channels, pull the liner out, rinse it, and put it back. First, confirm the exact F-250 or F-350 Crew Cab configuration. A good cleanup clip cannot fix the wrong fitment.",
-          "body_zh": "让脏东西留在沟槽里，取出脚垫，冲洗，再装回。开始前先确认F-250或F-350 Crew Cab的具体配置。再解压的清洗画面，也补救不了错误适配。",
-          "sequence_label": "口播与镜头",
-          "sequence_en": "Beat 1: show the mud sitting in the channels. Beat 2: remove the liner for cleaning. Beat 3: rinse it. Beat 4: end on the exact-configuration check.",
-          "sequence_zh": "第一拍展示沟槽里的泥水，第二拍取出脚垫，第三拍冲洗，第四拍以核对具体配置收尾。",
-          "cta_en": "Check the truck setup first. Then see what the channels hold.",
-          "cta_zh": "先核对车辆配置，再看沟槽能承接什么。",
-          "asset_note": "这里仅提供Hook、英文口播结构和镜头提示。正式视频由视频团队使用批准的产品素材制作。"
+          "body_en": "Check the truck before choosing the set: model years 2017 through 2026 for the F-250 or F-350 Super Duty Crew Cab, first-row bucket seats, under-seat storage, and the exact configuration listed on the product page. Deep channels and raised edges are designed to hold common wet and muddy messes on the liner for removal and rinsing.",
+          "cta_en": "Match your truck setup to the product page."
         },
         {
           "id": "facebook",
-          "index": "03",
           "platform": "Facebook",
-          "angle": "把配置、材质和清洁方法一次讲清",
-          "hook_label": "Hook",
-          "hook_en": "Floor-liner questions often start with material. Fitment starts with configuration.",
-          "hook_zh": "大家常先问脚垫材质，适配判断要先看车辆配置。",
-          "body_label": "Post",
-          "body_en": "This OEDRO 2Gen set uses black TPE and includes two front mats plus one rear liner. The current product page supports model years 2017 through 2026 for Ford F-250 and F-350 Super Duty Crew Cab trucks with first-row bucket seats, but the exact setup still needs to be checked. Deep channels and raised edges are designed to hold common wet and muddy messes on the liner. When it is dirty, remove it, hose it off, and reinstall it.",
-          "body_zh": "这套OEDRO 2Gen黑色TPE脚垫包含两张前排脚垫和一张后排连体垫。当前产品页支持2017至2026年Ford F-250和F-350 Super Duty Crew Cab，前排为桶形座椅，但仍需核对具体配置。深沟槽和高边缘用于承接常见泥水污渍。脏了以后取出、冲洗，再装回。",
-          "sequence_label": "内容结构",
-          "sequence_en": "Lead with the configuration checklist, then show what the channels contain and how the liner is removed for rinsing.",
-          "sequence_zh": "先列车辆配置检查，再展示沟槽承接的污渍，以及脚垫如何取出冲洗。",
-          "cta_en": "Tell us your year, model, cab, and front-seat setup before choosing a liner.",
-          "cta_zh": "选择脚垫前，请先确认年份、车型、驾驶室和前排座椅配置。",
-          "asset_note": "正文在静音状态下也能看懂；正式外发时使用批准的真实产品图，概念图不能证明产品几何和适配。"
+          "hook_en": "Floor-liner fitment starts with the truck configuration.",
+          "body_en": "This OEDRO 2Gen black TPE set includes two front mats and one rear liner. The product page lists specific 2017 through 2026 Ford F-250 and F-350 Super Duty Crew Cab configurations with first-row bucket seats and under-seat storage. Deep channels and raised edges are designed to hold common wet and muddy messes on the liner. Remove the liner, rinse it with a hose, and reinstall it when clean.",
+          "cta_en": "Check the year, model, cab, and front-seat setup."
         },
         {
-          "id": "youtube-shorts",
-          "index": "04",
-          "platform": "YouTube Shorts",
-          "angle": "标题先能被搜到，口播再讲适配和冲洗",
-          "hook_label": "Title",
-          "hook_en": "F-250/F-350 Floor Mats: Check This Before the Rinse",
-          "hook_zh": "F-250/F-350脚垫：冲洗前先核对这一点。",
-          "body_label": "Description",
-          "body_en": "A quick look at how deep channels and raised edges hold wet, muddy messes before the liner is removed and rinsed. This OEDRO 2Gen set is listed for specific model years 2017 through 2026 for F-250 and F-350 Super Duty Crew Cab configurations with first-row bucket seats. Check the exact truck setup before using the fitment information.",
-          "body_zh": "快速了解深沟槽和高边缘如何承接湿泥污渍，以及脚垫如何取出冲洗。这套OEDRO 2Gen脚垫适用于产品页列出的特定2017至2026年F-250/F-350 Super Duty Crew Cab配置，前排为桶形座椅。使用适配信息前，请核对具体车辆配置。",
-          "sequence_label": "口播与镜头",
-          "sequence_en": "Open with the fitment check, show the channel detail, demonstrate removal and rinsing with approved footage, and close by repeating the exact-configuration reminder.",
-          "sequence_zh": "开头先核对适配条件，再展示沟槽细节，用已批准素材展示取出和冲洗，最后再次提醒确认具体配置。",
-          "cta_en": "Check the exact configuration on the product page before choosing the set.",
-          "cta_zh": "选择这套脚垫前，请在产品页核对具体配置。",
-          "asset_note": "这里仅交付标题、英文口播结构、镜头提示和素材要求。正式画面与声音由视频团队制作并确认使用权。"
-        }
-      ],
-      "review": {
-        "round_one": {
-          "label": "第一轮 · 打回",
-          "title": "有四处不能放过",
-          "items": [
-            "Facebook暗示错误适配会造成经济损失，但没有事实支持。",
-            "TikTok暗示取出脚垫时绝不会洒到地毯上，语气过度确定。",
-            "Instagram和TikTok的CTA不够自然、有力。",
-            "第一版图像太像真实产品照，脱离说明后容易误导。"
-          ]
-        },
-        "round_two": {
-          "label": "第二轮 · 交给人审",
-          "title": "改完以后为什么可以继续",
-          "items": [
-            "删除了经济损失和绝不洒漏的暗示。",
-            "四个平台仍使用同一组产品事实和素材边界。",
-            "英文检查没有发现明显AI腔或高风险表达。",
-            "画面取消AI水印和醒目标识，生成方式只留在审核记录；正式发布仍要换真实产品图。"
-          ]
-        },
-        "examples": [
-          {
-            "platform": "Facebook",
-            "before": "Floor-liner questions often start with material. The expensive mistake starts with configuration.",
-            "after": "Floor-liner questions often start with material. Fitment starts with configuration.",
-            "reason": "删掉没有事实依据的经济损失暗示。"
-          },
-          {
-            "platform": "TikTok",
-            "before": "Beat 2: lift the liner without spilling onto the carpet.",
-            "after": "Beat 2: remove the liner for cleaning.",
-            "reason": "删掉绝不会洒漏的保证式表达。"
-          },
-          {
-            "platform": "Instagram",
-            "before": "Check your truck configuration before calling it a fit.",
-            "after": "Match your truck setup to the product page before you choose the set.",
-            "reason": "把生硬的说法改成更直接的下一步。"
-          },
-          {
-            "platform": "TikTok CTA",
-            "before": "Check the configuration, then watch the cleanup.",
-            "after": "Check the truck setup first. Then see what the channels hold.",
-            "reason": "把泛泛的观看提示改成与内容主题一致的动作。"
-          }
-        ]
-      },
-      "safety_tests": [
-        {
-          "title": "未获批准的产品说法",
-          "text": "不能进入文案。"
-        },
-        {
-          "title": "同一段文案跨平台复制",
-          "text": "会被退回。"
-        },
-        {
-          "title": "某个平台擅自改变产品事实",
-          "text": "会被识别。"
-        },
-        {
-          "title": "YouTube素材权利不足",
-          "text": "只停止YouTube，其他平台可继续。"
-        },
-        {
-          "title": "试图打开自动发布权限",
-          "text": "会被阻止。"
-        },
-        {
-          "title": "流程意外产出视频文件",
-          "text": "会被阻止。"
-        }
-      ],
-      "image_test": [
-        "第一版在清晰度、材质和构图上表现不错，但写实度太高，容易被误认为OEDRO的真实产品图。",
-        "复核时取消了图内AI水印和醒目标识，生成方式只保留在审核记录里。",
-        "这张图仍不能证明脚垫的准确形状、适配或性能。正式发布必须换成批准的真实产品图。"
-      ],
-      "social_snapshot": {
-        "checked_on": "2026-09-01",
-        "note": "数字来自当次公开页面，平台显示会变化。无登录状态下读不到的数据保持待确认。",
-        "rows": [
-          {
-            "platform": "Instagram",
-            "url": "https://www.instagram.com/oedroautoparts/",
-            "metrics": "47,315 followers、1,936 posts；近期日更，以车型适配、脚垫、头灯、汽车小知识和促销为主。",
-            "assessment": "官网可确认归属。近期新帖的早期互动样本偏低，不能当长期平均。"
-          },
-          {
-            "platform": "YouTube",
-            "url": "https://www.youtube.com/channel/UCJ2Hexjg59NLlFZAodX6eWg",
-            "metrics": "约3.08K subscribers、1,114 videos、10,846,890 channel views；近期内容集中在脚垫和后备箱垫。",
-            "assessment": "官网可确认归属。近期视频播放差异较大。"
-          },
-          {
-            "platform": "Facebook",
-            "url": "https://www.facebook.com/profile.php?id=61560226375409",
-            "metrics": "无登录状态下无法稳定读取粉丝、近期帖子和互动。",
-            "assessment": "官网可确认页面存在，运营强度待后台核对。"
-          },
-          {
-            "platform": "TikTok Shop",
-            "url": "https://shop.tiktok.com/us/store/oedro/7495900754273601705",
-            "metrics": "14.3K+ followers、16.3K sold、1,985 videos；商品区可见多个OEDRO产品。",
-            "assessment": "有真实运营基础，但官网没有反向链接，账号控制权仍待补证。"
-          },
-          {
-            "platform": "Pinterest / X / LinkedIn / Reddit",
-            "url": "",
-            "metrics": "未找到足够稳定的官方品牌账号和当前运营数据。",
-            "assessment": "暂不按已确认品牌阵地规划。"
-          }
-        ],
-        "sources": [
-          {
-            "label": "OEDRO官网",
-            "url": "https://www.oedro.com/"
-          },
-          {
-            "label": "YouTube频道RSS",
-            "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCJ2Hexjg59NLlFZAodX6eWg"
-          }
-        ]
-      },
-      "boundaries": [
-        {
-          "label": "视频",
-          "text": "这里只交Hook、英文口播结构、镜头提示和素材要求，正式视频由视频团队制作。"
-        },
-        {
-          "label": "发布",
-          "text": "流程不会自动登录、排期、发帖或修改平台账号。"
-        },
-        {
-          "label": "图片",
-          "text": "AI概念图只能帮助检查方向，正式外发仍需批准的真实产品图。"
+          "id": "pinterest",
+          "platform": "Pinterest",
+          "hook_en": "F-250/F-350 Floor Mats: Fitment and Cleaning",
+          "body_en": "Save this fitment and cleaning reference for an OEDRO 2Gen TPE floor-liner set. Compare the listed model year, Crew Cab, first-row bucket seats, and under-seat storage with your truck. Deep channels and raised edges are designed to hold common wet and muddy messes on the liner. Remove it, rinse it with a hose, and reinstall it when clean.",
+          "cta_en": "Save the checklist and verify the product page."
         }
       ]
     }

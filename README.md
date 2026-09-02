@@ -11,7 +11,7 @@
 - `research.html`：研究项目、方法、参与方式、用户权利和 AI智能对话问卷介绍
 - `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
 - `content-studio.html`：已经形成的内容、研究、方案和工作成果
-- `content-pipeline-test.html`：按日期保存多平台内容、AI检查前后、静态图和社媒概况；新增测试只需追加公开安全数据和素材
+- `content-pipeline-test.html`：按日期保存 Instagram、Facebook 和 Pinterest 静态图文样稿
 - `mascot.html`：OEDRO 吉祥物迭代历史，展示 Round 1–4、当前候选、筛选状态和 1254×1254 高清图
 - `topics.html`与`topic.html`：专题、稳定方法和经验记录
 - `playbook.html`：工作方法和完成标准
@@ -86,10 +86,12 @@ ChatGPT Work云任务已经完成真实预检：能读取仓库，但创建测�
 
 只有出现真实需求——网页直接编辑并永久保存、多人同时协作、不同用户权限，或私密业务数据必须在线存储——才重新评估后端。
 
-## 视觉约束
+## 设计与发布检查
 
-- 保留深色流体背景和暖金点缀；
-- `.main-content`保持透明；
-- 常用文字不小于12px；
-- 表单和控件文字不小于14px；
-- 优先保留已经验证正常的页面和交互，不为重构而重构。
+整站设计规则见 `design.md`。正文使用稳定深色实底，不加载全页装饰背景，不使用文字阴影；辅助信息不小于 12px，触控目标不小于 44×44px。
+
+页面或可见文案变更还需运行：
+
+```bash
+node scripts/check-anti-slop.js
+```

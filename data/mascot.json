@@ -1,6 +1,6 @@
 {
-  "title": "Mascot Evolution / 吉祥物迭代",
-  "meta_description": "OEDRO吉祥物从首轮概念到非蓝配色探索的完整迭代历史。",
+  "title": "吉祥物迭代",
+  "meta_description": "OEDRO 吉祥物候选与迭代历史。",
   "leader": {
     "conclusion": "当前建议先看犰狳护板守护者、工作野牛和套筒模块伙伴的氧化橙方案。Round 4 已停止使用蓝色，并把角色结构与颜色比较分开。",
     "note": "当前没有 Selected 方案。Shortlisted 只表示进入下一轮模型表、商标距离和用户测试。",
@@ -117,7 +117,7 @@
       "palette": ["氧化橙", "工业琥珀", "苔藓橄榄", "石墨与暖金属"],
       "score": "视觉审查 17/18。12 张通过蓝色像素、灰度、轮廓、32px、64px 和明暗背景检查。",
       "issues": ["野牛和成年犬仍保留较大面积有机皮毛，机械覆盖比例需要下一轮决定。", "工业琥珀的行业识别很强，同时最需要检查工程机械品牌距离。", "当前仍未完成商标、IP、生产成本或真实用户偏好验证。"],
-      "change_reason": "从 F4A、F1A、F3A 中选择 1 到 2 个结构，再制作统一模型表和姿态系统。",
+      "change_reason": "在 F4A、F1A、F3A 中选择 1 至 2 个结构，用于统一模型表和姿态系统。",
       "assets": [
         { "code": "R4-F1A", "title": "工作野牛", "family": "bison", "palette": "oxide", "status": "Shortlisted", "score": "视觉通过", "style": "氧化橙", "src": "assets/mascot-evolution/round4/R4_F1A.webp", "alt": "第四轮工作野牛氧化橙方案" },
         { "code": "R4-F1B", "title": "工作野牛", "family": "bison", "palette": "amber", "status": "Exploring", "score": "视觉通过", "style": "工业琥珀", "src": "assets/mascot-evolution/round4/R4_F1B.webp", "alt": "第四轮工作野牛工业琥珀方案" },

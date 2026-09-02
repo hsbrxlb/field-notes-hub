@@ -84,6 +84,7 @@ def safe_timestamp(value: Any, fallback: str) -> str:
             datetime.fromisoformat(value.replace("Z", "+00:00"))
             return value
         except ValueError:
+            # Invalid source timestamps deliberately fall through to the trusted run timestamp.
             pass
     return fallback
 

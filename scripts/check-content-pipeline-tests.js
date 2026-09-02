@@ -50,25 +50,23 @@ if (config) {
     const ids = new Set();
     config.records.forEach((record, index) => {
       const label = 'records[' + index + ']';
-      for (const key of ['run_id', 'date', 'product', 'theme', 'review_status', 'summary']) {
+      for (const key of ['run_id', 'date', 'product', 'review_status', 'title', 'source_url']) {
         requiredString(record[key], label + '.' + key);
       }
       if (!/^\d{4}-\d{2}-\d{2}$/.test(record.date || '')) errors.push(label + '.date 必须使用YYYY-MM-DD');
       if (!/^[a-z0-9][a-z0-9._-]{2,80}$/.test(record.run_id || '')) errors.push(label + '.run_id 格式不正确');
       if (ids.has(record.run_id)) errors.push(label + '.run_id 重复');
       ids.add(record.run_id);
-      if (!Array.isArray(record.platforms) || record.platforms.length !== 4) errors.push(label + '.platforms 必须有四个平台');
-      if (!Array.isArray(record.variants) || record.variants.length !== 4) errors.push(label + '.variants 必须有四个平台版本');
+      if (!Array.isArray(record.variants) || record.variants.length !== 3) errors.push(label + '.variants 必须有三个平台版本');
+      const platforms = (record.variants || []).map((item) => item.id).sort();
+      if (platforms.join(',') !== 'facebook,instagram,pinterest') errors.push(label + '.variants 平台必须是 Instagram、Facebook 和 Pinterest');
       if (!record.image || typeof record.image.src !== 'string') {
         errors.push(label + '.image 不完整');
       } else {
         const asset = path.join(root, record.image.src);
         if (!fs.existsSync(asset)) errors.push(label + '.image 文件不存在：' + record.image.src);
       }
-      if (!record.review?.round_one?.items?.length || !record.review?.round_two?.items?.length) errors.push(label + '.review 不完整');
-      if (!Array.isArray(record.safety_tests) || record.safety_tests.length !== 6) errors.push(label + '.safety_tests 必须有六项');
-      if (!record.social_snapshot?.rows?.length) errors.push(label + '.social_snapshot 不完整');
-      if (!Array.isArray(record.boundaries) || !record.boundaries.length) errors.push(label + '.boundaries 不完整');
+      if (!Array.isArray(record.facts) || !record.facts.length) errors.push(label + '.facts 不完整');
     });
   }
   const publicText = JSON.stringify(config);
@@ -95,13 +93,13 @@ if (fs.existsSync(scriptPath)) {
 
 const studio = readJson(studioDataPath);
 const entry = studio?.results?.find((item) => item.id === 'multiplatform-content-test');
-if (!entry) errors.push('Content Studio 缺少内容测试记录入口');
+if (!entry) errors.push('Content Studio 缺少内容样稿入口');
 if (!entry?.links?.some((item) => item.href === 'content-pipeline-test.html')) errors.push('Content Studio 入口没有指向新页面');
 
 if (errors.length) {
-  console.error('内容测试记录检查失败');
+  console.error('内容样稿检查失败');
   errors.forEach((error) => console.error('- ' + error));
   process.exitCode = 1;
 } else {
-  console.log('内容测试记录检查通过（' + config.records.length + ' 条公开记录）');
+  console.log('内容样稿检查通过（' + config.records.length + ' 条公开记录）');
 }

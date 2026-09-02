@@ -56,13 +56,7 @@
         </div>
         <span class="status status-${statusClass(item.status)}">${escapeHtml(item.status)}</span>
       </header>
-      <dl class="result-facts">
-        <div><dt>项目</dt><dd>${escapeHtml(item.project)}</dd></div>
-        <div><dt>成果类型</dt><dd>${escapeHtml(item.type)}</dd></div>
-        <div><dt>关联工作</dt><dd>${escapeHtml(item.related_work)}</dd></div>
-      </dl>
       <p class="result-description">${escapeHtml(item.description)}</p>
-      <p class="result-purpose"><strong>用途</strong>${escapeHtml(item.purpose)}</p>
       <div class="result-links" aria-label="成果入口">${links || '<span class="result-link-muted">暂无单独入口</span>'}</div>
     </article>`;
   }
@@ -79,28 +73,21 @@
     const results = visibleResults();
     const total = resultsConfig.results.length;
     const categoryLabel = categories.find((item) => item.id === activeCategory)?.label || '全部';
-    const featured = resultsConfig.results.find((item) => item.id === 'multiplatform-content-test');
     content.innerHTML = `
       <header class="page-heading">
         <h1>${escapeHtml(resultsConfig.title)}</h1>
         <p>${escapeHtml(resultsConfig.intro)}</p>
       </header>
-      ${featured ? `<a class="featured-result" href="content-pipeline-test.html" data-searchable>
-        <span class="eyebrow">最新案例</span>
-        <strong>${escapeHtml(featured.title)}</strong>
-        <p>${escapeHtml(featured.description)}</p>
-        <b>查看内容测试记录 <span aria-hidden="true">→</span></b>
-      </a>` : ''}
       <section class="section results-surface" aria-labelledby="results-list-title">
         <div class="section-head">
-          <div><h2 id="results-list-title">已经形成的工作结果</h2><p class="section-note">按类别查看，完整底稿仍保存在本地。</p></div>
+          <h2 id="results-list-title">工作结果</h2>
           <span class="count-note" id="results-count">${results.length} 项</span>
         </div>
         <div class="results-filter" role="tablist" aria-label="成果类别">
           ${categories.map((item) => `<button type="button" role="tab" aria-selected="${item.id === activeCategory}" data-results-category="${item.id}" class="${item.id === activeCategory ? 'active' : ''}">${escapeHtml(item.label)}</button>`).join('')}
         </div>
         <div class="result-list" id="result-list">${results.map(resultMarkup).join('')}</div>
-        <div class="empty-state result-empty" id="result-empty"${results.length ? ' hidden' : ''}><strong>暂无${escapeHtml(categoryLabel)}成果</strong><span>本地 Codex 完成新的工作后，再把适合公开的结果记到这里。</span></div>
+        <div class="empty-state result-empty" id="result-empty"${results.length ? ' hidden' : ''}><strong>暂无${escapeHtml(categoryLabel)}成果</strong></div>
         <div class="empty-state search-empty" role="status" hidden>换个关键词试试</div>
       </section>`;
 
