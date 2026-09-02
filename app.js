@@ -274,7 +274,7 @@ function renderUserVoice(data, voice, radar) {
     complaint: '产品问题', recommendation: '选购建议', fitment: '车型适配', installation: '安装', warranty: '保修', product_quality: '产品质量',
     shipping_returns: '配送与退换', support: '售后支持', community: '社区', general: '通用问题'
   };
-  const sourceLabels = { reddit: 'Reddit', forum: '车型论坛', youtube: 'YouTube' };
+  const sourceLabels = { reddit: 'Reddit', forum: '车型论坛', youtube: 'YouTube', bluesky: 'Bluesky' };
   const sourceStatusLabels = { not_run: '尚未运行', ok: '正常', failed: '失败', disabled: '停用', blocked: '需核对' };
   const radarTopicTitles = {
     complaint: '产品问题', support: '售后支持', installation: '安装问题', fitment: '车型适配',
@@ -312,9 +312,10 @@ function renderUserVoice(data, voice, radar) {
         <div><span class="eyebrow">产品事实</span><strong>${radar?.truth_status === 'current' ? '可用' : radar?.truth_status === 'blocked' ? '需核对' : '尚未检查'}</strong><p>事实不足时不生成确定性结论</p></div>
       </div>
       <div class="radar-source-list" aria-label="来源状态">
-        ${(radar?.sources || []).map((item) => `<span><b>${escapeHtml(item.source === 'official_facts' ? '官方产品事实' : item.source === 'tavily' ? '公开网页与论坛' : 'YouTube')}</b>${escapeHtml(sourceStatusLabels[item.status] || item.status)} · ${Number(item.accepted_count) || 0} 条</span>`).join('')}
+        ${(radar?.sources || []).map((item) => `<span><b>${escapeHtml(item.source === 'official_facts' ? '官方产品事实' : item.source === 'tavily' ? '公开网页与论坛' : item.source === 'bluesky' ? 'Bluesky' : 'YouTube')}</b>${escapeHtml(sourceStatusLabels[item.status] || item.status)} · ${Number(item.accepted_count) || 0} 条</span>`).join('')}
       </div>
       <p class="muted">YouTube 本轮得到 ${Number(radar?.metrics?.youtube_videos_checked) || 0} 次视频结果、${Number(radar?.metrics?.youtube_comments_checked) || 0} 条评论结果（其中回复 ${Number(radar?.metrics?.youtube_replies_checked) || 0} 条）；${Number(radar?.metrics?.youtube_unavailable_videos) || 0} 个视频的评论不可读取。不同查询可能命中同一视频或评论。</p>
+      <p class="muted">Bluesky 本轮得到 ${Number(radar?.metrics?.bluesky_posts_checked) || 0} 条公开帖子结果；只读检查，不需要账号、Cookie或付费服务。</p>
     </section>
     <section class="section demand-radar-items" data-searchable>
       <div class="section-head"><div><h2>值得查看的问题</h2><p>原帖链接会打开公开来源；页面不保存作者名、完整原话或内部回复草稿。</p></div></div>

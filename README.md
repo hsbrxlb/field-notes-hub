@@ -72,9 +72,11 @@ python3 scripts/test-update-hub-record.py
 
 当前继续使用静态 HTML、CSS、JavaScript、JSON、GitHub仓库和GitHub Pages。不接Supabase、Firebase、Cloudflare数据库、登录系统或AI API。
 
-公开问题检查由同一仓库的GitHub Actions每天北京时间09:17运行。选择非整点是为了降低GitHub Actions整点高负载造成的排队延迟；定时任务仍属于尽力调度，不保证分秒准时。它调用固定版本的私有OEDRO扫描代码，使用Tavily和YouTube只读API，并在同一次任务中校验、提交公开安全数据和部署Pages。扫描的SQLite、原始批次和日志只存在于临时云端运行目录，不进入Git。
+公开问题检查由同一仓库的GitHub Actions每天北京时间09:17运行。选择非整点是为了降低GitHub Actions整点高负载造成的排队延迟；定时任务仍属于尽力调度，不保证分秒准时。它调用固定版本的私有OEDRO扫描代码，使用Tavily、YouTube和Bluesky只读API，并在同一次任务中校验、提交公开安全数据和部署Pages。扫描的SQLite、原始批次和日志只存在于临时云端运行目录，不进入Git。
 
 YouTube检查每天执行8组固定查询，每组最多查看3个视频、每个视频最多20条顶层评论，并接收接口直接附带的回复。页面只公开本轮视频、评论、回复和不可读取视频的请求结果数，不公开作者或完整原文；不同查询可能产生重复结果。这扩大了免费官方API的覆盖，但不等于能搜索YouTube全站所有评论或全部回复。
+
+Bluesky检查每天通过官方公开AppView运行1组`OEDRO`品牌查询，最多50条结果，不需要登录、密钥或付费。页面只公开聚合数量和通过固定门槛的原帖链接，不公开作者或完整原文。
 
 ChatGPT Work云任务已经完成真实预检：能读取仓库，但创建测试分支返回GitHub集成权限拒绝，因此没有建立ChatGPT定时任务。当前只保留GitHub Actions这一条云端路线。
 

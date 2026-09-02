@@ -17,7 +17,8 @@
     "youtube_videos_checked": 9,
     "youtube_comments_checked": 159,
     "youtube_replies_checked": 54,
-    "youtube_unavailable_videos": 0
+    "youtube_unavailable_videos": 0,
+    "bluesky_posts_checked": 0
   },
   "sources": [
     {
@@ -29,6 +30,11 @@
       "source": "youtube",
       "status": "ok",
       "accepted_count": 166
+    },
+    {
+      "source": "bluesky",
+      "status": "not_run",
+      "accepted_count": 0
     },
     {
       "source": "official_facts",

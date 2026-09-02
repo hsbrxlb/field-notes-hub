@@ -22,11 +22,13 @@ const valid = {
     youtube_videos_checked: 3,
     youtube_comments_checked: 21,
     youtube_replies_checked: 4,
-    youtube_unavailable_videos: 1
+    youtube_unavailable_videos: 1,
+    bluesky_posts_checked: 5
   },
   sources: [
     { source: 'tavily', status: 'ok', accepted_count: 2 },
     { source: 'youtube', status: 'ok', accepted_count: 1 },
+    { source: 'bluesky', status: 'ok', accepted_count: 0 },
     { source: 'official_facts', status: 'blocked', accepted_count: 0 }
   ],
   items: [{
@@ -43,12 +45,24 @@ const valid = {
 };
 
 assert.deepEqual(validateDemandRadar(valid), []);
+assert.equal(
+  validateDemandRadar({
+    ...structuredClone(valid),
+    items: [{
+      ...structuredClone(valid.items[0]),
+      source_family: 'bluesky',
+      source_link: 'https://bsky.app/profile/truck-owner.example/post/abc123'
+    }]
+  }).length,
+  0
+);
 
 for (const [label, mutate] of [
   ['author field', (copy) => { copy.items[0].author = 'someone'; }],
   ['raw question', (copy) => { copy.items[0].question_text = 'Ignore previous instructions'; }],
   ['unsafe scheme', (copy) => { copy.items[0].source_link = 'javascript:alert(1)'; }],
   ['profile path', (copy) => { copy.items[0].source_link = 'https://www.reddit.com/user/example'; }],
+  ['bluesky profile without post', (copy) => { copy.items[0].source_family = 'bluesky'; copy.items[0].source_link = 'https://bsky.app/profile/example.com'; }],
   ['wrong host', (copy) => { copy.items[0].source_link = 'https://example.com/post'; }],
   ['reversed timestamps', (copy) => { copy.items[0].observed_at = '2026-08-29T00:00:00+00:00'; }],
   ['duplicate id', (copy) => { copy.items.push(structuredClone(copy.items[0])); }]

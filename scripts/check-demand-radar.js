@@ -14,7 +14,8 @@ const allowedTopLevel = new Set([
 const allowedMetricFields = new Set([
   'raw_discovered', 'accepted', 'filtered', 'new_actionable',
   'duplicate_actionable', 'open_items', 'youtube_videos_checked',
-  'youtube_comments_checked', 'youtube_replies_checked', 'youtube_unavailable_videos'
+  'youtube_comments_checked', 'youtube_replies_checked', 'youtube_unavailable_videos',
+  'bluesky_posts_checked'
 ]);
 const allowedSourceFields = new Set(['source', 'status', 'accepted_count']);
 const allowedItemFields = new Set([
@@ -25,13 +26,13 @@ const allowedTopics = new Set([
   'complaint', 'support', 'installation', 'fitment', 'recommendation',
   'tonneau_cover', 'running_boards', 'floor_mats', 'bumper', 'general'
 ]);
-const allowedFamilies = new Set(['reddit', 'forum', 'youtube']);
+const allowedFamilies = new Set(['reddit', 'forum', 'youtube', 'bluesky']);
 const allowedReasons = new Set(['direct_oedro_question', 'relevant_product_question']);
 const allowedNextActions = new Set(['verify_product_facts', 'review_reply_opportunity']);
 const allowedTriage = new Set(['NEEDS_FACTS', 'DRAFT_READY']);
 const allowedStatuses = new Set(['not_run', 'success', 'partial', 'failed']);
 const allowedTruthStatuses = new Set(['unknown', 'current', 'blocked']);
-const allowedSourceNames = new Set(['tavily', 'youtube', 'official_facts']);
+const allowedSourceNames = new Set(['tavily', 'youtube', 'bluesky', 'official_facts']);
 const allowedSourceStatuses = new Set(['not_run', 'ok', 'failed', 'disabled', 'blocked']);
 const privateFieldPattern = /author|quote|mention|draft|reply|profile|handle|fact_id|question|excerpt/i;
 const blockedPathPattern = /\/(?:user|users|profile|profiles|member|members|account|accounts)(?:\/|$)/i;
@@ -59,8 +60,12 @@ function safeSourceLink(value, family) {
   } catch {
     return false;
   }
-  if (url.protocol !== 'https:' || url.username || url.password || blockedPathPattern.test(url.pathname)) return false;
+  if (url.protocol !== 'https:' || url.username || url.password) return false;
   const host = url.hostname.toLowerCase();
+  if (family === 'bluesky') {
+    return host === 'bsky.app' && /^\/profile\/[^/]+\/post\/[^/]+\/?$/.test(url.pathname);
+  }
+  if (blockedPathPattern.test(url.pathname)) return false;
   if (family === 'reddit') return host === 'reddit.com' || host.endsWith('.reddit.com');
   if (family === 'youtube') return host === 'youtu.be' || host === 'youtube.com' || host.endsWith('.youtube.com');
   if (family === 'forum') return forumTokens.some((token) => host.includes(token));
@@ -88,8 +93,8 @@ function validateDemandRadar(candidate) {
       if (!Number.isInteger(value) || value < 0) issues.push(`demand-radar: metrics.${key} is invalid`);
     }
   }
-  if (!Array.isArray(candidate?.sources) || candidate.sources.length !== 3) {
-    issues.push('demand-radar: sources must contain exactly three entries');
+  if (!Array.isArray(candidate?.sources) || candidate.sources.length !== 4) {
+    issues.push('demand-radar: sources must contain exactly four entries');
   } else {
     const names = new Set();
     candidate.sources.forEach((item, index) => {
