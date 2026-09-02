@@ -19,7 +19,7 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "data" / "demand-radar.json"
 DEFAULT_STATE = ROOT / ".github" / "demand-radar-state.json"
-SCANNER_REVISION = "36ea88b73c36ee951b7f200bb5d22ca7f29e9b18"
+SCANNER_REVISION = "e3169422bab66a4ea92f2ebc26434a1a7b353898"
 ALLOWED_TOPICS = {
     "complaint", "support", "installation", "fitment", "recommendation",
     "tonneau_cover", "running_boards", "floor_mats", "bumper", "general",
