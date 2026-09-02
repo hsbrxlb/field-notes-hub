@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-02T03:44:44+00:00",
-  "last_attempt_at": "2026-09-02T03:44:10+00:00",
+  "generated_at": "2026-09-02T03:48:54+00:00",
+  "last_attempt_at": "2026-09-02T03:48:23+00:00",
   "last_success_at": "2026-09-01T11:13:38+00:00",
   "method": "deterministic_external_signal_scan",
   "status": "partial",
   "stale_after_hours": 36,
   "truth_status": "blocked",
   "metrics": {
-    "raw_discovered": 183,
-    "accepted": 149,
-    "filtered": 34,
+    "raw_discovered": 181,
+    "accepted": 148,
+    "filtered": 33,
     "new_actionable": 0,
     "duplicate_actionable": 0,
     "open_items": 4,
     "youtube_videos_checked": 9,
-    "youtube_comments_checked": 139,
-    "youtube_replies_checked": 44,
+    "youtube_comments_checked": 137,
+    "youtube_replies_checked": 38,
     "youtube_unavailable_videos": 0,
     "bluesky_posts_checked": 0
   },
@@ -24,12 +24,12 @@
     {
       "source": "tavily",
       "status": "ok",
-      "accepted_count": 3
+      "accepted_count": 4
     },
     {
       "source": "youtube",
       "status": "ok",
-      "accepted_count": 146
+      "accepted_count": 144
     },
     {
       "source": "bluesky",
