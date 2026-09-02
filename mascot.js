@@ -6,52 +6,41 @@
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;');
 
-  const statusClass = (status) => `evo-status-${String(status).toLowerCase()}`;
-  const statusLabels = { Exploring: '探索中', Rejected: '已淘汰', Shortlisted: '候选', Selected: '已选定' };
-  const statusMarkup = (status) => `<span class="evo-status ${statusClass(status)}">${safe(statusLabels[status] || status)}</span>`;
-
   function assetCard(asset, round, eager = false) {
+    const view = asset.view || asset.style || round.label;
     return `<button class="evo-asset" type="button"
       data-evo-image="${safe(asset.code)}"
       data-round="${safe(round.id)}"
       data-family="${safe(asset.family)}"
       data-palette="${safe(asset.palette)}"
-      data-status="${safe(asset.status)}"
-      aria-label="查看${safe(round.label)} ${safe(asset.title)}高清图">
-      <span class="evo-asset-image"><img src="${safe(asset.src)}" alt="${safe(asset.alt)}" width="960" height="960" loading="${eager ? 'eager' : 'lazy'}" decoding="async"></span>
-      <span class="evo-asset-copy"><strong>${safe(asset.title)}</strong></span>
+      aria-label="查看${safe(round.label)} ${safe(asset.title)} ${safe(view)}高清图">
+      <span class="evo-asset-image"><img src="${safe(asset.src)}" alt="${safe(asset.alt)}" width="1254" height="1254" loading="${eager ? 'eager' : 'lazy'}" decoding="async"></span>
+      <span class="evo-asset-copy"><strong>${safe(asset.title)}</strong><small>${safe(view)}</small></span>
     </button>`;
   }
 
-  function recommendedMarkup(data, assets) {
-    return data.leader.recommended.map((code) => {
-      const item = assets.find((candidate) => candidate.asset.code === code);
-      return item ? assetCard(item.asset, item.round, true) : '';
+  function roundMarkup(round, data, isLatest) {
+    const families = [...new Set(round.assets.map((asset) => asset.family))];
+    let eagerIndex = 0;
+    const groups = families.map((family) => {
+      const familyAssets = round.assets.filter((asset) => asset.family === family);
+      const note = data.family_notes?.[family];
+      return `<section class="evo-family-group" data-family-group="${safe(family)}" data-searchable>
+        <div class="evo-family-head">
+          <h3>${safe(data.family_labels[family] || family)}</h3>
+          ${note ? `<p>${safe(note)}</p>` : ''}
+        </div>
+        <div class="evo-family-assets">${familyAssets.map((asset) => assetCard(asset, round, isLatest && eagerIndex++ < 2)).join('')}</div>
+      </section>`;
     }).join('');
-  }
 
-  function roundMarkup(round) {
-    return `<details class="evo-round evo-reveal" data-evo-round="${safe(round.id)}" data-searchable>
+    return `<details class="evo-round" data-evo-round="${safe(round.id)}" data-searchable ${isLatest ? 'open' : ''}>
       <summary>
         <span class="evo-round-index">${safe(round.label)}</span>
         <span class="evo-round-summary"><b>${safe(round.date)}</b><strong>${safe(round.goal)}</strong></span>
-        ${statusMarkup(round.status)}
         <span class="evo-round-toggle" aria-hidden="true"></span>
       </summary>
-      <div class="evo-round-body">
-        <div class="evo-round-overview">
-          <button type="button" data-evo-overview="${safe(round.id)}" data-src="${safe(round.overview)}" data-alt="${safe(round.overview_alt)}" aria-label="放大查看${safe(round.label)}总览">
-            <img src="${safe(round.overview)}" alt="${safe(round.overview_alt)}" loading="lazy" decoding="async">
-            <span>查看本轮总览</span>
-          </button>
-        </div>
-        <div class="evo-round-story" data-searchable>
-          <section><h3>主要问题</h3><ul>${round.issues.map((item) => `<li>${safe(item)}</li>`).join('')}</ul></section>
-          <section><h3>改动</h3><p>${safe(round.change_reason)}</p></section>
-        </div>
-        <div class="evo-round-assets" data-round-assets="${safe(round.id)}">${round.assets.map((asset) => assetCard(asset, round)).join('')}</div>
-        <p class="evo-round-empty" hidden>这个筛选条件下没有方案。</p>
-      </div>
+      <div class="evo-round-body">${groups}</div>
     </details>`;
   }
 
@@ -59,26 +48,22 @@
     return `<option value="${safe(value)}">${safe(label)}</option>`;
   }
 
-  function bindLightbox(data, assets) {
+  function bindLightbox(assets) {
     const dialog = document.querySelector('#evo-lightbox');
     const image = dialog?.querySelector('img');
     const title = dialog?.querySelector('strong');
     const detail = dialog?.querySelector('span');
-    const open = (src, alt, heading, meta) => {
+    const open = (item) => {
       if (!dialog || !image) return;
-      image.src = src;
-      image.alt = alt;
-      title.textContent = heading;
-      detail.textContent = meta;
+      image.src = item.asset.src;
+      image.alt = item.asset.alt;
+      title.textContent = item.asset.title;
+      detail.textContent = `${item.round.label} · ${item.asset.view || item.asset.style || ''}`;
       dialog.showModal();
     };
     document.querySelectorAll('[data-evo-image]').forEach((button) => button.addEventListener('click', () => {
       const item = assets.find((candidate) => candidate.asset.code === button.dataset.evoImage);
-      if (item) open(item.asset.src, item.asset.alt, item.asset.title, item.round.label);
-    }));
-    document.querySelectorAll('[data-evo-overview]').forEach((button) => button.addEventListener('click', () => {
-      const round = data.rounds.find((item) => item.id === button.dataset.evoOverview);
-      if (round) open(button.dataset.src, button.dataset.alt, `${round.label} 总览`, round.date);
+      if (item) open(item);
     }));
     dialog?.querySelector('[data-close]')?.addEventListener('click', () => dialog.close());
     dialog?.addEventListener('click', (event) => {
@@ -86,52 +71,37 @@
     });
   }
 
-  function bindFilters(data) {
+  function bindFilters(total) {
     const controls = {
       round: document.querySelector('#evo-round-filter'),
       family: document.querySelector('#evo-family-filter'),
-      palette: document.querySelector('#evo-palette-filter'),
-      status: document.querySelector('#evo-status-filter')
+      palette: document.querySelector('#evo-palette-filter')
     };
     const count = document.querySelector('#evo-result-count');
     const run = () => {
       const values = Object.fromEntries(Object.entries(controls).map(([key, control]) => [key, control?.value || 'all']));
       let visible = 0;
-      document.querySelectorAll('.evo-round-assets .evo-asset[data-round]').forEach((card) => {
+      document.querySelectorAll('.evo-asset[data-round]').forEach((card) => {
         const show = (values.round === 'all' || card.dataset.round === values.round)
           && (values.family === 'all' || card.dataset.family === values.family)
-          && (values.palette === 'all' || card.dataset.palette === values.palette)
-          && (values.status === 'all' || card.dataset.status === values.status);
+          && (values.palette === 'all' || card.dataset.palette === values.palette);
         card.hidden = !show;
         if (show) visible += 1;
       });
+      document.querySelectorAll('[data-family-group]').forEach((group) => {
+        group.hidden = ![...group.querySelectorAll('.evo-asset')].some((card) => !card.hidden);
+      });
       document.querySelectorAll('[data-evo-round]').forEach((round) => {
-        const cards = [...round.querySelectorAll('.evo-asset[data-round]')];
-        const hasVisible = cards.some((card) => !card.hidden);
+        const hasVisible = [...round.querySelectorAll('.evo-asset')].some((card) => !card.hidden);
         round.hidden = !hasVisible;
-        round.querySelector('.evo-round-empty').hidden = hasVisible;
         if (values.round !== 'all' && round.dataset.evoRound === values.round) round.open = true;
       });
-      if (count) count.textContent = `显示 ${visible} / 45 张`;
+      if (count) count.textContent = `显示 ${visible} / ${total} 张`;
       const globalEmpty = document.querySelector('#evo-global-empty');
       if (globalEmpty) globalEmpty.hidden = visible > 0;
     };
     Object.values(controls).forEach((control) => control?.addEventListener('change', run));
     run();
-  }
-
-  function bindReveal() {
-    const items = [...document.querySelectorAll('.evo-reveal')];
-    if (!('IntersectionObserver' in window)) {
-      items.forEach((item) => item.classList.add('is-visible'));
-      return;
-    }
-    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }), { threshold: 0.08 });
-    items.forEach((item) => observer.observe(item));
   }
 
   window.initMascot = async function initMascot() {
@@ -141,27 +111,23 @@
     const assets = data.rounds.flatMap((round) => round.assets.map((asset) => ({ round, asset })));
     const families = [...new Set(assets.map((item) => item.asset.family))];
     const palettes = [...new Set(assets.map((item) => item.asset.palette))];
+    const rounds = [...data.rounds].reverse();
     document.title = `${data.title}｜OEDRO海外用户运营`;
     document.querySelector('meta[name="description"]').content = data.meta_description;
     document.querySelector('#content').innerHTML = `
       <header class="page-heading evo-heading">
         <h1>吉祥物迭代</h1>
+        <p>每张图独立展示。最新一轮按身份、结构、工作和动态查看同一角色。</p>
       </header>
-      <section class="section evo-leader" data-searchable>
-        <div class="section-head"><h2>当前候选</h2></div>
-        <div class="evo-recommended">${recommendedMarkup(data, assets)}</div>
-      </section>
       <section class="section evo-history">
-        <div class="section-head"><h2>迭代历史</h2></div>
         <div class="evo-filters" aria-label="筛选吉祥物方案">
-          <label>轮次<select id="evo-round-filter"><option value="all">全部轮次</option>${data.rounds.map((round) => optionMarkup(round.id, round.label)).join('')}</select></label>
+          <label>轮次<select id="evo-round-filter"><option value="all">全部轮次</option>${rounds.map((round) => optionMarkup(round.id, round.label)).join('')}</select></label>
           <label>角色<select id="evo-family-filter"><option value="all">全部角色</option>${families.map((id) => optionMarkup(id, data.family_labels[id])).join('')}</select></label>
           <label>配色<select id="evo-palette-filter"><option value="all">全部配色</option>${palettes.map((id) => optionMarkup(id, data.palette_labels[id])).join('')}</select></label>
-          <label>状态<select id="evo-status-filter"><option value="all">全部状态</option>${['Exploring', 'Rejected', 'Shortlisted', 'Selected'].map((status) => optionMarkup(status, statusLabels[status])).join('')}</select></label>
           <span id="evo-result-count" aria-live="polite"></span>
         </div>
-        <div class="evo-round-list">${data.rounds.map(roundMarkup).join('')}</div>
-        <p class="evo-global-empty" id="evo-global-empty" hidden>当前筛选条件下没有方案。这里没有 Selected 方案。</p>
+        <div class="evo-round-list">${rounds.map((round, index) => roundMarkup(round, data, index === 0)).join('')}</div>
+        <p class="evo-global-empty" id="evo-global-empty" hidden>当前筛选条件下没有方案。</p>
       </section>
       <div class="empty-state search-empty" role="status" hidden>没有找到匹配的方案</div>
       <dialog class="evo-lightbox" id="evo-lightbox" aria-label="吉祥物高清图">
@@ -169,8 +135,7 @@
         <div><img alt="" width="1500" height="1500"></div>
         <p><strong></strong><span></span></p>
       </dialog>`;
-    bindLightbox(data, assets);
-    bindFilters(data);
-    bindReveal();
+    bindLightbox(assets);
+    bindFilters(assets.length);
   };
 })();

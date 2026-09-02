@@ -12,7 +12,7 @@
 - `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
 - `content-studio.html`：已经形成的内容、研究、方案和工作成果
 - `content-pipeline-test.html`：按日期保存 Instagram、Facebook 和 Pinterest 静态图文样稿
-- `mascot.html`：OEDRO 吉祥物迭代历史，展示 Round 1–4、当前候选、筛选状态和 1254×1254 高清图
+- `mascot.html`：OEDRO 吉祥物版本档案，按角色分组展示 Round 1–5 的独立高清图、多视角和动作
 - `topics.html`与`topic.html`：专题、稳定方法和经验记录
 - `playbook.html`：工作方法和完成标准
 
