@@ -53,6 +53,16 @@ def test_open_web_is_not_public() -> None:
     assert RADAR.build_public_item(row("https://example.com/post", family="open_web"), KEY, NOW, False) is None
 
 
+def test_bluesky_post_is_public_safe_without_source_text() -> None:
+    candidate = row("https://bsky.app/profile/truck-owner.example/post/abc", family="bluesky")
+    candidate["question_text"] = "Private source text must not be copied"
+    item = RADAR.build_public_item(candidate, KEY, NOW, False)
+    assert item is not None
+    assert item["source_family"] == "bluesky"
+    assert item["source_link"] == "https://bsky.app/profile/truck-owner.example/post/abc"
+    assert "question_text" not in item
+
+
 def test_generic_product_question_stays_in_aggregate_only() -> None:
     assert RADAR.build_public_item(
         row("https://www.reddit.com/r/f150/comments/abc/general-question/", direct=0),
@@ -155,6 +165,7 @@ def test_failed_attempt_preserves_last_success_and_items() -> None:
                 "youtube_comments_checked": 1,
                 "youtube_replies_checked": 0,
                 "youtube_unavailable_videos": 0,
+                "bluesky_posts_checked": 1,
             },
             "sources": [],
             "items": [{"signal_id": "a" * 64}],
@@ -173,6 +184,7 @@ if __name__ == "__main__":
         test_public_item_is_controlled_and_does_not_copy_source_text,
         test_truth_block_downgrades_draft_ready,
         test_open_web_is_not_public,
+        test_bluesky_post_is_public_safe_without_source_text,
         test_generic_product_question_stays_in_aggregate_only,
         test_merge_deduplicates_by_signal_id,
         test_truth_gate_downgrades_existing_items,

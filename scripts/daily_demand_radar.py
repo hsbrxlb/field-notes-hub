@@ -19,12 +19,12 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "data" / "demand-radar.json"
 DEFAULT_STATE = ROOT / ".github" / "demand-radar-state.json"
-SCANNER_REVISION = "48962ce6bda3a8cf574130ae4160a2280d50125a"
+SCANNER_REVISION = "36ea88b73c36ee951b7f200bb5d22ca7f29e9b18"
 ALLOWED_TOPICS = {
     "complaint", "support", "installation", "fitment", "recommendation",
     "tonneau_cover", "running_boards", "floor_mats", "bumper", "general",
 }
-ALLOWED_FAMILIES = {"reddit", "forum", "youtube"}
+ALLOWED_FAMILIES = {"reddit", "forum", "youtube", "bluesky"}
 TRACKING_QUERY_KEYS = {
     "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
     "gclid", "fbclid", "mc_cid", "mc_eid",
@@ -216,10 +216,12 @@ def _source_entries(scan_result: dict[str, Any], truth_result: dict[str, Any]) -
     counts = scan_result.get("source_counts", {})
     tavily_count = sum(int(counts.get(name, 0) or 0) for name in ("reddit", "forum", "open_web"))
     youtube_count = int(counts.get("youtube", 0) or 0)
+    bluesky_count = int(counts.get("bluesky", 0) or 0)
     truth_blocked = bool(truth_result.get("stale") or truth_result.get("conflicts") or truth_result.get("failures"))
     return [
         {"source": "tavily", "status": "failed" if "tavily" in failures else "ok", "accepted_count": tavily_count},
         {"source": "youtube", "status": "failed" if "youtube" in failures else "ok", "accepted_count": youtube_count},
+        {"source": "bluesky", "status": "failed" if "bluesky" in failures else "ok", "accepted_count": bluesky_count},
         {"source": "official_facts", "status": "blocked" if truth_blocked else "ok", "accepted_count": int(truth_result.get("inserted", 0) or 0)},
     ]
 
@@ -282,6 +284,8 @@ def run_live(scanner_root: Path, output_path: Path, state_path: Path, hmac_key: 
     last_success_at = completed_at if scan_status == "success" else existing.get("last_success_at")
 
     youtube_metrics = _youtube_public_metrics(scan_result)
+    raw_source_counts = scan_result.get("raw_source_counts", {})
+    bluesky_posts_checked = max(0, int(raw_source_counts.get("bluesky", 0) or 0))
     payload = {
         "schema_version": 1,
         "generated_at": completed_at,
@@ -299,6 +303,7 @@ def run_live(scanner_root: Path, output_path: Path, state_path: Path, hmac_key: 
             "duplicate_actionable": duplicate_count,
             "open_items": len(items),
             **youtube_metrics,
+            "bluesky_posts_checked": bluesky_posts_checked,
         },
         "sources": _source_entries(scan_result, truth_result),
         "items": items,
@@ -338,10 +343,12 @@ def write_failed_attempt(output_path: Path, attempted_at: str) -> dict[str, Any]
         "youtube_comments_checked": 0,
         "youtube_replies_checked": 0,
         "youtube_unavailable_videos": 0,
+        "bluesky_posts_checked": 0,
     }
     payload["sources"] = [
         {"source": "tavily", "status": "failed", "accepted_count": 0},
         {"source": "youtube", "status": "failed", "accepted_count": 0},
+        {"source": "bluesky", "status": "failed", "accepted_count": 0},
         {"source": "official_facts", "status": "failed", "accepted_count": 0},
     ]
     atomic_write(output_path, payload)
