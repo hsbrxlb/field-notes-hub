@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-02T05:54:32+00:00",
-  "last_attempt_at": "2026-09-02T05:53:55+00:00",
+  "generated_at": "2026-09-02T15:43:00+00:00",
+  "last_attempt_at": "2026-09-02T15:41:39+00:00",
   "last_success_at": "2026-09-02T05:54:32+00:00",
   "method": "deterministic_external_signal_scan",
-  "status": "success",
+  "status": "partial",
   "stale_after_hours": 36,
   "truth_status": "blocked",
   "metrics": {
-    "raw_discovered": 223,
-    "accepted": 177,
-    "filtered": 46,
+    "raw_discovered": 166,
+    "accepted": 149,
+    "filtered": 17,
     "new_actionable": 0,
-    "duplicate_actionable": 0,
+    "duplicate_actionable": 1,
     "open_items": 4,
     "youtube_videos_checked": 9,
-    "youtube_comments_checked": 168,
-    "youtube_replies_checked": 56,
+    "youtube_comments_checked": 139,
+    "youtube_replies_checked": 44,
     "youtube_unavailable_videos": 0,
     "bluesky_posts_checked": 0
   },
@@ -24,12 +24,12 @@
     {
       "source": "tavily",
       "status": "ok",
-      "accepted_count": 2
+      "accepted_count": 3
     },
     {
       "source": "youtube",
-      "status": "ok",
-      "accepted_count": 175
+      "status": "failed",
+      "accepted_count": 146
     },
     {
       "source": "bluesky",
@@ -43,6 +43,17 @@
     }
   ],
   "items": [
+    {
+      "signal_id": "6996ffc0e165c43fb192bfb563aafd8fd64c757f21d0bfd57e522fd05e563506",
+      "topic": "complaint",
+      "source_family": "reddit",
+      "source_link": "https://www.reddit.com/r/chevycolorado/comments/1sh85cx/please_help_me_pick_some_side_railsstepsrunning",
+      "reason_code": "direct_oedro_question",
+      "next_action": "verify_product_facts",
+      "triage_status": "NEEDS_FACTS",
+      "observed_at": "2026-09-02T15:41:50+00:00",
+      "last_seen_at": "2026-09-02T15:43:00+00:00"
+    },
     {
       "signal_id": "2fe8fcac771e0d3c0a983f688f3098989821f43b468b2e0920257af61819ba8c",
       "topic": "recommendation",
@@ -75,17 +86,6 @@
       "triage_status": "NEEDS_FACTS",
       "observed_at": "2026-08-31T06:34:40+00:00",
       "last_seen_at": "2026-08-31T06:35:04+00:00"
-    },
-    {
-      "signal_id": "6996ffc0e165c43fb192bfb563aafd8fd64c757f21d0bfd57e522fd05e563506",
-      "topic": "complaint",
-      "source_family": "reddit",
-      "source_link": "https://www.reddit.com/r/chevycolorado/comments/1sh85cx/please_help_me_pick_some_side_railsstepsrunning",
-      "reason_code": "direct_oedro_question",
-      "next_action": "verify_product_facts",
-      "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-08-30T06:09:48+00:00",
-      "last_seen_at": "2026-08-30T06:10:09+00:00"
     }
   ]
 }
