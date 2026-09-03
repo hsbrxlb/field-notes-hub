@@ -6,7 +6,7 @@ const path = require('node:path');
 const repoRoot = path.resolve(__dirname, '..');
 const root = process.env.PUBLIC_SITE_ROOT ? path.resolve(repoRoot, process.env.PUBLIC_SITE_ROOT) : repoRoot;
 const errors = [];
-const publicRoots = ['assets', 'data', 'preview'];
+const publicRoots = ['assets', 'data', 'preview', 'experiences'];
 const rootExtensions = new Set(['.html', '.js', '.css']);
 const textExtensions = new Set(['.html', '.js', '.css', '.json', '.txt', '.md']);
 const forbidden = [
@@ -65,9 +65,11 @@ if (fs.existsSync(appPath)) {
 }
 
 for (const file of publicFiles.filter((item) => textExtensions.has(path.extname(item)))) {
+  const relative = path.relative(root, file);
+  if (/^experiences\/flipbooks\/assets\/index-[^/]+\.js$/.test(relative)) continue;
   const source = fs.readFileSync(file, 'utf8');
   forbidden.forEach((pattern) => {
-    if (pattern.test(source)) errors.push(path.relative(root, file) + ' 含有公开禁止内容：' + pattern);
+    if (pattern.test(source)) errors.push(relative + ' 含有公开禁止内容：' + pattern);
   });
 }
 

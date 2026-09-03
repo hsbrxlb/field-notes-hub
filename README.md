@@ -1,6 +1,6 @@
 # OEDRO 海外用户运营 Hub
 
-这是 Oliver 的在线版上班记事本、项目进展仪表盘和工作成果档案。网站通过公开 GitHub Pages 发布，只读展示适合公开的工作摘要和成果。
+这是 Oliver 的在线版上班记事本、项目进展仪表盘和工作成果档案，主要供 Oliver 日常查看。网站通过公开 GitHub Pages 发布，URL 仍可公开访问。
 
 研究、分析、内容生成、方案和文件制作继续由本地 Codex 与现有本地工具完成。Hub页面不调用AI、不提供在线编辑，也不保存完整私有工作数据。OEDRO公开问题由本机Codex自动任务每天检查，GitHub Actions只在收到代码推送后校验并发布网页。
 
@@ -12,11 +12,14 @@
 - `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
 - `content-studio.html`：已经形成的内容、研究、方案和工作成果
 - `content-pipeline-test.html`：按日期保存 Instagram、Facebook 和 Pinterest 静态图文样稿
+- `flipbooks.html`：Flip Book Demo，进入 Edition 01 与 Owner Field Notes
 - `mascot.html`：OEDRO 吉祥物版本档案，按角色分组展示 Round 1–5 的独立高清图、多视角和动作
 - `topics.html`与`topic.html`：专题、稳定方法和经验记录
 - `playbook.html`：工作方法和完成标准
 
 `content-studio.html`路径为兼容旧链接而保留。页面已经改为只读成果档案，读取`data/content-studio.json`；没有填写表单、在线生成、浏览器草稿、版本审核、登录或数据库。
+
+`flipbooks.html` 是两本书的统一入口。书内左上角返回该页面；Owner Field Notes 的回答保存在访问者当前浏览器。
 
 “问题与反馈”同时读取两份用途不同的数据：
 

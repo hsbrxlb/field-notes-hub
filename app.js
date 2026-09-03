@@ -185,6 +185,23 @@ function renderResearch(data) {
     </section>`;
 }
 
+function renderFlipbooks(data) {
+  const flipbooks = data.flipbooks;
+  document.title = `${flipbooks.title}｜${data.site.title}`;
+  document.querySelector('meta[name="description"]').content = 'OEDRO互动翻页书演示。';
+  document.querySelector('#content').innerHTML = `
+    ${pageHeading(flipbooks.title)}
+    <section class="section flipbook-demo-grid" aria-label="两本翻页书">
+      ${flipbooks.entries.map((entry) => `<article class="flipbook-demo-item" data-searchable>
+        <h2>${escapeHtml(entry.title)}</h2>
+        <a href="${escapeHtml(entry.href)}" aria-label="打开${escapeHtml(entry.title)}">
+          <img src="${escapeHtml(entry.image)}" alt="${escapeHtml(entry.image_alt)}" width="${escapeHtml(entry.image_width)}" height="${escapeHtml(entry.image_height)}" loading="eager" decoding="async">
+        </a>
+      </article>`).join('')}
+    </section>
+    <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>`;
+}
+
 function renderUserVoice(data, voice, radar) {
   const copy = data.user_voice || {};
   const insights = Array.isArray(voice.actions)
@@ -403,6 +420,7 @@ async function init() {
   if (page === 'playbook') renderPlaybook(data);
   if (page === 'work') renderWork(data);
   if (page === 'research') renderResearch(data);
+  if (page === 'flipbooks') renderFlipbooks(data);
   if (page === 'voice') renderUserVoice(data, voice, radar);
   if (page === 'topics' && location.pathname.endsWith('topics.html')) renderTopics(data, topics);
   if (page === 'topics' && location.pathname.endsWith('topic.html')) await renderTopic(data);

@@ -30,6 +30,7 @@ jobs:
           node scripts/test-content-pipeline-records.js
           node scripts/check-public-pages.js
           node scripts/check-anti-slop.js
+          node scripts/check-field-books.js
       - name: Test public demand radar boundary
         run: |
           node scripts/check-demand-radar.js
@@ -45,7 +46,7 @@ jobs:
         run: |
           mkdir public-dist
           cp .nojekyll *.html *.js *.css public-dist/
-          cp -R assets data preview public-dist/
+          cp -R assets data preview experiences public-dist/
       - name: Validate complete public artifact
         run: |
           PUBLIC_SITE_ROOT=public-dist node scripts/check-public-user-voice.js
@@ -54,6 +55,7 @@ jobs:
           PUBLIC_SITE_ROOT=public-dist node scripts/check-content-pipeline-tests.js
           PUBLIC_SITE_ROOT=public-dist node scripts/check-public-pages.js
           PUBLIC_SITE_ROOT=public-dist node scripts/check-anti-slop.js
+          PUBLIC_SITE_ROOT=public-dist node scripts/check-field-books.js
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site

@@ -32,6 +32,11 @@
       "file": "content-studio.html"
     },
     {
+      "id": "flipbooks",
+      "label": "Flip Book Demo",
+      "file": "flipbooks.html"
+    },
+    {
       "id": "mascot",
       "label": "吉祥物迭代",
       "file": "mascot.html"
@@ -47,6 +52,27 @@
       "file": "playbook.html"
     }
   ],
+  "flipbooks": {
+    "title": "Flip Book Demo",
+    "entries": [
+      {
+        "title": "品牌故事 · Edition 01",
+        "image": "experiences/flipbooks/assets/v2/出发封面_Departure_Cover.webp",
+        "image_alt": "Edition 01 品牌故事翻页书",
+        "image_width": 1086,
+        "image_height": 1448,
+        "href": "experiences/flipbooks/?book=edition-01&return=../../flipbooks.html"
+      },
+      {
+        "title": "车主问卷 · Owner Field Notes",
+        "image": "experiences/flipbooks/assets/v2/雨天归来_Floor_Mats_Rain_Return.webp",
+        "image_alt": "Owner Field Notes 车主问卷翻页书",
+        "image_width": 1086,
+        "image_height": 1448,
+        "href": "experiences/flipbooks/?book=owner-field-notes&return=../../flipbooks.html"
+      }
+    ]
+  },
   "overview": {
     "meta_description": "OEDRO 海外用户运营的当前重点、最近成果和工作入口。",
     "title": "海外用户运营",
