@@ -1,6 +1,6 @@
 {
   "title": "吉祥物迭代",
-  "meta_description": "按轮次、角色和配色查看 OEDRO 吉祥物独立概念图。",
+  "meta_description": "完整查看 OEDRO 吉祥物七轮独立概念图、多视角与动作。",
   "family_labels": {
     "parts-spirit": "零件精灵",
     "dog": "车库狗",
@@ -14,14 +14,20 @@
     "mule": "拖带骡",
     "gecko": "贴合壁虎",
     "raven": "巡检渡鸦",
-    "armadillo-flex": "柔壳犰狳"
+    "armadillo-flex": "柔壳犰狳",
+    "copilot-dog": "野外副驾犬",
+    "canyon-fox": "峡谷狐向导",
+    "quiet-lynx": "静默山猫",
+    "kestrel-scout": "红隼路线侦察员",
+    "route-engineer": "路线工程师"
   },
   "palette_labels": {
     "blue": "蓝、银、黑",
     "oxide": "氧化橙",
     "amber": "工业琥珀",
     "olive": "苔藓橄榄",
-    "natural-workwear": "自然毛色与氧化橙工装"
+    "natural-workwear": "自然毛色与氧化橙工装",
+    "appeal-warm": "暖沙、炭灰与氧化橙"
   },
   "rounds": [
     {
@@ -698,6 +704,242 @@
           "alt": "柔壳犰狳展开软壳并快速转向"
         }
       ]
+    },
+    {
+      "id": "round-6",
+      "label": "Round 6",
+      "date": "2026-09-03",
+      "goal": "测试 OEDRO 字样如何融入角色装备，比较尺寸、位置和材料效果。",
+      "palette": [
+        "自然毛色",
+        "氧化橙肩带",
+        "暖灰背景"
+      ],
+      "assets": [
+        {
+          "code": "R6-F1",
+          "title": "底盘獾",
+          "family": "badger",
+          "palette": "natural-workwear",
+          "view": "品牌字标｜肩部织标",
+          "style": "OEDRO 字标位置测试",
+          "src": "assets/mascot-evolution/round6/R6_F1.webp",
+          "alt": "肩部工作背带带有 OEDRO 字样的底盘獾"
+        }
+      ]
+    },
+    {
+      "id": "round-7",
+      "label": "Round 7",
+      "date": "2026-09-03",
+      "goal": "用人格、轮廓和动作重新设计五个更漂亮、更容易被喜欢的角色方向，并测试 OEDRO 字标。",
+      "palette": [
+        "暖沙与骨白",
+        "炭灰与暖铝",
+        "氧化橙功能件"
+      ],
+      "assets": [
+        {
+          "code": "R7-F1A",
+          "title": "野外副驾犬",
+          "family": "copilot-dog",
+          "palette": "appeal-warm",
+          "view": "身份｜三分之四标准图",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F1A.webp",
+          "alt": "佩戴小型 OEDRO 胸前织标的野外副驾犬身份图"
+        },
+        {
+          "code": "R7-F1B",
+          "title": "野外副驾犬",
+          "family": "copilot-dog",
+          "palette": "appeal-warm",
+          "view": "结构｜侧后回望",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F1B.webp",
+          "alt": "野外副驾犬侧后回望和装备结构图"
+        },
+        {
+          "code": "R7-F1C",
+          "title": "野外副驾犬",
+          "family": "copilot-dog",
+          "palette": "appeal-warm",
+          "view": "工作｜车旁检查",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F1C.webp",
+          "alt": "野外副驾犬在无品牌越野车旁检查装备"
+        },
+        {
+          "code": "R7-F1D",
+          "title": "野外副驾犬",
+          "family": "copilot-dog",
+          "palette": "appeal-warm",
+          "view": "动态｜越过障碍",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F1D.webp",
+          "alt": "野外副驾犬跨越低位障碍的动态"
+        },
+        {
+          "code": "R7-F2A",
+          "title": "峡谷狐向导",
+          "family": "canyon-fox",
+          "palette": "appeal-warm",
+          "view": "身份｜三分之四标准图",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F2A.webp",
+          "alt": "佩戴小型 OEDRO 胸前织标的峡谷狐向导身份图"
+        },
+        {
+          "code": "R7-F2B",
+          "title": "峡谷狐向导",
+          "family": "canyon-fox",
+          "palette": "appeal-warm",
+          "view": "结构｜侧后回望",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F2B.webp",
+          "alt": "峡谷狐向导侧后回望和披肩结构图"
+        },
+        {
+          "code": "R7-F2C",
+          "title": "峡谷狐向导",
+          "family": "canyon-fox",
+          "palette": "appeal-warm",
+          "view": "工作｜判断路线",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F2C.webp",
+          "alt": "峡谷狐向导在无品牌车辆旁判断行进路线"
+        },
+        {
+          "code": "R7-F2D",
+          "title": "峡谷狐向导",
+          "family": "canyon-fox",
+          "palette": "appeal-warm",
+          "view": "动态｜峡谷转身",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F2D.webp",
+          "alt": "峡谷狐向导在暖灰地面快速转身的动态"
+        },
+        {
+          "code": "R7-F3A",
+          "title": "静默山猫",
+          "family": "quiet-lynx",
+          "palette": "appeal-warm",
+          "view": "身份｜三分之四标准图",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F3A.webp",
+          "alt": "佩戴小型 OEDRO 袖章的静默山猫身份图"
+        },
+        {
+          "code": "R7-F3B",
+          "title": "静默山猫",
+          "family": "quiet-lynx",
+          "palette": "appeal-warm",
+          "view": "结构｜侧后回望",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F3B.webp",
+          "alt": "静默山猫侧后回望和工具收纳结构图"
+        },
+        {
+          "code": "R7-F3C",
+          "title": "静默山猫",
+          "family": "quiet-lynx",
+          "palette": "appeal-warm",
+          "view": "工作｜检查安装位",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F3C.webp",
+          "alt": "静默山猫检查无品牌车辆的安装位置"
+        },
+        {
+          "code": "R7-F3D",
+          "title": "静默山猫",
+          "family": "quiet-lynx",
+          "palette": "appeal-warm",
+          "view": "动态｜低位跃步",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F3D.webp",
+          "alt": "静默山猫保持低重心跃过障碍的动态"
+        },
+        {
+          "code": "R7-F4A",
+          "title": "红隼路线侦察员",
+          "family": "kestrel-scout",
+          "palette": "appeal-warm",
+          "view": "身份｜三分之四标准图",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F4A.webp",
+          "alt": "佩戴小型 OEDRO 胸带的红隼路线侦察员身份图"
+        },
+        {
+          "code": "R7-F4B",
+          "title": "红隼路线侦察员",
+          "family": "kestrel-scout",
+          "palette": "appeal-warm",
+          "view": "结构｜侧后回望",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F4B.webp",
+          "alt": "红隼路线侦察员侧后回望和翼部结构图"
+        },
+        {
+          "code": "R7-F4C",
+          "title": "红隼路线侦察员",
+          "family": "kestrel-scout",
+          "palette": "appeal-warm",
+          "view": "工作｜车顶观察",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F4C.webp",
+          "alt": "红隼路线侦察员从无品牌车辆附近观察路线"
+        },
+        {
+          "code": "R7-F4D",
+          "title": "红隼路线侦察员",
+          "family": "kestrel-scout",
+          "palette": "appeal-warm",
+          "view": "动态｜俯冲转向",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F4D.webp",
+          "alt": "红隼路线侦察员展开双翼俯冲转向的动态"
+        },
+        {
+          "code": "R7-F5A",
+          "title": "路线工程师",
+          "family": "route-engineer",
+          "palette": "appeal-warm",
+          "view": "身份｜三分之四标准图",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F5A.webp",
+          "alt": "胸前带有小型 OEDRO 织标的路线工程师身份图"
+        },
+        {
+          "code": "R7-F5B",
+          "title": "路线工程师",
+          "family": "route-engineer",
+          "palette": "appeal-warm",
+          "view": "结构｜侧后回望",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F5B.webp",
+          "alt": "路线工程师侧后回望和工装结构图"
+        },
+        {
+          "code": "R7-F5C",
+          "title": "路线工程师",
+          "family": "route-engineer",
+          "palette": "appeal-warm",
+          "view": "工作｜车辆安装",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F5C.webp",
+          "alt": "路线工程师在无品牌车辆旁检查安装结构"
+        },
+        {
+          "code": "R7-F5D",
+          "title": "路线工程师",
+          "family": "route-engineer",
+          "palette": "appeal-warm",
+          "view": "动态｜跨步转身",
+          "style": "高端动画角色概念",
+          "src": "assets/mascot-evolution/round7/R7_F5D.webp",
+          "alt": "路线工程师携带收纳好的工具跨步转身"
+        }
+      ]
     }
   ],
   "family_notes": {
@@ -705,6 +947,11 @@
     "mule": "承重、拖带和把重活做完；重点看长耳、方正胸腔与四蹄受力。",
     "gecko": "贴合、窄缝安装和准确落位；重点看扁头、趾垫和尾巴形成的负形。",
     "raven": "高处巡检与发现异常；重点看长喙、大翼面和落地前后的动作节奏。",
-    "armadillo-flex": "柔性保护与越野耐用；重点看五段软壳在展开、收拢和低位通过时的表现。"
+    "armadillo-flex": "柔性保护与越野耐用；重点看五段软壳在展开、收拢和低位通过时的表现。",
+    "copilot-dog": "沉稳、可靠、愿意同行；用宽阔胸肩、专注眼神和自然动作建立亲和力。",
+    "canyon-fox": "敏锐但不狡黠；用长耳、披肩与清楚的尾部弧线形成优雅轮廓。",
+    "quiet-lynx": "克制、精准、有审美；用耳簇、短尾和利落工装保持安静的专业感。",
+    "kestrel-scout": "轻盈、警觉、视野开阔；用翼面、俯冲和落点变化表达路线侦察。",
+    "route-engineer": "把专业能力变成可信的人格；用成熟比例、真实工装和明确动作呈现服务感。"
   }
 }
