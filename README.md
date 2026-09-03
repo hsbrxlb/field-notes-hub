@@ -76,7 +76,7 @@ python3 scripts/test-update-hub-record.py
 
 当前继续使用静态 HTML、CSS、JavaScript、JSON、GitHub仓库和GitHub Pages。不接Supabase、Firebase、Cloudflare数据库、登录系统或AI API。
 
-公开问题检查由本机Codex自动任务每天北京时间09:17运行。Codex调用固定版本的私有OEDRO扫描代码，使用Tavily、YouTube和Bluesky只读接口，校验后只提交公开安全的数据文件。扫描使用临时目录，完成后清理；Git不保存SQLite、原始批次和日志。GitHub Actions不再定时扫描，只负责校验推送内容和发布Pages。
+公开问题检查由本机Codex自动任务每天北京时间09:17运行。Codex调用固定版本的私有OEDRO扫描代码，使用Tavily、YouTube和Bluesky只读接口。公开安全的完整快照、查询游标和去重状态会先写入本机耐久outbox；Hub工作区有其他改动时仍继续扫描，只延迟公开发布。发布使用独立临时Git工作区，并且只允许提交`data/demand-radar.json`和`.github/demand-radar-state.json`。扫描临时目录、SQLite、原始批次和日志不会进入Git。GitHub Actions不再定时扫描，只负责校验推送内容和发布Pages。
 
 YouTube检查每天执行8组固定查询，每组最多查看3个视频、每个视频最多20条顶层评论，并接收接口直接附带的回复。页面公开本轮视频、评论、回复和不可读取视频的请求结果数；作者和完整原文不会公开。不同查询可能产生重复结果。这扩大了免费官方API的覆盖，但不等于能搜索YouTube全站所有评论或全部回复。
 
