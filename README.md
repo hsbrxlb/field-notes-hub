@@ -13,7 +13,7 @@
 - `content-studio.html`：已经形成的内容、研究、方案和工作成果
 - `content-pipeline-test.html`：按日期保存 Instagram、Facebook 和 Pinterest 静态图文样稿
 - `flipbooks.html`：Flip Book Demo，进入 Edition 01 与 Owner Field Notes
-- `mascot.html`：OEDRO 吉祥物版本档案，按角色分组展示 Round 1–5 的独立高清图、多视角和动作
+- `mascot.html`：OEDRO 吉祥物角色档案，19 个角色区共 110 张独立高清图；重复角色合并展示，并提供页内跳转导航
 - `topics.html`与`topic.html`：专题、稳定方法和经验记录
 - `playbook.html`：工作方法和完成标准
 

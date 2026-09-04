@@ -26,56 +26,59 @@ const css = read('mascot.css');
 
 if (!content.nav.some((item) => item.id === 'mascot' && item.file === 'mascot.html')) fail('Hub navigation does not include mascot.html');
 if (!html.includes('data-page="mascot"') || !html.includes('mascot.css') || !html.includes('mascot.js')) fail('mascot.html is missing the page id or dedicated assets');
-if (!script.includes('data/mascot.json') || !script.includes('evo-family-assets') || !css.includes('.evo-family-assets')) fail('history or large family layout code is incomplete');
+if (!script.includes('data.characters') || !script.includes('evo-toc') || !script.includes('evo-character-list')) fail('character archive or jump navigation is incomplete');
+if (!css.includes('grid-template-columns: 150px minmax(0, 1fr)') || !css.includes('scroll-margin-top') || !css.includes('overflow-x: auto')) fail('reserved desktop navigation or mobile anchor layout is incomplete');
 
 const forbiddenUi = [
-  'evo-filter', '<details', '<summary', 'evo-round-toggle', 'evo-status',
-  'dialog', 'evo-lightbox', 'recommendedMarkup', 'data-evo-overview'
+  'evo-filter', '<details', '<summary', '<time', 'evo-round-toggle', 'evo-status',
+  'dialog', 'evo-lightbox', 'recommendedMarkup', 'data-evo-overview', '<button'
 ];
 for (const token of forbiddenUi) {
-  if (script.includes(token) || html.includes(token)) fail(`unnecessary interaction remains: ${token}`);
-}
-if (script.includes('<button')) fail('the mascot archive content must not add buttons');
-
-if (!Array.isArray(mascot.rounds) || mascot.rounds.map((round) => round.id).join(',') !== 'round-1,round-2,round-3,round-4,round-5,round-6,round-7') {
-  fail('Round 1 through Round 7 are required in order');
+  if (script.includes(token)) fail(`unnecessary mascot interaction remains: ${token}`);
 }
 
-const expectedCounts = new Map([
-  ['round-1', 3], ['round-2', 9], ['round-3', 21], ['round-4', 12],
-  ['round-5', 20], ['round-6', 1], ['round-7', 20]
+if ('rounds' in mascot || !Array.isArray(mascot.characters) || mascot.characters.length !== 19) fail('the archive must contain exactly nineteen role-based character sections');
+
+const expected = new Map([
+  ['dog', 18], ['canyon-fox', 8], ['quiet-lynx', 8], ['bear', 4],
+  ['raccoon', 7], ['bison', 6], ['armadillo', 7], ['badger', 5],
+  ['mule', 4], ['gecko', 4], ['raven', 4], ['kestrel-scout', 4],
+  ['compass', 4], ['spark', 4], ['route-engineer', 4], ['parts-spirit', 7],
+  ['socket', 6], ['fitment', 3], ['guard', 3]
 ]);
+
 const codes = [];
-for (const round of mascot.rounds) {
-  if (!round.date || !round.goal || !Array.isArray(round.assets) || !round.assets.length) fail(`${round.id} is missing history metadata or assets`);
-  if (round.assets.length !== expectedCounts.get(round.id)) fail(`${round.id} has the wrong image count`);
-  for (const asset of round.assets) {
-    if (!asset.code || !asset.title || !asset.family || !asset.palette || !asset.style || !asset.alt || !asset.src) fail(`${round.id} contains an incomplete asset record`);
+const sources = [];
+const families = [];
+for (const character of mascot.characters) {
+  if (!character.id || !character.index || !character.family || !character.type || !character.name_cn || !character.name_en || !character.blurb) fail('a character section is missing identity or copy');
+  if (!Array.isArray(character.assets) || character.assets.length !== expected.get(character.family)) fail(`${character.family} has the wrong image count`);
+  families.push(character.family);
+  for (const asset of character.assets) {
+    if (!asset.code || !asset.caption || !asset.alt || !asset.src || !asset.source_round) fail(`${character.family} contains an incomplete asset record`);
     const assetPath = path.join(root, asset.src);
     if (!fs.existsSync(assetPath) || fs.statSync(assetPath).size < 1000) fail(`${asset.code} asset is missing or empty`);
     const size = webpSize(assetPath);
     if (!size || size.width !== size.height || size.width < 1024) fail(`${asset.code} must remain a square WebP at least 1024px wide`);
     codes.push(asset.code);
+    sources.push(asset.src);
   }
 }
 
-if (codes.length !== 86 || new Set(codes).size !== 86) fail('86 unique independent images are required');
+if (new Set(families).size !== 19) fail('each character family must appear in one section only');
+if (codes.length !== 110 || new Set(codes).size !== 110 || new Set(sources).size !== 110) fail('110 unique independent images are required');
 
-for (const roundId of ['round-5', 'round-7']) {
-  const round = mascot.rounds.find((item) => item.id === roundId);
-  const families = [...new Set(round.assets.map((asset) => asset.family))];
-  if (families.length !== 5) fail(`${round.label} must contain five distinct character families`);
-  for (const family of families) {
-    const familyAssets = round.assets.filter((asset) => asset.family === family);
-    if (familyAssets.length !== 4 || new Set(familyAssets.map((asset) => asset.view)).size !== 4) {
-      fail(`${round.label} family ${family} must contain four unique views or actions`);
-    }
-  }
+const historical = mascot.characters.flatMap((character) => character.assets).filter((asset) => /^round-[1-7]$/.test(asset.source_round));
+if (historical.length !== 86 || new Set(historical.map((asset) => asset.src)).size !== 86) fail('all eighty-six historical images must remain exactly once');
+
+for (let round = 8; round <= 13; round += 1) {
+  const additions = mascot.characters.flatMap((character) => character.assets).filter((asset) => asset.source_round === `round-${round}`);
+  if (additions.length !== 4) fail(`round-${round} must contain four new views of one character`);
 }
 
-const visiblePageText = [html, script].join('\n');
-if (/已淘汰|当前候选|候选|已选定|Rejected|Shortlisted|Selected/.test(visiblePageText)) fail('the rendered page must leave selection decisions to Oliver');
 const publicText = [JSON.stringify(mascot), html, script, css].join('\n');
+if (/已淘汰|当前候选|候选|已选定|Rejected|Shortlisted|Selected/.test(publicText)) fail('selection labels must not appear');
+if (/"date"\s*:|"goal"\s*:|独立画面|身份｜|结构｜|工作｜|动态｜/.test(JSON.stringify(mascot))) fail('dates or design-process copy must not appear in the role archive');
 if (/\/Users\/|127\.0\.0\.1|localhost|API[_ -]?KEY|COOKIE|PASSWORD/i.test(publicText)) fail('local-only or sensitive text appears in the public mascot page');
 
-console.log('Mascot archive check passed: 7 rounds, 86 large static images, no filters, status labels or collapsible sections.');
+console.log('Mascot role archive check passed: 19 single-character sections, 110 unique images, 86 historical images retained, 24 new images, no dates or process UI.');

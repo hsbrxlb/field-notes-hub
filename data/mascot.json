@@ -1,957 +1,1009 @@
 {
   "title": "吉祥物迭代",
-  "meta_description": "完整查看 OEDRO 吉祥物七轮独立概念图、多视角与动作。",
-  "family_labels": {
-    "parts-spirit": "零件精灵",
-    "dog": "车库狗",
-    "raccoon": "浣熊技师",
-    "bison": "工作野牛",
-    "socket": "套筒模块伙伴",
-    "fitment": "适配连接体",
-    "guard": "越野护板伙伴",
-    "armadillo": "犰狳护板守护者",
-    "badger": "底盘獾",
-    "mule": "拖带骡",
-    "gecko": "贴合壁虎",
-    "raven": "巡检渡鸦",
-    "armadillo-flex": "柔壳犰狳",
-    "copilot-dog": "野外副驾犬",
-    "canyon-fox": "峡谷狐向导",
-    "quiet-lynx": "静默山猫",
-    "kestrel-scout": "红隼路线侦察员",
-    "route-engineer": "路线工程师"
-  },
-  "palette_labels": {
-    "blue": "蓝、银、黑",
-    "oxide": "氧化橙",
-    "amber": "工业琥珀",
-    "olive": "苔藓橄榄",
-    "natural-workwear": "自然毛色与氧化橙工装",
-    "appeal-warm": "暖沙、炭灰与氧化橙"
-  },
-  "rounds": [
+  "meta_description": "OEDRO 吉祥物角色档案，包含动物伙伴、机械伙伴和多种动作造型。",
+  "characters": [
     {
-      "id": "round-1",
-      "label": "Round 1",
-      "date": "2026-08-27",
-      "goal": "用三条角色路线快速确认 OEDRO 吉祥物可以从哪里开始。",
-      "palette": [
-        "OEDRO 蓝",
-        "石墨黑",
-        "银色",
-        "少量橙色"
-      ],
+      "id": "character-01-dog",
+      "index": "01",
+      "family": "dog",
+      "type": "animal",
+      "name_cn": "路伴犬",
+      "name_en": "Trail Dog",
+      "blurb": "它像常年坐在副驾旁的老搭档，出发前会安静地绕车看一圈。",
       "assets": [
         {
-          "code": "R1-F1",
-          "title": "零件精灵",
-          "family": "parts-spirit",
-          "palette": "blue",
-          "style": "透明概念立绘",
-          "src": "assets/mascot-evolution/round1/R1_F1_Parts_Spirit.webp",
-          "alt": "第一轮零件精灵概念"
+          "code": "R8-F1A",
+          "caption": "安静站定",
+          "src": "assets/mascot-evolution/round8/R8_F1A.webp",
+          "alt": "自然四足、短腿低重心的路伴犬安静站定",
+          "source_round": "round-8",
+          "source_file": "R8_F1A_路伴犬_Trail_Dog_Calm.png"
+        },
+        {
+          "code": "R8-F1B",
+          "caption": "回头确认",
+          "src": "assets/mascot-evolution/round8/R8_F1B.webp",
+          "alt": "自然四足的路伴犬从侧后方回头确认",
+          "source_round": "round-8",
+          "source_file": "R8_F1B_路伴犬_Trail_Dog_Side_Rear.png"
+        },
+        {
+          "code": "R8-F1C",
+          "caption": "绕车检查",
+          "src": "assets/mascot-evolution/round8/R8_F1C.webp",
+          "alt": "路伴犬绕无品牌越野车检查车况",
+          "source_round": "round-8",
+          "source_file": "R8_F1C_路伴犬_Trail_Dog_Walkaround.png"
+        },
+        {
+          "code": "R8-F1D",
+          "caption": "越过沟槽",
+          "src": "assets/mascot-evolution/round8/R8_F1D.webp",
+          "alt": "路伴犬以短而有力的四肢越过沟槽",
+          "source_round": "round-8",
+          "source_file": "R8_F1D_路伴犬_Trail_Dog_Crossing_Rut.png"
         },
         {
           "code": "R1-F2",
-          "title": "车库狗",
-          "family": "dog",
-          "palette": "blue",
-          "style": "透明概念立绘",
+          "caption": "最初的轮廓",
           "src": "assets/mascot-evolution/round1/R1_F2_Garage_Dog.webp",
-          "alt": "第一轮车库狗概念"
-        },
-        {
-          "code": "R1-F3",
-          "title": "浣熊技师",
-          "family": "raccoon",
-          "palette": "blue",
-          "style": "透明概念立绘",
-          "src": "assets/mascot-evolution/round1/R1_F3_Raccoon.webp",
-          "alt": "第一轮浣熊技师概念"
-        }
-      ]
-    },
-    {
-      "id": "round-2",
-      "label": "Round 2",
-      "date": "2026-08-28",
-      "goal": "把精灵、狗和浣熊拆成九个方向，比较轮廓、机械覆盖和小尺寸表现。",
-      "palette": [
-        "OEDRO 蓝",
-        "石墨黑",
-        "缎面铝",
-        "安全橙"
-      ],
-      "assets": [
-        {
-          "code": "R2-1A",
-          "title": "圆环精灵",
-          "family": "parts-spirit",
-          "palette": "blue",
-          "style": "产品渲染",
-          "src": "assets/mascot-evolution/round2/R2_1A.webp",
-          "alt": "第二轮圆环精灵"
-        },
-        {
-          "code": "R2-1B",
-          "title": "胶囊精灵",
-          "family": "parts-spirit",
-          "palette": "blue",
-          "style": "扁平图形",
-          "src": "assets/mascot-evolution/round2/R2_1B.webp",
-          "alt": "第二轮胶囊精灵"
-        },
-        {
-          "code": "R2-1C",
-          "title": "方核精灵",
-          "family": "parts-spirit",
-          "palette": "blue",
-          "style": "黏土角色",
-          "src": "assets/mascot-evolution/round2/R2_1C.webp",
-          "alt": "第二轮方核精灵"
+          "alt": "第一轮车库狗概念",
+          "source_round": "round-1"
         },
         {
           "code": "R2-2A",
-          "title": "轻机械车库狗",
-          "family": "dog",
-          "palette": "blue",
-          "style": "角色插画",
+          "caption": "轻机械装束",
           "src": "assets/mascot-evolution/round2/R2_2A.webp",
-          "alt": "第二轮轻机械车库狗"
+          "alt": "第二轮轻机械车库狗",
+          "source_round": "round-2"
         },
         {
           "code": "R2-2B",
-          "title": "半机械车库狗",
-          "family": "dog",
-          "palette": "blue",
-          "style": "角色插画",
+          "caption": "半机械装束",
           "src": "assets/mascot-evolution/round2/R2_2B.webp",
-          "alt": "第二轮半机械车库狗"
+          "alt": "第二轮半机械车库狗",
+          "source_round": "round-2"
         },
         {
           "code": "R2-2C",
-          "title": "全机械车库狗",
-          "family": "dog",
-          "palette": "blue",
-          "style": "产品渲染",
+          "caption": "全机械装束",
           "src": "assets/mascot-evolution/round2/R2_2C.webp",
-          "alt": "第二轮全机械车库狗"
-        },
-        {
-          "code": "R2-3A",
-          "title": "轻机械浣熊",
-          "family": "raccoon",
-          "palette": "blue",
-          "style": "角色插画",
-          "src": "assets/mascot-evolution/round2/R2_3A.webp",
-          "alt": "第二轮轻机械浣熊"
-        },
-        {
-          "code": "R2-3B",
-          "title": "半机械浣熊",
-          "family": "raccoon",
-          "palette": "blue",
-          "style": "角色插画",
-          "src": "assets/mascot-evolution/round2/R2_3B.webp",
-          "alt": "第二轮半机械浣熊"
-        },
-        {
-          "code": "R2-3C",
-          "title": "全机械浣熊",
-          "family": "raccoon",
-          "palette": "blue",
-          "style": "机械角色",
-          "src": "assets/mascot-evolution/round2/R2_3C.webp",
-          "alt": "第二轮全机械浣熊"
-        }
-      ]
-    },
-    {
-      "id": "round-3",
-      "label": "Round 3",
-      "date": "2026-08-31",
-      "goal": "比较七个角色家族在手绘、品牌图形和机械原型三种媒介中的表现。",
-      "palette": [
-        "OEDRO 蓝",
-        "石墨黑",
-        "缎面铝",
-        "安全橙"
-      ],
-      "assets": [
-        {
-          "code": "R3-F1A",
-          "title": "模块零件精灵",
-          "family": "parts-spirit",
-          "palette": "blue",
-          "style": "车库手绘",
-          "src": "assets/mascot-round3/F1A.webp",
-          "alt": "第三轮模块零件精灵车库手绘"
-        },
-        {
-          "code": "R3-F1B",
-          "title": "模块零件精灵",
-          "family": "parts-spirit",
-          "palette": "blue",
-          "style": "品牌图形",
-          "src": "assets/mascot-round3/F1B.webp",
-          "alt": "第三轮模块零件精灵品牌图形"
-        },
-        {
-          "code": "R3-F1C",
-          "title": "模块零件精灵",
-          "family": "parts-spirit",
-          "palette": "blue",
-          "style": "机械原型",
-          "src": "assets/mascot-round3/F1C.webp",
-          "alt": "第三轮模块零件精灵机械原型"
+          "alt": "第二轮全机械车库狗",
+          "source_round": "round-2"
         },
         {
           "code": "R3-F2A",
-          "title": "成年车库狗",
-          "family": "dog",
-          "palette": "blue",
-          "style": "车库手绘",
+          "caption": "工具细节",
           "src": "assets/mascot-round3/F2A.webp",
-          "alt": "第三轮成年车库狗车库手绘"
+          "alt": "第三轮成年车库狗车库手绘",
+          "source_round": "round-3"
         },
         {
           "code": "R3-F2B",
-          "title": "成年车库狗",
-          "family": "dog",
-          "palette": "blue",
-          "style": "品牌图形",
+          "caption": "简洁色块",
           "src": "assets/mascot-round3/F2B.webp",
-          "alt": "第三轮成年车库狗品牌图形"
+          "alt": "第三轮成年车库狗品牌图形",
+          "source_round": "round-3"
         },
         {
           "code": "R3-F2C",
-          "title": "成年车库狗",
-          "family": "dog",
-          "palette": "blue",
-          "style": "机械原型",
+          "caption": "完整机械结构",
           "src": "assets/mascot-round3/F2C.webp",
-          "alt": "第三轮成年车库狗机械原型"
-        },
-        {
-          "code": "R3-F3A",
-          "title": "浣熊技师",
-          "family": "raccoon",
-          "palette": "blue",
-          "style": "车库手绘",
-          "src": "assets/mascot-round3/F3A.webp",
-          "alt": "第三轮浣熊技师车库手绘"
-        },
-        {
-          "code": "R3-F3B",
-          "title": "浣熊技师",
-          "family": "raccoon",
-          "palette": "blue",
-          "style": "品牌图形",
-          "src": "assets/mascot-round3/F3B.webp",
-          "alt": "第三轮浣熊技师品牌图形"
-        },
-        {
-          "code": "R3-F3C",
-          "title": "浣熊技师",
-          "family": "raccoon",
-          "palette": "blue",
-          "style": "机械原型",
-          "src": "assets/mascot-round3/F3C.webp",
-          "alt": "第三轮浣熊技师机械原型"
-        },
-        {
-          "code": "R3-F4A",
-          "title": "工作野牛",
-          "family": "bison",
-          "palette": "blue",
-          "style": "车库手绘",
-          "src": "assets/mascot-round3/F4A.webp",
-          "alt": "第三轮工作野牛车库手绘"
-        },
-        {
-          "code": "R3-F4B",
-          "title": "工作野牛",
-          "family": "bison",
-          "palette": "blue",
-          "style": "品牌图形",
-          "src": "assets/mascot-round3/F4B.webp",
-          "alt": "第三轮工作野牛品牌图形"
-        },
-        {
-          "code": "R3-F4C",
-          "title": "工作野牛",
-          "family": "bison",
-          "palette": "blue",
-          "style": "机械原型",
-          "src": "assets/mascot-round3/F4C.webp",
-          "alt": "第三轮工作野牛机械原型"
-        },
-        {
-          "code": "R3-F5A",
-          "title": "套筒模块伙伴",
-          "family": "socket",
-          "palette": "blue",
-          "style": "车库手绘",
-          "src": "assets/mascot-round3/F5A.webp",
-          "alt": "第三轮套筒模块伙伴车库手绘"
-        },
-        {
-          "code": "R3-F5B",
-          "title": "套筒模块伙伴",
-          "family": "socket",
-          "palette": "blue",
-          "style": "品牌图形",
-          "src": "assets/mascot-round3/F5B.webp",
-          "alt": "第三轮套筒模块伙伴品牌图形"
-        },
-        {
-          "code": "R3-F5C",
-          "title": "套筒模块伙伴",
-          "family": "socket",
-          "palette": "blue",
-          "style": "机械原型",
-          "src": "assets/mascot-round3/F5C.webp",
-          "alt": "第三轮套筒模块伙伴机械原型"
-        },
-        {
-          "code": "R3-F6A",
-          "title": "适配连接体",
-          "family": "fitment",
-          "palette": "blue",
-          "style": "车库手绘",
-          "src": "assets/mascot-round3/F6A.webp",
-          "alt": "第三轮适配连接体车库手绘"
-        },
-        {
-          "code": "R3-F6B",
-          "title": "适配连接体",
-          "family": "fitment",
-          "palette": "blue",
-          "style": "品牌图形",
-          "src": "assets/mascot-round3/F6B.webp",
-          "alt": "第三轮适配连接体品牌图形"
-        },
-        {
-          "code": "R3-F6C",
-          "title": "适配连接体",
-          "family": "fitment",
-          "palette": "blue",
-          "style": "机械原型",
-          "src": "assets/mascot-round3/F6C.webp",
-          "alt": "第三轮适配连接体机械原型"
-        },
-        {
-          "code": "R3-F7A",
-          "title": "越野护板伙伴",
-          "family": "guard",
-          "palette": "blue",
-          "style": "车库手绘",
-          "src": "assets/mascot-round3/F7A.webp",
-          "alt": "第三轮越野护板伙伴车库手绘"
-        },
-        {
-          "code": "R3-F7B",
-          "title": "越野护板伙伴",
-          "family": "guard",
-          "palette": "blue",
-          "style": "品牌图形",
-          "src": "assets/mascot-round3/F7B.webp",
-          "alt": "第三轮越野护板伙伴品牌图形"
-        },
-        {
-          "code": "R3-F7C",
-          "title": "越野护板伙伴",
-          "family": "guard",
-          "palette": "blue",
-          "style": "机械原型",
-          "src": "assets/mascot-round3/F7C.webp",
-          "alt": "第三轮越野护板伙伴机械原型"
-        }
-      ]
-    },
-    {
-      "id": "round-4",
-      "label": "Round 4",
-      "date": "2026-09-01",
-      "goal": "停止使用蓝色，用四个家族和三套非蓝配色公平比较角色温度、记忆点和材料层级。",
-      "palette": [
-        "氧化橙",
-        "工业琥珀",
-        "苔藓橄榄",
-        "石墨与暖金属"
-      ],
-      "assets": [
-        {
-          "code": "R4-F1A",
-          "title": "工作野牛",
-          "family": "bison",
-          "palette": "oxide",
-          "style": "氧化橙",
-          "src": "assets/mascot-evolution/round4/R4_F1A.webp",
-          "alt": "第四轮工作野牛氧化橙方案"
-        },
-        {
-          "code": "R4-F1B",
-          "title": "工作野牛",
-          "family": "bison",
-          "palette": "amber",
-          "style": "工业琥珀",
-          "src": "assets/mascot-evolution/round4/R4_F1B.webp",
-          "alt": "第四轮工作野牛工业琥珀方案"
-        },
-        {
-          "code": "R4-F1C",
-          "title": "工作野牛",
-          "family": "bison",
-          "palette": "olive",
-          "style": "苔藓橄榄",
-          "src": "assets/mascot-evolution/round4/R4_F1C.webp",
-          "alt": "第四轮工作野牛苔藓橄榄方案"
+          "alt": "第三轮成年车库狗机械原型",
+          "source_round": "round-3"
         },
         {
           "code": "R4-F2A",
-          "title": "成年车库狗",
-          "family": "dog",
-          "palette": "oxide",
-          "style": "氧化橙",
+          "caption": "氧化橙",
           "src": "assets/mascot-evolution/round4/R4_F2A.webp",
-          "alt": "第四轮成年车库狗氧化橙方案"
+          "alt": "第四轮成年车库狗氧化橙方案",
+          "source_round": "round-4"
         },
         {
           "code": "R4-F2B",
-          "title": "成年车库狗",
-          "family": "dog",
-          "palette": "amber",
-          "style": "工业琥珀",
+          "caption": "琥珀黄",
           "src": "assets/mascot-evolution/round4/R4_F2B.webp",
-          "alt": "第四轮成年车库狗工业琥珀方案"
+          "alt": "第四轮成年车库狗工业琥珀方案",
+          "source_round": "round-4"
         },
         {
           "code": "R4-F2C",
-          "title": "成年车库狗",
-          "family": "dog",
-          "palette": "olive",
-          "style": "苔藓橄榄",
+          "caption": "橄榄绿",
           "src": "assets/mascot-evolution/round4/R4_F2C.webp",
-          "alt": "第四轮成年车库狗苔藓橄榄方案"
+          "alt": "第四轮成年车库狗苔藓橄榄方案",
+          "source_round": "round-4"
         },
-        {
-          "code": "R4-F3A",
-          "title": "套筒模块伙伴",
-          "family": "socket",
-          "palette": "oxide",
-          "style": "氧化橙",
-          "src": "assets/mascot-evolution/round4/R4_F3A.webp",
-          "alt": "第四轮套筒模块伙伴氧化橙方案"
-        },
-        {
-          "code": "R4-F3B",
-          "title": "套筒模块伙伴",
-          "family": "socket",
-          "palette": "amber",
-          "style": "工业琥珀",
-          "src": "assets/mascot-evolution/round4/R4_F3B.webp",
-          "alt": "第四轮套筒模块伙伴工业琥珀方案"
-        },
-        {
-          "code": "R4-F3C",
-          "title": "套筒模块伙伴",
-          "family": "socket",
-          "palette": "olive",
-          "style": "苔藓橄榄",
-          "src": "assets/mascot-evolution/round4/R4_F3C.webp",
-          "alt": "第四轮套筒模块伙伴苔藓橄榄方案"
-        },
-        {
-          "code": "R4-F4A",
-          "title": "犰狳护板守护者",
-          "family": "armadillo",
-          "palette": "oxide",
-          "style": "氧化橙",
-          "src": "assets/mascot-evolution/round4/R4_F4A.webp",
-          "alt": "第四轮犰狳护板守护者氧化橙方案"
-        },
-        {
-          "code": "R4-F4B",
-          "title": "犰狳护板守护者",
-          "family": "armadillo",
-          "palette": "amber",
-          "style": "工业琥珀",
-          "src": "assets/mascot-evolution/round4/R4_F4B.webp",
-          "alt": "第四轮犰狳护板守护者工业琥珀方案"
-        },
-        {
-          "code": "R4-F4C",
-          "title": "犰狳护板守护者",
-          "family": "armadillo",
-          "palette": "olive",
-          "style": "苔藓橄榄",
-          "src": "assets/mascot-evolution/round4/R4_F4C.webp",
-          "alt": "第四轮犰狳护板守护者苔藓橄榄方案"
-        }
-      ]
-    },
-    {
-      "id": "round-5",
-      "label": "Round 5",
-      "date": "2026-09-03",
-      "goal": "用同一角色的身份、结构、工作和动态四张独立画面，检查真实动作与多种载体的落地能力。",
-      "palette": [
-        "自然毛色",
-        "石墨帆布与橡胶",
-        "氧化橙功能件",
-        "暖灰环境"
-      ],
-      "assets": [
-        {
-          "code": "R5-F1A",
-          "title": "底盘獾",
-          "family": "badger",
-          "palette": "natural-workwear",
-          "view": "身份｜三分之四标准图",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F1A.webp",
-          "alt": "底盘獾三分之四标准身份图"
-        },
-        {
-          "code": "R5-F1B",
-          "title": "底盘獾",
-          "family": "badger",
-          "palette": "natural-workwear",
-          "view": "结构｜左后侧视角",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F1B.webp",
-          "alt": "底盘獾左后侧结构视角"
-        },
-        {
-          "code": "R5-F1C",
-          "title": "底盘獾",
-          "family": "badger",
-          "palette": "natural-workwear",
-          "view": "工作｜车底检修动作",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F1C.webp",
-          "alt": "底盘獾在无品牌车辆下方进行检修"
-        },
-        {
-          "code": "R5-F1D",
-          "title": "底盘獾",
-          "family": "badger",
-          "palette": "natural-workwear",
-          "view": "动态｜低位跨步瞬间",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F1D.webp",
-          "alt": "底盘獾保持低重心向前跨步的动态"
-        },
-        {
-          "code": "R5-F2A",
-          "title": "拖带骡",
-          "family": "mule",
-          "palette": "natural-workwear",
-          "view": "身份｜三分之四标准图",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F2A.webp",
-          "alt": "拖带骡三分之四标准身份图"
-        },
-        {
-          "code": "R5-F2B",
-          "title": "拖带骡",
-          "family": "mule",
-          "palette": "natural-workwear",
-          "view": "结构｜左后侧视角",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F2B.webp",
-          "alt": "拖带骡左后侧承重结构视角"
-        },
-        {
-          "code": "R5-F2C",
-          "title": "拖带骡",
-          "family": "mule",
-          "palette": "natural-workwear",
-          "view": "工作｜拖带起步动作",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F2C.webp",
-          "alt": "拖带骡连接无品牌车辆进行拖带"
-        },
-        {
-          "code": "R5-F2D",
-          "title": "拖带骡",
-          "family": "mule",
-          "palette": "natural-workwear",
-          "view": "动态｜车库小跑瞬间",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F2D.webp",
-          "alt": "拖带骡携带收纳好的回收拖带穿过车库入口"
-        },
-        {
-          "code": "R5-F3A",
-          "title": "贴合壁虎",
-          "family": "gecko",
-          "palette": "natural-workwear",
-          "view": "身份｜三分之四标准图",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F3A.webp",
-          "alt": "贴合壁虎三分之四标准身份图"
-        },
-        {
-          "code": "R5-F3B",
-          "title": "贴合壁虎",
-          "family": "gecko",
-          "palette": "natural-workwear",
-          "view": "结构｜左后侧视角",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F3B.webp",
-          "alt": "贴合壁虎左后侧趾垫和尾部结构"
-        },
-        {
-          "code": "R5-F3C",
-          "title": "贴合壁虎",
-          "family": "gecko",
-          "palette": "natural-workwear",
-          "view": "工作｜车门密封条安装",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F3C.webp",
-          "alt": "贴合壁虎把无品牌车辆的柔性密封条压入车门边缘"
-        },
-        {
-          "code": "R5-F3D",
-          "title": "贴合壁虎",
-          "family": "gecko",
-          "palette": "natural-workwear",
-          "view": "动态｜表面爬行瞬间",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F3D.webp",
-          "alt": "贴合壁虎沿表面快速爬行的动态"
-        },
-        {
-          "code": "R5-F4A",
-          "title": "巡检渡鸦",
-          "family": "raven",
-          "palette": "natural-workwear",
-          "view": "身份｜三分之四标准图",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F4A.webp",
-          "alt": "巡检渡鸦三分之四标准身份图"
-        },
-        {
-          "code": "R5-F4B",
-          "title": "巡检渡鸦",
-          "family": "raven",
-          "palette": "natural-workwear",
-          "view": "结构｜左后侧视角",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F4B.webp",
-          "alt": "巡检渡鸦左后侧翼面和尾部结构"
-        },
-        {
-          "code": "R5-F4C",
-          "title": "巡检渡鸦",
-          "family": "raven",
-          "palette": "natural-workwear",
-          "view": "工作｜底盘接口巡检动作",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F4C.webp",
-          "alt": "巡检渡鸦在无品牌车辆下检查软管接口"
-        },
-        {
-          "code": "R5-F4D",
-          "title": "巡检渡鸦",
-          "family": "raven",
-          "palette": "natural-workwear",
-          "view": "动态｜落地巡检瞬间",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F4D.webp",
-          "alt": "巡检渡鸦展开双翼接近巡检位置"
-        },
-        {
-          "code": "R5-F5A",
-          "title": "柔壳犰狳",
-          "family": "armadillo-flex",
-          "palette": "natural-workwear",
-          "view": "身份｜三分之四标准图",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F5A.webp",
-          "alt": "柔壳犰狳三分之四标准身份图"
-        },
-        {
-          "code": "R5-F5B",
-          "title": "柔壳犰狳",
-          "family": "armadillo-flex",
-          "palette": "natural-workwear",
-          "view": "结构｜左后侧视角",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F5B.webp",
-          "alt": "柔壳犰狳左后侧五段软壳结构"
-        },
-        {
-          "code": "R5-F5C",
-          "title": "柔壳犰狳",
-          "family": "armadillo-flex",
-          "palette": "natural-workwear",
-          "view": "工作｜软壳缓冲动作",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F5C.webp",
-          "alt": "柔壳犰狳用五段软壳缓冲无品牌车辆的低位边缘"
-        },
-        {
-          "code": "R5-F5D",
-          "title": "柔壳犰狳",
-          "family": "armadillo-flex",
-          "palette": "natural-workwear",
-          "view": "动态｜展开转向瞬间",
-          "style": "半写实动画角色",
-          "src": "assets/mascot-evolution/round5/R5_F5D.webp",
-          "alt": "柔壳犰狳展开软壳并快速转向"
-        }
-      ]
-    },
-    {
-      "id": "round-6",
-      "label": "Round 6",
-      "date": "2026-09-03",
-      "goal": "测试 OEDRO 字样如何融入角色装备，比较尺寸、位置和材料效果。",
-      "palette": [
-        "自然毛色",
-        "氧化橙肩带",
-        "暖灰背景"
-      ],
-      "assets": [
-        {
-          "code": "R6-F1",
-          "title": "底盘獾",
-          "family": "badger",
-          "palette": "natural-workwear",
-          "view": "品牌字标｜肩部织标",
-          "style": "OEDRO 字标位置测试",
-          "src": "assets/mascot-evolution/round6/R6_F1.webp",
-          "alt": "肩部工作背带带有 OEDRO 字样的底盘獾"
-        }
-      ]
-    },
-    {
-      "id": "round-7",
-      "label": "Round 7",
-      "date": "2026-09-03",
-      "goal": "用人格、轮廓和动作重新设计五个更漂亮、更容易被喜欢的角色方向，并测试 OEDRO 字标。",
-      "palette": [
-        "暖沙与骨白",
-        "炭灰与暖铝",
-        "氧化橙功能件"
-      ],
-      "assets": [
         {
           "code": "R7-F1A",
-          "title": "野外副驾犬",
-          "family": "copilot-dog",
-          "palette": "appeal-warm",
-          "view": "身份｜三分之四标准图",
-          "style": "高端动画角色概念",
+          "caption": "正面站姿",
           "src": "assets/mascot-evolution/round7/R7_F1A.webp",
-          "alt": "佩戴小型 OEDRO 胸前织标的野外副驾犬身份图"
+          "alt": "佩戴小型 OEDRO 胸前织标的野外副驾犬身份图",
+          "source_round": "round-7"
         },
         {
           "code": "R7-F1B",
-          "title": "野外副驾犬",
-          "family": "copilot-dog",
-          "palette": "appeal-warm",
-          "view": "结构｜侧后回望",
-          "style": "高端动画角色概念",
+          "caption": "回头侧身",
           "src": "assets/mascot-evolution/round7/R7_F1B.webp",
-          "alt": "野外副驾犬侧后回望和装备结构图"
+          "alt": "野外副驾犬侧后回望和装备结构图",
+          "source_round": "round-7"
         },
         {
           "code": "R7-F1C",
-          "title": "野外副驾犬",
-          "family": "copilot-dog",
-          "palette": "appeal-warm",
-          "view": "工作｜车旁检查",
-          "style": "高端动画角色概念",
+          "caption": "检查车轮",
           "src": "assets/mascot-evolution/round7/R7_F1C.webp",
-          "alt": "野外副驾犬在无品牌越野车旁检查装备"
+          "alt": "野外副驾犬在无品牌越野车旁检查装备",
+          "source_round": "round-7"
         },
         {
           "code": "R7-F1D",
-          "title": "野外副驾犬",
-          "family": "copilot-dog",
-          "palette": "appeal-warm",
-          "view": "动态｜越过障碍",
-          "style": "高端动画角色概念",
+          "caption": "越过沟槽",
           "src": "assets/mascot-evolution/round7/R7_F1D.webp",
-          "alt": "野外副驾犬跨越低位障碍的动态"
+          "alt": "野外副驾犬跨越低位障碍的动态",
+          "source_round": "round-7"
+        }
+      ]
+    },
+    {
+      "id": "character-02-canyon-fox",
+      "index": "02",
+      "family": "canyon-fox",
+      "type": "animal",
+      "name_cn": "峡谷狐",
+      "name_en": "Canyon Fox",
+      "blurb": "耳朵先听见风，尾巴替身体掌握平衡；它总能在岔路口找到更稳的方向。",
+      "assets": [
+        {
+          "code": "R9-F2A",
+          "caption": "站在路口",
+          "src": "assets/mascot-evolution/round9/R9_F2A.webp",
+          "alt": "自然四足、短腿低重心的峡谷狐站在路口",
+          "source_round": "round-9",
+          "source_file": "R9_F2A_峡谷狐_Canyon_Fox_Calm.png"
+        },
+        {
+          "code": "R9-F2B",
+          "caption": "回头听风",
+          "src": "assets/mascot-evolution/round9/R9_F2B.webp",
+          "alt": "自然四足的峡谷狐从侧后方回头听风",
+          "source_round": "round-9",
+          "source_file": "R9_F2B_峡谷狐_Canyon_Fox_Listening.png"
+        },
+        {
+          "code": "R9-F2C",
+          "caption": "判断岔路",
+          "src": "assets/mascot-evolution/round9/R9_F2C.webp",
+          "alt": "峡谷狐在无品牌越野车旁判断岔路",
+          "source_round": "round-9",
+          "source_file": "R9_F2C_峡谷狐_Canyon_Fox_Route_Choice.png"
+        },
+        {
+          "code": "R9-F2D",
+          "caption": "跃过石阶",
+          "src": "assets/mascot-evolution/round9/R9_F2D.webp",
+          "alt": "峡谷狐以自然四足姿态跃过低矮石阶",
+          "source_round": "round-9",
+          "source_file": "R9_F2D_峡谷狐_Canyon_Fox_Rock_Step.png"
         },
         {
           "code": "R7-F2A",
-          "title": "峡谷狐向导",
-          "family": "canyon-fox",
-          "palette": "appeal-warm",
-          "view": "身份｜三分之四标准图",
-          "style": "高端动画角色概念",
+          "caption": "正面站姿",
           "src": "assets/mascot-evolution/round7/R7_F2A.webp",
-          "alt": "佩戴小型 OEDRO 胸前织标的峡谷狐向导身份图"
+          "alt": "佩戴小型 OEDRO 胸前织标的峡谷狐向导身份图",
+          "source_round": "round-7"
         },
         {
           "code": "R7-F2B",
-          "title": "峡谷狐向导",
-          "family": "canyon-fox",
-          "palette": "appeal-warm",
-          "view": "结构｜侧后回望",
-          "style": "高端动画角色概念",
+          "caption": "回头听风",
           "src": "assets/mascot-evolution/round7/R7_F2B.webp",
-          "alt": "峡谷狐向导侧后回望和披肩结构图"
+          "alt": "峡谷狐向导侧后回望和披肩结构图",
+          "source_round": "round-7"
         },
         {
           "code": "R7-F2C",
-          "title": "峡谷狐向导",
-          "family": "canyon-fox",
-          "palette": "appeal-warm",
-          "view": "工作｜判断路线",
-          "style": "高端动画角色概念",
+          "caption": "固定行李",
           "src": "assets/mascot-evolution/round7/R7_F2C.webp",
-          "alt": "峡谷狐向导在无品牌车辆旁判断行进路线"
+          "alt": "峡谷狐向导在无品牌车辆旁判断行进路线",
+          "source_round": "round-7"
         },
         {
           "code": "R7-F2D",
-          "title": "峡谷狐向导",
-          "family": "canyon-fox",
-          "palette": "appeal-warm",
-          "view": "动态｜峡谷转身",
-          "style": "高端动画角色概念",
+          "caption": "跃过石阶",
           "src": "assets/mascot-evolution/round7/R7_F2D.webp",
-          "alt": "峡谷狐向导在暖灰地面快速转身的动态"
+          "alt": "峡谷狐向导在暖灰地面快速转身的动态",
+          "source_round": "round-7"
+        }
+      ]
+    },
+    {
+      "id": "character-03-quiet-lynx",
+      "index": "03",
+      "family": "quiet-lynx",
+      "type": "animal",
+      "name_cn": "静默山猫",
+      "name_en": "Quiet Lynx",
+      "blurb": "它习惯静静听一会儿，细小的异响和松动很难逃过它的耳朵。",
+      "assets": [
+        {
+          "code": "R10-F3A",
+          "caption": "留意异响",
+          "src": "assets/mascot-evolution/round10/R10_F3A.webp",
+          "alt": "自然四足、短腿低重心的静默山猫留意异响",
+          "source_round": "round-10",
+          "source_file": "R10_F3A_静默山猫_Quiet_Lynx_Calm.png"
+        },
+        {
+          "code": "R10-F3B",
+          "caption": "侧身回望",
+          "src": "assets/mascot-evolution/round10/R10_F3B.webp",
+          "alt": "自然四足的静默山猫从侧后方回望",
+          "source_round": "round-10",
+          "source_file": "R10_F3B_静默山猫_Quiet_Lynx_Side_Rear.png"
+        },
+        {
+          "code": "R10-F3C",
+          "caption": "查看安装位",
+          "src": "assets/mascot-evolution/round10/R10_F3C.webp",
+          "alt": "静默山猫查看无品牌车辆的安装位置",
+          "source_round": "round-10",
+          "source_file": "R10_F3C_静默山猫_Quiet_Lynx_Fitment_Check.png"
+        },
+        {
+          "code": "R10-F3D",
+          "caption": "跳上低台",
+          "src": "assets/mascot-evolution/round10/R10_F3D.webp",
+          "alt": "静默山猫以自然四足姿态跳上低台",
+          "source_round": "round-10",
+          "source_file": "R10_F3D_静默山猫_Quiet_Lynx_Low_Ledge.png"
         },
         {
           "code": "R7-F3A",
-          "title": "静默山猫",
-          "family": "quiet-lynx",
-          "palette": "appeal-warm",
-          "view": "身份｜三分之四标准图",
-          "style": "高端动画角色概念",
+          "caption": "正面站姿",
           "src": "assets/mascot-evolution/round7/R7_F3A.webp",
-          "alt": "佩戴小型 OEDRO 袖章的静默山猫身份图"
+          "alt": "佩戴小型 OEDRO 袖章的静默山猫身份图",
+          "source_round": "round-7"
         },
         {
           "code": "R7-F3B",
-          "title": "静默山猫",
-          "family": "quiet-lynx",
-          "palette": "appeal-warm",
-          "view": "结构｜侧后回望",
-          "style": "高端动画角色概念",
+          "caption": "回头侧身",
           "src": "assets/mascot-evolution/round7/R7_F3B.webp",
-          "alt": "静默山猫侧后回望和工具收纳结构图"
+          "alt": "静默山猫侧后回望和工具收纳结构图",
+          "source_round": "round-7"
         },
         {
           "code": "R7-F3C",
-          "title": "静默山猫",
-          "family": "quiet-lynx",
-          "palette": "appeal-warm",
-          "view": "工作｜检查安装位",
-          "style": "高端动画角色概念",
+          "caption": "查看车底",
           "src": "assets/mascot-evolution/round7/R7_F3C.webp",
-          "alt": "静默山猫检查无品牌车辆的安装位置"
+          "alt": "静默山猫检查无品牌车辆的安装位置",
+          "source_round": "round-7"
         },
         {
           "code": "R7-F3D",
-          "title": "静默山猫",
-          "family": "quiet-lynx",
-          "palette": "appeal-warm",
-          "view": "动态｜低位跃步",
-          "style": "高端动画角色概念",
+          "caption": "踏上低台",
           "src": "assets/mascot-evolution/round7/R7_F3D.webp",
-          "alt": "静默山猫保持低重心跃过障碍的动态"
+          "alt": "静默山猫保持低重心跃过障碍的动态",
+          "source_round": "round-7"
+        }
+      ]
+    },
+    {
+      "id": "character-04-bear",
+      "index": "04",
+      "family": "bear",
+      "type": "animal",
+      "name_cn": "山路熊",
+      "name_en": "Trail Bear",
+      "blurb": "厚实的身体像一块会走路的靠山，遇到难走的路也让人放心。",
+      "assets": [
+        {
+          "code": "R11-F4A",
+          "caption": "稳稳站住",
+          "src": "assets/mascot-evolution/round11/R11_F4A.webp",
+          "alt": "自然四足、厚实短腿的山路熊稳稳站住",
+          "source_round": "round-11",
+          "source_file": "R11_F4A_山路熊_Trail_Bear_Calm.png"
         },
         {
+          "code": "R11-F4B",
+          "caption": "回头看路",
+          "src": "assets/mascot-evolution/round11/R11_F4B.webp",
+          "alt": "自然四足的山路熊从侧后方回头看路",
+          "source_round": "round-11",
+          "source_file": "R11_F4B_山路熊_Trail_Bear_Side_Rear.png"
+        },
+        {
+          "code": "R11-F4C",
+          "caption": "守在车旁",
+          "src": "assets/mascot-evolution/round11/R11_F4C.webp",
+          "alt": "山路熊守在无品牌越野车旁",
+          "source_round": "round-11",
+          "source_file": "R11_F4C_山路熊_Trail_Bear_Vehicle_Guard.png"
+        },
+        {
+          "code": "R11-F4D",
+          "caption": "踏过碎石",
+          "src": "assets/mascot-evolution/round11/R11_F4D.webp",
+          "alt": "山路熊以短而有力的四肢踏过碎石",
+          "source_round": "round-11",
+          "source_file": "R11_F4D_山路熊_Trail_Bear_Loose_Stones.png"
+        }
+      ]
+    },
+    {
+      "id": "character-05-raccoon",
+      "index": "05",
+      "family": "raccoon",
+      "type": "animal",
+      "name_cn": "车库浣熊",
+      "name_en": "Garage Raccoon",
+      "blurb": "它爱翻工具箱，手快眼尖，总能先找到那颗松掉的小零件。",
+      "assets": [
+        {
+          "code": "R1-F3",
+          "caption": "最初的轮廓",
+          "src": "assets/mascot-evolution/round1/R1_F3_Raccoon.webp",
+          "alt": "第一轮浣熊技师概念",
+          "source_round": "round-1"
+        },
+        {
+          "code": "R2-3A",
+          "caption": "轻机械装束",
+          "src": "assets/mascot-evolution/round2/R2_3A.webp",
+          "alt": "第二轮轻机械浣熊",
+          "source_round": "round-2"
+        },
+        {
+          "code": "R2-3B",
+          "caption": "半机械装束",
+          "src": "assets/mascot-evolution/round2/R2_3B.webp",
+          "alt": "第二轮半机械浣熊",
+          "source_round": "round-2"
+        },
+        {
+          "code": "R2-3C",
+          "caption": "全机械装束",
+          "src": "assets/mascot-evolution/round2/R2_3C.webp",
+          "alt": "第二轮全机械浣熊",
+          "source_round": "round-2"
+        },
+        {
+          "code": "R3-F3A",
+          "caption": "工具细节",
+          "src": "assets/mascot-round3/F3A.webp",
+          "alt": "第三轮浣熊技师车库手绘",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F3B",
+          "caption": "简洁色块",
+          "src": "assets/mascot-round3/F3B.webp",
+          "alt": "第三轮浣熊技师品牌图形",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F3C",
+          "caption": "完整机械结构",
+          "src": "assets/mascot-round3/F3C.webp",
+          "alt": "第三轮浣熊技师机械原型",
+          "source_round": "round-3"
+        }
+      ]
+    },
+    {
+      "id": "character-06-bison",
+      "index": "06",
+      "family": "bison",
+      "type": "animal",
+      "name_cn": "稳角野牛",
+      "name_en": "Steady Bison",
+      "blurb": "低下的角和宽肩代表承载，重活交给它，车就像多了一道支撑。",
+      "assets": [
+        {
+          "code": "R3-F4A",
+          "caption": "工具细节",
+          "src": "assets/mascot-round3/F4A.webp",
+          "alt": "第三轮工作野牛车库手绘",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F4B",
+          "caption": "简洁色块",
+          "src": "assets/mascot-round3/F4B.webp",
+          "alt": "第三轮工作野牛品牌图形",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F4C",
+          "caption": "完整机械结构",
+          "src": "assets/mascot-round3/F4C.webp",
+          "alt": "第三轮工作野牛机械原型",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R4-F1A",
+          "caption": "氧化橙",
+          "src": "assets/mascot-evolution/round4/R4_F1A.webp",
+          "alt": "第四轮工作野牛氧化橙方案",
+          "source_round": "round-4"
+        },
+        {
+          "code": "R4-F1B",
+          "caption": "琥珀黄",
+          "src": "assets/mascot-evolution/round4/R4_F1B.webp",
+          "alt": "第四轮工作野牛工业琥珀方案",
+          "source_round": "round-4"
+        },
+        {
+          "code": "R4-F1C",
+          "caption": "橄榄绿",
+          "src": "assets/mascot-evolution/round4/R4_F1C.webp",
+          "alt": "第四轮工作野牛苔藓橄榄方案",
+          "source_round": "round-4"
+        }
+      ]
+    },
+    {
+      "id": "character-07-armadillo",
+      "index": "07",
+      "family": "armadillo",
+      "type": "animal",
+      "name_cn": "护甲犰狳",
+      "name_en": "Armor Armadillo",
+      "blurb": "一节节背甲像活动护板，石子和磕碰来到时，它会先把身体护住。",
+      "assets": [
+        {
+          "code": "R4-F4A",
+          "caption": "氧化橙",
+          "src": "assets/mascot-evolution/round4/R4_F4A.webp",
+          "alt": "第四轮犰狳护板守护者氧化橙方案",
+          "source_round": "round-4"
+        },
+        {
+          "code": "R4-F4B",
+          "caption": "琥珀黄",
+          "src": "assets/mascot-evolution/round4/R4_F4B.webp",
+          "alt": "第四轮犰狳护板守护者工业琥珀方案",
+          "source_round": "round-4"
+        },
+        {
+          "code": "R4-F4C",
+          "caption": "橄榄绿",
+          "src": "assets/mascot-evolution/round4/R4_F4C.webp",
+          "alt": "第四轮犰狳护板守护者苔藓橄榄方案",
+          "source_round": "round-4"
+        },
+        {
+          "code": "R5-F5A",
+          "caption": "正面站姿",
+          "src": "assets/mascot-evolution/round5/R5_F5A.webp",
+          "alt": "柔壳犰狳三分之四标准身份图",
+          "source_round": "round-5"
+        },
+        {
+          "code": "R5-F5B",
+          "caption": "回头侧身",
+          "src": "assets/mascot-evolution/round5/R5_F5B.webp",
+          "alt": "柔壳犰狳左后侧五段软壳结构",
+          "source_round": "round-5"
+        },
+        {
+          "code": "R5-F5C",
+          "caption": "挡住低位碰撞",
+          "src": "assets/mascot-evolution/round5/R5_F5C.webp",
+          "alt": "柔壳犰狳用五段软壳缓冲无品牌车辆的低位边缘",
+          "source_round": "round-5"
+        },
+        {
+          "code": "R5-F5D",
+          "caption": "展开转身",
+          "src": "assets/mascot-evolution/round5/R5_F5D.webp",
+          "alt": "柔壳犰狳展开软壳并快速转向",
+          "source_round": "round-5"
+        }
+      ]
+    },
+    {
+      "id": "character-08-badger",
+      "index": "08",
+      "family": "badger",
+      "type": "animal",
+      "name_cn": "底盘獾",
+      "name_en": "Chassis Badger",
+      "blurb": "身体低、胆子大，最适合钻到车底寻找异响和松动。",
+      "assets": [
+        {
+          "code": "R5-F1A",
+          "caption": "正面站姿",
+          "src": "assets/mascot-evolution/round5/R5_F1A.webp",
+          "alt": "底盘獾三分之四标准身份图",
+          "source_round": "round-5"
+        },
+        {
+          "code": "R5-F1B",
+          "caption": "回头侧身",
+          "src": "assets/mascot-evolution/round5/R5_F1B.webp",
+          "alt": "底盘獾左后侧结构视角",
+          "source_round": "round-5"
+        },
+        {
+          "code": "R5-F1C",
+          "caption": "检查车底",
+          "src": "assets/mascot-evolution/round5/R5_F1C.webp",
+          "alt": "底盘獾在无品牌车辆下方进行检修",
+          "source_round": "round-5"
+        },
+        {
+          "code": "R5-F1D",
+          "caption": "向前跨步",
+          "src": "assets/mascot-evolution/round5/R5_F1D.webp",
+          "alt": "底盘獾保持低重心向前跨步的动态",
+          "source_round": "round-5"
+        },
+        {
+          "code": "R6-F1",
+          "caption": "肩部字标",
+          "src": "assets/mascot-evolution/round6/R6_F1.webp",
+          "alt": "肩部工作背带带有 OEDRO 字样的底盘獾",
+          "source_round": "round-6"
+        }
+      ]
+    },
+    {
+      "id": "character-09-mule",
+      "index": "09",
+      "family": "mule",
+      "type": "animal",
+      "name_cn": "拖带骡",
+      "name_en": "Tow Mule",
+      "blurb": "它不抢速度，只负责把重东西稳稳带走，把活干完再休息。",
+      "assets": [
+        {
+          "code": "R5-F2A",
+          "caption": "正面站姿",
+          "src": "assets/mascot-evolution/round5/R5_F2A.webp",
+          "alt": "拖带骡三分之四标准身份图",
+          "source_round": "round-5"
+        },
+        {
+          "code": "R5-F2B",
+          "caption": "回头侧身",
+          "src": "assets/mascot-evolution/round5/R5_F2B.webp",
+          "alt": "拖带骡左后侧承重结构视角",
+          "source_round": "round-5"
+        },
+        {
+          "code": "R5-F2C",
+          "caption": "准备拖带",
+          "src": "assets/mascot-evolution/round5/R5_F2C.webp",
+          "alt": "拖带骡连接无品牌车辆进行拖带",
+          "source_round": "round-5"
+        },
+        {
+          "code": "R5-F2D",
+          "caption": "穿过车库",
+          "src": "assets/mascot-evolution/round5/R5_F2D.webp",
+          "alt": "拖带骡携带收纳好的回收拖带穿过车库入口",
+          "source_round": "round-5"
+        }
+      ]
+    },
+    {
+      "id": "character-10-gecko",
+      "index": "10",
+      "family": "gecko",
+      "type": "animal",
+      "name_cn": "贴合壁虎",
+      "name_en": "Fit Gecko",
+      "blurb": "脚垫抓得牢，尾巴稳得住；它代表安装到位和严丝合缝。",
+      "assets": [
+        {
+          "code": "R5-F3A",
+          "caption": "正面站姿",
+          "src": "assets/mascot-evolution/round5/R5_F3A.webp",
+          "alt": "贴合壁虎三分之四标准身份图",
+          "source_round": "round-5"
+        },
+        {
+          "code": "R5-F3B",
+          "caption": "回头侧身",
+          "src": "assets/mascot-evolution/round5/R5_F3B.webp",
+          "alt": "贴合壁虎左后侧趾垫和尾部结构",
+          "source_round": "round-5"
+        },
+        {
+          "code": "R5-F3C",
+          "caption": "安装密封条",
+          "src": "assets/mascot-evolution/round5/R5_F3C.webp",
+          "alt": "贴合壁虎把无品牌车辆的柔性密封条压入车门边缘",
+          "source_round": "round-5"
+        },
+        {
+          "code": "R5-F3D",
+          "caption": "沿表面爬行",
+          "src": "assets/mascot-evolution/round5/R5_F3D.webp",
+          "alt": "贴合壁虎沿表面快速爬行的动态",
+          "source_round": "round-5"
+        }
+      ]
+    },
+    {
+      "id": "character-11-raven",
+      "index": "11",
+      "family": "raven",
+      "type": "animal",
+      "name_cn": "巡检渡鸦",
+      "name_en": "Scout Raven",
+      "blurb": "它喜欢站在高处看得更远，哪里不对劲，往往最先被它发现。",
+      "assets": [
+        {
+          "code": "R5-F4A",
+          "caption": "停在地面",
+          "src": "assets/mascot-evolution/round5/R5_F4A.webp",
+          "alt": "巡检渡鸦三分之四标准身份图",
+          "source_round": "round-5"
+        },
+        {
+          "code": "R5-F4B",
+          "caption": "回头查看",
+          "src": "assets/mascot-evolution/round5/R5_F4B.webp",
+          "alt": "巡检渡鸦左后侧翼面和尾部结构",
+          "source_round": "round-5"
+        },
+        {
+          "code": "R5-F4C",
+          "caption": "查看底盘",
+          "src": "assets/mascot-evolution/round5/R5_F4C.webp",
+          "alt": "巡检渡鸦在无品牌车辆下检查软管接口",
+          "source_round": "round-5"
+        },
+        {
+          "code": "R5-F4D",
+          "caption": "落地前一刻",
+          "src": "assets/mascot-evolution/round5/R5_F4D.webp",
+          "alt": "巡检渡鸦展开双翼接近巡检位置",
+          "source_round": "round-5"
+        }
+      ]
+    },
+    {
+      "id": "character-12-kestrel-scout",
+      "index": "12",
+      "family": "kestrel-scout",
+      "type": "animal",
+      "name_cn": "路线红隼",
+      "name_en": "Trail Kestrel",
+      "blurb": "它能在空中停住片刻，再迅速选定落点，像一双替车探路的眼睛。",
+      "assets": [
+        {
           "code": "R7-F4A",
-          "title": "红隼路线侦察员",
-          "family": "kestrel-scout",
-          "palette": "appeal-warm",
-          "view": "身份｜三分之四标准图",
-          "style": "高端动画角色概念",
+          "caption": "停在地面",
           "src": "assets/mascot-evolution/round7/R7_F4A.webp",
-          "alt": "佩戴小型 OEDRO 胸带的红隼路线侦察员身份图"
+          "alt": "佩戴小型 OEDRO 胸带的红隼路线侦察员身份图",
+          "source_round": "round-7"
         },
         {
           "code": "R7-F4B",
-          "title": "红隼路线侦察员",
-          "family": "kestrel-scout",
-          "palette": "appeal-warm",
-          "view": "结构｜侧后回望",
-          "style": "高端动画角色概念",
+          "caption": "回头查看",
           "src": "assets/mascot-evolution/round7/R7_F4B.webp",
-          "alt": "红隼路线侦察员侧后回望和翼部结构图"
+          "alt": "红隼路线侦察员侧后回望和翼部结构图",
+          "source_round": "round-7"
         },
         {
           "code": "R7-F4C",
-          "title": "红隼路线侦察员",
-          "family": "kestrel-scout",
-          "palette": "appeal-warm",
-          "view": "工作｜车顶观察",
-          "style": "高端动画角色概念",
+          "caption": "检查车顶",
           "src": "assets/mascot-evolution/round7/R7_F4C.webp",
-          "alt": "红隼路线侦察员从无品牌车辆附近观察路线"
+          "alt": "红隼路线侦察员从无品牌车辆附近观察路线",
+          "source_round": "round-7"
         },
         {
           "code": "R7-F4D",
-          "title": "红隼路线侦察员",
-          "family": "kestrel-scout",
-          "palette": "appeal-warm",
-          "view": "动态｜俯冲转向",
-          "style": "高端动画角色概念",
+          "caption": "落地前一刻",
           "src": "assets/mascot-evolution/round7/R7_F4D.webp",
-          "alt": "红隼路线侦察员展开双翼俯冲转向的动态"
+          "alt": "红隼路线侦察员展开双翼俯冲转向的动态",
+          "source_round": "round-7"
+        }
+      ]
+    },
+    {
+      "id": "character-13-compass",
+      "index": "13",
+      "family": "compass",
+      "type": "other",
+      "name_cn": "路向罗盘",
+      "name_en": "Trail Compass",
+      "blurb": "指针会随着路况轻轻偏转，始终把车带向更稳妥的方向。",
+      "assets": [
+        {
+          "code": "R12-F5A",
+          "caption": "指向前方",
+          "src": "assets/mascot-evolution/round12/R12_F5A.webp",
+          "alt": "低矮不对称的路向罗盘指向前方",
+          "source_round": "round-12",
+          "source_file": "R12_F5A_路向罗盘_Trail_Compass_Pointing.png"
         },
         {
+          "code": "R12-F5B",
+          "caption": "露出背环",
+          "src": "assets/mascot-evolution/round12/R12_F5B.webp",
+          "alt": "路向罗盘的侧后机械结构和背环",
+          "source_round": "round-12",
+          "source_file": "R12_F5B_路向罗盘_Trail_Compass_Rear.png"
+        },
+        {
+          "code": "R12-F5C",
+          "caption": "带车选路",
+          "src": "assets/mascot-evolution/round12/R12_F5C.webp",
+          "alt": "路向罗盘为无品牌越野车指引路线",
+          "source_round": "round-12",
+          "source_file": "R12_F5C_路向罗盘_Trail_Compass_Guiding.png"
+        },
+        {
+          "code": "R12-F5D",
+          "caption": "转向新路",
+          "src": "assets/mascot-evolution/round12/R12_F5D.webp",
+          "alt": "路向罗盘倾斜并把指针转向新路",
+          "source_round": "round-12",
+          "source_file": "R12_F5D_路向罗盘_Trail_Compass_Turning.png"
+        }
+      ]
+    },
+    {
+      "id": "character-14-spark",
+      "index": "14",
+      "family": "spark",
+      "type": "other",
+      "name_cn": "工坊火花",
+      "name_en": "Garage Spark",
+      "blurb": "它从工具接触金属的一瞬间醒来，哪里需要动手，哪里就亮起一团暖光。",
+      "assets": [
+        {
+          "code": "R13-F6A",
+          "caption": "暖光初醒",
+          "src": "assets/mascot-evolution/round13/R13_F6A.webp",
+          "alt": "围绕石墨金属芯的工坊火花亮起暖光",
+          "source_round": "round-13",
+          "source_file": "R13_F6A_工坊火花_Garage_Spark_Waking.png"
+        },
+        {
+          "code": "R13-F6B",
+          "caption": "绕过金属芯",
+          "src": "assets/mascot-evolution/round13/R13_F6B.webp",
+          "alt": "工坊火花的侧后方向和石墨金属芯",
+          "source_round": "round-13",
+          "source_file": "R13_F6B_工坊火花_Garage_Spark_Core.png"
+        },
+        {
+          "code": "R13-F6C",
+          "caption": "照亮工位",
+          "src": "assets/mascot-evolution/round13/R13_F6C.webp",
+          "alt": "工坊火花照亮无品牌车辆旁的安装位置",
+          "source_round": "round-13",
+          "source_file": "R13_F6C_工坊火花_Garage_Spark_Worklight.png"
+        },
+        {
+          "code": "R13-F6D",
+          "caption": "掠过车旁",
+          "src": "assets/mascot-evolution/round13/R13_F6D.webp",
+          "alt": "工坊火花拖着暖色光带掠过无品牌车辆",
+          "source_round": "round-13",
+          "source_file": "R13_F6D_工坊火花_Garage_Spark_Streak.png"
+        }
+      ]
+    },
+    {
+      "id": "character-15-route-engineer",
+      "index": "15",
+      "family": "route-engineer",
+      "type": "other",
+      "name_cn": "路线工程师",
+      "name_en": "Route Engineer",
+      "blurb": "他熟悉车辆，也熟悉路况，负责把每个安装细节做得稳妥。",
+      "assets": [
+        {
           "code": "R7-F5A",
-          "title": "路线工程师",
-          "family": "route-engineer",
-          "palette": "appeal-warm",
-          "view": "身份｜三分之四标准图",
-          "style": "高端动画角色概念",
+          "caption": "正面站姿",
           "src": "assets/mascot-evolution/round7/R7_F5A.webp",
-          "alt": "胸前带有小型 OEDRO 织标的路线工程师身份图"
+          "alt": "胸前带有小型 OEDRO 织标的路线工程师身份图",
+          "source_round": "round-7"
         },
         {
           "code": "R7-F5B",
-          "title": "路线工程师",
-          "family": "route-engineer",
-          "palette": "appeal-warm",
-          "view": "结构｜侧后回望",
-          "style": "高端动画角色概念",
+          "caption": "回头侧身",
           "src": "assets/mascot-evolution/round7/R7_F5B.webp",
-          "alt": "路线工程师侧后回望和工装结构图"
+          "alt": "路线工程师侧后回望和工装结构图",
+          "source_round": "round-7"
         },
         {
           "code": "R7-F5C",
-          "title": "路线工程师",
-          "family": "route-engineer",
-          "palette": "appeal-warm",
-          "view": "工作｜车辆安装",
-          "style": "高端动画角色概念",
+          "caption": "安装地垫",
           "src": "assets/mascot-evolution/round7/R7_F5C.webp",
-          "alt": "路线工程师在无品牌车辆旁检查安装结构"
+          "alt": "路线工程师在无品牌车辆旁检查安装结构",
+          "source_round": "round-7"
         },
         {
           "code": "R7-F5D",
-          "title": "路线工程师",
-          "family": "route-engineer",
-          "palette": "appeal-warm",
-          "view": "动态｜跨步转身",
-          "style": "高端动画角色概念",
+          "caption": "下车出发",
           "src": "assets/mascot-evolution/round7/R7_F5D.webp",
-          "alt": "路线工程师携带收纳好的工具跨步转身"
+          "alt": "路线工程师携带收纳好的工具跨步转身",
+          "source_round": "round-7"
+        }
+      ]
+    },
+    {
+      "id": "character-16-parts-spirit",
+      "index": "16",
+      "family": "parts-spirit",
+      "type": "other",
+      "name_cn": "零件精灵",
+      "name_en": "Parts Sprite",
+      "blurb": "它由几件真正能咬合的零件组成，每一块都有自己的位置。",
+      "assets": [
+        {
+          "code": "R1-F1",
+          "caption": "最初的轮廓",
+          "src": "assets/mascot-evolution/round1/R1_F1_Parts_Spirit.webp",
+          "alt": "第一轮零件精灵概念",
+          "source_round": "round-1"
+        },
+        {
+          "code": "R2-1A",
+          "caption": "圆环外壳",
+          "src": "assets/mascot-evolution/round2/R2_1A.webp",
+          "alt": "第二轮圆环精灵",
+          "source_round": "round-2"
+        },
+        {
+          "code": "R2-1B",
+          "caption": "胶囊外壳",
+          "src": "assets/mascot-evolution/round2/R2_1B.webp",
+          "alt": "第二轮胶囊精灵",
+          "source_round": "round-2"
+        },
+        {
+          "code": "R2-1C",
+          "caption": "方形外壳",
+          "src": "assets/mascot-evolution/round2/R2_1C.webp",
+          "alt": "第二轮方核精灵",
+          "source_round": "round-2"
+        },
+        {
+          "code": "R3-F1A",
+          "caption": "工具细节",
+          "src": "assets/mascot-round3/F1A.webp",
+          "alt": "第三轮模块零件精灵车库手绘",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F1B",
+          "caption": "简洁色块",
+          "src": "assets/mascot-round3/F1B.webp",
+          "alt": "第三轮模块零件精灵品牌图形",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F1C",
+          "caption": "完整机械结构",
+          "src": "assets/mascot-round3/F1C.webp",
+          "alt": "第三轮模块零件精灵机械原型",
+          "source_round": "round-3"
+        }
+      ]
+    },
+    {
+      "id": "character-17-socket",
+      "index": "17",
+      "family": "socket",
+      "type": "other",
+      "name_cn": "套筒伙伴",
+      "name_en": "Socket Buddy",
+      "blurb": "小小的身体来自套筒和接头，总能找到尺寸合适的那一个。",
+      "assets": [
+        {
+          "code": "R3-F5A",
+          "caption": "工具细节",
+          "src": "assets/mascot-round3/F5A.webp",
+          "alt": "第三轮套筒模块伙伴车库手绘",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F5B",
+          "caption": "简洁色块",
+          "src": "assets/mascot-round3/F5B.webp",
+          "alt": "第三轮套筒模块伙伴品牌图形",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F5C",
+          "caption": "完整机械结构",
+          "src": "assets/mascot-round3/F5C.webp",
+          "alt": "第三轮套筒模块伙伴机械原型",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R4-F3A",
+          "caption": "氧化橙",
+          "src": "assets/mascot-evolution/round4/R4_F3A.webp",
+          "alt": "第四轮套筒模块伙伴氧化橙方案",
+          "source_round": "round-4"
+        },
+        {
+          "code": "R4-F3B",
+          "caption": "琥珀黄",
+          "src": "assets/mascot-evolution/round4/R4_F3B.webp",
+          "alt": "第四轮套筒模块伙伴工业琥珀方案",
+          "source_round": "round-4"
+        },
+        {
+          "code": "R4-F3C",
+          "caption": "橄榄绿",
+          "src": "assets/mascot-evolution/round4/R4_F3C.webp",
+          "alt": "第四轮套筒模块伙伴苔藓橄榄方案",
+          "source_round": "round-4"
+        }
+      ]
+    },
+    {
+      "id": "character-18-fitment",
+      "index": "18",
+      "family": "fitment",
+      "type": "other",
+      "name_cn": "咬合模块",
+      "name_en": "Fit Link",
+      "blurb": "两边对准位置便会扣紧，它代表合适、牢靠和不勉强。",
+      "assets": [
+        {
+          "code": "R3-F6A",
+          "caption": "工具细节",
+          "src": "assets/mascot-round3/F6A.webp",
+          "alt": "第三轮适配连接体车库手绘",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F6B",
+          "caption": "简洁色块",
+          "src": "assets/mascot-round3/F6B.webp",
+          "alt": "第三轮适配连接体品牌图形",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F6C",
+          "caption": "完整机械结构",
+          "src": "assets/mascot-round3/F6C.webp",
+          "alt": "第三轮适配连接体机械原型",
+          "source_round": "round-3"
+        }
+      ]
+    },
+    {
+      "id": "character-19-guard",
+      "index": "19",
+      "family": "guard",
+      "type": "other",
+      "name_cn": "护板伙伴",
+      "name_en": "Skid Guard",
+      "blurb": "宽而低的身体挡在底盘和碎石之间，替车接住最先到来的冲击。",
+      "assets": [
+        {
+          "code": "R3-F7A",
+          "caption": "工具细节",
+          "src": "assets/mascot-round3/F7A.webp",
+          "alt": "第三轮越野护板伙伴车库手绘",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F7B",
+          "caption": "简洁色块",
+          "src": "assets/mascot-round3/F7B.webp",
+          "alt": "第三轮越野护板伙伴品牌图形",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F7C",
+          "caption": "完整机械结构",
+          "src": "assets/mascot-round3/F7C.webp",
+          "alt": "第三轮越野护板伙伴机械原型",
+          "source_round": "round-3"
         }
       ]
     }
-  ],
-  "family_notes": {
-    "badger": "低位检修与耐脏耐磨；重点看楔形头、宽背和贴近地面的动作。",
-    "mule": "承重、拖带和把重活做完；重点看长耳、方正胸腔与四蹄受力。",
-    "gecko": "贴合、窄缝安装和准确落位；重点看扁头、趾垫和尾巴形成的负形。",
-    "raven": "高处巡检与发现异常；重点看长喙、大翼面和落地前后的动作节奏。",
-    "armadillo-flex": "柔性保护与越野耐用；重点看五段软壳在展开、收拢和低位通过时的表现。",
-    "copilot-dog": "沉稳、可靠、愿意同行；用宽阔胸肩、专注眼神和自然动作建立亲和力。",
-    "canyon-fox": "敏锐但不狡黠；用长耳、披肩与清楚的尾部弧线形成优雅轮廓。",
-    "quiet-lynx": "克制、精准、有审美；用耳簇、短尾和利落工装保持安静的专业感。",
-    "kestrel-scout": "轻盈、警觉、视野开阔；用翼面、俯冲和落点变化表达路线侦察。",
-    "route-engineer": "把专业能力变成可信的人格；用成熟比例、真实工装和明确动作呈现服务感。"
-  }
+  ]
 }
