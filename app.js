@@ -53,7 +53,7 @@ function topicLink(item) {
 function renderShell(data) {
   document.querySelector('#site-title').textContent = '海外用户运营';
   document.querySelector('#site-subtitle').textContent = 'OEDRO 工作台';
-  searchInput.placeholder = '搜索当前页面';
+  if (searchInput) searchInput.placeholder = '搜索当前页面';
   document.querySelector('#nav-list').innerHTML = data.nav.map((item) => `
     <a href="${escapeHtml(item.file)}" data-page="${escapeHtml(item.id)}" class="${item.id === page ? 'active' : ''}">
       <span>${escapeHtml(item.label)}</span>

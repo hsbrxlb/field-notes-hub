@@ -10,14 +10,14 @@
   "results": [
     {
       "id": "multiplatform-content-test",
-      "date": "2026-09-02",
+      "date": "2026-09-04",
       "project": "OEDRO社媒内容",
       "type": "内容",
       "category": "content",
-      "title": "内容样稿",
-      "description": "脚垫主题的 Instagram、Facebook 和 Pinterest 静态图文。",
-      "purpose": "后续测试增加一条公开记录和对应素材即可。",
-      "status": "已完成",
+      "title": "内容生产测试",
+      "description": "用输入要求、内容目标、平台成品和判断结果检验社媒内容工作流。",
+      "purpose": "让人能判断工作流是否真正服务发帖目的。",
+      "status": "待确认",
       "related_work": "欧美多社媒内容准备",
       "links": [
         {"label": "查看测试记录", "href": "content-pipeline-test.html"}

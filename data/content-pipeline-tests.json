@@ -1,14 +1,32 @@
 {
-  "title": "内容样稿",
-  "intro": "Instagram、Facebook 和 Pinterest 静态图文，等待人工确认。",
+  "title": "内容生产测试",
   "records": [
     {
-      "run_id": "2026-09-01-oedro-floor-mats",
-      "date": "2026-09-01",
+      "run_id": "2026-09-04-oedro-floor-mats-static",
+      "date": "2026-09-04",
+      "version": "第2版",
       "product": "OEDRO 2Gen TPE脚垫",
-      "review_status": "等待人工确认",
-      "title": "F-250/F-350 脚垫适配与清洁",
-      "source_url": "https://www.oedro.com/products/all-weather-tpe-floor-mats-liners-for-2017-2024-ford-f-250-f-350-super-duty-crew-cab-full-set-liners-p-5361.html",
+      "review_status": "文案可审，图片待完善",
+      "prompt": "给 OEDRO 2Gen TPE 脚垫做一组面向美国车主的静态社媒内容，覆盖 Instagram、Facebook 和 Pinterest。内容重点是两件事：购买前核对 2017至2026年 Ford F-250/F-350 Super Duty Crew Cab、前排桶形座椅和座椅下储物空间；脏了以后可以取出冲洗并装回。三个平台要有不同写法和不同作用。语气具体、克制，像懂车型差异的人；不要写价格、折扣、保修或绝对适配，也不要生成视频。使用官方产品图，最后交给人审核。",
+      "brief": {
+        "purpose": "产品教育与购买前适配确认",
+        "audience": "正在为 F-250 或 F-350 挑选脚垫的美国车主",
+        "desired_effect": "让车主看懂适配条件，愿意进入产品页核对自己的车辆配置",
+        "creative_direction": "泥水清洁负责吸引注意，车型配置负责推动下一步",
+        "asset_decision": "使用官方产品图。本轮没有生成 AI 产品图，避免产品轮廓和适配关系失真。",
+        "success_criteria": [
+          "读者能在短时间内说清适配条件和清洁方式",
+          "三个平台承担不同任务，文案没有互相复制",
+          "所有产品说法都能在当前产品页找到依据",
+          "人审能明确决定可用、需改或放弃"
+        ],
+        "post_publish_signals": "关注产品页点击、保存、有效车型咨询；本页没有真实发布数据。"
+      },
+      "source": {
+        "label": "OEDRO产品页",
+        "url": "https://www.oedro.com/products/all-weather-tpe-floor-mats-liners-for-2017-2024-ford-f-250-f-350-super-duty-crew-cab-full-set-liners-p-5361.html",
+        "verification_status": "2026年9月4日已核对"
+      },
       "image": {
         "src": "assets/content-pipeline/oedro-floor-mat-official.jpg",
         "alt": "OEDRO 官方产品页展示的黑色 TPE 前排和后排脚垫",
@@ -16,32 +34,84 @@
         "height": 1000
       },
       "facts": [
-        {"label": "车型", "value": "2017至2026年 Ford F-250 / F-350 Super Duty Crew Cab，前排桶形座椅，带座椅下储物空间。具体配置以产品页为准。"},
-        {"label": "结构", "value": "深沟槽和高边缘用于承接常见泥水污渍。"},
-        {"label": "清洁", "value": "取出脚垫，用水冲洗并装回。"}
+        {"label": "车型适配", "value": "2017至2026年 Ford F-250 / F-350 Super Duty Crew Cab，前排桶形座椅，且带座椅下储物空间。"},
+        {"label": "防护结构", "value": "深沟槽和高边缘用于承接常见泥水污渍。"},
+        {"label": "清洁方式", "value": "取出脚垫，用水冲洗，清洁后装回。"}
       ],
       "variants": [
         {
           "id": "instagram",
           "platform": "Instagram",
-          "hook_en": "Mud has a way of finding the one gap you missed.",
-          "body_en": "Check the truck before choosing the set: model years 2017 through 2026 for the F-250 or F-350 Super Duty Crew Cab, first-row bucket seats, under-seat storage, and the exact configuration listed on the product page. Deep channels and raised edges are designed to hold common wet and muddy messes on the liner for removal and rinsing.",
-          "cta_en": "Match your truck setup to the product page."
+          "platform_job": "用车主熟悉的泥水场景吸引注意，结尾提醒核对车型。",
+          "format": "4:5 静态图目标 + Caption",
+          "hook_en": "Mud rinses off. Fitment still depends on the cab, seats, and storage setup.",
+          "body_en": "For this OEDRO 2Gen set, check the truck before you buy: 2017-2026 F-250 or F-350 Super Duty Crew Cab, first-row bucket seats, and under-seat storage. The deep channels and raised edges are designed to hold common wet and muddy messes on the liner. Pull it out, hose it off, and put it back when clean.",
+          "cta_en": "Match your truck to the fitment details on the product page.",
+          "visual": {
+            "aspect_ratio": "4:5",
+            "note": "官方产品图已准备；Instagram专用图片尚未制作。"
+          },
+          "review": {
+            "decision": "文案可审",
+            "rationale": "开头有生活感，车型条件完整，CTA落在产品页核对。",
+            "checks": ["目的清楚", "Instagram语气成立", "事实未越界"],
+            "success_signal": "保存与产品页点击"
+          }
         },
         {
           "id": "facebook",
           "platform": "Facebook",
-          "hook_en": "Floor-liner fitment starts with the truck configuration.",
-          "body_en": "This OEDRO 2Gen black TPE set includes two front mats and one rear liner. The product page lists specific 2017 through 2026 Ford F-250 and F-350 Super Duty Crew Cab configurations with first-row bucket seats and under-seat storage. Deep channels and raised edges are designed to hold common wet and muddy messes on the liner. Remove the liner, rinse it with a hose, and reinstall it when clean.",
-          "cta_en": "Check the year, model, cab, and front-seat setup."
+          "platform_job": "清楚解释套装内容和车辆条件，减少购买前的适配疑问。",
+          "format": "4:5 静态图目标 + Feed Post",
+          "hook_en": "Before choosing a floor-liner set, check the truck configuration.",
+          "body_en": "This OEDRO 2Gen black TPE set includes two front mats and one rear liner. The product page lists 2017-2026 Ford F-250 and F-350 Super Duty Crew Cab configurations with first-row bucket seats and under-seat storage. Deep channels and raised edges are designed to hold common wet and muddy messes on the liner. Remove the liner, rinse it with a hose, and reinstall it when clean.",
+          "cta_en": "Check the year, model, cab, front seats, and storage setup on the product page.",
+          "visual": {
+            "aspect_ratio": "4:5",
+            "note": "官方产品图已准备；Facebook专用图片尚未制作。"
+          },
+          "review": {
+            "decision": "文案可审",
+            "rationale": "信息比 Instagram 完整，仍保持一眼可扫，适合回答购买前问题。",
+            "checks": ["套装内容清楚", "Facebook信息密度合适", "CTA具体"],
+            "success_signal": "有效适配咨询与产品页点击"
+          }
         },
         {
           "id": "pinterest",
           "platform": "Pinterest",
-          "hook_en": "F-250/F-350 Floor Mats: Fitment and Cleaning",
+          "platform_job": "做成可搜索、可保存的适配与清洁参考。",
+          "format": "2:3 Image Pin目标",
+          "hook_en": "2017-2026 F-250/F-350 Floor Mats: Fitment and Cleaning",
           "body_en": "Save this fitment and cleaning reference for an OEDRO 2Gen TPE floor-liner set. Compare the listed model year, Crew Cab, first-row bucket seats, and under-seat storage with your truck. Deep channels and raised edges are designed to hold common wet and muddy messes on the liner. Remove it, rinse it with a hose, and reinstall it when clean.",
-          "cta_en": "Save the checklist and verify the product page."
+          "cta_en": "Save the checklist and verify the full fitment details on the product page.",
+          "visual": {
+            "aspect_ratio": "2:3",
+            "note": "官方产品图已准备；Pinterest专用图片尚未制作。"
+          },
+          "review": {
+            "decision": "文案可审",
+            "rationale": "标题可搜索，正文适合收藏，外链动作与 Pinterest 使用习惯一致。",
+            "checks": ["搜索信息明确", "保存价值成立", "没有复制其他平台开头"],
+            "success_signal": "保存与站外点击"
+          }
         }
+      ],
+      "ai_review": {
+        "decision": "图片待完善",
+        "revision_count": 1,
+        "summary": "文案事实和平台差异通过检查。图片环节尚未完成：已有官方产品图，还没有 Instagram、Facebook 和 Pinterest 的平台专用图片。",
+        "corrections": [
+          "删除了可能暗示经济损失的表述。",
+          "删除了可能暗示污水完全不会洒到地毯的表述。",
+          "三平台分别承担吸引注意、解释配置和提供可保存参考的任务。"
+        ]
+      },
+      "human_questions": [
+        "看完开头，你能马上说出这条内容想让谁做什么吗？",
+        "三个平台的用途和语气是否真的不同？",
+        "文案有人愿意看吗，还是仍像产品说明书？",
+        "官方产品图够不够像社媒内容，是否需要单独制作平台图片？"
       ]
     }
   ]

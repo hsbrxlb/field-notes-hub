@@ -11,7 +11,7 @@
 - `research.html`：研究项目、方法、参与方式、用户权利和 AI智能对话问卷介绍
 - `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
 - `content-studio.html`：已经形成的内容、研究、方案和工作成果
-- `content-pipeline-test.html`：按日期保存 Instagram、Facebook 和 Pinterest 静态图文样稿
+- `content-pipeline-test.html`：展示社媒内容测试的 Prompt、目的、平台成品和审核结论
 - `flipbooks.html`：Flip Book Demo，进入 Edition 01 与 Owner Field Notes
 - `mascot.html`：OEDRO 吉祥物角色档案，19 个角色区共 110 张独立高清图；重复角色合并展示，并提供页内跳转导航
 - `topics.html`与`topic.html`：专题、稳定方法和经验记录
