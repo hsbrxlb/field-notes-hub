@@ -1,19 +1,19 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-02T15:43:00+00:00",
-  "last_attempt_at": "2026-09-02T15:41:39+00:00",
-  "last_success_at": "2026-09-02T05:54:32+00:00",
+  "generated_at": "2026-09-03T08:58:19+00:00",
+  "last_attempt_at": "2026-09-03T08:57:33+00:00",
+  "last_success_at": "2026-09-03T08:58:19+00:00",
   "method": "deterministic_external_signal_scan",
-  "status": "partial",
+  "status": "success",
   "stale_after_hours": 36,
   "truth_status": "blocked",
   "metrics": {
-    "raw_discovered": 166,
-    "accepted": 149,
-    "filtered": 17,
+    "raw_discovered": 196,
+    "accepted": 158,
+    "filtered": 38,
     "new_actionable": 0,
-    "duplicate_actionable": 1,
-    "open_items": 4,
+    "duplicate_actionable": 2,
+    "open_items": 5,
     "youtube_videos_checked": 9,
     "youtube_comments_checked": 139,
     "youtube_replies_checked": 44,
@@ -24,11 +24,11 @@
     {
       "source": "tavily",
       "status": "ok",
-      "accepted_count": 3
+      "accepted_count": 12
     },
     {
       "source": "youtube",
-      "status": "failed",
+      "status": "ok",
       "accepted_count": 146
     },
     {
@@ -44,6 +44,28 @@
   ],
   "items": [
     {
+      "signal_id": "2fe8fcac771e0d3c0a983f688f3098989821f43b468b2e0920257af61819ba8c",
+      "topic": "tonneau_cover",
+      "source_family": "reddit",
+      "source_link": "https://www.reddit.com/r/chevycolorado/comments/1scctq2/oedro_running_boards",
+      "reason_code": "direct_oedro_question",
+      "next_action": "verify_product_facts",
+      "triage_status": "NEEDS_FACTS",
+      "observed_at": "2026-09-03T08:57:46+00:00",
+      "last_seen_at": "2026-09-03T08:58:19+00:00"
+    },
+    {
+      "signal_id": "0306d023b3e48930997aee10460ddeaab6658ef7493c90b38dd64d8239a7ccb3",
+      "topic": "installation",
+      "source_family": "reddit",
+      "source_link": "https://www.reddit.com/r/nissanfrontier/comments/1r5h3mn/tonneau_covers",
+      "reason_code": "direct_oedro_question",
+      "next_action": "verify_product_facts",
+      "triage_status": "NEEDS_FACTS",
+      "observed_at": "2026-09-03T08:57:46+00:00",
+      "last_seen_at": "2026-09-03T08:58:19+00:00"
+    },
+    {
       "signal_id": "6996ffc0e165c43fb192bfb563aafd8fd64c757f21d0bfd57e522fd05e563506",
       "topic": "complaint",
       "source_family": "reddit",
@@ -51,19 +73,8 @@
       "reason_code": "direct_oedro_question",
       "next_action": "verify_product_facts",
       "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-09-02T15:41:50+00:00",
-      "last_seen_at": "2026-09-02T15:43:00+00:00"
-    },
-    {
-      "signal_id": "2fe8fcac771e0d3c0a983f688f3098989821f43b468b2e0920257af61819ba8c",
-      "topic": "recommendation",
-      "source_family": "reddit",
-      "source_link": "https://www.reddit.com/r/chevycolorado/comments/1scctq2/oedro_running_boards",
-      "reason_code": "direct_oedro_question",
-      "next_action": "verify_product_facts",
-      "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-09-01T11:13:08+00:00",
-      "last_seen_at": "2026-09-01T11:13:38+00:00"
+      "observed_at": "2026-09-03T08:54:23+00:00",
+      "last_seen_at": "2026-09-03T08:55:14+00:00"
     },
     {
       "signal_id": "36bc5e0f07933c9f421bcaf42b853d064fee16b994b4df0a9be1f4ae343fa275",
