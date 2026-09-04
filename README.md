@@ -12,14 +12,14 @@
 - `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
 - `content-studio.html`：已经形成的内容、研究、方案和工作成果
 - `content-pipeline-test.html`：展示社媒内容测试的 Prompt、目的、平台成品和审核结论
-- `flipbooks.html`：Flip Book Demo，进入 Edition 01 与 Owner Field Notes
+- `flipbooks.html`：Flip Book Demo（翻页书），进入 Brand Story 与 Car Owner Survey
 - `mascot.html`：OEDRO 吉祥物角色档案，19 个角色区共 110 张独立高清图；重复角色合并展示，并提供页内跳转导航
 - `topics.html`与`topic.html`：专题、稳定方法和经验记录
 - `playbook.html`：工作方法和完成标准
 
 `content-studio.html`路径为兼容旧链接而保留。页面已经改为只读成果档案，读取`data/content-studio.json`；没有填写表单、在线生成、浏览器草稿、版本审核、登录或数据库。
 
-`flipbooks.html` 是两本书的统一入口。书内左上角返回该页面；Owner Field Notes 的回答保存在访问者当前浏览器。
+`flipbooks.html` 是两本书的统一入口。书内左上角返回该页面；Car Owner Survey 的回答保存在访问者当前浏览器。
 
 “问题与反馈”同时读取两份用途不同的数据：
 
@@ -91,7 +91,7 @@ Bluesky检查每天通过现有Tavily免费额度运行1组限定`bsky.app`的`O
 
 ## 设计与发布检查
 
-整站设计规则见 `design.md`。Hub 固定保留 `assets/background.png` 流体底图，正文通过深色半透明阅读面保持清晰，不使用文字阴影；辅助信息不小于 12px，触控目标不小于 44×44px。
+整站设计规则见 `design.md`。Hub 固定保留 `assets/background.png` 流体底图，正文与侧栏通过深色半透明阅读面保持清晰，不使用文字阴影；侧栏不设置页内搜索，辅助信息不小于 12px，触控目标不小于 44×44px。
 
 页面或可见文案变更还需运行：
 

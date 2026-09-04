@@ -2,8 +2,6 @@ const page = document.body.dataset.page;
 const sidebar = document.querySelector('.sidebar');
 const overlay = document.querySelector('.mobile-overlay');
 const menuButton = document.querySelector('.menu-button');
-const searchInput = document.querySelector('#page-search');
-const searchStatus = document.querySelector('#search-status');
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -12,10 +10,6 @@ function escapeHtml(value) {
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;');
-}
-
-function normalize(value) {
-  return String(value ?? '').toLocaleLowerCase('zh-CN').replace(/\s+/g, ' ').trim();
 }
 
 function setSidebar(open) {
@@ -53,7 +47,6 @@ function topicLink(item) {
 function renderShell(data) {
   document.querySelector('#site-title').textContent = '海外用户运营';
   document.querySelector('#site-subtitle').textContent = 'OEDRO 工作台';
-  if (searchInput) searchInput.placeholder = '搜索当前页面';
   document.querySelector('#nav-list').innerHTML = data.nav.map((item) => `
     <a href="${escapeHtml(item.file)}" data-page="${escapeHtml(item.id)}" class="${item.id === page ? 'active' : ''}">
       <span>${escapeHtml(item.label)}</span>
@@ -90,8 +83,7 @@ function renderOverview(data, topics, results) {
     <section class="section" data-searchable>
       ${sectionHead('专题与经验', '<a class="text-link" href="topics.html">查看全部 →</a>')}
       <div class="topic-list">${topics.items.filter((item) => item.featured).map(topicLink).join('')}</div>
-    </section>
-    <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>`;
+    </section>`;
 }
 
 function methodStageMarkup(stage) {
@@ -112,8 +104,7 @@ function renderPlaybook(data) {
   document.querySelector('meta[name="description"]').content = p.meta_description;
   document.querySelector('#content').innerHTML = `
     ${pageHeading('工作方法')}
-    <section class="section method-stack">${data.stages.map(methodStageMarkup).join('')}</section>
-    <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>`;
+    <section class="section method-stack">${data.stages.map(methodStageMarkup).join('')}</section>`;
 }
 
 function renderWork(data) {
@@ -129,12 +120,11 @@ function renderWork(data) {
       <div class="data-table-wrap"><table class="data-table project-table"><thead><tr><th>项目</th><th>状态</th><th>当前情况</th><th>下一步</th><th>需要配合</th></tr></thead><tbody id="project-rows">
         ${w.projects.map((item) => `<tr data-searchable data-status="${escapeHtml(item.status)}"><td class="cell-title" data-label="项目">${escapeHtml(item.name)}</td><td data-label="状态">${statusMarkup(item.status)}</td><td data-label="当前情况">${escapeHtml(item.progress)}</td><td data-label="下一步">${escapeHtml(item.next)}</td><td data-label="需要配合">${escapeHtml(item.dependency)}</td></tr>`).join('')}
       </tbody></table></div>
-      <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>
     </section>
     <section class="section" data-searchable>${sectionHead('当前阻塞')}<div class="topic-list">${w.blocked.map((item) => `<div class="topic-row"><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.reason)}</p></div>${statusMarkup('受阻')}</div>`).join('')}</div></section>
     `;
-  document.querySelector('#status-filter')?.addEventListener('change', runSearch);
-  runSearch();
+  document.querySelector('#status-filter')?.addEventListener('change', runFilters);
+  runFilters();
 }
 
 function researchMethodsMarkup(r) {
@@ -181,7 +171,6 @@ function renderResearch(data) {
     ${pageHeading('用户调研/问卷')}
     <section class="section research-surface">
       <div class="research-stack">${sections.map(([id, label]) => `<section class="research-expanded-section" data-searchable><h2>${escapeHtml(label)}</h2><div class="research-panel">${researchPanelMarkup(data, id)}</div></section>`).join('')}</div>
-      <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>
     </section>`;
 }
 
@@ -198,8 +187,7 @@ function renderFlipbooks(data) {
           <img src="${escapeHtml(entry.image)}" alt="${escapeHtml(entry.image_alt)}" width="${escapeHtml(entry.image_width)}" height="${escapeHtml(entry.image_height)}" loading="eager" decoding="async">
         </a>
       </article>`).join('')}
-    </section>
-    <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>`;
+    </section>`;
 }
 
 function renderUserVoice(data, voice, radar) {
@@ -274,7 +262,6 @@ function renderUserVoice(data, voice, radar) {
         </article>`).join('')}
       </div>
       <div class="empty-state voice-empty" id="voice-empty"${insights.length ? ' hidden' : ''}><strong>${escapeHtml(copy.empty_message || '暂无可公开洞察')}</strong></div>
-      <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>
     </section>`;
 }
 
@@ -286,10 +273,9 @@ function renderTopics(data, topics) {
     <section class="section topic-index-surface">
       <div class="table-toolbar"><div class="filter-row"><label for="topic-filter">状态</label><select id="topic-filter"><option>全部</option><option>筹备</option><option>待确认</option><option>进行中</option><option>受阻</option><option>已完成</option><option>归档</option></select><span class="count-note" id="topic-count"></span></div></div>
       <div class="topic-list" id="topic-list">${topics.items.map(topicLink).join('')}</div>
-      <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>
     </section>`;
-  document.querySelector('#topic-filter')?.addEventListener('change', runSearch);
-  runSearch();
+  document.querySelector('#topic-filter')?.addEventListener('change', runFilters);
+  runFilters();
 }
 
 const topicTitleMap = {
@@ -357,22 +343,17 @@ async function renderTopic(data) {
         <details class="disclosure source-disclosure" open><summary>来源</summary><div class="disclosure-body"><ul class="source-list">${renderTopicSources(topic.sources)}</ul></div></details>
       </article>
       <nav class="topic-toc" aria-label="页内导航"><strong>本页内容</strong>${sections.map((section, index) => `<a href="#topic-section-${index}">${escapeHtml(cleanTopicTitle(section.title))}</a>`).join('')}${topic.related_pages?.length ? '<a href="#topic-related">相关页面</a>' : ''}</nav>
-    </div>
-    <div class="empty-state search-empty" role="status" hidden>${escapeHtml(data.site.no_match)}</div>`;
+    </div>`;
 }
 
-function runSearch() {
-  const query = normalize(searchInput?.value);
+function runFilters() {
   const statusFilter = document.querySelector('#status-filter')?.value || '全部';
   const topicFilter = document.querySelector('#topic-filter')?.value || '全部';
   const items = [...document.querySelectorAll('[data-searchable]')];
-  let matches = 0;
   items.forEach((item) => {
-    const textMatch = !query || normalize(item.textContent).includes(query);
     const projectStatusMatch = !item.matches('#project-rows tr') || statusFilter === '全部' || item.dataset.status === statusFilter;
     const topicStatusMatch = !item.matches('#topic-list [data-status]') || topicFilter === '全部' || item.dataset.status === topicFilter;
-    item.hidden = !(textMatch && projectStatusMatch && topicStatusMatch);
-    if (!item.hidden) matches += 1;
+    item.hidden = !(projectStatusMatch && topicStatusMatch);
   });
   const rows = [...document.querySelectorAll('#project-rows tr')];
   const count = document.querySelector('#project-count');
@@ -380,23 +361,12 @@ function runSearch() {
   const topicRows = [...document.querySelectorAll('#topic-list [data-status]')];
   const topicCount = document.querySelector('#topic-count');
   if (topicCount) topicCount.textContent = `共 ${topicRows.filter((row) => !row.hidden).length} 个专题`;
-  const empty = document.querySelector('.search-empty');
-  if (empty) empty.hidden = matches > 0 || !query;
-  if (searchStatus) searchStatus.textContent = query ? `找到 ${matches} 项` : '按 / 搜索';
 }
 
 menuButton?.addEventListener('click', () => setSidebar(!sidebar?.classList.contains('open')));
 overlay?.addEventListener('click', () => setSidebar(false));
-searchInput?.addEventListener('input', runSearch);
 document.addEventListener('keydown', (event) => {
-  if (event.key === '/' && document.activeElement !== searchInput && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) {
-    event.preventDefault();
-    searchInput?.focus();
-  }
-  if (event.key === 'Escape') {
-    setSidebar(false);
-    if (document.activeElement === searchInput) searchInput.blur();
-  }
+  if (event.key === 'Escape') setSidebar(false);
 });
 
 async function init() {

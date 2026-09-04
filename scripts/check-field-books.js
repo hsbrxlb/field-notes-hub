@@ -58,10 +58,13 @@ if (fs.existsSync(contentPath)) {
   const content = JSON.parse(fs.readFileSync(contentPath, 'utf8'));
   const nav = (content.nav || []).find((item) => item.id === 'flipbooks');
   if (!nav || nav.label !== 'Flip Book Demo' || nav.file !== 'flipbooks.html') errors.push('侧边栏缺少 Flip Book Demo');
+  if (content.flipbooks?.title !== 'Flip Book Demo（翻页书）') errors.push('翻页书页面标题不正确');
   const entries = content.flipbooks?.entries;
   if (!Array.isArray(entries) || entries.length !== 2) {
     errors.push('Flip Book Demo 必须正好包含两本书');
   } else {
+    const expectedTitles = ['品牌故事 · Brand Story', '车主问卷 · Car Owner Survey'];
+    if (entries.some((entry, index) => entry.title !== expectedTitles[index])) errors.push('翻页书入口名称不正确');
     for (const entry of entries) {
       if (!entry.title || entry.description || entry.subtitle) errors.push('每本书必须只有一个用途标题');
       if (!/book=(?:edition-01|owner-field-notes)&return=\.\.\/\.\.\/flipbooks\.html$/.test(entry.href || '')) errors.push(`返回链接不正确：${entry.href}`);

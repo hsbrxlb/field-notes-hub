@@ -1,9 +1,7 @@
 {
   "site": {
     "title": "OEDRO 海外用户运营工作台",
-    "subtitle": "工作进展、计划与成果记录。",
-    "search_hint": "搜索当前页面",
-    "no_match": "换个关键词试试"
+    "subtitle": "工作进展、计划与成果记录。"
   },
   "nav": [
     {
@@ -53,20 +51,20 @@
     }
   ],
   "flipbooks": {
-    "title": "Flip Book Demo",
+    "title": "Flip Book Demo（翻页书）",
     "entries": [
       {
-        "title": "品牌故事 · Edition 01",
+        "title": "品牌故事 · Brand Story",
         "image": "experiences/flipbooks/assets/v2/出发封面_Departure_Cover.webp",
-        "image_alt": "Edition 01 品牌故事翻页书",
+        "image_alt": "品牌故事翻页书",
         "image_width": 1086,
         "image_height": 1448,
         "href": "experiences/flipbooks/?book=edition-01&return=../../flipbooks.html"
       },
       {
-        "title": "车主问卷 · Owner Field Notes",
+        "title": "车主问卷 · Car Owner Survey",
         "image": "experiences/flipbooks/assets/v2/雨天归来_Floor_Mats_Rain_Return.webp",
-        "image_alt": "Owner Field Notes 车主问卷翻页书",
+        "image_alt": "车主问卷翻页书",
         "image_width": 1086,
         "image_height": 1448,
         "href": "experiences/flipbooks/?book=owner-field-notes&return=../../flipbooks.html"

@@ -62,6 +62,9 @@ if (fs.existsSync(appPath)) {
   for (const forbiddenControl of ['data-research-tab', 'role="tabpanel"', 'data-stage=']) {
     if (app.includes(forbiddenControl)) errors.push('app.js 仍含正文隐藏控件：' + forbiddenControl);
   }
+  if (/searchInput|searchStatus|page-search|search-empty|event\.key === ['"]\/['"]/.test(app)) {
+    errors.push('app.js 仍含侧栏页内搜索逻辑');
+  }
 }
 
 for (const file of publicFiles.filter((item) => textExtensions.has(path.extname(item)))) {
@@ -75,6 +78,9 @@ for (const file of publicFiles.filter((item) => textExtensions.has(path.extname(
 
 for (const file of publicFiles.filter((item) => path.extname(item) === '.html')) {
   const source = fs.readFileSync(file, 'utf8');
+  if (/sidebar-search|page-search|search-status|搜索本页内容|按 \/ 搜索/.test(source)) {
+    errors.push(path.relative(root, file) + ' 仍含侧栏页内搜索');
+  }
   for (const match of source.matchAll(/(?:href|src)="([^"]+)"/g)) {
     const target = match[1];
     if (/^(?:https:|data:|#|mailto:|javascript:)/.test(target)) continue;

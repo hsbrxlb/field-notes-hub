@@ -88,7 +88,7 @@ function rgbaAlpha(token) {
   return match ? Number(match[1]) : null;
 }
 
-for (const token of ['--workspace-surface', '--content-surface']) {
+for (const token of ['--workspace-surface', '--content-surface', '--sidebar-bg']) {
   const alpha = rgbaAlpha(token);
   if (alpha === null || alpha <= 0 || alpha >= 1) errors.push(`theme.css: ${token} 必须是可见且半透明的阅读面`);
 }

@@ -40,6 +40,6 @@
       + '<div class="evo-layout">' + tocMarkup(data.characters)
       + '<div class="evo-character-list">'
       + data.characters.map((character, index) => characterMarkup(character, index === 0)).join('')
-      + '</div></div><div class="empty-state search-empty" role="status" hidden>没有找到匹配的角色</div>';
+      + '</div></div>';
   };
 })();

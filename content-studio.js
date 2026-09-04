@@ -88,17 +88,14 @@
         </div>
         <div class="result-list" id="result-list">${results.map(resultMarkup).join('')}</div>
         <div class="empty-state result-empty" id="result-empty"${results.length ? ' hidden' : ''}><strong>暂无${escapeHtml(categoryLabel)}成果</strong></div>
-        <div class="empty-state search-empty" role="status" hidden>换个关键词试试</div>
       </section>`;
 
     content.querySelectorAll('[data-results-category]').forEach((button) => {
       button.addEventListener('click', () => {
         activeCategory = button.dataset.resultsCategory || 'all';
         renderResults();
-        window.runSearch?.();
       });
     });
-    window.runSearch?.();
     const anchor = decodeURIComponent(window.location.hash.slice(1));
     if (anchor) requestAnimationFrame(() => document.getElementById(anchor)?.scrollIntoView({ block: 'start' }));
   }
