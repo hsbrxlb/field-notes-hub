@@ -2,9 +2,11 @@
   color-scheme: dark;
   --page-bg: #080a08;
   --surface: #0d100d;
+  --workspace-surface: rgba(8, 10, 8, .16);
+  --content-surface: rgba(8, 10, 8, .72);
   --surface-raised: #131713;
-  --sidebar-bg: #080a08;
-  --topbar-bg: #0b0e0b;
+  --sidebar-bg: rgba(8, 10, 8, .94);
+  --topbar-bg: rgba(11, 14, 11, .9);
   --input-bg: #111511;
   --text: #f4f5f1;
   --text-secondary: #d8dbd3;
@@ -58,5 +60,21 @@
   --motion-slow: 420ms;
 }
 
-html, body { background: var(--page-bg); }
+html { background: var(--page-bg); }
+body { position: relative; isolation: isolate; background: transparent; }
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+body::before { background: var(--page-bg) url('assets/background.png') 54% center / cover no-repeat; }
+body::after { background: rgba(2, 4, 2, .22); }
 .app-shell { z-index: 1; }
+
+@media (max-width: 760px) {
+  body::before { background-position: 57% center; }
+  body::after { background: rgba(2, 4, 2, .34); }
+}

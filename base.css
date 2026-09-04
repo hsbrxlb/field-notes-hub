@@ -43,7 +43,7 @@ p, ul, ol, dl, figure { margin-top: 0; }
 .nav-list a:hover { color: var(--text); background: var(--nav-hover); }
 .nav-list a.active { color: var(--nav-active-text); background: var(--nav-active); }
 
-.workspace { min-height: 100vh; margin-left: var(--sidebar-width); background: var(--surface); }
+.workspace { min-height: 100vh; margin-left: var(--sidebar-width); background: var(--workspace-surface); }
 .topbar { position: sticky; top: 0; z-index: 20; min-height: var(--topbar-height); display: flex; align-items: center; gap: var(--space-3); padding: 0 var(--space-5); background: var(--topbar-bg); border-bottom: 1px solid var(--border); }
 .breadcrumb { color: var(--text-faint); font-size: 12px; }
 .breadcrumb strong { color: var(--text-secondary); font-weight: 600; }
@@ -54,7 +54,7 @@ p, ul, ol, dl, figure { margin-top: 0; }
   min-height: calc(100vh - var(--topbar-height));
   margin: 0 auto;
   padding: 22px var(--page-gutter) var(--space-8);
-  background: var(--surface);
+  background: var(--content-surface);
 }
 .results-main { width: min(var(--content-max), calc(100% - 48px)); }
 .page-heading { min-height: 66px; display: flex; flex-direction: column; justify-content: center; padding: 4px 0 18px; }
