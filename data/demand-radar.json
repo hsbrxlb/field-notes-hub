@@ -1,19 +1,19 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-03T08:58:19+00:00",
-  "last_attempt_at": "2026-09-03T08:57:33+00:00",
-  "last_success_at": "2026-09-03T08:58:19+00:00",
+  "generated_at": "2026-09-04T01:25:29+00:00",
+  "last_attempt_at": "2026-09-04T01:24:42+00:00",
+  "last_success_at": "2026-09-04T01:25:29+00:00",
   "method": "deterministic_external_signal_scan",
   "status": "success",
   "stale_after_hours": 36,
   "truth_status": "blocked",
   "metrics": {
-    "raw_discovered": 196,
-    "accepted": 158,
-    "filtered": 38,
-    "new_actionable": 0,
-    "duplicate_actionable": 2,
-    "open_items": 5,
+    "raw_discovered": 194,
+    "accepted": 157,
+    "filtered": 37,
+    "new_actionable": 1,
+    "duplicate_actionable": 1,
+    "open_items": 6,
     "youtube_videos_checked": 9,
     "youtube_comments_checked": 139,
     "youtube_replies_checked": 44,
@@ -24,7 +24,7 @@
     {
       "source": "tavily",
       "status": "ok",
-      "accepted_count": 12
+      "accepted_count": 11
     },
     {
       "source": "youtube",
@@ -43,6 +43,28 @@
     }
   ],
   "items": [
+    {
+      "signal_id": "6996ffc0e165c43fb192bfb563aafd8fd64c757f21d0bfd57e522fd05e563506",
+      "topic": "complaint",
+      "source_family": "reddit",
+      "source_link": "https://www.reddit.com/r/chevycolorado/comments/1sh85cx/please_help_me_pick_some_side_railsstepsrunning",
+      "reason_code": "direct_oedro_question",
+      "next_action": "verify_product_facts",
+      "triage_status": "NEEDS_FACTS",
+      "observed_at": "2026-09-04T01:24:51+00:00",
+      "last_seen_at": "2026-09-04T01:25:29+00:00"
+    },
+    {
+      "signal_id": "82b584a5e04fde86ddbd83c19e1df649534a4992f5dcda08acece78833ba8d56",
+      "topic": "complaint",
+      "source_family": "reddit",
+      "source_link": "https://www.reddit.com/r/ram_trucks/comments/1rw81jc/oedro_low_profile_hard_quad_fold_tonneau_cover",
+      "reason_code": "direct_oedro_question",
+      "next_action": "verify_product_facts",
+      "triage_status": "NEEDS_FACTS",
+      "observed_at": "2026-09-04T01:24:51+00:00",
+      "last_seen_at": "2026-09-04T01:25:29+00:00"
+    },
     {
       "signal_id": "2fe8fcac771e0d3c0a983f688f3098989821f43b468b2e0920257af61819ba8c",
       "topic": "tonneau_cover",
@@ -64,17 +86,6 @@
       "triage_status": "NEEDS_FACTS",
       "observed_at": "2026-09-03T08:57:46+00:00",
       "last_seen_at": "2026-09-03T08:58:19+00:00"
-    },
-    {
-      "signal_id": "6996ffc0e165c43fb192bfb563aafd8fd64c757f21d0bfd57e522fd05e563506",
-      "topic": "complaint",
-      "source_family": "reddit",
-      "source_link": "https://www.reddit.com/r/chevycolorado/comments/1sh85cx/please_help_me_pick_some_side_railsstepsrunning",
-      "reason_code": "direct_oedro_question",
-      "next_action": "verify_product_facts",
-      "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-09-03T08:54:23+00:00",
-      "last_seen_at": "2026-09-03T08:55:14+00:00"
     },
     {
       "signal_id": "36bc5e0f07933c9f421bcaf42b853d064fee16b994b4df0a9be1f4ae343fa275",
