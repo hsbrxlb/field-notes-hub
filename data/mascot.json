@@ -10,6 +10,12 @@
       "name_cn": "路伴犬",
       "name_en": "Trail Dog",
       "blurb": "它像常年坐在副驾旁的老搭档，出发前会安静地绕车看一圈。",
+      "sizePreview": {
+        "label": "四足犬 · 小尺寸下的样子",
+        "code": "R8-F1A",
+        "src64": "assets/mascot-evolution/previews/R8-F1A-64.png",
+        "src32": "assets/mascot-evolution/previews/R8-F1A-32.png"
+      },
       "assets": [
         {
           "code": "R8-F1A",
@@ -449,6 +455,30 @@
       "name_cn": "护甲犰狳",
       "name_en": "Armor Armadillo",
       "blurb": "一节节背甲像活动护板，石子和磕碰来到时，它会先把身体护住。",
+      "versions": [
+        {
+          "name": "金属护壳（Metal Shell）",
+          "description": "尖长的鼻吻、贴地的身体，背壳像一片片铆接的金属护板。",
+          "codes": ["R4-F4A", "R4-F4B", "R4-F4C"],
+          "sizePreview": {
+            "label": "金属护壳 · 琥珀黄的小尺寸",
+            "code": "R4-F4B",
+            "src64": "assets/mascot-evolution/previews/R4-F4B-64.png",
+            "src32": "assets/mascot-evolution/previews/R4-F4B-32.png"
+          }
+        },
+        {
+          "name": "柔软背甲（Soft Shell）",
+          "description": "圆一些的头、短而厚实的腿，拱起的背甲跟着身体转动。",
+          "codes": ["R5-F5A", "R5-F5B", "R5-F5C", "R5-F5D"],
+          "sizePreview": {
+            "label": "柔软背甲 · 站姿的小尺寸",
+            "code": "R5-F5A",
+            "src64": "assets/mascot-evolution/previews/R5-F5A-64.png",
+            "src32": "assets/mascot-evolution/previews/R5-F5A-32.png"
+          }
+        }
+      ],
       "assets": [
         {
           "code": "R4-F4A",
@@ -482,14 +512,14 @@
           "code": "R5-F5B",
           "caption": "回头侧身",
           "src": "assets/mascot-evolution/round5/R5_F5B.webp",
-          "alt": "柔壳犰狳左后侧五段软壳结构",
+          "alt": "柔壳犰狳侧后回望，露出分段背甲和尾巴",
           "source_round": "round-5"
         },
         {
           "code": "R5-F5C",
-          "caption": "挡住低位碰撞",
+          "caption": "贴近车旁",
           "src": "assets/mascot-evolution/round5/R5_F5C.webp",
-          "alt": "柔壳犰狳用五段软壳缓冲无品牌车辆的低位边缘",
+          "alt": "柔壳犰狳低伏在车辆边缘旁",
           "source_round": "round-5"
         },
         {
@@ -711,6 +741,12 @@
       "name_cn": "路向罗盘",
       "name_en": "Trail Compass",
       "blurb": "指针会随着路况轻轻偏转，始终把车带向更稳妥的方向。",
+      "sizePreview": {
+        "label": "路向罗盘 · 小尺寸下的样子",
+        "code": "R12-F5A",
+        "src64": "assets/mascot-evolution/previews/R12-F5A-64.png",
+        "src32": "assets/mascot-evolution/previews/R12-F5A-32.png"
+      },
       "assets": [
         {
           "code": "R12-F5A",

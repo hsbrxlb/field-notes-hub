@@ -54,6 +54,23 @@ for (const character of mascot.characters) {
   if (!character.id || !character.index || !character.family || !character.type || !character.name_cn || !character.name_en || !character.blurb) fail('a character section is missing identity or copy');
   if (!Array.isArray(character.assets) || character.assets.length !== expected.get(character.family)) fail(`${character.family} has the wrong image count`);
   families.push(character.family);
+  if (character.versions) {
+    const grouped = character.versions.flatMap((version) => version.codes);
+    if (grouped.length !== character.assets.length || new Set(grouped).size !== grouped.length
+      || grouped.some((code) => !character.assets.some((asset) => asset.code === code))) fail(`${character.family} version grouping must retain every image exactly once`);
+    if (character.versions.some((version) => !version.name || !version.description)) fail(`${character.family} version names or descriptions are missing`);
+    if (character.versions.some((version) => version.sizePreview && !version.codes.includes(version.sizePreview.code))) fail(`${character.family} preview belongs to a different version`);
+  }
+  const previews = [character.sizePreview, ...(character.versions || []).map((version) => version.sizePreview)].filter(Boolean);
+  for (const preview of previews) {
+    if (!character.assets.some((asset) => asset.code === preview.code)) fail(`${character.family} preview refers to another character`);
+    for (const size of [32, 64]) {
+      const src = preview[`src${size}`];
+      if (!src || path.basename(src) !== `${preview.code}-${size}.png`) fail('small preview version or size does not match its source code');
+      const image = fs.readFileSync(path.join(root, src));
+      if (image.toString('hex', 0, 8) !== '89504e470d0a1a0a' || image.readUInt32BE(16) !== size || image.readUInt32BE(20) !== size) fail(`${src} is not the declared PNG size`);
+    }
+  }
   for (const asset of character.assets) {
     if (!asset.code || !asset.caption || !asset.alt || !asset.src || !asset.source_round) fail(`${character.family} contains an incomplete asset record`);
     const assetPath = path.join(root, asset.src);
@@ -77,7 +94,7 @@ for (let round = 8; round <= 13; round += 1) {
 }
 
 const publicText = [JSON.stringify(mascot), html, script, css].join('\n');
-if (/已淘汰|当前候选|候选|已选定|Rejected|Shortlisted|Selected/.test(publicText)) fail('selection labels must not appear');
+if (/已淘汰|当前候选|候选|已选定|首选|备选|Rejected|Shortlisted|Selected/.test(publicText)) fail('selection labels must not appear');
 if (/"date"\s*:|"goal"\s*:|独立画面|身份｜|结构｜|工作｜|动态｜/.test(JSON.stringify(mascot))) fail('dates or design-process copy must not appear in the role archive');
 if (/\/Users\/|127\.0\.0\.1|localhost|API[_ -]?KEY|COOKIE|PASSWORD/i.test(publicText)) fail('local-only or sensitive text appears in the public mascot page');
 

@@ -8,9 +8,32 @@
 
   function assetFigure(asset, eager = false) {
     return '<figure class="evo-asset">'
-      + '<div class="evo-asset-image"><img src="' + safe(asset.src) + '" alt="' + safe(asset.alt)
-      + '" width="1254" height="1254" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"></div>'
+      + '<a class="evo-asset-image" href="' + safe(asset.src) + '" aria-label="查看原图：' + safe(asset.caption) + '"><img src="' + safe(asset.src) + '" alt="' + safe(asset.alt)
+      + '" width="1254" height="1254" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"></a>'
       + '<figcaption>' + safe(asset.caption) + '</figcaption></figure>';
+  }
+
+  function sizePreviewMarkup(preview) {
+    if (!preview) return '';
+    return '<div class="evo-size-preview"><p>' + safe(preview.label) + '</p><div class="evo-size-pair">'
+      + [64, 32].map((size) => '<figure><img src="' + safe(preview['src' + size])
+        + '" width="' + size + '" height="' + size + '" alt="' + safe(preview.label) + '，' + size
+        + '像素"><figcaption>' + size + 'px</figcaption></figure>').join('')
+      + '</div></div>';
+  }
+
+  function characterImages(character, isFirst) {
+    if (character.versions) {
+      return '<div class="evo-versions">' + character.versions.map((version) =>
+        '<div class="evo-version"><h3>' + safe(version.name) + '</h3><p class="evo-version-note">'
+        + safe(version.description) + '</p><div class="evo-version-images">'
+        + version.codes.map((code) => assetFigure(character.assets.find((asset) => asset.code === code))).join('')
+        + '</div>' + sizePreviewMarkup(version.sizePreview) + '</div>'
+      ).join('') + '</div>';
+    }
+    return '<div class="evo-assets">'
+      + character.assets.map((asset, index) => assetFigure(asset, isFirst && index < 4)).join('')
+      + '</div>' + sizePreviewMarkup(character.sizePreview);
   }
 
   function characterMarkup(character, isFirst) {
@@ -18,9 +41,7 @@
       + '<header class="evo-character-head"><span class="evo-character-index">' + safe(character.index) + '</span>'
       + '<div><h2>' + safe(character.name_cn) + '<span lang="en">（' + safe(character.name_en) + '）</span></h2>'
       + '<p>' + safe(character.blurb) + '</p></div></header>'
-      + '<div class="evo-assets">'
-      + character.assets.map((asset, index) => assetFigure(asset, isFirst && index < 4)).join('')
-      + '</div></section>';
+      + characterImages(character, isFirst) + '</section>';
   }
 
   function tocMarkup(characters) {
