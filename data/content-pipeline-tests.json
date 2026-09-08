@@ -2,6 +2,279 @@
   "title": "内容生产测试",
   "records": [
     {
+      "run_id": "2026-09-08-oedro-cleaning-engagement",
+      "date": "2026-09-08",
+      "version": "互动样稿",
+      "product": "OEDRO 脚垫清洁",
+      "review_status": "图文样稿待你审核",
+      "prompt": "围绕 OEDRO 脚垫清洁，做五个平台能引出真实车主交流的内容。让人聊聊车里最难清理的脏东西，语气轻松自然；产品配置按需提及，别重复说明书。不编造车主故事，不做视频。",
+      "brief": {
+        "purpose": "用户关系与清洁话题互动",
+        "audience": "美国卡车车主",
+        "desired_effect": "让车主分享污物、清洁经验和习惯，也收集还没得到解答的问题；Pinterest 提供可收藏的清洁参考",
+        "creative_direction": "围绕车内地板清洁，让车主说出反复遇到的污物、踩过的坑、拖延清洁的习惯和仍想问的问题；Pinterest 提供可收藏的清洁参考。",
+        "asset_decision": "本次用原创主题插画配文，替代原计划中尚未提供的产品实拍。插画不展示具体脚垫外观、安装关系或清洁效果。",
+        "success_criteria": [
+          "五个平台引导的回答或动作有区别。",
+          "中文没有增加英文原稿未表达的意思。",
+          "配图服务话题，不把插画当成产品实拍或使用证据。"
+        ],
+        "post_publish_signals": "尚未发布。后续观察具体回答、经验分享和收藏，不把点赞数当成唯一标准。"
+      },
+      "source": {
+        "label": "OEDRO产品页",
+        "url": "https://www.oedro.com/products/all-weather-tpe-floor-mats-liners-for-2017-2024-ford-f-250-f-350-super-duty-crew-cab-full-set-liners-p-5361.html",
+        "verification_status": "2026年9月8日已核对"
+      },
+      "facts": [
+        {
+          "label": "产品",
+          "value": "OEDRO 2Gen TPE floor liners。"
+        },
+        {
+          "label": "结构",
+          "value": "深槽与凸起边缘。"
+        },
+        {
+          "label": "清洁",
+          "value": "取出、用水管冲洗、装回。"
+        }
+      ],
+      "variants": [
+        {
+          "id": "instagram",
+          "platform": "Instagram",
+          "platform_job": "辨认反复出现的污物，收集低门槛选择回答。",
+          "format": "静态图文",
+          "fields": [
+            {
+              "key": "caption",
+              "blocks": [
+                {
+                  "en": "Which is the repeat visitor on your truck's floor: sand, dried mud or crumbs?",
+                  "zh": "沙子、干泥、碎屑，你车里的地板上哪一种总是反复出现？"
+                },
+                {
+                  "en": "OEDRO 2Gen TPE floor liners have deep channels and raised edges.",
+                  "zh": "OEDRO 2Gen TPE 脚垫有深槽和凸起边缘。"
+                }
+              ]
+            }
+          ],
+          "visual": {
+            "kind": "illustration",
+            "aspect_ratio": "4:5",
+            "note": "原创清洁主题插画，非产品实拍。",
+            "image": {
+              "src": "assets/content-pipeline/cleaning-engagement-instagram.jpg",
+              "alt": "沙子、干泥和碎屑组成的日常清洁主题插画。",
+              "width": 1122,
+              "height": 1402
+            }
+          },
+          "review": {
+            "decision": "文案可审",
+            "rationale": "简短选择题与静态纹理近景配合，读者不用写长故事。",
+            "checks": [
+              "保留已审核英文原稿",
+              "中文逐段对应",
+              "未新增适配或效果承诺"
+            ],
+            "success_signal": "观察评论中各类污物的具体回答。"
+          }
+        },
+        {
+          "id": "facebook",
+          "platform": "Facebook",
+          "platform_job": "邀请车主分享清理时踩过的坑，供其他人参考。",
+          "format": "静态图文",
+          "fields": [
+            {
+              "key": "caption",
+              "blocks": [
+                {
+                  "en": "OEDRO 2Gen TPE floor liners can be taken out, hosed off and put back in.",
+                  "zh": "OEDRO 2Gen TPE 脚垫可以取出，用水管冲洗后装回。"
+                },
+                {
+                  "en": "What's one floor-cleaning mistake you'd spare another truck owner?",
+                  "zh": "清理车内地板时，你踩过什么坑，想提醒其他车主避开？"
+                }
+              ]
+            }
+          ],
+          "visual": {
+            "kind": "illustration",
+            "aspect_ratio": "4:5",
+            "note": "原创清洁主题插画，非产品实拍。",
+            "image": {
+              "src": "assets/content-pipeline/cleaning-engagement-facebook.jpg",
+              "alt": "水管与泥脚印组成的车道清洁主题插画。",
+              "width": 1122,
+              "height": 1402
+            }
+          },
+          "review": {
+            "decision": "文案可审",
+            "rationale": "允许用一段经历交代经验，区别于 Instagram 的污物选择。",
+            "checks": [
+              "保留已审核英文原稿",
+              "中文逐段对应",
+              "未新增适配或效果承诺"
+            ],
+            "success_signal": "观察评论是否提出具体失误和经验。"
+          }
+        },
+        {
+          "id": "pinterest",
+          "platform": "Pinterest",
+          "platform_job": "把已核实的清洁方法做成可收藏参考。",
+          "format": "Image Pin",
+          "fields": [
+            {
+              "key": "title",
+              "blocks": [
+                {
+                  "en": "OEDRO 2Gen TPE Floor Liner Cleaning Guide",
+                  "zh": "OEDRO 2Gen TPE 脚垫清洁指南"
+                }
+              ]
+            },
+            {
+              "key": "description",
+              "blocks": [
+                {
+                  "en": "The cleaning steps for OEDRO 2Gen TPE floor liners: removal, a hose rinse and reinstallation.",
+                  "zh": "OEDRO 2Gen TPE 脚垫的清洁步骤是取出、用水管冲洗、装回。"
+                },
+                {
+                  "en": "Save this guide to your truck maintenance board.",
+                  "zh": "把这份指南收藏到你的车辆养护画板。"
+                }
+              ]
+            }
+          ],
+          "visual": {
+            "kind": "illustration",
+            "aspect_ratio": "2:3",
+            "note": "原创清洁主题插画，非产品实拍。",
+            "image": {
+              "src": "assets/content-pipeline/cleaning-engagement-pinterest.jpg",
+              "alt": "标有取出、冲洗和装回步骤的清洁主题插画。",
+              "width": 1024,
+              "height": 1536
+            }
+          },
+          "review": {
+            "decision": "文案可审",
+            "rationale": "以检索和收藏为主要互动，不把评论问题搬到每个平台。",
+            "checks": [
+              "保留已审核英文原稿",
+              "中文逐段对应",
+              "未新增适配或效果承诺"
+            ],
+            "success_signal": "观察这条清洁参考的收藏情况。"
+          }
+        },
+        {
+          "id": "tiktok",
+          "platform": "TikTok",
+          "platform_job": "问清洁拖延多久，收集个人习惯。",
+          "format": "视频配文",
+          "fields": [
+            {
+              "key": "caption",
+              "blocks": [
+                {
+                  "en": "OEDRO 2Gen TPE floor liners have deep channels and raised edges.",
+                  "zh": "OEDRO 2Gen TPE 脚垫有深槽和凸起边缘。"
+                },
+                {
+                  "en": "How long does a dirty truck floor stay on your to-do list?",
+                  "zh": "车内地板脏了之后，清理这件事通常会在你的待办清单上挂多久？"
+                }
+              ]
+            }
+          ],
+          "visual": {
+            "kind": "external_video",
+            "aspect_ratio": "9:16",
+            "note": "搭配公司已有且与文案内容相符的视频。"
+          },
+          "review": {
+            "decision": "文案可审",
+            "rationale": "问题短，围绕时间习惯，而非再次询问污物种类或清洁经验。",
+            "checks": [
+              "保留已审核英文原稿",
+              "中文逐段对应",
+              "未新增适配或效果承诺"
+            ],
+            "success_signal": "观察评论是否给出具体时间习惯。"
+          }
+        },
+        {
+          "id": "youtube_shorts",
+          "platform": "YouTube Shorts",
+          "platform_job": "收集车主仍未得到解答的脚垫清洁问题。",
+          "format": "视频配文",
+          "fields": [
+            {
+              "key": "title",
+              "blocks": [
+                {
+                  "en": "Cleaning OEDRO 2Gen TPE Floor Liners",
+                  "zh": "清洁 OEDRO 2Gen TPE 脚垫"
+                }
+              ]
+            },
+            {
+              "key": "description",
+              "blocks": [
+                {
+                  "en": "OEDRO 2Gen TPE floor liners can be removed, hosed off and reinstalled.",
+                  "zh": "OEDRO 2Gen TPE 脚垫可以取出，用水管冲洗后装回。"
+                },
+                {
+                  "en": "What question about cleaning floor liners have you had trouble finding an answer to?",
+                  "zh": "关于脚垫清洁，你有什么一直难以找到答案的问题？"
+                }
+              ]
+            }
+          ],
+          "visual": {
+            "kind": "external_video",
+            "aspect_ratio": "9:16",
+            "note": "搭配公司已有且与文案内容相符的视频。"
+          },
+          "review": {
+            "decision": "文案可审",
+            "rationale": "标题便于检索，描述提供已知步骤，评论用于发现剩余信息需求。",
+            "checks": [
+              "保留已审核英文原稿",
+              "中文逐段对应",
+              "未新增适配或效果承诺"
+            ],
+            "success_signal": "观察是否出现具体、尚未解答的清洁问题。"
+          }
+        }
+      ],
+      "ai_review": {
+        "decision": "待人工判断",
+        "revision_count": 1,
+        "summary": "文案中的重复提问和中文增义已修正。三张插画用于评审话题与视觉方向；TikTok 和 YouTube Shorts 需搭配公司既有视频。",
+        "corrections": [
+          "将重复的互动问题改为污物选择、经验分享、清洁习惯和未解答问题；Pinterest 使用收藏动作。",
+          "删除中文里英文原稿没有表达的条件，核对产品结构与清洁说法。",
+          "配图从待提供的实拍改为主题插画，不呈现未经核对的产品外观。"
+        ]
+      },
+      "human_questions": [
+        "这些问题有车主愿意回答吗？",
+        "插画和文案放在一起，像不像 OEDRO 会发的内容？",
+        "哪一条值得继续完善或实际试发？"
+      ]
+    },
+    {
       "run_id": "2026-09-04-oedro-floor-mats-static",
       "date": "2026-09-04",
       "version": "第2版",
@@ -34,9 +307,18 @@
         "height": 1000
       },
       "facts": [
-        {"label": "车型适配", "value": "2017至2026年 Ford F-250 / F-350 Super Duty Crew Cab，前排桶形座椅，且带座椅下储物空间。"},
-        {"label": "防护结构", "value": "深沟槽和高边缘用于承接常见泥水污渍。"},
-        {"label": "清洁方式", "value": "取出脚垫，用水冲洗，清洁后装回。"}
+        {
+          "label": "车型适配",
+          "value": "2017至2026年 Ford F-250 / F-350 Super Duty Crew Cab，前排桶形座椅，且带座椅下储物空间。"
+        },
+        {
+          "label": "防护结构",
+          "value": "深沟槽和高边缘用于承接常见泥水污渍。"
+        },
+        {
+          "label": "清洁方式",
+          "value": "取出脚垫，用水冲洗，清洁后装回。"
+        }
       ],
       "variants": [
         {
@@ -54,7 +336,11 @@
           "review": {
             "decision": "文案可审",
             "rationale": "开头有生活感，车型条件完整，CTA落在产品页核对。",
-            "checks": ["目的清楚", "Instagram语气成立", "事实未越界"],
+            "checks": [
+              "目的清楚",
+              "Instagram语气成立",
+              "事实未越界"
+            ],
             "success_signal": "保存与产品页点击"
           }
         },
@@ -73,7 +359,11 @@
           "review": {
             "decision": "文案可审",
             "rationale": "信息比 Instagram 完整，仍保持一眼可扫，适合回答购买前问题。",
-            "checks": ["套装内容清楚", "Facebook信息密度合适", "CTA具体"],
+            "checks": [
+              "套装内容清楚",
+              "Facebook信息密度合适",
+              "CTA具体"
+            ],
             "success_signal": "有效适配咨询与产品页点击"
           }
         },
@@ -92,7 +382,11 @@
           "review": {
             "decision": "文案可审",
             "rationale": "标题可搜索，正文适合收藏，外链动作与 Pinterest 使用习惯一致。",
-            "checks": ["搜索信息明确", "保存价值成立", "没有复制其他平台开头"],
+            "checks": [
+              "搜索信息明确",
+              "保存价值成立",
+              "没有复制其他平台开头"
+            ],
             "success_signal": "保存与站外点击"
           }
         }

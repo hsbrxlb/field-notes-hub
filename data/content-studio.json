@@ -10,13 +10,13 @@
   "results": [
     {
       "id": "multiplatform-content-test",
-      "date": "2026-09-04",
+      "date": "2026-09-08",
       "project": "OEDRO社媒内容",
       "type": "内容",
       "category": "content",
-      "title": "内容生产测试",
-      "description": "用输入要求、内容目标、平台成品和判断结果检验社媒内容工作流。",
-      "purpose": "让人能判断工作流是否真正服务发帖目的。",
+      "title": "脚垫清洁 · 五平台互动样稿",
+      "description": "Instagram、Facebook、Pinterest 主题插画与 TikTok、YouTube Shorts 配文样稿。",
+      "purpose": "判断清洁话题能否引出车主交流。",
       "status": "待确认",
       "related_work": "欧美多社媒内容准备",
       "links": [

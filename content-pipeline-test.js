@@ -27,52 +27,65 @@
     return 'pending';
   }
 
-  function briefMarkup(brief) {
-    const rows = [
-      ['内容目的', brief.purpose],
-      ['面向谁', brief.audience],
-      ['希望产生什么效果', brief.desired_effect],
-      ['内容主线', brief.creative_direction],
-      ['素材选择', brief.asset_decision],
-      ['发布后看什么', brief.post_publish_signals]
-    ];
-    return `<dl class="pipeline-brief">${rows.map(([label, text]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(text)}</dd></div>`).join('')}</dl>`;
-  }
-
   function factsMarkup(record) {
-    return `<section class="pipeline-evidence" aria-labelledby="${escapeHtml(record.run_id)}-evidence-title">
+    if (!/^https:\/\//.test(value(record.source.url))) throw new Error('来源链接必须使用 HTTPS');
+    return `<details class="pipeline-evidence">
+      <summary>产品来源与素材</summary>
+      <div class="pipeline-evidence-layout${record.image ? '' : ' evidence-text-only'}">
       <div class="pipeline-evidence-copy">
-        <h2 id="${escapeHtml(record.run_id)}-evidence-title">产品事实</h2>
         <dl>${record.facts.map((item) => `<div><dt>${escapeHtml(item.label)}</dt><dd>${escapeHtml(item.value)}</dd></div>`).join('')}</dl>
         <p><strong>${escapeHtml(record.source.verification_status)}</strong><a class="text-link" href="${escapeHtml(record.source.url)}" target="_blank" rel="noreferrer">打开${escapeHtml(record.source.label)} →</a></p>
+        <p>${escapeHtml(record.brief.asset_decision)}</p>
       </div>
-      <img src="${escapeHtml(record.image.src)}" alt="${escapeHtml(record.image.alt)}" width="${escapeHtml(record.image.width)}" height="${escapeHtml(record.image.height)}" loading="eager" decoding="async">
-    </section>`;
+      ${record.image ? `<figure>${imageMarkup(record.image)}<figcaption>官方产品参考图</figcaption></figure>` : ''}
+      </div>
+    </details>`;
+  }
+
+  function imageMarkup(image) {
+    if (!/^assets\/[a-zA-Z0-9/_-]+\.(?:png|jpe?g|webp)$/.test(value(image.src))) throw new Error('图片路径不正确');
+    return `<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="${escapeHtml(image.width)}" height="${escapeHtml(image.height)}" loading="lazy" decoding="async">`;
+  }
+
+  function fieldsMarkup(fields, language) {
+    return fields.map((field) => field.blocks.map((block) => {
+      const tag = field.key === 'title' ? 'h4' : 'p';
+      return `<${tag}>${escapeHtml(block[language])}</${tag}>`;
+    }).join('')).join('');
+  }
+
+  function mediaMarkup(visual) {
+    if (visual.kind === 'external_video') return '<p class="platform-media-state media-external">文案样稿 · 搭配公司既有视频</p>';
+    if (visual.kind === 'illustration' && visual.image) {
+      return `<figure class="platform-illustration">${imageMarkup(visual.image)}<figcaption>主题插画，非产品实拍</figcaption></figure>`;
+    }
+    return `<p class="platform-media-state">${escapeHtml(visual.aspect_ratio)} 配图待制作</p>`;
   }
 
   function variantMarkup(item, record) {
     const id = `${record.run_id}-${item.id}`;
     return `<article class="pipeline-platform" id="${escapeHtml(id)}" data-searchable>
       <header class="platform-head">
-        <div><h3>${escapeHtml(item.platform)}</h3><p>${escapeHtml(item.platform_job)}</p></div>
-        <span class="record-status status-${statusClass(item.review.decision)}">${escapeHtml(item.review.decision)}</span>
+        <h3>${escapeHtml(item.platform)}</h3>
+        <p>${escapeHtml(item.platform_job)}</p>
       </header>
-      <div class="platform-layout">
-        <figure class="platform-preview platform-preview-${escapeHtml(item.id)}">
-          <div class="platform-asset-placeholder" role="img" aria-label="${escapeHtml(item.platform)} 平台图片待制作，目标比例 ${escapeHtml(item.visual.aspect_ratio)}"><strong>${escapeHtml(item.visual.aspect_ratio)}</strong><span>平台图片待制作</span></div>
-          <figcaption><strong>${escapeHtml(item.format)}</strong>${escapeHtml(item.visual.note)}</figcaption>
-        </figure>
-        <dl class="platform-copy">
-          <div><dt>Hook</dt><dd>${escapeHtml(item.hook_en)}</dd></div>
-          <div><dt>正文</dt><dd>${escapeHtml(item.body_en)}</dd></div>
-          <div><dt>CTA</dt><dd>${escapeHtml(item.cta_en)}</dd></div>
-        </dl>
+      <div class="platform-post${item.visual.kind === 'illustration' && item.visual.image ? ' post-with-image' : ''}" aria-label="${escapeHtml(item.platform)} 文案草稿">
+        ${mediaMarkup(item.visual)}
+        <div class="platform-text">
+        <div class="platform-copy" lang="en">
+          ${item.fields ? fieldsMarkup(item.fields, 'en') : `${item.id === 'pinterest' ? `<h4>${escapeHtml(item.hook_en)}</h4>` : `<p>${escapeHtml(item.hook_en)}</p>`}
+          <p>${escapeHtml(item.body_en)}</p>
+          <p>${escapeHtml(item.cta_en)}</p>`}
+        </div>
+        ${item.fields ? `<details class="platform-translation"><summary>中文对照</summary><div class="platform-copy" lang="zh-CN">${fieldsMarkup(item.fields, 'zh')}</div></details>` : ''}
+        </div>
       </div>
-      <div class="platform-review">
-        <p><strong>AI判断</strong>${escapeHtml(item.review.rationale)}</p>
-        <p><strong>检查结果</strong>${item.review.checks.map(escapeHtml).join(' · ')}</p>
-        <p><strong>发布后看</strong>${escapeHtml(item.review.success_signal)}</p>
-      </div>
+      <details class="platform-review">
+        <summary>AI审核意见 · ${escapeHtml(item.review.decision)}</summary>
+        <p>${escapeHtml(item.review.rationale)}</p>
+        <ul>${item.review.checks.map((check) => `<li>${escapeHtml(check)}</li>`).join('')}</ul>
+        <p>发布后观察：${escapeHtml(item.review.success_signal)}</p>
+      </details>
     </article>`;
   }
 
@@ -81,12 +94,17 @@
       <div>
         <div class="section-head"><h2 id="${escapeHtml(record.run_id)}-review-title">AI复核结果</h2><span class="record-status status-${statusClass(record.ai_review.decision)}">${escapeHtml(record.ai_review.decision)}</span></div>
         <p>${escapeHtml(record.ai_review.summary)}</p>
-        <p><strong>打回 ${escapeHtml(record.ai_review.revision_count)} 次</strong></p>
+        <details class="pipeline-revisions"><summary>${record.ai_review.revision_count ? `修改记录 · ${escapeHtml(record.ai_review.revision_count)} 次退稿` : '检查记录'}</summary>
         <ul>${record.ai_review.corrections.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+        </details>
       </div>
       <div class="human-review">
-        <h2>请你判断</h2>
+        <details class="pipeline-criteria"><summary>评审问题与效果观察</summary>
         <ol>${record.human_questions.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ol>
+        <p>${escapeHtml(record.brief.post_publish_signals)}</p>
+        <ul>${record.brief.success_criteria.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+        <p>${escapeHtml(record.brief.creative_direction)}</p>
+        </details>
       </div>
     </section>`;
   }
@@ -102,16 +120,16 @@
         <blockquote>${escapeHtml(record.prompt)}</blockquote>
       </section>
       <section class="pipeline-purpose" aria-labelledby="${escapeHtml(record.run_id)}-purpose-title">
-        <h2 id="${escapeHtml(record.run_id)}-purpose-title">这次内容要完成什么</h2>
-        ${briefMarkup(record.brief)}
-        <div class="success-criteria"><strong>发布前成功标准</strong><ul>${record.brief.success_criteria.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></div>
+        <h2 id="${escapeHtml(record.run_id)}-purpose-title">${escapeHtml(record.brief.purpose)}</h2>
+        <p>面向${escapeHtml(record.brief.audience)}。${escapeHtml(record.brief.desired_effect)}。</p>
       </section>
-      ${factsMarkup(record)}
       <section class="pipeline-outputs" aria-labelledby="${escapeHtml(record.run_id)}-outputs-title">
-        <div class="section-head"><h2 id="${escapeHtml(record.run_id)}-outputs-title">平台成品</h2></div>
+        <div class="section-head"><h2 id="${escapeHtml(record.run_id)}-outputs-title">各平台作品</h2></div>
+        <nav class="platform-index" aria-label="本组平台文案">${record.variants.map((item) => `<a href="#${escapeHtml(record.run_id)}-${escapeHtml(item.id)}">${escapeHtml(item.platform)}</a>`).join('')}</nav>
         ${record.variants.map((item) => variantMarkup(item, record)).join('')}
       </section>
       ${reviewMarkup(record)}
+      ${factsMarkup(record)}
     </article>`;
   }
 
