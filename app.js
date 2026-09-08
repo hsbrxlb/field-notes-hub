@@ -2,6 +2,8 @@ const page = document.body.dataset.page;
 const sidebar = document.querySelector('.sidebar');
 const overlay = document.querySelector('.mobile-overlay');
 const menuButton = document.querySelector('.menu-button');
+const compactNavigation = window.matchMedia('(max-width: 980px)');
+const workspace = document.querySelector('.workspace');
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -12,10 +14,16 @@ function escapeHtml(value) {
     .replaceAll("'", '&#039;');
 }
 
-function setSidebar(open) {
+function setSidebar(open, restoreFocus = true) {
+  open = open && compactNavigation.matches;
   sidebar?.classList.toggle('open', open);
+  if (sidebar) sidebar.inert = compactNavigation.matches && !open;
+  if (workspace) workspace.inert = open;
+  document.body.classList.toggle('nav-open', open);
   if (overlay) overlay.hidden = !open;
   menuButton?.setAttribute('aria-expanded', String(open));
+  if (open) sidebar?.querySelector('.nav-close')?.focus();
+  else if (restoreFocus && compactNavigation.matches) menuButton?.focus();
 }
 
 function statusClass(status) {
@@ -48,7 +56,7 @@ function renderShell(data) {
   document.querySelector('#site-title').textContent = '海外用户运营';
   document.querySelector('#site-subtitle').textContent = 'OEDRO 工作台';
   document.querySelector('#nav-list').innerHTML = data.nav.map((item) => `
-    <a href="${escapeHtml(item.file)}" data-page="${escapeHtml(item.id)}" class="${item.id === page ? 'active' : ''}">
+    <a href="${escapeHtml(item.file)}" data-page="${escapeHtml(item.id)}" ${item.id === page ? 'aria-current="page"' : ''} class="${item.id === page ? 'active' : ''}">
       <span>${escapeHtml(item.label)}</span>
     </a>`).join('');
   const current = data.nav.find((item) => item.id === page);
@@ -72,7 +80,7 @@ function renderOverview(data, topics, results) {
     </section>
     <section class="section" data-searchable>
       ${sectionHead('最近成果', '<a class="text-link" href="content-studio.html">查看全部 →</a>')}
-      <div class="topic-list">${recentResults.map((item) => `<a class="topic-row" href="content-studio.html#${encodeURIComponent(item.id)}"><div><span class="result-date">${escapeHtml(item.date)}</span><strong>${escapeHtml(item.title)}</strong></div>${statusMarkup(item.status)}</a>`).join('')}</div>
+      <div class="topic-list">${recentResults.length ? recentResults.map((item) => `<a class="topic-row" href="content-studio.html#${encodeURIComponent(item.id)}"><div><span class="result-date">${escapeHtml(item.date)}</span><strong>${escapeHtml(item.title)}</strong></div>${statusMarkup(item.status)}</a>`).join('') : '<p class="empty-state">暂无已记录的成果</p>'}</div>
     </section>
     <section class="section" data-searchable>
       ${sectionHead('工作入口')}
@@ -120,6 +128,7 @@ function renderWork(data) {
       <div class="data-table-wrap"><table class="data-table project-table"><thead><tr><th>项目</th><th>状态</th><th>当前情况</th><th>下一步</th><th>需要配合</th></tr></thead><tbody id="project-rows">
         ${w.projects.map((item) => `<tr data-searchable data-status="${escapeHtml(item.status)}"><td class="cell-title" data-label="项目">${escapeHtml(item.name)}</td><td data-label="状态">${statusMarkup(item.status)}</td><td data-label="当前情况">${escapeHtml(item.progress)}</td><td data-label="下一步">${escapeHtml(item.next)}</td><td data-label="需要配合">${escapeHtml(item.dependency)}</td></tr>`).join('')}
       </tbody></table></div>
+      <p class="empty-state" id="project-empty" role="status" hidden>这个状态下暂无项目</p>
     </section>
     <section class="section" data-searchable>${sectionHead('当前阻塞')}<div class="topic-list">${w.blocked.map((item) => `<div class="topic-row"><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.reason)}</p></div>${statusMarkup('受阻')}</div>`).join('')}</div></section>
     `;
@@ -358,15 +367,33 @@ function runFilters() {
   const rows = [...document.querySelectorAll('#project-rows tr')];
   const count = document.querySelector('#project-count');
   if (count) count.textContent = `共 ${rows.filter((row) => !row.hidden).length} 个项目`;
+  const empty = document.querySelector('#project-empty');
+  if (empty) empty.hidden = rows.some((row) => !row.hidden);
   const topicRows = [...document.querySelectorAll('#topic-list [data-status]')];
   const topicCount = document.querySelector('#topic-count');
   if (topicCount) topicCount.textContent = `共 ${topicRows.filter((row) => !row.hidden).length} 个专题`;
 }
 
+if (sidebar) {
+  sidebar.id = 'workspace-navigation';
+  sidebar.insertAdjacentHTML('afterbegin', '<button class="nav-close" type="button" aria-label="关闭导航">×</button>');
+  sidebar.querySelector('.nav-close').addEventListener('click', () => setSidebar(false));
+}
+menuButton?.setAttribute('aria-controls', 'workspace-navigation');
+setSidebar(false, false);
+compactNavigation.addEventListener('change', () => setSidebar(false, false));
 menuButton?.addEventListener('click', () => setSidebar(!sidebar?.classList.contains('open')));
 overlay?.addEventListener('click', () => setSidebar(false));
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') setSidebar(false);
+  if (!sidebar?.classList.contains('open')) return;
+  if (event.key === 'Escape') { event.preventDefault(); setSidebar(false); }
+  if (event.key === 'Tab') {
+    const items = [...sidebar.querySelectorAll('a[href],button')];
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  }
 });
 
 async function init() {
@@ -399,7 +426,12 @@ async function init() {
   if (page === 'mascot') await window.initMascot?.();
 }
 
+const mainContent = document.querySelector('#content');
+mainContent.setAttribute('tabindex', '-1');
+mainContent.setAttribute('aria-busy', 'true');
+mainContent.innerHTML = '<p class="loading-state" role="status">正在加载…</p>';
 init().catch((error) => {
-  document.querySelector('#content').innerHTML = `<div class="load-error"><strong>页面暂时无法加载</strong><p>${escapeHtml(error.message)}</p></div>`;
+  mainContent.innerHTML = '<div class="load-error" role="alert"><h1>页面暂时无法加载</h1><p>检查连接后重试，或返回总览。</p><button type="button" id="reload-page">重试</button><a href="index.html">返回总览</a></div>';
+  document.querySelector('#reload-page').addEventListener('click', () => location.reload());
   console.error(error);
-});
+}).finally(() => mainContent.setAttribute('aria-busy', 'false'));

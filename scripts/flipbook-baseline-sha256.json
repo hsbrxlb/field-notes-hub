@@ -1,0 +1,6 @@
+{
+  "src/App.tsx": "53c848eee65047ed4b3248f4660da60368ca403034a33216da0daa6aae70e2e4",
+  "src/styles.css": "7bc68b2ecce995880610782a1d53d6fceb012ce84e2cf7e2076b2df7250e4805",
+  "package.json": "6bd082ee24edc29ce5ecc546ab0a850e8e1cf9a05a92a664a54e6ec8b67e6607",
+  "tests/v3-source-contract.test.ts": "0f6ea8bb9adbe7e3cffc8ec3884c1652fcbc3113803303c0ed3636d2c862afcc"
+}

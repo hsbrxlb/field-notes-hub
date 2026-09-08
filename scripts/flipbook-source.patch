@@ -1,0 +1,5046 @@
+diff --git a/src/App.tsx b/src/App.tsx
+index f73d2d8..c2b56bd 100644
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -7,7 +7,7 @@ import {
+   type CSSProperties,
+   type ReactNode,
+ } from "react";
+-import HTMLFlipBook from "react-pageflip";
++import { BookShell } from "./BookShell";
+ import {
+   productStories,
+   questions,
+@@ -21,16 +21,6 @@ type AnswerValue = string | string[];
+ type Answers = Record<string, AnswerValue>;
+ type StorageStatus = "available" | "unavailable";
+ 
+-type PageFlipApi = {
+-  flipNext: (corner?: "top" | "bottom") => void;
+-  flipPrev: (corner?: "top" | "bottom") => void;
+-  getCurrentPageIndex: () => number;
+-  getPageCount: () => number;
+-};
+-
+-type BookHandle = { pageFlip: () => PageFlipApi | undefined };
+-type FlipEvent = { data: number | string; object: PageFlipApi };
+-
+ type PortalDefinition = {
+   mode: ExperienceMode;
+   title: string;
+@@ -124,7 +114,7 @@ function sanitizeAnswers(parsed: unknown): Answers {
+ const BookLeaf = forwardRef<HTMLDivElement, { children: ReactNode; label: string }>(
+   function BookLeaf({ children, label }, ref) {
+     return (
+-      <article ref={ref} className="book-leaf" data-density="soft" aria-label={label}>
++      <article ref={ref} className="leaf-content" aria-label={label}>
+         {children}
+       </article>
+     );
+@@ -187,103 +177,6 @@ function EditorialLeaf({ page, className = "" }: { page: EditorialPage; classNam
+   );
+ }
+ 
+-function BookShell({ title, children, onExit }: { title: string; children: ReactNode[]; onExit: () => void }) {
+-  const bookRef = useRef<BookHandle | null>(null);
+-  const rigRef = useRef<HTMLDivElement | null>(null);
+-  const [turning, setTurning] = useState(false);
+-  const [orientation, setOrientation] = useState<"portrait" | "landscape">("landscape");
+-  const [engineAttempt, setEngineAttempt] = useState(0);
+-  const [engineReady, setEngineReady] = useState(false);
+-  const previous = useCallback(() => engineReady && !turning && bookRef.current?.pageFlip()?.flipPrev("bottom"), [engineReady, turning]);
+-  const next = useCallback(() => engineReady && !turning && bookRef.current?.pageFlip()?.flipNext("bottom"), [engineReady, turning]);
+-
+-  useEffect(() => {
+-    if (engineReady) return undefined;
+-    const timer = window.setTimeout(() => {
+-      const initialized = Boolean(rigRef.current?.querySelector(".stf__block") && bookRef.current?.pageFlip());
+-      if (initialized) {
+-        setEngineReady(true);
+-        return;
+-      }
+-      if (engineAttempt < 2) setEngineAttempt((attempt) => attempt + 1);
+-    }, 600);
+-    return () => window.clearTimeout(timer);
+-  }, [engineAttempt, engineReady]);
+-
+-  useEffect(() => {
+-    const onKey = (event: KeyboardEvent) => {
+-      if (event.key === "Escape") {
+-        onExit();
+-        return;
+-      }
+-      const target = event.target as HTMLElement | null;
+-      if (
+-        target?.matches("input, textarea, select, button") ||
+-        target?.isContentEditable
+-      ) return;
+-      if (event.key === "ArrowLeft") previous();
+-      if (event.key === "ArrowRight") next();
+-    };
+-    window.addEventListener("keydown", onKey);
+-    return () => window.removeEventListener("keydown", onKey);
+-  }, [next, onExit, previous]);
+-
+-  return (
+-    <main className={`book-room${turning ? " is-turning" : ""}`} data-orientation={orientation}>
+-      <button className="experience-back" onClick={onExit} aria-label="Back to book selection">←</button>
+-      <section className="book-stage" aria-label={title}>
+-        <div className="book-stage__halo" aria-hidden="true" />
+-        <div className="book-stage__horizon" aria-hidden="true" />
+-        <div className="book-shadow" aria-hidden="true" />
+-        <div ref={rigRef} className={`book-rig${engineReady ? " is-engine-ready" : ""}`}>
+-          <HTMLFlipBook
+-            key={`${title}-${engineAttempt}`}
+-            ref={bookRef}
+-            width={510}
+-            height={680}
+-            size="stretch"
+-            minWidth={220}
+-            maxWidth={540}
+-            minHeight={293}
+-            maxHeight={720}
+-            maxShadowOpacity={0.68}
+-            showCover={false}
+-            usePortrait={true}
+-            autoSize={true}
+-            drawShadow={true}
+-            flippingTime={920}
+-            startPage={0}
+-            useMouseEvents={true}
+-            clickEventForward={true}
+-            swipeDistance={42}
+-            showPageCorners={true}
+-            disableFlipByClick={false}
+-            mobileScrollSupport={false}
+-            className="oedro-book"
+-            style={{}}
+-            startZIndex={10}
+-            renderOnlyPageLengthChange={true}
+-            onInit={(event: FlipEvent) => {
+-              const payload = event.data as unknown as { page?: number; mode?: "portrait" | "landscape" };
+-              if (payload.mode) setOrientation(payload.mode);
+-              setEngineReady(true);
+-            }}
+-            onUpdate={() => setEngineReady(true)}
+-            onChangeOrientation={(event: FlipEvent) => setOrientation(String(event.data) as "portrait" | "landscape")}
+-            onChangeState={(event: FlipEvent) => {
+-              const active = event.data !== "read";
+-              setTurning(active);
+-            }}
+-          >
+-            {children}
+-          </HTMLFlipBook>
+-          {!engineReady && <div className="book-loading" role="status"><span />Binding the pages…</div>}
+-        </div>
+-      </section>
+-    </main>
+-  );
+-}
+-
+ function Edition({ onExit }: { onExit: () => void }) {
+   const leaves = productStories.map((page) => (
+       <BookLeaf key={page.id} label={page.title}>
+@@ -516,7 +409,7 @@ function Research({ onExit }: { onExit: () => void }) {
+   ];
+   return (
+     <>
+-      <BookShell title="Field Notes" onExit={onExit}>{leaves}</BookShell>
++      <BookShell title="Field Notes" onExit={onExit} suspended={Boolean(active)}>{leaves}</BookShell>
+       {storageStatus === "unavailable" && <p className="storage-warning" role="status">Could not save in this browser. Keep this page open to avoid losing answers.</p>}
+       {active && <ResponseSheet question={active} initial={answers[active.id]} storageStatus={storageStatus} onClose={closeSheet} onSave={save} />}
+     </>
+@@ -548,12 +441,9 @@ function PortalTransition({ state }: { state: TransitionState }) {
+ export default function App() {
+   const [initialMode] = useState<Mode>(modeFromLocation);
+   const [mode, setMode] = useState<Mode>(initialMode);
+-  const [visited, setVisited] = useState<Record<ExperienceMode, boolean>>({
+-    edition: initialMode === "edition",
+-    research: initialMode === "research",
+-  });
+   const [transition, setTransition] = useState<TransitionState | null>(null);
+   const portalElements = useRef<Record<ExperienceMode, HTMLButtonElement | null>>({ edition: null, research: null });
++  const returnPortal = useRef<ExperienceMode | null>(null);
+ 
+   const registerPortal = useCallback((portalMode: ExperienceMode, element: HTMLButtonElement | null) => {
+     portalElements.current[portalMode] = element;
+@@ -566,7 +456,6 @@ export default function App() {
+   const openExperience = useCallback((next: ExperienceMode, source: HTMLButtonElement) => {
+     if (transition !== null) return;
+     const rect = source.getBoundingClientRect();
+-    setVisited((current) => ({ ...current, [next]: true }));
+     setTransition({ mode: next, rect, direction: "enter", expanded: false });
+     setMode(next);
+     writeBookQuery(next);
+@@ -589,6 +478,7 @@ export default function App() {
+       return;
+     }
+     const source = portalElements.current[currentMode];
++    returnPortal.current = currentMode;
+     const rect = source?.getBoundingClientRect() ?? new DOMRect(0, 0, window.innerWidth, window.innerHeight);
+     setTransition({ mode: currentMode, rect, direction: "exit", expanded: true });
+     setMode("home");
+@@ -600,7 +490,6 @@ export default function App() {
+     });
+     window.setTimeout(() => {
+       setTransition(null);
+-      portalElements.current[currentMode]?.focus({ preventScroll: true });
+     }, transitionDuration());
+   }, [transition, transitionDuration]);
+ 
+@@ -608,17 +497,24 @@ export default function App() {
+     if (mode === "home") window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+   }, [mode]);
+ 
++  useEffect(() => {
++    if (mode === "home" && !transition && returnPortal.current) {
++      portalElements.current[returnPortal.current]?.focus({ preventScroll: true });
++      returnPortal.current = null;
++    }
++  }, [mode, transition]);
++
+   return (
+     <div className={`app-shell${mode !== "home" ? " is-experience-open" : ""}${transition ? " is-transitioning" : ""}`}>
+-      <div className={`home-layer${mode === "home" ? " is-active" : ""}`} aria-hidden={mode !== "home"}>
++      <div className={`home-layer${mode === "home" ? " is-active" : ""}`} aria-hidden={mode !== "home"} inert={mode !== "home" || Boolean(transition)}>
+         <Home onOpen={openExperience} registerPortal={registerPortal} />
+       </div>
+ 
+       <div className={`experience-layer experience-layer--edition${mode === "edition" ? " is-active" : ""}`} aria-hidden={mode !== "edition"}>
+-        {visited.edition && <Edition onExit={() => closeExperience("edition")} />}
++        {mode === "edition" && <Edition onExit={() => closeExperience("edition")} />}
+       </div>
+       <div className={`experience-layer experience-layer--research${mode === "research" ? " is-active" : ""}`} aria-hidden={mode !== "research"}>
+-        {visited.research && <Research onExit={() => closeExperience("research")} />}
++        {mode === "research" && <Research onExit={() => closeExperience("research")} />}
+       </div>
+       {transition && <PortalTransition state={transition} />}
+     </div>
+diff --git a/src/BookShell.tsx b/src/BookShell.tsx
+new file mode 100644
+index 0000000..7cae7ee
+--- /dev/null
++++ b/src/BookShell.tsx
+@@ -0,0 +1,141 @@
++import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
++import { createPortal } from "react-dom";
++import { PageFlip } from "../vendor/page-flip/dist/page-flip.js";
++import "../vendor/page-flip/dist/page-flip.css";
++
++type BookPosition = { index: number; portrait: boolean; state: string };
++
++export function BookShell({ title, children, onExit, suspended = false }: {
++  title: string; children: ReactNode[]; onExit: () => void; suspended?: boolean;
++}) {
++  const mountRef = useRef<HTMLDivElement>(null);
++  const engineRef = useRef<PageFlip | null>(null);
++  const backRef = useRef<HTMLButtonElement>(null);
++  const [attempt, setAttempt] = useState(0);
++  const [status, setStatus] = useState<"binding" | "ready" | "failed">("binding");
++  const [position, setPosition] = useState<BookPosition>({ index: 0, portrait: false, state: "read" });
++  // Engine owns leaf containers; React portals own their live content, never reparented React roots.
++  const leaves = useMemo(() => Array.from({ length: children.length }, () => {
++    const leaf = document.createElement("div");
++    leaf.className = "book-leaf";
++    leaf.dataset.density = "soft";
++    return leaf;
++  }), [children.length]);
++
++  useEffect(() => {
++    const mount = mountRef.current!;
++    const host = document.createElement("div");
++    host.className = "oedro-book";
++    mount.append(host);
++    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
++    const engine = new PageFlip(host, {
++      width: 510, height: 680, size: "stretch" as NonNullable<ConstructorParameters<typeof PageFlip>[1]>["size"], minWidth: innerHeight < 480 ? 160 : 220, maxWidth: 540,
++      minHeight: 213, maxHeight: 720, maxShadowOpacity: .68, showCover: false,
++      usePortrait: true, autoSize: true, drawShadow: true, flippingTime: motion.matches ? 120 : 720,
++      startPage: 0, useMouseEvents: true, clickEventForward: true, swipeDistance: 42,
++      showPageCorners: true, disableFlipByClick: false, mobileScrollSupport: true, startZIndex: 10,
++    });
++    engineRef.current = engine;
++    let disposed = false;
++    let resizeFrame = 0;
++    let readyTimer = 0;
++    const sync = () => {
++      if (disposed || !engine.getPageCollection()) return;
++      const index = engine.getCurrentPageIndex();
++      const portrait = engine.getOrientation() === "portrait";
++      const state = engine.getState();
++      setPosition({ index, portrait, state });
++      leaves.forEach((leaf, i) => {
++        const visible = i === index || (!portrait && i === index + 1);
++        leaf.inert = !visible;
++        leaf.setAttribute("aria-hidden", String(!visible));
++      });
++    };
++    const updateMotion = () => { engine.getSettings().flippingTime = motion.matches ? 120 : 720; };
++    engine.on("flip", sync).on("changeOrientation", sync).on("changeState", sync);
++    engine.on("init", () => {
++      if (disposed) return;
++      clearTimeout(readyTimer);
++      sync();
++      setStatus("ready");
++    });
++    try {
++      engine.loadFromHTML(leaves);
++      readyTimer = window.setTimeout(() => setStatus("failed"), 2000);
++    } catch {
++      setStatus("failed");
++    }
++    const observer = new ResizeObserver(() => {
++      cancelAnimationFrame(resizeFrame);
++      resizeFrame = requestAnimationFrame(() => {
++        if (!disposed && engine.getPageCollection()) {
++          engine.getSettings().minWidth = innerHeight < 480 ? 160 : 220;
++          engine.cancelUserTouch(); engine.update(); sync();
++        }
++      });
++    });
++    observer.observe(mount);
++    motion.addEventListener("change", updateMotion);
++    backRef.current?.focus({ preventScroll: true });
++    return () => {
++      disposed = true;
++      clearTimeout(readyTimer);
++      cancelAnimationFrame(resizeFrame);
++      observer.disconnect();
++      motion.removeEventListener("change", updateMotion);
++      engine.destroy();
++      engineRef.current = null;
++    };
++  }, [leaves, attempt]);
++
++  const move = (direction: -1 | 1) => {
++    const engine = engineRef.current;
++    if (suspended || status !== "ready" || !engine || !["read", "fold_corner"].includes(engine.getState())) return;
++    engine.getSettings().flippingTime = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 120 : 720;
++    if (direction < 0 && engine.getCurrentPageIndex() > 0) engine.flipPrev();
++    if (direction > 0 && engine.getCurrentPageIndex() + (engine.getOrientation() === "portrait" ? 1 : 2) < children.length) engine.flipNext();
++  };
++
++  useEffect(() => {
++    if (suspended) { engineRef.current?.cancelUserTouch(); return; }
++    const onKey = (event: KeyboardEvent) => {
++      if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey) return;
++      const target = event.target as HTMLElement | null;
++      if (target?.closest('input, textarea, select, [contenteditable="true"], [role="dialog"]')) return;
++      if (event.key === "Escape") { event.preventDefault(); onExit(); }
++      if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
++        event.preventDefault();
++        if (!event.repeat) move(event.key === "ArrowLeft" ? -1 : 1);
++      }
++    };
++    window.addEventListener("keydown", onKey);
++    return () => window.removeEventListener("keydown", onKey);
++  });
++
++  const busy = !["read", "fold_corner"].includes(position.state);
++  return (
++    <main className={`book-room${busy ? " is-turning" : ""}`} data-page-index={position.index}
++      data-state={position.state} data-orientation={position.portrait ? "portrait" : "landscape"} inert={suspended}>
++      <button ref={backRef} className="experience-back" onClick={onExit} aria-label="Back to book selection">←</button>
++      <section className="book-stage" aria-label={title}>
++        <div className="book-stage__halo" aria-hidden="true" />
++        <div className="book-shadow" aria-hidden="true" />
++        <div className={`book-rig${status === "ready" ? " is-engine-ready" : ""}`}>
++          <div className="engine-mount" ref={mountRef} />
++          {status !== "ready" && <div className="book-loading" role="status">
++            {status === "binding" ? <><span />Loading pages…</> : <>
++              Pages could not load.
++              <button onClick={() => { setStatus("binding"); setAttempt(value => value + 1); }}>Retry</button>
++            </>}
++          </div>}
++        </div>
++      </section>
++      <nav className="book-controls" aria-label="Page navigation">
++        <button aria-label="Previous page" aria-disabled={busy || position.index === 0} onClick={() => move(-1)}>←</button>
++        <button aria-label="Next page" aria-disabled={busy || position.index + (position.portrait ? 1 : 2) >= children.length} onClick={() => move(1)}>→</button>
++      </nav>
++      <span className="sr-only" role="status" aria-live="polite">Page {position.index + 1} of {children.length}</span>
++      {children.map((child, i) => createPortal(child, leaves[i], String(i)))}
++    </main>
++  );
++}
+diff --git a/src/styles.css b/src/styles.css
+index 9dd6087..03a811b 100644
+--- a/src/styles.css
++++ b/src/styles.css
+@@ -171,6 +171,7 @@ img { max-width: 100%; }
+ .research-cover .editorial-page__body { max-width: 26ch; }
+ 
+ .question-page { background: #17212a; color: #fff; }
++.question-page.scrim-light { color: #111316; }
+ .question-page__image img { filter: saturate(.76) contrast(1.08); }
+ .question-page__content .brand-mark { width: 96px; }
+ .question-page__meta { display: flex; width: 100%; justify-content: space-between; margin-top: 22px; padding-bottom: 14px; border-bottom: 1px solid currentColor; font: 600 12px/1 "Barlow Condensed",sans-serif; letter-spacing: .15em; text-transform: uppercase; opacity: .7; }
+@@ -252,3 +253,47 @@ img { max-width: 100%; }
+ @media (prefers-reduced-motion: reduce) {
+   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+ }
++
++/* Leave real space for controls; size display type from the leaf, not the viewport. */
++.book-room { height: 100dvh; min-height: 0; padding: 68px 12px 60px; }
++.book-stage { width: 100%; }
++.book-rig { width: min(90vw, calc((100dvh - 132px) * 1.5), 1080px); }
++.engine-mount { width: 100%; }
++.leaf-content { width: 100%; height: 100%; }
++.book-leaf { container-type: inline-size; }
++.editorial-page h2 { font-size: clamp(26px, 11.5cqw, 64px); }
++.question-page h2 { font-size: clamp(25px, 10.5cqw, 60px); }
++.research-back h2 { font-size: clamp(28px, 12cqw, 68px); }
++.editorial-page__content .brand-mark { width: 24%; }
++.editorial-page__eyebrow { margin: 18px 0 12px; }
++.editorial-page__body { margin-top: 14px; }
++.editorial-page__folio { display: none; }
++.book-controls { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); display: flex; gap: 24px; }
++.book-controls button, .book-loading button { min-width: 44px; min-height: 44px; border: 1px solid var(--line-light); background: var(--ink); color: var(--paper); cursor: pointer; }
++.book-controls button { border-radius: 50%; }
++.book-controls button[aria-disabled="true"] { opacity: .35; cursor: default; }
++.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
++.sheet-close { width: 44px; height: 44px; }
++.response-sheet { height: 100dvh; overscroll-behavior: contain; }
++.book-leaf, .engine-mount { touch-action: pan-y pinch-zoom; }
++@media (max-width: 720px) {
++  .book-rig { width: min(92vw, calc((100dvh - 132px) * .75)); }
++}
++@media (max-height: 600px) {
++  .editorial-page__content { padding: 6%; }
++  .editorial-page h2, .question-page h2 { font-size: clamp(23px, 9cqw, 36px); }
++  .question-page__meta { margin-top: 12px; padding-bottom: 8px; }
++  .question-page p { margin-bottom: 12px; }
++  .placement-top-left.question-page h2 { margin-top: 16px; }
++}
++@media (max-height: 480px) {
++  .editorial-page__content .brand-mark, .question-page__meta, .editorial-page__eyebrow { display: none; }
++  .editorial-page h2, .question-page h2 { font-size: clamp(20px, 9cqw, 28px); }
++  .question-page button { min-height: 44px; padding-block: 8px; }
++  .question-page p { margin-bottom: 8px; }
++  .placement-top-left.question-page h2 { margin-top: 0; }
++  .research-back { padding: 7%; }
++  .research-back p { display: none; }
++  .research-back h2 { margin: 0 0 12px; font-size: clamp(22px, 10cqw, 36px); }
++  .research-back span { line-height: 1.35; }
++}
+diff --git a/package.json b/package.json
+index 1b7b618..2ddaf2a 100644
+--- a/package.json
++++ b/package.json
+@@ -4,10 +4,13 @@
+   "private": true,
+   "type": "module",
+   "scripts": {
++    "predev": "node vendor/page-flip/build.mjs",
++    "prebuild": "node vendor/page-flip/build.mjs",
++    "test:engine": "node --test vendor/page-flip/engine-regression.test.mjs",
+     "dev": "vite --host 127.0.0.1",
+     "test:legacy-engine": "node --experimental-strip-types --test tests/oedro-page-flip.test.ts",
+     "test:v3": "node --experimental-strip-types --test tests/v3-source-contract.test.ts",
+-    "test": "npm run test:v3 && npm run test:legacy-engine",
++    "test": "npm run test:v3 && npm run test:engine",
+     "typecheck": "tsc --noEmit",
+     "build": "npm run typecheck && vite build",
+     "preview": "vite preview --host 127.0.0.1"
+diff --git a/tests/v3-source-contract.test.ts b/tests/v3-source-contract.test.ts
+index 6fa2547..95aaa7a 100644
+--- a/tests/v3-source-contract.test.ts
++++ b/tests/v3-source-contract.test.ts
+@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
+ import { test } from "node:test";
+ 
+ const app = readFileSync(new URL("../src/App.tsx", import.meta.url), "utf8");
++const shell = readFileSync(new URL("../src/BookShell.tsx", import.meta.url), "utf8");
+ const css = readFileSync(new URL("../src/styles.css", import.meta.url), "utf8");
+ const data = readFileSync(new URL("../src/data.ts", import.meta.url), "utf8");
+ const main = readFileSync(new URL("../src/main.tsx", import.meta.url), "utf8");
+@@ -12,7 +13,7 @@ const pkg = JSON.parse(readFileSync(new URL("../package.json", import.meta.url),
+ };
+ 
+ test("V3 uses the reviewed full page renderer at exact versions", () => {
+-  assert.match(app, /import HTMLFlipBook from "react-pageflip"/);
++  assert.match(shell, /vendor\/page-flip\/dist\/page-flip.js/);
+   assert.doesNotMatch(app, /components\/OedroFlipbook/);
+   assert.equal(pkg.dependencies["react-pageflip"], "2.0.3");
+   assert.equal(pkg.dependencies["page-flip"], "2.0.7");
+@@ -52,12 +53,12 @@ test("the bundle supports GitHub Pages subpaths and direct book links", () => {
+ });
+ 
+ test("all visible leaves stay soft and the final page never auto-exits", () => {
+-  assert.match(app, /data-density="soft"/);
++  assert.match(shell, /leaf.dataset.density = "soft"/);
+   assert.doesNotMatch(app, /data-density=\{density\}/);
+   assert.doesNotMatch(app, /density="hard"/);
+   assert.doesNotMatch(app, /BookClosingLeaf/);
+   assert.doesNotMatch(app, /setTimeout\(onExit/);
+-  assert.match(app, /showCover=\{false\}/);
++  assert.match(shell, /showCover: false/);
+ });
+ 
+ test("the index and book theater contain no unrequested visible chrome copy", () => {
+@@ -71,17 +72,16 @@ test("the index and book theater contain no unrequested visible chrome copy", ()
+ 
+ test("book initialization cannot expose a static page stack", () => {
+   assert.doesNotMatch(main, /StrictMode/);
+-  assert.match(app, /engineAttempt/);
+-  assert.match(app, /querySelector\("\.stf__block"\)/);
+-  assert.match(app, /book-loading/);
++  assert.match(shell, /engine.destroy\(\)/);
++  assert.match(shell, /setStatus\("failed"\)/);
++  assert.match(shell, /book-loading/);
+   assert.match(css, /\.book-rig:not\(\.is-engine-ready\) \.oedro-book[\s\S]*visibility: hidden/);
+ });
+ 
+ test("the active books delegate directional corner previews to the renderer", () => {
+-  assert.match(app, /drawShadow=\{true\}/);
+-  assert.match(app, /showPageCorners=\{true\}/);
+-  assert.match(app, /maxShadowOpacity=\{0\.68\}/);
+-  assert.match(app, /flippingTime=\{920\}/);
++  assert.match(shell, /drawShadow: true/);
++  assert.match(shell, /showPageCorners: true/);
++  assert.match(shell, /maxShadowOpacity: .68/);
+   assert.match(css, /\.stf__outerShadow/);
+   assert.match(css, /\.stf__innerShadow/);
+   assert.doesNotMatch(app, /page-corner-sheen/);
+diff --git a/vendor/page-flip/CHANGELOG.local.md b/vendor/page-flip/CHANGELOG.local.md
+new file mode 100644
+index 0000000..88d136b
+--- /dev/null
++++ b/vendor/page-flip/CHANGELOG.local.md
+@@ -0,0 +1,18 @@
++# Local changes to page-flip 2.0.7
++
++Source: the installed upstream `page-flip@2.0.7` package, MIT license retained in `LICENSE`. This candidate uses the original soft-page geometry, polygon clipping, and shadow renderer. These edits are local; they are not an upstream release.
++
++- Preserve the declared density of an odd final leaf. Explicit `showCover` behavior remains available.
++- Recover failed boundary drags to `read`; serialize settling animations and reject new flips while settling.
++- Add `PageFlip.cancelUserTouch()` for rollback without committing, and route blur, pointer cancellation, touch cancellation, and multi-touch interruption through it.
++- Resolve touch intent after eight pixels, track the initiating touch, preserve vertical movement, and require horizontal-dominant quick swipes. Remove the delayed touch-start timer entirely.
++- Ignore interactive descendants and non-primary mouse buttons when starting page gestures.
++- Make destruction idempotent; remove window listeners, cancel initialization timers and animation frames, discard animation callbacks, and release page collections. `destroy()` retains upstream behavior of removing the engine root.
++
++Acceptance boundaries: controller/lifecycle checks can establish state and cleanup contracts; real Chromium/WebKit interaction and image review remain required to establish visual correctness and mobile behavior.
++
++Local checks (2026-09-08): `node --test vendor/page-flip/engine-regression.test.mjs` passes six behavior tests. The vendored source also passes `tsc --noEmit --target ES2022 --module ESNext --moduleResolution Bundler --skipLibCheck --strict false vendor/page-flip/src/PageFlip.ts`; this uses upstream-compatible null checking, not the application's stricter source policy.
++
++## Application integration
++
++Run `node vendor/page-flip/build.mjs` from the candidate project before dev/build. This uses the existing project esbuild and TypeScript installations; it installs no packages. Import `PageFlip` from `vendor/page-flip/dist/page-flip.js`, and import `vendor/page-flip/dist/page-flip.css` separately. The adjacent generated declaration entry resolves to `dist/types`, keeping upstream null checking local to the vendor build while the application remains strict. Original TypeScript remains unsuppressed and editable under `src`.
+diff --git a/vendor/page-flip/LICENSE b/vendor/page-flip/LICENSE
+new file mode 100644
+index 0000000..681e1e7
+--- /dev/null
++++ b/vendor/page-flip/LICENSE
+@@ -0,0 +1,21 @@
++MIT License
++
++Copyright (c) 2020 Nodlik
++
++Permission is hereby granted, free of charge, to any person obtaining a copy
++of this software and associated documentation files (the "Software"), to deal
++in the Software without restriction, including without limitation the rights
++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++copies of the Software, and to permit persons to whom the Software is
++furnished to do so, subject to the following conditions:
++
++The above copyright notice and this permission notice shall be included in all
++copies or substantial portions of the Software.
++
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
++SOFTWARE.
+diff --git a/vendor/page-flip/build.mjs b/vendor/page-flip/build.mjs
+new file mode 100644
+index 0000000..40ce9fe
+--- /dev/null
++++ b/vendor/page-flip/build.mjs
+@@ -0,0 +1,32 @@
++import { build } from 'esbuild';
++import { mkdir, writeFile } from 'node:fs/promises';
++import { createRequire } from 'node:module';
++import { dirname, join } from 'node:path';
++import { fileURLToPath } from 'node:url';
++import { spawnSync } from 'node:child_process';
++
++const vendorRoot = dirname(fileURLToPath(import.meta.url));
++const require = createRequire(import.meta.url);
++const declarations = spawnSync(process.execPath, [
++  require.resolve('typescript/bin/tsc'),
++  '--project', join(vendorRoot, 'tsconfig.build.json'),
++], { cwd: vendorRoot, stdio: 'inherit' });
++if (declarations.error) throw declarations.error;
++if (declarations.status !== 0) process.exit(declarations.status ?? 1);
++
++await build({
++  absWorkingDir: vendorRoot,
++  entryPoints: ['src/PageFlip.ts'],
++  outfile: 'dist/page-flip.js',
++  bundle: true,
++  format: 'esm',
++  platform: 'browser',
++  target: ['es2022'],
++  sourcemap: true,
++  legalComments: 'linked',
++});
++await mkdir(join(vendorRoot, 'dist'), { recursive: true });
++await writeFile(join(vendorRoot, 'dist', 'page-flip.d.ts'),
++  '// Generated by ../build.mjs; declarations use upstream-compatible null checking.\n' +
++  'export { PageFlip } from "./types/PageFlip";\n');
++console.log('Built local page-flip JS, CSS, source maps, and declarations.');
+diff --git a/vendor/page-flip/engine-regression.test.mjs b/vendor/page-flip/engine-regression.test.mjs
+new file mode 100644
+index 0000000..4a4dcca
+--- /dev/null
++++ b/vendor/page-flip/engine-regression.test.mjs
+@@ -0,0 +1,102 @@
++import assert from 'node:assert/strict';
++import test from 'node:test';
++import { build } from 'esbuild';
++import { fileURLToPath } from 'node:url';
++
++const root = fileURLToPath(new URL('.', import.meta.url));
++const result = await build({
++  stdin: { contents: `export { Flip } from './src/Flip/Flip'; export { Render } from './src/Render/Render'; export { UI } from './src/UI/UI'; export { PageCollection } from './src/Collection/PageCollection'; export { PageFlip } from './src/PageFlip';`, resolveDir: root },
++  bundle: true, write: false, format: 'cjs', platform: 'node', loader: { '.css': 'empty' },
++});
++const module = { exports: {} };
++new Function('module', 'exports', result.outputFiles[0].text)(module, module.exports);
++const { Flip, Render, UI, PageCollection, PageFlip } = module.exports;
++globalThis.window = { navigator: { userAgent: 'unit-test' }, addEventListener() {}, removeEventListener() {} };
++
++test('odd last leaf preserves soft material', () => {
++  class Collection extends PageCollection { load() {} }
++  const collection = new Collection({ getSettings: () => ({ showCover: false }) }, {});
++  collection.pages = Array.from({ length: 7 }, () => ({ density: 'soft', setDensity(value) { this.density = value; } }));
++  collection.createSpread();
++  assert.equal(collection.pages[6].density, 'soft');
++  assert.deepEqual(collection.landscapeSpread, [[0, 1], [2, 3], [4, 5], [6]]);
++});
++
++function controller(index = 0) {
++  let cancels = 0;
++  let shown = 0;
++  const render = {
++    getRect: () => ({ width: 1000, height: 680, pageWidth: 500 }),
++    getOrientation: () => 'landscape', convertToBook: (p) => p,
++    cancelAnimation: () => cancels++, setBottomPage() {}, setFlippingPage() {}, clearShadow() {},
++  };
++  const app = { getCurrentPageIndex: () => index, getPageCount: () => 7,
++    getPageCollection: () => ({ getPages: () => [], show: () => shown++ }), updateState() {},
++    getSettings: () => ({ disableFlipByClick: false }) };
++  return { flip: new Flip(render, app), counts: () => ({ cancels, shown }) };
++}
++
++test('first-back and final-forward drag failures return to read', () => {
++  for (const [index, x] of [[0, 2], [6, 998]]) {
++    const { flip } = controller(index);
++    flip.fold({ x, y: 650 });
++    flip.stopMove();
++    assert.equal(flip.getState(), 'read');
++  }
++});
++
++test('cancellation discards pending commit and rapid flips do not interrupt settling', () => {
++  const { flip, counts } = controller();
++  flip.state = 'flipping';
++  flip.flip({ x: 998, y: 650 });
++  assert.equal(counts().cancels, 0);
++  flip.cancel();
++  assert.equal(flip.getState(), 'read');
++  assert.deepEqual(counts(), { cancels: 1, shown: 1 });
++});
++
++test('render destruction cancels its RAF and animation callback', () => {
++  let callback;
++  let cancelled;
++  globalThis.requestAnimationFrame = (fn) => { callback = fn; return 31; };
++  globalThis.cancelAnimationFrame = (id) => { cancelled = id; };
++  class Renderer extends Render { update() {} drawFrame() { throw new Error('rendered after destroy'); } }
++  const render = new Renderer({}, {});
++  render.start();
++  render.animation = { onAnimateEnd: () => { throw new Error('committed after destroy'); } };
++  render.destroy();
++  assert.equal(cancelled, 31);
++  callback(100);
++  assert.equal(render.animation, null);
++});
++
++test('touch vertical intent does not start a fold; cancellation clears tracking', () => {
++  const calls = [];
++  const element = { classList: { add() {} }, style: {}, insertAdjacentHTML() {}, querySelector() { return this; }, getBoundingClientRect: () => ({ left: 0, top: 0 }) };
++  const settings = { usePortrait: true, minWidth: 220, minHeight: 293, swipeDistance: 42, clickEventForward: true };
++  const app = { getSettings: () => settings, getState: () => 'read', startUserTouch: () => calls.push('start'), userMove: () => calls.push('move'), userStop: () => calls.push('stop'), cancelUserTouch() { ui.cancelPendingTouch(); calls.push('cancel'); } };
++  class TestUI extends UI { constructor() { super(element, app, settings); this.distElement = element; } update() {} }
++  const ui = new TestUI();
++  const event = (x, y) => ({ target: { closest: () => null }, touches: [{ identifier: 1 }], changedTouches: [{ identifier: 1, clientX: x, clientY: y }], cancelable: true, preventDefault() {} });
++  ui.onTouchStart(event(200, 200));
++  ui.onTouchMove(event(220, 270));
++  ui.onTouchEnd(event(245, 280));
++  assert.deepEqual(calls, []);
++  ui.onTouchStart(event(200, 200));
++  ui.onTouchMove(event(160, 205));
++  assert.deepEqual(calls, ['start', 'move']);
++  ui.onCancel();
++  assert.equal(ui.touchPoint, null);
++});
++
++test('destroy before initialization is idempotent and cancels init callback', async () => {
++  let removed = 0;
++  let fired = false;
++  const app = new PageFlip({ remove: () => removed++ }, { width: 510, height: 680 });
++  app.initTimer = setTimeout(() => { fired = true; }, 5);
++  app.destroy();
++  app.destroy();
++  await new Promise((resolve) => setTimeout(resolve, 15));
++  assert.equal(removed, 1);
++  assert.equal(fired, false);
++});
+diff --git a/vendor/page-flip/package.json b/vendor/page-flip/package.json
+new file mode 100644
+index 0000000..5890e0b
+--- /dev/null
++++ b/vendor/page-flip/package.json
+@@ -0,0 +1,53 @@
++{
++  "name": "page-flip",
++  "version": "2.0.7",
++  "private": true,
++  "type": "module",
++  "main": "dist/page-flip.js",
++  "browser": "dist/page-flip.js",
++  "types": "dist/page-flip.d.ts",
++  "author": "oleg.litovski9@gmail.com",
++  "license": "MIT",
++  "description": "Powerful, simple and flexible JS Library for creating realistic and beautiful page turning effect",
++  "repository": {
++    "type": "git",
++    "url": "https://github.com/Nodlik/StPageFlip.git"
++  },
++  "publishConfig": {},
++  "homepage": "https://nodlik.github.io/StPageFlip/",
++  "dependencies": {},
++  "devDependencies": {
++    "@typescript-eslint/eslint-plugin": "^2.33.0",
++    "@typescript-eslint/parser": "^2.33.0",
++    "css-loader": "^3.5.3",
++    "eslint": "^7.0.0",
++    "eslint-plugin-typescript": "^0.14.0",
++    "prettier": "^2.0.5",
++    "rollup-plugin-postcss": "^3.1.1",
++    "rollup-plugin-terser": "^6.1.0",
++    "rollup-plugin-typescript2": "^0.27.1",
++    "style-loader": "^1.2.1",
++    "ts-loader": "^7.0.4",
++    "typedoc": "^0.17.8",
++    "typescript": "latest",
++    "webpack": "^4.43.0",
++    "webpack-cli": "^3.3.11"
++  },
++  "scripts": {
++    "eslint": "eslint . --ext .ts",
++    "build-global": "npx webpack",
++    "build": "node build.mjs",
++    "test:local": "node --test engine-regression.test.mjs"
++  },
++  "keywords": [
++    "typescript",
++    "page",
++    "flip",
++    "canvas",
++    "book",
++    "reader",
++    "fold",
++    "frontend",
++    "javascript"
++  ]
++}
+diff --git a/vendor/page-flip/src/BasicTypes.ts b/vendor/page-flip/src/BasicTypes.ts
+new file mode 100644
+index 0000000..929a5fb
+--- /dev/null
++++ b/vendor/page-flip/src/BasicTypes.ts
+@@ -0,0 +1,48 @@
++/**
++ * Type representing a point on a plane
++ */
++export interface Point {
++    x: number;
++    y: number;
++}
++
++/**
++ * Type representing a coordinates of the rectangle on the plane
++ */
++export interface RectPoints {
++    /** Coordinates of the top left corner */
++    topLeft: Point;
++    /** Coordinates of the top right corner */
++    topRight: Point;
++    /** Coordinates of the bottom left corner */
++    bottomLeft: Point;
++    /** Coordinates of the bottom right corner */
++    bottomRight: Point;
++}
++
++/**
++ * Type representing a rectangle
++ */
++export interface Rect {
++    left: number;
++    top: number;
++    width: number;
++    height: number;
++}
++
++/**
++ * Type representing a book area
++ */
++export interface PageRect {
++    left: number;
++    top: number;
++    width: number;
++    height: number;
++    /** Page width. If portrait mode is equal to the width of the book. In landscape mode - half of the total width. */
++    pageWidth: number;
++}
++
++/**
++ * Type representing a line segment contains two points: start and end
++ */
++export type Segment = [Point, Point];
+diff --git a/vendor/page-flip/src/Collection/HTMLPageCollection.ts b/vendor/page-flip/src/Collection/HTMLPageCollection.ts
+new file mode 100644
+index 0000000..16039da
+--- /dev/null
++++ b/vendor/page-flip/src/Collection/HTMLPageCollection.ts
+@@ -0,0 +1,40 @@
++import { HTMLPage } from '../Page/HTMLPage';
++import { Render } from '../Render/Render';
++import { PageCollection } from './PageCollection';
++import { PageFlip } from '../PageFlip';
++import { PageDensity } from '../Page/Page';
++
++/**
++ * Сlass representing a collection of pages as HTML Element
++ */
++export class HTMLPageCollection extends PageCollection {
++    private readonly element: HTMLElement;
++    private readonly pagesElement: NodeListOf<HTMLElement> | HTMLElement[];
++
++    constructor(
++        app: PageFlip,
++        render: Render,
++        element: HTMLElement,
++        items: NodeListOf<HTMLElement> | HTMLElement[]
++    ) {
++        super(app, render);
++
++        this.element = element;
++        this.pagesElement = items;
++    }
++
++    public load(): void {
++        for (const pageElement of this.pagesElement) {
++            const page = new HTMLPage(
++                this.render,
++                pageElement,
++                pageElement.dataset['density'] === 'hard' ? PageDensity.HARD : PageDensity.SOFT
++            );
++
++            page.load();
++            this.pages.push(page);
++        }
++
++        this.createSpread();
++    }
++}
+diff --git a/vendor/page-flip/src/Collection/ImagePageCollection.ts b/vendor/page-flip/src/Collection/ImagePageCollection.ts
+new file mode 100644
+index 0000000..a05e004
+--- /dev/null
++++ b/vendor/page-flip/src/Collection/ImagePageCollection.ts
+@@ -0,0 +1,29 @@
++import { ImagePage } from '../Page/ImagePage';
++import { Render } from '../Render/Render';
++import { PageCollection } from './PageCollection';
++import { PageFlip } from '../PageFlip';
++import { PageDensity } from '../Page/Page';
++
++/**
++ * Сlass representing a collection of pages as images on the canvas
++ */
++export class ImagePageCollection extends PageCollection {
++    private readonly imagesHref: string[];
++
++    constructor(app: PageFlip, render: Render, imagesHref: string[]) {
++        super(app, render);
++
++        this.imagesHref = imagesHref;
++    }
++
++    public load(): void {
++        for (const href of this.imagesHref) {
++            const page = new ImagePage(this.render, href, PageDensity.SOFT);
++
++            page.load();
++            this.pages.push(page);
++        }
++
++        this.createSpread();
++    }
++}
+diff --git a/vendor/page-flip/src/Collection/PageCollection.ts b/vendor/page-flip/src/Collection/PageCollection.ts
+new file mode 100644
+index 0000000..924e7dc
+--- /dev/null
++++ b/vendor/page-flip/src/Collection/PageCollection.ts
+@@ -0,0 +1,293 @@
++import { Orientation, Render } from '../Render/Render';
++import { Page, PageDensity } from '../Page/Page';
++import { PageFlip } from '../PageFlip';
++import { FlipDirection } from '../Flip/Flip';
++
++type NumberArray = number[];
++
++/**
++ * Сlass representing a collection of pages
++ */
++export abstract class PageCollection {
++    protected readonly app: PageFlip;
++    protected readonly render: Render;
++    protected readonly isShowCover: boolean;
++
++    /** Pages List */
++    protected pages: Page[] = [];
++    /** Index of the current page in list */
++    protected currentPageIndex = 0;
++
++    /** Number of the current spread in book */
++    protected currentSpreadIndex = 0;
++    /**  Two-page spread in landscape mode */
++    protected landscapeSpread: NumberArray[] = [];
++    /**  One-page spread in portrait mode */
++    protected portraitSpread: NumberArray[] = [];
++
++    protected constructor(app: PageFlip, render: Render) {
++        this.render = render;
++        this.app = app;
++
++        this.currentPageIndex = 0;
++        this.isShowCover = this.app.getSettings().showCover;
++    }
++
++    /**
++     * Load pages
++     */
++    public abstract load(): void;
++
++    /**
++     * Clear pages list
++     */
++    public destroy(): void {
++        this.pages = [];
++    }
++
++    /**
++     * Split the book on the two-page spread in landscape mode and one-page spread in portrait mode
++     */
++    protected createSpread(): void {
++        this.landscapeSpread = [];
++        this.portraitSpread = [];
++
++        for (let i = 0; i < this.pages.length; i++) {
++            this.portraitSpread.push([i]); // In portrait mode - (one spread = one page)
++        }
++
++        let start = 0;
++        if (this.isShowCover) {
++            this.pages[0].setDensity(PageDensity.HARD);
++            this.landscapeSpread.push([start]);
++            start++;
++        }
++
++        for (let i = start; i < this.pages.length; i += 2) {
++            if (i < this.pages.length - 1) this.landscapeSpread.push([i, i + 1]);
++            else {
++                this.landscapeSpread.push([i]);
++                if (this.isShowCover) this.pages[i].setDensity(PageDensity.HARD);
++            }
++        }
++    }
++
++    /**
++     * Get spread by mode (portrait or landscape)
++     */
++    protected getSpread(): NumberArray[] {
++        return this.render.getOrientation() === Orientation.LANDSCAPE
++            ? this.landscapeSpread
++            : this.portraitSpread;
++    }
++
++    /**
++     * Get spread index by page number
++     *
++     * @param {number} pageNum - page index
++     */
++    public getSpreadIndexByPage(pageNum: number): number {
++        const spread = this.getSpread();
++
++        for (let i = 0; i < spread.length; i++)
++            if (pageNum === spread[i][0] || pageNum === spread[i][1]) return i;
++
++        return null;
++    }
++
++    /**
++     * Get the total number of pages
++     */
++    public getPageCount(): number {
++        return this.pages.length;
++    }
++
++    /**
++     * Get the pages list
++     */
++    public getPages(): Page[] {
++        return this.pages;
++    }
++
++    /**
++     * Get page by index
++     *
++     * @param {number} pageIndex
++     */
++    public getPage(pageIndex: number): Page {
++        if (pageIndex >= 0 && pageIndex < this.pages.length) {
++            return this.pages[pageIndex];
++        }
++
++        throw new Error('Invalid page number');
++    }
++
++    /**
++     * Get the next page from the specified
++     *
++     * @param {Page} current
++     */
++    public nextBy(current: Page): Page {
++        const idx = this.pages.indexOf(current);
++
++        if (idx < this.pages.length - 1) return this.pages[idx + 1];
++
++        return null;
++    }
++
++    /**
++     * Get previous page from specified
++     *
++     * @param {Page} current
++     */
++    public prevBy(current: Page): Page {
++        const idx = this.pages.indexOf(current);
++
++        if (idx > 0) return this.pages[idx - 1];
++
++        return null;
++    }
++
++    /**
++     * Get flipping page depending on the direction
++     *
++     * @param {FlipDirection} direction
++     */
++    public getFlippingPage(direction: FlipDirection): Page {
++        const current = this.currentSpreadIndex;
++
++        if (this.render.getOrientation() === Orientation.PORTRAIT) {
++            return direction === FlipDirection.FORWARD
++                ? this.pages[current].newTemporaryCopy()
++                : this.pages[current - 1];
++        } else {
++            const spread =
++                direction === FlipDirection.FORWARD
++                    ? this.getSpread()[current + 1]
++                    : this.getSpread()[current - 1];
++
++            if (spread.length === 1) return this.pages[spread[0]];
++
++            return direction === FlipDirection.FORWARD
++                ? this.pages[spread[0]]
++                : this.pages[spread[1]];
++        }
++    }
++
++    /**
++     * Get Next page at the time of flipping
++     *
++     * @param {FlipDirection}  direction
++     */
++    public getBottomPage(direction: FlipDirection): Page {
++        const current = this.currentSpreadIndex;
++
++        if (this.render.getOrientation() === Orientation.PORTRAIT) {
++            return direction === FlipDirection.FORWARD
++                ? this.pages[current + 1]
++                : this.pages[current - 1];
++        } else {
++            const spread =
++                direction === FlipDirection.FORWARD
++                    ? this.getSpread()[current + 1]
++                    : this.getSpread()[current - 1];
++
++            if (spread.length === 1) return this.pages[spread[0]];
++
++            return direction === FlipDirection.FORWARD
++                ? this.pages[spread[1]]
++                : this.pages[spread[0]];
++        }
++    }
++
++    /**
++     * Show next spread
++     */
++    public showNext(): void {
++        if (this.currentSpreadIndex < this.getSpread().length) {
++            this.currentSpreadIndex++;
++            this.showSpread();
++        }
++    }
++
++    /**
++     * Show prev spread
++     */
++    public showPrev(): void {
++        if (this.currentSpreadIndex > 0) {
++            this.currentSpreadIndex--;
++            this.showSpread();
++        }
++    }
++
++    /**
++     * Get the number of the current spread in book
++     */
++    public getCurrentPageIndex(): number {
++        return this.currentPageIndex;
++    }
++
++    /**
++     * Show specified page
++     * @param {number} pageNum - Page index (from 0s)
++     */
++    public show(pageNum: number = null): void {
++        if (pageNum === null) pageNum = this.currentPageIndex;
++
++        if (pageNum < 0 || pageNum >= this.pages.length) return;
++
++        const spreadIndex = this.getSpreadIndexByPage(pageNum);
++        if (spreadIndex !== null) {
++            this.currentSpreadIndex = spreadIndex;
++            this.showSpread();
++        }
++    }
++
++    /**
++     * Index of the current page in list
++     */
++    public getCurrentSpreadIndex(): number {
++        return this.currentSpreadIndex;
++    }
++
++    /**
++     * Set new spread index as current
++     *
++     * @param {number} newIndex - new spread index
++     */
++    public setCurrentSpreadIndex(newIndex: number): void {
++        if (newIndex >= 0 && newIndex < this.getSpread().length) {
++            this.currentSpreadIndex = newIndex;
++        } else {
++            throw new Error('Invalid page');
++        }
++    }
++
++    /**
++     * Show current spread
++     */
++    private showSpread(): void {
++        const spread = this.getSpread()[this.currentSpreadIndex];
++
++        if (spread.length === 2) {
++            this.render.setLeftPage(this.pages[spread[0]]);
++            this.render.setRightPage(this.pages[spread[1]]);
++        } else {
++            if (this.render.getOrientation() === Orientation.LANDSCAPE) {
++                if (spread[0] === this.pages.length - 1) {
++                    this.render.setLeftPage(this.pages[spread[0]]);
++                    this.render.setRightPage(null);
++                } else {
++                    this.render.setLeftPage(null);
++                    this.render.setRightPage(this.pages[spread[0]]);
++                }
++            } else {
++                this.render.setLeftPage(null);
++                this.render.setRightPage(this.pages[spread[0]]);
++            }
++        }
++
++        this.currentPageIndex = spread[0];
++        this.app.updatePageIndex(this.currentPageIndex);
++    }
++}
+diff --git a/vendor/page-flip/src/Event/EventObject.ts b/vendor/page-flip/src/Event/EventObject.ts
+new file mode 100644
+index 0000000..40d98a1
+--- /dev/null
++++ b/vendor/page-flip/src/Event/EventObject.ts
+@@ -0,0 +1,56 @@
++import { PageFlip } from '../PageFlip';
++
++/**
++ * Data type passed to the event handler
++ */
++export type DataType = number | string | boolean | object;
++
++/**
++ * Type of object in event handlers
++ */
++export interface WidgetEvent {
++    data: DataType;
++    object: PageFlip;
++}
++
++type EventCallback = (e: WidgetEvent) => void;
++
++/**
++ * A class implementing a basic event model
++ */
++export abstract class EventObject {
++    private events = new Map<string, EventCallback[]>();
++
++    /**
++     * Add new event handler
++     *
++     * @param {string} eventName
++     * @param {EventCallback} callback
++     */
++    public on(eventName: string, callback: EventCallback): EventObject {
++        if (!this.events.has(eventName)) {
++            this.events.set(eventName, [callback]);
++        } else {
++            this.events.get(eventName).push(callback);
++        }
++
++        return this;
++    }
++
++    /**
++     * Removing all handlers from an event
++     *
++     * @param {string} event - Event name
++     */
++    public off(event: string): void {
++        this.events.delete(event);
++    }
++
++    protected trigger(eventName: string, app: PageFlip, data: DataType = null): void {
++        if (!this.events.has(eventName)) return;
++
++        for (const callback of this.events.get(eventName)) {
++            callback({ data, object: app });
++        }
++    }
++}
+diff --git a/vendor/page-flip/src/Flip/Flip.ts b/vendor/page-flip/src/Flip/Flip.ts
+new file mode 100644
+index 0000000..de780d3
+--- /dev/null
++++ b/vendor/page-flip/src/Flip/Flip.ts
+@@ -0,0 +1,474 @@
++import { Orientation, Render } from '../Render/Render';
++import { PageFlip } from '../PageFlip';
++import { Helper } from '../Helper';
++import { PageRect, Point } from '../BasicTypes';
++import { FlipCalculation } from './FlipCalculation';
++import { Page, PageDensity } from '../Page/Page';
++
++/**
++ * Flipping direction
++ */
++export const enum FlipDirection {
++    FORWARD,
++    BACK,
++}
++
++/**
++ * Active corner when flipping
++ */
++export const enum FlipCorner {
++    TOP = 'top',
++    BOTTOM = 'bottom',
++}
++
++/**
++ * State of the book
++ */
++export const enum FlippingState {
++    /** The user folding the page */
++    USER_FOLD = 'user_fold',
++
++    /** Mouse over active corners */
++    FOLD_CORNER = 'fold_corner',
++
++    /** During flipping animation */
++    FLIPPING = 'flipping',
++
++    /** Base state */
++    READ = 'read',
++}
++
++/**
++ * Class representing the flipping process
++ */
++export class Flip {
++    private readonly render: Render;
++    private readonly app: PageFlip;
++
++    private flippingPage: Page = null;
++    private bottomPage: Page = null;
++
++    private calc: FlipCalculation = null;
++
++    private state: FlippingState = FlippingState.READ;
++
++    constructor(render: Render, app: PageFlip) {
++        this.render = render;
++        this.app = app;
++    }
++
++    /**
++     * Called when the page folding (User drags page corner)
++     *
++     * @param globalPos - Touch Point Coordinates (relative window)
++     */
++    public fold(globalPos: Point): void {
++        if (this.state === FlippingState.FLIPPING) return;
++
++        // If the process has not started yet
++        if (this.calc === null && !this.start(globalPos)) {
++            this.cancel();
++            return;
++        }
++        // A hover-preview animation must not continue moving a held leaf.
++        this.render.cancelAnimation();
++        this.setState(FlippingState.USER_FOLD);
++
++        this.do(this.render.convertToPage(globalPos));
++    }
++
++    /**
++     * Page turning with animation
++     *
++     * @param globalPos - Touch Point Coordinates (relative window)
++     */
++    public flip(globalPos: Point): void {
++        if (this.state === FlippingState.FLIPPING || this.state === FlippingState.USER_FOLD) return;
++        if (this.app.getSettings().disableFlipByClick && !this.isPointOnCorners(globalPos)) return;
++
++        if (this.calc !== null) this.cancel();
++
++        if (!this.start(globalPos)) {
++            this.cancel();
++            return;
++        }
++
++        const rect = this.getBoundsRect();
++
++        this.setState(FlippingState.FLIPPING);
++
++        // Margin from top to start flipping
++        const topMargins = rect.height / 10;
++
++        // Defining animation start points
++        const yStart =
++            this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height - topMargins : topMargins;
++
++        const yDest = this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height : 0;
++
++        // Сalculations for these points
++        this.calc.calc({ x: rect.pageWidth - topMargins, y: yStart });
++
++        // Run flipping animation
++        this.animateFlippingTo(
++            { x: rect.pageWidth - topMargins, y: yStart },
++            { x: -rect.pageWidth, y: yDest },
++            true
++        );
++    }
++
++    /**
++     * Start the flipping process. Find direction and corner of flipping. Creating an object for calculation.
++     *
++     * @param {Point} globalPos - Touch Point Coordinates (relative window)
++     *
++     * @returns {boolean} True if flipping is possible, false otherwise
++     */
++    public start(globalPos: Point): boolean {
++        this.reset();
++
++        const bookPos = this.render.convertToBook(globalPos);
++        const rect = this.getBoundsRect();
++
++        // Find the direction of flipping
++        const direction = this.getDirectionByPoint(bookPos);
++
++        // Find the active corner
++        const flipCorner = bookPos.y >= rect.height / 2 ? FlipCorner.BOTTOM : FlipCorner.TOP;
++
++        if (!this.checkDirection(direction)) return false;
++
++        try {
++            this.flippingPage = this.app.getPageCollection().getFlippingPage(direction);
++            this.bottomPage = this.app.getPageCollection().getBottomPage(direction);
++
++            // In landscape mode, needed to set the density  of the next page to the same as that of the flipped
++            if (this.render.getOrientation() === Orientation.LANDSCAPE) {
++                if (direction === FlipDirection.BACK) {
++                    const nextPage = this.app.getPageCollection().nextBy(this.flippingPage);
++
++                    if (nextPage !== null) {
++                        if (this.flippingPage.getDensity() !== nextPage.getDensity()) {
++                            this.flippingPage.setDrawingDensity(PageDensity.HARD);
++                            nextPage.setDrawingDensity(PageDensity.HARD);
++                        }
++                    }
++                } else {
++                    const prevPage = this.app.getPageCollection().prevBy(this.flippingPage);
++
++                    if (prevPage !== null) {
++                        if (this.flippingPage.getDensity() !== prevPage.getDensity()) {
++                            this.flippingPage.setDrawingDensity(PageDensity.HARD);
++                            prevPage.setDrawingDensity(PageDensity.HARD);
++                        }
++                    }
++                }
++            }
++
++            this.render.setDirection(direction);
++            this.calc = new FlipCalculation(
++                direction,
++                flipCorner,
++                rect.pageWidth.toString(10), // fix bug with type casting
++                rect.height.toString(10) // fix bug with type casting
++            );
++
++            return true;
++        } catch (e) {
++            return false;
++        }
++    }
++
++    /**
++     * Perform calculations for the current page position. Pass data to render object
++     *
++     * @param {Point} pagePos - Touch Point Coordinates (relative active page)
++     */
++    private do(pagePos: Point): void {
++        if (this.calc === null) return; // Flipping process not started
++
++        if (this.calc.calc(pagePos)) {
++            // Perform calculations for a specific position
++            const progress = this.calc.getFlippingProgress();
++
++            this.bottomPage.setArea(this.calc.getBottomClipArea());
++            this.bottomPage.setPosition(this.calc.getBottomPagePosition());
++            this.bottomPage.setAngle(0);
++            this.bottomPage.setHardAngle(0);
++
++            this.flippingPage.setArea(this.calc.getFlippingClipArea());
++            this.flippingPage.setPosition(this.calc.getActiveCorner());
++            this.flippingPage.setAngle(this.calc.getAngle());
++
++            if (this.calc.getDirection() === FlipDirection.FORWARD) {
++                this.flippingPage.setHardAngle((90 * (200 - progress * 2)) / 100);
++            } else {
++                this.flippingPage.setHardAngle((-90 * (200 - progress * 2)) / 100);
++            }
++
++            this.render.setPageRect(this.calc.getRect());
++
++            this.render.setBottomPage(this.bottomPage);
++            this.render.setFlippingPage(this.flippingPage);
++
++            this.render.setShadowData(
++                this.calc.getShadowStartPoint(),
++                this.calc.getShadowAngle(),
++                progress,
++                this.calc.getDirection()
++            );
++        }
++    }
++
++    /**
++     * Turn to the specified page number (with animation)
++     *
++     * @param {number} page - New page number
++     * @param {FlipCorner} corner - Active page corner when turning
++     */
++    public flipToPage(page: number, corner: FlipCorner): void {
++        const current = this.app.getPageCollection().getCurrentSpreadIndex();
++        const next = this.app.getPageCollection().getSpreadIndexByPage(page);
++
++        try {
++            if (next > current) {
++                this.app.getPageCollection().setCurrentSpreadIndex(next - 1);
++                this.flipNext(corner);
++            }
++            if (next < current) {
++                this.app.getPageCollection().setCurrentSpreadIndex(next + 1);
++                this.flipPrev(corner);
++            }
++        } catch (e) {
++            //
++        }
++    }
++
++    /**
++     * Turn to the next page (with animation)
++     *
++     * @param {FlipCorner} corner - Active page corner when turning
++     */
++    public flipNext(corner: FlipCorner): void {
++        this.flip({
++            x: this.render.getRect().left + this.render.getRect().pageWidth * 2 - 10,
++            y: corner === FlipCorner.TOP ? 1 : this.render.getRect().height - 2,
++        });
++    }
++
++    /**
++     * Turn to the prev page (with animation)
++     *
++     * @param {FlipCorner} corner - Active page corner when turning
++     */
++    public flipPrev(corner: FlipCorner): void {
++        this.flip({
++            x: 10,
++            y: corner === FlipCorner.TOP ? 1 : this.render.getRect().height - 2,
++        });
++    }
++
++    /**
++     * Called when the user has stopped flipping
++     */
++    public stopMove(): void {
++        if (this.calc === null) {
++            this.setState(FlippingState.READ);
++            return;
++        }
++
++        const pos = this.calc.getPosition();
++        const rect = this.getBoundsRect();
++
++        const y = this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height : 0;
++
++        this.setState(FlippingState.FLIPPING);
++        if (pos.x <= 0) this.animateFlippingTo(pos, { x: -rect.pageWidth, y }, true);
++        else this.animateFlippingTo(pos, { x: rect.pageWidth, y }, false);
++    }
++
++    /** Roll back a cancelled gesture without turning, including beyond the spine. */
++    public cancel(): void {
++        this.render.cancelAnimation();
++        this.render.setBottomPage(null);
++        this.render.setFlippingPage(null);
++        this.render.clearShadow();
++        for (const page of this.app.getPageCollection().getPages()) page.hideTemporaryCopy();
++        this.reset();
++        this.app.getPageCollection().show();
++        this.setState(FlippingState.READ);
++    }
++
++    /**
++     * Fold the corners of the book when the mouse pointer is over them.
++     * Called when the mouse pointer is over the book without clicking
++     *
++     * @param globalPos
++     */
++    public showCorner(globalPos: Point): void {
++        if (!this.checkState(FlippingState.READ, FlippingState.FOLD_CORNER)) return;
++
++        const rect = this.getBoundsRect();
++        const pageWidth = rect.pageWidth;
++
++        if (this.isPointOnCorners(globalPos)) {
++            if (this.calc === null) {
++                if (!this.start(globalPos)) return;
++
++                this.setState(FlippingState.FOLD_CORNER);
++
++                this.calc.calc({ x: pageWidth - 1, y: 1 });
++
++                const fixedCornerSize = 50;
++                const yStart = this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height - 1 : 1;
++
++                const yDest =
++                    this.calc.getCorner() === FlipCorner.BOTTOM
++                        ? rect.height - fixedCornerSize
++                        : fixedCornerSize;
++
++                this.animateFlippingTo(
++                    { x: pageWidth - 1, y: yStart },
++                    { x: pageWidth - fixedCornerSize, y: yDest },
++                    false,
++                    false
++                );
++            } else {
++                this.do(this.render.convertToPage(globalPos));
++            }
++        } else {
++            this.setState(FlippingState.READ);
++            this.render.finishAnimation();
++
++            this.stopMove();
++        }
++    }
++
++    /**
++     * Starting the flipping animation process
++     *
++     * @param {Point} start - animation start point
++     * @param {Point} dest - animation end point
++     * @param {boolean} isTurned - will the page turn over, or just bring it back
++     * @param {boolean} needReset - reset the flipping process at the end of the animation
++     */
++    private animateFlippingTo(
++        start: Point,
++        dest: Point,
++        isTurned: boolean,
++        needReset = true
++    ): void {
++        const points = Helper.GetCordsFromTwoPoint(start, dest);
++
++        // Create frames
++        const frames = [];
++        for (const p of points) frames.push(() => this.do(p));
++
++        const duration = this.getAnimationDuration(points.length);
++
++        this.render.startAnimation(frames, duration, () => {
++            // callback function
++            if (!this.calc) return;
++
++            if (isTurned) {
++                if (this.calc.getDirection() === FlipDirection.BACK) this.app.turnToPrevPage();
++                else this.app.turnToNextPage();
++            }
++
++            if (needReset) {
++                this.render.setBottomPage(null);
++                this.render.setFlippingPage(null);
++                this.render.clearShadow();
++
++                this.setState(FlippingState.READ);
++                this.reset();
++            }
++        });
++    }
++
++    /**
++     * Get the current calculations object
++     */
++    public getCalculation(): FlipCalculation {
++        return this.calc;
++    }
++
++    /**
++     * Get current flipping state
++     */
++    public getState(): FlippingState {
++        return this.state;
++    }
++
++    private setState(newState: FlippingState): void {
++        if (this.state !== newState) {
++            this.state = newState;
++            this.app.updateState(newState);
++        }
++    }
++
++    private getDirectionByPoint(touchPos: Point): FlipDirection {
++        const rect = this.getBoundsRect();
++
++        if (this.render.getOrientation() === Orientation.PORTRAIT) {
++            if (touchPos.x - rect.pageWidth <= rect.width / 5) {
++                return FlipDirection.BACK;
++            }
++        } else if (touchPos.x < rect.width / 2) {
++            return FlipDirection.BACK;
++        }
++
++        return FlipDirection.FORWARD;
++    }
++
++    private getAnimationDuration(size: number): number {
++        const defaultTime = this.app.getSettings().flippingTime;
++
++        if (size >= 1000) return defaultTime;
++
++        return (size / 1000) * defaultTime;
++    }
++
++    private checkDirection(direction: FlipDirection): boolean {
++        if (direction === FlipDirection.FORWARD)
++            return this.app.getCurrentPageIndex() < this.app.getPageCount() - 1;
++
++        return this.app.getCurrentPageIndex() >= 1;
++    }
++
++    private reset(): void {
++        this.calc = null;
++        this.flippingPage = null;
++        this.bottomPage = null;
++    }
++
++    private getBoundsRect(): PageRect {
++        return this.render.getRect();
++    }
++
++    private checkState(...states: FlippingState[]): boolean {
++        for (const state of states) {
++            if (this.state === state) return true;
++        }
++
++        return false;
++    }
++
++    private isPointOnCorners(globalPos: Point): boolean {
++        const rect = this.getBoundsRect();
++        const pageWidth = rect.pageWidth;
++
++        const operatingDistance = Math.sqrt(Math.pow(pageWidth, 2) + Math.pow(rect.height, 2)) / 5;
++
++        const bookPos = this.render.convertToBook(globalPos);
++
++        return (
++            bookPos.x > 0 &&
++            bookPos.y > 0 &&
++            bookPos.x < rect.width &&
++            bookPos.y < rect.height &&
++            (bookPos.x < operatingDistance || bookPos.x > rect.width - operatingDistance) &&
++            (bookPos.y < operatingDistance || bookPos.y > rect.height - operatingDistance)
++        );
++    }
++}
+diff --git a/vendor/page-flip/src/Flip/FlipCalculation.ts b/vendor/page-flip/src/Flip/FlipCalculation.ts
+new file mode 100644
+index 0000000..61363e0
+--- /dev/null
++++ b/vendor/page-flip/src/Flip/FlipCalculation.ts
+@@ -0,0 +1,433 @@
++import { Helper } from '../Helper';
++import { Point, Rect, RectPoints, Segment } from '../BasicTypes';
++import { FlipCorner, FlipDirection } from './Flip';
++
++/**
++ * Class representing mathematical methods for calculating page position (rotation angle, clip area ...)
++ */
++export class FlipCalculation {
++    /** Calculated rotation angle to flipping page */
++    private angle: number;
++    /** Calculated position to flipping page */
++    private position: Point;
++
++    private rect: RectPoints;
++
++    /** The point of intersection of the page with the borders of the book */
++    private topIntersectPoint: Point = null; // With top border
++    private sideIntersectPoint: Point = null; // With side border
++    private bottomIntersectPoint: Point = null; // With bottom border
++
++    private readonly pageWidth: number;
++    private readonly pageHeight: number;
++
++    /**
++     * @constructor
++     *
++     * @param {FlipDirection} direction - Flipping direction
++     * @param {FlipCorner} corner - Flipping corner
++     * @param pageWidth - Current page width
++     * @param pageHeight - Current page height
++     */
++    constructor(
++        private direction: FlipDirection,
++        private corner: FlipCorner,
++
++        pageWidth: string,
++        pageHeight: string
++    ) {
++        this.pageWidth = parseInt(pageWidth, 10);
++        this.pageHeight = parseInt(pageHeight, 10);
++    }
++
++    /**
++     * The main calculation method
++     * 
++     * @param {Point} localPos - Touch Point Coordinates (relative active page!)
++     * 
++     * @returns {boolean} True - if the calculations were successful, false if errors occurred
++     */
++    public calc(localPos: Point): boolean {
++        try {
++            // Find: page rotation angle and active corner position
++            this.position = this.calcAngleAndPosition(localPos);
++            // Find the intersection points of the scrolling page and the book
++            this.calculateIntersectPoint(this.position);
++
++            return true;
++        } catch (e) {
++            return false;
++        }
++    }
++
++    /**
++     * Get the crop area for the flipping page
++     * 
++     * @returns {Point[]} Polygon page
++     */
++    public getFlippingClipArea(): Point[] {
++        const result = [];
++        let clipBottom = false;
++
++        result.push(this.rect.topLeft);
++        result.push(this.topIntersectPoint);
++
++        if (this.sideIntersectPoint === null) {
++            clipBottom = true;
++        } else {
++            result.push(this.sideIntersectPoint);
++
++            if (this.bottomIntersectPoint === null) clipBottom = false;
++        }
++
++        result.push(this.bottomIntersectPoint);
++
++        if (clipBottom || this.corner === FlipCorner.BOTTOM) {
++            result.push(this.rect.bottomLeft);
++        }
++
++        return result;
++    }
++
++    /**
++     * Get the crop area for the page that is below the page to be flipped
++     * 
++     * @returns {Point[]} Polygon page
++     */
++    public getBottomClipArea(): Point[] {
++        const result = [];
++
++        result.push(this.topIntersectPoint);
++
++        if (this.corner === FlipCorner.TOP) {
++            result.push({ x: this.pageWidth, y: 0 });
++        } else {
++            if (this.topIntersectPoint !== null) {
++                result.push({ x: this.pageWidth, y: 0 });
++            }
++            result.push({ x: this.pageWidth, y: this.pageHeight });
++        }
++
++        if (this.sideIntersectPoint !== null) {
++            if (
++                Helper.GetDistanceBetweenTwoPoint(
++                    this.sideIntersectPoint,
++                    this.topIntersectPoint
++                ) >= 10
++            )
++                result.push(this.sideIntersectPoint);
++        } else {
++            if (this.corner === FlipCorner.TOP) {
++                result.push({ x: this.pageWidth, y: this.pageHeight });
++            }
++        }
++
++        result.push(this.bottomIntersectPoint);
++        result.push(this.topIntersectPoint);
++
++        return result;
++    }
++
++    /**
++     * Get page rotation angle
++     */
++    public getAngle(): number {
++        if (this.direction === FlipDirection.FORWARD) {
++            return -this.angle;
++        }
++
++        return this.angle;
++    }
++
++    /**
++     * Get page area while flipping
++     */
++    public getRect(): RectPoints {
++        return this.rect;
++    }
++
++    /**
++     * Get the position of the active angle when turning
++     */
++    public getPosition(): Point {
++        return this.position;
++    }
++
++    /**
++     * Get the active corner of the page (which pull)
++     */
++    public getActiveCorner(): Point {
++        if (this.direction === FlipDirection.FORWARD) {
++            return this.rect.topLeft;
++        }
++
++        return this.rect.topRight;
++    }
++
++    /**
++     * Get flipping direction
++     */
++    public getDirection(): FlipDirection {
++        return this.direction;
++    }
++
++    /**
++     * Get flipping progress (0-100)
++     */
++    public getFlippingProgress(): number {
++        return Math.abs(((this.position.x - this.pageWidth) / (2 * this.pageWidth)) * 100);
++    }
++    
++    /**
++     * Get flipping corner position (top, bottom)
++     */
++    public getCorner(): FlipCorner {
++        return this.corner;
++    }
++
++    /**
++     * Get start position for the page that is below the page to be flipped
++     */
++    public getBottomPagePosition(): Point {
++        if (this.direction === FlipDirection.BACK) {
++            return { x: this.pageWidth, y: 0 };
++        }
++
++        return { x: 0, y: 0 };
++    }
++
++    /**
++     * Get the starting position of the shadow
++     */
++    public getShadowStartPoint(): Point {
++        if (this.corner === FlipCorner.TOP) {
++            return this.topIntersectPoint;
++        } else {
++            if (this.sideIntersectPoint !== null) return this.sideIntersectPoint;
++
++            return this.topIntersectPoint;
++        }
++    }
++
++    /**
++     * Get the rotate angle of the shadow
++     */
++    public getShadowAngle(): number {
++        const angle = Helper.GetAngleBetweenTwoLine(this.getSegmentToShadowLine(), [
++            { x: 0, y: 0 },
++            { x: this.pageWidth, y: 0 },
++        ]);
++
++        if (this.direction === FlipDirection.FORWARD) {
++            return angle;
++        }
++
++        return Math.PI - angle;
++    }
++
++    private calcAngleAndPosition(pos: Point): Point {
++        let result = pos;
++
++        this.updateAngleAndGeometry(result);
++
++        if (this.corner === FlipCorner.TOP) {
++            result = this.checkPositionAtCenterLine(
++                result,
++                { x: 0, y: 0 },
++                { x: 0, y: this.pageHeight }
++            );
++        } else {
++            result = this.checkPositionAtCenterLine(
++                result,
++                { x: 0, y: this.pageHeight },
++                { x: 0, y: 0 }
++            );
++        }
++
++        if (Math.abs(result.x - this.pageWidth) < 1 && Math.abs(result.y) < 1) {
++            throw new Error('Point is too small');
++        }
++
++        return result;
++    }
++
++    private updateAngleAndGeometry(pos: Point): void {
++        this.angle = this.calculateAngle(pos);
++        this.rect = this.getPageRect(pos);
++    }
++
++    private calculateAngle(pos: Point): number {
++        const left = this.pageWidth - pos.x + 1;
++        const top = this.corner === FlipCorner.BOTTOM ? this.pageHeight - pos.y : pos.y;
++
++        let angle = 2 * Math.acos(left / Math.sqrt(top * top + left * left));
++
++        if (top < 0) angle = -angle;
++
++        const da = Math.PI - angle;
++        if (!isFinite(angle) || (da >= 0 && da < 0.003))
++            throw new Error('The G point is too small');
++
++        if (this.corner === FlipCorner.BOTTOM) angle = -angle;
++
++        return angle;
++    }
++
++
++    private getPageRect(localPos: Point): RectPoints {
++        if (this.corner === FlipCorner.TOP) {
++            return this.getRectFromBasePoint(
++                [
++                    { x: 0, y: 0 },
++                    { x: this.pageWidth, y: 0 },
++                    { x: 0, y: this.pageHeight },
++                    { x: this.pageWidth, y: this.pageHeight },
++                ],
++                localPos
++            );
++        }
++
++        return this.getRectFromBasePoint(
++            [
++                { x: 0, y: -this.pageHeight },
++                { x: this.pageWidth, y: -this.pageHeight },
++                { x: 0, y: 0 },
++                { x: this.pageWidth, y: 0 },
++            ],
++            localPos
++        );
++    }
++
++    private getRectFromBasePoint(points: Point[], localPos: Point): RectPoints {
++        return {
++            topLeft: this.getRotatedPoint(points[0], localPos),
++            topRight: this.getRotatedPoint(points[1], localPos),
++            bottomLeft: this.getRotatedPoint(points[2], localPos),
++            bottomRight: this.getRotatedPoint(points[3], localPos),
++        };
++    }
++
++    private getRotatedPoint(transformedPoint: Point, startPoint: Point): Point {
++        return {
++            x:
++                transformedPoint.x * Math.cos(this.angle) +
++                transformedPoint.y * Math.sin(this.angle) +
++                startPoint.x,
++            y:
++                transformedPoint.y * Math.cos(this.angle) -
++                transformedPoint.x * Math.sin(this.angle) +
++                startPoint.y,
++        };
++    }
++
++    private calculateIntersectPoint(pos: Point): void {
++        const boundRect: Rect = {
++            left: -1,
++            top: -1,
++            width: this.pageWidth + 2,
++            height: this.pageHeight + 2,
++        };
++
++        if (this.corner === FlipCorner.TOP) {
++            this.topIntersectPoint = Helper.GetIntersectBetweenTwoSegment(
++                boundRect,
++                [pos, this.rect.topRight],
++                [
++                    { x: 0, y: 0 },
++                    { x: this.pageWidth, y: 0 },
++                ]
++            );
++
++            this.sideIntersectPoint = Helper.GetIntersectBetweenTwoSegment(
++                boundRect,
++                [pos, this.rect.bottomLeft],
++                [
++                    { x: this.pageWidth, y: 0 },
++                    { x: this.pageWidth, y: this.pageHeight },
++                ]
++            );
++
++            this.bottomIntersectPoint = Helper.GetIntersectBetweenTwoSegment(
++                boundRect,
++                [this.rect.bottomLeft, this.rect.bottomRight],
++                [
++                    { x: 0, y: this.pageHeight },
++                    { x: this.pageWidth, y: this.pageHeight },
++                ]
++            );
++        } else {
++            this.topIntersectPoint = Helper.GetIntersectBetweenTwoSegment(
++                boundRect,
++                [this.rect.topLeft, this.rect.topRight],
++                [
++                    { x: 0, y: 0 },
++                    { x: this.pageWidth, y: 0 },
++                ]
++            );
++
++            this.sideIntersectPoint = Helper.GetIntersectBetweenTwoSegment(
++                boundRect,
++                [pos, this.rect.topLeft],
++                [
++                    { x: this.pageWidth, y: 0 },
++                    { x: this.pageWidth, y: this.pageHeight },
++                ]
++            );
++
++            this.bottomIntersectPoint = Helper.GetIntersectBetweenTwoSegment(
++                boundRect,
++                [this.rect.bottomLeft, this.rect.bottomRight],
++                [
++                    { x: 0, y: this.pageHeight },
++                    { x: this.pageWidth, y: this.pageHeight },
++                ]
++            );
++        }
++    }
++
++    private checkPositionAtCenterLine(
++        checkedPos: Point,
++        centerOne: Point,
++        centerTwo: Point
++    ): Point {
++        let result = checkedPos;
++
++        const tmp = Helper.LimitPointToCircle(centerOne, this.pageWidth, result);
++        if (result !== tmp) {
++            result = tmp;
++            this.updateAngleAndGeometry(result);
++        }
++
++        const rad = Math.sqrt(Math.pow(this.pageWidth, 2) + Math.pow(this.pageHeight, 2));
++
++        let checkPointOne = this.rect.bottomRight;
++        let checkPointTwo = this.rect.topLeft;
++
++        if (this.corner === FlipCorner.BOTTOM) {
++            checkPointOne = this.rect.topRight;
++            checkPointTwo = this.rect.bottomLeft;
++        }
++
++        if (checkPointOne.x <= 0) {
++            const bottomPoint = Helper.LimitPointToCircle(centerTwo, rad, checkPointTwo);
++
++            if (bottomPoint !== result) {
++                result = bottomPoint;
++                this.updateAngleAndGeometry(result);
++            }
++        }
++
++        return result;
++    }
++
++    private getSegmentToShadowLine(): Segment {
++        const first = this.getShadowStartPoint();
++
++        const second =
++            first !== this.sideIntersectPoint && this.sideIntersectPoint !== null
++                ? this.sideIntersectPoint
++                : this.bottomIntersectPoint;
++
++        return [first, second];
++    }
++}
+diff --git a/vendor/page-flip/src/Helper.ts b/vendor/page-flip/src/Helper.ts
+new file mode 100644
+index 0000000..d5ac4fc
+--- /dev/null
++++ b/vendor/page-flip/src/Helper.ts
+@@ -0,0 +1,203 @@
++import { Point, Rect, Segment } from './BasicTypes';
++
++/**
++ * A class containing helping mathematical methods
++ */
++export class Helper {
++    /**
++     * Get the distance between two points
++     *
++     * @param {Point} point1
++     * @param {Point} point2
++     */
++    public static GetDistanceBetweenTwoPoint(point1: Point, point2: Point): number {
++        if (point1 === null || point2 === null) {
++            return Infinity;
++        }
++
++        return Math.sqrt(Math.pow(point2.x - point1.x, 2) + Math.pow(point2.y - point1.y, 2));
++    }
++
++    /**
++     * Get the length of the line segment
++     *
++     * @param {Segment} segment
++     */
++    public static GetSegmentLength(segment: Segment): number {
++        return Helper.GetDistanceBetweenTwoPoint(segment[0], segment[1]);
++    }
++
++    /**
++     * Get the angle between two lines
++     *
++     * @param {Segment} line1
++     * @param {Segment} line2
++     */
++    public static GetAngleBetweenTwoLine(line1: Segment, line2: Segment): number {
++        const A1 = line1[0].y - line1[1].y;
++        const A2 = line2[0].y - line2[1].y;
++
++        const B1 = line1[1].x - line1[0].x;
++        const B2 = line2[1].x - line2[0].x;
++
++        return Math.acos((A1 * A2 + B1 * B2) / (Math.sqrt(A1 * A1 + B1 * B1) * Math.sqrt(A2 * A2 + B2 * B2)));
++    }
++
++    /**
++     * Check for a point in a rectangle
++     *
++     * @param {Rect} rect
++     * @param {Point} pos
++     *
++     * @returns {Point} If the point enters the rectangle its coordinates will be returned, otherwise - null
++     */
++    public static PointInRect(rect: Rect, pos: Point): Point {
++        if (pos === null) {
++            return null;
++        }
++
++        if (
++            pos.x >= rect.left &&
++            pos.x <= rect.width + rect.left &&
++            pos.y >= rect.top &&
++            pos.y <= rect.top + rect.height
++        ) {
++            return pos;
++        }
++        return null;
++    }
++
++    /**
++     * Transform point coordinates to a given angle
++     *
++     * @param {Point} transformedPoint - Point to rotate
++     * @param {Point} startPoint - Transformation reference point
++     * @param {number} angle - Rotation angle (in radians)
++     *
++     * @returns {Point} Point coordinates after rotation
++     */
++    public static GetRotatedPoint(transformedPoint: Point, startPoint: Point, angle: number): Point {
++        return {
++            x: transformedPoint.x * Math.cos(angle) + transformedPoint.y * Math.sin(angle) + startPoint.x,
++            y: transformedPoint.y * Math.cos(angle) - transformedPoint.x * Math.sin(angle) + startPoint.y,
++        };
++    }
++
++    /**
++     * Limit a point "linePoint" to a given circle centered at point "startPoint" and a given radius
++     *
++     * @param {Point} startPoint - Circle center
++     * @param {number} radius - Circle radius
++     * @param {Point} limitedPoint - Сhecked point
++     *
++     * @returns {Point} If "linePoint" enters the circle, then its coordinates are returned.
++     * Else will be returned the intersection point between the line ([startPoint, linePoint]) and the circle
++     */
++    public static LimitPointToCircle(startPoint: Point, radius: number, limitedPoint: Point): Point {
++        // If "linePoint" enters the circle, do nothing
++        if (Helper.GetDistanceBetweenTwoPoint(startPoint, limitedPoint) <= radius) {
++            return limitedPoint;
++        }
++
++        const a = startPoint.x;
++        const b = startPoint.y;
++        const n = limitedPoint.x;
++        const m = limitedPoint.y;
++
++        // Find the intersection between the line at two points: (startPoint and limitedPoint) and the circle.
++        let x = Math.sqrt((Math.pow(radius, 2) * Math.pow(a - n, 2)) / (Math.pow(a - n, 2) + Math.pow(b - m, 2))) + a;
++        if (limitedPoint.x < 0) {
++            x *= -1;
++        }
++
++        let y = ((x - a) * (b - m)) / (a - n) + b;
++        if (a - n + b === 0) {
++            y = radius;
++        }
++
++        return { x, y };
++    }
++
++    /**
++     * Find the intersection of two lines bounded by a rectangle "rectBorder"
++     *
++     * @param {Rect} rectBorder
++     * @param {Segment} one
++     * @param {Segment} two
++     *
++     * @returns {Point} The intersection point, or "null" if it does not exist, or it lies outside the rectangle "rectBorder"
++     */
++    public static GetIntersectBetweenTwoSegment(rectBorder: Rect, one: Segment, two: Segment): Point {
++        return Helper.PointInRect(rectBorder, Helper.GetIntersectBeetwenTwoLine(one, two));
++    }
++
++    /**
++     * Find the intersection point of two lines
++     *
++     * @param one
++     * @param two
++     *
++     * @returns {Point} The intersection point, or "null" if it does not exist
++     * @throws Error if the segments are on the same line
++     */
++    public static GetIntersectBeetwenTwoLine(one: Segment, two: Segment): Point {
++        const A1 = one[0].y - one[1].y;
++        const A2 = two[0].y - two[1].y;
++
++        const B1 = one[1].x - one[0].x;
++        const B2 = two[1].x - two[0].x;
++
++        const C1 = one[0].x * one[1].y - one[1].x * one[0].y;
++        const C2 = two[0].x * two[1].y - two[1].x * two[0].y;
++
++        const det1 = A1 * C2 - A2 * C1;
++        const det2 = B1 * C2 - B2 * C1;
++
++        const x = -((C1 * B2 - C2 * B1) / (A1 * B2 - A2 * B1));
++        const y = -((A1 * C2 - A2 * C1) / (A1 * B2 - A2 * B1));
++
++        if (isFinite(x) && isFinite(y)) {
++            return { x, y };
++        } else {
++            if (Math.abs(det1 - det2) < 0.1) throw new Error('Segment included');
++        }
++
++        return null;
++    }
++
++    /**
++     * Get a list of coordinates (step: 1px) between two points
++     *
++     * @param pointOne
++     * @param pointTwo
++     *
++     * @returns {Point[]}
++     */
++    public static GetCordsFromTwoPoint(pointOne: Point, pointTwo: Point): Point[] {
++        const sizeX = Math.abs(pointOne.x - pointTwo.x);
++        const sizeY = Math.abs(pointOne.y - pointTwo.y);
++
++        const lengthLine = Math.max(sizeX, sizeY);
++
++        const result: Point[] = [pointOne];
++
++        function getCord(c1: number, c2: number, size: number, length: number, index: number): number {
++            if (c2 > c1) {
++                return c1 + index * (size / length);
++            } else if (c2 < c1) {
++                return c1 - index * (size / length);
++            }
++
++            return c1;
++        }
++
++        for (let i = 1; i <= lengthLine; i += 1) {
++            result.push({
++                x: getCord(pointOne.x, pointTwo.x, sizeX, lengthLine, i),
++                y: getCord(pointOne.y, pointTwo.y, sizeY, lengthLine, i),
++            });
++        }
++
++        return result;
++    }
++}
+diff --git a/vendor/page-flip/src/Page/HTMLPage.ts b/vendor/page-flip/src/Page/HTMLPage.ts
+new file mode 100644
+index 0000000..f077a84
+--- /dev/null
++++ b/vendor/page-flip/src/Page/HTMLPage.ts
+@@ -0,0 +1,176 @@
++import { Page, PageDensity, PageOrientation } from './Page';
++import { Render } from '../Render/Render';
++import { Helper } from '../Helper';
++import { FlipDirection } from '../Flip/Flip';
++import { Point } from '../BasicTypes';
++
++/**
++ * Class representing a book page as a HTML Element
++ */
++export class HTMLPage extends Page {
++    private readonly element: HTMLElement;
++    private copiedElement: HTMLElement = null;
++
++    private temporaryCopy: Page = null;
++
++    private isLoad = false;
++
++    constructor(render: Render, element: HTMLElement, density: PageDensity) {
++        super(render, density);
++
++        this.element = element;
++        this.element.classList.add('stf__item');
++        this.element.classList.add('--' + density);
++    }
++
++    public newTemporaryCopy(): Page {
++        if (this.nowDrawingDensity === PageDensity.HARD) {
++            return this;
++        }
++
++        if (this.temporaryCopy === null) {
++            this.copiedElement = this.element.cloneNode(true) as HTMLElement;
++            this.element.parentElement.appendChild(this.copiedElement);
++
++            this.temporaryCopy = new HTMLPage(
++                this.render,
++                this.copiedElement,
++                this.nowDrawingDensity
++            );
++        }
++
++        return this.getTemporaryCopy();
++    }
++
++    public getTemporaryCopy(): Page {
++        return this.temporaryCopy;
++    }
++
++    public hideTemporaryCopy(): void {
++        if (this.temporaryCopy !== null) {
++            this.copiedElement.remove();
++            this.copiedElement = null;
++            this.temporaryCopy = null;
++        }
++    }
++
++    public draw(tempDensity?: PageDensity): void {
++        const density = tempDensity ? tempDensity : this.nowDrawingDensity;
++
++        const pagePos = this.render.convertToGlobal(this.state.position);
++        const pageWidth = this.render.getRect().pageWidth;
++        const pageHeight = this.render.getRect().height;
++
++        this.element.classList.remove('--simple');
++
++        const commonStyle = `
++            display: block;
++            z-index: ${this.element.style.zIndex};
++            left: 0;
++            top: 0;
++            width: ${pageWidth}px;
++            height: ${pageHeight}px;
++        `;
++
++        density === PageDensity.HARD
++            ? this.drawHard(commonStyle)
++            : this.drawSoft(pagePos, commonStyle);
++    }
++
++    private drawHard(commonStyle = ''): void {
++        const pos = this.render.getRect().left + this.render.getRect().width / 2;
++
++        const angle = this.state.hardDrawingAngle;
++
++        const newStyle =
++            commonStyle +
++            `
++                backface-visibility: hidden;
++                -webkit-backface-visibility: hidden;
++                clip-path: none;
++                -webkit-clip-path: none;
++            ` +
++            (this.orientation === PageOrientation.LEFT
++                ? `transform-origin: ${this.render.getRect().pageWidth}px 0; 
++                   transform: translate3d(0, 0, 0) rotateY(${angle}deg);`
++                : `transform-origin: 0 0; 
++                   transform: translate3d(${pos}px, 0, 0) rotateY(${angle}deg);`);
++
++        this.element.style.cssText = newStyle;
++    }
++
++    private drawSoft(position: Point, commonStyle = ''): void {
++        let polygon = 'polygon( ';
++        for (const p of this.state.area) {
++            if (p !== null) {
++                let g =
++                    this.render.getDirection() === FlipDirection.BACK
++                        ? {
++                              x: -p.x + this.state.position.x,
++                              y: p.y - this.state.position.y,
++                          }
++                        : {
++                              x: p.x - this.state.position.x,
++                              y: p.y - this.state.position.y,
++                          };
++
++                g = Helper.GetRotatedPoint(g, { x: 0, y: 0 }, this.state.angle);
++                polygon += g.x + 'px ' + g.y + 'px, ';
++            }
++        }
++        polygon = polygon.slice(0, -2);
++        polygon += ')';
++
++        const newStyle =
++            commonStyle +
++            `transform-origin: 0 0; clip-path: ${polygon}; -webkit-clip-path: ${polygon};` +
++            (this.render.isSafari() && this.state.angle === 0
++                ? `transform: translate(${position.x}px, ${position.y}px);`
++                : `transform: translate3d(${position.x}px, ${position.y}px, 0) rotate(${this.state.angle}rad);`);
++
++        this.element.style.cssText = newStyle;
++    }
++
++    public simpleDraw(orient: PageOrientation): void {
++        const rect = this.render.getRect();
++
++        const pageWidth = rect.pageWidth;
++        const pageHeight = rect.height;
++
++        const x = orient === PageOrientation.RIGHT ? rect.left + rect.pageWidth : rect.left;
++
++        const y = rect.top;
++
++        this.element.classList.add('--simple');
++        this.element.style.cssText = `
++            position: absolute; 
++            display: block; 
++            height: ${pageHeight}px; 
++            left: ${x}px; 
++            top: ${y}px; 
++            width: ${pageWidth}px; 
++            z-index: ${this.render.getSettings().startZIndex + 1};`;
++    }
++
++    public getElement(): HTMLElement {
++        return this.element;
++    }
++
++    public load(): void {
++        this.isLoad = true;
++    }
++
++    public setOrientation(orientation: PageOrientation): void {
++        super.setOrientation(orientation);
++        this.element.classList.remove('--left', '--right');
++
++        this.element.classList.add(orientation === PageOrientation.RIGHT ? '--right' : '--left');
++    }
++
++    public setDrawingDensity(density: PageDensity): void {
++        this.element.classList.remove('--soft', '--hard');
++        this.element.classList.add('--' + density);
++
++        super.setDrawingDensity(density);
++    }
++}
+diff --git a/vendor/page-flip/src/Page/ImagePage.ts b/vendor/page-flip/src/Page/ImagePage.ts
+new file mode 100644
+index 0000000..536fe9d
+--- /dev/null
++++ b/vendor/page-flip/src/Page/ImagePage.ts
+@@ -0,0 +1,126 @@
++import { CanvasRender } from '../Render/CanvasRender';
++import { Page, PageDensity, PageOrientation } from './Page';
++import { Render } from '../Render/Render';
++import { Point } from '../BasicTypes';
++
++/**
++ * Class representing a book page as an image on Canvas
++ */
++export class ImagePage extends Page {
++    private readonly image: HTMLImageElement = null;
++    private isLoad = false;
++
++    private loadingAngle = 0;
++
++    constructor(render: Render, href: string, density: PageDensity) {
++        super(render, density);
++
++        this.image = new Image();
++        this.image.src = href;
++    }
++
++    public draw(tempDensity?: PageDensity): void {
++        const ctx = (this.render as CanvasRender).getContext();
++
++        const pagePos = this.render.convertToGlobal(this.state.position);
++        const pageWidth = this.render.getRect().pageWidth;
++        const pageHeight = this.render.getRect().height;
++
++        ctx.save();
++        ctx.translate(pagePos.x, pagePos.y);
++        ctx.beginPath();
++
++        for (let p of this.state.area) {
++            if (p !== null) {
++                p = this.render.convertToGlobal(p);
++                ctx.lineTo(p.x - pagePos.x, p.y - pagePos.y);
++            }
++        }
++
++        ctx.rotate(this.state.angle);
++
++        ctx.clip();
++
++        if (!this.isLoad) {
++            this.drawLoader(ctx, { x: 0, y: 0 }, pageWidth, pageHeight);
++        } else {
++            ctx.drawImage(this.image, 0, 0, pageWidth, pageHeight);
++        }
++
++        ctx.restore();
++    }
++
++    public simpleDraw(orient: PageOrientation): void {
++        const rect = this.render.getRect();
++        const ctx = (this.render as CanvasRender).getContext();
++
++        const pageWidth = rect.pageWidth;
++        const pageHeight = rect.height;
++
++        const x = orient === PageOrientation.RIGHT ? rect.left + rect.pageWidth : rect.left;
++
++        const y = rect.top;
++
++        if (!this.isLoad) {
++            this.drawLoader(ctx, { x, y }, pageWidth, pageHeight);
++        } else {
++            ctx.drawImage(this.image, x, y, pageWidth, pageHeight);
++        }
++    }
++
++    private drawLoader(
++        ctx: CanvasRenderingContext2D,
++        shiftPos: Point,
++        pageWidth: number,
++        pageHeight: number
++    ): void {
++        ctx.beginPath();
++        ctx.strokeStyle = 'rgb(200, 200, 200)';
++        ctx.fillStyle = 'rgb(255, 255, 255)';
++        ctx.lineWidth = 1;
++        ctx.rect(shiftPos.x + 1, shiftPos.y + 1, pageWidth - 1, pageHeight - 1);
++        ctx.stroke();
++        ctx.fill();
++
++        const middlePoint: Point = {
++            x: shiftPos.x + pageWidth / 2,
++            y: shiftPos.y + pageHeight / 2,
++        };
++
++        ctx.beginPath();
++        ctx.lineWidth = 10;
++        ctx.arc(
++            middlePoint.x,
++            middlePoint.y,
++            20,
++            this.loadingAngle,
++            (3 * Math.PI) / 2 + this.loadingAngle
++        );
++        ctx.stroke();
++        ctx.closePath();
++
++        this.loadingAngle += 0.07;
++        if (this.loadingAngle >= 2 * Math.PI) {
++            this.loadingAngle = 0;
++        }
++    }
++
++    public load(): void {
++        if (!this.isLoad)
++            this.image.onload = (): void => {
++                this.isLoad = true;
++            };
++    }
++
++    public newTemporaryCopy(): Page {
++        return this;
++    }
++
++    public getTemporaryCopy(): Page {
++        return this;
++    }
++
++    public hideTemporaryCopy(): void {
++        return;
++    }
++}
+diff --git a/vendor/page-flip/src/Page/Page.ts b/vendor/page-flip/src/Page/Page.ts
+new file mode 100644
+index 0000000..288b402
+--- /dev/null
++++ b/vendor/page-flip/src/Page/Page.ts
+@@ -0,0 +1,186 @@
++import { Render } from '../Render/Render';
++import { Point } from '../BasicTypes';
++
++/**
++ * State of the page on the basis of which rendering
++ */
++export interface PageState {
++    /** Page rotation angle */
++    angle: number;
++
++    /** Page scope */
++    area: Point[];
++
++    /** Page position */
++    position: Point;
++
++    /** Rotate angle for hard pages */
++    hardAngle: number;
++
++    /** Rotate angle for hard pages at renedering time */
++    hardDrawingAngle: number;
++}
++
++export const enum PageOrientation {
++    /** Left side page */
++    LEFT,
++
++    /** Right side page */
++    RIGHT,
++}
++
++export const enum PageDensity {
++    SOFT = 'soft',
++    HARD = 'hard',
++}
++
++/**
++ * Class representing a book page
++ */
++export abstract class Page {
++    /** State of the page on the basis of which rendering */
++    protected state: PageState;
++    /** Render object */
++    protected render: Render;
++
++    /** Page Orientation */
++    protected orientation: PageOrientation;
++
++    /** Density at creation */
++    protected createdDensity: PageDensity;
++    /** Density at the time of rendering (Depends on neighboring pages) */
++    protected nowDrawingDensity: PageDensity;
++
++    protected constructor(render: Render, density: PageDensity) {
++        this.state = {
++            angle: 0,
++            area: [],
++            position: { x: 0, y: 0 },
++            hardAngle: 0,
++            hardDrawingAngle: 0,
++        };
++
++        this.createdDensity = density;
++        this.nowDrawingDensity = this.createdDensity;
++
++        this.render = render;
++    }
++
++    /**
++     * Render static page
++     * 
++     * @param {PageOrientation} orient - Static page orientation
++     */
++    public abstract simpleDraw(orient: PageOrientation): void;
++
++    /**
++     * Render dynamic page, using state
++     * 
++     * @param {PageDensity} tempDensity - Density at the time of rendering 
++     */
++    public abstract draw(tempDensity?: PageDensity): void;
++
++    /**
++     * Page loading
++     */
++    public abstract load(): void;
++
++    /**
++     * Set a constant page density
++     * 
++     * @param {PageDensity} density 
++     */
++    public setDensity(density: PageDensity): void {
++        this.createdDensity = density;
++        this.nowDrawingDensity = density;
++    }
++
++    /**
++     * Set temp page density to next render
++     * 
++     * @param {PageDensity}  density 
++     */
++    public setDrawingDensity(density: PageDensity): void {
++        this.nowDrawingDensity = density;
++    }
++
++    /**
++     * Set page position
++     * 
++     * @param {Point} pagePos 
++     */
++    public setPosition(pagePos: Point): void {
++        this.state.position = pagePos;
++    }
++
++    /**
++     * Set page angle
++     * 
++     * @param {number} angle 
++     */
++    public setAngle(angle: number): void {
++        this.state.angle = angle;
++    }
++
++    /**
++     * Set page crop area
++     * 
++     * @param {Point[]} area 
++     */
++    public setArea(area: Point[]): void {
++        this.state.area = area;
++    }
++
++    /**
++     * Rotate angle for hard pages to next render
++     * 
++     * @param {number} angle 
++     */
++    public setHardDrawingAngle(angle: number): void {
++        this.state.hardDrawingAngle = angle;
++    }
++
++    /**
++     * Rotate angle for hard pages
++     * 
++     * @param {number} angle 
++     */
++    public setHardAngle(angle: number): void {
++        this.state.hardAngle = angle;
++        this.state.hardDrawingAngle = angle;
++    }
++
++    /**
++     * Set page orientation
++     * 
++     * @param {PageOrientation} orientation 
++     */
++    public setOrientation(orientation: PageOrientation): void {
++        this.orientation = orientation;
++    }
++
++    /**
++     * Get temp page density
++     */
++    public getDrawingDensity(): PageDensity {
++        return this.nowDrawingDensity;
++    }
++
++    /**
++     * Get a constant page density
++     */
++    public getDensity(): PageDensity {
++        return this.createdDensity;
++    }
++    
++    /**
++     * Get rotate angle for hard pages
++     */
++    public getHardAngle(): number {
++        return this.state.hardAngle;
++    }
++
++    public abstract newTemporaryCopy(): Page;
++    public abstract getTemporaryCopy(): Page;
++    public abstract hideTemporaryCopy(): void;
++}
+diff --git a/vendor/page-flip/src/PageFlip.ts b/vendor/page-flip/src/PageFlip.ts
+new file mode 100644
+index 0000000..946a625
+--- /dev/null
++++ b/vendor/page-flip/src/PageFlip.ts
+@@ -0,0 +1,428 @@
++import { PageCollection } from './Collection/PageCollection';
++import { ImagePageCollection } from './Collection/ImagePageCollection';
++import { HTMLPageCollection } from './Collection/HTMLPageCollection';
++import { PageRect, Point } from './BasicTypes';
++import { Flip, FlipCorner, FlippingState } from './Flip/Flip';
++import { Orientation, Render } from './Render/Render';
++import { CanvasRender } from './Render/CanvasRender';
++import { HTMLUI } from './UI/HTMLUI';
++import { CanvasUI } from './UI/CanvasUI';
++import { Helper } from './Helper';
++import { Page } from './Page/Page';
++import { EventObject } from './Event/EventObject';
++import { HTMLRender } from './Render/HTMLRender';
++import { FlipSetting, Settings } from './Settings';
++import { UI } from './UI/UI';
++
++import './Style/stPageFlip.css';
++
++/**
++ * Class representing a main PageFlip object
++ *
++ * @extends EventObject
++ */
++export class PageFlip extends EventObject {
++    private mousePosition: Point;
++    private isUserTouch = false;
++    private isUserMove = false;
++
++    private readonly setting: FlipSetting = null;
++    private readonly block: HTMLElement; // Root HTML Element
++
++    private pages: PageCollection = null;
++    private flipController: Flip;
++    private render: Render;
++
++    private ui: UI;
++    private initTimer: ReturnType<typeof setTimeout> | null = null;
++    private destroyed = false;
++
++    /**
++     * Create a new PageFlip instance
++     *
++     * @constructor
++     * @param {HTMLElement} inBlock - Root HTML Element
++     * @param {Object} setting - Configuration object
++     */
++    constructor(inBlock: HTMLElement, setting: Partial<FlipSetting>) {
++        super();
++
++        this.setting = new Settings().getSettings(setting);
++        this.block = inBlock;
++    }
++
++    /**
++     * Destructor. Remove a root HTML element and all event handlers
++     */
++    public destroy(): void {
++        if (this.destroyed) return;
++        this.destroyed = true;
++        if (this.initTimer !== null) clearTimeout(this.initTimer);
++        this.initTimer = null;
++        this.isUserTouch = false;
++        this.isUserMove = false;
++        this.render?.destroy();
++        this.ui?.destroy();
++        this.pages?.destroy();
++        this.block.remove();
++    }
++
++    /**
++     * Update the render area. Re-show current page.
++     */
++    public update(): void {
++        this.render.update();
++        this.pages.show();
++    }
++
++    /**
++     * Load pages from images on the Canvas mode
++     *
++     * @param {string[]} imagesHref - List of paths to images
++     */
++    public loadFromImages(imagesHref: string[]): void {
++        this.ui = new CanvasUI(this.block, this, this.setting);
++
++        const canvas = (this.ui as CanvasUI).getCanvas();
++        this.render = new CanvasRender(this, this.setting, canvas);
++
++        this.flipController = new Flip(this.render, this);
++
++        this.pages = new ImagePageCollection(this, this.render, imagesHref);
++        this.pages.load();
++
++        this.render.start();
++
++        this.pages.show(this.setting.startPage);
++
++        // safari fix
++        this.initTimer = setTimeout(() => {
++            this.initTimer = null;
++            if (this.destroyed) return;
++            this.ui.update();
++            this.trigger('init', this, {
++                page: this.setting.startPage,
++                mode: this.render.getOrientation(),
++            });
++        }, 1);
++    }
++
++    /**
++     * Load pages from HTML elements on the HTML mode
++     *
++     * @param {(NodeListOf<HTMLElement>|HTMLElement[])} items - List of pages as HTML Element
++     */
++    public loadFromHTML(items: NodeListOf<HTMLElement> | HTMLElement[]): void {
++        this.ui = new HTMLUI(this.block, this, this.setting, items);
++
++        this.render = new HTMLRender(this, this.setting, this.ui.getDistElement());
++
++        this.flipController = new Flip(this.render, this);
++
++        this.pages = new HTMLPageCollection(this, this.render, this.ui.getDistElement(), items);
++        this.pages.load();
++
++        this.render.start();
++
++        this.pages.show(this.setting.startPage);
++
++        // safari fix
++        this.initTimer = setTimeout(() => {
++            this.initTimer = null;
++            if (this.destroyed) return;
++            this.ui.update();
++            this.trigger('init', this, {
++                page: this.setting.startPage,
++                mode: this.render.getOrientation(),
++            });
++        }, 1);
++    }
++
++    /**
++     * Update current pages from images
++     *
++     * @param {string[]} imagesHref - List of paths to images
++     */
++    public updateFromImages(imagesHref: string[]): void {
++        const current = this.pages.getCurrentPageIndex();
++
++        this.pages.destroy();
++        this.pages = new ImagePageCollection(this, this.render, imagesHref);
++        this.pages.load();
++
++        this.pages.show(current);
++        this.trigger('update', this, {
++            page: current,
++            mode: this.render.getOrientation(),
++        });
++    }
++
++    /**
++     * Update current pages from HTML
++     *
++     * @param {(NodeListOf<HTMLElement>|HTMLElement[])} items - List of pages as HTML Element
++     */
++    public updateFromHtml(items: NodeListOf<HTMLElement> | HTMLElement[]): void {
++        const current = this.pages.getCurrentPageIndex();
++
++        this.pages.destroy();
++        this.pages = new HTMLPageCollection(this, this.render, this.ui.getDistElement(), items);
++        this.pages.load();
++        (this.ui as HTMLUI).updateItems(items);
++        this.render.reload();
++
++        this.pages.show(current);
++        this.trigger('update', this, {
++            page: current,
++            mode: this.render.getOrientation(),
++        });
++    }
++
++    /**
++     * Clear pages from HTML (remove to initinalState)
++     */
++    public clear(): void {
++        this.pages.destroy();
++        (this.ui as HTMLUI).clear();
++    }
++
++    /**
++     * Turn to the previous page (without animation)
++     */
++    public turnToPrevPage(): void {
++        this.pages.showPrev();
++    }
++
++    /**
++     * Turn to the next page (without animation)
++     */
++    public turnToNextPage(): void {
++        this.pages.showNext();
++    }
++
++    /**
++     * Turn to the specified page number (without animation)
++     *
++     * @param {number} page - New page number
++     */
++    public turnToPage(page: number): void {
++        this.pages.show(page);
++    }
++
++    /**
++     * Turn to the next page (with animation)
++     *
++     * @param {FlipCorner} corner - Active page corner when turning
++     */
++    public flipNext(corner: FlipCorner = FlipCorner.TOP): void {
++        this.flipController.flipNext(corner);
++    }
++
++    /**
++     * Turn to the prev page (with animation)
++     *
++     * @param {FlipCorner} corner - Active page corner when turning
++     */
++    public flipPrev(corner: FlipCorner = FlipCorner.TOP): void {
++        this.flipController.flipPrev(corner);
++    }
++
++    /**
++     * Turn to the specified page number (with animation)
++     *
++     * @param {number} page - New page number
++     * @param {FlipCorner} corner - Active page corner when turning
++     */
++    public flip(page: number, corner: FlipCorner = FlipCorner.TOP): void {
++        this.flipController.flipToPage(page, corner);
++    }
++
++    /**
++     * Call a state change event trigger
++     *
++     * @param {FlippingState} newState - New  state of the object
++     */
++    public updateState(newState: FlippingState): void {
++        this.trigger('changeState', this, newState);
++    }
++
++    /**
++     * Call a page number change event trigger
++     *
++     * @param {number} newPage - New page Number
++     */
++    public updatePageIndex(newPage: number): void {
++        this.trigger('flip', this, newPage);
++    }
++
++    /**
++     * Call a page orientation change event trigger. Update UI and rendering area
++     *
++     * @param {Orientation} newOrientation - New page orientation (portrait, landscape)
++     */
++    public updateOrientation(newOrientation: Orientation): void {
++        this.ui.setOrientationStyle(newOrientation);
++        this.update();
++        this.trigger('changeOrientation', this, newOrientation);
++    }
++
++    /**
++     * Get the total number of pages in a book
++     *
++     * @returns {number}
++     */
++    public getPageCount(): number {
++        return this.pages.getPageCount();
++    }
++
++    /**
++     * Get the index of the current page in the page list (starts at 0)
++     *
++     * @returns {number}
++     */
++    public getCurrentPageIndex(): number {
++        return this.pages.getCurrentPageIndex();
++    }
++
++    /**
++     * Get page from collection by number
++     *
++     * @param {number} pageIndex
++     * @returns {Page}
++     */
++    public getPage(pageIndex: number): Page {
++        return this.pages.getPage(pageIndex);
++    }
++
++    /**
++     * Get the current rendering object
++     *
++     * @returns {Render}
++     */
++    public getRender(): Render {
++        return this.render;
++    }
++
++    /**
++     * Get current object responsible for flipping
++     *
++     * @returns {Flip}
++     */
++    public getFlipController(): Flip {
++        return this.flipController;
++    }
++
++    /**
++     * Get current page orientation
++     *
++     * @returns {Orientation} Сurrent orientation: portrait or landscape
++     */
++    public getOrientation(): Orientation {
++        return this.render.getOrientation();
++    }
++
++    /**
++     * Get current book sizes and position
++     *
++     * @returns {PageRect}
++     */
++    public getBoundsRect(): PageRect {
++        return this.render.getRect();
++    }
++
++    /**
++     * Get configuration object
++     *
++     * @returns {FlipSetting}
++     */
++    public getSettings(): FlipSetting {
++        return this.setting;
++    }
++
++    /**
++     * Get UI object
++     *
++     * @returns {UI}
++     */
++    public getUI(): UI {
++        return this.ui;
++    }
++
++    /**
++     * Get current flipping state
++     *
++     * @returns {FlippingState}
++     */
++    public getState(): FlippingState {
++        return this.flipController.getState();
++    }
++
++    /**
++     * Get page collection
++     *
++     * @returns {PageCollection}
++     */
++    public getPageCollection(): PageCollection {
++        return this.pages;
++    }
++
++    /**
++     * Start page turning. Called when a user clicks or touches
++     *
++     * @param {Point} pos - Touch position in coordinates relative to the book
++     */
++    public startUserTouch(pos: Point): void {
++        if (this.destroyed || this.getState() === FlippingState.FLIPPING) return;
++        this.mousePosition = pos; // Save touch position
++        this.isUserTouch = true;
++        this.isUserMove = false;
++    }
++
++    /**
++     * Called when a finger / mouse moves
++     *
++     * @param {Point} pos - Touch position in coordinates relative to the book
++     * @param {boolean} isTouch - True if there was a touch event, not a mouse click
++     */
++    public userMove(pos: Point, isTouch: boolean): void {
++        if (this.destroyed) return;
++        if (!this.isUserTouch && !isTouch && this.setting.showPageCorners) {
++            this.flipController.showCorner(pos); // fold Page Corner
++        } else if (this.isUserTouch) {
++            if (this.isUserMove || Helper.GetDistanceBetweenTwoPoint(this.mousePosition, pos) > 5) {
++                this.isUserMove = true;
++                this.flipController.fold(pos);
++            }
++        }
++    }
++
++    /**
++     * Сalled when the user has stopped touching
++     *
++     * @param {Point} pos - Touch end position in coordinates relative to the book
++     * @param {boolean} isSwipe - true if there was a mobile swipe event
++     */
++    public userStop(pos: Point, isSwipe = false): void {
++        if (this.destroyed) return;
++        if (this.isUserTouch) {
++            this.isUserTouch = false;
++
++            if (!isSwipe) {
++                if (!this.isUserMove) this.flipController.flip(pos);
++                else {
++                    // The release can be coalesced with the final move; settle at that position.
++                    this.flipController.fold(pos);
++                    this.flipController.stopMove();
++                }
++            }
++        }
++    }
++
++    /** Abort a gesture without committing a turn; safe for blur/cancel/unmount. */
++    public cancelUserTouch(): void {
++        this.ui?.cancelPendingTouch();
++        this.isUserTouch = false;
++        this.isUserMove = false;
++        if (!this.destroyed && this.flipController && this.pages) this.flipController.cancel();
++    }
++}
+diff --git a/vendor/page-flip/src/Render/CanvasRender.ts b/vendor/page-flip/src/Render/CanvasRender.ts
+new file mode 100644
+index 0000000..0629588
+--- /dev/null
++++ b/vendor/page-flip/src/Render/CanvasRender.ts
+@@ -0,0 +1,167 @@
++import { Orientation, Render } from './Render';
++import { PageFlip } from '../PageFlip';
++import { FlipDirection } from '../Flip/Flip';
++import { PageOrientation } from '../Page/Page';
++import { FlipSetting } from '../Settings';
++
++/**
++ * Class responsible for rendering the Canvas book
++ */
++export class CanvasRender extends Render {
++    private readonly canvas: HTMLCanvasElement;
++    private readonly ctx: CanvasRenderingContext2D;
++
++    constructor(app: PageFlip, setting: FlipSetting, inCanvas: HTMLCanvasElement) {
++        super(app, setting);
++
++        this.canvas = inCanvas;
++        this.ctx = inCanvas.getContext('2d');
++    }
++
++    public getContext(): CanvasRenderingContext2D {
++        return this.ctx;
++    }
++
++    public reload(): void {
++        //
++    }
++
++    protected drawFrame(): void {
++        this.clear();
++
++        if (this.orientation !== Orientation.PORTRAIT)
++            if (this.leftPage != null) this.leftPage.simpleDraw(PageOrientation.LEFT);
++
++        if (this.rightPage != null) this.rightPage.simpleDraw(PageOrientation.RIGHT);
++
++        if (this.bottomPage != null) this.bottomPage.draw();
++
++        this.drawBookShadow();
++
++        if (this.flippingPage != null) this.flippingPage.draw();
++
++        if (this.shadow != null) {
++            this.drawOuterShadow();
++            this.drawInnerShadow();
++        }
++
++        const rect = this.getRect();
++
++        if (this.orientation === Orientation.PORTRAIT) {
++            this.ctx.beginPath();
++            this.ctx.rect(rect.left + rect.pageWidth, rect.top, rect.width, rect.height);
++            this.ctx.clip();
++        }
++    }
++
++    private drawBookShadow(): void {
++        const rect = this.getRect();
++
++        this.ctx.save();
++        this.ctx.beginPath();
++
++        const shadowSize = rect.width / 20;
++        this.ctx.rect(rect.left, rect.top, rect.width, rect.height);
++
++        const shadowPos = { x: rect.left + rect.width / 2 - shadowSize / 2, y: 0 };
++        this.ctx.translate(shadowPos.x, shadowPos.y);
++
++        const outerGradient = this.ctx.createLinearGradient(0, 0, shadowSize, 0);
++
++        outerGradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
++        outerGradient.addColorStop(0.4, 'rgba(0, 0, 0, 0.2)');
++        outerGradient.addColorStop(0.49, 'rgba(0, 0, 0, 0.1)');
++        outerGradient.addColorStop(0.5, 'rgba(0, 0, 0, 0.5)');
++        outerGradient.addColorStop(0.51, 'rgba(0, 0, 0, 0.4)');
++        outerGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
++
++        this.ctx.clip();
++
++        this.ctx.fillStyle = outerGradient;
++        this.ctx.fillRect(0, 0, shadowSize, rect.height * 2);
++
++        this.ctx.restore();
++    }
++
++    private drawOuterShadow(): void {
++        const rect = this.getRect();
++
++        this.ctx.save();
++        this.ctx.beginPath();
++
++        this.ctx.rect(rect.left, rect.top, rect.width, rect.height);
++
++        const shadowPos = this.convertToGlobal({ x: this.shadow.pos.x, y: this.shadow.pos.y });
++        this.ctx.translate(shadowPos.x, shadowPos.y);
++
++        this.ctx.rotate(Math.PI + this.shadow.angle + Math.PI / 2);
++
++        const outerGradient = this.ctx.createLinearGradient(0, 0, this.shadow.width, 0);
++
++        if (this.shadow.direction === FlipDirection.FORWARD) {
++            this.ctx.translate(0, -100);
++            outerGradient.addColorStop(0, 'rgba(0, 0, 0, ' + this.shadow.opacity + ')');
++            outerGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
++        } else {
++            this.ctx.translate(-this.shadow.width, -100);
++            outerGradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
++            outerGradient.addColorStop(1, 'rgba(0, 0, 0, ' + this.shadow.opacity + ')');
++        }
++
++        this.ctx.clip();
++
++        this.ctx.fillStyle = outerGradient;
++        this.ctx.fillRect(0, 0, this.shadow.width, rect.height * 2);
++
++        this.ctx.restore();
++    }
++
++    private drawInnerShadow(): void {
++        const rect = this.getRect();
++
++        this.ctx.save();
++        this.ctx.beginPath();
++
++        const shadowPos = this.convertToGlobal({ x: this.shadow.pos.x, y: this.shadow.pos.y });
++
++        const pageRect = this.convertRectToGlobal(this.pageRect);
++        this.ctx.moveTo(pageRect.topLeft.x, pageRect.topLeft.y);
++        this.ctx.lineTo(pageRect.topRight.x, pageRect.topRight.y);
++        this.ctx.lineTo(pageRect.bottomRight.x, pageRect.bottomRight.y);
++        this.ctx.lineTo(pageRect.bottomLeft.x, pageRect.bottomLeft.y);
++        this.ctx.translate(shadowPos.x, shadowPos.y);
++
++        this.ctx.rotate(Math.PI + this.shadow.angle + Math.PI / 2);
++
++        const isw = (this.shadow.width * 3) / 4;
++        const innerGradient = this.ctx.createLinearGradient(0, 0, isw, 0);
++
++        if (this.shadow.direction === FlipDirection.FORWARD) {
++            this.ctx.translate(-isw, -100);
++
++            innerGradient.addColorStop(1, 'rgba(0, 0, 0, ' + this.shadow.opacity + ')');
++            innerGradient.addColorStop(0.9, 'rgba(0, 0, 0, 0.05)');
++            innerGradient.addColorStop(0.7, 'rgba(0, 0, 0, ' + this.shadow.opacity + ')');
++            innerGradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
++        } else {
++            this.ctx.translate(0, -100);
++
++            innerGradient.addColorStop(0, 'rgba(0, 0, 0, ' + this.shadow.opacity + ')');
++            innerGradient.addColorStop(0.1, 'rgba(0, 0, 0, 0.05)');
++            innerGradient.addColorStop(0.3, 'rgba(0, 0, 0, ' + this.shadow.opacity + ')');
++            innerGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
++        }
++
++        this.ctx.clip();
++
++        this.ctx.fillStyle = innerGradient;
++        this.ctx.fillRect(0, 0, isw, rect.height * 2);
++
++        this.ctx.restore();
++    }
++
++    private clear(): void {
++        this.ctx.fillStyle = 'white';
++        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
++    }
++}
+diff --git a/vendor/page-flip/src/Render/HTMLRender.ts b/vendor/page-flip/src/Render/HTMLRender.ts
+new file mode 100644
+index 0000000..fe079e1
+--- /dev/null
++++ b/vendor/page-flip/src/Render/HTMLRender.ts
+@@ -0,0 +1,382 @@
++import { Orientation, Render } from './Render';
++import { PageFlip } from '../PageFlip';
++import { FlipDirection } from '../Flip/Flip';
++import { PageDensity, PageOrientation } from '../Page/Page';
++import { HTMLPage } from '../Page/HTMLPage';
++import { Helper } from '../Helper';
++import { FlipSetting } from '../Settings';
++
++/**
++ * Class responsible for rendering the HTML book
++ */
++export class HTMLRender extends Render {
++    /** Parent HTML Element */
++    private readonly element: HTMLElement;
++
++    /** Pages List as HTMLElements */
++    private readonly items: NodeListOf<HTMLElement> | HTMLElement[];
++
++    private outerShadow: HTMLElement = null;
++    private innerShadow: HTMLElement = null;
++    private hardShadow: HTMLElement = null;
++    private hardInnerShadow: HTMLElement = null;
++
++    /**
++     * @constructor
++     *
++     * @param {PageFlip} app - PageFlip object
++     * @param {FlipSetting} setting - Configuration object
++     * @param {HTMLElement} element - Parent HTML Element
++     */
++    constructor(app: PageFlip, setting: FlipSetting, element: HTMLElement) {
++        super(app, setting);
++
++        this.element = element;
++
++        this.createShadows();
++    }
++
++    private createShadows(): void {
++        this.element.insertAdjacentHTML(
++            'beforeend',
++            `<div class="stf__outerShadow"></div>
++             <div class="stf__innerShadow"></div>
++             <div class="stf__hardShadow"></div>
++             <div class="stf__hardInnerShadow"></div>`
++        );
++
++        this.outerShadow = this.element.querySelector('.stf__outerShadow');
++        this.innerShadow = this.element.querySelector('.stf__innerShadow');
++        this.hardShadow = this.element.querySelector('.stf__hardShadow');
++        this.hardInnerShadow = this.element.querySelector('.stf__hardInnerShadow');
++    }
++
++    public clearShadow(): void {
++        super.clearShadow();
++
++        this.outerShadow.style.cssText = 'display: none';
++        this.innerShadow.style.cssText = 'display: none';
++        this.hardShadow.style.cssText = 'display: none';
++        this.hardInnerShadow.style.cssText = 'display: none';
++    }
++
++    public reload(): void {
++        const testShadow = this.element.querySelector('.stf__outerShadow');
++
++        if (!testShadow) {
++            this.createShadows();
++        }
++    }
++
++    /**
++     * Draw inner shadow to the hard page
++     */
++    private drawHardInnerShadow(): void {
++        const rect = this.getRect();
++
++        const progress =
++            this.shadow.progress > 100 ? 200 - this.shadow.progress : this.shadow.progress;
++
++        let innerShadowSize = ((100 - progress) * (2.5 * rect.pageWidth)) / 100 + 20;
++        if (innerShadowSize > rect.pageWidth) innerShadowSize = rect.pageWidth;
++
++        let newStyle = `
++            display: block;
++            z-index: ${(this.getSettings().startZIndex + 5).toString(10)};
++            width: ${innerShadowSize}px;
++            height: ${rect.height}px;
++            background: linear-gradient(to right,
++                rgba(0, 0, 0, ${(this.shadow.opacity * progress) / 100}) 5%,
++                rgba(0, 0, 0, 0) 100%);
++            left: ${rect.left + rect.width / 2}px;
++            transform-origin: 0 0;
++        `;
++
++        newStyle +=
++            (this.getDirection() === FlipDirection.FORWARD && this.shadow.progress > 100) ||
++            (this.getDirection() === FlipDirection.BACK && this.shadow.progress <= 100)
++                ? `transform: translate3d(0, 0, 0);`
++                : `transform: translate3d(0, 0, 0) rotateY(180deg);`;
++
++        this.hardInnerShadow.style.cssText = newStyle;
++    }
++
++    /**
++     * Draw outer shadow to the hard page
++     */
++    private drawHardOuterShadow(): void {
++        const rect = this.getRect();
++
++        const progress =
++            this.shadow.progress > 100 ? 200 - this.shadow.progress : this.shadow.progress;
++
++        let shadowSize = ((100 - progress) * (2.5 * rect.pageWidth)) / 100 + 20;
++        if (shadowSize > rect.pageWidth) shadowSize = rect.pageWidth;
++
++        let newStyle = `
++            display: block;
++            z-index: ${(this.getSettings().startZIndex + 4).toString(10)};
++            width: ${shadowSize}px;
++            height: ${rect.height}px;
++            background: linear-gradient(to left, rgba(0, 0, 0, ${
++                this.shadow.opacity
++            }) 5%, rgba(0, 0, 0, 0) 100%);
++            left: ${rect.left + rect.width / 2}px;
++            transform-origin: 0 0;
++        `;
++
++        newStyle +=
++            (this.getDirection() === FlipDirection.FORWARD && this.shadow.progress > 100) ||
++            (this.getDirection() === FlipDirection.BACK && this.shadow.progress <= 100)
++                ? `transform: translate3d(0, 0, 0) rotateY(180deg);`
++                : `transform: translate3d(0, 0, 0);`;
++
++        this.hardShadow.style.cssText = newStyle;
++    }
++
++    /**
++     * Draw inner shadow to the soft page
++     */
++    private drawInnerShadow(): void {
++        const rect = this.getRect();
++
++        const innerShadowSize = (this.shadow.width * 3) / 4;
++        const shadowTranslate = this.getDirection() === FlipDirection.FORWARD ? innerShadowSize : 0;
++
++        const shadowDirection =
++            this.getDirection() === FlipDirection.FORWARD ? 'to left' : 'to right';
++
++        const shadowPos = this.convertToGlobal(this.shadow.pos);
++
++        const angle = this.shadow.angle + (3 * Math.PI) / 2;
++
++        const clip = [
++            this.pageRect.topLeft,
++            this.pageRect.topRight,
++            this.pageRect.bottomRight,
++            this.pageRect.bottomLeft,
++        ];
++
++        let polygon = 'polygon( ';
++        for (const p of clip) {
++            let g =
++                this.getDirection() === FlipDirection.BACK
++                    ? {
++                          x: -p.x + this.shadow.pos.x,
++                          y: p.y - this.shadow.pos.y,
++                      }
++                    : {
++                          x: p.x - this.shadow.pos.x,
++                          y: p.y - this.shadow.pos.y,
++                      };
++
++            g = Helper.GetRotatedPoint(g, { x: shadowTranslate, y: 100 }, angle);
++
++            polygon += g.x + 'px ' + g.y + 'px, ';
++        }
++        polygon = polygon.slice(0, -2);
++        polygon += ')';
++
++        const newStyle = `
++            display: block;
++            z-index: ${(this.getSettings().startZIndex + 10).toString(10)};
++            width: ${innerShadowSize}px;
++            height: ${rect.height * 2}px;
++            background: linear-gradient(${shadowDirection},
++                rgba(0, 0, 0, ${this.shadow.opacity}) 5%,
++                rgba(0, 0, 0, 0.05) 15%,
++                rgba(0, 0, 0, ${this.shadow.opacity}) 35%,
++                rgba(0, 0, 0, 0) 100%);
++            transform-origin: ${shadowTranslate}px 100px;
++            transform: translate3d(${shadowPos.x - shadowTranslate}px, ${
++            shadowPos.y - 100
++        }px, 0) rotate(${angle}rad);
++            clip-path: ${polygon};
++            -webkit-clip-path: ${polygon};
++        `;
++
++        this.innerShadow.style.cssText = newStyle;
++    }
++
++    /**
++     * Draw outer shadow to the soft page
++     */
++    private drawOuterShadow(): void {
++        const rect = this.getRect();
++
++        const shadowPos = this.convertToGlobal({ x: this.shadow.pos.x, y: this.shadow.pos.y });
++
++        const angle = this.shadow.angle + (3 * Math.PI) / 2;
++        const shadowTranslate = this.getDirection() === FlipDirection.BACK ? this.shadow.width : 0;
++
++        const shadowDirection =
++            this.getDirection() === FlipDirection.FORWARD ? 'to right' : 'to left';
++
++        const clip = [
++            { x: 0, y: 0 },
++            { x: rect.pageWidth, y: 0 },
++            { x: rect.pageWidth, y: rect.height },
++            { x: 0, y: rect.height },
++        ];
++
++        let polygon = 'polygon( ';
++        for (const p of clip) {
++            if (p !== null) {
++                let g =
++                    this.getDirection() === FlipDirection.BACK
++                        ? {
++                              x: -p.x + this.shadow.pos.x,
++                              y: p.y - this.shadow.pos.y,
++                          }
++                        : {
++                              x: p.x - this.shadow.pos.x,
++                              y: p.y - this.shadow.pos.y,
++                          };
++
++                g = Helper.GetRotatedPoint(g, { x: shadowTranslate, y: 100 }, angle);
++
++                polygon += g.x + 'px ' + g.y + 'px, ';
++            }
++        }
++
++        polygon = polygon.slice(0, -2);
++        polygon += ')';
++
++        const newStyle = `
++            display: block;
++            z-index: ${(this.getSettings().startZIndex + 10).toString(10)};
++            width: ${this.shadow.width}px;
++            height: ${rect.height * 2}px;
++            background: linear-gradient(${shadowDirection}, rgba(0, 0, 0, ${
++            this.shadow.opacity
++        }), rgba(0, 0, 0, 0));
++            transform-origin: ${shadowTranslate}px 100px;
++            transform: translate3d(${shadowPos.x - shadowTranslate}px, ${
++            shadowPos.y - 100
++        }px, 0) rotate(${angle}rad);
++            clip-path: ${polygon};
++            -webkit-clip-path: ${polygon};
++        `;
++
++        this.outerShadow.style.cssText = newStyle;
++    }
++
++    /**
++     * Draw left static page
++     */
++    private drawLeftPage(): void {
++        if (this.orientation === Orientation.PORTRAIT || this.leftPage === null) return;
++
++        if (
++            this.direction === FlipDirection.BACK &&
++            this.flippingPage !== null &&
++            this.flippingPage.getDrawingDensity() === PageDensity.HARD
++        ) {
++            (this.leftPage as HTMLPage).getElement().style.zIndex = (
++                this.getSettings().startZIndex + 5
++            ).toString(10);
++
++            this.leftPage.setHardDrawingAngle(180 + this.flippingPage.getHardAngle());
++            this.leftPage.draw(this.flippingPage.getDrawingDensity());
++        } else {
++            this.leftPage.simpleDraw(PageOrientation.LEFT);
++        }
++    }
++
++    /**
++     * Draw right static page
++     */
++    private drawRightPage(): void {
++        if (this.rightPage === null) return;
++
++        if (
++            this.direction === FlipDirection.FORWARD &&
++            this.flippingPage !== null &&
++            this.flippingPage.getDrawingDensity() === PageDensity.HARD
++        ) {
++            (this.rightPage as HTMLPage).getElement().style.zIndex = (
++                this.getSettings().startZIndex + 5
++            ).toString(10);
++
++            this.rightPage.setHardDrawingAngle(180 + this.flippingPage.getHardAngle());
++            this.rightPage.draw(this.flippingPage.getDrawingDensity());
++        } else {
++            this.rightPage.simpleDraw(PageOrientation.RIGHT);
++        }
++    }
++
++    /**
++     * Draw the next page at the time of flipping
++     */
++    private drawBottomPage(): void {
++        if (this.bottomPage === null) return;
++
++        const tempDensity =
++            this.flippingPage != null ? this.flippingPage.getDrawingDensity() : null;
++
++        if (!(this.orientation === Orientation.PORTRAIT && this.direction === FlipDirection.BACK)) {
++            (this.bottomPage as HTMLPage).getElement().style.zIndex = (
++                this.getSettings().startZIndex + 3
++            ).toString(10);
++
++            this.bottomPage.draw(tempDensity);
++        }
++    }
++
++    protected drawFrame(): void {
++        this.clear();
++
++        this.drawLeftPage();
++
++        this.drawRightPage();
++
++        this.drawBottomPage();
++
++        if (this.flippingPage != null) {
++            (this.flippingPage as HTMLPage).getElement().style.zIndex = (
++                this.getSettings().startZIndex + 5
++            ).toString(10);
++
++            this.flippingPage.draw();
++        }
++
++        if (this.shadow != null && this.flippingPage !== null) {
++            if (this.flippingPage.getDrawingDensity() === PageDensity.SOFT) {
++                this.drawOuterShadow();
++                this.drawInnerShadow();
++            } else {
++                this.drawHardOuterShadow();
++                this.drawHardInnerShadow();
++            }
++        }
++    }
++
++    private clear(): void {
++        for (const page of this.app.getPageCollection().getPages()) {
++            if (
++                page !== this.leftPage &&
++                page !== this.rightPage &&
++                page !== this.flippingPage &&
++                page !== this.bottomPage
++            ) {
++                (page as HTMLPage).getElement().style.cssText = 'display: none';
++            }
++
++            if (page.getTemporaryCopy() !== this.flippingPage) {
++                page.hideTemporaryCopy();
++            }
++        }
++    }
++
++    public update(): void {
++        super.update();
++
++        if (this.rightPage !== null) {
++            this.rightPage.setOrientation(PageOrientation.RIGHT);
++        }
++
++        if (this.leftPage !== null) {
++            this.leftPage.setOrientation(PageOrientation.LEFT);
++        }
++    }
++}
+diff --git a/vendor/page-flip/src/Render/Render.ts b/vendor/page-flip/src/Render/Render.ts
+new file mode 100644
+index 0000000..0b0b255
+--- /dev/null
++++ b/vendor/page-flip/src/Render/Render.ts
+@@ -0,0 +1,513 @@
++import { PageFlip } from '../PageFlip';
++import { Point, PageRect, RectPoints } from '../BasicTypes';
++import { FlipDirection } from '../Flip/Flip';
++import { Page, PageOrientation } from '../Page/Page';
++import { FlipSetting, SizeType } from '../Settings';
++
++type FrameAction = () => void;
++type AnimationSuccessAction = () => void;
++
++/**
++ * Type describing calculated values for drop shadows
++ */
++type Shadow = {
++    /** Shadow Position Start Point */
++    pos: Point;
++    /** The angle of the shadows relative to the book */
++    angle: number;
++    /** Base width shadow */
++    width: number;
++    /** Base shadow opacity */
++    opacity: number;
++    /** Flipping Direction, the direction of the shadow gradients */
++    direction: FlipDirection;
++    /** Flipping progress in percent (0 - 100) */
++    progress: number;
++};
++
++/**
++ * Type describing the animation process
++ * Only one animation process can be started at a same time
++ */
++type AnimationProcess = {
++    /** List of frames in playback order. Each frame is a function. */
++    frames: FrameAction[];
++    /** Total animation duration */
++    duration: number;
++    /** Animation duration of one frame */
++    durationFrame: number;
++    /** Сallback at the end of the animation */
++    onAnimateEnd: AnimationSuccessAction;
++    /** Animation start time (Global Timer) */
++    startedAt: number;
++};
++
++/**
++ * Book orientation
++ */
++export const enum Orientation {
++    PORTRAIT = 'portrait',
++    LANDSCAPE = 'landscape',
++}
++
++/**
++ * Class responsible for rendering the book
++ */
++export abstract class Render {
++    protected readonly setting: FlipSetting;
++    protected readonly app: PageFlip;
++
++    /** Left static book page */
++    protected leftPage: Page = null;
++    /** Right static book page */
++    protected rightPage: Page = null;
++
++    /** Page currently flipping */
++    protected flippingPage: Page = null;
++    /** Next page at the time of flipping */
++    protected bottomPage: Page = null;
++
++    /** Current flipping direction */
++    protected direction: FlipDirection = null;
++    /** Current book orientation */
++    protected orientation: Orientation = null;
++    /** Сurrent state of the shadows */
++    protected shadow: Shadow = null;
++    /** Сurrent animation process */
++    protected animation: AnimationProcess = null;
++    /** Page borders while flipping */
++    protected pageRect: RectPoints = null;
++    /** Current book area */
++    private boundsRect: PageRect = null;
++
++    /** Timer started from start of rendering */
++    protected timer = 0;
++    private frameId: number | null = null;
++    private running = false;
++
++    /**
++     * Safari browser definitions for resolving a bug with a css property clip-area
++     *
++     * https://bugs.webkit.org/show_bug.cgi?id=126207
++     */
++    private safari = false;
++
++    protected constructor(app: PageFlip, setting: FlipSetting) {
++        this.setting = setting;
++        this.app = app;
++
++        // detect safari
++        const regex = new RegExp('Version\\/[\\d\\.]+.*Safari/');
++        this.safari = regex.exec(window.navigator.userAgent) !== null;
++    }
++
++    /**
++     * Rendering action on each requestAnimationFrame call. The entire rendering process is performed only in this method
++     */
++    protected abstract drawFrame(): void;
++
++    /**
++     * Reload the render area, after update pages
++     */
++    public abstract reload(): void;
++
++    /**
++     * Executed when requestAnimationFrame is called. Performs the current animation process and call drawFrame()
++     *
++     * @param timer
++     */
++    private render(timer: number): void {
++        if (this.animation !== null) {
++            // Find current frame of animation
++            const frameIndex = Math.round(
++                (timer - this.animation.startedAt) / this.animation.durationFrame
++            );
++
++            if (frameIndex < this.animation.frames.length) {
++                this.animation.frames[frameIndex]();
++            } else {
++                const onAnimateEnd = this.animation.onAnimateEnd;
++                this.animation = null;
++                onAnimateEnd();
++            }
++        }
++
++        this.timer = timer;
++        this.drawFrame();
++    }
++
++    /**
++     * Running requestAnimationFrame, and rendering process
++     */
++    public start(): void {
++        if (this.running) return;
++        this.running = true;
++        this.update();
++
++        const loop = (timer: number): void => {
++            if (!this.running) return;
++            this.render(timer);
++            if (this.running) this.frameId = requestAnimationFrame(loop);
++        };
++
++        this.frameId = requestAnimationFrame(loop);
++    }
++
++    public destroy(): void {
++        this.running = false;
++        if (this.frameId !== null) cancelAnimationFrame(this.frameId);
++        this.frameId = null;
++        this.cancelAnimation();
++    }
++
++    /** Discard an animation without committing its destination page. */
++    public cancelAnimation(): void {
++        this.animation = null;
++    }
++
++    /**
++     * Start a new animation process
++     *
++     * @param {FrameAction[]} frames - Frame list
++     * @param {number} duration - total animation duration
++     * @param {AnimationSuccessAction} onAnimateEnd - Animation callback function
++     */
++    public startAnimation(
++        frames: FrameAction[],
++        duration: number,
++        onAnimateEnd: AnimationSuccessAction
++    ): void {
++        this.finishAnimation(); // finish the previous animation process
++
++        this.animation = {
++            frames,
++            duration,
++            durationFrame: duration / frames.length,
++            onAnimateEnd,
++            startedAt: this.timer,
++        };
++    }
++
++    /**
++     * End the current animation process and call the callback
++     */
++    public finishAnimation(): void {
++        const animation = this.animation;
++        this.animation = null;
++        if (animation !== null) {
++            animation.frames[animation.frames.length - 1]();
++
++            if (animation.onAnimateEnd !== null) {
++                animation.onAnimateEnd();
++            }
++        }
++    }
++
++    /**
++     * Recalculate the size of the displayed area, and update the page orientation
++     */
++    public update(): void {
++        this.boundsRect = null;
++        const orientation = this.calculateBoundsRect();
++
++        if (this.orientation !== orientation) {
++            this.orientation = orientation;
++            this.app.updateOrientation(orientation);
++        }
++    }
++
++    /**
++     * Calculate the size and position of the book depending on the parent element and configuration parameters
++     */
++    private calculateBoundsRect(): Orientation {
++        let orientation = Orientation.LANDSCAPE;
++
++        const blockWidth = this.getBlockWidth();
++        const middlePoint: Point = {
++            x: blockWidth / 2,
++            y: this.getBlockHeight() / 2,
++        };
++
++        const ratio = this.setting.width / this.setting.height;
++
++        let pageWidth = this.setting.width;
++        let pageHeight = this.setting.height;
++
++        let left = middlePoint.x - pageWidth;
++
++        if (this.setting.size === SizeType.STRETCH) {
++            if (blockWidth < this.setting.minWidth * 2 && this.app.getSettings().usePortrait)
++                orientation = Orientation.PORTRAIT;
++
++            pageWidth =
++                orientation === Orientation.PORTRAIT
++                    ? this.getBlockWidth()
++                    : this.getBlockWidth() / 2;
++
++            if (pageWidth > this.setting.maxWidth) pageWidth = this.setting.maxWidth;
++
++            pageHeight = pageWidth / ratio;
++            if (pageHeight > this.getBlockHeight()) {
++                pageHeight = this.getBlockHeight();
++                pageWidth = pageHeight * ratio;
++            }
++
++            left =
++                orientation === Orientation.PORTRAIT
++                    ? middlePoint.x - pageWidth / 2 - pageWidth
++                    : middlePoint.x - pageWidth;
++        } else {
++            if (blockWidth < pageWidth * 2) {
++                if (this.app.getSettings().usePortrait) {
++                    orientation = Orientation.PORTRAIT;
++                    left = middlePoint.x - pageWidth / 2 - pageWidth;
++                }
++            }
++        }
++
++        this.boundsRect = {
++            left,
++            top: middlePoint.y - pageHeight / 2,
++            width: pageWidth * 2,
++            height: pageHeight,
++            pageWidth: pageWidth,
++        };
++
++        return orientation;
++    }
++
++    /**
++     * Set the current parameters of the drop shadow
++     *
++     * @param {Point} pos - Shadow Position Start Point
++     * @param {number} angle - The angle of the shadows relative to the book
++     * @param {number} progress - Flipping progress in percent (0 - 100)
++     * @param {FlipDirection} direction - Flipping Direction, the direction of the shadow gradients
++     */
++    public setShadowData(
++        pos: Point,
++        angle: number,
++        progress: number,
++        direction: FlipDirection
++    ): void {
++        if (!this.app.getSettings().drawShadow) return;
++
++        const maxShadowOpacity = 100 * this.getSettings().maxShadowOpacity;
++
++        this.shadow = {
++            pos,
++            angle,
++            width: (((this.getRect().pageWidth * 3) / 4) * progress) / 100,
++            opacity: ((100 - progress) * maxShadowOpacity) / 100 / 100,
++            direction,
++            progress: progress * 2,
++        };
++    }
++
++    /**
++     * Clear shadow
++     */
++    public clearShadow(): void {
++        this.shadow = null;
++    }
++
++    /**
++     * Get parent block offset width
++     */
++    public getBlockWidth(): number {
++        return this.app.getUI().getDistElement().offsetWidth;
++    }
++
++    /**
++     * Get parent block offset height
++     */
++    public getBlockHeight(): number {
++        return this.app.getUI().getDistElement().offsetHeight;
++    }
++
++    /**
++     * Get current flipping direction
++     */
++    public getDirection(): FlipDirection {
++        return this.direction;
++    }
++
++    /**
++     * Сurrent size and position of the book
++     */
++    public getRect(): PageRect {
++        if (this.boundsRect === null) this.calculateBoundsRect();
++
++        return this.boundsRect;
++    }
++
++    /**
++     * Get configuration object
++     */
++    public getSettings(): FlipSetting {
++        return this.app.getSettings();
++    }
++
++    /**
++     * Get current book orientation
++     */
++    public getOrientation(): Orientation {
++        return this.orientation;
++    }
++
++    /**
++     * Set page area while flipping
++     *
++     * @param direction
++     */
++    public setPageRect(pageRect: RectPoints): void {
++        this.pageRect = pageRect;
++    }
++
++    /**
++     * Set flipping direction
++     *
++     * @param direction
++     */
++    public setDirection(direction: FlipDirection): void {
++        this.direction = direction;
++    }
++
++    /**
++     * Set right static book page
++     *
++     * @param page
++     */
++    public setRightPage(page: Page): void {
++        if (page !== null) page.setOrientation(PageOrientation.RIGHT);
++
++        this.rightPage = page;
++    }
++
++    /**
++     * Set left static book page
++     * @param page
++     */
++    public setLeftPage(page: Page): void {
++        if (page !== null) page.setOrientation(PageOrientation.LEFT);
++
++        this.leftPage = page;
++    }
++
++    /**
++     * Set next page at the time of flipping
++     * @param page
++     */
++    public setBottomPage(page: Page): void {
++        if (page !== null)
++            page.setOrientation(
++                this.direction === FlipDirection.BACK ? PageOrientation.LEFT : PageOrientation.RIGHT
++            );
++
++        this.bottomPage = page;
++    }
++
++    /**
++     * Set currently flipping page
++     *
++     * @param page
++     */
++    public setFlippingPage(page: Page): void {
++        if (page !== null)
++            page.setOrientation(
++                this.direction === FlipDirection.FORWARD &&
++                    this.orientation !== Orientation.PORTRAIT
++                    ? PageOrientation.LEFT
++                    : PageOrientation.RIGHT
++            );
++
++        this.flippingPage = page;
++    }
++
++    /**
++     * Coordinate conversion function. Window coordinates -> to book coordinates
++     *
++     * @param {Point} pos - Global coordinates relative to the window
++     * @returns {Point} Coordinates relative to the book
++     */
++    public convertToBook(pos: Point): Point {
++        const rect = this.getRect();
++
++        return {
++            x: pos.x - rect.left,
++            y: pos.y - rect.top,
++        };
++    }
++
++    public isSafari(): boolean {
++        return this.safari;
++    }
++
++    /**
++     * Coordinate conversion function. Window coordinates -> to current coordinates of the working page
++     *
++     * @param {Point} pos - Global coordinates relative to the window
++     * @param {FlipDirection} direction  - Current flipping direction
++     *
++     * @returns {Point} Coordinates relative to the work page
++     */
++    public convertToPage(pos: Point, direction?: FlipDirection): Point {
++        if (!direction) direction = this.direction;
++
++        const rect = this.getRect();
++        const x =
++            direction === FlipDirection.FORWARD
++                ? pos.x - rect.left - rect.width / 2
++                : rect.width / 2 - pos.x + rect.left;
++
++        return {
++            x,
++            y: pos.y - rect.top,
++        };
++    }
++
++    /**
++     * Coordinate conversion function. Coordinates relative to the work page -> Window coordinates
++     *
++     * @param {Point} pos - Coordinates relative to the work page
++     * @param {FlipDirection} direction  - Current flipping direction
++     *
++     * @returns {Point} Global coordinates relative to the window
++     */
++    public convertToGlobal(pos: Point, direction?: FlipDirection): Point {
++        if (!direction) direction = this.direction;
++
++        if (pos == null) return null;
++
++        const rect = this.getRect();
++
++        const x =
++            direction === FlipDirection.FORWARD
++                ? pos.x + rect.left + rect.width / 2
++                : rect.width / 2 - pos.x + rect.left;
++
++        return {
++            x,
++            y: pos.y + rect.top,
++        };
++    }
++
++    /**
++     * Casting the coordinates of the corners of the rectangle in the coordinates relative to the window
++     *
++     * @param {RectPoints} rect - Coordinates of the corners of the rectangle relative to the work page
++     * @param {FlipDirection} direction  - Current flipping direction
++     *
++     * @returns {RectPoints} Coordinates of the corners of the rectangle relative to the window
++     */
++    public convertRectToGlobal(rect: RectPoints, direction?: FlipDirection): RectPoints {
++        if (!direction) direction = this.direction;
++
++        return {
++            topLeft: this.convertToGlobal(rect.topLeft, direction),
++            topRight: this.convertToGlobal(rect.topRight, direction),
++            bottomLeft: this.convertToGlobal(rect.bottomLeft, direction),
++            bottomRight: this.convertToGlobal(rect.bottomRight, direction),
++        };
++    }
++}
+diff --git a/vendor/page-flip/src/Settings.ts b/vendor/page-flip/src/Settings.ts
+new file mode 100644
+index 0000000..d16510d
+--- /dev/null
++++ b/vendor/page-flip/src/Settings.ts
+@@ -0,0 +1,121 @@
++/**
++ * Book size calculation type
++ */
++export const enum SizeType {
++    /** Dimensions are fixed */
++    FIXED = 'fixed',
++    /** Dimensions are calculated based on the parent element */
++    STRETCH = 'stretch',
++}
++
++/**
++ * Configuration object
++ */
++export interface FlipSetting {
++    /** Page number from which to start viewing */
++    startPage: number;
++    /** Whether the book will be stretched under the parent element or not */
++    size: SizeType;
++
++    width: number;
++    height: number;
++
++    minWidth: number;
++    maxWidth: number;
++    minHeight: number;
++    maxHeight: number;
++
++    /** Draw shadows or not when page flipping */
++    drawShadow: boolean;
++    /** Flipping animation time */
++    flippingTime: number;
++
++    /** Enable switching to portrait mode */
++    usePortrait: boolean;
++    /** Initial value to z-index */
++    startZIndex: number;
++    /** If this value is true, the parent element will be equal to the size of the book */
++    autoSize: boolean;
++    /** Shadow intensity (1: max intensity, 0: hidden shadows) */
++    maxShadowOpacity: number;
++
++    /** If this value is true, the first and the last pages will be marked as hard and will be shown in single page mode */
++    showCover: boolean;
++    /** Disable content scrolling when touching a book on mobile devices */
++    mobileScrollSupport: boolean;
++
++    /** Set the forward event of clicking on child elements (buttons, links) */
++    clickEventForward: boolean;
++
++    /** Using mouse and touch events to page flipping */
++    useMouseEvents: boolean;
++
++    swipeDistance: number;
++
++    /** if this value is true, fold the corners of the book when the mouse pointer is over them. */
++    showPageCorners: boolean;
++
++    /** if this value is true, flipping by clicking on the whole book will be locked. Only on corners */
++    disableFlipByClick: boolean;
++}
++
++export class Settings {
++    private _default: FlipSetting = {
++        startPage: 0,
++        size: SizeType.FIXED,
++        width: 0,
++        height: 0,
++        minWidth: 0,
++        maxWidth: 0,
++        minHeight: 0,
++        maxHeight: 0,
++        drawShadow: true,
++        flippingTime: 1000,
++        usePortrait: true,
++        startZIndex: 0,
++        autoSize: true,
++        maxShadowOpacity: 1,
++        showCover: false,
++        mobileScrollSupport: true,
++        swipeDistance: 30,
++        clickEventForward: true,
++        useMouseEvents: true,
++        showPageCorners: true,
++        disableFlipByClick: false,
++    };
++
++    /**
++     * Processing parameters received from the user. Substitution default values
++     *
++     * @param userSetting
++     * @returns {FlipSetting} Сonfiguration object
++     */
++    public getSettings(userSetting: Record<string, number | string | boolean>): FlipSetting {
++        const result = this._default;
++        Object.assign(result, userSetting);
++
++        if (result.size !== SizeType.STRETCH && result.size !== SizeType.FIXED)
++            throw new Error('Invalid size type. Available only "fixed" and "stretch" value');
++
++        if (result.width <= 0 || result.height <= 0) throw new Error('Invalid width or height');
++
++        if (result.flippingTime <= 0) throw new Error('Invalid flipping time');
++
++        if (result.size === SizeType.STRETCH) {
++            if (result.minWidth <= 0) result.minWidth = 100;
++
++            if (result.maxWidth < result.minWidth) result.maxWidth = 2000;
++
++            if (result.minHeight <= 0) result.minHeight = 100;
++
++            if (result.maxHeight < result.minHeight) result.maxHeight = 2000;
++        } else {
++            result.minWidth = result.width;
++            result.maxWidth = result.width;
++            result.minHeight = result.height;
++            result.maxHeight = result.height;
++        }
++
++        return result;
++    }
++}
+diff --git a/vendor/page-flip/src/Style/stPageFlip.css b/vendor/page-flip/src/Style/stPageFlip.css
+new file mode 100644
+index 0000000..5432da4
+--- /dev/null
++++ b/vendor/page-flip/src/Style/stPageFlip.css
+@@ -0,0 +1,61 @@
++.stf__parent {
++  position: relative;
++  display: block;
++  box-sizing: border-box;
++  transform: translateZ(0);
++
++  -ms-touch-action: pan-y;
++  touch-action: pan-y;
++}
++
++.sft__wrapper {
++  position: relative;
++  width: 100%;
++  box-sizing: border-box;
++}
++
++.stf__parent canvas {
++  position: absolute;
++  width: 100%;
++  height: 100%;
++  left: 0;
++  top: 0;
++}
++
++.stf__block {
++  position: absolute;
++  width: 100%;
++  height: 100%;
++  box-sizing: border-box;
++  perspective: 2000px;
++}
++
++.stf__item {
++  display: none;
++  position: absolute;
++  transform-style: preserve-3d;
++}
++
++.stf__outerShadow {
++  position: absolute;
++  left: 0;
++  top: 0;
++}
++
++.stf__innerShadow {
++  position: absolute;
++  left: 0;
++  top: 0;
++}
++
++.stf__hardShadow {
++  position: absolute;
++  left: 0;
++  top: 0;
++}
++
++.stf__hardInnerShadow {
++  position: absolute;
++  left: 0;
++  top: 0;
++}
+\ No newline at end of file
+diff --git a/vendor/page-flip/src/UI/CanvasUI.ts b/vendor/page-flip/src/UI/CanvasUI.ts
+new file mode 100644
+index 0000000..892f579
+--- /dev/null
++++ b/vendor/page-flip/src/UI/CanvasUI.ts
+@@ -0,0 +1,44 @@
++import {UI} from "./UI";
++import {PageFlip} from "../PageFlip";
++import {FlipSetting} from "../Settings";
++
++/**
++ * UI for canvas mode
++ */
++export class CanvasUI extends UI {
++    private readonly canvas: HTMLCanvasElement;
++
++    constructor(inBlock: HTMLElement, app: PageFlip, setting: FlipSetting) {
++        super(inBlock, app, setting);
++
++        this.wrapper.innerHTML = '<canvas class="stf__canvas"></canvas>';
++
++        this.canvas = inBlock.querySelectorAll('canvas')[0];
++
++        this.distElement = this.canvas;
++
++        this.resizeCanvas();
++        this.setHandlers();
++    }
++
++    private resizeCanvas(): void {
++        const cs = getComputedStyle(this.canvas);
++        const width = parseInt(cs.getPropertyValue('width'), 10);
++        const height = parseInt(cs.getPropertyValue('height'), 10);
++
++        this.canvas.width = width;
++        this.canvas.height = height;
++    }
++
++    /**
++     * Get canvas element
++     */
++    public getCanvas(): HTMLCanvasElement {
++        return this.canvas;
++    }
++
++    public update(): void {
++        this.resizeCanvas();
++        this.app.getRender().update();
++    }
++}
+\ No newline at end of file
+diff --git a/vendor/page-flip/src/UI/HTMLUI.ts b/vendor/page-flip/src/UI/HTMLUI.ts
+new file mode 100644
+index 0000000..63f4c25
+--- /dev/null
++++ b/vendor/page-flip/src/UI/HTMLUI.ts
+@@ -0,0 +1,59 @@
++import { UI } from './UI';
++import { PageFlip } from '../PageFlip';
++import { FlipSetting } from '../Settings';
++
++/**
++ * UI for HTML mode
++ */
++export class HTMLUI extends UI {
++    private items: NodeListOf<HTMLElement> | HTMLElement[];
++
++    constructor(
++        inBlock: HTMLElement,
++        app: PageFlip,
++        setting: FlipSetting,
++        items: NodeListOf<HTMLElement> | HTMLElement[]
++    ) {
++        super(inBlock, app, setting);
++
++        // Second wrapper to HTML page
++        this.wrapper.insertAdjacentHTML('afterbegin', '<div class="stf__block"></div>');
++
++        this.distElement = inBlock.querySelector('.stf__block');
++
++        this.items = items;
++        for (const item of items) {
++            this.distElement.appendChild(item);
++        }
++
++        this.setHandlers();
++    }
++
++    public clear(): void {
++        for (const item of this.items) {
++            this.parentElement.appendChild(item);
++        }
++    }
++
++    /**
++     * Update page list from HTMLElements
++     *
++     * @param {(NodeListOf<HTMLElement>|HTMLElement[])} items - List of pages as HTML Element
++     */
++    public updateItems(items: NodeListOf<HTMLElement> | HTMLElement[]): void {
++        this.removeHandlers();
++
++        this.distElement.innerHTML = '';
++
++        for (const item of items) {
++            this.distElement.appendChild(item);
++        }
++        this.items = items;
++
++        this.setHandlers();
++    }
++
++    public update(): void {
++        this.app.getRender().update();
++    }
++}
+diff --git a/vendor/page-flip/src/UI/UI.ts b/vendor/page-flip/src/UI/UI.ts
+new file mode 100644
+index 0000000..c39b9bb
+--- /dev/null
++++ b/vendor/page-flip/src/UI/UI.ts
+@@ -0,0 +1,304 @@
++import { PageFlip } from '../PageFlip';
++import { Point } from '../BasicTypes';
++import { FlipSetting, SizeType } from '../Settings';
++import { FlipCorner, FlippingState } from '../Flip/Flip';
++import { Orientation } from '../Render/Render';
++
++type SwipeData = {
++    point: Point;
++    time: number;
++    identifier: number;
++    intent: 'pending' | 'horizontal' | 'vertical';
++};
++
++/**
++ * UI Class, represents work with DOM
++ */
++export abstract class UI {
++    protected readonly parentElement: HTMLElement;
++
++    protected readonly app: PageFlip;
++    protected readonly wrapper: HTMLElement;
++    protected distElement: HTMLElement;
++
++    private touchPoint: SwipeData = null;
++    private readonly swipeTimeout = 250;
++    private readonly swipeDistance: number;
++    private onCancel = (): void => this.app.cancelUserTouch();
++
++    private onResize = (): void => {
++        this.update();
++    };
++
++    /**
++     * @constructor
++     *
++     * @param {HTMLElement} inBlock - Root HTML Element
++     * @param {PageFlip} app - PageFlip instanse
++     * @param {FlipSetting} setting - Configuration object
++     */
++    protected constructor(inBlock: HTMLElement, app: PageFlip, setting: FlipSetting) {
++        this.parentElement = inBlock;
++
++        inBlock.classList.add('stf__parent');
++        // Add first wrapper
++        inBlock.insertAdjacentHTML('afterbegin', '<div class="stf__wrapper"></div>');
++
++        this.wrapper = inBlock.querySelector('.stf__wrapper');
++
++        this.app = app;
++
++        const k = this.app.getSettings().usePortrait ? 1 : 2;
++
++        // Setting block sizes based on configuration
++        inBlock.style.minWidth = setting.minWidth * k + 'px';
++        inBlock.style.minHeight = setting.minHeight + 'px';
++
++        if (setting.size === SizeType.FIXED) {
++            inBlock.style.minWidth = setting.width * k + 'px';
++            inBlock.style.minHeight = setting.height + 'px';
++        }
++
++        if (setting.autoSize) {
++            inBlock.style.width = '100%';
++            inBlock.style.maxWidth = setting.maxWidth * 2 + 'px';
++        }
++
++        inBlock.style.display = 'block';
++
++        window.addEventListener('resize', this.onResize, false);
++        this.swipeDistance = setting.swipeDistance;
++    }
++
++    /**
++     * Destructor. Remove all HTML elements and all event handlers
++     */
++    public destroy(): void {
++        this.cancelPendingTouch();
++        this.removeHandlers();
++
++        this.distElement.remove();
++        this.wrapper.remove();
++    }
++
++    public cancelPendingTouch(): void {
++        this.touchPoint = null;
++    }
++
++    /**
++     * Updating child components when resizing
++     */
++    public abstract update(): void;
++
++    /**
++     * Get parent element for book
++     *
++     * @returns {HTMLElement}
++     */
++    public getDistElement(): HTMLElement {
++        return this.distElement;
++    }
++
++    /**
++     * Get wrapper element
++     *
++     * @returns {HTMLElement}
++     */
++    public getWrapper(): HTMLElement {
++        return this.wrapper;
++    }
++
++    /**
++     * Updates styles and sizes based on book orientation
++     *
++     * @param {Orientation} orientation - New book orientation
++     */
++    public setOrientationStyle(orientation: Orientation): void {
++        this.wrapper.classList.remove('--portrait', '--landscape');
++
++        if (orientation === Orientation.PORTRAIT) {
++            if (this.app.getSettings().autoSize)
++                this.wrapper.style.paddingBottom =
++                    (this.app.getSettings().height / this.app.getSettings().width) * 100 + '%';
++
++            this.wrapper.classList.add('--portrait');
++        } else {
++            if (this.app.getSettings().autoSize)
++                this.wrapper.style.paddingBottom =
++                    (this.app.getSettings().height / (this.app.getSettings().width * 2)) * 100 +
++                    '%';
++
++            this.wrapper.classList.add('--landscape');
++        }
++
++        this.update();
++    }
++
++    protected removeHandlers(): void {
++        window.removeEventListener('resize', this.onResize);
++
++        this.distElement.removeEventListener('mousedown', this.onMouseDown);
++        this.distElement.removeEventListener('touchstart', this.onTouchStart);
++        window.removeEventListener('mousemove', this.onMouseMove);
++        window.removeEventListener('touchmove', this.onTouchMove);
++        window.removeEventListener('mouseup', this.onMouseUp);
++        window.removeEventListener('touchend', this.onTouchEnd);
++        window.removeEventListener('touchcancel', this.onCancel);
++        window.removeEventListener('pointercancel', this.onCancel);
++        window.removeEventListener('blur', this.onCancel);
++    }
++
++    protected setHandlers(): void {
++        window.addEventListener('resize', this.onResize, false);
++        if (!this.app.getSettings().useMouseEvents) return;
++
++        this.distElement.addEventListener('mousedown', this.onMouseDown);
++        this.distElement.addEventListener('touchstart', this.onTouchStart);
++        window.addEventListener('mousemove', this.onMouseMove);
++        window.addEventListener('touchmove', this.onTouchMove, {
++            passive: false,
++        });
++        window.addEventListener('mouseup', this.onMouseUp);
++        window.addEventListener('touchend', this.onTouchEnd);
++        window.addEventListener('touchcancel', this.onCancel);
++        window.addEventListener('pointercancel', this.onCancel);
++        window.addEventListener('blur', this.onCancel);
++    }
++
++    /**
++     * Convert global coordinates to relative book coordinates
++     *
++     * @param x
++     * @param y
++     */
++    private getMousePos(x: number, y: number): Point {
++        const rect = this.distElement.getBoundingClientRect();
++
++        return {
++            x: x - rect.left,
++            y: y - rect.top,
++        };
++    }
++
++    private checkTarget(targer: EventTarget): boolean {
++        if (!this.app.getSettings().clickEventForward) return true;
++
++        if ((targer as Element).closest('a, button, input, textarea, select, [contenteditable="true"]')) {
++            return false;
++        }
++
++        return true;
++    }
++
++    private onMouseDown = (e: MouseEvent): void => {
++        if (e.button === 0 && this.checkTarget(e.target)) {
++            const pos = this.getMousePos(e.clientX, e.clientY);
++
++            this.app.startUserTouch(pos);
++
++            e.preventDefault();
++        }
++    };
++
++    private onTouchStart = (e: TouchEvent): void => {
++        if (this.app.getState() === FlippingState.FLIPPING) return;
++        if (e.touches.length !== 1) {
++            this.onCancel();
++            return;
++        }
++        if (this.checkTarget(e.target)) {
++            if (e.changedTouches.length > 0) {
++                const t = e.changedTouches[0];
++                const pos = this.getMousePos(t.clientX, t.clientY);
++
++                this.touchPoint = {
++                    point: pos,
++                    time: Date.now(),
++                    identifier: t.identifier,
++                    intent: 'pending',
++                };
++            }
++        }
++    };
++
++    private onMouseUp = (e: MouseEvent): void => {
++        const pos = this.getMousePos(e.clientX, e.clientY);
++
++        this.app.userStop(pos);
++    };
++
++    private onMouseMove = (e: MouseEvent): void => {
++        const pos = this.getMousePos(e.clientX, e.clientY);
++
++        this.app.userMove(pos, false);
++    };
++
++    private onTouchMove = (e: TouchEvent): void => {
++        const touch = this.touchPoint;
++        if (!touch) return;
++        const t = Array.from(e.changedTouches).find((item) => item.identifier === touch.identifier);
++        if (t) {
++            const pos = this.getMousePos(t.clientX, t.clientY);
++            const dx = Math.abs(pos.x - touch.point.x);
++            const dy = Math.abs(pos.y - touch.point.y);
++            if (touch.intent === 'pending' && Math.max(dx, dy) > 8) {
++                touch.intent = dx > dy ? 'horizontal' : 'vertical';
++                if (touch.intent === 'horizontal') this.app.startUserTouch(touch.point);
++            }
++            if (touch.intent === 'horizontal') {
++                if (e.cancelable) e.preventDefault();
++                this.app.userMove(pos, true);
++            }
++        }
++    };
++
++    private onTouchEnd = (e: TouchEvent): void => {
++        const touch = this.touchPoint;
++        if (!touch) return;
++        const t = Array.from(e.changedTouches).find((item) => item.identifier === touch.identifier);
++        if (t) {
++            const pos = this.getMousePos(t.clientX, t.clientY);
++            let isSwipe = false;
++
++            this.touchPoint = null;
++            if (touch.intent === 'vertical') return;
++            // A vertical move may arrive only on touchend in a coalesced stream.
++            const totalX = Math.abs(pos.x - touch.point.x);
++            const totalY = Math.abs(pos.y - touch.point.y);
++            if (touch.intent === 'pending' && totalY > 8 && totalY >= totalX) return;
++
++            // swipe detection
++            {
++                const dx = pos.x - touch.point.x;
++                const distY = Math.abs(pos.y - touch.point.y);
++
++                if (
++                    Math.abs(dx) > this.swipeDistance &&
++                    Math.abs(dx) > distY &&
++                    (Date.now() - touch.time < this.swipeTimeout ||
++                        Math.abs(dx) >= this.app.getRender().getRect().pageWidth * 0.35)
++                ) {
++                    // Clear the drag before starting one atomic swipe turn.
++                    this.app.cancelUserTouch();
++                    if (dx > 0) {
++                        this.app.flipPrev(
++                            touch.point.y < this.app.getRender().getRect().height / 2
++                                ? FlipCorner.TOP
++                                : FlipCorner.BOTTOM
++                        );
++                    } else {
++                        this.app.flipNext(
++                            touch.point.y < this.app.getRender().getRect().height / 2
++                                ? FlipCorner.TOP
++                                : FlipCorner.BOTTOM
++                        );
++                    }
++                    isSwipe = true;
++                }
++            }
++
++            if (!isSwipe && touch.intent === 'pending') this.app.startUserTouch(touch.point);
++            this.app.userStop(pos, isSwipe);
++        }
++    };
++}
+diff --git a/vendor/page-flip/tsconfig.build.json b/vendor/page-flip/tsconfig.build.json
+new file mode 100644
+index 0000000..eb41d95
+--- /dev/null
++++ b/vendor/page-flip/tsconfig.build.json
+@@ -0,0 +1,15 @@
++{
++  "compilerOptions": {
++    "target": "ES2022",
++    "module": "ESNext",
++    "moduleResolution": "Bundler",
++    "lib": ["ES2022", "DOM", "DOM.Iterable"],
++    "strict": false,
++    "skipLibCheck": true,
++    "declaration": true,
++    "emitDeclarationOnly": true,
++    "rootDir": "src",
++    "outDir": "dist/types"
++  },
++  "include": ["src/**/*.ts"]
++}

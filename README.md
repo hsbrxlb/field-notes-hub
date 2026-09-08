@@ -11,7 +11,7 @@
 - `research.html`：研究项目、方法、参与方式、用户权利和 AI智能对话问卷介绍
 - `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
 - `content-studio.html`：已经形成的内容、研究、方案和工作成果
-- `content-pipeline-test.html`：展示社媒内容测试的 Prompt、目的、平台成品和审核结论
+- `content-pipeline-test.html`：展示社媒内容测试的 Prompt、目的、平台作品和审核意见；最新五平台互动稿与旧三平台样稿分别保留，英文原稿默认展开，中文可逐平台查看。主题插画与产品实拍分开标识，TikTok / YouTube Shorts 展示配文。
 - `flipbooks.html`：Flip Book Demo（翻页书），进入 Brand Story 与 Car Owner Survey
 - `mascot.html`：OEDRO 吉祥物角色档案，19 个角色区共 110 张独立高清图；重复角色合并展示，并提供页内跳转导航
 - `topics.html`与`topic.html`：专题、稳定方法和经验记录
@@ -20,6 +20,8 @@
 `content-studio.html`路径为兼容旧链接而保留。页面已经改为只读成果档案，读取`data/content-studio.json`；没有填写表单、在线生成、浏览器草稿、版本审核、登录或数据库。
 
 `flipbooks.html` 是两本书的统一入口。书内左上角返回该页面；Car Owner Survey 的回答保存在访问者当前浏览器。
+
+两本书使用已修复的软页引擎：末页保持柔软且不自动退出，拖回起点可取消，保存回答立即更新。独立翻页源项目的重建顺序：核对 `scripts/flipbook-baseline-sha256.json`，依次应用 `scripts/flipbook-source.patch` 与 `scripts/flipbook-integration.patch`，运行 `npm run build`；只把构建产物同步到 `experiences/flipbooks`。这些补丁不作为网页资源发布。不要从未打补丁的旧源项目覆盖当前构建。
 
 “问题与反馈”同时读取两份用途不同的数据：
 
@@ -92,6 +94,8 @@ Bluesky检查每天通过现有Tavily免费额度运行1组限定`bsky.app`的`O
 ## 设计与发布检查
 
 整站设计规则见 `design.md`。Hub 固定保留 `assets/background.png` 流体底图，正文与侧栏通过深色半透明阅读面保持清晰，不使用文字阴影；侧栏不设置页内搜索，辅助信息不小于 12px，触控目标不小于 44×44px。
+
+980px 以下导航收起、表格采用键值行，手机菜单支持触摸、Tab 和 Escape，并恢复原焦点。导航打开时隐藏后方正文以避免文字重影，底图保持可见。数据加载失败可重试；空项目列表明确提示，而不是留下空白。
 
 页面或可见文案变更还需运行：
 
