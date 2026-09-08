@@ -48,10 +48,7 @@ for (const file of codeFiles) {
   for (const match of source.matchAll(/<details\b[^>]*>/gi)) {
     detailTags.push({ file, tag: match[0] });
     const intentionalHistory = /class="[^"]*evo-round/.test(match[0]);
-    // Review-page supporting evidence may collapse; prompts and actual posts remain visible.
-    const reviewSupplement = path.relative(root, file) === 'content-pipeline-test.js'
-      && /^<details class="(?:pipeline-evidence|platform-review|pipeline-revisions|pipeline-criteria|platform-translation)">$/.test(match[0]);
-    if (!intentionalHistory && !reviewSupplement && !/\bopen\b/i.test(match[0])) errors.push(path.relative(root, file) + ' 有正文details未默认展开：' + match[0]);
+    if (!intentionalHistory && !/\bopen\b/i.test(match[0])) errors.push(path.relative(root, file) + ' 有正文details未默认展开：' + match[0]);
   }
   for (const match of source.matchAll(/<[^>]+aria-expanded="false"[^>]*>/gi)) {
     if (!/class="[^"]*menu-button/.test(match[0])) errors.push(path.relative(root, file) + ' 有正文aria-expanded=false：' + match[0]);
@@ -104,5 +101,5 @@ if (errors.length) {
   errors.forEach((error) => console.error('- ' + error));
   process.exitCode = 1;
 } else {
-  console.log('公开页面检查通过（' + detailTags.length + ' 个details，正文展开，指定评审附件可折叠）');
+  console.log('公开页面检查通过（' + detailTags.length + ' 个details，正文与评审内容默认展开）');
 }

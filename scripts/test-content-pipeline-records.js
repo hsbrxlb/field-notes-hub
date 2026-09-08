@@ -36,9 +36,11 @@ const firstPurpose = html.indexOf('class="pipeline-purpose"');
 const firstOutputs = html.indexOf('class="pipeline-outputs"');
 const firstReview = html.indexOf('class="pipeline-final-review"');
 assert.ok(firstPrompt < firstPurpose && firstPurpose < firstOutputs && firstOutputs < firstReview, '页面必须按Prompt、目的、平台成品、复核结论排列');
+const detailTags = [...html.matchAll(/<details\b[^>]*>/g)].map(x => x[0]);
+assert.ok(detailTags.length > 0 && detailTags.every(tag => /\bopen\b/.test(tag)), '全部评审与翻译默认可见');
 const firstEvidence = html.indexOf('class="pipeline-evidence"');
 assert.ok(firstEvidence > firstReview, '产品来源必须位于文案及审核之后');
-assert.ok(html.includes('<details class="pipeline-evidence">'), '来源详情默认折叠');
+assert.ok(html.includes('<details class="pipeline-evidence" open>'), '来源详情默认展开');
 assert.ok(!html.includes('<dt>Hook</dt>') && !html.includes('<dt>CTA</dt>'), '完整帖子不能被内部文案字段拆成表格');
 assert.equal((html.match(/class="platform-post(?: post-with-image)?"/g) || []).length, 8, '每个平台都有独立完整帖子');
 assert.equal((html.match(/class="platform-media-state"/g) || []).length, 3, '旧三平台仍披露配图缺失');
@@ -65,7 +67,7 @@ simulated.variants.forEach((variant) => {
     previous = position;
     assert.ok(article.includes(`<${tag}>${escapeText(block.zh)}</${tag}>`), variant.platform + '中文必须完整显示');
   }
-  assert.ok(article.includes('<details class="platform-translation">'), '中文使用原生展开区');
+  assert.ok(article.includes('<details class="platform-translation" open>'), '中文默认展开');
   if (variant.visual.kind === 'external_video') assert.ok(!article.includes('<img') && !article.includes('配图待制作'), '视频配文不能冒充图片作品');
 });
 const injected = JSON.parse(JSON.stringify(current));
@@ -111,8 +113,8 @@ try {
     assert.ifError(result.error);
     return result;
   };
-  assert.equal(validateDetails('content-pipeline-test.js', '<details class="platform-review"></details>').status, 0, '评审附件允许按需展开');
-  assert.equal(validateDetails('content-pipeline-test.js', '<details class="platform-translation"></details>').status, 0, '中文对照允许按需展开');
+  assert.equal(validateDetails('content-pipeline-test.js', '<details class="platform-review"></details>').status, 1, '折叠评审附件必须拒绝');
+  assert.equal(validateDetails('content-pipeline-test.js', '<details class="platform-translation"></details>').status, 1, '折叠中文对照必须拒绝');
   const hiddenPost = validateDetails('content-pipeline-test.js', '<details class="platform-post"></details>');
   assert.equal(hiddenPost.status, 1, '实际帖子仍禁止默认隐藏');
   assert.match(hiddenPost.stderr, /正文details未默认展开/);

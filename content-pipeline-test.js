@@ -29,7 +29,7 @@
 
   function factsMarkup(record) {
     if (!/^https:\/\//.test(value(record.source.url))) throw new Error('来源链接必须使用 HTTPS');
-    return `<details class="pipeline-evidence">
+    return `<details class="pipeline-evidence" open>
       <summary>产品来源与素材</summary>
       <div class="pipeline-evidence-layout${record.image ? '' : ' evidence-text-only'}">
       <div class="pipeline-evidence-copy">
@@ -77,10 +77,10 @@
           <p>${escapeHtml(item.body_en)}</p>
           <p>${escapeHtml(item.cta_en)}</p>`}
         </div>
-        ${item.fields ? `<details class="platform-translation"><summary>中文对照</summary><div class="platform-copy" lang="zh-CN">${fieldsMarkup(item.fields, 'zh')}</div></details>` : ''}
+        ${item.fields ? `<details class="platform-translation" open><summary>中文对照</summary><div class="platform-copy" lang="zh-CN">${fieldsMarkup(item.fields, 'zh')}</div></details>` : ''}
         </div>
       </div>
-      <details class="platform-review">
+      <details class="platform-review" open>
         <summary>AI审核意见 · ${escapeHtml(item.review.decision)}</summary>
         <p>${escapeHtml(item.review.rationale)}</p>
         <ul>${item.review.checks.map((check) => `<li>${escapeHtml(check)}</li>`).join('')}</ul>
@@ -94,12 +94,12 @@
       <div>
         <div class="section-head"><h2 id="${escapeHtml(record.run_id)}-review-title">AI复核结果</h2><span class="record-status status-${statusClass(record.ai_review.decision)}">${escapeHtml(record.ai_review.decision)}</span></div>
         <p>${escapeHtml(record.ai_review.summary)}</p>
-        <details class="pipeline-revisions"><summary>${record.ai_review.revision_count ? `修改记录 · ${escapeHtml(record.ai_review.revision_count)} 次退稿` : '检查记录'}</summary>
+        <details class="pipeline-revisions" open><summary>${record.ai_review.revision_count ? `修改记录 · ${escapeHtml(record.ai_review.revision_count)} 次退稿` : '检查记录'}</summary>
         <ul>${record.ai_review.corrections.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
         </details>
       </div>
       <div class="human-review">
-        <details class="pipeline-criteria"><summary>评审问题与效果观察</summary>
+        <details class="pipeline-criteria" open><summary>评审问题与效果观察</summary>
         <ol>${record.human_questions.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ol>
         <p>${escapeHtml(record.brief.post_publish_signals)}</p>
         <ul>${record.brief.success_criteria.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
