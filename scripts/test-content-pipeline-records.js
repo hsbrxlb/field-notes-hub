@@ -92,7 +92,7 @@ const noMedia = clone(simulated);
 delete noMedia.variants[0].visual.image;
 noMedia.ai_review.revision_count = 0;
 const noMediaHtml = renderer.recordMarkup(noMedia);
-assert.ok(noMediaHtml.includes('4:5 配图待制作') && noMediaHtml.includes('检查记录') && !noMediaHtml.includes('0 次退稿'), '缺图与零次退稿必须如实展示');
+assert.ok(noMediaHtml.includes('4:5 配图待制作') && noMediaHtml.includes('检查记录') && !noMediaHtml.includes('0 次修改'), '缺图与零次修改必须如实展示');
 assert.ok(html.includes('record-status status-blocked">文案可审，图片待完善'), '图片未完成时总状态必须使用阻塞色');
 assert.ok(html.includes('record-status status-pending">图文样稿待你审核'), '新记录不能显示为已通过');
 const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);

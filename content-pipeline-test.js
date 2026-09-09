@@ -94,7 +94,7 @@
       <div>
         <div class="section-head"><h2 id="${escapeHtml(record.run_id)}-review-title">AI复核结果</h2><span class="record-status status-${statusClass(record.ai_review.decision)}">${escapeHtml(record.ai_review.decision)}</span></div>
         <p>${escapeHtml(record.ai_review.summary)}</p>
-        <details class="pipeline-revisions" open><summary>${record.ai_review.revision_count ? `修改记录 · ${escapeHtml(record.ai_review.revision_count)} 次退稿` : '检查记录'}</summary>
+        <details class="pipeline-revisions" open><summary>${record.ai_review.revision_count ? `修改记录 · ${escapeHtml(record.ai_review.revision_count)} 次修改` : '检查记录'}</summary>
         <ul>${record.ai_review.corrections.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
         </details>
       </div>
