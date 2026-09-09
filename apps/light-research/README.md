@@ -1,6 +1,6 @@
 # Light Research
 
-Hawthorne is the selected typeface. Oedro Buddy runs a conversational lighting study with natural model-generated replies, bounded topic routing, source-linked evidence and saved-answer retry. Prestion and Sorella comparison variants are not included.
+Oedro Buddy runs a conversational lighting study with natural model-generated replies, source-linked evidence and saved-answer retry. Uninterpretable answers stay on the current question until understood; participants can explicitly skip, stop, or ask to return later.
 
 This directory contains the complete Next.js application. GitHub Pages publishes the Hub's entry page and screenshot only; it cannot execute these route handlers. The Hub entry opens an existing service at `http://127.0.0.1:54810/` on the visitor's own computer. It is not a cloud API endpoint.
 
@@ -32,3 +32,15 @@ The first question is canonical English; subsequent replies follow substantive p
 The selected OTF and generated background are served locally from `public/`. Chinese and unsupported glyphs use a system serif fallback. New deployments must use their own appropriate asset rights and operational settings.
 
 The export and retention scripts require an explicit `DATABASE_URL`. With a configured `.env.local`, run them using `node --env-file=.env.local scripts/export-sessions.mjs` or `node --env-file=.env.local scripts/manage-session-data.mjs`; inspect their usage before selecting records.
+
+## Cloud test hosting
+
+The repository root `render.yaml` defines one free Node web service in Singapore. It builds this subdirectory using `npm ci` and the existing webpack build, then listens on Render's assigned `PORT` on all interfaces. `/api/health` is a liveness check and never calls the model or writes an interview.
+
+Supply `DATABASE_URL` from a Neon project and `DEEPSEEK_API_KEY` through Render's secret environment settings. Use the Neon connection string with TLS enabled; do not commit either value. The existing schema initializer creates tables on first use. A new cloud database starts without local interview records.
+
+Configuration alone does not establish a live deployment. Keep the Hub launch URL pointing at the verified service until the cloud URL passes a real conversation, saved-answer retrieval, and stop check. Free Render services sleep when idle and can take time to wake.
+
+## Reading and input
+
+The selected display face remains throughout the page. User answers use 25px on desktop and 22px on mobile. Choice controls use open rows with visible selected states. The answer field grows with content up to a viewport-aware limit, then scrolls internally. Small visual viewports retain 44px send, skip, and stop controls.

@@ -71,7 +71,7 @@
     "providerDisclosure": "Answers are processed by a configured third-party AI provider for interview understanding, controlled follow-up, and evidence extraction."
   },
   "moderation": {
-    "policyVersion": "controlled-autonomy-3.5-natural-language",
+    "policyVersion": "controlled-autonomy-3.6-understanding-gate",
     "maxTotalProbes": 6,
     "checkpointEveryAnchors": 3,
     "maxCheckpointQuestions": 2,
@@ -83,7 +83,7 @@
   "model": {
     "provider": "deepseek",
     "model": "deepseek-v4-flash",
-    "promptVersion": "interviewer-3.5-natural-language",
+    "promptVersion": "interviewer-3.6-understanding-gate",
     "timeoutMs": 25000,
     "maxRetries": 1
   },

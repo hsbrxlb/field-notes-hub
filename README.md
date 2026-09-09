@@ -8,7 +8,7 @@
 
 - `index.html`：当前重点、最近成果、工作入口和运营专题
 - `work.html`：项目状态、待办、阻塞和下一动作
-- `light-research.html`：AI 对话调研入口，连接本机运行的 Hawthorne 版 Light Research；独立应用源码保存在 `apps/light-research`
+- `light-research.html`：AI 对话调研入口，连接本机运行的 Light Research；独立应用源码保存在 `apps/light-research`
 - `research.html`：研究项目、方法、参与方式、用户权利和 AI智能对话问卷介绍
 - `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
 - `content-studio.html`：已经形成的内容、研究、方案和工作成果

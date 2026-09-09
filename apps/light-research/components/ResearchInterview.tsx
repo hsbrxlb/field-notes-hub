@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import type { PublicStudyConfig, StudyInput } from "@/lib/study-schema";
 
@@ -50,9 +50,9 @@ const RECOVERY_COPY: Record<string, Record<string, string>> = {
 };
 
 const DATA_COPY: Record<string, Record<string, string>> = {
-  en: { remove: "Delete my answers", confirm: "Delete saved answers?", detail: "This removes this interview from the local database. Previously downloaded files are not removed.", cancel: "Keep answers", deleted: "Your answers have been deleted", restart: "Start another interview", conflict: "Another tab moved to a different question. This answer was not submitted:", dismiss: "Dismiss", synthetic: "Synthetic test session" },
-  es: { remove: "Eliminar mis respuestas", confirm: "¿Eliminar las respuestas guardadas?", detail: "Esto elimina esta entrevista de la base de datos local. Los archivos ya descargados no se eliminan.", cancel: "Conservar respuestas", deleted: "Tus respuestas se han eliminado", restart: "Iniciar otra entrevista", conflict: "Otra pestaña pasó a otra pregunta. Esta respuesta no se envió:", dismiss: "Cerrar", synthetic: "Sesión de prueba sintética" },
-  "zh-CN": { remove: "删除我的回答", confirm: "删除已保存的回答？", detail: "这会从本地数据库删除本次访谈。此前下载的文件不会自动删除。", cancel: "保留回答", deleted: "你的回答已删除", restart: "开始另一场访谈", conflict: "另一标签页已进入新问题。以下回答没有提交：", dismiss: "收起", synthetic: "模拟测试会话" },
+  en: { remove: "Delete my answers", confirm: "Delete saved answers?", detail: "This removes this interview from the study database. Previously downloaded files are not removed.", cancel: "Keep answers", deleted: "Your answers have been deleted", restart: "Start another interview", conflict: "Another tab moved to a different question. This answer was not submitted:", dismiss: "Dismiss", synthetic: "Synthetic test session" },
+  es: { remove: "Eliminar mis respuestas", confirm: "¿Eliminar las respuestas guardadas?", detail: "Esto elimina esta entrevista de la base de datos del estudio. Los archivos ya descargados no se eliminan.", cancel: "Conservar respuestas", deleted: "Tus respuestas se han eliminado", restart: "Iniciar otra entrevista", conflict: "Otra pestaña pasó a otra pregunta. Esta respuesta no se envió:", dismiss: "Cerrar", synthetic: "Sesión de prueba sintética" },
+  "zh-CN": { remove: "删除我的回答", confirm: "删除已保存的回答？", detail: "这会从调研数据库删除本次访谈。此前下载的文件不会自动删除。", cancel: "保留回答", deleted: "你的回答已删除", restart: "开始另一场访谈", conflict: "另一标签页已进入新问题。以下回答没有提交：", dismiss: "收起", synthetic: "模拟测试会话" },
 };
 
 const LOCAL_COPY: Record<string, Record<string, string>> = {
@@ -128,6 +128,7 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
   const exportingRef = useRef(false);
   const shellRef = useRef<HTMLElement>(null);
   const transcriptRef = useRef<HTMLDivElement>(null);
+  const answerRef = useRef<HTMLTextAreaElement>(null);
   const followingLatestRef = useRef(true);
   const submittingRef = useRef(false);
   const stoppedRef = useRef(false);
@@ -271,7 +272,9 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
     if (appState !== "interview") return;
     const viewport = window.visualViewport;
     const resize = () => {
-      shellRef.current?.style.setProperty("--survey-viewport", `${viewport?.height || window.innerHeight}px`);
+      const height = viewport?.height || window.innerHeight;
+      shellRef.current?.style.setProperty("--survey-viewport", `${height}px`);
+      shellRef.current?.toggleAttribute("data-compact-viewport", height < 590);
       if (followingLatestRef.current) followCurrentQuestion();
     };
     const observer = new ResizeObserver(() => { if (followingLatestRef.current) followCurrentQuestion(); });
@@ -281,6 +284,38 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
     resize();
     return () => { observer.disconnect(); window.removeEventListener("resize", resize); viewport?.removeEventListener("resize", resize); };
   }, [appState, followCurrentQuestion]);
+
+  // Keep the composer compact when empty and grow with typing or a restored draft.
+  // ResizeObserver covers wrapping after rotation; font readiness covers the local display face.
+  const answerText = retryAnswer ? retryAnswer.inputPayload.freeText || retryAnswer.text : freeText;
+  useLayoutEffect(() => {
+    const textarea = answerRef.current;
+    if (!textarea) return;
+    const resizeAnswer = () => {
+      textarea.style.height = "0px";
+      const styles = getComputedStyle(textarea);
+      const minimum = parseFloat(styles.minHeight) || 0;
+      const maximum = parseFloat(styles.maxHeight) || 200;
+      textarea.style.height = `${Math.min(maximum, Math.max(minimum, textarea.scrollHeight))}px`;
+      textarea.style.overflowY = textarea.scrollHeight > textarea.clientHeight + 1 ? "auto" : "hidden";
+    };
+    resizeAnswer();
+    let width = textarea.clientWidth;
+    const observer = new ResizeObserver(() => {
+      if (textarea.clientWidth !== width) { width = textarea.clientWidth; resizeAnswer(); }
+    });
+    observer.observe(textarea);
+    window.addEventListener("resize", resizeAnswer);
+    window.visualViewport?.addEventListener("resize", resizeAnswer);
+    let cancelled = false;
+    void document.fonts.ready.then(() => { if (!cancelled) resizeAnswer(); });
+    return () => {
+      cancelled = true;
+      observer.disconnect();
+      window.removeEventListener("resize", resizeAnswer);
+      window.visualViewport?.removeEventListener("resize", resizeAnswer);
+    };
+  }, [answerText, appState, conversation?.input?.type, conversation?.anchorId]);
 
   const start = async () => {
     if (!consentChecked || busy) return;
@@ -528,10 +563,10 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
   const completed = conversation?.status === "completed";
   const currentQuestionIndex = conversation?.messages.findLastIndex((message) => message.role === "assistant" && message.text === conversation.prompt);
   const visualUi = activeLocale.startsWith("zh")
-    ? { pauseMotion: "暂停背景动态", resumeMotion: "开启背景动态", history: "查看本次对话", session: "本次访谈", topic: "话题", latest: "回到当前问题", shortcut: "⌘ / Ctrl + Enter 发送" }
+    ? { pauseMotion: "暂停背景动态", resumeMotion: "开启背景动态", history: "查看本次对话", session: "访谈选项", topic: "访谈进度", latest: "回到当前问题", shortcut: "⌘ / Ctrl + Enter 发送" }
     : activeLocale.startsWith("es")
-    ? { pauseMotion: "Pausar movimiento", resumeMotion: "Activar movimiento", history: "Ver esta conversación", session: "Esta entrevista", topic: "Tema", latest: "Volver a la pregunta", shortcut: "⌘ / Ctrl + Enter para enviar" }
-    : { pauseMotion: "Pause background motion", resumeMotion: "Resume background motion", history: "Review this conversation", session: "This interview", topic: "Topic", latest: "Back to current question", shortcut: "⌘ / Ctrl + Enter to send" };
+    ? { pauseMotion: "Pausar movimiento", resumeMotion: "Activar movimiento", history: "Ver esta conversación", session: "Opciones", topic: "Progreso", latest: "Volver a la pregunta", shortcut: "⌘ / Ctrl + Enter para enviar" }
+    : { pauseMotion: "Pause background motion", resumeMotion: "Resume background motion", history: "Review this conversation", session: "Options", topic: "Interview progress", latest: "Back to current question", shortcut: "⌘ / Ctrl + Enter to send" };
   return (
     <main ref={shellRef} lang={activeLocale} className={`appShell lightResearchShell${completed ? ` isComplete${historyOpen ? " showHistory" : ""}` : ""}${conversation?.messages.length === 1 ? " isOpening" : ""}${motionPaused ? " motionPaused" : ""}`}>
       <header className="appHeader">
@@ -571,7 +606,7 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
             return <button key={option.id} type="button" disabled={busy || !!retryAnswer} aria-pressed={checked} className={checked ? "choice selected" : "choice"} onClick={() => toggleOption(option.id)}><span className="choiceIndicator" aria-hidden="true" /><span>{pickLocale(option.labels, activeLocale, baseLocale)}</span></button>;
           })}</div>}
           {activeInput.type === "scale" && <div className="scaleInput"><span>{activeInput.minLabels ? pickLocale(activeInput.minLabels, activeLocale, baseLocale) : activeInput.min}</span><div>{Array.from({ length: activeInput.max - activeInput.min + 1 }, (_, offset) => String(activeInput.min + offset)).map((value) => <button type="button" disabled={busy || !!retryAnswer} aria-pressed={selected.includes(value)} className={selected.includes(value) ? "scaleChoice selected" : "scaleChoice"} key={value} onClick={() => updateDraft(freeText, [value])}>{value}</button>)}</div><span>{activeInput.maxLabels ? pickLocale(activeInput.maxLabels, activeLocale, baseLocale) : activeInput.max}</span></div>}
-          {(activeInput.type === "text" || (activeInput.type !== "scale" && activeInput.allowOther)) && <label className="textInput"><span>{activeInput.type === "text" ? ui.answer : ui.context}</span><textarea value={retryAnswer ? retryAnswer.inputPayload.freeText || retryAnswer.text : freeText} readOnly={busy || !!retryAnswer} aria-describedby={currentQuestionIndex !== -1 ? "current-question" : undefined} maxLength={3000} rows={3} placeholder={activeInput.type === "text" && activeInput.placeholder ? pickExactLocale(activeInput.placeholder, activeLocale) || ui.anyLanguage : ui.anyLanguage} onChange={(event) => updateDraft(event.target.value, selected)} onKeyDown={(event) => { if ((event.metaKey || event.ctrlKey) && event.key === "Enter" && !event.nativeEvent.isComposing) { event.preventDefault(); void submit(); } }} /></label>}
+          {(activeInput.type === "text" || (activeInput.type !== "scale" && activeInput.allowOther)) && <label className="textInput"><span>{activeInput.type === "text" ? ui.answer : ui.context}</span><textarea ref={answerRef} value={answerText} readOnly={busy || !!retryAnswer} aria-describedby={currentQuestionIndex !== -1 ? "current-question" : undefined} maxLength={3000} rows={1} placeholder={activeInput.type === "text" && activeInput.placeholder ? pickExactLocale(activeInput.placeholder, activeLocale) || ui.anyLanguage : ui.anyLanguage} onChange={(event) => updateDraft(event.target.value, selected)} onKeyDown={(event) => { if ((event.metaKey || event.ctrlKey) && event.key === "Enter" && !event.nativeEvent.isComposing) { event.preventDefault(); void submit(); } }} /></label>}
           {error && !retryAnswer && <p className="errorMessage" role="alert">{error}</p>}
           </div>
           <div className="composerActions"><div><button className="textButton" type="button" disabled={busy || stopping} onClick={() => void submit("skip")}>{ui.skip}</button><button className="textButton" type="button" disabled={stopping} onClick={stop}>{ui.stop}</button></div><button className="primaryButton" aria-label={busy ? ui.reviewing : retryAnswer || conversation.retryExhausted ? recoveryUi.retry : ui.send} type="button" disabled={busy || stopping || conversation.retryExhausted || (!retryAnswer && !freeText.trim() && !selected.length)} onClick={() => void submit()}>{busy ? ui.reviewing : retryAnswer || conversation.retryExhausted ? recoveryUi.retry : ui.send}</button></div>

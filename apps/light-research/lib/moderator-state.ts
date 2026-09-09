@@ -157,7 +157,7 @@ const safeReply = (candidate: string, recentPrompts: string[], allowNoQuestion =
   const questionCount = cleaned.match(/[?？؟]/g)?.length ?? 0;
   const praise = /\b(great|excellent|insightful|smart|good answer|well said)\b|很有意思|说得很好|非常棒|excelente|interesante/iu.test(cleaned);
   const generic = /\b(tell me more|elaborate|provide more detail)\b|详细说说|展开一下|多说一点/iu.test(cleaned);
-  const leading = /\b(is it because|would you say|does that mean|for example|such as|if (?:price|cost|installation) (?:isn't|is not|weren't|were not))\b|是不是.{0,40}[?？]|也就是说|比如|例如|对吗[?？]|如果.{0,30}(?:不是问题|没有限制|不考虑).{0,20}[?？]|超过.{0,12}(美元|dollars?)/iu.test(cleaned);
+  const leading = /,\s*like\s+|\b(is it because|would you say|does that mean|for example|such as|if (?:price|cost|installation) (?:isn't|is not|weren't|were not))\b|是不是.{0,40}[?？]|也就是说|比如|例如|对吗[?？]|如果.{0,30}(?:不是问题|没有限制|不考虑).{0,20}[?？]|超过.{0,12}(美元|dollars?)/iu.test(cleaned);
   const repeated = !allowSemanticRepeat && recentPrompts.some((prompt) => semanticSimilarity(cleaned, prompt) >= 0.82);
   const questionSafe = allowNoQuestion ? questionCount <= 1 : questionCount === 1;
   return cleaned && questionSafe && !questionPolicyViolation(cleaned) && !praise && !generic && !leading && !repeated ? cleaned : null;
@@ -202,8 +202,8 @@ const localizedAnchorClarification = (anchor: StudyAnchor, language: string) =>
 const resolvedReplyLanguage = (rawText: string, assessment: ModeratorAssessment, previousLanguage: string) => {
   const text = compact(rawText);
   if (["gibberish", "prompt_attack", "off_topic"].includes(assessment.participantIntent)) return previousLanguage;
-  if (text.length < 4) return previousLanguage;
   if ((text.match(/\p{Script=Han}/gu)?.length ?? 0) >= 2) return "zh-CN";
+  if (text.length < 4) return previousLanguage;
   if (/[¿¡]|\b(qué|cuál|cómo|cuándo|dónde|porque|pero|para|precio|coche|bosque|instalación)\b/iu.test(text)) return "es";
   const latinWords = text.match(/[A-Za-zÀ-ÿ]+/g)?.length ?? 0;
   if (latinWords >= 3 && assessment.replyLanguageConfidence !== "low") return assessment.replyLanguage || previousLanguage;
@@ -371,29 +371,40 @@ const planAssessment = ({
   }
 
   const currentMove = previous.activeMove;
+  const factsCoverAnchor = isAnchorCovered(study, state, anchor.id);
+  const modelCoversAnchor = assessment.topicCoverage.anchorId === anchor.id && assessment.topicCoverage.status === "covered";
+  const activeGap = currentMove.gapId ? state.pendingGaps.find((gap) => gap.id === currentMove.gapId) : undefined;
+  const gapCovered = activeGap?.fieldId
+    ? hasFact(state, activeGap.fieldId) && !currentContradictionFields.has(activeGap.fieldId)
+    : factsCoverAnchor;
+  const explicitExit = forceAdvance || assessment.participantIntent === "skip" || assessment.participantIntent === "refusal";
+  const cannotInterpret = unsafeGapIntents.has(assessment.participantIntent);
+  const needsExplanation = assessment.participantIntent === "asks_clarification";
+  const unresolvedRepair = (assessment.participantIntent === "already_answered" || assessment.participantIntent === "frustration") && !(currentMove.kind === "anchor" ? factsCoverAnchor || modelCoversAnchor : gapCovered);
+  // Repair is a response to a new participant turn, never a provider retry loop.
+  // Neither repair/probe budgets nor checkpoint/final-audit limits make an
+  // uninterpretable answer usable. Only a participant's explicit exit can do so.
+  const canAskFocusedProbe = currentMove.kind === "anchor" && assessment.nextAction === "probe_now"
+    && currentUnresolvedPoints.length > 0
+    && (state.probeCounts[anchor.id] ?? 0) < anchor.maxImmediateProbes
+    && state.totalProbeCount < study.moderation.maxTotalProbes
+    && !recentPrompts.some((prompt) => semanticSimilarity(assessment.candidateReply, prompt) >= 0.82);
+  const lacksUsableAnswer = !(currentMove.kind === "anchor" ? factsCoverAnchor : gapCovered)
+    && !normalizeLaterAnswerability
+    && (assessment.topicCoverage.status === "missing" || (!canAskFocusedProbe && (currentMove.kind !== "anchor" || !modelCoversAnchor)));
+  if (!explicitExit && (cannotInterpret || needsExplanation || unresolvedRepair || lacksUsableAnswer)) {
+    const serverAction = cannotInterpret ? "soft_redirect" : unresolvedRepair ? "repair_conversation" : "immediate_clarify";
+    state.repairCount += 1;
+    if (activeGap) { activeGap.status = "asked"; delete activeGap.resolvedTurnId; }
+    state.activePrompt = previous.activePrompt;
+    return { state, serverAction, prompt: state.activePrompt, displayedReply: state.activePrompt, acceptedUpdates, rejectedUpdates, actionReason: "Keep the current question open until the answer is understood, or the participant explicitly skips or stops." };
+  }
   if (currentMove.kind !== "anchor") {
-    const repairBudgetExhausted = assessment.participantIntent === "asks_clarification" && state.repairCount >= study.moderation.maxRepairTurns;
-    const activeGap = state.pendingGaps.find((gap) => gap.id === currentMove.gapId);
-    if (activeGap && assessment.participantIntent !== "asks_clarification") {
-      const resolvedByFact = Boolean(activeGap.fieldId && acceptedUpdates.some((update) => update.fieldId === activeGap.fieldId) && hasFact(state, activeGap.fieldId) && !currentContradictionFields.has(activeGap.fieldId));
-      const covered = !activeGap.fieldId && isAnchorCovered(study, state, anchor.id);
-      const deferUntilEnd = currentMove.kind === "checkpoint_gap" && assessment.participantIntent !== "refusal" && assessment.participantIntent !== "skip" && normalizeLaterAnswerability && activeGap.attempts < 2;
-      activeGap.status = resolvedByFact || covered ? "resolved" : deferUntilEnd ? "pending" : "unresolved";
+    if (activeGap) {
+      const deferUntilEnd = currentMove.kind === "checkpoint_gap" && !explicitExit && normalizeLaterAnswerability && activeGap.attempts < 2;
+      activeGap.status = gapCovered ? "resolved" : deferUntilEnd ? "pending" : "unresolved";
       if (deferUntilEnd) activeGap.notBeforeStage = "final_audit";
       else activeGap.resolvedTurnId = turnId;
-    }
-    if (assessment.participantIntent === "asks_clarification" && state.repairCount < study.moderation.maxRepairTurns) {
-      state.repairCount += 1;
-      const prompt = localizedAnchorClarification(anchor, state.activeLanguage);
-      state.activePrompt = prompt;
-      return { state, serverAction: "immediate_clarify", prompt, displayedReply: prompt, acceptedUpdates, rejectedUpdates, actionReason: assessment.actionReason };
-    }
-    if (repairBudgetExhausted) {
-      if (activeGap) {
-        activeGap.status = "unresolved";
-        activeGap.resolvedTurnId = turnId;
-      }
-      state.riskFlags = unique([...state.riskFlags, `repair_budget_exhausted:${anchor.id}`]);
     }
     if (currentMove.kind === "checkpoint_gap" && currentMove.resumeAnchorId) {
       const resume = study.anchors.find((item) => item.id === currentMove.resumeAnchorId) ?? null;
@@ -415,11 +426,8 @@ const planAssessment = ({
     return { state, serverAction: "complete", prompt: null, displayedReply: completion, acceptedUpdates, rejectedUpdates, actionReason: assessment.actionReason };
   }
 
-  const factsCoverAnchor = isAnchorCovered(study, state, anchor.id);
-  const modelCoversAnchor = assessment.topicCoverage.anchorId === anchor.id && assessment.topicCoverage.status === "covered";
   let serverAction: ServerAction;
   if (forceAdvance) serverAction = "skip";
-  else if (assessment.participantIntent === "gibberish" && (previous.lastParticipantIntent === "gibberish" || (previous.repairCount > 0 && assessment.nextAction === "defer_gap"))) serverAction = "defer_gap";
   else if (assessment.participantIntent === "prompt_attack" || assessment.participantIntent === "off_topic" || assessment.participantIntent === "gibberish") serverAction = "soft_redirect";
   else if (assessment.participantIntent === "asks_clarification") serverAction = "immediate_clarify";
   else if (assessment.participantIntent === "already_answered" || assessment.participantIntent === "frustration") serverAction = "repair_conversation";
@@ -442,7 +450,7 @@ const planAssessment = ({
   if (serverAction === "probe_now" && !probeBudgetAvailable) serverAction = "defer_gap";
   if (serverAction === "probe_now" && (assessment.topicCoverage.status === "covered" || factsCoverAnchor) && !currentUnresolvedPoints.some((point) => point.priority === "critical")) serverAction = "advance";
   if (serverAction === "complete") serverAction = "advance";
-  if ((serverAction === "repair_conversation" || serverAction === "immediate_clarify" || serverAction === "soft_redirect") && state.repairCount >= study.moderation.maxRepairTurns) serverAction = factsCoverAnchor || modelCoversAnchor ? "advance" : "defer_gap";
+  // Research budgets bound optional probes, not the ability to understand an answer.
 
   if (serverAction === "probe_now") {
     state.probeCounts[anchor.id] = (state.probeCounts[anchor.id] ?? 0) + 1;
@@ -532,7 +540,8 @@ export const acceptPlannedReply = (study: StudyManifest, applied: AppliedTurn, a
   const fieldId = gap?.fieldId ?? probeGap?.fieldId;
   const actionMatches = assessment.nextAction === applied.serverAction || (applied.serverAction === "skip" && assessment.nextAction === "defer_gap");
   const scopeMatches = Boolean(anchor && assessment.candidateAnchorId === anchor.id && (!fieldId || assessment.candidateFieldId === fieldId) && (!assessment.candidateFieldId || anchorOwnsGapField(study, anchor.id, assessment.candidateFieldId)));
-  const candidate = actionMatches && scopeMatches && questionMatchesLanguage(assessment.candidateReply, applied.state.activeLanguage)
+  const abandonsRepair = stayActions.has(applied.serverAction) && /\b(?:let['’]?s move on|(?:we['’]?ll|I['’]?ll) (?:move on|leave (?:that|this|it) (?:aside|open))|next (?:topic|question))\b|(?:跳过|先放下|换个话题|下一个(?:问题|话题))/iu.test(assessment.candidateReply);
+  const candidate = actionMatches && scopeMatches && !abandonsRepair && questionMatchesLanguage(assessment.candidateReply, applied.state.activeLanguage)
     ? safeReply(assessment.candidateReply, recentPrompts) : null;
   applied.prompt = candidate ? normalizeLocalizedPunctuation(candidate, applied.state.activeLanguage) : null;
   applied.displayedReply = applied.prompt;

@@ -29,17 +29,17 @@ it("keeps canonical English entry and accepts natural contextual repair without 
   expect(generate).not.toHaveBeenCalled();
 });
 
-it("uses the selected next topic for one wording pass and ignores second-pass evidence", async () => {
+it("uses the selected current topic for one wording pass and ignores second-pass evidence", async () => {
   const i = input(); i.state.repairCount = study.moderation.maxRepairTurns;
-  const a = base(), applied = plan(i, a);
-  expect(applied.serverAction).toBe("defer_gap");
-  expect(applied.state.activeAnchorId).toBe(next.id);
+  const a = base({ nextAction: "defer_gap", candidateAnchorId: next.id }), applied = plan(i, a);
+  expect(applied.serverAction).toBe("soft_redirect");
+  expect(applied.state.activeAnchorId).toBe(first.id);
   expect(applied.displayedReply).toBeNull();
-  const wording = base({ nextAction: "defer_gap", candidateAnchorId: next.id, candidateReply: "I still couldn't make sense of that, so we'll leave it open. How was the view on your last drive after dark?", understoodFacts: [{ fieldId: first.requiredFields[0], value: "FORGED", confidence: "high", correction: false, evidenceTurnIds: [i.turnId] }] });
+  const wording = base({ nextAction: "soft_redirect", candidateAnchorId: first.id, candidateReply: "Those digits do not tell me about your driving. What do you use the vehicle for after sunset?", understoodFacts: [{ fieldId: first.requiredFields[0], value: "FORGED", confidence: "high", correction: false, evidenceTurnIds: [i.turnId] }] });
   const generate = vi.fn().mockResolvedValue(wording), factsBefore = structuredClone(applied.state.facts);
   await resolvePlannedReply(i, applied, a, [i.state.activePrompt!], generate);
   expect(generate).toHaveBeenCalledTimes(1);
-  expect(generate.mock.calls[0][0].selectedMove).toMatchObject({ action: "defer_gap", anchorId: next.id, fieldId: null, language: "en" });
+  expect(generate.mock.calls[0][0].selectedMove).toMatchObject({ action: "soft_redirect", anchorId: first.id, fieldId: null, language: "en" });
   expect(applied.displayedReply).toBe(wording.candidateReply);
   expect(applied.state.facts).toEqual(factsBefore);
   expect(applied.state.revision).toBe(1);
@@ -51,6 +51,7 @@ it.each([
   { candidateReply: "What is your phone number?", candidateAnchorId: first.id },
   { candidateReply: "Which car do you drive? Where do you use it?", candidateAnchorId: first.id },
   { candidateReply: "What was your visibility like?", candidateAnchorId: next.id },
+  { candidateReply: "What do you use it for, like driving to work or running errands?", candidateAnchorId: first.id },
 ])("fails explicitly after one invalid regeneration without fixed substitution: $candidateReply", async (bad) => {
   const i = input(), a = base({ candidateReply: "What is your phone number?" }), applied = plan(i, a);
   const generate = vi.fn().mockResolvedValue(base(bad));
@@ -60,21 +61,21 @@ it.each([
   expect(i.state.revision).toBe(0);
 });
 
-it("can defer repeated non-answer naturally without consuming research probes", () => {
+it("rejects a model proposal to defer a repeated non-answer without consuming research probes", () => {
   const i = input(); i.state.repairCount = 1;
   const a = base({ nextAction: "defer_gap", candidateAnchorId: next.id, candidateReply: "I still couldn't follow that. How was visibility on your most recent nighttime drive?" });
   const applied = plan(i, a);
-  expect(applied.serverAction).toBe("defer_gap");
-  expect(applied.displayedReply).toBe(a.candidateReply);
+  expect(applied.serverAction).toBe("soft_redirect");
+  expect(applied.displayedReply).toBeNull();
   expect(applied.state.totalProbeCount).toBe(0);
-  expect(applied.state.pendingGaps.some((gap) => gap.anchorId === first.id)).toBe(true);
+  expect(applied.state.completedAnchors).not.toContain(first.id);
 });
 
-it("defers consecutive gibberish even when the model proposes another repair", () => {
+it("keeps consecutive gibberish on the current topic even when the model proposes a research probe", () => {
   const i = input(); i.state.lastParticipantIntent = "gibberish"; i.state.repairCount = 1;
   const a = base({ nextAction: "probe_now" }), applied = plan(i, a);
-  expect(applied.serverAction).toBe("defer_gap");
-  expect(applied.state.activeAnchorId).toBe(next.id);
+  expect(applied.serverAction).toBe("soft_redirect");
+  expect(applied.state.activeAnchorId).toBe(first.id);
   expect(applied.displayedReply).toBeNull();
   expect(applied.state.totalProbeCount).toBe(0);
 });
@@ -88,13 +89,28 @@ it("keeps a medium-confidence entity unresolved when its field is still ambiguou
   expect(applied.state.facts[fieldId].rawValue).toBe(i.rawText);
 });
 
+it("regenerates a short Chinese clarification with one question and no suggested answers", async () => {
+  const i = input(); i.rawText = "你说啥";
+  const a = base({ participantIntent: "asks_clarification", nextAction: "soft_redirect", replyLanguage: "zh-CN", candidateReply: "我是想问，你天黑以后开车出去，通常是去做什么？比如上班、买东西，还是办别的事？" });
+  const applied = plan(i, a);
+  expect(applied.displayedReply).toBeNull();
+  const wording = base({ participantIntent: "asks_clarification", nextAction: "immediate_clarify", replyLanguage: "zh-CN", candidateReply: "我想了解的是夜间用车的目的。天黑以后，你通常开车去做什么？" });
+  const generate = vi.fn().mockResolvedValue(wording);
+  await resolvePlannedReply(i, applied, a, [], generate);
+  expect(generate).toHaveBeenCalledTimes(1);
+  expect(generate.mock.calls[0][0].selectedMove).toMatchObject({ action: "immediate_clarify", language: "zh-CN", anchorId: first.id });
+  expect(generate.mock.calls[0][0].selectedMove.wordingFeedback).toContain("no example answers");
+  expect(applied.displayedReply).toBe(wording.candidateReply);
+  expect(applied.state.activeAnchorId).toBe(first.id);
+});
+
 const records: unknown[] = [];
 describe.skipIf(process.env.SURVEY_REAL_NATURAL !== "1")("real sequential natural dialogue", () => {
   afterAll(() => { mkdirSync("output", { recursive: true }); writeFileSync("output/natural-dialogue-real.json", JSON.stringify({ scope: "One synthetic sequential provider/state/wording run; no HTTP or database acceptance", studyVersion: study.study.version, policyVersion: study.moderation.policyVersion, promptVersion: study.model.promptVersion, records }, null, 2)); });
   it("understands gibberish, repeated non-answer, then substantive Chinese normally", async () => {
     let state = createModeratorState(study);
     const transcript: ConversationTurn[] = [];
-    for (const [index, rawText] of ["123123123", "123123123", "上次晚上在乡间道路开车，原车灯能看清楚，没有看不清的地方，也不需要额外装灯。"].entries()) {
+    for (const [index, rawText] of ["123123123", "1212", "你说啥", "上次晚上在乡间道路开车，原车灯能看清楚，没有看不清的地方，也不需要额外装灯。"].entries()) {
       const previous = structuredClone(state), anchor = study.anchors.find((item) => item.id === state.activeAnchorId)!;
       const turnId = `synthetic-natural-${index + 1}`;
       const i: ProviderTurnInput = { study, anchor, state, turnId, rawText, inputPayload: { type: "text", freeText: rawText }, transcript };
@@ -117,8 +133,9 @@ describe.skipIf(process.env.SURVEY_REAL_NATURAL !== "1")("real sequential natura
       expect(questionPolicyViolation(applied.displayedReply!)).toBeNull();
       expect(applied.displayedReply!.match(/[?？؟]/g)).toHaveLength(1);
       if (index < 2) { expect(a.participantIntent).toBe("gibberish"); expect(applied.acceptedUpdates).toHaveLength(0); }
-      if (index === 1) { expect(applied.state.activeAnchorId).toBe(next.id); expect(applied.serverAction).toBe("defer_gap"); }
-      if (index === 2) { expect(a.participantIntent).toBe("answer"); expect(applied.state.activeLanguage).toBe("zh-CN"); expect(applied.displayedReply).toMatch(/\p{Script=Han}/u); }
+      if (index === 1) { expect(applied.state.activeAnchorId).toBe(first.id); expect(applied.serverAction).toBe("soft_redirect"); }
+      if (index === 2) { expect(a.participantIntent).toBe("asks_clarification"); expect(applied.state.activeAnchorId).toBe(first.id); expect(applied.state.activeLanguage).toBe("zh-CN"); }
+      if (index === 3) { expect(a.participantIntent).toBe("answer"); expect(applied.state.activeLanguage).toBe("zh-CN"); expect(applied.displayedReply).toMatch(/\p{Script=Han}/u); }
       transcript.push({ id: turnId, turnIndex: index + 1, anchorId: anchor.id, moveKind: previous.activeMove!.kind, canonicalPrompt: anchor.question, localizedPrompt: previous.activePrompt!, rawText, inputPayload: i.inputPayload, replyLanguage: applied.state.activeLanguage, participantIntent: a.participantIntent, topicCoverage: a.topicCoverage, unresolvedPoints: a.unresolvedPoints, contradictions: a.contradictions, extractedFields: applied.acceptedUpdates, rejectedFieldUpdates: applied.rejectedUpdates, aiSuggestedAction: a.nextAction, serverAction: applied.serverAction, actionReason: applied.actionReason, candidateReply: a.candidateReply, displayedReply: applied.displayedReply, provider: a.provider, model: a.model, promptVersion: a.promptVersion, policyVersion: study.moderation.policyVersion });
       state = applied.state;
     }

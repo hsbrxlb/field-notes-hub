@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: oedro-light-research
+    runtime: node
+    plan: free
+    region: singapore
+    rootDir: apps/light-research
+    buildCommand: npm ci && npm run build -- --webpack
+    startCommand: npm run start -- --hostname 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: AI_PROVIDER
+        value: deepseek
+      - key: DATABASE_URL
+        sync: false
+      - key: DEEPSEEK_API_KEY
+        sync: false

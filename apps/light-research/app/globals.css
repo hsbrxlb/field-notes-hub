@@ -75,7 +75,7 @@ button { touch-action: manipulation; }
 .textInput { display: block; padding: 17px 19px 0; border: 1px solid #c7c9bd; border-radius: 12px; background: var(--white); box-shadow: 0 3px 8px #292d2804; transition: border-color 140ms, box-shadow 140ms; }
 .textInput:focus-within { border-color: var(--action); box-shadow: 0 0 0 1px var(--action); }
 .textInput > span { display: block; color: var(--muted); font-size: 14px; margin-bottom: 8px; }
-.textInput textarea { width: 100%; display: block; min-height: 88px; max-height: 180px; padding: 0 0 12px; resize: vertical; border: 0; border-radius: 0; background: transparent; color: var(--ink); font-size: 19px; line-height: 1.6; }
+.textInput textarea { width: 100%; display: block; min-height: 88px; max-height: 180px; padding: 0 0 12px; resize: none; border: 0; border-radius: 0; background: transparent; color: var(--ink); font-size: 19px; line-height: 1.6; }
 .textInput textarea:focus-visible { outline: none; }
 .textInput textarea::placeholder { color: #777b70; }
 .composerActions { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; }
@@ -309,3 +309,79 @@ body { background: #f1eee7 url("/study-assets/cast-light.png") center / cover fi
   .composer:has(.choiceGrid) .textInput textarea { min-height: 54px; height: 54px; }
   .composer:has(.choiceGrid) .composerFootnote { display: none; }
 }
+
+/* Reading and input refinement: retain the cast-glass material with a usable type scale. */
+.studyRail { width: min(880px, calc(100% - 80px)); gap: 28px; }
+.topicPosition { gap: 10px; }
+.topicPosition > span:first-child { font-size: 19px; margin-right: 8px; }
+.topicPosition strong { font-size: 32px; }
+.topicTotal { font-size: 21px; }
+.conversationArea { width: min(960px, 100%); }
+.message > span { font-size: 19px; color: #655747; }
+.message.user p { font-size: 25px; color: #453a30; line-height: 1.6; }
+.message.pending p, .textInput > span { font-size: 18px; color: #655747; }
+.textInput textarea { font-size: 23px; min-height: 64px; max-height: min(200px, calc(var(--survey-viewport, 100dvh) * .24)); line-height: 1.55; resize: none; overscroll-behavior-y: contain; }
+.textInput textarea::placeholder { color: #716455; }
+.sessionTools summary { font-size: 20px; }
+.sessionPopover p, .sessionPopover dl { font-size: 18px; }
+.primaryButton, .secondaryButton { font-size: 21px; }
+.textButton, .latestButton { font-size: 18px; }
+.composerFootnote { font-size: 16px; color: #665846; }
+.recoveryNotice, .storageNotice, .errorMessage { font-size: 18px; }
+.choiceGrid { gap: 0 28px; margin-bottom: 20px; }
+.choice { min-height: 58px; border: 0; border-bottom: 1px solid #9f876c45; border-radius: 0; padding: 12px 4px; background: transparent; font-size: 22px; gap: 14px; transition: color 160ms, background 160ms, border-color 160ms; }
+.choiceIndicator { flex-basis: 23px; width: 23px; height: 23px; border-radius: 50%; border-color: #88745a; font-size: 17px; transition: background 160ms, box-shadow 160ms; }
+.choice:hover { background: #faf5e936; border-bottom-color: #775137; }
+.choice.selected { background: linear-gradient(90deg, #c6aa791c, transparent); color: #644326; border-bottom-color: #775137; }
+.choice.selected .choiceIndicator { box-shadow: 0 0 0 4px #a9844118; }
+.scaleInput { font-size: 18px; }
+.scaleChoice { min-height: 48px; border: 0; border-bottom: 1px solid #9f876c66; border-radius: 0; font-size: 22px; }
+.scaleChoice.selected { background: #c6aa7924; border-bottom: 2px solid var(--action); outline: none; }
+@media (max-width: 760px) {
+  .typefaceSurface[data-typeface] .sessionTools summary { font-size: 18px; }
+  .appHeader { column-gap: 12px; padding-top: env(safe-area-inset-top); }
+  .studyRail { width: calc(100% - 48px); gap: 18px; }
+  .topicPosition { gap: 7px; }
+  .topicPosition > span:first-child { font-size: 17px; margin-right: 3px; }
+  .topicPosition strong { font-size: 27px; }
+  .topicTotal { font-size: 18px; }
+  .message > span { font-size: 17px; }
+  .message.user p { font-size: 22px; }
+  .message p { font-size: 25px; }
+  .appShell:lang(zh) .message.assistant p { font-size: 22px; }
+  .textInput > span { font-size: 17px; }
+  .textInput textarea, .composer:has(.choiceGrid) .textInput textarea { min-height: 52px; font-size: 21px; }
+  .choice { min-height: 52px; font-size: 21px; }
+  .choiceGrid { gap: 0; margin-bottom: 14px; }
+  .textButton, .latestButton { font-size: 17px; }
+  .composerFootnote { font-size: 16px; }
+  .isOpening .conversationArea { padding-bottom: max(20px, env(safe-area-inset-bottom)); }
+}
+@media (max-height: 590px) {
+  .appShell { grid-template-rows: 52px 40px minmax(0, 1fr); }
+  .conversationArea { padding-bottom: max(6px, env(safe-area-inset-bottom)); }
+  .composer { max-height: calc(var(--survey-viewport, 100dvh) * .56); padding-top: 6px; }
+  .composerActions { margin-top: 4px; gap: 4px; }
+  .composerActions > div { gap: 0 12px; }
+  .composerActions .textButton { min-height: 44px; font-size: 16px; }
+  .composerActions .primaryButton { min-height: 44px; padding: 8px 12px; font-size: 18px; }
+  .textInput { padding-top: 8px; }
+  .textInput > span { margin-bottom: 4px; }
+  .textInput textarea, .composer:has(.choiceGrid) .textInput textarea { min-height: 40px; }
+  .composerActions .primaryButton::after { display: none; }
+}
+
+/* Mobile keyboards resize visualViewport, not necessarily CSS media-query height. */
+.appShell[data-compact-viewport] { grid-template-rows: 52px 40px minmax(0, 1fr); }
+[data-compact-viewport] .conversationArea { padding-bottom: max(6px, env(safe-area-inset-bottom)); }
+[data-compact-viewport].isOpening .conversationArea { align-content: stretch; grid-template-rows: minmax(0, 1fr) auto; }
+[data-compact-viewport].isOpening .transcript { max-height: none; }
+[data-compact-viewport] .composer { max-height: calc(var(--survey-viewport, 100dvh) * .56); padding-top: 6px; }
+[data-compact-viewport] .composerActions { flex-direction: row; align-items: center; margin-top: 4px; gap: 4px; }
+[data-compact-viewport] .composerActions > div { flex-wrap: wrap; gap: 0 12px; }
+[data-compact-viewport] .composerActions .textButton { min-height: 44px; font-size: 16px; }
+[data-compact-viewport] .composerActions .primaryButton { width: auto; min-height: 44px; padding: 8px 12px; font-size: 18px; }
+[data-compact-viewport] .composerActions .primaryButton::after, [data-compact-viewport] .composerFootnote { display: none; }
+[data-compact-viewport] .textInput { padding-top: 8px; }
+[data-compact-viewport] .textInput > span { margin-bottom: 4px; }
+[data-compact-viewport] .textInput textarea { min-height: 40px; }

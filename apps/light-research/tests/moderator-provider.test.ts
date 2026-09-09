@@ -50,7 +50,7 @@ describe("deterministic controlled-autonomy provider", () => {
   it("asks for restrained support without permitting praise", () => {
     expect(systemPrompt).toContain("brief, restrained emotional support");
     expect(systemPrompt).toContain("Do not praise the answer");
-    expect(systemPrompt).toContain("do not ask the same question again");
+    expect(systemPrompt).toContain("a used probe does not authorize moving on");
   });
 
 });

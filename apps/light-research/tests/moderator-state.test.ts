@@ -40,14 +40,14 @@ const apply = (state: ReturnType<typeof createModeratorState>, assessment: Moder
 };
 
 describe("controlled-autonomy moderator policy", () => {
-  it("caps clarification and redirection repair loops", () => {
+  it("keeps clarification and redirection on the current topic past repair limits", () => {
     const study = getStudyConfig();
     for (const participantIntent of ["asks_clarification", "off_topic"] as const) {
       const state = createModeratorState(study);
       state.repairCount = study.moderation.maxRepairTurns;
       const result = apply(state, makeAssessment({ participantIntent, understoodFacts: [], topicCoverage: { anchorId: state.activeAnchorId!, status: "missing", coveredFieldIds: [], evidenceTurnIds: [], note: "No evidence." }, nextAction: "immediate_clarify", candidateReply: "Can you explain what happened?" }));
-      expect(result.state.activeAnchorId).not.toBe(state.activeAnchorId);
-      expect(result.state.repairCount).toBe(study.moderation.maxRepairTurns);
+      expect(result.state.activeAnchorId).toBe(state.activeAnchorId);
+      expect(result.state.repairCount).toBe(study.moderation.maxRepairTurns + 1);
     }
   });
 
@@ -68,7 +68,7 @@ describe("controlled-autonomy moderator policy", () => {
     expect(result.state.facts[study.anchors[0].requiredFields[0]].evidenceTurnIds).toContain("turn-1");
   });
 
-  it("defers an ordinary Tesla-model confirmation and moves on", () => {
+  it("keeps a required candidate field open until understood or explicitly deferred", () => {
     const study = getStudyConfig();
     const anchor = study.anchors[0];
     const assessment = makeAssessment({
@@ -88,8 +88,8 @@ describe("controlled-autonomy moderator policy", () => {
       actionReason: "The candidate does not block the next topic.",
     });
     const result = apply(createModeratorState(study), assessment);
-    expect(result.serverAction).toBe("defer_gap");
-    expect(result.state.activeAnchorId).toBe(study.anchors[1]?.id ?? null);
+    expect(result.serverAction).toBe("immediate_clarify");
+    expect(result.state.activeAnchorId).toBe(anchor.id);
     expect(result.state.pendingGaps.some((gap) => gap.fieldId === anchor.requiredFields[0])).toBe(true);
     expect(result.state.pendingGaps.every((gap) => gap.anchorId === anchor.id)).toBe(true);
     expect(result.state.pendingGaps[0].status).toBe("pending");
@@ -157,7 +157,7 @@ describe("controlled-autonomy moderator policy", () => {
     expect(result.prompt).toBe("What, if anything, was difficult to see in the woods?");
   });
 
-  it("defers a probe when the global budget is exhausted", () => {
+  it("keeps an unanswered topic open when the global probe budget is exhausted", () => {
     const study = getStudyConfig();
     const state = createModeratorState(study);
     state.totalProbeCount = study.moderation.maxTotalProbes;
@@ -168,8 +168,8 @@ describe("controlled-autonomy moderator policy", () => {
       nextAction: "probe_now",
       candidateReply: "What happened next?",
     }));
-    expect(result.serverAction).toBe("defer_gap");
-    expect(result.state.activeAnchorId).toBe(study.anchors[1]?.id ?? null);
+    expect(result.serverAction).toBe("immediate_clarify");
+    expect(result.state.activeAnchorId).toBe(state.activeAnchorId);
   });
 
   it("resolves an older pending gap when a later answer supplies its field", () => {
@@ -447,7 +447,7 @@ describe("controlled-autonomy moderator policy", () => {
       }),
       turnId: "turn-defer",
       turnIndex: 1,
-      rawText: "这个细节我现在还想不起来。",
+      rawText: "这个细节我现在还想不起来，稍后再问我。",
       recentPrompts: [anchor.question],
     });
     expect(result.serverAction).toBe("defer_gap");
@@ -455,10 +455,9 @@ describe("controlled-autonomy moderator policy", () => {
     expect(result.prompt).toBeNull(); // server chose a different topic
   });
 
-  it("defers instead of repeating the same focused probe", () => {
+  it("repairs rather than advancing an unanswered topic after a repeated probe", () => {
     const study = getStudyConfig();
     const anchor = study.anchors[0];
-    const next = study.anchors[1];
     const state = createModeratorState(study);
     state.activeLanguage = "zh-CN";
     state.activePrompt = anchor.followUpQuestions![anchor.requiredFields[0]]["zh-CN"];
@@ -484,9 +483,8 @@ describe("controlled-autonomy moderator policy", () => {
       rawText: "这个细节我还是想不起来。",
       recentPrompts: [state.activePrompt],
     });
-    expect(result.serverAction).toBe("defer_gap");
-    expect(result.state.riskFlags).toContain("repeated_probe_deferred");
-    expect(result.state.activeAnchorId).toBe(next.id);
+    expect(result.serverAction).toBe("immediate_clarify");
+    expect(result.state.activeAnchorId).toBe(anchor.id);
     expect(result.prompt).toBeNull(); // server chose a different topic
   });
 
@@ -514,7 +512,7 @@ describe("controlled-autonomy moderator policy", () => {
       }),
       turnId: "turn-deferred-checkpoint",
       turnIndex: 2,
-      rawText: "这个细节先放一下。",
+      rawText: "这个细节稍后再问我。",
       recentPrompts: [state.activePrompt],
     });
     expect(result.serverAction).toBe("defer_gap");
@@ -557,10 +555,9 @@ describe("controlled-autonomy moderator policy", () => {
       candidateReply: "Thank you.",
     }));
     expect(result.state.pendingGaps).toHaveLength(1);
-    expect(result.state.pendingGaps[0].status).toBe("unresolved");
-    expect(result.serverAction).toBe("complete");
-    expect(result.displayedReply).toBe(study.completion.messages.en);
-    expect(result.displayedReply).not.toMatch(/[?？؟]/);
+    expect(result.state.pendingGaps[0].status).toBe("asked");
+    expect(result.serverAction).toBe("immediate_clarify");
+    expect(result.state.activeMove).toEqual(state.activeMove);
   });
 
   it("marks an all-skipped required interview as completed with evidence gaps", () => {
@@ -594,7 +591,7 @@ describe("controlled-autonomy moderator policy", () => {
     expect(state.pendingGaps.some((gap) => gap.status === "unresolved")).toBe(true);
   });
 
-  it("ends an audit gap when its repair budget is exhausted", () => {
+  it("keeps an audit gap open when its repair budget is exhausted", () => {
     const study = getStudyConfig();
     const state = createModeratorState(study);
     state.repairCount = study.moderation.maxRepairTurns;
@@ -610,12 +607,12 @@ describe("controlled-autonomy moderator policy", () => {
       topicCoverage: { anchorId: study.anchors[0].id, status: "missing", coveredFieldIds: [], evidenceTurnIds: [], note: "Participant asks again." },
       nextAction: "immediate_clarify",
     }));
-    expect(result.serverAction).toBe("complete");
-    expect(result.state.pendingGaps[0].status).toBe("unresolved");
-    expect(result.state.riskFlags).toContain(`repair_budget_exhausted:${study.anchors[0].id}`);
+    expect(result.serverAction).toBe("immediate_clarify");
+    expect(result.state.pendingGaps[0].status).toBe("asked");
+    expect(result.state.activeMove).toEqual(state.activeMove);
   });
 
-  it("selects the next topic for regeneration after checkpoint repair exhaustion", () => {
+  it("retains the checkpoint gap for regeneration after repair exhaustion", () => {
     const study = getStudyConfig();
     const next = study.anchors[1];
     const state = createModeratorState(study);
@@ -633,12 +630,12 @@ describe("controlled-autonomy moderator policy", () => {
       nextAction: "immediate_clarify",
       candidateReply: "Can I explain the old gap again?",
     }));
-    expect(result.state.activeAnchorId).toBe(next.id);
-    expect(result.state.activeMove).toEqual({ kind: "anchor", anchorId: next.id });
+    expect(result.state.activeAnchorId).toBe(state.activeAnchorId);
+    expect(result.state.activeMove).toEqual(state.activeMove);
     expect(result.prompt).toBeNull();
   });
 
-  it("resumes a checkpoint on the next topic instead of displaying the old gap again", () => {
+  it("keeps a checkpoint open when there is still no usable answer", () => {
     const study = getStudyConfig();
     const next = study.anchors[1];
     const state = createModeratorState(study);
@@ -658,7 +655,7 @@ describe("controlled-autonomy moderator policy", () => {
       replyLanguage: "zh-CN",
       candidateReply: "好的，之后我会再问旧主题还缺什么？",
     }));
-    expect(result.state.activeAnchorId).toBe(next.id);
+    expect(result.state.activeAnchorId).toBe(state.activeAnchorId);
     expect(result.prompt).toBeNull();
   });
 
