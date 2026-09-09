@@ -6,6 +6,10 @@
 
 ## 当前页面
 
+- `fakesite/`：独立站样站，侧栏直接进入首页；包含 Blog、两篇完整指南、FAQ 和草稿编辑演示。保留独立的品牌页面外观，不套 Hub 阅读外壳。页面标明设计演示并禁止索引，不连接购物或真实发布。
+- `fakesite/editor.html`：可预览、在浏览器保存并下载 Markdown/JSON 草稿；这不是员工登录后台，也不会把内容提交到仓库。正式发文优先接公司现有后台；没有现成能力时再评估 Pages CMS 或 Decap 的认证与仓库授权。
+- 样站检查：`node scripts/check-fakesite.js`；发布流程同时检查源码和最终 Pages 文件。公开目录只包含运行所需网页、脚本、字体和图片，没有研究原件或本地运行记录。
+
 - `index.html`：当前重点、最近成果、工作入口和运营专题
 - `work.html`：项目状态、待办、阻塞和下一动作
 - `light-research.html`：AI 对话调研入口，连接本机运行的 Hawthorne 版 Light Research；独立应用源码保存在 `apps/light-research`

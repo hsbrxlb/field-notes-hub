@@ -6,7 +6,7 @@ const path = require('node:path');
 const repoRoot = path.resolve(__dirname, '..');
 const root = process.env.PUBLIC_SITE_ROOT ? path.resolve(repoRoot, process.env.PUBLIC_SITE_ROOT) : repoRoot;
 const errors = [];
-const publicRoots = ['assets', 'data', 'preview', 'experiences'];
+const publicRoots = ['assets', 'data', 'preview', 'experiences', 'fakesite'];
 const rootExtensions = new Set(['.html', '.js', '.css']);
 const textExtensions = new Set(['.html', '.js', '.css', '.json', '.txt', '.md']);
 const forbidden = [
@@ -48,7 +48,8 @@ for (const file of codeFiles) {
   for (const match of source.matchAll(/<details\b[^>]*>/gi)) {
     detailTags.push({ file, tag: match[0] });
     const intentionalHistory = /class="[^"]*evo-round/.test(match[0]);
-    if (!intentionalHistory && !/\bopen\b/i.test(match[0])) errors.push(path.relative(root, file) + ' 有正文details未默认展开：' + match[0]);
+    const demoFaq = path.relative(root, file) === 'fakesite/faq.html' && /class="faq-question"/.test(match[0]);
+    if (!intentionalHistory && !demoFaq && !/\bopen\b/i.test(match[0])) errors.push(path.relative(root, file) + ' 有正文details未默认展开：' + match[0]);
   }
   for (const match of source.matchAll(/<[^>]+aria-expanded="false"[^>]*>/gi)) {
     if (!/class="[^"]*menu-button/.test(match[0])) errors.push(path.relative(root, file) + ' 有正文aria-expanded=false：' + match[0]);
