@@ -1,12 +1,184 @@
 {
   "title": "内容生产测试",
+  "active_run_id": "2026-09-09-oedro-muddy-return-photo",
   "records": [
+    {
+      "run_id": "2026-09-09-oedro-muddy-return-photo",
+      "date": "2026-09-09",
+      "version": "照片版",
+      "product": "徒步回来的皮卡",
+      "review_status": "等待Oliver判断",
+      "prompt": "给 OEDRO 做一组面向美国皮卡车主的趣味社媒图文，发布位置是 Instagram、X 和 YouTube 社区。用徒步回来、泥跟进车里的生活细节写得有意思。图片要像真实照片，场景可信。不要漫画，不做 TikTok，不制作视频。",
+      "brief": {
+        "purpose": "品牌趣味内容",
+        "audience": "美国皮卡车主",
+        "desired_effect": "让皮卡车主看到徒步回家后的脚下残局，会心一笑，愿意把帖子转给一起出门的人。",
+        "creative_direction": "Proposed brand humor using a generic staged photographic scene; not a real owner testimonial.",
+        "asset_decision": "Codex built-in image_gen; exact model not exposed. No claimed real photograph or customer account.",
+        "success_criteria": [
+          "场景可信，泥靴与车内泥沙对应文案。",
+          "三平台文案有不同节奏，中英意思一致。",
+          "没有具体产品或效果承诺。"
+        ],
+        "post_publish_signals": "尚未进行社媒发布，没有受众效果数据。"
+      },
+      "source": {
+        "label": "OEDRO产品页",
+        "url": "https://www.oedro.com/products/all-weather-tpe-floor-mats-liners-for-2017-2024-ford-f-250-f-350-super-duty-crew-cab-full-set-liners-p-5361.html",
+        "verification_status": "2026年9月9日核对产品身份；未引用功效承诺。"
+      },
+      "facts": [
+        {
+          "label": "品牌背景",
+          "value": "OEDRO；本组使用通用皮卡生活场景，没有具体产品或功效说法。"
+        },
+        {
+          "label": "素材性质",
+          "value": "Codex built-in image_gen; exact model not exposed. No claimed real photograph or customer account."
+        }
+      ],
+      "variants": [
+        {
+          "id": "instagram",
+          "platform": "Instagram",
+          "platform_job": "围绕泥靴回车的生活情境。",
+          "format": "静态图文",
+          "fields": [
+            {
+              "key": "caption",
+              "blocks": [
+                {
+                  "en": "The hike is over. Getting these boots into the truck is a separate expedition.",
+                  "zh": "徒步结束了。把这双靴子弄进皮卡，还得另开一趟探险。"
+                }
+              ]
+            }
+          ],
+          "visual": {
+            "kind": "generated_photo",
+            "aspect_ratio": "4:5",
+            "note": "Codex built-in image_gen; exact model not exposed. No claimed real photograph or customer account.",
+            "image": {
+              "src": "assets/content-pipeline/muddy-return-instagram.jpg",
+              "alt": "Muddy hiking boots at an open pickup door after a walk.",
+              "width": 1122,
+              "height": 1402
+            }
+          },
+          "review": {
+            "decision": "文案可审",
+            "rationale": "待 Oliver 判断照片感和幽默表达。",
+            "checks": [
+              "按最终稿保留双语段落。",
+              "未新增产品效果说法。",
+              "使用父任务交付的实际图片。"
+            ],
+            "success_signal": "观察具体共鸣、转发或回复。"
+          }
+        },
+        {
+          "id": "x",
+          "platform": "X",
+          "platform_job": "围绕泥靴回车的生活情境。",
+          "format": "静态图文",
+          "fields": [
+            {
+              "key": "caption",
+              "blocks": [
+                {
+                  "en": "love the outdoors. apparently the feeling is mutual. there's a small amount of forest living on the truck floor now.",
+                  "zh": "喜欢大自然。看来它也喜欢我，已经有一小片森林住进皮卡地板了。"
+                }
+              ]
+            }
+          ],
+          "visual": {
+            "kind": "generated_photo",
+            "aspect_ratio": "1:1",
+            "note": "Codex built-in image_gen; exact model not exposed. No claimed real photograph or customer account.",
+            "image": {
+              "src": "assets/content-pipeline/muddy-return-square.jpg",
+              "alt": "Mud flakes and pine needles on a pickup's carpeted floor beside the open driver door.",
+              "width": 1254,
+              "height": 1254
+            }
+          },
+          "review": {
+            "decision": "文案可审",
+            "rationale": "待 Oliver 判断照片感和幽默表达。",
+            "checks": [
+              "按最终稿保留双语段落。",
+              "未新增产品效果说法。",
+              "使用父任务交付的实际图片。"
+            ],
+            "success_signal": "观察具体共鸣、转发或回复。"
+          }
+        },
+        {
+          "id": "youtube",
+          "platform": "YouTube",
+          "platform_job": "围绕泥靴回车的生活情境。",
+          "format": "YouTube 社区图文",
+          "fields": [
+            {
+              "key": "caption",
+              "blocks": [
+                {
+                  "en": "Somewhere between the trailhead and the driveway, the truck picked up a second floor.",
+                  "zh": "从山路口开回家这一路，皮卡不知什么时候又多铺了一层地板。"
+                },
+                {
+                  "en": "Mostly mud, with a few pine needles. Terrible resale value.",
+                  "zh": "主要是泥，夹着几根松针。这装修，卖车时可加不了价。"
+                }
+              ]
+            }
+          ],
+          "visual": {
+            "kind": "generated_photo",
+            "aspect_ratio": "1:1",
+            "note": "Codex built-in image_gen; exact model not exposed. No claimed real photograph or customer account.",
+            "image": {
+              "src": "assets/content-pipeline/muddy-return-square.jpg",
+              "alt": "Mud flakes and pine needles on a pickup's carpeted floor beside the open driver door.",
+              "width": 1254,
+              "height": 1254
+            }
+          },
+          "review": {
+            "decision": "文案可审",
+            "rationale": "待 Oliver 判断照片感和幽默表达。",
+            "checks": [
+              "按最终稿保留双语段落。",
+              "未新增产品效果说法。",
+              "使用父任务交付的实际图片。"
+            ],
+            "success_signal": "观察具体共鸣、转发或回复。"
+          }
+        }
+      ],
+      "ai_review": {
+        "decision": "待人工判断",
+        "revision_count": 1,
+        "summary": "插画方向已退回；本组改为通用皮卡泥靴和车内泥沙的照片感场景，等待最终图文判断。",
+        "corrections": [
+          "用照片感场景替换被退回的小树漫画。",
+          "主平台调整为 Instagram、X、YouTube 社区图文。",
+          "移除页面审核说明与来源展示，保留数据检查。"
+        ]
+      },
+      "human_questions": [
+        "场景是否可信？",
+        "文案是否好笑？",
+        "照片与文案是否匹配？"
+      ]
+    },
     {
       "run_id": "2026-09-09-oedro-trail-passenger",
       "date": "2026-09-09",
-      "version": "山路搭便车 · 新创意样稿",
+      "version": "小树插画旧稿 · 已退回",
       "product": "泥靴把山路带回皮卡",
-      "review_status": "图文样稿待你审核",
+      "review_status": "需要修改",
       "prompt": "为 OEDRO 重做五个平台的创意样稿。面向徒步后带着泥靴回到皮卡的美国车主，把泥巴画成不请自来的乘客：靴子携带一小块山路和小树。让人认出熟悉的车边清理情境并觉得好笑，不堆产品参数。制作 Instagram、Facebook、Pinterest 三张静态插画，提供五个平台的英文文案与中文对照。TikTok 和 YouTube Shorts 提供可搭配公司既有泥靴或清理视频的候选配文；不制作视频。",
       "brief": {
         "purpose": "车主共鸣与趣味内容",
@@ -70,8 +242,8 @@
             }
           },
           "review": {
-            "decision": "文案可审",
-            "rationale": "小树要搭车与地板绿化接在一起，笑点涉及车内脏污；是否像 OEDRO 的语气仍待判断。",
+            "decision": "需要修改",
+            "rationale": "旧插画方向已退回，此前意见已失效。原意见：小树要搭车与地板绿化接在一起，笑点涉及车内脏污；是否像 OEDRO 的语气仍待判断。",
             "checks": [
               "已核对最终英文与中文逐段对应。",
               "没有新增适配、清洁效果或产品性能承诺。",
@@ -112,8 +284,8 @@
             }
           },
           "review": {
-            "decision": "文案可审",
-            "rationale": "游客中心的包袱回应掉下的山路碎片，车内地板成为笑点的落点。",
+            "decision": "需要修改",
+            "rationale": "旧插画方向已退回，此前意见已失效。原意见：游客中心的包袱回应掉下的山路碎片，车内地板成为笑点的落点。",
             "checks": [
               "已核对最终英文与中文逐段对应。",
               "没有新增适配、清洁效果或产品性能承诺。",
@@ -159,8 +331,8 @@
             }
           },
           "review": {
-            "decision": "文案可审",
-            "rationale": "靴子在车外交代清理情境，小树要求浇水承接插画中的荒诞。",
+            "decision": "需要修改",
+            "rationale": "旧插画方向已退回，此前意见已失效。原意见：靴子在车外交代清理情境，小树要求浇水承接插画中的荒诞。",
             "checks": [
               "已核对最终英文与中文逐段对应。",
               "没有新增适配、清洁效果或产品性能承诺。",
@@ -191,8 +363,8 @@
             "note": "候选配文；尚未核对公司既有泥靴或清理视频，须匹配画面及复用权限。"
           },
           "review": {
-            "decision": "文案可审",
-            "rationale": "半条山路的夸张可配普通泥靴画面；尚未检查实际公司视频。",
+            "decision": "需要修改",
+            "rationale": "旧插画方向已退回，此前意见已失效。原意见：半条山路的夸张可配普通泥靴画面；尚未检查实际公司视频。",
             "checks": [
               "已核对最终英文与中文逐段对应。",
               "没有新增适配、清洁效果或产品性能承诺。",
@@ -232,8 +404,8 @@
             "note": "候选配文；尚未核对公司既有泥靴或清理视频，须匹配画面及复用权限。"
           },
           "review": {
-            "decision": "文案可审",
-            "rationale": "山路样本指靴上的泥，标题交代回到车边；尚未检查实际公司视频。",
+            "decision": "需要修改",
+            "rationale": "旧插画方向已退回，此前意见已失效。原意见：山路样本指靴上的泥，标题交代回到车边；尚未检查实际公司视频。",
             "checks": [
               "已核对最终英文与中文逐段对应。",
               "没有新增适配、清洁效果或产品性能承诺。",
@@ -244,9 +416,9 @@
         }
       ],
       "ai_review": {
-        "decision": "待人工判断",
+        "decision": "需要修改",
         "revision_count": 3,
-        "summary": "首稿的车内地板关联太弱，视频配文还依赖虚构小树画面，已退回修改。最终文案补足皮卡地板与车外清理情境，视频配文改为普通泥靴画面可承接的旁白。三张插画已查看；是否符合 OEDRO 的品牌语气、是否真的好笑仍待判断。",
+        "summary": "Oliver 已退回小树插画，要求真实照片感场景；旧稿保留，原可审意见已失效。",
         "corrections": [
           "撤回旧清洁互动样稿的可审意见，保留原稿作对照。",
           "删除重复产品标签和空泛口号，把笑点落在靴底小树、山路碎片和皮卡地板上。",
