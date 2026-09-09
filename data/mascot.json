@@ -3,8 +3,433 @@
   "meta_description": "OEDRO 吉祥物角色档案，包含动物伙伴、机械伙伴和多种动作造型。",
   "characters": [
     {
-      "id": "character-01-dog",
+      "id": "character-spring-flex",
       "index": "01",
+      "family": "spring-flex",
+      "type": "mechanical",
+      "name_cn": "弹弹",
+      "name_en": "Flex",
+      "blurb": "几片弯钢板叠成有弹性的身子，压低一点，再稳稳弹回来。",
+      "assets": [
+        {
+          "code": "M14-A",
+          "caption": "安静站定",
+          "src": "assets/mascot-evolution/round14/M14-A.webp",
+          "alt": "弹弹（Flex）安静站定",
+          "source_round": "round-14"
+        },
+        {
+          "code": "M14-B",
+          "caption": "露出背面",
+          "src": "assets/mascot-evolution/round14/M14-B.webp",
+          "alt": "弹弹（Flex）露出背面",
+          "source_round": "round-14"
+        },
+        {
+          "code": "M14-C",
+          "caption": "托住零件",
+          "src": "assets/mascot-evolution/round14/M14-C.webp",
+          "alt": "弹弹（Flex）托住零件",
+          "source_round": "round-14"
+        },
+        {
+          "code": "M14-D",
+          "caption": "越过石块",
+          "src": "assets/mascot-evolution/round14/M14-D.webp",
+          "alt": "弹弹（Flex）越过石块",
+          "source_round": "round-14"
+        }
+      ]
+    },
+    {
+      "id": "character-toggle-latch",
+      "index": "02",
+      "family": "toggle-latch",
+      "type": "mechanical",
+      "name_cn": "扣扣",
+      "name_en": "Latch",
+      "blurb": "搭扣合上，松开的两端就靠拢了；它用开合的姿态表达心情。",
+      "assets": [
+        {
+          "code": "M15-A",
+          "caption": "安静站定",
+          "src": "assets/mascot-evolution/round15/M15-A.webp",
+          "alt": "扣扣（Latch）安静站定",
+          "source_round": "round-15"
+        },
+        {
+          "code": "M15-B",
+          "caption": "侧看转轴",
+          "src": "assets/mascot-evolution/round15/M15-B.webp",
+          "alt": "扣扣（Latch）侧看转轴",
+          "source_round": "round-15"
+        },
+        {
+          "code": "M15-C",
+          "caption": "对齐零件",
+          "src": "assets/mascot-evolution/round15/M15-C.webp",
+          "alt": "扣扣（Latch）对齐零件",
+          "source_round": "round-15"
+        },
+        {
+          "code": "M15-D",
+          "caption": "压低搭扣",
+          "src": "assets/mascot-evolution/round15/M15-D.webp",
+          "alt": "扣扣（Latch）压低搭扣",
+          "source_round": "round-15"
+        }
+      ]
+    },
+    {
+      "id": "character-strap-reel",
+      "index": "03",
+      "family": "strap-reel",
+      "type": "mechanical",
+      "name_cn": "卷卷",
+      "name_en": "Reel",
+      "blurb": "把散开的织带收成一圈，出发前把零碎整理妥当。",
+      "assets": [
+        {
+          "code": "M16-A",
+          "caption": "安静站定",
+          "src": "assets/mascot-evolution/round16/M16-A.webp",
+          "alt": "卷卷（Reel）安静站定",
+          "source_round": "round-16"
+        },
+        {
+          "code": "M16-B",
+          "caption": "侧看卷轴",
+          "src": "assets/mascot-evolution/round16/M16-B.webp",
+          "alt": "卷卷（Reel）侧看卷轴",
+          "source_round": "round-16"
+        },
+        {
+          "code": "M16-C",
+          "caption": "收好织带",
+          "src": "assets/mascot-evolution/round16/M16-C.webp",
+          "alt": "卷卷（Reel）收好织带",
+          "source_round": "round-16"
+        },
+        {
+          "code": "M16-D",
+          "caption": "卷回松带",
+          "src": "assets/mascot-evolution/round16/M16-D.webp",
+          "alt": "卷卷（Reel）卷回松带",
+          "source_round": "round-16"
+        }
+      ]
+    },
+    {
+      "id": "character-fin-light",
+      "index": "04",
+      "family": "fin-light",
+      "type": "mechanical",
+      "name_cn": "小翅",
+      "name_en": "Fin",
+      "blurb": "散热片像一束展开的小翅，转个角度，把暖光送到需要的地方。",
+      "assets": [
+        {
+          "code": "M17-A",
+          "caption": "安静站定",
+          "src": "assets/mascot-evolution/round17/M17-A.webp",
+          "alt": "小翅（Fin）安静站定",
+          "source_round": "round-17"
+        },
+        {
+          "code": "M17-B",
+          "caption": "侧看鳍片",
+          "src": "assets/mascot-evolution/round17/M17-B.webp",
+          "alt": "小翅（Fin）侧看鳍片",
+          "source_round": "round-17"
+        },
+        {
+          "code": "M17-C",
+          "caption": "照亮零件",
+          "src": "assets/mascot-evolution/round17/M17-C.webp",
+          "alt": "小翅（Fin）照亮零件",
+          "source_round": "round-17"
+        },
+        {
+          "code": "M17-D",
+          "caption": "转向工位",
+          "src": "assets/mascot-evolution/round17/M17-D.webp",
+          "alt": "小翅（Fin）转向工位",
+          "source_round": "round-17"
+        }
+      ]
+    },
+    {
+      "id": "character-16-parts-spirit",
+      "index": "05",
+      "family": "parts-spirit",
+      "type": "mechanical",
+      "name_cn": "零件精灵",
+      "name_en": "Parts Sprite",
+      "blurb": "它由几件真正能咬合的零件组成，每一块都有自己的位置。",
+      "assets": [
+        {
+          "code": "R1-F1",
+          "caption": "最初的轮廓",
+          "src": "assets/mascot-evolution/round1/R1_F1_Parts_Spirit.webp",
+          "alt": "第一轮零件精灵概念",
+          "source_round": "round-1"
+        },
+        {
+          "code": "R2-1A",
+          "caption": "圆环外壳",
+          "src": "assets/mascot-evolution/round2/R2_1A.webp",
+          "alt": "第二轮圆环精灵",
+          "source_round": "round-2"
+        },
+        {
+          "code": "R2-1B",
+          "caption": "胶囊外壳",
+          "src": "assets/mascot-evolution/round2/R2_1B.webp",
+          "alt": "第二轮胶囊精灵",
+          "source_round": "round-2"
+        },
+        {
+          "code": "R2-1C",
+          "caption": "方形外壳",
+          "src": "assets/mascot-evolution/round2/R2_1C.webp",
+          "alt": "第二轮方核精灵",
+          "source_round": "round-2"
+        },
+        {
+          "code": "R3-F1A",
+          "caption": "工具细节",
+          "src": "assets/mascot-round3/F1A.webp",
+          "alt": "第三轮模块零件精灵车库手绘",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F1B",
+          "caption": "简洁色块",
+          "src": "assets/mascot-round3/F1B.webp",
+          "alt": "第三轮模块零件精灵品牌图形",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F1C",
+          "caption": "完整机械结构",
+          "src": "assets/mascot-round3/F1C.webp",
+          "alt": "第三轮模块零件精灵机械原型",
+          "source_round": "round-3"
+        }
+      ]
+    },
+    {
+      "id": "character-17-socket",
+      "index": "06",
+      "family": "socket",
+      "type": "mechanical",
+      "name_cn": "套筒伙伴",
+      "name_en": "Socket Buddy",
+      "blurb": "小小的身体来自套筒和接头，总能找到尺寸合适的那一个。",
+      "assets": [
+        {
+          "code": "R3-F5A",
+          "caption": "工具细节",
+          "src": "assets/mascot-round3/F5A.webp",
+          "alt": "第三轮套筒模块伙伴车库手绘",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F5B",
+          "caption": "简洁色块",
+          "src": "assets/mascot-round3/F5B.webp",
+          "alt": "第三轮套筒模块伙伴品牌图形",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F5C",
+          "caption": "完整机械结构",
+          "src": "assets/mascot-round3/F5C.webp",
+          "alt": "第三轮套筒模块伙伴机械原型",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R4-F3A",
+          "caption": "氧化橙",
+          "src": "assets/mascot-evolution/round4/R4_F3A.webp",
+          "alt": "第四轮套筒模块伙伴氧化橙方案",
+          "source_round": "round-4"
+        },
+        {
+          "code": "R4-F3B",
+          "caption": "琥珀黄",
+          "src": "assets/mascot-evolution/round4/R4_F3B.webp",
+          "alt": "第四轮套筒模块伙伴工业琥珀方案",
+          "source_round": "round-4"
+        },
+        {
+          "code": "R4-F3C",
+          "caption": "橄榄绿",
+          "src": "assets/mascot-evolution/round4/R4_F3C.webp",
+          "alt": "第四轮套筒模块伙伴苔藓橄榄方案",
+          "source_round": "round-4"
+        }
+      ]
+    },
+    {
+      "id": "character-18-fitment",
+      "index": "07",
+      "family": "fitment",
+      "type": "mechanical",
+      "name_cn": "咬合模块",
+      "name_en": "Fit Link",
+      "blurb": "两边对准位置便会扣紧，它代表合适、牢靠和不勉强。",
+      "assets": [
+        {
+          "code": "R3-F6A",
+          "caption": "工具细节",
+          "src": "assets/mascot-round3/F6A.webp",
+          "alt": "第三轮适配连接体车库手绘",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F6B",
+          "caption": "简洁色块",
+          "src": "assets/mascot-round3/F6B.webp",
+          "alt": "第三轮适配连接体品牌图形",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F6C",
+          "caption": "完整机械结构",
+          "src": "assets/mascot-round3/F6C.webp",
+          "alt": "第三轮适配连接体机械原型",
+          "source_round": "round-3"
+        }
+      ]
+    },
+    {
+      "id": "character-19-guard",
+      "index": "08",
+      "family": "guard",
+      "type": "mechanical",
+      "name_cn": "护板伙伴",
+      "name_en": "Skid Guard",
+      "blurb": "宽而低的身体挡在底盘和碎石之间，替车接住最先到来的冲击。",
+      "assets": [
+        {
+          "code": "R3-F7A",
+          "caption": "工具细节",
+          "src": "assets/mascot-round3/F7A.webp",
+          "alt": "第三轮越野护板伙伴车库手绘",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F7B",
+          "caption": "简洁色块",
+          "src": "assets/mascot-round3/F7B.webp",
+          "alt": "第三轮越野护板伙伴品牌图形",
+          "source_round": "round-3"
+        },
+        {
+          "code": "R3-F7C",
+          "caption": "完整机械结构",
+          "src": "assets/mascot-round3/F7C.webp",
+          "alt": "第三轮越野护板伙伴机械原型",
+          "source_round": "round-3"
+        }
+      ]
+    },
+    {
+      "id": "character-13-compass",
+      "index": "09",
+      "family": "compass",
+      "type": "mechanical",
+      "name_cn": "路向罗盘",
+      "name_en": "Trail Compass",
+      "blurb": "指针会随着路况轻轻偏转，始终把车带向更稳妥的方向。",
+      "sizePreview": {
+        "label": "路向罗盘 · 小尺寸下的样子",
+        "code": "R12-F5A",
+        "src64": "assets/mascot-evolution/previews/R12-F5A-64.png",
+        "src32": "assets/mascot-evolution/previews/R12-F5A-32.png"
+      },
+      "assets": [
+        {
+          "code": "R12-F5A",
+          "caption": "指向前方",
+          "src": "assets/mascot-evolution/round12/R12_F5A.webp",
+          "alt": "低矮不对称的路向罗盘指向前方",
+          "source_round": "round-12",
+          "source_file": "R12_F5A_路向罗盘_Trail_Compass_Pointing.png"
+        },
+        {
+          "code": "R12-F5B",
+          "caption": "露出背环",
+          "src": "assets/mascot-evolution/round12/R12_F5B.webp",
+          "alt": "路向罗盘的侧后机械结构和背环",
+          "source_round": "round-12",
+          "source_file": "R12_F5B_路向罗盘_Trail_Compass_Rear.png"
+        },
+        {
+          "code": "R12-F5C",
+          "caption": "带车选路",
+          "src": "assets/mascot-evolution/round12/R12_F5C.webp",
+          "alt": "路向罗盘为无品牌越野车指引路线",
+          "source_round": "round-12",
+          "source_file": "R12_F5C_路向罗盘_Trail_Compass_Guiding.png"
+        },
+        {
+          "code": "R12-F5D",
+          "caption": "转向新路",
+          "src": "assets/mascot-evolution/round12/R12_F5D.webp",
+          "alt": "路向罗盘倾斜并把指针转向新路",
+          "source_round": "round-12",
+          "source_file": "R12_F5D_路向罗盘_Trail_Compass_Turning.png"
+        }
+      ]
+    },
+    {
+      "id": "character-14-spark",
+      "index": "10",
+      "family": "spark",
+      "type": "mechanical",
+      "name_cn": "工坊火花",
+      "name_en": "Garage Spark",
+      "blurb": "它从工具接触金属的一瞬间醒来，哪里需要动手，哪里就亮起一团暖光。",
+      "assets": [
+        {
+          "code": "R13-F6A",
+          "caption": "暖光初醒",
+          "src": "assets/mascot-evolution/round13/R13_F6A.webp",
+          "alt": "围绕石墨金属芯的工坊火花亮起暖光",
+          "source_round": "round-13",
+          "source_file": "R13_F6A_工坊火花_Garage_Spark_Waking.png"
+        },
+        {
+          "code": "R13-F6B",
+          "caption": "绕过金属芯",
+          "src": "assets/mascot-evolution/round13/R13_F6B.webp",
+          "alt": "工坊火花的侧后方向和石墨金属芯",
+          "source_round": "round-13",
+          "source_file": "R13_F6B_工坊火花_Garage_Spark_Core.png"
+        },
+        {
+          "code": "R13-F6C",
+          "caption": "照亮工位",
+          "src": "assets/mascot-evolution/round13/R13_F6C.webp",
+          "alt": "工坊火花照亮无品牌车辆旁的安装位置",
+          "source_round": "round-13",
+          "source_file": "R13_F6C_工坊火花_Garage_Spark_Worklight.png"
+        },
+        {
+          "code": "R13-F6D",
+          "caption": "掠过车旁",
+          "src": "assets/mascot-evolution/round13/R13_F6D.webp",
+          "alt": "工坊火花拖着暖色光带掠过无品牌车辆",
+          "source_round": "round-13",
+          "source_file": "R13_F6D_工坊火花_Garage_Spark_Streak.png"
+        }
+      ]
+    },
+    {
+      "id": "character-01-dog",
+      "index": "11",
       "family": "dog",
       "type": "animal",
       "name_cn": "路伴犬",
@@ -151,7 +576,7 @@
     },
     {
       "id": "character-02-canyon-fox",
-      "index": "02",
+      "index": "12",
       "family": "canyon-fox",
       "type": "animal",
       "name_cn": "峡谷狐",
@@ -222,7 +647,7 @@
     },
     {
       "id": "character-03-quiet-lynx",
-      "index": "03",
+      "index": "13",
       "family": "quiet-lynx",
       "type": "animal",
       "name_cn": "静默山猫",
@@ -293,7 +718,7 @@
     },
     {
       "id": "character-04-bear",
-      "index": "04",
+      "index": "14",
       "family": "bear",
       "type": "animal",
       "name_cn": "山路熊",
@@ -336,7 +761,7 @@
     },
     {
       "id": "character-05-raccoon",
-      "index": "05",
+      "index": "15",
       "family": "raccoon",
       "type": "animal",
       "name_cn": "车库浣熊",
@@ -396,7 +821,7 @@
     },
     {
       "id": "character-06-bison",
-      "index": "06",
+      "index": "16",
       "family": "bison",
       "type": "animal",
       "name_cn": "稳角野牛",
@@ -449,7 +874,7 @@
     },
     {
       "id": "character-07-armadillo",
-      "index": "07",
+      "index": "17",
       "family": "armadillo",
       "type": "animal",
       "name_cn": "护甲犰狳",
@@ -459,7 +884,11 @@
         {
           "name": "金属护壳（Metal Shell）",
           "description": "尖长的鼻吻、贴地的身体，背壳像一片片铆接的金属护板。",
-          "codes": ["R4-F4A", "R4-F4B", "R4-F4C"],
+          "codes": [
+            "R4-F4A",
+            "R4-F4B",
+            "R4-F4C"
+          ],
           "sizePreview": {
             "label": "金属护壳 · 琥珀黄的小尺寸",
             "code": "R4-F4B",
@@ -470,7 +899,12 @@
         {
           "name": "柔软背甲（Soft Shell）",
           "description": "圆一些的头、短而厚实的腿，拱起的背甲跟着身体转动。",
-          "codes": ["R5-F5A", "R5-F5B", "R5-F5C", "R5-F5D"],
+          "codes": [
+            "R5-F5A",
+            "R5-F5B",
+            "R5-F5C",
+            "R5-F5D"
+          ],
           "sizePreview": {
             "label": "柔软背甲 · 站姿的小尺寸",
             "code": "R5-F5A",
@@ -533,7 +967,7 @@
     },
     {
       "id": "character-08-badger",
-      "index": "08",
+      "index": "18",
       "family": "badger",
       "type": "animal",
       "name_cn": "底盘獾",
@@ -579,7 +1013,7 @@
     },
     {
       "id": "character-09-mule",
-      "index": "09",
+      "index": "19",
       "family": "mule",
       "type": "animal",
       "name_cn": "拖带骡",
@@ -618,7 +1052,7 @@
     },
     {
       "id": "character-10-gecko",
-      "index": "10",
+      "index": "20",
       "family": "gecko",
       "type": "animal",
       "name_cn": "贴合壁虎",
@@ -657,7 +1091,7 @@
     },
     {
       "id": "character-11-raven",
-      "index": "11",
+      "index": "21",
       "family": "raven",
       "type": "animal",
       "name_cn": "巡检渡鸦",
@@ -696,7 +1130,7 @@
     },
     {
       "id": "character-12-kestrel-scout",
-      "index": "12",
+      "index": "22",
       "family": "kestrel-scout",
       "type": "animal",
       "name_cn": "路线红隼",
@@ -734,102 +1168,10 @@
       ]
     },
     {
-      "id": "character-13-compass",
-      "index": "13",
-      "family": "compass",
-      "type": "other",
-      "name_cn": "路向罗盘",
-      "name_en": "Trail Compass",
-      "blurb": "指针会随着路况轻轻偏转，始终把车带向更稳妥的方向。",
-      "sizePreview": {
-        "label": "路向罗盘 · 小尺寸下的样子",
-        "code": "R12-F5A",
-        "src64": "assets/mascot-evolution/previews/R12-F5A-64.png",
-        "src32": "assets/mascot-evolution/previews/R12-F5A-32.png"
-      },
-      "assets": [
-        {
-          "code": "R12-F5A",
-          "caption": "指向前方",
-          "src": "assets/mascot-evolution/round12/R12_F5A.webp",
-          "alt": "低矮不对称的路向罗盘指向前方",
-          "source_round": "round-12",
-          "source_file": "R12_F5A_路向罗盘_Trail_Compass_Pointing.png"
-        },
-        {
-          "code": "R12-F5B",
-          "caption": "露出背环",
-          "src": "assets/mascot-evolution/round12/R12_F5B.webp",
-          "alt": "路向罗盘的侧后机械结构和背环",
-          "source_round": "round-12",
-          "source_file": "R12_F5B_路向罗盘_Trail_Compass_Rear.png"
-        },
-        {
-          "code": "R12-F5C",
-          "caption": "带车选路",
-          "src": "assets/mascot-evolution/round12/R12_F5C.webp",
-          "alt": "路向罗盘为无品牌越野车指引路线",
-          "source_round": "round-12",
-          "source_file": "R12_F5C_路向罗盘_Trail_Compass_Guiding.png"
-        },
-        {
-          "code": "R12-F5D",
-          "caption": "转向新路",
-          "src": "assets/mascot-evolution/round12/R12_F5D.webp",
-          "alt": "路向罗盘倾斜并把指针转向新路",
-          "source_round": "round-12",
-          "source_file": "R12_F5D_路向罗盘_Trail_Compass_Turning.png"
-        }
-      ]
-    },
-    {
-      "id": "character-14-spark",
-      "index": "14",
-      "family": "spark",
-      "type": "other",
-      "name_cn": "工坊火花",
-      "name_en": "Garage Spark",
-      "blurb": "它从工具接触金属的一瞬间醒来，哪里需要动手，哪里就亮起一团暖光。",
-      "assets": [
-        {
-          "code": "R13-F6A",
-          "caption": "暖光初醒",
-          "src": "assets/mascot-evolution/round13/R13_F6A.webp",
-          "alt": "围绕石墨金属芯的工坊火花亮起暖光",
-          "source_round": "round-13",
-          "source_file": "R13_F6A_工坊火花_Garage_Spark_Waking.png"
-        },
-        {
-          "code": "R13-F6B",
-          "caption": "绕过金属芯",
-          "src": "assets/mascot-evolution/round13/R13_F6B.webp",
-          "alt": "工坊火花的侧后方向和石墨金属芯",
-          "source_round": "round-13",
-          "source_file": "R13_F6B_工坊火花_Garage_Spark_Core.png"
-        },
-        {
-          "code": "R13-F6C",
-          "caption": "照亮工位",
-          "src": "assets/mascot-evolution/round13/R13_F6C.webp",
-          "alt": "工坊火花照亮无品牌车辆旁的安装位置",
-          "source_round": "round-13",
-          "source_file": "R13_F6C_工坊火花_Garage_Spark_Worklight.png"
-        },
-        {
-          "code": "R13-F6D",
-          "caption": "掠过车旁",
-          "src": "assets/mascot-evolution/round13/R13_F6D.webp",
-          "alt": "工坊火花拖着暖色光带掠过无品牌车辆",
-          "source_round": "round-13",
-          "source_file": "R13_F6D_工坊火花_Garage_Spark_Streak.png"
-        }
-      ]
-    },
-    {
       "id": "character-15-route-engineer",
-      "index": "15",
+      "index": "23",
       "family": "route-engineer",
-      "type": "other",
+      "type": "human",
       "name_cn": "路线工程师",
       "name_en": "Route Engineer",
       "blurb": "他熟悉车辆，也熟悉路况，负责把每个安装细节做得稳妥。",
@@ -861,183 +1203,6 @@
           "src": "assets/mascot-evolution/round7/R7_F5D.webp",
           "alt": "路线工程师携带收纳好的工具跨步转身",
           "source_round": "round-7"
-        }
-      ]
-    },
-    {
-      "id": "character-16-parts-spirit",
-      "index": "16",
-      "family": "parts-spirit",
-      "type": "other",
-      "name_cn": "零件精灵",
-      "name_en": "Parts Sprite",
-      "blurb": "它由几件真正能咬合的零件组成，每一块都有自己的位置。",
-      "assets": [
-        {
-          "code": "R1-F1",
-          "caption": "最初的轮廓",
-          "src": "assets/mascot-evolution/round1/R1_F1_Parts_Spirit.webp",
-          "alt": "第一轮零件精灵概念",
-          "source_round": "round-1"
-        },
-        {
-          "code": "R2-1A",
-          "caption": "圆环外壳",
-          "src": "assets/mascot-evolution/round2/R2_1A.webp",
-          "alt": "第二轮圆环精灵",
-          "source_round": "round-2"
-        },
-        {
-          "code": "R2-1B",
-          "caption": "胶囊外壳",
-          "src": "assets/mascot-evolution/round2/R2_1B.webp",
-          "alt": "第二轮胶囊精灵",
-          "source_round": "round-2"
-        },
-        {
-          "code": "R2-1C",
-          "caption": "方形外壳",
-          "src": "assets/mascot-evolution/round2/R2_1C.webp",
-          "alt": "第二轮方核精灵",
-          "source_round": "round-2"
-        },
-        {
-          "code": "R3-F1A",
-          "caption": "工具细节",
-          "src": "assets/mascot-round3/F1A.webp",
-          "alt": "第三轮模块零件精灵车库手绘",
-          "source_round": "round-3"
-        },
-        {
-          "code": "R3-F1B",
-          "caption": "简洁色块",
-          "src": "assets/mascot-round3/F1B.webp",
-          "alt": "第三轮模块零件精灵品牌图形",
-          "source_round": "round-3"
-        },
-        {
-          "code": "R3-F1C",
-          "caption": "完整机械结构",
-          "src": "assets/mascot-round3/F1C.webp",
-          "alt": "第三轮模块零件精灵机械原型",
-          "source_round": "round-3"
-        }
-      ]
-    },
-    {
-      "id": "character-17-socket",
-      "index": "17",
-      "family": "socket",
-      "type": "other",
-      "name_cn": "套筒伙伴",
-      "name_en": "Socket Buddy",
-      "blurb": "小小的身体来自套筒和接头，总能找到尺寸合适的那一个。",
-      "assets": [
-        {
-          "code": "R3-F5A",
-          "caption": "工具细节",
-          "src": "assets/mascot-round3/F5A.webp",
-          "alt": "第三轮套筒模块伙伴车库手绘",
-          "source_round": "round-3"
-        },
-        {
-          "code": "R3-F5B",
-          "caption": "简洁色块",
-          "src": "assets/mascot-round3/F5B.webp",
-          "alt": "第三轮套筒模块伙伴品牌图形",
-          "source_round": "round-3"
-        },
-        {
-          "code": "R3-F5C",
-          "caption": "完整机械结构",
-          "src": "assets/mascot-round3/F5C.webp",
-          "alt": "第三轮套筒模块伙伴机械原型",
-          "source_round": "round-3"
-        },
-        {
-          "code": "R4-F3A",
-          "caption": "氧化橙",
-          "src": "assets/mascot-evolution/round4/R4_F3A.webp",
-          "alt": "第四轮套筒模块伙伴氧化橙方案",
-          "source_round": "round-4"
-        },
-        {
-          "code": "R4-F3B",
-          "caption": "琥珀黄",
-          "src": "assets/mascot-evolution/round4/R4_F3B.webp",
-          "alt": "第四轮套筒模块伙伴工业琥珀方案",
-          "source_round": "round-4"
-        },
-        {
-          "code": "R4-F3C",
-          "caption": "橄榄绿",
-          "src": "assets/mascot-evolution/round4/R4_F3C.webp",
-          "alt": "第四轮套筒模块伙伴苔藓橄榄方案",
-          "source_round": "round-4"
-        }
-      ]
-    },
-    {
-      "id": "character-18-fitment",
-      "index": "18",
-      "family": "fitment",
-      "type": "other",
-      "name_cn": "咬合模块",
-      "name_en": "Fit Link",
-      "blurb": "两边对准位置便会扣紧，它代表合适、牢靠和不勉强。",
-      "assets": [
-        {
-          "code": "R3-F6A",
-          "caption": "工具细节",
-          "src": "assets/mascot-round3/F6A.webp",
-          "alt": "第三轮适配连接体车库手绘",
-          "source_round": "round-3"
-        },
-        {
-          "code": "R3-F6B",
-          "caption": "简洁色块",
-          "src": "assets/mascot-round3/F6B.webp",
-          "alt": "第三轮适配连接体品牌图形",
-          "source_round": "round-3"
-        },
-        {
-          "code": "R3-F6C",
-          "caption": "完整机械结构",
-          "src": "assets/mascot-round3/F6C.webp",
-          "alt": "第三轮适配连接体机械原型",
-          "source_round": "round-3"
-        }
-      ]
-    },
-    {
-      "id": "character-19-guard",
-      "index": "19",
-      "family": "guard",
-      "type": "other",
-      "name_cn": "护板伙伴",
-      "name_en": "Skid Guard",
-      "blurb": "宽而低的身体挡在底盘和碎石之间，替车接住最先到来的冲击。",
-      "assets": [
-        {
-          "code": "R3-F7A",
-          "caption": "工具细节",
-          "src": "assets/mascot-round3/F7A.webp",
-          "alt": "第三轮越野护板伙伴车库手绘",
-          "source_round": "round-3"
-        },
-        {
-          "code": "R3-F7B",
-          "caption": "简洁色块",
-          "src": "assets/mascot-round3/F7B.webp",
-          "alt": "第三轮越野护板伙伴品牌图形",
-          "source_round": "round-3"
-        },
-        {
-          "code": "R3-F7C",
-          "caption": "完整机械结构",
-          "src": "assets/mascot-round3/F7C.webp",
-          "alt": "第三轮越野护板伙伴机械原型",
-          "source_round": "round-3"
         }
       ]
     }

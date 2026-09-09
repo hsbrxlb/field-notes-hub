@@ -13,7 +13,7 @@
 - `content-studio.html`：已经形成的内容、研究、方案和工作成果
 - `content-pipeline-test.html`：展示社媒内容测试的 Prompt、目的、平台作品和审核意见；最新五平台互动稿与旧三平台样稿分别保留，英文原稿、中文对照、审核意见与来源默认展开。主题插画与产品实拍分开标识，TikTok / YouTube Shorts 展示配文。
 - `flipbooks.html`：Flip Book Demo（翻页书），进入 Brand Story 与 Car Owner Survey
-- `mascot.html`：OEDRO 吉祥物角色档案，19 个角色区共 110 张独立高清图；犰狳的金属护壳与柔软背甲分栏展示，保留页内跳转、高清原图链接及对应版本的小尺寸对照，不设置选角标签
+- `mascot.html`：OEDRO 吉祥物角色档案，23 个角色区共 126 张独立高清图；机械与配件角色在前，动物与人物在后。新增板簧、搭扣、织带卷轴和散热鳍片四组造型，保留页内跳转、高清原图链接及对应版本的小尺寸对照，不设置选角标签
 - `topics.html`与`topic.html`：专题、稳定方法和经验记录
 - `playbook.html`：工作方法和完成标准
 
