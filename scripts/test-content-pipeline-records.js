@@ -19,6 +19,7 @@ const latest = config.records.find((record) => record.variants.length === 5);
 assert.ok(current && latest, '必须保留旧三平台和新五平台记录');
 const simulated = clone(latest);
 simulated.run_id = 'simulation-2026-09-08-second-record';
+simulated.review_status = '图文样稿待你审核';
 
 const records = renderer.sortRecords([current, simulated]);
 assert.equal(records[0].run_id, simulated.run_id, '最新记录应排在最前');
@@ -91,7 +92,7 @@ const noMedia = clone(simulated);
 delete noMedia.variants[0].visual.image;
 noMedia.ai_review.revision_count = 0;
 const noMediaHtml = renderer.recordMarkup(noMedia);
-assert.ok(noMediaHtml.includes('4:5 配图待制作') && noMediaHtml.includes('检查记录') && !noMediaHtml.includes('0 次退稿'), '缺图与零次退稿必须如实展示');
+assert.ok(noMediaHtml.includes('4:5 配图待制作') && noMediaHtml.includes('检查记录') && !noMediaHtml.includes('0 次修改'), '缺图与零次修改必须如实展示');
 assert.ok(html.includes('record-status status-blocked">文案可审，图片待完善'), '图片未完成时总状态必须使用阻塞色');
 assert.ok(html.includes('record-status status-pending">图文样稿待你审核'), '新记录不能显示为已通过');
 const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
@@ -150,6 +151,7 @@ try {
   fs.mkdirSync(path.join(mediaRoot, 'data'));
   for (const file of ['content-pipeline-test.html', 'content-pipeline-test.js', 'data/content-studio.json']) fs.copyFileSync(path.join(root, file), path.join(mediaRoot, file));
   const fixtureConfig = { ...config, records: [clone(latest), clone(current)] };
+  fixtureConfig.records[0].review_status = '图文样稿待你审核';
   for (const record of fixtureConfig.records) {
     if (record.image) {
       fs.mkdirSync(path.dirname(path.join(mediaRoot, record.image.src)), { recursive: true });
@@ -173,6 +175,18 @@ try {
   };
   const valid = validateRecord(() => {});
   assert.equal(valid.status, 0, valid.stderr);
+  const rejected = validateRecord((record) => {
+    record.review_status = '需要修改';
+    record.ai_review.decision = '需要修改';
+    record.variants.forEach((variant) => { variant.review.decision = '需要修改'; });
+    const markup = renderer.recordMarkup(record);
+    assert.ok(markup.includes('status-blocked">需要修改'), '退回记录必须显示阻塞状态');
+    assert.ok(!markup.includes('AI审核意见 · 文案可审'), '退回记录不能继续显示可审结论');
+    for (const variant of record.variants) for (const field of variant.fields) for (const block of field.blocks) {
+      assert.ok(markup.includes(escapeText(block.en)) && markup.includes(escapeText(block.zh)), '退回记录仍须保留双语原文');
+    }
+  });
+  assert.equal(rejected.status, 0, '旧稿退回状态应通过现行校验：' + rejected.stderr);
   const invalidCases = [
     ['平台集合', (record) => record.variants.pop(), /完整的三个或五个平台/],
     ['重复平台', (record) => { record.variants[4].id = 'tiktok'; }, /完整的三个或五个平台/],

@@ -21,7 +21,7 @@
   }
 
   function statusClass(status) {
-    if (status.includes('待完善') || status.includes('需改') || status.includes('放弃')) return 'blocked';
+    if (status.includes('待完善') || status.includes('需改') || status.includes('需要修改') || status.includes('放弃')) return 'blocked';
     if (status.includes('文案可审') || status.includes('可交给人审')) return 'ready';
     if (status.includes('通过')) return 'done';
     return 'pending';
@@ -94,7 +94,7 @@
       <div>
         <div class="section-head"><h2 id="${escapeHtml(record.run_id)}-review-title">AI复核结果</h2><span class="record-status status-${statusClass(record.ai_review.decision)}">${escapeHtml(record.ai_review.decision)}</span></div>
         <p>${escapeHtml(record.ai_review.summary)}</p>
-        <details class="pipeline-revisions" open><summary>${record.ai_review.revision_count ? `修改记录 · ${escapeHtml(record.ai_review.revision_count)} 次退稿` : '检查记录'}</summary>
+        <details class="pipeline-revisions" open><summary>${record.ai_review.revision_count ? `修改记录 · ${escapeHtml(record.ai_review.revision_count)} 次修改` : '检查记录'}</summary>
         <ul>${record.ai_review.corrections.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
         </details>
       </div>

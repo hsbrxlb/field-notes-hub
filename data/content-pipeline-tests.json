@@ -2,11 +2,271 @@
   "title": "内容生产测试",
   "records": [
     {
+      "run_id": "2026-09-09-oedro-trail-passenger",
+      "date": "2026-09-09",
+      "version": "山路搭便车 · 新创意样稿",
+      "product": "泥靴把山路带回皮卡",
+      "review_status": "图文样稿待你审核",
+      "prompt": "为 OEDRO 重做五个平台的创意样稿。面向徒步后带着泥靴回到皮卡的美国车主，把泥巴画成不请自来的乘客：靴子携带一小块山路和小树。让人认出熟悉的车边清理情境并觉得好笑，不堆产品参数。制作 Instagram、Facebook、Pinterest 三张静态插画，提供五个平台的英文文案与中文对照。TikTok 和 YouTube Shorts 提供可搭配公司既有泥靴或清理视频的候选配文；不制作视频。",
+      "brief": {
+        "purpose": "车主共鸣与趣味内容",
+        "audience": "徒步后带着泥靴回到皮卡的美国车主",
+        "desired_effect": "让车主认出熟悉的车内脏污情境，愿意看完、分享或收藏这个笑话；测试这种语气是否适合 OEDRO",
+        "creative_direction": "这是旧清洁互动稿被退回后的新创意方向。小树和微型山路是明确的插画虚构；品牌语气仍是提案，尚无受众效果证据。",
+        "asset_decision": "三张原创主题插画不呈现脚垫几何结构或产品效果。Instagram、Facebook 原图为 1122×1402，低于原定 1440×1800；保留原尺寸，手机阅读清楚，未放大伪装高清。Pinterest 为 1024×1536。TikTok、YouTube Shorts 尚未核对公司既有视频，使用前须确认画面和复用权限。",
+        "success_criteria": [
+          "文案和画面一起能让人认出泥靴回车后的清理情境。",
+          "笑点来自可见细节，品牌语气有辨识度，未变成产品说明书。",
+          "中英文意思一致，插画未冒充产品使用或清洁效果证明。",
+          "视频配文须与实际既有画面匹配后才能使用。"
+        ],
+        "post_publish_signals": "尚未发布，也没有效果数据。若后续使用，观察具体共鸣、转发和收藏；不把结构校验当作创意有效的证明。"
+      },
+      "source": {
+        "label": "OEDRO产品页",
+        "url": "https://www.oedro.com/products/all-weather-tpe-floor-mats-liners-for-2017-2024-ford-f-250-f-350-super-duty-crew-cab-full-set-liners-p-5361.html",
+        "verification_status": "2026年9月9日核对产品身份；未引用功效承诺。"
+      },
+      "facts": [
+        {
+          "label": "品牌与产品背景",
+          "value": "OEDRO 2Gen TPE 脚垫；本组关注泥靴与车边清理情境。"
+        },
+        {
+          "label": "画面性质",
+          "value": "微型山路与小树是插画虚构，不是车主证言或产品效果演示。"
+        }
+      ],
+      "variants": [
+        {
+          "id": "instagram",
+          "platform": "Instagram",
+          "platform_job": "用靴底的小树搭车，把徒步后的泥带到皮卡地板这个笑点说完整。",
+          "format": "静态图文",
+          "fields": [
+            {
+              "key": "caption",
+              "blocks": [
+                {
+                  "en": "Went hiking to get a little space.",
+                  "zh": "去徒步，本想清静一会儿。"
+                },
+                {
+                  "en": "Now there's a pine tree on the boot asking for a ride home. That's a lot of landscaping for one truck floor.",
+                  "zh": "现在靴子上有棵松树，嚷着要搭车回家。一辆皮卡的地板，哪用得着这么多绿化。"
+                }
+              ]
+            }
+          ],
+          "visual": {
+            "kind": "illustration",
+            "aspect_ratio": "4:5",
+            "note": "原创主题插画，非产品实拍。",
+            "image": {
+              "src": "assets/content-pipeline/trail-passenger-instagram.jpg",
+              "alt": "皮卡车门外的泥靴，靴底带着一小块山路和松树。",
+              "width": 1122,
+              "height": 1402
+            }
+          },
+          "review": {
+            "decision": "文案可审",
+            "rationale": "小树要搭车与地板绿化接在一起，笑点涉及车内脏污；是否像 OEDRO 的语气仍待判断。",
+            "checks": [
+              "已核对最终英文与中文逐段对应。",
+              "没有新增适配、清洁效果或产品性能承诺。",
+              "图中虚构山路与文案的车边情境相呼应。"
+            ],
+            "success_signal": "观察车主是否认出情境并愿意分享笑点。"
+          }
+        },
+        {
+          "id": "facebook",
+          "platform": "Facebook",
+          "platform_job": "把掉落的泥块写成微型景点，落在车道清理的情境里。",
+          "format": "静态图文",
+          "fields": [
+            {
+              "key": "caption",
+              "blocks": [
+                {
+                  "en": "Back in the driveway, one tap of a boot drops a surprisingly complete souvenir.",
+                  "zh": "回到自家车道，靴子一磕，一份出奇完整的纪念品就掉了下来。"
+                },
+                {
+                  "en": "A tiny tree. A chunk of trail. Enough scenery to start charging admission. The truck floor has narrowly avoided becoming the visitor center.",
+                  "zh": "一棵小树，一截山路。这点风景都够开始收门票了。车里的地板差一点就成了游客中心。"
+                }
+              ]
+            }
+          ],
+          "visual": {
+            "kind": "illustration",
+            "aspect_ratio": "4:5",
+            "note": "原创主题插画，非产品实拍。",
+            "image": {
+              "src": "assets/content-pipeline/trail-passenger-facebook.jpg",
+              "alt": "停放的皮卡旁，一磕靴子掉下一块带小树的山路。",
+              "width": 1122,
+              "height": 1402
+            }
+          },
+          "review": {
+            "decision": "文案可审",
+            "rationale": "游客中心的包袱回应掉下的山路碎片，车内地板成为笑点的落点。",
+            "checks": [
+              "已核对最终英文与中文逐段对应。",
+              "没有新增适配、清洁效果或产品性能承诺。",
+              "图中虚构山路与文案的车边情境相呼应。"
+            ],
+            "success_signal": "观察车主是否认出情境并愿意分享笑点。"
+          }
+        },
+        {
+          "id": "pinterest",
+          "platform": "Pinterest",
+          "platform_job": "用车外的泥靴与小树形成可收藏的徒步插画。",
+          "format": "静态图文",
+          "fields": [
+            {
+              "key": "title",
+              "blocks": [
+                {
+                  "en": "Muddy hiking boots & an ambitious souvenir",
+                  "zh": "沾泥的登山靴，带回一份有想法的纪念品"
+                }
+              ]
+            },
+            {
+              "key": "description",
+              "blocks": [
+                {
+                  "en": "Boots outside the cab. The mud brought a tiny tree home, and this souvenir expects to be watered.",
+                  "zh": "靴子先放车外。泥巴把一棵小树带回了家，这份纪念品还等着人给它浇水。"
+                }
+              ]
+            }
+          ],
+          "visual": {
+            "kind": "illustration",
+            "aspect_ratio": "2:3",
+            "note": "原创主题插画，非产品实拍。",
+            "image": {
+              "src": "assets/content-pipeline/trail-passenger-pinterest.jpg",
+              "alt": "皮卡车外的泥靴与清理场景，泥中有一棵小树。",
+              "width": 1024,
+              "height": 1536
+            }
+          },
+          "review": {
+            "decision": "文案可审",
+            "rationale": "靴子在车外交代清理情境，小树要求浇水承接插画中的荒诞。",
+            "checks": [
+              "已核对最终英文与中文逐段对应。",
+              "没有新增适配、清洁效果或产品性能承诺。",
+              "图中虚构山路与文案的车边情境相呼应。"
+            ],
+            "success_signal": "观察收藏及车主对画面的具体回应。"
+          }
+        },
+        {
+          "id": "tiktok",
+          "platform": "TikTok",
+          "platform_job": "为普通泥靴或车边清理视频提供一句夸张旁白。",
+          "format": "候选视频配文",
+          "fields": [
+            {
+              "key": "caption",
+              "blocks": [
+                {
+                  "en": "brought half the trail home. the other half is still open.",
+                  "zh": "半条山路都带回来了。另一半还正常开放。"
+                }
+              ]
+            }
+          ],
+          "visual": {
+            "kind": "external_video",
+            "aspect_ratio": "9:16",
+            "note": "候选配文；尚未核对公司既有泥靴或清理视频，须匹配画面及复用权限。"
+          },
+          "review": {
+            "decision": "文案可审",
+            "rationale": "半条山路的夸张可配普通泥靴画面；尚未检查实际公司视频。",
+            "checks": [
+              "已核对最终英文与中文逐段对应。",
+              "没有新增适配、清洁效果或产品性能承诺。",
+              "实际既有视频未检查，配文仍需匹配素材。"
+            ],
+            "success_signal": "观察车主是否认出情境并愿意分享笑点。"
+          }
+        },
+        {
+          "id": "youtube_shorts",
+          "platform": "YouTube Shorts",
+          "platform_job": "用可辨认的泥靴回车场景配上简短幽默描述。",
+          "format": "候选视频配文",
+          "fields": [
+            {
+              "key": "title",
+              "blocks": [
+                {
+                  "en": "Muddy hiking boots back at the truck | OEDRO",
+                  "zh": "沾泥的登山靴，又回到了车边 | OEDRO"
+                }
+              ]
+            },
+            {
+              "key": "description",
+              "blocks": [
+                {
+                  "en": "The boots made it back to the truck. So did a generous sample of the trail.",
+                  "zh": "靴子回到了车边，还顺便带回了一大份山路样本。"
+                }
+              ]
+            }
+          ],
+          "visual": {
+            "kind": "external_video",
+            "aspect_ratio": "9:16",
+            "note": "候选配文；尚未核对公司既有泥靴或清理视频，须匹配画面及复用权限。"
+          },
+          "review": {
+            "decision": "文案可审",
+            "rationale": "山路样本指靴上的泥，标题交代回到车边；尚未检查实际公司视频。",
+            "checks": [
+              "已核对最终英文与中文逐段对应。",
+              "没有新增适配、清洁效果或产品性能承诺。",
+              "实际既有视频未检查，配文仍需匹配素材。"
+            ],
+            "success_signal": "观察车主是否认出情境并愿意分享笑点。"
+          }
+        }
+      ],
+      "ai_review": {
+        "decision": "待人工判断",
+        "revision_count": 3,
+        "summary": "首稿的车内地板关联太弱，视频配文还依赖虚构小树画面，已退回修改。最终文案补足皮卡地板与车外清理情境，视频配文改为普通泥靴画面可承接的旁白。三张插画已查看；是否符合 OEDRO 的品牌语气、是否真的好笑仍待判断。",
+        "corrections": [
+          "撤回旧清洁互动样稿的可审意见，保留原稿作对照。",
+          "删除重复产品标签和空泛口号，把笑点落在靴底小树、山路碎片和皮卡地板上。",
+          "修正视频配文对虚构小树镜头的依赖；未把未检查的公司素材当作已完成视频。",
+          "逐段核对中文，修正游客中心、车内绿化等笑点的对应关系。"
+        ]
+      },
+      "human_questions": [
+        "配图和文案放在一起，能否一眼认出泥靴回车的情境？",
+        "小树和山路的笑点值得看完或分享吗？",
+        "这种语气像你希望 OEDRO 采用的品牌表达吗？",
+        "公司现有泥靴或清理视频中，哪些画面能准确承接两条候选配文？"
+      ]
+    },
+    {
       "run_id": "2026-09-08-oedro-cleaning-engagement",
       "date": "2026-09-08",
-      "version": "互动样稿",
+      "version": "旧互动样稿 · Oliver 已退回",
       "product": "OEDRO 脚垫清洁",
-      "review_status": "图文样稿待你审核",
+      "review_status": "需要修改",
       "prompt": "围绕 OEDRO 脚垫清洁，做五个平台能引出真实车主交流的内容。让人聊聊车里最难清理的脏东西，语气轻松自然；产品配置按需提及，别重复说明书。不编造车主故事，不做视频。",
       "brief": {
         "purpose": "用户关系与清洁话题互动",
@@ -73,12 +333,12 @@
             }
           },
           "review": {
-            "decision": "文案可审",
-            "rationale": "简短选择题与静态纹理近景配合，读者不用写长故事。",
+            "decision": "需要修改",
+            "rationale": "该平台旧稿已随整组退回；此前审核意见已失效。原意见：简短选择题与静态纹理近景配合，读者不用写长故事。",
             "checks": [
-              "保留已审核英文原稿",
-              "中文逐段对应",
-              "未新增适配或效果承诺"
+              "原检查记录（已失效）：保留已审核英文原稿",
+              "原检查记录（已失效）：中文逐段对应",
+              "原检查记录（已失效）：未新增适配或效果承诺"
             ],
             "success_signal": "观察评论中各类污物的具体回答。"
           }
@@ -115,12 +375,12 @@
             }
           },
           "review": {
-            "decision": "文案可审",
-            "rationale": "允许用一段经历交代经验，区别于 Instagram 的污物选择。",
+            "decision": "需要修改",
+            "rationale": "该平台旧稿已随整组退回；此前审核意见已失效。原意见：允许用一段经历交代经验，区别于 Instagram 的污物选择。",
             "checks": [
-              "保留已审核英文原稿",
-              "中文逐段对应",
-              "未新增适配或效果承诺"
+              "原检查记录（已失效）：保留已审核英文原稿",
+              "原检查记录（已失效）：中文逐段对应",
+              "原检查记录（已失效）：未新增适配或效果承诺"
             ],
             "success_signal": "观察评论是否提出具体失误和经验。"
           }
@@ -166,12 +426,12 @@
             }
           },
           "review": {
-            "decision": "文案可审",
-            "rationale": "以检索和收藏为主要互动，不把评论问题搬到每个平台。",
+            "decision": "需要修改",
+            "rationale": "该平台旧稿已随整组退回；此前审核意见已失效。原意见：以检索和收藏为主要互动，不把评论问题搬到每个平台。",
             "checks": [
-              "保留已审核英文原稿",
-              "中文逐段对应",
-              "未新增适配或效果承诺"
+              "原检查记录（已失效）：保留已审核英文原稿",
+              "原检查记录（已失效）：中文逐段对应",
+              "原检查记录（已失效）：未新增适配或效果承诺"
             ],
             "success_signal": "观察这条清洁参考的收藏情况。"
           }
@@ -202,12 +462,12 @@
             "note": "搭配公司已有且与文案内容相符的视频。"
           },
           "review": {
-            "decision": "文案可审",
-            "rationale": "问题短，围绕时间习惯，而非再次询问污物种类或清洁经验。",
+            "decision": "需要修改",
+            "rationale": "该平台旧稿已随整组退回；此前审核意见已失效。原意见：问题短，围绕时间习惯，而非再次询问污物种类或清洁经验。",
             "checks": [
-              "保留已审核英文原稿",
-              "中文逐段对应",
-              "未新增适配或效果承诺"
+              "原检查记录（已失效）：保留已审核英文原稿",
+              "原检查记录（已失效）：中文逐段对应",
+              "原检查记录（已失效）：未新增适配或效果承诺"
             ],
             "success_signal": "观察评论是否给出具体时间习惯。"
           }
@@ -247,22 +507,23 @@
             "note": "搭配公司已有且与文案内容相符的视频。"
           },
           "review": {
-            "decision": "文案可审",
-            "rationale": "标题便于检索，描述提供已知步骤，评论用于发现剩余信息需求。",
+            "decision": "需要修改",
+            "rationale": "该平台旧稿已随整组退回；此前审核意见已失效。原意见：标题便于检索，描述提供已知步骤，评论用于发现剩余信息需求。",
             "checks": [
-              "保留已审核英文原稿",
-              "中文逐段对应",
-              "未新增适配或效果承诺"
+              "原检查记录（已失效）：保留已审核英文原稿",
+              "原检查记录（已失效）：中文逐段对应",
+              "原检查记录（已失效）：未新增适配或效果承诺"
             ],
             "success_signal": "观察是否出现具体、尚未解答的清洁问题。"
           }
         }
       ],
       "ai_review": {
-        "decision": "待人工判断",
+        "decision": "需要修改",
         "revision_count": 1,
-        "summary": "文案中的重复提问和中文增义已修正。三张插画用于评审话题与视觉方向；TikTok 和 YouTube Shorts 需搭配公司既有视频。",
+        "summary": "Oliver 已退回这组清洁互动样稿：内容缺少值得看的创意，文案与插画仍需重做。此前的可审意见已失效，以下原图文保留供对照。",
         "corrections": [
+          "已撤回此前可审结论，保留用户退回的原稿。",
           "将重复的互动问题改为污物选择、经验分享、清洁习惯和未解答问题；Pinterest 使用收藏动作。",
           "删除中文里英文原稿没有表达的条件，核对产品结构与清洁说法。",
           "配图从待提供的实拍改为主题插画，不呈现未经核对的产品外观。"

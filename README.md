@@ -6,19 +6,25 @@
 
 ## 当前页面
 
+- `fakesite/`：独立站样站，侧栏直接进入首页；包含 Blog、两篇完整指南、FAQ 和草稿编辑演示。保留独立的品牌页面外观，不套 Hub 阅读外壳。页面标明设计演示并禁止索引，不连接购物或真实发布。
+- `fakesite/editor.html`：可预览、在浏览器保存并下载 Markdown/JSON 草稿；这不是员工登录后台，也不会把内容提交到仓库。正式发文优先接公司现有后台；没有现成能力时再评估 Pages CMS 或 Decap 的认证与仓库授权。
+- 样站检查：`node scripts/check-fakesite.js`；发布流程同时检查源码和最终 Pages 文件。公开目录只包含运行所需网页、脚本、字体和图片，没有研究原件或本地运行记录。
+
 - `index.html`：当前重点、最近成果、工作入口和运营专题
 - `work.html`：项目状态、待办、阻塞和下一动作
 - `light-research.html`：AI 对话调研入口，连接本机运行的 Light Research；独立应用源码保存在 `apps/light-research`
 - `research.html`：研究项目、方法、参与方式、用户权利和 AI智能对话问卷介绍
 - `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
 - `content-studio.html`：已经形成的内容、研究、方案和工作成果
-- `content-pipeline-test.html`：展示社媒内容测试的 Prompt、目的、平台作品和审核意见；最新五平台互动稿与旧三平台样稿分别保留，英文原稿、中文对照、审核意见与来源默认展开。主题插画与产品实拍分开标识，TikTok / YouTube Shorts 展示配文。
+- `content-pipeline-test.html`：展示社媒内容测试的 Prompt、目的、平台作品和审核意见；最新泥靴幽默样稿、已退回的清洁互动稿与旧三平台样稿分别保留，英文原稿、中文对照、审核意见与来源默认展开。主题插画与产品实拍分开标识，TikTok / YouTube Shorts 展示待匹配既有视频的候选配文。
 - `flipbooks.html`：Flip Book Demo（翻页书），进入 Brand Story 与 Car Owner Survey
 - `mascot.html`：OEDRO 吉祥物角色档案，23 个角色区共 126 张独立高清图；机械与配件角色在前，动物与人物在后。新增板簧、搭扣、织带卷轴和散热鳍片四组造型，保留页内跳转、高清原图链接及对应版本的小尺寸对照，不设置选角标签
 - `topics.html`与`topic.html`：专题、稳定方法和经验记录
 - `playbook.html`：工作方法和完成标准
 
 `content-studio.html`路径为兼容旧链接而保留。页面已经改为只读成果档案，读取`data/content-studio.json`；没有填写表单、在线生成、浏览器草稿、版本审核、登录或数据库。
+
+维护记录：2026年9月9日创意样稿由现有 Skills 与总控整合完成；完整自动内容包校验尚未通过，Hub 展示验收不代表整套工作流通过。
 
 `flipbooks.html` 是两本书的统一入口。书内左上角返回该页面；Car Owner Survey 的回答保存在访问者当前浏览器。
 

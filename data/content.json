@@ -5,6 +5,11 @@
   },
   "nav": [
     {
+      "id": "fakesite",
+      "label": "独立站样站",
+      "file": "fakesite/"
+    },
+    {
       "id": "overview",
       "label": "总览",
       "file": "index.html"
