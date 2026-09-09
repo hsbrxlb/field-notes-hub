@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const assert = require('node:assert/strict');
-const { validateVoicePayload } = require('./check-public-user-voice.js');
+const { validateVoicePayload, validateRuntimeContent } = require('./check-public-user-voice.js');
 
 const valid = {
   schema_version: 2,
@@ -40,3 +40,13 @@ withUncontrolledTopic.actions[0].public_topic = 'does-it-fit';
 assert.ok(validateVoicePayload(withUncontrolledTopic).some((error) => error.includes('invalid public topic')));
 
 console.log('Public user voice rejection tests passed');
+
+assert.deepEqual(validateRuntimeContent('app.js', '<a href="http://127.0.0.1:54810/">Open interview</a>'), []);
+for (const [file, content] of [
+  ['data/user-voice.json', 'http://127.0.0.1:54810/'],
+  ['app.js', 'fetch("http://127.0.0.1:54810/")'],
+  ['app.js', '<a href="http://127.0.0.1:54810/api/study/delete">Delete</a>'],
+  ['app.js', '<a href="http://127.0.0.1:54811/">Other service</a>'],
+  ['app.js', '<a href="http://localhost:54810/">Other origin</a>'],
+]) assert.ok(validateRuntimeContent(file, content).length, file + ' must remain blocked');
+console.log('Explicit interview launch and remaining local-runtime boundaries passed');

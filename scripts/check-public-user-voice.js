@@ -32,6 +32,8 @@ function collectRuntimeFiles(directory, prefix = '') {
   const files = [];
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
     if (entry.isDirectory() && excludedDirectories.has(entry.name)) continue;
+    // Independent server applications are excluded by the Pages artifact allowlist.
+    if (!prefix && entry.isDirectory() && entry.name === 'apps') continue;
     const relativePath = path.join(prefix, entry.name);
     const absolutePath = path.join(directory, entry.name);
     if (entry.isDirectory()) files.push(...collectRuntimeFiles(absolutePath, relativePath));
@@ -51,11 +53,17 @@ function read(relativePath) {
   return fs.readFileSync(absolutePath, 'utf8');
 }
 
+function validateRuntimeContent(relativePath, content) {
+  // The selected interview is a user-clicked local launch, never a Pages API call.
+  const inspected = relativePath === 'app.js'
+    ? content.replaceAll('href="http://127.0.0.1:54810/"', 'href="approved-local-interview-launch"')
+    : content;
+  return forbiddenRuntime.filter((pattern) => pattern.test(inspected))
+    .map((pattern) => `${relativePath}: contains ${pattern}`);
+}
+
 for (const relativePath of runtimeFiles) {
-  const content = read(relativePath);
-  for (const pattern of forbiddenRuntime) {
-    if (pattern.test(content)) errors.push(`${relativePath}: contains ${pattern}`);
-  }
+  errors.push(...validateRuntimeContent(relativePath, read(relativePath)));
 }
 
 const voiceText = read('data/user-voice.json');
@@ -116,4 +124,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { validateVoicePayload };
+module.exports = { validateVoicePayload, validateRuntimeContent };
