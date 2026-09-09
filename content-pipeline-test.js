@@ -21,7 +21,7 @@
   }
 
   function statusClass(status) {
-    if (status.includes('待完善') || status.includes('需改') || status.includes('放弃')) return 'blocked';
+    if (status.includes('待完善') || status.includes('需改') || status.includes('需要修改') || status.includes('放弃')) return 'blocked';
     if (status.includes('文案可审') || status.includes('可交给人审')) return 'ready';
     if (status.includes('通过')) return 'done';
     return 'pending';
