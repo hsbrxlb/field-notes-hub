@@ -63,6 +63,19 @@ function renderShell(data) {
   document.querySelector('#breadcrumb-page').textContent = current?.label || '';
 }
 
+function renderLightResearch() {
+  document.title = 'Light Research｜OEDRO 工作台';
+  document.querySelector('#content').innerHTML = `
+    ${pageHeading('Light Research', '与 Oedro Buddy 进行一对一文字访谈。')}
+    <section class="section light-research-launch">
+      <a class="research-preview" href="http://127.0.0.1:54810/" target="_blank" rel="noopener" aria-label="打开本机 Light Research 访谈">
+        <img src="assets/light-research/hawthorne-preview.jpg" alt="Hawthorne 字体与浅色光影背景的访谈界面" width="1440" height="900">
+      </a>
+      <div class="section-head"><a class="text-link research-open" href="http://127.0.0.1:54810/" target="_blank" rel="noopener">打开访谈 ↗</a><a class="text-link" href="https://github.com/hsbrxlb/field-notes-hub/tree/main/apps/light-research">应用源码 ↗</a></div>
+      <p>访谈由本机服务运行，请在已启动服务的这台 Mac 上打开。回答可以跳过，访谈可以随时停止。</p>
+    </section>`;
+}
+
 function renderOverview(data, topics, results) {
   const o = data.overview;
   const recentResults = [...(results?.results || [])]
@@ -417,6 +430,7 @@ async function init() {
   if (page === 'playbook') renderPlaybook(data);
   if (page === 'work') renderWork(data);
   if (page === 'research') renderResearch(data);
+  if (page === 'light-research') renderLightResearch();
   if (page === 'flipbooks') renderFlipbooks(data);
   if (page === 'voice') renderUserVoice(data, voice, radar);
   if (page === 'topics' && location.pathname.endsWith('topics.html')) renderTopics(data, topics);

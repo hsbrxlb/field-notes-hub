@@ -1,0 +1,517 @@
+{
+  "schemaVersion": "2.0",
+  "study": {
+    "id": "purchase-abandonment",
+    "version": "fixture-3.1-reviewed-questions",
+    "title": "Checkout Decision Study",
+    "status": "review_ready",
+    "readiness": "technical_prototype",
+    "goal": "Understand why a shopper considered a product but did not complete checkout and identify the smallest useful follow-up test.",
+    "decisionQuestions": [
+      "Which barriers appear most often in this sample?",
+      "Which product, price, trust, or checkout improvement should be tested next?"
+    ],
+    "audience": {
+      "description": "Synthetic adult shopper personas who considered a product and left before completing checkout.",
+      "eligibility": [
+        "Reached a product or checkout page",
+        "Did not complete the purchase"
+      ]
+    },
+    "languagePolicy": {
+      "entryLanguage": "en",
+      "fallbackLanguage": "en",
+      "autoReplyLanguage": true,
+      "preserveOriginal": true
+    },
+    "estimatedMinutes": 7,
+    "sampleKind": "synthetic"
+  },
+  "brand": {
+    "name": "Customer Research",
+    "shortLabel": "Decision Study",
+    "accent": "#2563EB",
+    "surface": "light"
+  },
+  "claims": [
+    {
+      "id": "synthetic_concept",
+      "text": "The image and checkout details in this fixture are synthetic and do not describe a live offer.",
+      "status": "approved_for_participants",
+      "source": "Synthetic fixture created for local acceptance testing on 2026-08-31"
+    }
+  ],
+  "consent": {
+    "version": "fixture-consent-2",
+    "enabledByDefault": false,
+    "internalOnly": false,
+    "locales": {
+      "en": {
+        "languageLabel": "Language",
+        "title": "Review how this synthetic study uses your answers",
+        "intro": "This optional screen is dormant unless a specific project explicitly enables it.",
+        "items": [
+          "Written answers are stored in a local test database and processed by the configured AI provider.",
+          "Do not enter names, contact details, order numbers, or payment details."
+        ],
+        "checkbox": "I understand and want to start this synthetic study.",
+        "accept": "Agree and start",
+        "decline": "Not now",
+        "declinedTitle": "The study was not started",
+        "declinedText": "No research session was created."
+      }
+    }
+  },
+  "dataPolicy": {
+    "retentionDays": 30,
+    "collectPii": false,
+    "allowWithdrawal": true,
+    "providerDisclosure": "Answers are processed by a configured third-party AI provider for interview understanding, controlled follow-up, and evidence extraction."
+  },
+  "moderation": {
+    "policyVersion": "controlled-autonomy-3.1-reviewed-questions",
+    "maxTotalProbes": 5,
+    "checkpointEveryAnchors": 3,
+    "maxCheckpointQuestions": 1,
+    "maxFinalAuditQuestions": 2,
+    "maxRepairTurns": 5,
+    "repairConsumesProbeBudget": false,
+    "oneQuestionPerReply": true
+  },
+  "model": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "promptVersion": "interviewer-3.1-reviewed-questions",
+    "timeoutMs": 25000,
+    "maxRetries": 1
+  },
+  "fields": [
+    {
+      "id": "shopping_goal",
+      "description": "What the participant hoped to accomplish",
+      "type": "text",
+      "decisionRelevance": "important"
+    },
+    {
+      "id": "exit_point",
+      "description": "Where the participant stopped",
+      "type": "choice",
+      "decisionRelevance": "important"
+    },
+    {
+      "id": "barriers",
+      "description": "Reasons for not completing the purchase",
+      "type": "string_list",
+      "decisionRelevance": "critical"
+    },
+    {
+      "id": "decision_confidence",
+      "description": "Confidence in the decision not to buy",
+      "type": "scale",
+      "decisionRelevance": "context"
+    },
+    {
+      "id": "missing_information",
+      "description": "Information or reassurance that was missing",
+      "type": "text",
+      "decisionRelevance": "critical"
+    },
+    {
+      "id": "return_condition",
+      "description": "Change that could make the participant reconsider",
+      "type": "text",
+      "decisionRelevance": "critical"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "goal",
+      "label": "Shopping goal",
+      "objective": "Understand the job or situation that led the shopper to consider the product.",
+      "question": "What started your search for the product?",
+      "clarification": "What started your search for the product?",
+      "sufficiencyCriteria": [
+        "The intended job, need, or situation is understood"
+      ],
+      "highValueProbeTargets": [
+        "A missing real situation"
+      ],
+      "requiredFields": [
+        "shopping_goal"
+      ],
+      "optional": false,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 1,
+      "measurementStage": "conversation",
+      "claimRefs": [],
+      "media": [],
+      "input": {
+        "type": "text",
+        "placeholder": {
+          "en": "Describe the job or situation in your own words…",
+          "zh-CN": "用你自己的话说说当时的需要…",
+          "es": "Escribe tu respuesta…"
+        }
+      },
+      "questionLocales": {
+        "en": "What started your search for the product?",
+        "zh-CN": "是什么让你开始寻找这个产品？",
+        "es": "¿Qué te llevó a buscar el producto?"
+      },
+      "clarificationLocales": {
+        "en": "What started your search for the product?",
+        "zh-CN": "是什么让你开始寻找这个产品？",
+        "es": "¿Qué te llevó a buscar el producto?"
+      },
+      "followUpQuestions": {
+        "shopping_goal": {
+          "en": "What started your search for the product?",
+          "zh-CN": "是什么让你开始寻找这个产品？",
+          "es": "¿Qué te llevó a buscar el producto?"
+        }
+      }
+    },
+    {
+      "id": "exit",
+      "label": "Exit point",
+      "objective": "Locate the point where the buying process stopped.",
+      "question": "What was the last step you reached before leaving?",
+      "clarification": "What was the last step you reached before leaving?",
+      "sufficiencyCriteria": [
+        "One exit point or an equivalent description is recorded"
+      ],
+      "highValueProbeTargets": [],
+      "requiredFields": [
+        "exit_point"
+      ],
+      "optional": false,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 0,
+      "measurementStage": "conversation",
+      "claimRefs": [],
+      "media": [],
+      "input": {
+        "type": "single_choice",
+        "allowOther": true,
+        "options": [
+          {
+            "id": "product_page",
+            "labels": {
+              "en": "Product page",
+              "zh-CN": "商品页",
+              "es": "Página del producto"
+            }
+          },
+          {
+            "id": "cart",
+            "labels": {
+              "en": "Cart",
+              "zh-CN": "购物车",
+              "es": "Carrito"
+            }
+          },
+          {
+            "id": "checkout",
+            "labels": {
+              "en": "Checkout",
+              "zh-CN": "结账页",
+              "es": "Página de compra"
+            }
+          },
+          {
+            "id": "payment",
+            "labels": {
+              "en": "Payment step",
+              "zh-CN": "付款步骤",
+              "es": "Paso de pago"
+            }
+          }
+        ]
+      },
+      "questionLocales": {
+        "en": "What was the last step you reached before leaving?",
+        "zh-CN": "离开之前，你进行到了哪一步？",
+        "es": "¿Cuál fue el último paso al que llegaste antes de salir?"
+      },
+      "clarificationLocales": {
+        "en": "What was the last step you reached before leaving?",
+        "zh-CN": "离开之前，你进行到了哪一步？",
+        "es": "¿Cuál fue el último paso al que llegaste antes de salir?"
+      },
+      "followUpQuestions": {
+        "exit_point": {
+          "en": "What was the last step you reached before leaving?",
+          "zh-CN": "离开之前，你进行到了哪一步？",
+          "es": "¿Cuál fue el último paso al que llegaste antes de salir?"
+        }
+      }
+    },
+    {
+      "id": "barrier",
+      "label": "Main barriers",
+      "objective": "Identify the barriers that materially affected the purchase decision.",
+      "question": "What influenced your decision to leave?",
+      "clarification": "What influenced your decision to leave?",
+      "sufficiencyCriteria": [
+        "At least one decision-relevant barrier is recorded"
+      ],
+      "highValueProbeTargets": [
+        "Why a barrier mattered",
+        "A barrier not represented in the choices"
+      ],
+      "requiredFields": [
+        "barriers"
+      ],
+      "optional": false,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 1,
+      "measurementStage": "conversation",
+      "claimRefs": [],
+      "media": [],
+      "input": {
+        "type": "multiple_choice",
+        "allowOther": true,
+        "maxSelections": 3,
+        "options": [
+          {
+            "id": "price",
+            "labels": {
+              "en": "Price or total cost",
+              "zh-CN": "价格或总成本",
+              "es": "Precio o coste total"
+            }
+          },
+          {
+            "id": "fit",
+            "labels": {
+              "en": "Unsure it would fit my need",
+              "zh-CN": "不确定是否适合",
+              "es": "No sabía si cubría mi necesidad"
+            }
+          },
+          {
+            "id": "trust",
+            "labels": {
+              "en": "Trust or proof",
+              "zh-CN": "信任或证明不足",
+              "es": "Confianza o pruebas"
+            }
+          },
+          {
+            "id": "delivery",
+            "labels": {
+              "en": "Delivery or returns",
+              "zh-CN": "配送或退货",
+              "es": "Entrega o devoluciones"
+            }
+          },
+          {
+            "id": "checkout_friction",
+            "labels": {
+              "en": "Checkout difficulty",
+              "zh-CN": "结账不顺",
+              "es": "Dificultad al tramitar la compra"
+            }
+          }
+        ]
+      },
+      "questionLocales": {
+        "en": "What influenced your decision to leave?",
+        "zh-CN": "什么影响了你离开的决定？",
+        "es": "¿Qué influyó en tu decisión de salir?"
+      },
+      "clarificationLocales": {
+        "en": "What influenced your decision to leave?",
+        "zh-CN": "什么影响了你离开的决定？",
+        "es": "¿Qué influyó en tu decisión de salir?"
+      },
+      "followUpQuestions": {
+        "barriers": {
+          "en": "What influenced your decision to leave?",
+          "zh-CN": "什么影响了你离开的决定？",
+          "es": "¿Qué influyó en tu decisión de salir?"
+        }
+      }
+    },
+    {
+      "id": "confidence",
+      "label": "Decision confidence",
+      "objective": "Capture a post-conversation confidence measure while preserving its position as a possible intervention effect.",
+      "question": "How certain did you feel about that decision?",
+      "clarification": "How certain did you feel about that decision?",
+      "sufficiencyCriteria": [
+        "A scale value is recorded"
+      ],
+      "highValueProbeTargets": [],
+      "requiredFields": [
+        "decision_confidence"
+      ],
+      "optional": true,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 0,
+      "measurementStage": "post_intervention",
+      "claimRefs": [],
+      "media": [],
+      "input": {
+        "type": "scale",
+        "min": 1,
+        "max": 5,
+        "minLabels": {
+          "en": "Not certain",
+          "zh-CN": "不确定",
+          "es": "Nada seguro"
+        },
+        "maxLabels": {
+          "en": "Very certain",
+          "zh-CN": "非常确定",
+          "es": "Muy seguro"
+        }
+      },
+      "questionLocales": {
+        "en": "How certain did you feel about that decision?",
+        "zh-CN": "你当时对这个决定有多确定？",
+        "es": "¿Qué seguridad sentías sobre esa decisión?"
+      },
+      "clarificationLocales": {
+        "en": "How certain did you feel about that decision?",
+        "zh-CN": "你当时对这个决定有多确定？",
+        "es": "¿Qué seguridad sentías sobre esa decisión?"
+      },
+      "followUpQuestions": {
+        "decision_confidence": {
+          "en": "How certain did you feel about that decision?",
+          "zh-CN": "你当时对这个决定有多确定？",
+          "es": "¿Qué seguridad sentías sobre esa decisión?"
+        }
+      }
+    },
+    {
+      "id": "missing_info",
+      "label": "Missing information",
+      "objective": "Identify the missing evidence or reassurance that blocked a confident purchase decision.",
+      "question": "What information, if any, did you still need?",
+      "clarification": "What information, if any, did you still need?",
+      "sufficiencyCriteria": [
+        "A missing detail, proof, or policy is recorded"
+      ],
+      "highValueProbeTargets": [
+        "How the missing information would change the decision"
+      ],
+      "requiredFields": [
+        "missing_information"
+      ],
+      "optional": false,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 1,
+      "measurementStage": "conversation",
+      "claimRefs": [
+        "synthetic_concept"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "/study-assets/concept-placeholder.svg",
+          "alt": {
+            "en": "Synthetic product image placeholder",
+            "zh-CN": "模拟商品图片占位图"
+          }
+        }
+      ],
+      "input": {
+        "type": "text",
+        "placeholder": {
+          "en": "Name the missing detail, proof, or policy…",
+          "zh-CN": "写下当时缺少的细节、证明或政策…",
+          "es": "Escribe tu respuesta…"
+        }
+      },
+      "questionLocales": {
+        "en": "What information, if any, did you still need?",
+        "zh-CN": "当时还有没有什么信息是你需要但没得到的？",
+        "es": "¿Qué información necesitabas todavía, si faltaba alguna?"
+      },
+      "clarificationLocales": {
+        "en": "What information, if any, did you still need?",
+        "zh-CN": "当时还有没有什么信息是你需要但没得到的？",
+        "es": "¿Qué información necesitabas todavía, si faltaba alguna?"
+      },
+      "followUpQuestions": {
+        "missing_information": {
+          "en": "What information, if any, did you still need?",
+          "zh-CN": "当时还有没有什么信息是你需要但没得到的？",
+          "es": "¿Qué información necesitabas todavía, si faltaba alguna?"
+        }
+      }
+    },
+    {
+      "id": "return",
+      "label": "Return condition",
+      "objective": "Force one prioritized change for the next test.",
+      "question": "What, if anything, would you want to be different?",
+      "clarification": "What, if anything, would you want to be different?",
+      "sufficiencyCriteria": [
+        "One prioritized return condition is recorded"
+      ],
+      "highValueProbeTargets": [
+        "Why this change matters more than the other barriers"
+      ],
+      "requiredFields": [
+        "return_condition"
+      ],
+      "optional": false,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 1,
+      "measurementStage": "post_intervention",
+      "claimRefs": [],
+      "media": [],
+      "input": {
+        "type": "text",
+        "placeholder": {
+          "en": "Choose the one change that matters most…",
+          "zh-CN": "只写最重要的一项变化…",
+          "es": "Escribe tu respuesta…"
+        }
+      },
+      "questionLocales": {
+        "en": "What, if anything, would you want to be different?",
+        "zh-CN": "如果有什么需要不同，你希望是什么？",
+        "es": "¿Qué te gustaría que fuera diferente, si cambiarías algo?"
+      },
+      "clarificationLocales": {
+        "en": "What, if anything, would you want to be different?",
+        "zh-CN": "如果有什么需要不同，你希望是什么？",
+        "es": "¿Qué te gustaría que fuera diferente, si cambiarías algo?"
+      },
+      "followUpQuestions": {
+        "return_condition": {
+          "en": "What, if anything, would you want to be different?",
+          "zh-CN": "如果有什么需要不同，你希望是什么？",
+          "es": "¿Qué te gustaría que fuera diferente, si cambiarías algo?"
+        }
+      }
+    }
+  ],
+  "completion": {
+    "requiredAnchors": [
+      "goal",
+      "exit",
+      "barrier",
+      "missing_info",
+      "return"
+    ],
+    "messages": {
+      "en": "Thank you. The interview is complete.",
+      "zh-CN": "谢谢，访谈已完成。",
+      "es": "Gracias. La entrevista ha terminado."
+    }
+  },
+  "analysis": {
+    "outputs": [
+      "evidence_packet",
+      "individual_summary",
+      "theme_matrix",
+      "decision_report"
+    ],
+    "primaryDecisionQuestion": "Which purchase barrier should be tested first with real participants?"
+  }
+}

@@ -20,6 +20,11 @@
       "file": "research.html"
     },
     {
+      "id": "light-research",
+      "label": "AI 对话调研",
+      "file": "light-research.html"
+    },
+    {
       "id": "voice",
       "label": "问题与反馈",
       "file": "user-voice.html"

@@ -1,0 +1,172 @@
+{
+  "schemaVersion": "2.0",
+  "study": {
+    "id": "generic-research-template",
+    "version": "3.1.0",
+    "title": "Research Study",
+    "status": "draft",
+    "readiness": "technical_prototype",
+    "goal": "Provide a valid controlled-autonomy template that is replaced by a reviewed study manifest.",
+    "decisionQuestions": [
+      "What decision should this research inform?"
+    ],
+    "audience": {
+      "description": "Synthetic local test participants.",
+      "eligibility": []
+    },
+    "languagePolicy": {
+      "entryLanguage": "en",
+      "fallbackLanguage": "en",
+      "autoReplyLanguage": true,
+      "preserveOriginal": true
+    },
+    "estimatedMinutes": 5,
+    "sampleKind": "synthetic"
+  },
+  "brand": {
+    "name": "Research",
+    "shortLabel": "Study",
+    "accent": "#2563EB",
+    "surface": "light"
+  },
+  "claims": [],
+  "consent": {
+    "version": "optional-1",
+    "enabledByDefault": false,
+    "internalOnly": true,
+    "locales": {
+      "en": {
+        "languageLabel": "Language",
+        "title": "Review how this study uses your answers",
+        "intro": "This optional screen is dormant by default.",
+        "items": [
+          "Written answers may be processed by the configured AI provider.",
+          "Do not enter contact details."
+        ],
+        "checkbox": "I understand and want to start.",
+        "accept": "Agree and start",
+        "decline": "Not now",
+        "declinedTitle": "The study was not started",
+        "declinedText": "No research session was created."
+      }
+    }
+  },
+  "dataPolicy": {
+    "retentionDays": 30,
+    "collectPii": false,
+    "allowWithdrawal": true,
+    "providerDisclosure": "Answers are processed by a configured AI provider for interview understanding and evidence extraction."
+  },
+  "moderation": {
+    "policyVersion": "controlled-autonomy-3.1-reviewed-questions",
+    "maxTotalProbes": 4,
+    "checkpointEveryAnchors": 2,
+    "maxCheckpointQuestions": 1,
+    "maxFinalAuditQuestions": 2,
+    "maxRepairTurns": 4,
+    "repairConsumesProbeBudget": false,
+    "oneQuestionPerReply": true
+  },
+  "model": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "promptVersion": "interviewer-3.1-reviewed-questions",
+    "timeoutMs": 25000,
+    "maxRetries": 1
+  },
+  "fields": [
+    {
+      "id": "recent_experience",
+      "description": "A recent relevant experience",
+      "type": "text",
+      "decisionRelevance": "important"
+    },
+    {
+      "id": "priority_change",
+      "description": "The single most important change",
+      "type": "text",
+      "decisionRelevance": "critical"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "experience",
+      "label": "Recent experience",
+      "objective": "Capture one recent relevant experience.",
+      "question": "What happened in your most recent experience with this topic?",
+      "clarification": "What do you remember about that experience?",
+      "sufficiencyCriteria": [
+        "A real recent example is present"
+      ],
+      "highValueProbeTargets": [
+        "A decision-relevant missing detail"
+      ],
+      "requiredFields": [
+        "recent_experience"
+      ],
+      "optional": false,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 1,
+      "measurementStage": "conversation",
+      "claimRefs": [],
+      "media": [],
+      "input": {
+        "type": "text",
+        "placeholder": {
+          "en": "Write in any language…"
+        }
+      },
+      "followUpQuestions": {
+        "recent_experience": {
+          "en": "What do you remember about that experience?"
+        }
+      }
+    },
+    {
+      "id": "change",
+      "label": "Priority change",
+      "objective": "Identify one prioritized change.",
+      "question": "What change, if any, would matter to you?",
+      "clarification": "What would you most want to keep or change?",
+      "sufficiencyCriteria": [
+        "One prioritized change is present"
+      ],
+      "highValueProbeTargets": [],
+      "requiredFields": [
+        "priority_change"
+      ],
+      "optional": false,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 1,
+      "measurementStage": "conversation",
+      "claimRefs": [],
+      "media": [],
+      "input": {
+        "type": "text",
+        "placeholder": {
+          "en": "Choose one change…"
+        }
+      },
+      "followUpQuestions": {
+        "priority_change": {
+          "en": "What would you most want to keep or change?"
+        }
+      }
+    }
+  ],
+  "completion": {
+    "requiredAnchors": [
+      "experience",
+      "change"
+    ],
+    "messages": {
+      "en": "Thank you. The local research record is complete."
+    }
+  },
+  "analysis": {
+    "outputs": [
+      "evidence_packet"
+    ],
+    "primaryDecisionQuestion": "What should be investigated next?"
+  }
+}

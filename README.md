@@ -8,6 +8,7 @@
 
 - `index.html`：当前重点、最近成果、工作入口和运营专题
 - `work.html`：项目状态、待办、阻塞和下一动作
+- `light-research.html`：AI 对话调研入口，连接本机运行的 Hawthorne 版 Light Research；独立应用源码保存在 `apps/light-research`
 - `research.html`：研究项目、方法、参与方式、用户权利和 AI智能对话问卷介绍
 - `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
 - `content-studio.html`：已经形成的内容、研究、方案和工作成果
@@ -102,3 +103,9 @@ Bluesky检查每天通过现有Tavily免费额度运行1组限定`bsky.app`的`O
 ```bash
 node scripts/check-anti-slop.js
 ```
+
+## Light Research
+
+侧边栏的“AI 对话调研”进入 `light-research.html`，可打开已运行的本机真实 AI 访谈。GitHub Pages 发布的是入口和界面预览，不执行模型调用。完整 Next.js 应用位于 `apps/light-research`，需要单独的 Node.js 服务、PostgreSQL 和服务端模型凭据；它不进入 Pages 静态发布目录。
+
+当前只保留 Oliver 选定的 Hawthorne 字体版本。参见应用目录的 README 获取启动和验证命令。

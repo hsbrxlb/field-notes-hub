@@ -1,0 +1,672 @@
+{
+  "schemaVersion": "2.0",
+  "study": {
+    "id": "worklight-regression",
+    "version": "fixture-3.5-natural-buddy",
+    "title": "OEDRO Light Research",
+    "status": "review_ready",
+    "readiness": "technical_prototype",
+    "sampleKind": "synthetic",
+    "goal": "Test whether a controlled-autonomy AI interviewer can understand vehicle-lighting experiences, repair conversation breakdowns, and preserve auditable evidence without work-light-specific runtime code.",
+    "decisionQuestions": [
+      "Which real use situations and visibility problems deserve further product research?",
+      "Which concept, installation, or price concerns need stronger evidence?"
+    ],
+    "audience": {
+      "description": "Synthetic adult vehicle-owner personas used only for local acceptance testing.",
+      "eligibility": [
+        "Uses a vehicle after dark",
+        "Can describe a real lighting situation"
+      ]
+    },
+    "languagePolicy": {
+      "entryLanguage": "en",
+      "fallbackLanguage": "en",
+      "autoReplyLanguage": true,
+      "preserveOriginal": true
+    },
+    "estimatedMinutes": 8
+  },
+  "brand": {
+    "name": "OEDRO",
+    "shortLabel": "OEDRO",
+    "tagline": "Light Research",
+    "accent": "#FF6518",
+    "surface": "immersive",
+    "backgroundImage": "/study-assets/cast-light.png"
+  },
+  "claims": [
+    {
+      "id": "concept_sizes",
+      "text": "The synthetic concept includes example size and price tiers from 7–8 inches at $129.99 to 48–52 inches at $499.99.",
+      "status": "approved_for_participants",
+      "source": "Synthetic research configuration fixture; sample concepts and price tiers for internal testing."
+    }
+  ],
+  "consent": {
+    "version": "fixture-consent-2",
+    "enabledByDefault": false,
+    "internalOnly": false,
+    "locales": {
+      "en": {
+        "languageLabel": "Language",
+        "title": "Review how this synthetic test uses your answers",
+        "intro": "This optional screen is dormant unless a specific project explicitly enables it.",
+        "items": [
+          "Written answers are stored in the local test database and processed by the configured AI provider.",
+          "Do not enter names, email addresses, phone numbers, addresses, or other contact details."
+        ],
+        "checkbox": "I understand and want to start this synthetic study.",
+        "accept": "Agree and start",
+        "decline": "Not now",
+        "declinedTitle": "The study was not started",
+        "declinedText": "No research session was created."
+      }
+    }
+  },
+  "dataPolicy": {
+    "retentionDays": 30,
+    "collectPii": false,
+    "allowWithdrawal": true,
+    "providerDisclosure": "Answers are processed by a configured third-party AI provider for interview understanding, controlled follow-up, and evidence extraction."
+  },
+  "moderation": {
+    "policyVersion": "controlled-autonomy-3.5-natural-language",
+    "maxTotalProbes": 6,
+    "checkpointEveryAnchors": 3,
+    "maxCheckpointQuestions": 2,
+    "maxFinalAuditQuestions": 3,
+    "maxRepairTurns": 5,
+    "repairConsumesProbeBudget": false,
+    "oneQuestionPerReply": true
+  },
+  "model": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "promptVersion": "interviewer-3.5-natural-language",
+    "timeoutMs": 25000,
+    "maxRetries": 1
+  },
+  "fields": [
+    {
+      "id": "vehicle_year",
+      "description": "Vehicle model year when stated",
+      "type": "number",
+      "decisionRelevance": "context"
+    },
+    {
+      "id": "vehicle_make",
+      "description": "Vehicle manufacturer as stated or cautiously normalized",
+      "type": "text",
+      "decisionRelevance": "important"
+    },
+    {
+      "id": "vehicle_model",
+      "description": "Vehicle model as stated or kept as a candidate",
+      "type": "text",
+      "decisionRelevance": "critical"
+    },
+    {
+      "id": "use_context",
+      "description": "Ordinary after-dark use context",
+      "type": "text",
+      "decisionRelevance": "important"
+    },
+    {
+      "id": "recent_location",
+      "description": "Broad setting only; never precise location or identifying address.",
+      "type": "text",
+      "decisionRelevance": "important"
+    },
+    {
+      "id": "visibility_problem",
+      "description": "What was difficult to see or do",
+      "type": "text",
+      "decisionRelevance": "critical"
+    },
+    {
+      "id": "user_action",
+      "description": "What the participant did in response",
+      "type": "text",
+      "decisionRelevance": "important"
+    },
+    {
+      "id": "priority",
+      "description": "Lighting outcomes the participant prioritizes",
+      "type": "string_list",
+      "decisionRelevance": "critical"
+    },
+    {
+      "id": "constraint",
+      "description": "Installation, ownership, or legal constraint",
+      "type": "text",
+      "decisionRelevance": "important"
+    },
+    {
+      "id": "concept_reaction",
+      "description": "First reaction to the synthetic concept",
+      "type": "text",
+      "decisionRelevance": "important"
+    },
+    {
+      "id": "price_fit",
+      "description": "Explicit response about the listed synthetic tiers: small_129, medium_279, large_499, none (explicitly considers none of these tiers), or not_sure (explicitly undecided). Missing, skipped, refused, or unrelated answers do not establish any price_fit. none does not by itself mean no product need; keep the participant's stated reason separately in price_reason.",
+      "type": "choice",
+      "decisionRelevance": "important"
+    },
+    {
+      "id": "price_reason",
+      "description": "Reason the price feels acceptable or unacceptable",
+      "type": "text",
+      "decisionRelevance": "critical"
+    },
+    {
+      "id": "final_change",
+      "description": "Single most important proposed change",
+      "type": "text",
+      "decisionRelevance": "critical"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "use_context",
+      "label": "Use context",
+      "objective": "Identify the participant's vehicle and ordinary after-dark use without demanding details that do not change the research path.",
+      "question": "How do you usually use your vehicle after dark?",
+      "questionLocales": {
+        "en": "How do you usually use your vehicle after dark?",
+        "zh-CN": "你天黑后通常用车做什么？",
+        "es": "¿Para qué usas normalmente tu vehículo después de anochecer?"
+      },
+      "clarification": "How do you usually use your vehicle after dark?",
+      "clarificationLocales": {
+        "en": "How do you usually use your vehicle after dark?",
+        "zh-CN": "你天黑后通常用车做什么？",
+        "es": "¿Para qué usas normalmente tu vehículo después de anochecer?"
+      },
+      "sufficiencyCriteria": [
+        "Vehicle model or a usable candidate is recorded",
+        "Ordinary use context is understood"
+      ],
+      "highValueProbeTargets": [
+        "Vehicle identity only when it changes fitment or interpretation",
+        "A missing ordinary use context"
+      ],
+      "requiredFields": [
+        "vehicle_model",
+        "use_context"
+      ],
+      "evidenceFields": [
+        "vehicle_year",
+        "vehicle_make",
+        "vehicle_model",
+        "use_context"
+      ],
+      "optional": false,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 1,
+      "measurementStage": "conversation",
+      "claimRefs": [],
+      "media": [],
+      "input": {
+        "type": "text",
+        "placeholder": {
+          "en": "A brief real example is enough…",
+          "zh-CN": "简短说清车辆和用途就可以…",
+          "es": "Un ejemplo real y breve es suficiente…"
+        }
+      },
+      "followUpQuestions": {
+        "vehicle_year": {
+          "en": "What model year is your vehicle?",
+          "zh-CN": "你的车是哪一年的款式？",
+          "es": "¿De qué año es tu vehículo?"
+        },
+        "vehicle_make": {
+          "en": "Who makes your vehicle?",
+          "zh-CN": "你的车是什么品牌？",
+          "es": "¿De qué marca es tu vehículo?"
+        },
+        "vehicle_model": {
+          "en": "What model is your vehicle?",
+          "zh-CN": "你的车是什么型号？",
+          "es": "¿Qué modelo es tu vehículo?"
+        },
+        "use_context": {
+          "en": "How do you usually use your vehicle after dark?",
+          "zh-CN": "你天黑后通常用车做什么？",
+          "es": "¿Para qué usas normalmente tu vehículo después de anochecer?"
+        }
+      }
+    },
+    {
+      "id": "recent_experience",
+      "label": "Recent experience",
+      "objective": "Capture a concrete recent low-light situation and the visibility problem without treating short answers as poor answers.",
+      "question": "How was visibility the last time you used your vehicle after dark?",
+      "questionLocales": {
+        "en": "How was visibility the last time you used your vehicle after dark?",
+        "zh-CN": "最近一次天黑后用车时，视野怎么样？",
+        "es": "¿Cómo fue la visibilidad la última vez que usaste tu vehículo de noche?"
+      },
+      "clarification": "What, if anything, was difficult to see?",
+      "clarificationLocales": {
+        "en": "What, if anything, was difficult to see?",
+        "zh-CN": "当时有没有什么看不清的地方？",
+        "es": "¿Qué te resultó difícil de ver, si hubo algo?"
+      },
+      "sufficiencyCriteria": [
+        "A real location or situation is present",
+        "The visibility problem or affected task is understood"
+      ],
+      "highValueProbeTargets": [
+        "What was hardest to see",
+        "What the participant did next"
+      ],
+      "requiredFields": [
+        "recent_location",
+        "visibility_problem"
+      ],
+      "evidenceFields": [
+        "recent_location",
+        "visibility_problem",
+        "user_action"
+      ],
+      "optional": false,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 2,
+      "measurementStage": "conversation",
+      "claimRefs": [],
+      "media": [],
+      "input": {
+        "type": "text",
+        "placeholder": {
+          "en": "Describe the place and what was difficult to see…",
+          "zh-CN": "说说地点和当时最难看清的东西…",
+          "es": "Describe el lugar y qué era difícil ver…"
+        }
+      },
+      "followUpQuestions": {
+        "recent_location": {
+          "en": "What kind of setting was it? A broad description is enough.",
+          "zh-CN": "当时是在什么样的环境里？大致描述就可以。",
+          "es": "¿Qué tipo de entorno era? Basta con una descripción general."
+        },
+        "visibility_problem": {
+          "en": "What, if anything, was difficult to see?",
+          "zh-CN": "当时有没有什么看不清的地方？",
+          "es": "¿Qué te resultó difícil de ver, si hubo algo?"
+        },
+        "user_action": {
+          "en": "What did you do at that point, if anything?",
+          "zh-CN": "当时你有没有采取什么行动？",
+          "es": "¿Qué hiciste en ese momento, si hiciste algo?"
+        }
+      }
+    },
+    {
+      "id": "priorities",
+      "label": "Priorities",
+      "objective": "Identify the most important lighting outcomes for comparison across participants.",
+      "question": "Which outcomes matter most for your lighting setup?",
+      "questionLocales": {
+        "en": "Which outcomes matter most for your lighting setup?",
+        "zh-CN": "你的照明设置最看重哪些效果？",
+        "es": "¿Qué resultados le importan más en su configuración de iluminación?"
+      },
+      "clarification": "I am asking which results matter most when you judge a lighting setup.",
+      "clarificationLocales": {
+        "en": "I want to confirm the most important result for you. Which result matters most?",
+        "zh-CN": "我想确认对你最重要的照明结果。哪一项最重要？",
+        "es": "Quiero confirmar el resultado más importante para usted. ¿Cuál importa más?"
+      },
+      "sufficiencyCriteria": [
+        "At least one priority is selected or stated"
+      ],
+      "highValueProbeTargets": [
+        "A reason only when priorities conflict"
+      ],
+      "requiredFields": [
+        "priority"
+      ],
+      "evidenceFields": [
+        "priority"
+      ],
+      "optional": false,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 1,
+      "measurementStage": "conversation",
+      "claimRefs": [],
+      "media": [],
+      "input": {
+        "type": "multiple_choice",
+        "allowOther": true,
+        "maxSelections": 3,
+        "options": [
+          {
+            "id": "wider_view",
+            "labels": {
+              "en": "Wider view",
+              "zh-CN": "更宽的视野",
+              "es": "Vista más amplia"
+            }
+          },
+          {
+            "id": "longer_distance",
+            "labels": {
+              "en": "Longer distance",
+              "zh-CN": "照得更远",
+              "es": "Mayor distancia"
+            }
+          },
+          {
+            "id": "easy_install",
+            "labels": {
+              "en": "Easier installation",
+              "zh-CN": "更容易安装",
+              "es": "Instalación más sencilla"
+            }
+          },
+          {
+            "id": "durability",
+            "labels": {
+              "en": "Durability",
+              "zh-CN": "耐用性",
+              "es": "Durabilidad"
+            }
+          }
+        ]
+      },
+      "followUpQuestions": {
+        "priority": {
+          "en": "What matters most to you about your current lighting?",
+          "zh-CN": "对于现在的照明，你最在意什么？",
+          "es": "¿Qué es lo que más te importa de tu iluminación actual?"
+        }
+      }
+    },
+    {
+      "id": "constraints",
+      "label": "Constraints",
+      "objective": "Find practical barriers that could block installation, ownership, or legal use.",
+      "question": "What would affect your decision about using auxiliary lights?",
+      "questionLocales": {
+        "en": "What would affect your decision about using auxiliary lights?",
+        "zh-CN": "什么会影响你是否使用辅助灯的决定？",
+        "es": "¿Qué influiría en tu decisión de usar luces auxiliares?"
+      },
+      "clarification": "What would affect your decision about using auxiliary lights?",
+      "clarificationLocales": {
+        "en": "What would affect your decision about using auxiliary lights?",
+        "zh-CN": "什么会影响你是否使用辅助灯的决定？",
+        "es": "¿Qué influiría en tu decisión de usar luces auxiliares?"
+      },
+      "sufficiencyCriteria": [
+        "One practical constraint is recorded, or the participant says none comes to mind"
+      ],
+      "highValueProbeTargets": [
+        "A concrete barrier that changes product requirements"
+      ],
+      "requiredFields": [
+        "constraint"
+      ],
+      "evidenceFields": [
+        "constraint"
+      ],
+      "optional": true,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 1,
+      "measurementStage": "conversation",
+      "claimRefs": [],
+      "media": [],
+      "input": {
+        "type": "text",
+        "placeholder": {
+          "en": "You may skip if nothing comes to mind…",
+          "zh-CN": "想不到可以跳过…",
+          "es": "Puedes omitirla si no se te ocurre nada…"
+        }
+      },
+      "followUpQuestions": {
+        "constraint": {
+          "en": "What would affect your decision about using auxiliary lights?",
+          "zh-CN": "什么会影响你是否使用辅助灯的决定？",
+          "es": "¿Qué influiría en tu decisión de usar luces auxiliares?"
+        }
+      }
+    },
+    {
+      "id": "concept",
+      "label": "Concept",
+      "objective": "Record the participant's spontaneous concept reaction before detailed price interpretation.",
+      "question": "What is your first honest reaction to this configurable auxiliary-light concept?",
+      "questionLocales": {
+        "en": "What is your first honest reaction to this configurable auxiliary-light concept?",
+        "zh-CN": "你对这个可配置辅助灯概念的第一真实反应是什么？",
+        "es": "¿Cuál es su primera reacción sincera a este concepto de luz auxiliar configurable?"
+      },
+      "clarification": "I want your first reaction to the idea shown here, including what feels useful or concerning.",
+      "clarificationLocales": {
+        "en": "I want to understand your most direct reaction to the idea. What stands out most?",
+        "zh-CN": "我想确认你对这个想法最直接的感受。最突出的一点是什么？",
+        "es": "Quiero entender su reacción más directa a la idea. ¿Qué aspecto destaca más?"
+      },
+      "sufficiencyCriteria": [
+        "A spontaneous reaction, value, or concern is recorded"
+      ],
+      "highValueProbeTargets": [
+        "A specific concern that changes the concept"
+      ],
+      "requiredFields": [
+        "concept_reaction"
+      ],
+      "evidenceFields": [
+        "concept_reaction"
+      ],
+      "optional": false,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 1,
+      "measurementStage": "conversation",
+      "claimRefs": [
+        "concept_sizes"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "/study-assets/concept-placeholder.svg",
+          "alt": {
+            "en": "Placeholder for an approved product concept image",
+            "zh-CN": "待批准产品概念图占位",
+            "es": "Marcador para una imagen aprobada del concepto"
+          }
+        }
+      ],
+      "input": {
+        "type": "text",
+        "placeholder": {
+          "en": "React to the idea, not the placeholder artwork…",
+          "zh-CN": "请评价产品想法，不用评价占位图…",
+          "es": "Comenta la idea, no el marcador de imagen…"
+        }
+      },
+      "followUpQuestions": {
+        "concept_reaction": {
+          "en": "What stands out to you about the concept? It is fine if the material is not enough to judge.",
+          "zh-CN": "这个概念让你最在意的是什么？资料不足以判断也可以直接说。",
+          "es": "¿Qué te llama la atención del concepto? Está bien si el material no basta para valorarlo."
+        }
+      }
+    },
+    {
+      "id": "price",
+      "label": "Price",
+      "objective": "Record a considered synthetic tier, an explicit decision to consider none of the tiers, or explicit uncertainty. Preserve the stated reason without inferring that rejecting these tiers always means no product need.",
+      "question": "Which of these sample tiers, if any, would you consider?",
+      "questionLocales": {
+        "en": "Which of these sample tiers, if any, would you consider?",
+        "zh-CN": "这些模拟档位中，有没有你会考虑的？",
+        "es": "¿Cuál de estos niveles de ejemplo considerarías, si alguno?"
+      },
+      "clarification": "What led you to that choice, including choosing none?",
+      "clarificationLocales": {
+        "en": "What led you to that choice, including choosing none?",
+        "zh-CN": "是什么让你做出这个选择，包括一个都不选？",
+        "es": "¿Qué te llevó a esa elección, incluida la de no elegir ninguno?"
+      },
+      "sufficiencyCriteria": [
+        "Record the declared option ID matching the explicit answer: small_129, medium_279, large_499, none, or not_sure.",
+        "Explicitly considering no listed tier is none; explicitly being undecided is not_sure. Neither requires choosing a price tier. A missing, skipped, refused, or unrelated answer is not none or not_sure.",
+        "Keep any stated reason in price_reason; do not invent no purchase need, a budget problem, or a selected tier."
+      ],
+      "highValueProbeTargets": [
+        "What makes a selected tier feel worth or not worth its price"
+      ],
+      "requiredFields": [
+        "price_fit"
+      ],
+      "evidenceFields": [
+        "price_fit",
+        "price_reason"
+      ],
+      "optional": true,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 1,
+      "measurementStage": "post_intervention",
+      "claimRefs": [
+        "concept_sizes"
+      ],
+      "media": [],
+      "input": {
+        "type": "single_choice",
+        "allowOther": true,
+        "options": [
+          {
+            "id": "small_129",
+            "labels": {
+              "en": "7–8 in · $129.99",
+              "zh-CN": "7–8 英寸 · 129.99 美元",
+              "es": "7–8 pulg · $129.99"
+            }
+          },
+          {
+            "id": "medium_279",
+            "labels": {
+              "en": "19–22 in · $279.99",
+              "zh-CN": "19–22 英寸 · 279.99 美元",
+              "es": "19–22 pulg · $279.99"
+            }
+          },
+          {
+            "id": "large_499",
+            "labels": {
+              "en": "48–52 in · $499.99",
+              "zh-CN": "48–52 英寸 · 499.99 美元",
+              "es": "48–52 pulg · $499.99"
+            }
+          },
+          {
+            "id": "none",
+            "labels": {
+              "en": "None of these",
+              "zh-CN": "以上都不选",
+              "es": "Ninguna de estas opciones"
+            }
+          },
+          {
+            "id": "not_sure",
+            "labels": {
+              "en": "Not sure yet",
+              "zh-CN": "暂不确定",
+              "es": "Aún no lo sé"
+            }
+          }
+        ]
+      },
+      "followUpQuestions": {
+        "price_fit": {
+          "en": "Which of these sample tiers, if any, would you consider?",
+          "zh-CN": "这些模拟档位中，有没有你会考虑的？",
+          "es": "¿Cuál de estos niveles de ejemplo considerarías, si alguno?"
+        },
+        "price_reason": {
+          "en": "What led you to that choice, including choosing none?",
+          "zh-CN": "是什么让你做出这个选择，包括一个都不选？",
+          "es": "¿Qué te llevó a esa elección, incluida la de no elegir ninguno?"
+        }
+      }
+    },
+    {
+      "id": "final_change",
+      "label": "Final change",
+      "objective": "Force a final priority choice that can inform the next research or concept iteration.",
+      "question": "What, if anything, would you change first?",
+      "questionLocales": {
+        "en": "What, if anything, would you change first?",
+        "zh-CN": "如果要改，你最想先改什么？不需要改也可以。",
+        "es": "¿Qué cambiarías primero, si cambiarías algo?"
+      },
+      "clarification": "I am asking for the single change that would matter most to you.",
+      "clarificationLocales": {
+        "en": "I want to confirm the single highest-priority change. What should change first?",
+        "zh-CN": "我想确认最优先的一项改动。你最希望先改什么？",
+        "es": "Quiero confirmar el cambio de mayor prioridad. ¿Qué debería cambiar primero?"
+      },
+      "sufficiencyCriteria": [
+        "One prioritized change is recorded"
+      ],
+      "highValueProbeTargets": [
+        "Why this change outranks alternatives, only if unclear"
+      ],
+      "requiredFields": [
+        "final_change"
+      ],
+      "evidenceFields": [
+        "final_change"
+      ],
+      "optional": false,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 1,
+      "measurementStage": "post_intervention",
+      "claimRefs": [],
+      "media": [],
+      "input": {
+        "type": "text",
+        "placeholder": {
+          "en": "Choose one change…",
+          "zh-CN": "只选一个最重要的变化…",
+          "es": "Elige un cambio…"
+        }
+      },
+      "followUpQuestions": {
+        "final_change": {
+          "en": "What, if anything, would you change first?",
+          "zh-CN": "如果要改，你最想先改什么？不需要改也可以。",
+          "es": "¿Qué cambiarías primero, si cambiarías algo?"
+        }
+      }
+    }
+  ],
+  "completion": {
+    "requiredAnchors": [
+      "use_context",
+      "recent_experience",
+      "priorities",
+      "concept",
+      "final_change"
+    ],
+    "messages": {
+      "en": "Your synthetic interview record is complete. No reward or follow-up is attached to this fixture.",
+      "zh-CN": "这次模拟访谈已经完成，不会触发奖励或后续联系。",
+      "es": "Tu registro sintético está completo. Esta prueba no incluye recompensa ni seguimiento."
+    }
+  },
+  "analysis": {
+    "outputs": [
+      "evidence_packet",
+      "individual_summary",
+      "theme_matrix",
+      "decision_report"
+    ],
+    "primaryDecisionQuestion": "Which use situations and visibility problems deserve further real-user study?"
+  }
+}
