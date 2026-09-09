@@ -3,8 +3,47 @@
   "meta_description": "OEDRO 吉祥物角色档案，包含动物伙伴、机械伙伴和多种动作造型。",
   "characters": [
     {
-      "id": "character-spring-flex",
+      "id": "character-click-helper",
       "index": "01",
+      "family": "click-helper",
+      "type": "mechanical",
+      "name_cn": "咔咔",
+      "name_en": "Click",
+      "blurb": "它爱抬眼打招呼，也愿意伸出短夹爪，帮你把零件稳稳对齐。",
+      "assets": [
+        {
+          "code": "M18-A",
+          "caption": "招呼伙伴",
+          "src": "assets/mascot-evolution/round18/M18-A.webp",
+          "alt": "咔咔（Click）招呼伙伴",
+          "source_round": "round-18"
+        },
+        {
+          "code": "M18-B",
+          "caption": "回头看看",
+          "src": "assets/mascot-evolution/round18/M18-B.webp",
+          "alt": "咔咔（Click）回头看看",
+          "source_round": "round-18"
+        },
+        {
+          "code": "M18-C",
+          "caption": "对准小孔",
+          "src": "assets/mascot-evolution/round18/M18-C.webp",
+          "alt": "咔咔（Click）对准小孔",
+          "source_round": "round-18"
+        },
+        {
+          "code": "M18-D",
+          "caption": "稳住圆片",
+          "src": "assets/mascot-evolution/round18/M18-D.webp",
+          "alt": "咔咔（Click）稳住圆片",
+          "source_round": "round-18"
+        }
+      ]
+    },
+    {
+      "id": "character-spring-flex",
+      "index": "02",
       "family": "spring-flex",
       "type": "mechanical",
       "name_cn": "弹弹",
@@ -43,7 +82,7 @@
     },
     {
       "id": "character-toggle-latch",
-      "index": "02",
+      "index": "03",
       "family": "toggle-latch",
       "type": "mechanical",
       "name_cn": "扣扣",
@@ -82,7 +121,7 @@
     },
     {
       "id": "character-strap-reel",
-      "index": "03",
+      "index": "04",
       "family": "strap-reel",
       "type": "mechanical",
       "name_cn": "卷卷",
@@ -121,7 +160,7 @@
     },
     {
       "id": "character-fin-light",
-      "index": "04",
+      "index": "05",
       "family": "fin-light",
       "type": "mechanical",
       "name_cn": "小翅",
@@ -160,7 +199,7 @@
     },
     {
       "id": "character-16-parts-spirit",
-      "index": "05",
+      "index": "06",
       "family": "parts-spirit",
       "type": "mechanical",
       "name_cn": "零件精灵",
@@ -220,7 +259,7 @@
     },
     {
       "id": "character-17-socket",
-      "index": "06",
+      "index": "07",
       "family": "socket",
       "type": "mechanical",
       "name_cn": "套筒伙伴",
@@ -273,7 +312,7 @@
     },
     {
       "id": "character-18-fitment",
-      "index": "07",
+      "index": "08",
       "family": "fitment",
       "type": "mechanical",
       "name_cn": "咬合模块",
@@ -305,7 +344,7 @@
     },
     {
       "id": "character-19-guard",
-      "index": "08",
+      "index": "09",
       "family": "guard",
       "type": "mechanical",
       "name_cn": "护板伙伴",
@@ -337,7 +376,7 @@
     },
     {
       "id": "character-13-compass",
-      "index": "09",
+      "index": "10",
       "family": "compass",
       "type": "mechanical",
       "name_cn": "路向罗盘",
@@ -386,7 +425,7 @@
     },
     {
       "id": "character-14-spark",
-      "index": "10",
+      "index": "11",
       "family": "spark",
       "type": "mechanical",
       "name_cn": "工坊火花",
@@ -429,7 +468,7 @@
     },
     {
       "id": "character-01-dog",
-      "index": "11",
+      "index": "12",
       "family": "dog",
       "type": "animal",
       "name_cn": "路伴犬",
@@ -576,7 +615,7 @@
     },
     {
       "id": "character-02-canyon-fox",
-      "index": "12",
+      "index": "13",
       "family": "canyon-fox",
       "type": "animal",
       "name_cn": "峡谷狐",
@@ -647,7 +686,7 @@
     },
     {
       "id": "character-03-quiet-lynx",
-      "index": "13",
+      "index": "14",
       "family": "quiet-lynx",
       "type": "animal",
       "name_cn": "静默山猫",
@@ -718,7 +757,7 @@
     },
     {
       "id": "character-04-bear",
-      "index": "14",
+      "index": "15",
       "family": "bear",
       "type": "animal",
       "name_cn": "山路熊",
@@ -761,7 +800,7 @@
     },
     {
       "id": "character-05-raccoon",
-      "index": "15",
+      "index": "16",
       "family": "raccoon",
       "type": "animal",
       "name_cn": "车库浣熊",
@@ -821,7 +860,7 @@
     },
     {
       "id": "character-06-bison",
-      "index": "16",
+      "index": "17",
       "family": "bison",
       "type": "animal",
       "name_cn": "稳角野牛",
@@ -874,7 +913,7 @@
     },
     {
       "id": "character-07-armadillo",
-      "index": "17",
+      "index": "18",
       "family": "armadillo",
       "type": "animal",
       "name_cn": "护甲犰狳",
@@ -967,7 +1006,7 @@
     },
     {
       "id": "character-08-badger",
-      "index": "18",
+      "index": "19",
       "family": "badger",
       "type": "animal",
       "name_cn": "底盘獾",
@@ -1013,7 +1052,7 @@
     },
     {
       "id": "character-09-mule",
-      "index": "19",
+      "index": "20",
       "family": "mule",
       "type": "animal",
       "name_cn": "拖带骡",
@@ -1052,7 +1091,7 @@
     },
     {
       "id": "character-10-gecko",
-      "index": "20",
+      "index": "21",
       "family": "gecko",
       "type": "animal",
       "name_cn": "贴合壁虎",
@@ -1091,7 +1130,7 @@
     },
     {
       "id": "character-11-raven",
-      "index": "21",
+      "index": "22",
       "family": "raven",
       "type": "animal",
       "name_cn": "巡检渡鸦",
@@ -1130,7 +1169,7 @@
     },
     {
       "id": "character-12-kestrel-scout",
-      "index": "22",
+      "index": "23",
       "family": "kestrel-scout",
       "type": "animal",
       "name_cn": "路线红隼",
@@ -1169,7 +1208,7 @@
     },
     {
       "id": "character-15-route-engineer",
-      "index": "23",
+      "index": "24",
       "family": "route-engineer",
       "type": "human",
       "name_cn": "路线工程师",

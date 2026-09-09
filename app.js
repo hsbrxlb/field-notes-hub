@@ -56,8 +56,8 @@ function renderShell(data) {
   document.querySelector('#site-title').textContent = '海外用户运营';
   document.querySelector('#site-subtitle').textContent = 'OEDRO 工作台';
   document.querySelector('#nav-list').innerHTML = data.nav.map((item) => `
-    <a href="${escapeHtml(item.file)}" data-page="${escapeHtml(item.id)}" ${item.id === page ? 'aria-current="page"' : ''} class="${item.id === page ? 'active' : ''}">
-      <span>${escapeHtml(item.label)}</span>
+    <a href="${escapeHtml(item.file)}" data-page="${escapeHtml(item.id)}" ${item.id === page ? 'aria-current="page"' : ''} class="${item.id === page ? 'active' : ''}${item.parent ? ' nav-child' : ''}">
+      <span${item.parent ? ' style="padding-inline-start:12px"' : ''}>${escapeHtml(item.label)}</span>
     </a>`).join('');
   const current = data.nav.find((item) => item.id === page);
   document.querySelector('#breadcrumb-page').textContent = current?.label || '';
@@ -443,8 +443,12 @@ async function init() {
 const mainContent = document.querySelector('#content');
 mainContent.setAttribute('tabindex', '-1');
 mainContent.setAttribute('aria-busy', 'true');
-mainContent.innerHTML = '<p class="loading-state" role="status">正在加载…</p>';
+if (page !== 'mascot-workflow') mainContent.innerHTML = '<p class="loading-state" role="status">正在加载…</p>';
 init().catch((error) => {
+  if (page === 'mascot-workflow') {
+    console.error(error);
+    return;
+  }
   mainContent.innerHTML = '<div class="load-error" role="alert"><h1>页面暂时无法加载</h1><p>检查连接后重试，或返回总览。</p><button type="button" id="reload-page">重试</button><a href="index.html">返回总览</a></div>';
   document.querySelector('#reload-page').addEventListener('click', () => location.reload());
   console.error(error);

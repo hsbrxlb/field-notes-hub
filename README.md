@@ -16,9 +16,12 @@
 - `research.html`：研究项目、方法、参与方式、用户权利和 AI智能对话问卷介绍
 - `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
 - `content-studio.html`：已经形成的内容、研究、方案和工作成果
-- `content-pipeline-test.html`：展示社媒内容测试的 Prompt、目的、平台作品和审核意见；最新泥靴幽默样稿、已退回的清洁互动稿与旧三平台样稿分别保留，英文原稿、中文对照、审核意见与来源默认展开。主题插画与产品实拍分开标识，TikTok / YouTube Shorts 展示待匹配既有视频的候选配文。
+- `content-pipeline-test.html`：仅展示当前 Instagram、X 和 YouTube 社区图文的 Prompt、简短目的与作品，中文对照默认展开。历史作品和公开安全的来源、审核记录保留在数据中，不在当前审阅页展示。
+
+  维护说明：Hub 的 `youtube` 对应 Skill 的 `youtube_community`。本次验收范围是静态作品页，完整自动管线尚未通过；Instagram 原生图片为 1122×1402，低于预设目标，保持原尺寸。
 - `flipbooks.html`：Flip Book Demo（翻页书），进入 Brand Story 与 Car Owner Survey
-- `mascot.html`：OEDRO 吉祥物角色档案，23 个角色区共 126 张独立高清图；机械与配件角色在前，动物与人物在后。新增板簧、搭扣、织带卷轴和散热鳍片四组造型，保留页内跳转、高清原图链接及对应版本的小尺寸对照，不设置选角标签
+- `mascot.html`：OEDRO 吉祥物角色档案，24 个角色区共 130 张独立高清图；机械与配件角色在前，动物与人物在后。新增轻拟人连接件伙伴咔咔四张视角与动作图，保留全部历史图、页内跳转与对应版本的小尺寸对照，不设置选角标签。
+- `mascot-workflow.html`：吉祥物设计方法，位于角色档案下方的侧栏子入口，说明主图审查、身份一致性、反馈处理、跨品牌适配及交付验证。
 - `topics.html`与`topic.html`：专题、稳定方法和经验记录
 - `playbook.html`：工作方法和完成标准
 

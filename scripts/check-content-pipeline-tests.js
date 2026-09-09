@@ -13,8 +13,8 @@ const errors = [];
 const recordStatuses = new Set(['等待Oliver判断', '文案可审，图片待完善', '图文样稿待你审核', '需要修改', '已通过']);
 const variantDecisions = new Set(['文案可审', '需要修改', '不适用']);
 const aiDecisions = new Set(['可交给人审', '待人工判断', '图片待完善', '需要修改', '停止']);
-const expectedRatios = { instagram: '4:5', facebook: '4:5', pinterest: '2:3', tiktok: '9:16', youtube_shorts: '9:16' };
-const expectedFields = { instagram: 'caption', facebook: 'caption', pinterest: 'title,description', tiktok: 'caption', youtube_shorts: 'title,description' };
+const expectedRatios = { instagram: '4:5', x: '1:1', youtube: '1:1', facebook: '4:5', pinterest: '2:3', tiktok: '9:16', youtube_shorts: '9:16' };
+const expectedFields = { instagram: 'caption', x: 'caption', youtube: 'caption', facebook: 'caption', pinterest: 'title,description', tiktok: 'caption', youtube_shorts: 'title,description' };
 const forbidden = [
   /\/Users\//i,
   /file:\/\//i,
@@ -100,6 +100,7 @@ function validateImage(image, label, ratio) {
 const config = readJson(dataPath);
 if (config) {
   requiredString(config.title, 'title');
+  if (config.active_run_id && !config.records?.some((record) => record.run_id === config.active_run_id)) errors.push('active_run_id 必须指向已存在的记录');
   if (!Array.isArray(config.records) || !config.records.length) {
     errors.push('records 必须是非空数组');
   } else {
@@ -124,11 +125,12 @@ if (config) {
       const variants = Array.isArray(record.variants) ? record.variants : [];
       const platforms = variants.map((item) => item.id).sort().join(',');
       const fivePlatforms = platforms === 'facebook,instagram,pinterest,tiktok,youtube_shorts';
-      if (!fivePlatforms && platforms !== 'facebook,instagram,pinterest') errors.push(label + '.variants 必须是完整的三个或五个平台，且不能重复');
+      const primaryPlatforms = platforms === 'instagram,x,youtube';
+      if (!fivePlatforms && !primaryPlatforms && platforms !== 'facebook,instagram,pinterest') errors.push(label + '.variants 必须是完整的主平台 Instagram/X/YouTube 或历史三个或五个平台，且不能重复');
       variants.forEach((variant, variantIndex) => {
         const variantLabel = label + '.variants[' + variantIndex + ']';
         for (const key of ['id', 'platform', 'platform_job', 'format']) requiredString(variant[key], variantLabel + '.' + key);
-        if (variant.fields !== undefined || fivePlatforms) {
+        if (variant.fields !== undefined || fivePlatforms || primaryPlatforms) {
           const fields = Array.isArray(variant.fields) ? variant.fields : [];
           if (fields.map((field) => field.key).join(',') !== expectedFields[variant.id]) errors.push(variantLabel + '.fields 必须包含按发布顺序排列的完整平台字段');
           fields.forEach((field, fieldIndex) => {
@@ -153,14 +155,15 @@ if (config) {
         const videoPlatform = ['tiktok', 'youtube_shorts'].includes(variant.id);
         if (videoPlatform) {
           if (variant.visual?.kind !== 'external_video' || variant.visual?.image !== undefined) errors.push(variantLabel + ' 视频平台必须使用 external_video 且不能包含图片');
-        } else if (variant.visual?.kind !== undefined || fivePlatforms) {
-          if (variant.visual?.kind !== 'illustration') errors.push(variantLabel + '.visual.kind 必须是 illustration');
+        } else if (variant.visual?.kind !== undefined || fivePlatforms || primaryPlatforms) {
+          const expectedKind = primaryPlatforms ? 'generated_photo' : 'illustration';
+          if (variant.visual?.kind !== expectedKind) errors.push(variantLabel + '.visual.kind 必须是 ' + expectedKind);
           if (variant.visual?.image) validateImage(variant.visual.image, variantLabel + '.visual.image', expectedRatios[variant.id]);
           else if (record.review_status === '图文样稿待你审核') errors.push(variantLabel + ' 图文样稿缺少插画');
         } else if (variant.visual?.image !== undefined) errors.push(variantLabel + ' 图片必须说明 visual.kind');
       });
       if (record.image) validateImage(record.image, label + '.image');
-      else if (!fivePlatforms) errors.push(label + '.image 不完整');
+      else if (!fivePlatforms && !primaryPlatforms) errors.push(label + '.image 不完整');
       if (!Array.isArray(record.facts) || !record.facts.length) errors.push(label + '.facts 不完整');
       requiredString(record.ai_review?.decision, label + '.ai_review.decision');
       requiredString(record.ai_review?.summary, label + '.ai_review.summary');
@@ -187,7 +190,7 @@ if (fs.existsSync(pagePath)) {
 }
 if (fs.existsSync(scriptPath)) {
   const source = fs.readFileSync(scriptPath, 'utf8');
-  for (const required of ['sortRecords', 'renderPageMarkup', 'pipeline-record', 'pipeline-prompt', 'pipeline-purpose', 'pipeline-final-review']) {
+  for (const required of ['sortRecords', 'renderPageMarkup', 'pipeline-record', 'pipeline-prompt', 'pipeline-purpose', 'visibleVariants']) {
     if (!source.includes(required)) errors.push('content-pipeline-test.js 缺少：' + required);
   }
 }

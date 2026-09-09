@@ -37,7 +37,7 @@ for (const token of forbiddenUi) {
   if (script.includes(token)) fail(`unnecessary mascot interaction remains: ${token}`);
 }
 
-if ('rounds' in mascot || !Array.isArray(mascot.characters) || mascot.characters.length !== 23) fail('the archive must contain exactly twenty-three role-based character sections');
+if ('rounds' in mascot || !Array.isArray(mascot.characters) || mascot.characters.length !== 24) fail('the archive must contain exactly twenty-four role-based character sections');
 
 const expected = new Map([
   ['dog', 18], ['canyon-fox', 8], ['quiet-lynx', 8], ['bear', 4],
@@ -45,7 +45,7 @@ const expected = new Map([
   ['mule', 4], ['gecko', 4], ['raven', 4], ['kestrel-scout', 4],
   ['compass', 4], ['spark', 4], ['route-engineer', 4], ['parts-spirit', 7],
   ['socket', 6], ['fitment', 3], ['guard', 3],
-  ['spring-flex', 4], ['toggle-latch', 4], ['strap-reel', 4], ['fin-light', 4]
+  ['spring-flex', 4], ['toggle-latch', 4], ['strap-reel', 4], ['fin-light', 4], ['click-helper', 4]
 ]);
 
 const codes = [];
@@ -83,18 +83,18 @@ for (const character of mascot.characters) {
   }
 }
 
-if (new Set(families).size !== 23) fail('each character family must appear in one section only');
-if (codes.length !== 126 || new Set(codes).size !== 126 || new Set(sources).size !== 126) fail('126 unique independent images are required');
-const mechanicalFamilies = new Set(['spring-flex', 'toggle-latch', 'strap-reel', 'fin-light', 'parts-spirit', 'socket', 'fitment', 'guard', 'compass', 'spark']);
-if (mascot.characters.slice(0, 10).some((character) => !mechanicalFamilies.has(character.family) || character.type !== 'mechanical')
-  || mascot.characters.slice(10).some((character) => mechanicalFamilies.has(character.family))) fail('mechanical and accessory families must precede animals and people');
+if (new Set(families).size !== 24) fail('each character family must appear in one section only');
+if (codes.length !== 130 || new Set(codes).size !== 130 || new Set(sources).size !== 130) fail('130 unique independent images are required');
+const mechanicalFamilies = new Set(['click-helper', 'spring-flex', 'toggle-latch', 'strap-reel', 'fin-light', 'parts-spirit', 'socket', 'fitment', 'guard', 'compass', 'spark']);
+if (mascot.characters.slice(0, 11).some((character) => !mechanicalFamilies.has(character.family) || character.type !== 'mechanical')
+  || mascot.characters.slice(11).some((character) => mechanicalFamilies.has(character.family))) fail('mechanical and accessory families must precede animals and people');
 if (mascot.characters.at(-1).family !== 'route-engineer') fail('the human character belongs at the end');
 if (mascot.characters.some((character, index) => character.index !== String(index + 1).padStart(2, '0'))) fail('navigation numbering must follow the display order');
 
 const historical = mascot.characters.flatMap((character) => character.assets).filter((asset) => /^round-[1-7]$/.test(asset.source_round));
 if (historical.length !== 86 || new Set(historical.map((asset) => asset.src)).size !== 86) fail('all eighty-six historical images must remain exactly once');
 
-for (let round = 8; round <= 17; round += 1) {
+for (let round = 8; round <= 18; round += 1) {
   const additions = mascot.characters.flatMap((character) => character.assets).filter((asset) => asset.source_round === `round-${round}`);
   if (additions.length !== 4) fail(`round-${round} must contain four new views of one character`);
 }
@@ -104,4 +104,4 @@ if (/已淘汰|当前候选|候选|已选定|首选|备选|Rejected|Shortlisted|
 if (/"date"\s*:|"goal"\s*:|独立画面|身份｜|结构｜|工作｜|动态｜/.test(JSON.stringify(mascot))) fail('dates or design-process copy must not appear in the role archive');
 if (/\/Users\/|127\.0\.0\.1|localhost|API[_ -]?KEY|COOKIE|PASSWORD/i.test(publicText)) fail('local-only or sensitive text appears in the public mascot page');
 
-console.log('Mascot role archive check passed: 23 single-character sections, 126 unique images, mechanical families first, historical images retained, no selection labels or process UI.');
+console.log('Mascot role archive check passed: 24 single-character sections, 130 unique images, mechanical families first, historical images retained, no selection labels or process UI.');

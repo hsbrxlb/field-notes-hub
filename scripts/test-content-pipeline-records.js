@@ -14,92 +14,46 @@ const config = JSON.parse(originalSource);
 const renderer = require(path.join(root, 'content-pipeline-test.js'));
 const clone = (value) => JSON.parse(JSON.stringify(value));
 const escapeText = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
-const current = config.records.find((record) => record.variants.length === 3);
-const latest = config.records.find((record) => record.variants.length === 5);
-assert.ok(current && latest, '必须保留旧三平台和新五平台记录');
+const current = config.records.find((record) => record.run_id === '2026-09-04-oedro-floor-mats-static');
+const latest = config.records.find((record) => record.run_id === '2026-09-09-oedro-trail-passenger');
+assert.ok(current && latest, '历史原稿必须保留');
 const simulated = clone(latest);
-simulated.run_id = 'simulation-2026-09-08-second-record';
-simulated.review_status = '图文样稿待你审核';
-
-const records = renderer.sortRecords([current, simulated]);
-assert.equal(records[0].run_id, simulated.run_id, '最新记录应排在最前');
-const html = renderer.renderPageMarkup({ ...config, records: [current, simulated] });
-assert.equal((html.match(/<article class="pipeline-record"/g) || []).length, 2, '两条记录应使用同一模板');
-assert.equal((html.match(/class="pipeline-platform"/g) || []).length, 8, '两条记录分别保留三个和五个平台');
-assert.equal((html.match(/class="pipeline-prompt"/g) || []).length, 2, '每条记录必须显示输入Prompt');
-assert.equal((html.match(/class="pipeline-purpose"/g) || []).length, 2, '每条记录必须显示内容目的');
-assert.equal((html.match(/class="pipeline-final-review"/g) || []).length, 2, '每条记录必须显示审核结论');
-assert.ok(html.includes(current.prompt), '当前记录的Prompt没有渲染');
-assert.ok(html.includes(current.brief.desired_effect), '期望效果没有渲染');
-current.variants.forEach((variant) => assert.ok(html.includes(variant.platform_job), variant.platform + '的平台任务没有渲染'));
-const firstPrompt = html.indexOf('class="pipeline-prompt"');
-const firstPurpose = html.indexOf('class="pipeline-purpose"');
-const firstOutputs = html.indexOf('class="pipeline-outputs"');
-const firstReview = html.indexOf('class="pipeline-final-review"');
-assert.ok(firstPrompt < firstPurpose && firstPurpose < firstOutputs && firstOutputs < firstReview, '页面必须按Prompt、目的、平台成品、复核结论排列');
-const detailTags = [...html.matchAll(/<details\b[^>]*>/g)].map(x => x[0]);
-assert.ok(detailTags.length > 0 && detailTags.every(tag => /\bopen\b/.test(tag)), '全部评审与翻译默认可见');
-const firstEvidence = html.indexOf('class="pipeline-evidence"');
-assert.ok(firstEvidence > firstReview, '产品来源必须位于文案及审核之后');
-assert.ok(html.includes('<details class="pipeline-evidence" open>'), '来源详情默认展开');
-assert.ok(!html.includes('<dt>Hook</dt>') && !html.includes('<dt>CTA</dt>'), '完整帖子不能被内部文案字段拆成表格');
-assert.equal((html.match(/class="platform-post(?: post-with-image)?"/g) || []).length, 8, '每个平台都有独立完整帖子');
-assert.equal((html.match(/class="platform-media-state"/g) || []).length, 3, '旧三平台仍披露配图缺失');
-assert.equal((html.match(/class="platform-illustration"/g) || []).length, 3, '新三个静态平台显示插画');
-assert.equal((html.match(/文案样稿 · 搭配公司既有视频/g) || []).length, 2, '两个视频平台明确既有视频用途');
-assert.equal((html.match(/官方产品参考图/g) || []).length, 1, '仅旧记录显示官方参考图');
-current.variants.forEach((variant) => {
-  assert.ok(html.includes(variant.body_en.replaceAll('&', '&amp;')), variant.platform + '必须保留完整原稿');
-  assert.ok(html.includes(`href="#${current.run_id}-${variant.id}"`), variant.platform + '缺少页内导航');
-  const articleStart = html.indexOf(`<article class="pipeline-platform" id="${current.run_id}-${variant.id}"`);
-  const article = html.slice(articleStart, html.indexOf('</article>', articleStart));
-  const visiblePost = article.split('<details')[0];
-  assert.ok(visiblePost.includes(variant.body_en.replaceAll('&', '&amp;')), variant.platform + '正文必须位于首个折叠区之前');
-});
-simulated.variants.forEach((variant) => {
-  const start = html.indexOf(`<article class="pipeline-platform" id="${simulated.run_id}-${variant.id}"`);
-  const article = html.slice(start, html.indexOf('</article>', start));
-  const visiblePost = article.split('<details')[0];
-  let previous = -1;
-  for (const field of variant.fields) for (const block of field.blocks) {
-    const tag = field.key === 'title' ? 'h4' : 'p';
-    const position = visiblePost.indexOf(`<${tag}>${escapeText(block.en)}</${tag}>`);
-    assert.ok(position > previous, variant.platform + '英文字段顺序与段落必须保留且默认可见');
-    previous = position;
-    assert.ok(article.includes(`<${tag}>${escapeText(block.zh)}</${tag}>`), variant.platform + '中文必须完整显示');
-  }
-  assert.ok(article.includes('<details class="platform-translation" open>'), '中文默认展开');
-  if (variant.visual.kind === 'external_video') assert.ok(!article.includes('<img') && !article.includes('配图待制作'), '视频配文不能冒充图片作品');
-});
-const injected = JSON.parse(JSON.stringify(current));
-injected.prompt = '<img src=x onerror="alert(1)">';
-injected.variants[0].body_en = '<script>alert(1)</script>';
+simulated.run_id = 'simulation-primary-platforms';
+simulated.date = '2099-01-01';
+simulated.variants = ['instagram', 'x', 'youtube'].map((id) => ({ ...clone(latest.variants[0]), id, platform: id }));
+const beforeRendering = JSON.stringify(config);
+const html = renderer.renderPageMarkup({ ...config, active_run_id: simulated.run_id, records: [current, latest, simulated] });
+assert.throws(() => renderer.renderPageMarkup({ ...config, active_run_id: 'missing-record' }), /当前内容记录不存在/, '不能悄悄显示其他旧稿');
+assert.equal(renderer.sortRecords([latest, simulated])[0].run_id, simulated.run_id, '最新样稿优先');
+assert.equal((html.match(/<article class="pipeline-record"/g) || []).length, 1, '审阅页只显示最新组');
+assert.equal((html.match(/class="pipeline-platform"/g) || []).length, 3, '三个主平台完整展示');
+assert.ok(!html.includes('id="' + latest.run_id + '"') && !html.includes('id="' + current.run_id + '"'), '旧作品不进入当前审阅页');
+for (const record of [simulated]) {
+  assert.ok(html.includes(escapeText(record.prompt)), 'Prompt完整可见');
+  assert.ok(html.includes(escapeText(record.brief.desired_effect)), '目的可见');
+}
+for (const token of ['platform-review', 'pipeline-final-review', 'pipeline-evidence', 'pipeline-revisions', 'pipeline-criteria', '<figcaption', 'AI审核意见', 'AI复核结果', '产品来源与素材']) assert.ok(!html.includes(token), '不再渲染审核解释或图下注释：' + token);
+for (const platform of ['facebook', 'pinterest', 'tiktok', 'youtube_shorts']) assert.ok(!html.includes('-' + platform + '"'), '非主平台不生成作品或跳转：' + platform);
+assert.ok(!html.includes(latest.variants[0].platform_job), '删除平台解释副标题');
+const tags = [...html.matchAll(/<details\b[^>]*>/g)].map((match) => match[0]);
+assert.ok(tags.length > 0 && tags.every((tag) => /\bopen\b/.test(tag) && tag.includes('platform-translation')), '仅中文对照使用默认展开详情');
+for (const variant of simulated.variants) {
+  assert.ok(html.includes('id="' + simulated.run_id + '-' + variant.id + '"'), '三个主平台均有作品');
+  for (const field of variant.fields) for (const b of field.blocks) assert.ok(html.includes(escapeText(b.en)) && html.includes(escapeText(b.zh)), '双语段落完整');
+}
+const injected = clone(simulated);
+injected.prompt = '<script>alert(1)</script>';
+injected.variants[0].fields[0].blocks[0] = { en: '<svg onload="alert(1)">', zh: '<img src=x onerror="alert(1)">' };
 const escaped = renderer.recordMarkup(injected);
-assert.ok(!escaped.includes('<script>') && !escaped.includes('<img src=x'), 'Prompt和文案中的HTML必须作为文字展示');
-assert.ok(escaped.includes('&lt;script&gt;'), 'HTML文案必须可见而非丢失');
-const newInjected = clone(simulated);
-newInjected.variants[0].fields[0].blocks[0] = { en: '<script>alert(1)</script>', zh: '<svg onload="alert(1)">' };
-newInjected.variants[0].visual.image.alt = '" onerror="alert(1)';
-const newEscaped = renderer.recordMarkup(newInjected);
-assert.ok(!newEscaped.includes('<script>') && !newEscaped.includes('<svg') && !newEscaped.includes('alt="" onerror='), '新字段与图片属性必须转义');
-assert.ok(newEscaped.includes('&lt;script&gt;') && newEscaped.includes('&lt;svg'), '双语注入文本不能丢失');
-newInjected.variants[0].visual.image.src = 'javascript:alert(1)';
-assert.throws(() => renderer.recordMarkup(newInjected), /图片路径/);
-const maliciousLink = clone(simulated);
-maliciousLink.source.url = 'javascript:alert(1)';
-assert.throws(() => renderer.recordMarkup(maliciousLink), /HTTPS/);
+assert.ok(!escaped.includes('<script>') && !escaped.includes('<svg') && escaped.includes('&lt;svg'), 'Prompt与双语正文转义');
+injected.variants[0].visual.image.src = 'javascript:alert(1)';
+assert.throws(() => renderer.recordMarkup(injected), /图片路径/);
 const noMedia = clone(simulated);
 delete noMedia.variants[0].visual.image;
-noMedia.ai_review.revision_count = 0;
-const noMediaHtml = renderer.recordMarkup(noMedia);
-assert.ok(noMediaHtml.includes('4:5 配图待制作') && noMediaHtml.includes('检查记录') && !noMediaHtml.includes('0 次修改'), '缺图与零次修改必须如实展示');
-assert.ok(html.includes('record-status status-blocked">文案可审，图片待完善'), '图片未完成时总状态必须使用阻塞色');
-assert.ok(html.includes('record-status status-pending">图文样稿待你审核'), '新记录不能显示为已通过');
+assert.ok(renderer.recordMarkup(noMedia).includes('图片待制作'), '缺图仍需明确显示');
+assert.equal(JSON.stringify(config), beforeRendering, '渲染过滤不能删除历史数据或审核记录');
 const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
-assert.equal(new Set(ids).size, ids.length, '追加记录后DOM id必须保持唯一');
-assert.ok(html.includes(current.run_id), '当前记录锚点缺失');
-assert.ok(html.includes(simulated.run_id), '模拟记录锚点缺失');
-assert.ok(!fs.readFileSync(path.join(root, 'data', 'content-pipeline-tests.json'), 'utf8').includes(simulated.run_id), '模拟记录不得写入公开数据');
+assert.equal(new Set(ids).size, ids.length, '所有DOM锚点唯一');
 
 const fixtureRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'hub-review-disclosure-'));
 try {
@@ -151,6 +105,7 @@ try {
   fs.mkdirSync(path.join(mediaRoot, 'data'));
   for (const file of ['content-pipeline-test.html', 'content-pipeline-test.js', 'data/content-studio.json']) fs.copyFileSync(path.join(root, file), path.join(mediaRoot, file));
   const fixtureConfig = { ...config, records: [clone(latest), clone(current)] };
+  fixtureConfig.active_run_id = latest.run_id;
   fixtureConfig.records[0].review_status = '图文样稿待你审核';
   for (const record of fixtureConfig.records) {
     if (record.image) {
@@ -175,21 +130,47 @@ try {
   };
   const valid = validateRecord(() => {});
   assert.equal(valid.status, 0, valid.stderr);
+  fs.writeFileSync(path.join(mediaRoot, 'assets', 'primary-square.png'), makePng(1, 1));
+  const primaryRecord = (record) => {
+    const caption = clone(record.variants[0]);
+    record.variants = ['instagram', 'x', 'youtube'].map((id) => {
+      const variant = { ...clone(caption), id, platform: id };
+      variant.visual.kind = 'generated_photo';
+      if (id !== 'instagram') {
+        variant.visual.aspect_ratio = '1:1';
+        variant.visual.image = { src: 'assets/primary-square.png', alt: '测试图片', width: 1, height: 1 };
+      }
+      return variant;
+    });
+  };
+  assert.equal(validateRecord(primaryRecord).status, 0, '主平台接受共享方图并保留来源审核字段');
+  for (const [label, mutate, pattern] of [
+    ['来源缺失', (record) => { delete record.source; }, /source.url/],
+    ['审核缺失', (record) => { delete record.ai_review; }, /ai_review/],
+    ['主平台变视频', (record) => { record.variants[2].visual.kind = 'external_video'; }, /generated_photo/],
+    ['主平台插画冒充照片', (record) => { record.variants[0].visual.kind = 'illustration'; }, /generated_photo/],
+    ['主平台缺图', (record) => { delete record.variants[1].visual.image; }, /缺少插画/],
+    ['非展示字段泄露本机路径', (record) => { record.source.verification_status = '/Users/example/private'; }, /公开记录含有禁止内容/]
+  ]) {
+    const result = validateRecord((record) => { primaryRecord(record); mutate(record); });
+    assert.equal(result.status, 1, label + '必须阻止发布');
+    assert.match(result.stderr, pattern, label);
+  }
   const rejected = validateRecord((record) => {
     record.review_status = '需要修改';
     record.ai_review.decision = '需要修改';
     record.variants.forEach((variant) => { variant.review.decision = '需要修改'; });
     const markup = renderer.recordMarkup(record);
-    assert.ok(markup.includes('status-blocked">需要修改'), '退回记录必须显示阻塞状态');
-    assert.ok(!markup.includes('AI审核意见 · 文案可审'), '退回记录不能继续显示可审结论');
-    for (const variant of record.variants) for (const field of variant.fields) for (const block of field.blocks) {
+    assert.ok(!markup.includes('record-status'), '作品页不展示审核状态');
+    assert.ok(!markup.includes('AI审核意见'), '审核记录不显示在作品页');
+    for (const variant of renderer.visibleVariants(record)) for (const field of variant.fields) for (const block of field.blocks) {
       assert.ok(markup.includes(escapeText(block.en)) && markup.includes(escapeText(block.zh)), '退回记录仍须保留双语原文');
     }
   });
   assert.equal(rejected.status, 0, '旧稿退回状态应通过现行校验：' + rejected.stderr);
   const invalidCases = [
-    ['平台集合', (record) => record.variants.pop(), /完整的三个或五个平台/],
-    ['重复平台', (record) => { record.variants[4].id = 'tiktok'; }, /完整的三个或五个平台/],
+    ['平台集合', (record) => record.variants.pop(), /完整的主平台/],
+    ['重复平台', (record) => { record.variants[4].id = 'tiktok'; }, /完整的主平台/],
     ['缺少标题', (record) => record.variants[2].fields.shift(), /完整平台字段/],
     ['缺少翻译', (record) => { delete record.variants[0].fields[0].blocks[0].zh; }, /\.zh 不能为空/],
     ['空段落', (record) => { record.variants[0].fields[0].blocks = []; }, /blocks 不能为空/],
