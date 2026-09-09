@@ -20,6 +20,8 @@
 
 `content-studio.html`路径为兼容旧链接而保留。页面已经改为只读成果档案，读取`data/content-studio.json`；没有填写表单、在线生成、浏览器草稿、版本审核、登录或数据库。
 
+维护记录：2026年9月9日创意样稿由现有 Skills 与总控整合完成；完整自动内容包校验尚未通过，Hub 展示验收不代表整套工作流通过。
+
 `flipbooks.html` 是两本书的统一入口。书内左上角返回该页面；Car Owner Survey 的回答保存在访问者当前浏览器。
 
 两本书使用已修复的软页引擎：末页保持柔软且不自动退出，拖回起点可取消，保存回答立即更新。独立翻页源项目的重建顺序：核对 `scripts/flipbook-baseline-sha256.json`，依次应用 `scripts/flipbook-source.patch` 与 `scripts/flipbook-integration.patch`，运行 `npm run build`；只把构建产物同步到 `experiences/flipbooks`。这些补丁不作为网页资源发布。不要从未打补丁的旧源项目覆盖当前构建。
