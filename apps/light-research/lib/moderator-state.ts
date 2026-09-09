@@ -152,14 +152,18 @@ export const semanticSimilarity = (left: string, right: string) => {
   return (2 * overlap) / (a.size + b.size);
 };
 
-const safeReply = (candidate: string, recentPrompts: string[], allowNoQuestion = false, allowSemanticRepeat = false) => {
+const safeReply = (candidate: string, recentPrompts: string[], isConversationRepair = false) => {
   const cleaned = compact(candidate).slice(0, 480);
   const questionCount = cleaned.match(/[?？؟]/g)?.length ?? 0;
   const praise = /\b(great|excellent|insightful|smart|good answer|well said)\b|很有意思|说得很好|非常棒|excelente|interesante/iu.test(cleaned);
   const generic = /\b(tell me more|elaborate|provide more detail)\b|详细说说|展开一下|多说一点/iu.test(cleaned);
   const leading = /,\s*like\s+|\b(is it because|would you say|does that mean|for example|such as|if (?:price|cost|installation) (?:isn't|is not|weren't|were not))\b|是不是.{0,40}[?？]|也就是说|比如|例如|对吗[?？]|如果.{0,30}(?:不是问题|没有限制|不考虑).{0,20}[?？]|超过.{0,12}(美元|dollars?)/iu.test(cleaned);
-  const repeated = !allowSemanticRepeat && recentPrompts.some((prompt) => semanticSimilarity(cleaned, prompt) >= 0.82);
-  const questionSafe = allowNoQuestion ? questionCount <= 1 : questionCount === 1;
+  // A repair must retain the same research objective. Shared vocabulary is
+  // expected, so reject only near-verbatim copies here. Optional research probes
+  // retain the stricter redundancy guard to avoid re-asking answered questions.
+  const repetitionThreshold = isConversationRepair ? 0.97 : 0.82;
+  const repeated = recentPrompts.some((prompt) => semanticSimilarity(cleaned, prompt) >= repetitionThreshold);
+  const questionSafe = questionCount === 1;
   return cleaned && questionSafe && !questionPolicyViolation(cleaned) && !praise && !generic && !leading && !repeated ? cleaned : null;
 };
 
@@ -542,7 +546,7 @@ export const acceptPlannedReply = (study: StudyManifest, applied: AppliedTurn, a
   const scopeMatches = Boolean(anchor && assessment.candidateAnchorId === anchor.id && (!fieldId || assessment.candidateFieldId === fieldId) && (!assessment.candidateFieldId || anchorOwnsGapField(study, anchor.id, assessment.candidateFieldId)));
   const abandonsRepair = stayActions.has(applied.serverAction) && /\b(?:let['’]?s move on|(?:we['’]?ll|I['’]?ll) (?:move on|leave (?:that|this|it) (?:aside|open))|next (?:topic|question))\b|(?:跳过|先放下|换个话题|下一个(?:问题|话题))/iu.test(assessment.candidateReply);
   const candidate = actionMatches && scopeMatches && !abandonsRepair && questionMatchesLanguage(assessment.candidateReply, applied.state.activeLanguage)
-    ? safeReply(assessment.candidateReply, recentPrompts) : null;
+    ? safeReply(assessment.candidateReply, recentPrompts, ["soft_redirect", "immediate_clarify", "repair_conversation"].includes(applied.serverAction)) : null;
   applied.prompt = candidate ? normalizeLocalizedPunctuation(candidate, applied.state.activeLanguage) : null;
   applied.displayedReply = applied.prompt;
   applied.state.activePrompt = applied.prompt;

@@ -1,7 +1,7 @@
 import { afterAll, describe, expect, it, vi } from "vitest";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { getStudyConfig } from "@/lib/study-config";
-import { applyAssessment, createModeratorState } from "@/lib/moderator-state";
+import { applyAssessment, createModeratorState, semanticSimilarity } from "@/lib/moderator-state";
 import { resolvePlannedReply } from "@/lib/moderator-dialogue";
 import { evaluateTurn, type ProviderTurnInput } from "@/lib/moderator-provider";
 import { questionPolicyViolation } from "@/lib/question-policy";
@@ -102,6 +102,36 @@ it("regenerates a short Chinese clarification with one question and no suggested
   expect(generate.mock.calls[0][0].selectedMove.wordingFeedback).toContain("no example answers");
   expect(applied.displayedReply).toBe(wording.candidateReply);
   expect(applied.state.activeAnchorId).toBe(first.id);
+});
+
+it.each([
+  ["gibberish", "soft_redirect"],
+  ["asks_clarification", "immediate_clarify"],
+  ["frustration", "repair_conversation"],
+] as const)("accepts naturally different same-objective wording for %s", async (participantIntent, nextAction) => {
+  const i = input();
+  i.state.activePrompt = "I couldn't understand your last message because it was just numbers. Could you tell me in your own words what you usually do with your vehicle after dark?";
+  const candidateReply = "I couldn't understand those numbers in your last message. Could you tell me in your own words what you usually do with your vehicle after dark?";
+  expect(semanticSimilarity(i.state.activePrompt, candidateReply)).toBeGreaterThanOrEqual(0.82);
+  expect(semanticSimilarity(i.state.activePrompt, candidateReply)).toBeLessThan(0.97);
+  const a = base({ participantIntent, nextAction, candidateReply });
+  const applied = plan(i, a);
+  expect(applied.displayedReply).toBe(candidateReply);
+  expect(applied.state.activeAnchorId).toBe(first.id);
+  const generate = vi.fn();
+  await resolvePlannedReply(i, applied, a, [i.state.activePrompt], generate);
+  expect(generate).not.toHaveBeenCalled();
+});
+
+it.each(["exact", "punctuation"])("rejects %s copies during repair and keeps regeneration bounded", async (variant) => {
+  const i = input(); i.state.activePrompt = base().candidateReply;
+  const candidateReply = variant === "exact" ? i.state.activePrompt : i.state.activePrompt.replace("?", " ?").toUpperCase();
+  const a = base({ candidateReply }), applied = plan(i, a);
+  expect(applied.displayedReply).toBeNull();
+  const generate = vi.fn().mockResolvedValue(a);
+  await expect(resolvePlannedReply(i, applied, a, [i.state.activePrompt], generate)).rejects.toMatchObject({ code: "invalid_response" });
+  expect(generate).toHaveBeenCalledTimes(1);
+  expect(applied.displayedReply).toBeNull();
 });
 
 const records: unknown[] = [];
