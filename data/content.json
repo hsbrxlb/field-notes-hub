@@ -50,6 +50,12 @@
       "file": "mascot.html"
     },
     {
+      "id": "mascot-workflow",
+      "label": "吉祥物设计方法",
+      "file": "mascot-workflow.html",
+      "parent": "mascot"
+    },
+    {
       "id": "topics",
       "label": "运营专题",
       "file": "topics.html"

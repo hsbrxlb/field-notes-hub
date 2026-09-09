@@ -1,0 +1,16 @@
+.mascot-workflow-main { max-width: 960px; }
+.mascot-workflow-main article { max-width: 740px; }
+.mascot-workflow-main .page-heading p { font-size: 16px; line-height: 1.8; }
+.workflow-section { margin-top: var(--space-6); padding-top: var(--space-5); border-top: 1px solid var(--border); }
+.workflow-section h2 { margin: 0 0 var(--space-4); font-size: 24px; line-height: 1.4; }
+.workflow-section h3 { margin: var(--space-5) 0 var(--space-2); font-size: 18px; }
+.workflow-section p, .workflow-section li { font-size: 16px; line-height: 1.8; }
+.workflow-section p { margin: var(--space-3) 0; }
+.workflow-section ul, .workflow-section ol { padding-left: 1.5em; margin: var(--space-3) 0; }
+.workflow-section li + li { margin-top: var(--space-2); }
+.workflow-request { border-left: 2px solid var(--text-muted); padding-left: var(--space-4); }
+.workflow-return { display: inline-flex; align-items: center; min-height: var(--touch-size); margin-top: var(--space-5); }
+@media (max-width: 640px) {
+  .workflow-section h2 { font-size: 22px; }
+  .workflow-section { margin-top: var(--space-5); }
+}
