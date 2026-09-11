@@ -7,12 +7,6 @@
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;');
 
-  function formatDate(input) {
-    const date = new Date(`${input}T00:00:00`);
-    if (Number.isNaN(date.getTime())) return input;
-    return new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' }).format(date);
-  }
-
   function sortRecords(records) {
     return [...records].sort((left, right) => {
       const byDate = value(right.date).localeCompare(value(left.date));
@@ -63,7 +57,7 @@
   function recordMarkup(record) {
     return `<article class="pipeline-record" id="${escapeHtml(record.run_id)}">
       <header class="pipeline-record-head">
-        <div><time datetime="${escapeHtml(record.date)}">${escapeHtml(formatDate(record.date))}</time><h2>${escapeHtml(record.product)}</h2><span>${escapeHtml(record.version)}</span></div>
+        <div><h2>${escapeHtml(record.product)}</h2></div>
       </header>
       <section class="pipeline-prompt" aria-labelledby="${escapeHtml(record.run_id)}-prompt-title">
         <h2 id="${escapeHtml(record.run_id)}-prompt-title">输入 Prompt</h2>
@@ -73,9 +67,7 @@
         <h2 id="${escapeHtml(record.run_id)}-purpose-title">${escapeHtml(record.brief.purpose)}</h2>
         <p>${escapeHtml(record.brief.desired_effect)}</p>
       </section>
-      <section class="pipeline-outputs" aria-labelledby="${escapeHtml(record.run_id)}-outputs-title">
-        <div class="section-head"><h2 id="${escapeHtml(record.run_id)}-outputs-title">各平台作品</h2></div>
-        <nav class="platform-index" aria-label="本组平台文案">${visibleVariants(record).map((item) => `<a href="#${escapeHtml(record.run_id)}-${escapeHtml(item.id)}">${escapeHtml(item.platform)}</a>`).join('')}</nav>
+      <section class="pipeline-outputs" aria-label="平台作品">
         ${visibleVariants(record).map((item) => variantMarkup(item, record)).join('')}
       </section>
     </article>`;
@@ -86,7 +78,7 @@
       ? config.records.find((item) => item.run_id === config.active_run_id)
       : sortRecords(config.records)[0];
     if (!record) throw new Error('当前内容记录不存在');
-    return `<header class="page-heading pipeline-heading"><a class="text-link" href="content-studio.html">← 内容成果</a><h1>${escapeHtml(config.title)}</h1></header>${recordMarkup(record)}`;
+    return `<header class="page-heading pipeline-heading"><a class="text-link" href="content-studio.html">← 社媒内容生产</a><h1>${escapeHtml(config.title)}</h1></header>${recordMarkup(record)}`;
   }
 
   async function initContentPipelineTests() {
