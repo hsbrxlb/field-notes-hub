@@ -54,11 +54,7 @@ function read(relativePath) {
 }
 
 function validateRuntimeContent(relativePath, content) {
-  // The selected interview is a user-clicked local launch, never a Pages API call.
-  const inspected = relativePath === 'app.js'
-    ? content.replaceAll('href="http://127.0.0.1:54810/"', 'href="approved-local-interview-launch"')
-    : content;
-  return forbiddenRuntime.filter((pattern) => pattern.test(inspected))
+  return forbiddenRuntime.filter((pattern) => pattern.test(content))
     .map((pattern) => `${relativePath}: contains ${pattern}`);
 }
 

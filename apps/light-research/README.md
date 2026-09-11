@@ -2,7 +2,7 @@
 
 Oedro Buddy runs a conversational lighting study with natural model-generated replies, source-linked evidence and saved-answer retry. Uninterpretable answers stay on the current question until understood; participants can explicitly skip, stop, or ask to return later.
 
-This directory contains the complete Next.js application. GitHub Pages publishes the Hub's entry page and screenshot only; it cannot execute these route handlers. The Hub entry opens an existing service at `http://127.0.0.1:54810/` on the visitor's own computer. It is not a cloud API endpoint.
+This directory contains the complete Next.js application. GitHub Pages publishes the Hub's entry page and screenshot only; it cannot execute these route handlers. The Hub entry opens `https://oedro-light-research.onrender.com/`, hosted on Render Free in Singapore with Neon Free PostgreSQL. It does not depend on a local Mac.
 
 ## Run the application
 
@@ -39,7 +39,9 @@ The repository root `render.yaml` defines one free Node web service in Singapore
 
 Supply `DATABASE_URL` from a Neon project and `DEEPSEEK_API_KEY` through Render's secret environment settings. Use the Neon connection string with TLS enabled; do not commit either value. The existing schema initializer creates tables on first use. A new cloud database starts without local interview records.
 
-Configuration alone does not establish a live deployment. Keep the Hub launch URL pointing at the verified service until the cloud URL passes a real conversation, saved-answer retrieval, and stop check. Free Render services sleep when idle and can take time to wake.
+The cloud service passed a real four-turn conversation, saved-session retrieval, and pause check on 2026-09-11. Uninterpretable answers stayed on the same question; a meaningful answer advanced the interview. Free Render services sleep when idle and can take time to wake.
+
+Render service: `srv-dahsmf142hec73abns4g`. Neon project: `little-wind-27223557`. The service uses the public Git repository on `main`; deploy subsequent app changes from the Render dashboard. Account login uses GitHub.
 
 ## Reading and input
 

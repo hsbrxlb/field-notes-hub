@@ -68,11 +68,11 @@ function renderLightResearch() {
   document.querySelector('#content').innerHTML = `
     ${pageHeading('Light Research', '与 Oedro Buddy 进行一对一文字访谈。')}
     <section class="section light-research-launch">
-      <a class="research-preview" href="http://127.0.0.1:54810/" target="_blank" rel="noopener" aria-label="打开本机 Light Research 访谈">
+      <a class="research-preview" href="https://oedro-light-research.onrender.com/" target="_blank" rel="noopener" aria-label="打开 Light Research 访谈">
         <img src="assets/light-research/hawthorne-preview.jpg" alt="Hawthorne 字体与浅色光影背景的访谈界面" width="1440" height="900">
       </a>
-      <div class="section-head"><a class="text-link research-open" href="http://127.0.0.1:54810/" target="_blank" rel="noopener">打开访谈 ↗</a><a class="text-link" href="https://github.com/hsbrxlb/field-notes-hub/tree/main/apps/light-research">应用源码 ↗</a></div>
-      <p>访谈由本机服务运行，请在已启动服务的这台 Mac 上打开。回答可以跳过，访谈可以随时停止。</p>
+      <div class="section-head"><a class="text-link research-open" href="https://oedro-light-research.onrender.com/" target="_blank" rel="noopener">打开访谈 ↗</a><a class="text-link" href="https://github.com/hsbrxlb/field-notes-hub/tree/main/apps/light-research">应用源码 ↗</a></div>
+      <p>手机或电脑都可以直接开始访谈。首次打开可能需要稍等片刻；回答可以跳过，访谈可以随时停止。</p>
     </section>`;
 }
 
