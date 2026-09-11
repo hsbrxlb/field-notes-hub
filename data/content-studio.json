@@ -1,6 +1,6 @@
 {
-  "title": "内容成果",
-  "intro": "OEDRO 海外用户运营的公开成果。",
+  "title": "社媒内容生产",
+  "intro": "AI根据需求自动化生产和审核用于社媒社群的图文内容",
   "categories": [
     { "id": "all", "label": "全部" },
     { "id": "content", "label": "内容" },

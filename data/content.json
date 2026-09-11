@@ -36,7 +36,7 @@
     },
     {
       "id": "studio",
-      "label": "内容成果",
+      "label": "社媒内容生产",
       "file": "content-studio.html"
     },
     {
@@ -671,7 +671,7 @@
         "file": "research.html"
       },
       {
-        "label": "内容成果",
+        "label": "社媒内容生产",
         "description": "查看已经形成的内容、研究、方案和网站成果。",
         "file": "content-studio.html"
       }

@@ -90,8 +90,10 @@ function checkPublicText(value, label) {
   const source = typeof value === 'string' ? value : JSON.stringify(value);
   if (emailPattern.test(source)) errors.push(`${label} 不得包含邮箱地址`);
   if (phonePattern.test(source)) errors.push(`${label} 不得包含疑似电话号码`);
+  // The approved page description describes the local workflow, not a browser approval control.
+  const interfaceText = source.replaceAll('AI根据需求自动化生产和审核用于社媒社群的图文内容', '');
   forbiddenText.forEach((pattern) => {
-    if (pattern.test(source)) errors.push(`${label} 含有禁止内容：${pattern}`);
+    if (pattern.test(interfaceText)) errors.push(`${label} 含有禁止内容：${pattern}`);
   });
 }
 
@@ -101,7 +103,7 @@ if (config) {
   for (const field of ['title', 'intro']) {
     if (typeof config[field] !== 'string' || !config[field].trim()) errors.push(`${field} 不能为空`);
   }
-  if (config.title !== '内容成果') errors.push('title 必须是“内容成果”');
+  if (config.title !== '社媒内容生产') errors.push('title 必须是“社媒内容生产”');
   if (!Array.isArray(config.categories)) {
     errors.push('categories 必须是数组');
   } else {

@@ -22,23 +22,6 @@
       .replaceAll("'", '&#039;');
   }
 
-  function statusClass(status) {
-    return {
-      已完成: 'done',
-      进行中: 'active',
-      概念: 'ready',
-      待确认: 'pending'
-    }[status] || 'pending';
-  }
-
-  function formatDate(value) {
-    const date = new Date(`${value}T00:00:00`);
-    if (Number.isNaN(date.getTime())) return value;
-    return new Intl.DateTimeFormat('zh-CN', {
-      year: 'numeric', month: 'long', day: 'numeric'
-    }).format(date);
-  }
-
   function resultLink(link) {
     const href = text(link.href);
     const external = href.startsWith('https://');
@@ -50,11 +33,7 @@
     const links = (item.links || []).map(resultLink).join('');
     return `<article class="result-entry" id="${escapeHtml(item.id)}" data-searchable data-result-category="${escapeHtml(item.category)}">
       <header class="result-entry-head">
-        <div>
-          <time class="result-date" datetime="${escapeHtml(item.date)}">${escapeHtml(formatDate(item.date))}</time>
-          <h2>${escapeHtml(item.title)}</h2>
-        </div>
-        <span class="status status-${statusClass(item.status)}">${escapeHtml(item.status)}</span>
+        <h2>${escapeHtml(item.title)}</h2>
       </header>
       <p class="result-description">${escapeHtml(item.description)}</p>
       <div class="result-links" aria-label="成果入口">${links || '<span class="result-link-muted">暂无单独入口</span>'}</div>
@@ -102,10 +81,10 @@
 
   window.initContentStudio = async () => {
     const response = await fetch('data/content-studio.json', { cache: 'no-store' });
-    if (!response.ok) throw new Error('内容成果数据加载失败');
+    if (!response.ok) throw new Error('社媒内容生产数据加载失败');
     const config = await response.json();
-    if (!config || config.title !== '内容成果' || !Array.isArray(config.results)) {
-      throw new Error('内容成果数据格式不正确');
+    if (!config || config.title !== '社媒内容生产' || !Array.isArray(config.results)) {
+      throw new Error('社媒内容生产数据格式不正确');
     }
     config.results.forEach((item) => {
       if (!item.id || !item.date || !allowedStatuses.has(item.status) || !categories.some((category) => category.id === item.category)) {
