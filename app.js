@@ -57,7 +57,7 @@ function renderShell(data) {
   document.querySelector('#site-subtitle').textContent = 'OEDRO 工作台';
   document.querySelector('#nav-list').innerHTML = data.nav.map((item) => `
     <a href="${escapeHtml(item.file)}" data-page="${escapeHtml(item.id)}" ${item.id === page ? 'aria-current="page"' : ''} class="${item.id === page ? 'active' : ''}${item.parent ? ' nav-child' : ''}">
-      <span${item.parent ? ' style="padding-inline-start:12px"' : ''}>${escapeHtml(item.label)}</span>
+      <span>${escapeHtml(item.label)}</span>
     </a>`).join('');
   const current = data.nav.find((item) => item.id === page);
   document.querySelector('#breadcrumb-page').textContent = current?.label || '';

@@ -23,6 +23,7 @@ simulated.date = '2099-01-01';
 simulated.variants = ['instagram', 'x', 'youtube'].map((id) => ({ ...clone(latest.variants[0]), id, platform: id }));
 const beforeRendering = JSON.stringify(config);
 const html = renderer.renderPageMarkup({ ...config, active_run_id: simulated.run_id, records: [current, latest, simulated] });
+for (const token of ['<time', 'platform-index', '各平台作品', escapeText(simulated.version)]) assert.ok(!html.includes(token), '删除日期、版本标签和平台跳转：' + token);
 assert.throws(() => renderer.renderPageMarkup({ ...config, active_run_id: 'missing-record' }), /当前内容记录不存在/, '不能悄悄显示其他旧稿');
 assert.equal(renderer.sortRecords([latest, simulated])[0].run_id, simulated.run_id, '最新样稿优先');
 assert.equal((html.match(/<article class="pipeline-record"/g) || []).length, 1, '审阅页只显示最新组');

@@ -1,7 +1,8 @@
 .pipeline-main {
   width: min(var(--content-wide), calc(100% - var(--space-7)));
   max-width: none;
-  background: rgba(8, 10, 8, .96);
+  background: rgba(8, 10, 8, .55);
+  --surface-raised: rgba(8, 10, 8, .28);
 }
 
 .topbar { background: var(--surface); }
@@ -58,7 +59,7 @@
 }
 
 @media (max-width: 760px) {
-  .pipeline-main { width: 100%; background: rgba(8, 10, 8, .98); }
+  .pipeline-main { width: 100%; }
   .pipeline-prompt blockquote { padding: var(--space-3) var(--space-4); font-size: 15px; }
   .pipeline-record-head > div { column-gap: var(--space-3); }
   .pipeline-record-head h2 { flex-basis: 100%; order: -1; }
