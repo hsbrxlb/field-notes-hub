@@ -7,7 +7,8 @@
     {
       "id": "fakesite",
       "label": "独立站样站",
-      "file": "fakesite/"
+      "file": "fakesite/",
+      "external": true
     },
     {
       "id": "overview",
@@ -43,6 +44,11 @@
       "id": "flipbooks",
       "label": "Flip Book Demo",
       "file": "flipbooks.html"
+    },
+    {
+      "id": "email-templates",
+      "label": "用户邮件模板",
+      "file": "email-templates.html"
     },
     {
       "id": "mascot",

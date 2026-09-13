@@ -124,9 +124,8 @@ p, ul, ol, dl, figure { margin-top: 0; }
 .data-table tbody tr:last-child td { border-bottom: 0; }
 .data-table tbody tr:hover { background: rgba(255,255,255,.035); }
 .data-table .cell-title { font-weight: 700; }
-.project-table th:nth-child(1) { width: 16%; }
-.project-table th:nth-child(2) { width: 10%; }
-.project-table th:nth-child(3), .project-table th:nth-child(4), .project-table th:nth-child(5) { width: 24%; }
+.project-table th:nth-child(1) { width: 19%; }
+.project-table th:nth-child(2), .project-table th:nth-child(3), .project-table th:nth-child(4) { width: 27%; }
 
 .research-stack { border-top: 1px solid var(--border-strong); }
 .research-expanded-section { padding: 22px 0 30px; border-bottom: 1px solid var(--border-strong); }

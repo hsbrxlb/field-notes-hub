@@ -34,6 +34,7 @@ function statusClass(status) {
 }
 
 function statusMarkup(status) {
+  if (/^(待确认|待审.*|进行中|准备中|筹备|受阻|已完成|归档)$/.test(status)) return '';
   return `<span class="status status-${statusClass(status)}">${escapeHtml(status)}</span>`;
 }
 
@@ -56,8 +57,8 @@ function renderShell(data) {
   document.querySelector('#site-title').textContent = '海外用户运营';
   document.querySelector('#site-subtitle').textContent = 'OEDRO 工作台';
   document.querySelector('#nav-list').innerHTML = data.nav.map((item) => `
-    <a href="${escapeHtml(item.file)}" data-page="${escapeHtml(item.id)}" ${item.id === page ? 'aria-current="page"' : ''} class="${item.id === page ? 'active' : ''}${item.parent ? ' nav-child' : ''}">
-      <span>${escapeHtml(item.label)}</span>
+    <a href="${escapeHtml(item.file)}" data-page="${escapeHtml(item.id)}" ${item.external ? 'aria-label="' + escapeHtml(item.label) + '（离开工作台，进入样站）"' : ''} ${item.id === page ? 'aria-current="page"' : ''} class="${item.id === page ? 'active' : ''}${item.parent ? ' nav-child' : ''}${item.external ? ' nav-external' : ''}">
+      <span>${escapeHtml(item.label)}</span>${item.external ? '<span aria-hidden="true">↗</span>' : ''}
     </a>`).join('');
   const current = data.nav.find((item) => item.id === page);
   document.querySelector('#breadcrumb-page').textContent = current?.label || '';
@@ -98,7 +99,7 @@ function renderOverview(data, topics, results) {
     <section class="section" data-searchable>
       ${sectionHead('工作入口')}
       <nav class="workspace-links" aria-label="工作入口">
-        ${data.nav.filter((item) => item.id !== 'overview').map((item) => `<a href="${escapeHtml(item.file)}"><span>${escapeHtml(item.label)}</span><b aria-hidden="true">→</b></a>`).join('')}
+        ${data.nav.filter((item) => item.id !== 'overview').map((item) => `<a href="${escapeHtml(item.file)}" ${item.external ? 'class="nav-external" aria-label="' + escapeHtml(item.label) + '（离开工作台，进入样站）"' : ''}><span>${escapeHtml(item.label)}</span><b aria-hidden="true">${item.external ? '↗' : '→'}</b></a>`).join('')}
       </nav>
     </section>
     <section class="section" data-searchable>
@@ -136,10 +137,10 @@ function renderWork(data) {
     ${pageHeading(w.title)}
     <section class="section work-surface">
       <div class="table-toolbar">
-        <div class="filter-row"><label for="status-filter">状态</label><select id="status-filter"><option>全部</option>${w.statuses.map((item) => `<option>${escapeHtml(item.name)}</option>`).join('')}</select><span class="count-note" id="project-count"></span></div>
+        <span class="count-note" id="project-count"></span>
       </div>
-      <div class="data-table-wrap"><table class="data-table project-table"><thead><tr><th>项目</th><th>状态</th><th>当前情况</th><th>下一步</th><th>需要配合</th></tr></thead><tbody id="project-rows">
-        ${w.projects.map((item) => `<tr data-searchable data-status="${escapeHtml(item.status)}"><td class="cell-title" data-label="项目">${escapeHtml(item.name)}</td><td data-label="状态">${statusMarkup(item.status)}</td><td data-label="当前情况">${escapeHtml(item.progress)}</td><td data-label="下一步">${escapeHtml(item.next)}</td><td data-label="需要配合">${escapeHtml(item.dependency)}</td></tr>`).join('')}
+      <div class="data-table-wrap"><table class="data-table project-table"><thead><tr><th>项目</th><th>当前情况</th><th>下一步</th><th>需要配合</th></tr></thead><tbody id="project-rows">
+        ${w.projects.map((item) => `<tr data-searchable data-status="${escapeHtml(item.status)}"><td class="cell-title" data-label="项目">${escapeHtml(item.name)}</td><td data-label="当前情况">${escapeHtml(item.progress)}</td><td data-label="下一步">${escapeHtml(item.next)}</td><td data-label="需要配合">${escapeHtml(item.dependency)}</td></tr>`).join('')}
       </tbody></table></div>
       <p class="empty-state" id="project-empty" role="status" hidden>这个状态下暂无项目</p>
     </section>
@@ -293,7 +294,7 @@ function renderTopics(data, topics) {
   document.querySelector('#content').innerHTML = `
     ${pageHeading(topics.title)}
     <section class="section topic-index-surface">
-      <div class="table-toolbar"><div class="filter-row"><label for="topic-filter">状态</label><select id="topic-filter"><option>全部</option><option>筹备</option><option>待确认</option><option>进行中</option><option>受阻</option><option>已完成</option><option>归档</option></select><span class="count-note" id="topic-count"></span></div></div>
+      <div class="table-toolbar"><span class="count-note" id="topic-count"></span></div>
       <div class="topic-list" id="topic-list">${topics.items.map(topicLink).join('')}</div>
     </section>`;
   document.querySelector('#topic-filter')?.addEventListener('change', runFilters);
@@ -438,6 +439,7 @@ async function init() {
   if (page === 'studio' && location.pathname.endsWith('content-pipeline-test.html')) await window.initContentPipelineTests?.();
   if (page === 'studio' && !location.pathname.endsWith('content-pipeline-test.html')) await window.initContentStudio?.();
   if (page === 'mascot') await window.initMascot?.();
+  if (page === 'email-templates') await window.initEmailTemplates?.();
 }
 
 const mainContent = document.querySelector('#content');

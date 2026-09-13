@@ -60,6 +60,9 @@
   --motion-slow: 420ms;
 }
 
+.nav-list a.nav-external, .workspace-links a.nav-external { color: var(--accent); }
+.nav-list a.nav-external { justify-content: space-between; }
+
 html { background: var(--page-bg); }
 body { position: relative; isolation: isolate; background: transparent; }
 body::before,
