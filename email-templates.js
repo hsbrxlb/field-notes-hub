@@ -6,7 +6,7 @@ window.initEmailTemplates = async function () {
       subject: 'An invitation to OEDRO on Discord',
       preview: 'Talk fitment, compare setups, and share what you’re working on.',
       purpose: '承接问卷反馈，邀请愿意继续交流的人进入 Discord。语气像一位懂车库工作的伙伴，不假定对方买过产品或拥有某辆车。',
-      condition: '发送前按实际名单核对邮件和社群邀请许可，替换真实邮寄地址，并在 Klaviyo 预览中验证退订。问卷参与本身不等于营销许可。',
+      condition: '发送前按实际名单核对邮件和社群邀请许可，并在 Klaviyo 预览中验证组织地址和退订。问卷参与本身不等于营销许可。',
       translation: '谢谢你花时间分享反馈。欢迎到 OEDRO 的 Discord 聊聊适配问题、安装经历和产品建议。进入后阅读 welcome-and-rules，自愿介绍正在做的项目；也可以先看看。',
       cta: 'Join OEDRO on Discord'
     },
@@ -51,9 +51,9 @@ window.initEmailTemplates = async function () {
     </section>
     <section class="email-proposal" aria-labelledby="email-use-title"><h3 id="email-use-title">导入与发送前检查</h3>
       <p>在 Klaviyo 新建 HTML 模板，导入下载文件，单独填写 Subject 和 Preview text。邮件正文、按钮和页脚都是真实文字，图片关闭后仍能读懂并进入 Discord。</p>
-      <p>署名为 Oliver / OEDRO，回复入口为 service@oedro.com。该地址来自历史欢迎邮件，使用前须在当前 Klaviyo 账户核对 From、Reply-To 和收件处理安排。</p>
+      <p>署名为 Oliver / OEDRO，回复入口为 service@oedro.com。已核实当前 Klaviyo 账号默认发件人为该邮箱、组织实体地址完整非空；正式发送前仍须核对本次邮件的 From、Reply-To 和收件处理安排。</p>
       <p>邀请邮件使用 AI 生成的通用车库场景，不是真实用户照片或产品适配证明。公开 JPEG 约 374KB，保留完整画面。</p>
-      <ul><li>替换页脚方括号中的真实邮寄地址；用 Klaviyo 的预览与测试邮件验证退订链接。</li><li>图片采用公开 HTTPS 地址。若改用品牌素材库，请上传图片并替换 HTML 中的图片地址。</li><li>正式发送前，在手机、Gmail 和 Outlook 中检查测试邮件；本页预览不等于邮件客户端验收。</li></ul>
+      <ul><li>页脚使用 <code>{{ organization.full_address }}</code>，正式发送时读取账号组织地址，公开模板不包含地址明文。用 Klaviyo 的预览与测试邮件验证地址和退订链接。<a href="https://help.klaviyo.com/hc/en-us/articles/4408802648731" target="_blank" rel="noopener noreferrer">组织标签说明 ↗</a></li><li>图片采用公开 HTTPS 地址。若改用品牌素材库，请上传图片并替换 HTML 中的图片地址。</li><li>正式发送前，在手机、Gmail 和 Outlook 中检查测试邮件；本页预览不等于邮件客户端验收，实收测试尚未确认完成。</li></ul>
     </section>`;
   for (const frame of document.querySelectorAll('.email-frame')) {
     const resize = () => {
