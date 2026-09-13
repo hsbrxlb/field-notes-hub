@@ -443,11 +443,16 @@ async function init() {
 }
 
 const mainContent = document.querySelector('#content');
+const staticContentPage = ['mascot-workflow', 'social-brand', 'merch-plan'].includes(page);
 mainContent.setAttribute('tabindex', '-1');
 mainContent.setAttribute('aria-busy', 'true');
-if (page !== 'mascot-workflow') mainContent.innerHTML = '<p class="loading-state" role="status">正在加载…</p>';
+if (!staticContentPage) mainContent.innerHTML = '<p class="loading-state" role="status">正在加载…</p>';
 init().catch((error) => {
-  if (page === 'mascot-workflow') {
+  if (staticContentPage) {
+    const navigation = document.querySelector('#nav-list');
+    if (navigation && !navigation.querySelector('a')) {
+      navigation.innerHTML = '<p role="alert">导航暂时无法加载</p><a href="">重新加载</a><a href="index.html">返回总览</a>';
+    }
     console.error(error);
     return;
   }

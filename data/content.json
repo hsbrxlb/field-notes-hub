@@ -36,9 +36,19 @@
       "file": "user-voice.html"
     },
     {
+      "id": "social-brand",
+      "label": "社媒品牌升级",
+      "file": "social-brand.html"
+    },
+    {
       "id": "studio",
       "label": "社媒内容生产",
       "file": "content-studio.html"
+    },
+    {
+      "id": "merch-plan",
+      "label": "OEDRO Merch 企划",
+      "file": "merch-plan.html"
     },
     {
       "id": "flipbooks",

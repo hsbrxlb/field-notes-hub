@@ -39,6 +39,7 @@ jobs:
           python scripts/test_daily_demand_radar.py
       - name: Validate static work records
         run: |
+          node scripts/check-brand-plans.js
           node scripts/check-content-studio.js
           node scripts/check-content-pipeline-tests.js
           node scripts/check-mascot-page.js
