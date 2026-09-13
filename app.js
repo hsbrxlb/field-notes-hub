@@ -54,30 +54,21 @@ function topicLink(item) {
 }
 
 function renderShell(data) {
+  const activePage = page === 'topics' && location.pathname.endsWith('topic.html')
+    ? new URLSearchParams(location.search).get('slug')
+    : page;
   document.querySelector('#site-title').textContent = '海外用户运营';
   document.querySelector('#site-subtitle').textContent = 'OEDRO 工作台';
   document.querySelector('#nav-list').innerHTML = data.nav.map((item) => `
-    <a href="${escapeHtml(item.file)}" data-page="${escapeHtml(item.id)}" ${item.external ? 'aria-label="' + escapeHtml(item.label) + '（离开工作台，进入样站）"' : ''} ${item.id === page ? 'aria-current="page"' : ''} class="${item.id === page ? 'active' : ''}${item.parent ? ' nav-child' : ''}${item.external ? ' nav-external' : ''}">
+    <a href="${escapeHtml(item.file)}" data-page="${escapeHtml(item.id)}" ${item.external ? 'aria-label="' + escapeHtml(item.label) + '（离开工作台，进入样站）"' : ''} ${item.id === activePage ? 'aria-current="page"' : ''} class="${item.id === activePage ? 'active' : ''}${item.parent ? ' nav-child' : ''}${item.external ? ' nav-external' : ''}">
       <span>${escapeHtml(item.label)}</span>${item.external ? '<span aria-hidden="true">↗</span>' : ''}
     </a>`).join('');
-  const current = data.nav.find((item) => item.id === page);
-  document.querySelector('#breadcrumb-page').textContent = current?.label || '';
+  const current = data.nav.find((item) => item.id === activePage);
+  document.querySelector('#breadcrumb-page').textContent = current?.label || (page === 'topics' ? '资料索引' : '');
 }
 
-function renderLightResearch() {
-  document.title = 'Light Research｜OEDRO 工作台';
-  document.querySelector('#content').innerHTML = `
-    ${pageHeading('Light Research', '与 Oedro Buddy 进行一对一文字访谈。')}
-    <section class="section light-research-launch">
-      <a class="research-preview" href="https://oedro-light-research.onrender.com/" target="_blank" rel="noopener" aria-label="打开 Light Research 访谈">
-        <img src="assets/light-research/hawthorne-preview.jpg" alt="浅色光影背景的调研界面" width="1440" height="900">
-      </a>
-      <div class="section-head"><a class="text-link research-open" href="https://oedro-light-research.onrender.com/" target="_blank" rel="noopener">打开访谈 ↗</a><a class="text-link" href="https://github.com/hsbrxlb/field-notes-hub/tree/main/apps/light-research">应用源码 ↗</a></div>
-      <p>手机或电脑都可以直接开始访谈。首次打开可能需要稍等片刻；回答可以跳过，访谈可以随时停止。</p>
-    </section>`;
-}
 
-function renderOverview(data, topics, results) {
+function renderOverview(data, results) {
   const o = data.overview;
   const recentResults = [...(results?.results || [])]
     .sort((a, b) => b.date.localeCompare(a.date))
@@ -101,10 +92,6 @@ function renderOverview(data, topics, results) {
       <nav class="workspace-links" aria-label="工作入口">
         ${data.nav.filter((item) => item.id !== 'overview').map((item) => `<a href="${escapeHtml(item.file)}" ${item.external ? 'class="nav-external" aria-label="' + escapeHtml(item.label) + '（离开工作台，进入样站）"' : ''}><span>${escapeHtml(item.label)}</span><b aria-hidden="true">${item.external ? '↗' : '→'}</b></a>`).join('')}
       </nav>
-    </section>
-    <section class="section" data-searchable>
-      ${sectionHead('专题与经验', '<a class="text-link" href="topics.html">查看全部 →</a>')}
-      <div class="topic-list">${topics.items.filter((item) => item.featured).map(topicLink).join('')}</div>
     </section>`;
 }
 
@@ -150,50 +137,27 @@ function renderWork(data) {
   runFilters();
 }
 
-function researchMethodsMarkup(r) {
-  return `<div class="data-table-wrap"><table class="data-table"><thead><tr><th>方法</th><th>适合回答什么</th><th>需要准备</th></tr></thead><tbody>${r.methods.map((item) => `<tr data-searchable><td class="cell-title" data-label="方法">${escapeHtml(item.name)}</td><td data-label="适合回答什么">${escapeHtml(item.use)}</td><td data-label="需要准备">${escapeHtml(item.needs)}</td></tr>`).join('')}</tbody></table></div>`;
-}
-
-function researchProgramsMarkup(r) {
-  return `<div class="data-table-wrap"><table class="data-table"><thead><tr><th>类型</th><th>启动条件</th><th>参与动作</th><th>获得什么</th><th>留下什么记录</th></tr></thead><tbody>${r.programs.map((item) => `<tr data-searchable><td class="cell-title" data-label="类型">${escapeHtml(item.name)}</td><td data-label="启动条件">${escapeHtml(item.start)}</td><td data-label="参与动作">${escapeHtml(item.task)}</td><td data-label="获得什么">${escapeHtml(item.return)}</td><td data-label="留下什么记录">${escapeHtml(item.record)}</td></tr>`).join('')}</tbody></table></div>`;
-}
-
-function researchRightsMarkup(r) {
-  return `<div class="rights-list">${r.rights_groups.map((group) => `<section data-searchable><h3>${escapeHtml(group.title)}</h3>${group.items.map((item) => `<p>${escapeHtml(item)}</p>`).join('')}</section>`).join('')}</div>`;
-}
-
-function smartSurveyMarkup(r) {
-  const image = r.case_image;
-  return `<div class="smart-survey-case" data-searchable>
-    <div class="smart-survey-copy">
-      <p class="tab-intro">${escapeHtml(r.case_text)}</p>
-    </div>
-    <figure class="smart-survey-visual"><img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="${escapeHtml(image.width)}" height="${escapeHtml(image.height)}" loading="lazy" decoding="async"></figure>
-  </div>`;
-}
-
-function researchPanelMarkup(data, tabId) {
-  const r = data.research;
-  const project = data.work.projects.find((item) => item.id === 'work-light-research');
-  const panels = {
-    current: `<div class="current-research" data-searchable><div><h3>${escapeHtml(project.name)}</h3>${statusMarkup(project.status)}</div><p>${escapeHtml(project.progress)}</p></div>`,
-    methods: researchMethodsMarkup(r),
-    programs: researchProgramsMarkup(r),
-    rights: researchRightsMarkup(r),
-    'smart-survey': smartSurveyMarkup(r)
-  };
-  return panels[tabId] || panels.current;
-}
-
 function renderResearch(data) {
   const r = data.research;
-  document.title = `用户调研/问卷｜${data.site.title}`;
+  document.title = `${r.title}｜${data.site.title}`;
   document.querySelector('meta[name="description"]').content = r.meta_description;
-  const sections = [['current', '当前调研'], ['methods', '调研方法'], ['programs', '参与方式'], ['rights', '用户权利'], ['smart-survey', 'AI智能对话问卷']];
   document.querySelector('#content').innerHTML = `
-    ${pageHeading('用户调研/问卷')}
-    <section class="section research-surface">
-      <div class="research-stack">${sections.map(([id, label]) => `<section class="research-expanded-section" data-searchable><h2>${escapeHtml(label)}</h2><div class="research-panel">${researchPanelMarkup(data, id)}</div></section>`).join('')}</div>
+    ${pageHeading(r.title, r.description)}
+    <section class="section research-entry">
+      <div class="research-launch-copy">
+        <h2>开始文字访谈</h2>
+        <p>在手机或电脑上逐题交流，可以跳过问题，也可以随时结束。</p>
+        <a class="research-open" href="https://oedro-light-research.onrender.com/" target="_blank" rel="noopener">打开 AI 访谈 ↗</a>
+        <p class="research-loading-note">首次打开可能需要稍等片刻。</p>
+      </div>
+      <a class="research-preview" href="https://oedro-light-research.onrender.com/" target="_blank" rel="noopener" aria-label="预览并打开 AI 访谈">
+        <img src="assets/light-research/hawthorne-preview.jpg" alt="Oedro Buddy 文字访谈界面" width="1440" height="900">
+      </a>
+    </section>
+    <section class="section research-notes" aria-label="调研使用说明">
+      <section id="research-prepare"><h2>调研准备</h2><ul>${r.prepare.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>
+      <section id="research-results"><h2>结果整理</h2><p>${escapeHtml(r.results)}</p><a class="text-link" href="user-voice.html">查看已确认的问题与反馈 →</a></section>
+      <section id="research-participation"><h2>参与说明</h2><p>${escapeHtml(r.participation)}</p></section>
     </section>`;
 }
 
@@ -285,6 +249,16 @@ function renderUserVoice(data, voice, radar) {
         </article>`).join('')}
       </div>
       <div class="empty-state voice-empty" id="voice-empty"${insights.length ? ' hidden' : ''}><strong>${escapeHtml(copy.empty_message || '暂无可公开洞察')}</strong></div>
+    </section>
+    <section class="section feedback-method" id="feedback-method">
+      <h2>反馈怎么处理</h2>
+      <ol>
+        <li>保留评论来源与上下文，合并重复记录，区分适配、安装和使用问题。</li>
+        <li>人工核对事实与重复主题；涉及安全、适配或产品损坏的问题优先处理。</li>
+        <li>把确认的问题用于 FAQ、调研、内容或产品反馈，并记录后续处理结果。</li>
+      </ol>
+      <p>公开评论不等于营销许可。继续邀请调研、社群或复用用户内容，需要分别取得同意。</p>
+      <a class="text-link" href="research.html">继续做用户调研 →</a>
     </section>`;
 }
 
@@ -331,7 +305,6 @@ function visibleTopicSections(topic) {
   if (!topic.sections?.length) return discordSections(topic);
   const ids = {
     'brand-voice-system': ['current', 'principles', 'channels', 'donts'],
-    'external-signals-to-relationships': ['external-signals', 'repeat-issue-threshold', 'turning-into-work', 'rights-and-platform-boundaries'],
     'seo-geo': ['current', 'milestones', 'baseline', 'next']
   }[topic.slug];
   return ids ? topic.sections.filter((section) => ids.includes(section.id)) : topic.sections;
@@ -359,7 +332,6 @@ async function renderTopic(data) {
   document.querySelector('meta[name="description"]').content = topic.description;
   document.querySelector('#content').innerHTML = `
     ${pageHeading(topic.title)}
-    <div class="topic-status-bar"><div><span class="eyebrow">${escapeHtml(topic.area)}</span>${statusMarkup(topic.status)}</div><a class="text-link" href="topics.html">返回专题列表 →</a></div>
     <div class="topic-layout">
       <article class="topic-body">${sections.map(topicSectionMarkup).join('')}
         ${renderRelatedPages(topic.related_pages)}
@@ -411,6 +383,10 @@ document.addEventListener('keydown', (event) => {
 });
 
 async function init() {
+  if (location.pathname.endsWith('topic.html') && new URLSearchParams(location.search).get('slug') === 'external-signals-to-relationships') {
+    location.replace('user-voice.html#feedback-method');
+    return;
+  }
   const [dataResponse, topicsResponse, voiceResponse, resultsResponse, radarResponse] = await Promise.all([
     fetch('data/content.json', { cache: 'no-store' }),
     fetch('data/topics.json', { cache: 'no-store' }),
@@ -427,13 +403,15 @@ async function init() {
     radarResponse ? radarResponse.json() : Promise.resolve(null)
   ]);
   renderShell(data);
-  if (page === 'overview') renderOverview(data, topics, results);
+  if (page === 'overview') renderOverview(data, results);
   if (page === 'playbook') renderPlaybook(data);
   if (page === 'work') renderWork(data);
   if (page === 'research') renderResearch(data);
-  if (page === 'light-research') renderLightResearch();
   if (page === 'flipbooks') renderFlipbooks(data);
-  if (page === 'voice') renderUserVoice(data, voice, radar);
+  if (page === 'voice') {
+    renderUserVoice(data, voice, radar);
+    if (location.hash === '#feedback-method') document.querySelector('#feedback-method').scrollIntoView({ behavior: 'instant', block: 'start' });
+  }
   if (page === 'topics' && location.pathname.endsWith('topics.html')) renderTopics(data, topics);
   if (page === 'topics' && location.pathname.endsWith('topic.html')) await renderTopic(data);
   if (page === 'studio' && location.pathname.endsWith('content-pipeline-test.html')) await window.initContentPipelineTests?.();

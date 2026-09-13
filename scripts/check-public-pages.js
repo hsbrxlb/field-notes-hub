@@ -94,7 +94,8 @@ for (const file of publicFiles.filter((item) => path.extname(item) === '.html'))
 
 const data = JSON.parse(fs.readFileSync(path.join(root, 'data', 'content.json'), 'utf8'));
 for (const item of data.nav || []) {
-  if (!fs.existsSync(path.join(root, item.file))) errors.push('导航目标不存在：' + item.file);
+  const pathname = item.file.split(/[?#]/)[0];
+  if (!fs.existsSync(path.join(root, pathname))) errors.push('导航目标不存在：' + item.file);
 }
 
 if (errors.length) {

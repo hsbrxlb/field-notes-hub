@@ -16,8 +16,8 @@ window.initEmailTemplates = async function () {
       subject: '[Join OEDRO on Discord for your member offer]',
       preview: '[Join OEDRO on Discord and receive the approved member offer.]',
       purpose: '以“加入 Discord 后领取专属优惠券”为增长方案，供讨论入群动机、邮件呈现和兑换机制。问卷答谢是另一事项，不在本方案中替代处理。',
-      condition: 'VERSION DISABLED。提请审批：满 100 美元减 10 美元，最多 15 张唯一单次码，发放后 30 天有效，不叠加。入群与经济奖励绑定存在 Discord 平台政策冲突，本页不能发送或发券。',
-      translation: '谢谢你分享反馈。[加入 OEDRO 的 Discord 社群，即可按批准后的条件获得专属优惠券。] [方案示例：满 100 美元减 10 美元，单次使用、不可叠加、发放后 30 天有效；实际优惠码和截止日期待填。]',
+      condition: 'VERSION DISABLED。主案提请审批：满 75 美元享 15% 优惠，每单最多减 30 美元，已购客户也可用，首批最多 15 人、单次使用、60 天有效、不叠加。入群与经济奖励绑定存在 Discord 平台政策冲突，本页不能发送或发券。',
+      translation: '谢谢你分享反馈。[加入 OEDRO 的 Discord 社群，即可按批准后的条件获得专属优惠券。] [方案示例：满 75 美元享 15% 优惠，每单最高减 30 美元，新老客户均可使用；单次使用、不可叠加、60 天有效。实际优惠码和截止日期待填。]',
       cta: '[Join Discord and get the offer]'
     }
   ];
@@ -41,11 +41,13 @@ window.initEmailTemplates = async function () {
     <nav class="email-index" aria-label="邮件模板目录"><a href="#discord-invite">01 无优惠邀请</a><a href="#discord-member-offer">02 入群优惠券方案</a></nav>
     ${templates.map(section).join('')}
     <section class="email-proposal" aria-labelledby="offer-proposal-title"><h3 id="offer-proposal-title">入群优惠券方案说明</h3>
-      <p>提请审批的方案值：满 100 美元减 10 美元，最多 15 张唯一单次优惠码，发放后 30 天有效，不可叠加。目标是提高邮件收件人加入 Discord 的意愿，拟议流程为点击邀请、加入社群、核对资格后领取独立优惠码。</p>
-      <p>全部兑换时，券面优惠合计最多 150 美元；这不是利润损失估算，也不保证入群或销售效果。适用品类、地区、最低消费是否排除税费和运费、发券与核销系统支持仍需核实。上述数字都是方案参数，没有已发放优惠券。</p>
+      <p>主案提请审批：满 75 美元享 15% 优惠，单次最高减 30 美元，已购客户也可用；首批最多 15 人，每人一张唯一单次码，发放后 60 天有效，不叠加。拟议流程为点击邀请、加入社群、核对资格后领取优惠码。</p>
+      <p><a href="https://www.oedro.com/" target="_blank" rel="noopener noreferrer">OEDRO 官网订阅优惠为 10% ↗</a>，因此旧的满 100 美元减 10 美元方案不足以体现专属价值。新主案提高折扣比例并拟向已购客户开放，但有 30 美元封顶：订单达到 300 美元时与 10% 相当，更高金额时可能不如 10%，不能称为“最优惠”。</p>
+      <p>若全部按上限兑换，主案券面让利最多 450 美元，不代表利润损失，也不保证入群或销售效果。商城是否支持百分比折扣封顶仍需核实；若不支持，低预算备选为满 75 美元减 15 美元，同样最多 15 张，券面让利最多 225 美元。</p>
+      <p>适用品类、地区、税费与运费是否计入门槛，以及发券、核销和防重复领取机制均待核实。上述数字是审批方案，没有已发放优惠券。</p>
       <p>该机制把经济奖励与加入服务器绑定，与 <a href="https://discord.com/safety/platform-manipulation-policy-explainer" target="_blank" rel="noopener noreferrer">Discord 平台操纵政策 ↗</a>存在直接冲突。模板展示不代表平台允许或方案获批；即使内部批准优惠，平台冲突仍需解决。</p>
       <p>无优惠邀请保留为对照版本。问卷答谢需另行确定现金、礼品卡等形式，本页没有把购物优惠券当作问卷补偿。</p>
-      <p>历史汽配优惠结构参考：<a href="https://auxbeam.com/collections/exclusive-offer" target="_blank" rel="noopener noreferrer">Auxbeam 2025 年满 69 美元减 10 美元 ↗</a>、<a href="https://www.lasfit.com/blogs/news/newsletter-giveaway-big-rewards-for-our-valued-subscribers" target="_blank" rel="noopener noreferrer">Lasfit 2024 年满 99 美元减 16 美元 ↗</a>。它们不是当前活动，也不是 Discord 入群效果的证据。</p>
+      <p>优惠结构参考：<a href="https://www.anker.com/hot-deals" target="_blank" rel="noopener noreferrer">Anker 首购 15% ↗</a>、<a href="https://weathertech-uk.com/pages/newsletter-signup" target="_blank" rel="noopener noreferrer">WeatherTech 英国站新订阅 15% ↗</a>。这两例属于首购与订阅活动，不能作为 Discord 入群案例或效果证据。</p>
     </section>
     <section class="email-proposal" aria-labelledby="email-use-title"><h3 id="email-use-title">导入与发送前检查</h3>
       <p>在 Klaviyo 新建 HTML 模板，导入下载文件，单独填写 Subject 和 Preview text。邮件正文、按钮和页脚都是真实文字，图片关闭后仍能读懂并进入 Discord。</p>

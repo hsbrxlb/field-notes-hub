@@ -1,10 +1,10 @@
 {
-  "title": "运营专题",
-  "description": "按主题查看目标、当前情况、启动条件和后续安排。",
+  "title": "资料索引",
+  "description": "SEO、Discord 和品牌表达资料。",
   "items": [
     {
       "slug": "seo-geo",
-      "title": "OEDRO SEO与AI搜索可见度",
+      "title": "SEO与AI搜索",
       "area": "独立站增长",
       "status": "进行中",
       "summary": "本机已形成公开技术审计、三个品类九页Demo和六十条买家问题；定时任务已暂停，后续按需检查。",
@@ -12,7 +12,7 @@
     },
     {
       "slug": "discord-community",
-      "title": "OEDRO Discord社区",
+      "title": "Discord社群",
       "area": "社群",
       "status": "待确认",
       "summary": "频道、验证、工单和内容同步框架已经搭好，下一步确认管理权限、新人路径、首批车主和日常维护分工。",
@@ -20,18 +20,10 @@
     },
     {
       "slug": "brand-voice-system",
-      "title": "OEDRO品牌人格与用户联系",
+      "title": "品牌与说话风格",
       "area": "品牌声音",
       "status": "进行中",
       "summary": "统一Email、Discord、调研、客服和内容合作的说话原则；内部规则已经形成，真实用户反应仍待验证。",
-      "featured": true
-    },
-    {
-      "slug": "external-signals-to-relationships",
-      "title": "公开信号与用户关系",
-      "area": "用户反馈",
-      "status": "筹备",
-      "summary": "把外部评论整理成可核对的问题，并在用户主动同意后继续邀请参与调研、社群或产品测试。",
       "featured": true
     }
   ]

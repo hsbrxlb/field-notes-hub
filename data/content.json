@@ -22,13 +22,8 @@
     },
     {
       "id": "research",
-      "label": "用户调研/问卷",
+      "label": "AI智能用户调研",
       "file": "research.html"
-    },
-    {
-      "id": "light-research",
-      "label": "AI 对话调研",
-      "file": "light-research.html"
     },
     {
       "id": "voice",
@@ -72,9 +67,19 @@
       "parent": "mascot"
     },
     {
-      "id": "topics",
-      "label": "运营专题",
-      "file": "topics.html"
+      "id": "seo-geo",
+      "label": "SEO与AI搜索",
+      "file": "topic.html?slug=seo-geo"
+    },
+    {
+      "id": "discord-community",
+      "label": "Discord社群",
+      "file": "topic.html?slug=discord-community"
+    },
+    {
+      "id": "brand-voice-system",
+      "label": "品牌与说话风格",
+      "file": "topic.html?slug=brand-voice-system"
     },
     {
       "id": "playbook",
@@ -512,136 +517,15 @@
     ]
   },
   "research": {
-    "meta_description": "OEDRO海外用户调研与问卷，包括调研方法、参与项目、用户权利和AI智能对话问卷。",
-    "title": "用户调研/问卷",
-    "description": "",
-    "methods_title": "调研方法",
-    "methods_label": "",
-    "methods": [
-      {
-        "name": "资料调研",
-        "use": "查现有资料、竞品信息和用户讨论。",
-        "needs": "先写清要回答的问题，并记录资料来源。"
-      },
-      {
-        "name": "A/B投票",
-        "use": "用于快速比较两个方案的用户偏好。",
-        "needs": "需要明确选项和样本范围。"
-      },
-      {
-        "name": "用户访谈",
-        "use": "用于了解用户使用场景和具体问题。",
-        "needs": "需要招募符合条件的用户并准备访谈提纲。"
-      },
-      {
-        "name": "结构化问卷",
-        "use": "用于收集可统计的用户反馈。",
-        "needs": "需要设计问题和投放渠道。"
-      },
-      {
-        "name": "产品测试（获批后）",
-        "use": "用于收集用户在实际使用中的反馈。",
-        "needs": "需要获批的产品、测试任务、参与条件、履约与记录方式。"
-      }
+    "title": "AI智能用户调研",
+    "meta_description": "打开 OEDRO AI 文字访谈，查看调研准备、结果整理与参与说明。",
+    "description": "与 Oedro Buddy 进行一对一文字访谈。",
+    "prepare": [
+      "写清需要回答的问题、目标人群和希望比较的方案。",
+      "准备必要的产品资料与访谈提纲，确认参与和后续联系范围。"
     ],
-    "programs_title": "用户参与项目",
-    "programs_label": "",
-    "programs": [
-      {
-        "name": "用户调研",
-        "start": "从已有用户中邀请符合条件的对象。",
-        "task": "完成访谈或问卷。",
-        "return": "获得用户反馈和可跟进的问题点。",
-        "record": "记录参与人、时间和反馈要点。"
-      },
-      {
-        "name": "产品测试（条件式）",
-        "start": "产品、测试方案、权益和履约获批后，再邀请符合条件的用户。",
-        "task": "按已批准任务参与测试并反馈真实使用体验。",
-        "return": "获得产品使用问题和改进建议。",
-        "record": "记录测试样本、任务完成情况和反馈。"
-      },
-      {
-        "name": "用户内容（UGC）",
-        "start": "邀请用户提交内容。",
-        "task": "提供内容并确认使用授权。",
-        "return": "获得可用于传播的用户内容。",
-        "record": "记录内容来源、授权和使用范围。"
-      },
-      {
-        "name": "长期用户反馈组",
-        "start": "邀请用户加入长期参与用户名单。",
-        "task": "定期参与讨论和反馈。",
-        "return": "获得持续的用户视角。",
-        "record": "记录每次参与和反馈。"
-      },
-      {
-        "name": "社群",
-        "start": "在Discord等社群中发起讨论。",
-        "task": "参与话题并反馈问题。",
-        "return": "获得社群中的用户反馈和讨论线索。",
-        "record": "记录讨论主题和反馈要点。"
-      }
-    ],
-    "rights_title": "用户权利",
-    "rights_label": "",
-    "rights_groups": [
-      {
-        "title": "知情",
-        "items": [
-          "用户需要知道研究目的、数据用途和参与方式。"
-        ]
-      },
-      {
-        "title": "同意",
-        "items": [
-          "用户参与前需要获得明确同意，分项授权需要单独记录。"
-        ]
-      },
-      {
-        "title": "退出",
-        "items": [
-          "用户可以随时退出，退出后继续邀请会停止。"
-        ]
-      },
-      {
-        "title": "数据使用",
-        "items": [
-          "用户内容（UGC）的使用范围需要事先说明并记录授权。"
-        ]
-      }
-    ],
-    "case_title": "AI智能对话问卷",
-    "case_label": "可复用工具方向",
-    "case_text": "把问卷目的和背景资料交给本地 AI，它会生成一套由 AI 主持的智能对话问卷。用户在网页中自然回答，AI 按规则继续追问。完成后，系统保留原始回答，并整理出可追溯的主题、分歧和建议。",
-    "case_steps": [
-      {
-        "number": "01",
-        "title": "提供问卷目的与资料",
-        "text": "明确要回答的问题、目标用户和可展示材料。"
-      },
-      {
-        "number": "02",
-        "title": "用户完成智能对话问卷",
-        "text": "AI 按固定规则提问和追问，用户用熟悉的语言回答。"
-      },
-      {
-        "number": "03",
-        "title": "整理原话与结论",
-        "text": "保留原始回答，归纳共同点、分歧和证据不足之处。"
-      }
-    ],
-    "case_image": {
-      "src": "assets/ai-smart-survey/ai-smart-conversational-survey.webp",
-      "alt": "三步示意图：提供问卷资料、用户完成AI智能对话问卷、系统整理原话与结论",
-      "width": 1586,
-      "height": 992
-    },
-    "case_note": "Hub 记录这项可复用能力；真实问卷入口尚未开放。",
-    "entry_title": "统一研究资料",
-    "entry_label": "",
-    "entry_text": "把用户招募、参与记录和研究结果放在同一处，后续工作更容易继续使用。",
-    "entry_next": "先确定统一入口和记录方式；新的产品测试还要等产品、方案、权益和履约获批。"
+    "results": "保留用户原话和来源，归纳共同问题与分歧。资料不足的判断继续核实，不把单次意见当作普遍结论。",
+    "participation": "参与前说明研究目的、回答用途和联系范围，取得明确同意并记录分项许可。参与者可跳过或结束，退出后停止继续邀请；营销联系和内容复用需单独许可。"
   },
   "user_voice": {
     "meta_description": "OEDRO公开问题与反馈的阶段性工作汇总。",
@@ -682,8 +566,8 @@
     "related_title": "相关记录",
     "related": [
       {
-        "label": "用户调研/问卷",
-        "description": "查看调研方法、参与方式和用户权利。",
+        "label": "AI智能用户调研",
+        "description": "打开文字访谈，查看调研准备与结果整理。",
         "file": "research.html"
       },
       {

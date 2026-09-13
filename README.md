@@ -12,8 +12,7 @@
 
 - `index.html`：当前重点、最近成果、工作入口和运营专题
 - `work.html`：项目状态、待办、阻塞和下一动作
-- `light-research.html`：AI 对话调研入口，连接云端运行的 Light Research；独立应用源码保存在 `apps/light-research`
-- `research.html`：研究项目、方法、参与方式、用户权利和 AI智能对话问卷介绍
+- `research.html`：统一的“AI智能用户调研”，首屏打开云端 Light Research 文字访谈，附简短的调研准备、结果整理与参与说明。`light-research.html` 保留为同内容兼容入口；独立应用源码位于 `apps/light-research`，本次调整不修改应用。
 - `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
 - `content-studio.html`：已经形成的内容、研究、方案和工作成果
 - `social-brand.html`：社媒品牌升级讨论方案，保留成交内容并新增车主关系内容；平台分工、四周试验与待决事项。
@@ -25,7 +24,8 @@
 - `flipbooks.html`：Flip Book Demo（翻页书），进入 Brand Story 与 Car Owner Survey
 - `mascot.html`：OEDRO 吉祥物角色档案，24 个角色区共 130 张独立高清图；机械与配件角色在前，动物与人物在后。新增轻拟人连接件伙伴咔咔四张视角与动作图，保留全部历史图、页内跳转与对应版本的小尺寸对照，不设置选角标签。
 - `mascot-workflow.html`：吉祥物设计方法，位于角色档案下方的侧栏子入口，说明主图审查、身份一致性、反馈处理、跨品牌适配及交付验证。
-- `topics.html`与`topic.html`：专题、稳定方法和经验记录
+- 侧栏分别进入“SEO与AI搜索”“Discord社群”“品牌与说话风格”，沿用对应的 `topic.html?slug=...` 网址。`topics.html` 仅保留旧链接所需的资料索引。
+- 原“公开信号与用户关系”是公开评论的留存、核实、采用与许可方法，已归入 `user-voice.html#feedback-method`；原专题网址自动跳转到该位置。
 - `playbook.html`：工作方法和完成标准
 
 `content-studio.html`路径为兼容旧链接而保留。页面已经改为只读成果档案，读取`data/content-studio.json`；没有填写表单、在线生成、浏览器草稿、版本审核、登录或数据库。
@@ -118,6 +118,6 @@ node scripts/check-anti-slop.js
 
 ## Light Research
 
-侧边栏的“AI 对话调研”进入 `light-research.html`，可打开云端真实 AI 访谈（https://oedro-light-research.onrender.com/）。GitHub Pages 发布的是入口和界面预览，不执行模型调用。完整 Next.js 应用位于 `apps/light-research`，由 Render 免费 Web Service 运行，回答与访谈进度保存于 Neon 免费 PostgreSQL；模型凭据只配置在服务端。它不进入 Pages 静态发布目录，也不依赖本机开机。
+侧边栏的“AI智能用户调研”进入 `research.html`，可打开云端真实 AI 访谈（https://oedro-light-research.onrender.com/）。GitHub Pages 发布的是入口和界面预览，不执行模型调用。完整 Next.js 应用位于 `apps/light-research`，由 Render 免费 Web Service 运行，回答与访谈进度保存于 Neon 免费 PostgreSQL；模型凭据只配置在服务端。它不进入 Pages 静态发布目录，也不依赖本机开机。
 
 当前只保留 Oliver 选定的 Hawthorne 字体版本。参见应用目录的 README 获取启动和验证命令。
