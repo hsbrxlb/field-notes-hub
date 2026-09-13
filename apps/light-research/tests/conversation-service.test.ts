@@ -1,10 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { validateInputPayload } from "@/lib/conversation-service";
+import { validateInputPayload, respondToConversation } from "@/lib/conversation-service";
 import { createModeratorState } from "@/lib/moderator-state";
 import { getStudyConfig } from "@/lib/study-config";
 import type { StudyAnchor } from "@/lib/study-schema";
 
 describe("server-side study input validation", () => {
+  it("rejects skip even through direct service callers before touching storage", async () => {
+    await expect(respondToConversation({ entryToken: "synthetic-local-token", clientAttemptId: "00000000-0000-4000-8000-000000000001", stateRevision: 0, anchorId: "first-question", text: "skip", inputPayload: { type: "text" }, intent: "skip" })).rejects.toMatchObject({ code: "skip_disabled" });
+  });
   const study = getStudyConfig();
   const state = createModeratorState(study);
   const base = study.anchors[0];

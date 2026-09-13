@@ -1,0 +1,10 @@
+{
+  "page": "social-brand.html",
+  "sources": [
+    {"url": "https://www.oedro.com/ugc-gallery", "supports": "OEDRO 创作者内容图库"},
+    {"url": "https://www.roughcountry.com/gallery", "supports": "车主改装展示"},
+    {"url": "https://www.lasfit.com/pages/community-gallery", "supports": "用户内容图库"},
+    {"url": "https://help.x.com/en/using-x/x-polls", "supports": "X 投票媒体限制与匿名性"},
+    {"url": "https://support.threadless.com/article/165-how-are-the-submissions-chosen", "supports": "用户评分与最终选稿"}
+  ]
+}

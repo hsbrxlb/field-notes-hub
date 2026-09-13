@@ -142,22 +142,15 @@ function renderResearch(data) {
   document.title = `${r.title}｜${data.site.title}`;
   document.querySelector('meta[name="description"]').content = r.meta_description;
   document.querySelector('#content').innerHTML = `
-    ${pageHeading(r.title, r.description)}
+    ${pageHeading(r.title)}
     <section class="section research-entry">
-      <div class="research-launch-copy">
-        <h2>开始文字访谈</h2>
-        <p>在手机或电脑上逐题交流，可以跳过问题，也可以随时结束。</p>
-        <a class="research-open" href="https://oedro-light-research.onrender.com/" target="_blank" rel="noopener">打开 AI 访谈 ↗</a>
-        <p class="research-loading-note">首次打开可能需要稍等片刻。</p>
-      </div>
-      <a class="research-preview" href="https://oedro-light-research.onrender.com/" target="_blank" rel="noopener" aria-label="预览并打开 AI 访谈">
-        <img src="assets/light-research/hawthorne-preview.jpg" alt="Oedro Buddy 文字访谈界面" width="1440" height="900">
+      <a class="research-preview" href="https://oedro-light-research.onrender.com/" target="_blank" rel="noopener" aria-label="预览并打开 AI 调研问卷">
+        <img src="assets/light-research/hawthorne-preview.jpg?v=20260914" alt="OEDRO AI 调研问卷演示界面" width="1440" height="900">
       </a>
-    </section>
-    <section class="section research-notes" aria-label="调研使用说明">
-      <section id="research-prepare"><h2>调研准备</h2><ul>${r.prepare.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>
-      <section id="research-results"><h2>结果整理</h2><p>${escapeHtml(r.results)}</p><a class="text-link" href="user-voice.html">查看已确认的问题与反馈 →</a></section>
-      <section id="research-participation"><h2>参与说明</h2><p>${escapeHtml(r.participation)}</p></section>
+      <div class="research-launch-copy">
+        <p>工作灯调研演示：AI 根据回答继续追问。</p>
+        <a class="research-open" href="https://oedro-light-research.onrender.com/" target="_blank" rel="noopener">开始AI调研问卷 ↗</a>
+      </div>
     </section>`;
 }
 
@@ -276,7 +269,7 @@ function renderTopics(data, topics) {
 }
 
 const topicTitleMap = {
-  当前判断: '品牌声音', 'OEDRO怎么说': '表达原则', 不同渠道怎么变: '渠道语气',
+  当前判断: '品牌表达', 'OEDRO怎么说': '表达原则', 不同渠道怎么变: '各渠道的语气',
   明确不采用: '禁用表达', 当前验证状态: '验证状态'
 };
 
@@ -310,10 +303,6 @@ function visibleTopicSections(topic) {
   return ids ? topic.sections.filter((section) => ids.includes(section.id)) : topic.sections;
 }
 
-function renderTopicSources(sources) {
-  return sources.map((item) => `<li><a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.label)} ↗</a></li>`).join('');
-}
-
 function renderRelatedPages(pages = []) {
   if (!pages.length) return '';
   return `<section class="topic-content-section topic-related" id="topic-related" data-searchable>
@@ -335,9 +324,7 @@ async function renderTopic(data) {
     <div class="topic-layout">
       <article class="topic-body">${sections.map(topicSectionMarkup).join('')}
         ${renderRelatedPages(topic.related_pages)}
-        <details class="disclosure source-disclosure" open><summary>来源</summary><div class="disclosure-body"><ul class="source-list">${renderTopicSources(topic.sources)}</ul></div></details>
       </article>
-      <nav class="topic-toc" aria-label="页内导航"><strong>本页内容</strong>${sections.map((section, index) => `<a href="#topic-section-${index}">${escapeHtml(cleanTopicTitle(section.title))}</a>`).join('')}${topic.related_pages?.length ? '<a href="#topic-related">相关页面</a>' : ''}</nav>
     </div>`;
 }
 

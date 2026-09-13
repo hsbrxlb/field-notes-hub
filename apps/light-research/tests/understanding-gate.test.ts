@@ -47,7 +47,7 @@ describe.each(["anchor", "checkpoint_gap", "final_audit"] as const)("understandi
   it.each(["skip", "refusal", "stop"] as const)("still honors explicit %s", (intent) => {
     const state = stateFor(kind), result = apply(state, intent, intent);
     if (intent === "stop") expect(result.serverAction).toBe("stop");
-    else expect(result.state.activeMove).not.toEqual(state.activeMove);
+    else { expect(result.state.activeMove).toEqual(state.activeMove); expect(result.serverAction).toBe("repair_conversation"); }
   });
   it("does not trust claimed coverage or invented facts for meaningless input", () => {
     const state = stateFor(kind), result = apply(state, "gibberish", "123123123", {

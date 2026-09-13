@@ -49,11 +49,11 @@ for (const study of studies) describe(`public question safety: ${study.study.id}
     expect(result.state.totalProbeCount).toBe(1);
     expect(result.acceptedUpdates).toHaveLength(0);
   });
-  it("honors skipping even when a model proposes a private question", () => {
+  it("blocks skipping and unsafe model questions together", () => {
     const previous = createModeratorState(study), anchor = study.anchors[0];
     const a: ModeratorAssessment = { participantIntent: "skip", understoodFacts: [], topicCoverage: { anchorId: anchor.id, status: "missing", coveredFieldIds: [], evidenceTurnIds: [], note: "Skipped" }, unresolvedPoints: [], contradictions: [], replyLanguage: "en", replyLanguageConfidence: "high", nextAction: "probe_now", actionReason: "Synthetic", candidateReply: examples[0][1], provider: "mock", model: "fixture", promptVersion: study.model.promptVersion };
     const r = applyAssessment({ study, previous, assessment: a, turnId: "skip", turnIndex: 1, rawText: "Skip this", recentPrompts: [] });
-    expect(r.serverAction).toBe("skip"); expect(r.state.activeAnchorId).not.toBe(anchor.id);
+    expect(r.serverAction).toBe("repair_conversation"); expect(r.state.activeAnchorId).toBe(anchor.id);
     expect(r.state.pendingGaps.filter(g => g.anchorId === anchor.id).every(g => g.status === "unresolved")).toBe(true);
     expect(isAnchorCovered(study, r.state, anchor.id)).toBe(false);
   });

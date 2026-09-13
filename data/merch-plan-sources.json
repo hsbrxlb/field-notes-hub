@@ -1,0 +1,12 @@
+{
+  "page": "merch-plan.html",
+  "sources": [
+    {"url":"https://www.roughcountry.com/lifestyle","supports":"品牌周边"},
+    {"url":"https://www.roughcountry.com/gallery","supports":"车主改装展示"},
+    {"url":"https://www.lasfit.com/pages/community-gallery","supports":"车型与产品连接"},
+    {"url":"https://www.weathertech.com/home/merchandise/","supports":"周边产品"},
+    {"url":"https://www.oedro.com/article/shipping-delivery-policy.html?aid=91","supports":"配送网络"},
+    {"url":"https://support.threadless.com/article/165-how-are-the-submissions-chosen","supports":"投稿选择机制"},
+    {"url":"https://help.x.com/en/using-x/x-polls","supports":"投票限制"}
+  ]
+}

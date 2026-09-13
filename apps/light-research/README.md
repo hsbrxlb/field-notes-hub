@@ -1,6 +1,6 @@
-# Light Research
+# OEDRO AI Research for Drivers
 
-Oedro Buddy runs a conversational lighting study with natural model-generated replies, source-linked evidence and saved-answer retry. Uninterpretable answers stay on the current question until understood; participants can explicitly skip, stop, or ask to return later.
+Oedro Buddy runs a conversational lighting study with natural model-generated replies, source-linked evidence and saved-answer retry. Questions cannot be skipped: both the API and moderator enforce this, including typed skip requests. Participants can stop at any time; the stopped screen retains export and deletion controls. The header uses the official OEDRO logo. Background motion is disabled rather than keeping an Options menu.
 
 This directory contains the complete Next.js application. GitHub Pages publishes the Hub's entry page and screenshot only; it cannot execute these route handlers. The Hub entry opens `https://oedro-light-research.onrender.com/`, hosted on Render Free in Singapore with Neon Free PostgreSQL. It does not depend on a local Mac.
 
@@ -45,4 +45,8 @@ Render service: `srv-dahsmf142hec73abns4g`. Neon project: `little-wind-27223557`
 
 ## Reading and input
 
-The selected display face remains throughout the page. User answers use 25px on desktop and 22px on mobile. Choice controls use open rows with visible selected states. The answer field grows with content up to a viewport-aware limit, then scrolls internally. Small visual viewports retain 44px send, skip, and stop controls.
+The selected display face remains throughout the page. User answers use 25px on desktop and 22px on mobile. Choice controls use open rows with visible selected states. The answer field grows with content up to a viewport-aware limit, then scrolls internally. Small visual viewports retain 44px send and stop controls.
+
+`public/oedro-logo.png` is the unmodified transparent 320×96 logo verified against the OEDRO homepage, copied from the Hub's `assets/brand/oedro-logo-official.png`. Its source is recorded with the shared brand asset. This is not an AI-redrawn mark.
+
+2026-09-14 local verification: typecheck, lint, webpack production build, and 243 deterministic tests passed; 40 database/provider opt-in tests were not run. Mocked-browser send and stop passed at 1440×900 and 390×844 with no horizontal overflow. Forged model actions, legacy API skip requests, and typed skip/refusal cannot bypass the unanswered-question gate. These checks created no production interview and do not establish real-provider or cloud deployment acceptance for this revision.

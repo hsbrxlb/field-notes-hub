@@ -10,7 +10,7 @@ export const turnRequestSchema = z.object({
   clientAttemptId: z.string().uuid(),
   stateRevision: z.number().int().min(0),
   anchorId: z.string().min(2).max(64),
-  intent: z.enum(["answer", "skip"]).default("answer"),
+  intent: z.literal("answer").default("answer"),
   text: z.string().min(1).max(6000).refine((value) => value.trim().length > 0, "An answer cannot be blank."),
   inputPayload: z.object({
     type: z.enum(["text", "single_choice", "multiple_choice", "scale"]),

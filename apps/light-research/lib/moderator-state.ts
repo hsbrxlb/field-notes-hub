@@ -281,6 +281,7 @@ const planAssessment = ({
   structuredFieldIds?: string[];
   forceAdvance?: boolean;
 }): AppliedTurn => {
+  if (!["advance", "probe_now", "immediate_clarify", "defer_gap", "repair_conversation", "soft_redirect", "complete"].includes(assessment.nextAction)) throw new Error("Invalid moderator action");
   if (!previous.activeAnchorId || !previous.activeMove) throw new Error("session is already complete");
   const state = structuredClone(previous);
   const anchor = study.anchors.find((item) => item.id === previous.activeAnchorId);
@@ -374,6 +375,14 @@ const planAssessment = ({
     return { state, serverAction: "stop", prompt: null, displayedReply: localizedStop(state.activeLanguage), acceptedUpdates, rejectedUpdates, actionReason: assessment.actionReason };
   }
 
+  // Skipping is disabled in this study, including typed requests and legacy
+  // callers. Refusing an answer leaves the question open without inventing facts.
+  // Participants may still explicitly stop at any time.
+  if (forceAdvance || assessment.participantIntent === "skip" || assessment.participantIntent === "refusal") {
+    state.activePrompt = previous.activePrompt;
+    return { state, serverAction: "repair_conversation", prompt: state.activePrompt, displayedReply: null, acceptedUpdates, rejectedUpdates, actionReason: "Skipping is disabled. Keep this question open; explain that the participant may answer it or stop the interview, without pressure." };
+  }
+
   const currentMove = previous.activeMove;
   const factsCoverAnchor = isAnchorCovered(study, state, anchor.id);
   const modelCoversAnchor = assessment.topicCoverage.anchorId === anchor.id && assessment.topicCoverage.status === "covered";
@@ -381,7 +390,6 @@ const planAssessment = ({
   const gapCovered = activeGap?.fieldId
     ? hasFact(state, activeGap.fieldId) && !currentContradictionFields.has(activeGap.fieldId)
     : factsCoverAnchor;
-  const explicitExit = forceAdvance || assessment.participantIntent === "skip" || assessment.participantIntent === "refusal";
   const cannotInterpret = unsafeGapIntents.has(assessment.participantIntent);
   const needsExplanation = assessment.participantIntent === "asks_clarification";
   const unresolvedRepair = (assessment.participantIntent === "already_answered" || assessment.participantIntent === "frustration") && !(currentMove.kind === "anchor" ? factsCoverAnchor || modelCoversAnchor : gapCovered);
@@ -396,7 +404,7 @@ const planAssessment = ({
   const lacksUsableAnswer = !(currentMove.kind === "anchor" ? factsCoverAnchor : gapCovered)
     && !normalizeLaterAnswerability
     && (assessment.topicCoverage.status === "missing" || (!canAskFocusedProbe && (currentMove.kind !== "anchor" || !modelCoversAnchor)));
-  if (!explicitExit && (cannotInterpret || needsExplanation || unresolvedRepair || lacksUsableAnswer)) {
+  if (cannotInterpret || needsExplanation || unresolvedRepair || lacksUsableAnswer) {
     const serverAction = cannotInterpret ? "soft_redirect" : unresolvedRepair ? "repair_conversation" : "immediate_clarify";
     state.repairCount += 1;
     if (activeGap) { activeGap.status = "asked"; delete activeGap.resolvedTurnId; }
@@ -405,7 +413,7 @@ const planAssessment = ({
   }
   if (currentMove.kind !== "anchor") {
     if (activeGap) {
-      const deferUntilEnd = currentMove.kind === "checkpoint_gap" && !explicitExit && normalizeLaterAnswerability && activeGap.attempts < 2;
+      const deferUntilEnd = currentMove.kind === "checkpoint_gap" && normalizeLaterAnswerability && activeGap.attempts < 2;
       activeGap.status = gapCovered ? "resolved" : deferUntilEnd ? "pending" : "unresolved";
       if (deferUntilEnd) activeGap.notBeforeStage = "final_audit";
       else activeGap.resolvedTurnId = turnId;
@@ -431,11 +439,9 @@ const planAssessment = ({
   }
 
   let serverAction: ServerAction;
-  if (forceAdvance) serverAction = "skip";
-  else if (assessment.participantIntent === "prompt_attack" || assessment.participantIntent === "off_topic" || assessment.participantIntent === "gibberish") serverAction = "soft_redirect";
+  if (assessment.participantIntent === "prompt_attack" || assessment.participantIntent === "off_topic" || assessment.participantIntent === "gibberish") serverAction = "soft_redirect";
   else if (assessment.participantIntent === "asks_clarification") serverAction = "immediate_clarify";
   else if (assessment.participantIntent === "already_answered" || assessment.participantIntent === "frustration") serverAction = "repair_conversation";
-  else if (assessment.participantIntent === "refusal" || assessment.participantIntent === "skip") serverAction = "skip";
   else serverAction = assessment.nextAction;
 
   const probeBudgetAvailable = (state.probeCounts[anchor.id] ?? 0) < anchor.maxImmediateProbes && state.totalProbeCount < study.moderation.maxTotalProbes;
@@ -472,29 +478,7 @@ const planAssessment = ({
 
   state.completedAnchors = unique([...state.completedAnchors, anchor.id]);
   state.anchorsSinceCheckpoint += 1;
-  if (serverAction === "skip") for (const gap of state.pendingGaps) {
-    if (gap.anchorId === anchor.id && (gap.status === "pending" || gap.status === "asked")) { gap.status = "unresolved"; gap.answerability = 0; }
-  }
-  if (serverAction === "skip" && !factsCoverAnchor) {
-    state.riskFlags = unique([...state.riskFlags, `participant_skipped:${anchor.id}`]);
-    if (study.completion.requiredAnchors.includes(anchor.id)) {
-      const skippedField = anchor.requiredFields.find((fieldId) => !hasFact(state, fieldId)) ?? null;
-      mergePendingGaps(state, [{
-        anchorId: anchor.id,
-        fieldId: skippedField,
-        question: anchor.clarification,
-        reason: "The participant skipped a topic required for the research decision.",
-        priority: "critical",
-        uncertainty: 1,
-        answerability: 0,
-        evidenceTurnIds: [turnId],
-      }], turnId, turnIndex);
-      for (const gap of state.pendingGaps) {
-        if (gap.anchorId === anchor.id && gap.fieldId === skippedField && gap.status === "pending") gap.status = "unresolved";
-      }
-    }
-  }
-  if (serverAction !== "skip" && !factsCoverAnchor) for (const missingField of anchor.requiredFields.filter((field) => !hasFact(state, field))) {
+  if (!factsCoverAnchor) for (const missingField of anchor.requiredFields.filter((field) => !hasFact(state, field))) {
     mergePendingGaps(state, [{
       anchorId: anchor.id,
       fieldId: missingField,

@@ -3,7 +3,7 @@
   "study": {
     "id": "worklight-regression",
     "version": "fixture-3.5-natural-buddy",
-    "title": "OEDRO Light Research",
+    "title": "OEDRO AI Research for Drivers",
     "status": "review_ready",
     "readiness": "technical_prototype",
     "sampleKind": "synthetic",
@@ -30,7 +30,7 @@
   "brand": {
     "name": "OEDRO",
     "shortLabel": "OEDRO",
-    "tagline": "Light Research",
+    "tagline": "AI Research for Drivers",
     "accent": "#FF6518",
     "surface": "immersive",
     "backgroundImage": "/study-assets/cast-light.png"
@@ -422,9 +422,9 @@
       "input": {
         "type": "text",
         "placeholder": {
-          "en": "You may skip if nothing comes to mind…",
-          "zh-CN": "想不到可以跳过…",
-          "es": "Puedes omitirla si no se te ocurre nada…"
+          "en": "Describe what comes to mind…",
+          "zh-CN": "说说你想到的情况…",
+          "es": "Describe lo que se te ocurra…"
         }
       },
       "followUpQuestions": {

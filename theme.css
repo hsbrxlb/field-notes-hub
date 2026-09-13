@@ -82,19 +82,10 @@ body::after { background: rgba(2, 4, 2, .22); }
   body::after { background: rgba(2, 4, 2, .34); }
 }
 
-.research-entry { display: grid; grid-template-columns: minmax(240px, 1fr) minmax(0, 1fr); gap: 32px; align-items: center; }
-.research-launch-copy h2 { font-size: 24px; margin-bottom: 16px; }
+.research-entry { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
 .research-entry .research-preview { display: block; }
 .research-entry .research-preview img { display: block; width: 100%; height: auto; }
 .research-open { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 18px; background: var(--accent); color: var(--nav-active-text); font-size: 16px; font-weight: 700; }
-.research-loading-note { margin: 12px 0 0; color: var(--text-muted); font-size: 13px; }
-.research-notes { border-top: 1px solid var(--border); }
-.research-notes > section { padding: 24px 0; max-width: 760px; }
-.research-notes > section + section { border-top: 1px solid var(--border); }
-.research-notes h2, .feedback-method h2 { font-size: 22px; margin-bottom: 16px; }
+.feedback-method h2 { font-size: 22px; margin-bottom: 16px; }
 .feedback-method { max-width: 760px; scroll-margin-top: 72px; }
 .feedback-method li { margin-bottom: 8px; }
-@media (max-width: 720px) {
-  .research-entry { grid-template-columns: 1fr; gap: 24px; }
-  .research-launch-copy h2 { font-size: 22px; }
-}

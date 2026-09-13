@@ -12,7 +12,7 @@
 
 - `index.html`：当前重点、最近成果、工作入口和运营专题
 - `work.html`：项目状态、待办、阻塞和下一动作
-- `research.html`：统一的“AI智能用户调研”，首屏打开云端 Light Research 文字访谈，附简短的调研准备、结果整理与参与说明。`light-research.html` 保留为同内容兼容入口；独立应用源码位于 `apps/light-research`，本次调整不修改应用。
+- `research.html`：统一的“AI智能用户调研”，完整界面预览与“开始AI调研问卷”入口。`light-research.html` 保留为同内容兼容入口；独立应用源码位于 `apps/light-research`。
 - `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
 - `content-studio.html`：已经形成的内容、研究、方案和工作成果
 - `social-brand.html`：社媒品牌升级讨论方案，保留成交内容并新增车主关系内容；平台分工、四周试验与待决事项。

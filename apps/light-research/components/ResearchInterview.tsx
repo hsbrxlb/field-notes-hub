@@ -38,15 +38,15 @@ class SessionRestoreError extends Error {
 }
 
 const UI_COPY: Record<string, Record<string, string>> = {
-  en: { preparing: "Preparing the study…", before: "Before you start", back: "Back", progress: "Progress", format: "Format", textInterview: "Text interview", language: "Language", version: "Study version", privacy: "You may skip a question or stop. Do not enter contact details.", researchAi: "Oedro Buddy", you: "You", reviewing: "Reviewing your answer…", answer: "Your answer", context: "Add context (optional)", anyLanguage: "Write in any language…", send: "Send answer", skip: "Skip question", stop: "Stop and leave", stoppedTitle: "The interview has stopped", stoppedText: "Your existing answers remain stored under the study retention policy. No new questions will be asked.", complete: "Interview complete", thanks: "Thank you", reference: "Reference code", download: "Download my record", clear: "Clear local session" },
-  es: { preparing: "Preparando el estudio…", before: "Antes de comenzar", back: "Volver", progress: "Progreso", format: "Formato", textInterview: "Entrevista por texto", language: "Idioma", version: "Versión del estudio", privacy: "Puedes omitir una pregunta o detenerte. No introduzcas datos de contacto.", researchAi: "Oedro Buddy", you: "Tú", reviewing: "Revisando tu respuesta…", answer: "Tu respuesta", context: "Añadir contexto (opcional)", anyLanguage: "Escribe en cualquier idioma…", send: "Enviar respuesta", skip: "Omitir pregunta", stop: "Detener y salir", stoppedTitle: "La entrevista se detuvo", stoppedText: "Tus respuestas existentes siguen guardadas según la política de conservación. No se harán más preguntas.", complete: "Entrevista completada", thanks: "Gracias", reference: "Código de referencia", download: "Descargar mi registro", clear: "Borrar sesión local" },
-  "zh-CN": { preparing: "正在准备问卷…", before: "开始之前", back: "返回", progress: "进度", format: "形式", textInterview: "文字访谈", language: "语言", version: "问卷版本", privacy: "你可以跳过问题或停止。请不要填写联系方式。", researchAi: "Oedro Buddy", you: "你", reviewing: "正在理解你的回答…", answer: "你的回答", context: "补充说明（可选）", anyLanguage: "可以使用任何语言回答…", send: "发送回答", skip: "跳过这题", stop: "停止并离开", stoppedTitle: "访谈已经停止", stoppedText: "已有回答会按当前数据保留规则保存，系统不会继续提问。", complete: "访谈完成", thanks: "谢谢", reference: "参与编号", download: "下载我的记录", clear: "清除本地会话" }
+  en: { preparing: "Preparing the study…", before: "Before you start", back: "Back", progress: "Progress", format: "Format", textInterview: "Text interview", language: "Language", version: "Study version", researchAi: "Oedro Buddy", you: "You", reviewing: "Reviewing your answer…", answer: "Your answer", context: "Add context (optional)", anyLanguage: "Write in any language…", send: "Send answer", stop: "Stop and leave", stoppedTitle: "The interview has stopped", stoppedText: "Your existing answers remain stored under the study retention policy. No new questions will be asked.", complete: "Interview complete", thanks: "Thank you", reference: "Reference code", download: "Download my record", clear: "Clear local session" },
+  es: { preparing: "Preparando el estudio…", before: "Antes de comenzar", back: "Volver", progress: "Progreso", format: "Formato", textInterview: "Entrevista por texto", language: "Idioma", version: "Versión del estudio", researchAi: "Oedro Buddy", you: "Tú", reviewing: "Revisando tu respuesta…", answer: "Tu respuesta", context: "Añadir contexto (opcional)", anyLanguage: "Escribe en cualquier idioma…", send: "Enviar respuesta", stop: "Detener y salir", stoppedTitle: "La entrevista se detuvo", stoppedText: "Tus respuestas existentes siguen guardadas según la política de conservación. No se harán más preguntas.", complete: "Entrevista completada", thanks: "Gracias", reference: "Código de referencia", download: "Descargar mi registro", clear: "Borrar sesión local" },
+  "zh-CN": { preparing: "正在准备问卷…", before: "开始之前", back: "返回", progress: "进度", format: "形式", textInterview: "文字访谈", language: "语言", version: "问卷版本", researchAi: "Oedro Buddy", you: "你", reviewing: "正在理解你的回答…", answer: "你的回答", context: "补充说明（可选）", anyLanguage: "可以使用任何语言回答…", send: "发送回答", stop: "停止并离开", stoppedTitle: "访谈已经停止", stoppedText: "已有回答会按当前数据保留规则保存，系统不会继续提问。", complete: "访谈完成", thanks: "谢谢", reference: "参与编号", download: "下载我的记录", clear: "清除本地会话" }
 };
 
 const RECOVERY_COPY: Record<string, Record<string, string>> = {
-  en: { saved: "Your answer is saved. The next question could not be prepared.", uncertain: "We couldn’t confirm the next question. Your answer is kept here for another try.", exhausted: "Your answer is saved, but we still can’t continue this question. You can skip it or stop.", retry: "Try again", conversation: "Research conversation", composer: "Answer the current question" },
-  es: { saved: "Tu respuesta está guardada. No se pudo preparar la siguiente pregunta.", uncertain: "No pudimos confirmar la siguiente pregunta. Tu respuesta sigue aquí para volver a intentarlo.", exhausted: "Tu respuesta está guardada, pero no podemos continuar con esta pregunta. Puedes omitirla o detenerte.", retry: "Reintentar", conversation: "Conversación de investigación", composer: "Responde a la pregunta actual" },
-  "zh-CN": { saved: "你的回答已保存，暂时未能生成下一题。", uncertain: "暂时无法确认下一题，你的回答还保留在这里，可以重试。", exhausted: "你的回答已保存，但这题暂时无法继续。你可以跳过这题或停止访谈。", retry: "重试", conversation: "调研对话", composer: "回答当前问题" },
+  en: { saved: "Your answer is saved. The next question could not be prepared.", uncertain: "We couldn’t confirm the next question. Your answer is kept here for another try.", exhausted: "Your answer is saved, but we still can’t continue this question. Please stop the interview.", retry: "Try again", conversation: "Research conversation", composer: "Answer the current question" },
+  es: { saved: "Tu respuesta está guardada. No se pudo preparar la siguiente pregunta.", uncertain: "No pudimos confirmar la siguiente pregunta. Tu respuesta sigue aquí para volver a intentarlo.", exhausted: "Tu respuesta está guardada, pero no podemos continuar con esta pregunta. Puedes detener la entrevista.", retry: "Reintentar", conversation: "Conversación de investigación", composer: "Responde a la pregunta actual" },
+  "zh-CN": { saved: "你的回答已保存，暂时未能生成下一题。", uncertain: "暂时无法确认下一题，你的回答还保留在这里，可以重试。", exhausted: "你的回答已保存，但这题暂时无法继续。请停止访谈。", retry: "重试", conversation: "调研对话", composer: "回答当前问题" },
 };
 
 const DATA_COPY: Record<string, Record<string, string>> = {
@@ -93,11 +93,6 @@ const pickExactLocale = (values: Record<string, string>, locale: string) => {
   return (key && values[key]) || "";
 };
 
-const languageName = (locale: string) => {
-  try { return new Intl.DisplayNames([locale], { type: "language" }).of(locale) || locale; }
-  catch { return locale; }
-};
-
 export function ResearchInterview({ study, requireConsent = false }: { study: PublicStudyConfig; requireConsent?: boolean }) {
   const baseLocale = study.study.languagePolicy.entryLanguage;
   const sessionKey = `research-session:${study.study.id}:${study.study.version}`;
@@ -124,7 +119,6 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
   const [freshMessageId, setFreshMessageId] = useState<string | null>(null);
   const [showLatest, setShowLatest] = useState(false);
   const [historyOpen, setHistoryOpen] = useState(false);
-  const [motionPaused, setMotionPaused] = useState(false);
   const exportingRef = useRef(false);
   const shellRef = useRef<HTMLElement>(null);
   const transcriptRef = useRef<HTMLDivElement>(null);
@@ -328,13 +322,13 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
     return new Map(activeInput.options.map((option) => [option.id, pickLocale(option.labels, activeLocale, baseLocale)]));
   }, [activeInput, activeLocale, baseLocale]);
 
-  const submit = async (intent: "answer" | "skip" = "answer") => {
+  const submit = async () => {
     if (!session || !conversation?.anchorId || !activeInput || busy || stopping || stoppedRef.current || submittingRef.current) return;
     const selectedLabels = selected.map((value) => optionLabels.get(value) || value);
-    const text = intent === "skip" ? ui.skip : [...selectedLabels, freeText].filter((value) => value.length > 0).join(" — ");
-    const request: PendingAnswer = intent === "answer" && retryAnswer ? retryAnswer : {
+    const text = [...selectedLabels, freeText].filter((value) => value.length > 0).join(" — ");
+    const request: PendingAnswer = retryAnswer ? retryAnswer : {
       clientAttemptId: crypto.randomUUID(), stateRevision: conversation.stateRevision, anchorId: conversation.anchorId,
-      intent, text, inputPayload: { type: activeInput.type, selectedValues: selected, freeText: freeText || undefined },
+      intent: "answer", text, inputPayload: { type: activeInput.type, selectedValues: selected, freeText: freeText || undefined },
     };
     if (!request.text.trim()) return;
     submittingRef.current = true;
@@ -344,7 +338,7 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
     setError("");
     setPendingAnswer(request);
     try { sessionStorage.setItem(pendingKey, JSON.stringify(request)); } catch { setStorageNotice("draft"); }
-    if (!retryAnswer || intent === "skip") {
+    if (!retryAnswer) {
       const optimistic: VisibleMessage = { id: `local-${request.clientAttemptId}`, role: "user", text: request.text };
       setConversation((current) => current ? { ...current, messages: [...current.messages, optimistic] } : current);
     }
@@ -568,19 +562,9 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
     ? { pauseMotion: "Pausar movimiento", resumeMotion: "Activar movimiento", history: "Ver esta conversación", session: "Opciones", topic: "Progreso", latest: "Volver a la pregunta", shortcut: "⌘ / Ctrl + Enter para enviar" }
     : { pauseMotion: "Pause background motion", resumeMotion: "Resume background motion", history: "Review this conversation", session: "Options", topic: "Interview progress", latest: "Back to current question", shortcut: "⌘ / Ctrl + Enter to send" };
   return (
-    <main ref={shellRef} lang={activeLocale} className={`appShell lightResearchShell${completed ? ` isComplete${historyOpen ? " showHistory" : ""}` : ""}${conversation?.messages.length === 1 ? " isOpening" : ""}${motionPaused ? " motionPaused" : ""}`}>
+    <main ref={shellRef} lang={activeLocale} className={`appShell lightResearchShell motionPaused${completed ? ` isComplete${historyOpen ? " showHistory" : ""}` : ""}${conversation?.messages.length === 1 ? " isOpening" : ""}`}>
       <header className="appHeader">
-        <div className="identity"><span className="brandMark">{study.brand.shortLabel}</span><h1>{study.brand.tagline || study.study.title}</h1></div>
-        <details className="sessionTools">
-          <summary>{visualUi.session}</summary>
-          <div className="sessionPopover">
-            <p>{ui.privacy}</p>
-            <button className="textButton motionControl" type="button" aria-pressed={motionPaused} onClick={() => setMotionPaused(!motionPaused)}>{motionPaused ? visualUi.resumeMotion : visualUi.pauseMotion}</button>
-            <dl><div><dt>{ui.language}</dt><dd>{languageName(activeLocale)}</dd></div><div><dt>{ui.version}</dt><dd>{study.study.version}</dd></div></dl>
-            <button className="textButton" type="button" onClick={clearLocalSession}>{ui.clear}</button>
-            {!completed && dataControls}
-          </div>
-        </details>
+        <div className="identity"><Image className="officialLogo" src="/oedro-logo.png" alt="OEDRO" width={160} height={48} unoptimized /><h1>AI Research for Drivers</h1></div>
       </header>
       <aside className="studyRail" aria-label={`${visualUi.topic} ${conversation?.progress.current ?? 1} / ${conversation?.progress.total ?? study.anchors.length}`}>
         <div className="topicPosition"><span>{visualUi.topic}</span><strong>{String(conversation?.progress.current ?? 1).padStart(2, "0")}</strong><span className="topicTotal">/ {String(conversation?.progress.total ?? study.anchors.length).padStart(2, "0")}</span></div>
@@ -609,8 +593,7 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
           {(activeInput.type === "text" || (activeInput.type !== "scale" && activeInput.allowOther)) && <label className="textInput"><span>{activeInput.type === "text" ? ui.answer : ui.context}</span><textarea ref={answerRef} value={answerText} readOnly={busy || !!retryAnswer} aria-describedby={currentQuestionIndex !== -1 ? "current-question" : undefined} maxLength={3000} rows={1} placeholder={activeInput.type === "text" && activeInput.placeholder ? pickExactLocale(activeInput.placeholder, activeLocale) || ui.anyLanguage : ui.anyLanguage} onChange={(event) => updateDraft(event.target.value, selected)} onKeyDown={(event) => { if ((event.metaKey || event.ctrlKey) && event.key === "Enter" && !event.nativeEvent.isComposing) { event.preventDefault(); void submit(); } }} /></label>}
           {error && !retryAnswer && <p className="errorMessage" role="alert">{error}</p>}
           </div>
-          <div className="composerActions"><div><button className="textButton" type="button" disabled={busy || stopping} onClick={() => void submit("skip")}>{ui.skip}</button><button className="textButton" type="button" disabled={stopping} onClick={stop}>{ui.stop}</button></div><button className="primaryButton" aria-label={busy ? ui.reviewing : retryAnswer || conversation.retryExhausted ? recoveryUi.retry : ui.send} type="button" disabled={busy || stopping || conversation.retryExhausted || (!retryAnswer && !freeText.trim() && !selected.length)} onClick={() => void submit()}>{busy ? ui.reviewing : retryAnswer || conversation.retryExhausted ? recoveryUi.retry : ui.send}</button></div>
-          <div className="composerFootnote"><span>{ui.privacy}</span><span className="keyboardHint">{visualUi.shortcut}</span></div>
+          <div className="composerActions"><div><button className="textButton" type="button" disabled={stopping} onClick={stop}>{ui.stop}</button></div><button className="primaryButton" aria-label={busy ? ui.reviewing : retryAnswer || conversation.retryExhausted ? recoveryUi.retry : ui.send} type="button" disabled={busy || stopping || conversation.retryExhausted || (!retryAnswer && !freeText.trim() && !selected.length)} onClick={() => void submit()}>{busy ? ui.reviewing : retryAnswer || conversation.retryExhausted ? recoveryUi.retry : ui.send}</button></div>
         </section>}
         {completed && conversation?.completion && <section className="completionPanel"><p className="eyebrow">{study.study.sampleKind === "synthetic" ? dataUi.synthetic : ui.complete}</p><h2>{ui.thanks}</h2><p>{conversation.completion.message}</p><p className="participationCode">{ui.reference} <strong>{conversation.completion.participationCode}</strong></p><button className="primaryButton" type="button" disabled={exporting} onClick={exportRecord}>{exporting ? localUi.exporting : ui.download}</button>{storageFeedback}{dataControls}<button className="textButton" aria-expanded={historyOpen} onClick={() => setHistoryOpen(!historyOpen)}>{visualUi.history}</button>{error && <p className="errorMessage" role="alert">{error}</p>}</section>}
       </section>

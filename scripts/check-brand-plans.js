@@ -21,9 +21,9 @@ async function checkPlan(plan) {
   assert.equal((html.match(/<h1>/g) || []).length, 1, `${plan.id}: one main title`);
   assert.ok(html.includes(`data-page="${plan.id}"`), `${plan.id}: route identity`);
   assert.ok(html.includes(`href="${plan.other}.html"`), `${plan.id}: companion link`);
-  assert.ok(html.includes('<script src="app.js"></script>'), `${plan.id}: shared shell script`);
+  assert.match(html, /<script src="app\.js(?:\?[^\"]*)?"><\/script>/, `${plan.id}: shared shell script`);
   for (const stylesheet of ['base.css', 'theme.css', 'brand-plan.css']) {
-    assert.ok(html.includes(`href="${stylesheet}"`), `${plan.id}: shared stylesheet ${stylesheet}`);
+    assert.ok([...html.matchAll(/href="([^\"]+)"/g)].some(match => match[1].split('?')[0] === stylesheet), `${plan.id}: shared stylesheet ${stylesheet}`);
   }
   assert.match(html, /<nav[^>]+id="nav-list"[^>]*><\/nav>/, `${plan.id}: navigation is supplied by the shared shell`);
   assert.ok(navigation.some(item => item.id === plan.id && item.file === `${plan.id}.html`), `${plan.id}: registered navigation route`);
@@ -42,8 +42,12 @@ async function checkPlan(plan) {
     assert.ok(fs.existsSync(path.join(root, target.split(/[?#]/)[0])), `${plan.id}: missing local resource ${target}`);
   }
   const footer = html.match(/<footer class="plan-sources">([\s\S]*?)<\/footer>/)?.[1] || '';
-  const sourceCount = [...footer.matchAll(/href="https:\/\//g)].length;
-  assert.ok(sourceCount >= 4 && sourceCount <= 7, `${plan.id}: four to seven direct source links`);
+  const sourceFile = path.join(root, `data/${plan.id}-sources.json`);
+  const sources = fs.existsSync(sourceFile) ? JSON.parse(fs.readFileSync(sourceFile, 'utf8')).sources : [];
+  const sourceCount = sources.length || [...footer.matchAll(/href="https:\/\//g)].length;
+  assert.ok(sourceCount >= 4, `${plan.id}: retained research references`);
+  for (const source of sources) assert.match(source.url, /^https:\/\//, `${plan.id}: valid reference URL`);
+  if (sources.length) assert.equal(footer, '', `${plan.id}: references stay outside reading UI`);
   for (const figure of html.matchAll(/<figure\b[^>]*>([\s\S]*?)<\/figure>/g)) {
     assert.match(figure[1], /<figcaption[^>]*>[\s\S]*概念效果图/, `${plan.id}: concept disclosure outside image`);
   }

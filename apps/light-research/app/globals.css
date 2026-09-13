@@ -298,6 +298,12 @@ body { background: #f1eee7 url("/study-assets/cast-light.png") center / cover fi
 }
 .appHeader { column-gap: 20px; }
 .identity { min-width: 0; }
+.officialLogo { width: 160px; height: auto; object-fit: contain; flex-shrink: 0; }
+@media (max-width: 600px) {
+  .identity { flex-wrap: wrap; gap: 8px 16px; }
+  .officialLogo { width: 116px; }
+  .appHeader h1 { font-size: 18px; }
+}
 @media (max-width: 760px) {
   .typefaceSurface[data-typeface] .identity { display: grid; gap: 2px; }
   .typefaceSurface[data-typeface] .brandMark { font-size: 16px; }

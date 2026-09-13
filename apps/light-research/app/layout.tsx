@@ -6,7 +6,7 @@ import "./globals.css";
 export const generateMetadata = (): Metadata => {
   const study = getStudyConfig();
   return {
-    title: study.study.title,
+    title: "OEDRO · AI Research for Drivers",
     description: `A short, interactive survey from ${study.brand.name}.`,
   };
 };

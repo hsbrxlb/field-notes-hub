@@ -211,6 +211,7 @@ export const respondToConversation = async ({
   inputPayload: { type: string; selectedValues?: string[]; freeText?: string };
   intent?: "answer" | "skip";
 }) => {
+  if (intent === "skip") throw new ConversationError(400, "skip_disabled", "Please answer the current question or stop the interview.");
   const study = getStudyConfig();
   let session = await getSessionByToken(entryToken);
   if (!session) throw new ConversationError(404, "not_found", "Study session not found.");
@@ -223,7 +224,7 @@ export const respondToConversation = async ({
   if (session.status !== "active") return conversationView(entryToken);
   const anchor = getActiveAnchor(study, session.state);
   if (!anchor || anchor.id !== anchorId) throw new ConversationError(409, "anchor_conflict", "The interview moved to another question.");
-  if (intent !== "skip") validateInputPayload(anchor, session.state, inputPayload);
+  validateInputPayload(anchor, session.state, inputPayload);
   const canonicalPrompt = anchor.question;
   const localizedPrompt = session.state.activePrompt || anchor.question;
   const reservation = await reserveTurn({
@@ -242,28 +243,14 @@ export const respondToConversation = async ({
   if (reservation.kind === "conflict") throw new ConversationError(409, "revision_conflict", "The interview changed in another tab.");
   if (reservation.kind === "in_progress") throw new ConversationError(409, "in_progress", "Your saved answer is still being processed.", true);
   if (reservation.kind === "attempt_conflict") throw new ConversationError(409, "attempt_conflict", "This attempt belongs to a different saved answer.", true);
-  if (reservation.kind === "retry_exhausted") throw new ConversationError(429, "retry_exhausted", "This answer is saved. The retry limit has been reached; please stop or skip this question.", true);
+  if (reservation.kind === "retry_exhausted") throw new ConversationError(429, "retry_exhausted", "This answer is saved. The retry limit has been reached; please stop the interview.", true);
   if (reservation.kind === "complete") return conversationView(entryToken);
   if (reservation.kind === "duplicate") return conversationView(entryToken);
   session = reservation.session;
   const priorTurns = (await listTurns(session.id)).map(toConversationTurn).filter((turn): turn is ConversationTurn => Boolean(turn));
   const providerDiagnostics: unknown[] = [];
   try {
-    const assessed: ModeratorAssessment = intent === "skip" ? {
-      participantIntent: "skip",
-      understoodFacts: [],
-      topicCoverage: { anchorId, status: "missing", coveredFieldIds: [], evidenceTurnIds: [reservation.turnId], note: "Participant skipped the question." },
-      unresolvedPoints: [],
-      contradictions: [],
-      replyLanguage: session.state.activeLanguage,
-      replyLanguageConfidence: "high",
-      nextAction: "defer_gap",
-      actionReason: "The participant explicitly skipped this question.",
-      candidateReply: study.anchors.find((item) => item.id !== anchor.id && !session.state.completedAnchors.includes(item.id))?.question || localized(study.completion.messages, session.state.activeLanguage),
-      provider: "system",
-      model: "deterministic-skip-v2",
-      promptVersion: study.model.promptVersion,
-    } : await evaluateTurn({
+    const assessed: ModeratorAssessment = await evaluateTurn({
       study,
       anchor,
       state: session.state,
@@ -273,7 +260,7 @@ export const respondToConversation = async ({
       transcript: priorTurns,
       onDiagnostic: (diagnostic) => providerDiagnostics.push(diagnostic),
     });
-    const direct = intent === "skip" ? [] : structuredUpdates(anchor, session.state, inputPayload, reservation.turnId);
+    const direct = structuredUpdates(anchor, session.state, inputPayload, reservation.turnId);
     const assessment = mergeAssessment(assessed, direct);
     const applied = applyAssessment({
       study,
@@ -284,7 +271,6 @@ export const respondToConversation = async ({
       rawText: text,
       recentPrompts: [...priorTurns.map((turn) => turn.localizedPrompt), localizedPrompt],
       structuredFieldIds: direct.map((item) => item.fieldId),
-      forceAdvance: intent === "skip",
     });
     await resolvePlannedReply({ study, anchor, state: session.state, turnId: reservation.turnId, rawText: text, inputPayload, transcript: priorTurns,
       onDiagnostic: (diagnostic) => providerDiagnostics.push({ ...diagnostic, phase: "selected_move_wording" }),

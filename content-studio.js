@@ -55,7 +55,6 @@
     content.innerHTML = `
       <header class="page-heading">
         <h1>${escapeHtml(resultsConfig.title)}</h1>
-        <p>${escapeHtml(resultsConfig.intro)}</p>
       </header>
       <section class="section results-surface" aria-labelledby="results-list-title">
         <div class="section-head">

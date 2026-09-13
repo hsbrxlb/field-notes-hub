@@ -21,14 +21,19 @@
       "file": "work.html"
     },
     {
+      "id": "discord-community",
+      "label": "Discord社群",
+      "file": "topic.html?slug=discord-community"
+    },
+    {
+      "id": "email-templates",
+      "label": "用户邮件模板",
+      "file": "email-templates.html"
+    },
+    {
       "id": "research",
       "label": "AI智能用户调研",
       "file": "research.html"
-    },
-    {
-      "id": "voice",
-      "label": "问题与反馈",
-      "file": "user-voice.html"
     },
     {
       "id": "social-brand",
@@ -46,14 +51,19 @@
       "file": "merch-plan.html"
     },
     {
-      "id": "flipbooks",
-      "label": "Flip Book Demo",
-      "file": "flipbooks.html"
+      "id": "seo-geo",
+      "label": "SEO与AI搜索",
+      "file": "topic.html?slug=seo-geo"
     },
     {
-      "id": "email-templates",
-      "label": "用户邮件模板",
-      "file": "email-templates.html"
+      "id": "voice",
+      "label": "问题与反馈",
+      "file": "user-voice.html"
+    },
+    {
+      "id": "brand-voice-system",
+      "label": "品牌与说话风格",
+      "file": "topic.html?slug=brand-voice-system"
     },
     {
       "id": "mascot",
@@ -67,19 +77,9 @@
       "parent": "mascot"
     },
     {
-      "id": "seo-geo",
-      "label": "SEO与AI搜索",
-      "file": "topic.html?slug=seo-geo"
-    },
-    {
-      "id": "discord-community",
-      "label": "Discord社群",
-      "file": "topic.html?slug=discord-community"
-    },
-    {
-      "id": "brand-voice-system",
-      "label": "品牌与说话风格",
-      "file": "topic.html?slug=brand-voice-system"
+      "id": "flipbooks",
+      "label": "Flip Book Demo",
+      "file": "flipbooks.html"
     },
     {
       "id": "playbook",

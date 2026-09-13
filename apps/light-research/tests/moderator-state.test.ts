@@ -40,6 +40,13 @@ const apply = (state: ReturnType<typeof createModeratorState>, assessment: Moder
 };
 
 describe("controlled-autonomy moderator policy", () => {
+  it("rejects a forged skip nextAction even with answer intent and covered facts", () => {
+    const state = createModeratorState(getStudyConfig());
+    const before = structuredClone(state);
+    const invalid = makeAssessment({ nextAction: "skip" as ModeratorAssessment["nextAction"] });
+    expect(() => apply(state, invalid)).toThrow("Invalid moderator action");
+    expect(state).toEqual(before);
+  });
   it("keeps clarification and redirection on the current topic past repair limits", () => {
     const study = getStudyConfig();
     for (const participantIntent of ["asks_clarification", "off_topic"] as const) {
@@ -560,7 +567,7 @@ describe("controlled-autonomy moderator policy", () => {
     expect(result.state.activeMove).toEqual(state.activeMove);
   });
 
-  it("marks an all-skipped required interview as completed with evidence gaps", () => {
+  it("never completes an interview through repeated legacy skip requests", () => {
     const study = getStudyConfig();
     let state = createModeratorState(study);
     let turnIndex = 1;
@@ -586,9 +593,9 @@ describe("controlled-autonomy moderator policy", () => {
       state = result.state;
       turnIndex += 1;
     }
-    expect(state.activeAnchorId).toBeNull();
-    expect(state.completionQuality).toBe("with_evidence_gaps");
-    expect(state.pendingGaps.some((gap) => gap.status === "unresolved")).toBe(true);
+    expect(state.activeAnchorId).toBe(study.anchors[0].id);
+    expect(state.completionQuality).toBeNull();
+    expect(state.completedAnchors).toEqual([]);
   });
 
   it("keeps an audit gap open when its repair budget is exhausted", () => {

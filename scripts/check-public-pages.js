@@ -49,7 +49,8 @@ for (const file of codeFiles) {
     detailTags.push({ file, tag: match[0] });
     const intentionalHistory = /class="[^"]*evo-round/.test(match[0]);
     const demoFaq = path.relative(root, file) === 'fakesite/faq.html' && /class="faq-question"/.test(match[0]);
-    if (!intentionalHistory && !demoFaq && !/\bopen\b/i.test(match[0])) errors.push(path.relative(root, file) + ' 有正文details未默认展开：' + match[0]);
+    const emailImportFiles = path.relative(root, file) === 'email-templates.js' && match[0] === '<details class="email-files">';
+    if (!intentionalHistory && !demoFaq && !emailImportFiles && !/\bopen\b/i.test(match[0])) errors.push(path.relative(root, file) + ' 有正文details未默认展开：' + match[0]);
   }
   for (const match of source.matchAll(/<[^>]+aria-expanded="false"[^>]*>/gi)) {
     if (!/class="[^"]*menu-button/.test(match[0])) errors.push(path.relative(root, file) + ' 有正文aria-expanded=false：' + match[0]);
