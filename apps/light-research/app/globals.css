@@ -29,8 +29,8 @@ button:focus-visible, textarea:focus-visible, input:focus-visible, summary:focus
 button { touch-action: manipulation; }
 ::selection { color: var(--ink); background: #e8cbb3; }
 .appShell { height: var(--survey-viewport, 100dvh); min-height: 0; display: grid; grid-template: 96px 86px minmax(0, 1fr) / minmax(0, 1fr); overflow: hidden; border-top: 0; }
-.appHeader { width: min(1200px, calc(100% - 80px)); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); z-index: 5; }
-.identity { display: flex; align-items: center; gap: 20px; }
+.appHeader { width: min(872px, calc(100% - 88px)); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); z-index: 5; }
+.identity { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 20px; }
 .brandMark { display: inline-flex; align-items: center; gap: 9px; font-weight: 750; letter-spacing: -.05em; font-size: 23px; }
 .brandMark::before { content: ""; width: 22px; height: 22px; border: 1.5px solid currentColor; border-radius: 50%; background: radial-gradient(circle, currentColor 0 2px, transparent 2.5px); }
 .appHeader h1 { margin: 0; padding-left: 20px; border-left: 1px solid var(--line); font-size: 14px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; }
@@ -213,13 +213,13 @@ body { background: #f1eee7 url("/study-assets/cast-light.png") center / cover fi
 .motionPaused::before { animation-play-state: paused; }
 .appHeader { border-bottom-color: #6f61522b; }
 .brandMark { font-family: var(--voice); font-weight: 400; font-size: 26px; letter-spacing: -.025em; }
-.appHeader h1 { font: 400 24px/1.2 var(--voice); text-transform: none; letter-spacing: -.015em; border-left: none; padding-left: 0; }
+.appHeader h1 { font: 400 24px/1.2 var(--voice); text-transform: none; letter-spacing: -.015em; border-left: none; padding-left: 0; margin-left: auto; text-align: right; }
 .identity { gap: 24px; }
 .sessionTools summary { font-size: 17px; }
 .sessionPopover { background: #f9f6ef; }
 .studyRail { gap: 28px; }
 .topicPosition { gap: 12px; align-items: baseline; }
-.topicPosition > span:first-child { font-size: 15px; }
+.progressLabel { font-size: 15px; }
 .topicPosition strong { font-size: 38px; line-height: 1; font-weight: 400; letter-spacing: -.04em; }
 .topicTotal { font-size: 18px; color: #716655; }
 .progressHorizon { position: relative; flex: 1; min-width: 0; height: 1px; background: #7a6a5345; margin: 0 3px; }
@@ -247,7 +247,7 @@ body { background: #f1eee7 url("/study-assets/cast-light.png") center / cover fi
 .consentPanel h1, .completionPanel h2 { font-family: var(--voice); }
 @keyframes lightDrift { from { transform: scale(1.04) translate(-.6%, -.3%); } to { transform: scale(1.06) translate(.6%, .3%); } }
 @media (max-width: 760px) {
-  .appHeader { width: calc(100% - 36px); }
+  .appHeader { width: calc(100% - 56px); }
   .identity { gap: 12px; }
   .brandMark { font-size: 21px; }
   .appHeader h1 { font-size: 20px; }
@@ -255,7 +255,7 @@ body { background: #f1eee7 url("/study-assets/cast-light.png") center / cover fi
   .studyRail { width: calc(100% - 48px); gap: 22px; }
   .topicPosition { gap: 8px; }
   .topicPosition strong { font-size: 30px; }
-  .topicPosition > span:first-child { font-size: 14px; }
+  .progressLabel { font-size: 14px; }
   .topicTotal { font-size: 16px; }
   .conversationArea { padding-inline: 24px; }
   .appShell::before { background-position: 60% center; }
@@ -305,7 +305,7 @@ body { background: #f1eee7 url("/study-assets/cast-light.png") center / cover fi
   .appHeader h1 { font-size: 18px; }
 }
 @media (max-width: 760px) {
-  .typefaceSurface[data-typeface] .identity { display: grid; gap: 2px; }
+  .typefaceSurface[data-typeface] .identity { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .typefaceSurface[data-typeface] .brandMark { font-size: 16px; }
   .typefaceSurface[data-typeface] .brandMark::before { width: 14px; height: 14px; }
   .typefaceSurface[data-typeface] .appHeader h1 { font-size: 21px; white-space: nowrap; }
@@ -317,9 +317,10 @@ body { background: #f1eee7 url("/study-assets/cast-light.png") center / cover fi
 }
 
 /* Reading and input refinement: retain the cast-glass material with a usable type scale. */
-.studyRail { width: min(880px, calc(100% - 80px)); gap: 28px; }
+.studyRail { width: min(872px, calc(100% - 88px)); flex-direction: column; align-items: stretch; justify-content: center; gap: 8px; }
+.progressRow { display: flex; align-items: center; gap: 24px; width: 100%; }
 .topicPosition { gap: 10px; }
-.topicPosition > span:first-child { font-size: 19px; margin-right: 8px; }
+.progressLabel { font-size: 19px; }
 .topicPosition strong { font-size: 32px; }
 .topicTotal { font-size: 21px; }
 .conversationArea { width: min(960px, 100%); }
@@ -346,9 +347,10 @@ body { background: #f1eee7 url("/study-assets/cast-light.png") center / cover fi
 @media (max-width: 760px) {
   .typefaceSurface[data-typeface] .sessionTools summary { font-size: 18px; }
   .appHeader { column-gap: 12px; padding-top: env(safe-area-inset-top); }
-  .studyRail { width: calc(100% - 48px); gap: 18px; }
+  .studyRail { width: calc(100% - 56px); gap: 6px; }
+  .progressRow { gap: 18px; }
   .topicPosition { gap: 7px; }
-  .topicPosition > span:first-child { font-size: 17px; margin-right: 3px; }
+  .progressLabel { font-size: 17px; }
   .topicPosition strong { font-size: 27px; }
   .topicTotal { font-size: 18px; }
   .message > span { font-size: 17px; }
@@ -364,7 +366,7 @@ body { background: #f1eee7 url("/study-assets/cast-light.png") center / cover fi
   .isOpening .conversationArea { padding-bottom: max(20px, env(safe-area-inset-bottom)); }
 }
 @media (max-height: 590px) {
-  .appShell { grid-template-rows: 52px 40px minmax(0, 1fr); }
+  .appShell { grid-template-rows: 72px 66px minmax(0, 1fr); }
   .conversationArea { padding-bottom: max(6px, env(safe-area-inset-bottom)); }
   .composer { max-height: calc(var(--survey-viewport, 100dvh) * .56); padding-top: 6px; }
   .composerActions { margin-top: 4px; gap: 4px; }
@@ -378,7 +380,7 @@ body { background: #f1eee7 url("/study-assets/cast-light.png") center / cover fi
 }
 
 /* Mobile keyboards resize visualViewport, not necessarily CSS media-query height. */
-.appShell[data-compact-viewport] { grid-template-rows: 52px 40px minmax(0, 1fr); }
+.appShell[data-compact-viewport] { grid-template-rows: 72px 66px minmax(0, 1fr); }
 [data-compact-viewport] .conversationArea { padding-bottom: max(6px, env(safe-area-inset-bottom)); }
 [data-compact-viewport].isOpening .conversationArea { align-content: stretch; grid-template-rows: minmax(0, 1fr) auto; }
 [data-compact-viewport].isOpening .transcript { max-height: none; }

@@ -567,10 +567,13 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
         <div className="identity"><Image className="officialLogo" src="/oedro-logo.png" alt="OEDRO" width={160} height={48} unoptimized /><h1>AI Research for Drivers</h1></div>
       </header>
       <aside className="studyRail" aria-label={`${visualUi.topic} ${conversation?.progress.current ?? 1} / ${conversation?.progress.total ?? study.anchors.length}`}>
-        <div className="topicPosition"><span>{visualUi.topic}</span><strong>{String(conversation?.progress.current ?? 1).padStart(2, "0")}</strong><span className="topicTotal">/ {String(conversation?.progress.total ?? study.anchors.length).padStart(2, "0")}</span></div>
+        <span className="progressLabel">{visualUi.topic}</span>
+        <div className="progressRow">
+        <div className="topicPosition"><strong>{String(conversation?.progress.current ?? 1).padStart(2, "0")}</strong><span className="topicTotal">/ {String(conversation?.progress.total ?? study.anchors.length).padStart(2, "0")}</span></div>
         <div className="progressHorizon" aria-hidden="true">
           <span className="horizonFill" style={{ width: `${Math.max(0, ((conversation?.progress.current ?? 1) - 1) / Math.max(1, (conversation?.progress.total ?? study.anchors.length) - 1)) * 100}%` }} />
           <div className="horizonMarks">{study.anchors.map((anchor, index) => <i key={anchor.id} className={index === (conversation?.progress.current ?? 1) - 1 ? "current" : index < (conversation?.progress.current ?? 1) ? "reached" : ""} />)}</div>
+        </div>
         </div>
       </aside>
       <section className={`conversationArea${showLatest && !completed ? " hasEarlier" : ""}`} aria-label={recoveryUi.conversation}>

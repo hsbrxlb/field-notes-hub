@@ -29,7 +29,7 @@
 .plan-examples { margin: 0; padding-left: var(--space-5); }
 .plan-examples li { padding: var(--space-3) 0; }
 .plan-examples strong { color: var(--text); }
-.plan-concepts { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--space-5); }
+.plan-concepts { display: grid; grid-template-columns: 1fr; gap: var(--space-7); }
 .plan-concepts article { min-width: 0; }
 .brand-plan figure { margin: var(--space-5) 0; }
 .brand-plan img { display: block; width: 100%; height: auto; }

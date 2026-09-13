@@ -145,7 +145,7 @@ function renderResearch(data) {
     ${pageHeading(r.title)}
     <section class="section research-entry">
       <a class="research-preview" href="https://oedro-light-research.onrender.com/" target="_blank" rel="noopener" aria-label="预览并打开 AI 调研问卷">
-        <img src="assets/light-research/hawthorne-preview.jpg?v=20260914" alt="OEDRO AI 调研问卷演示界面" width="1440" height="900">
+        <img src="assets/light-research/hawthorne-preview.jpg?v=20260914-r2" alt="OEDRO AI 调研问卷演示界面" width="1440" height="900">
       </a>
       <div class="research-launch-copy">
         <p>工作灯调研演示：AI 根据回答继续追问。</p>
