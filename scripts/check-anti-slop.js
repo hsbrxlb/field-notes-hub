@@ -30,13 +30,16 @@ function walk(directory) {
 const files = [
   ...fs.readdirSync(root).filter((name) => ['.html', '.js', '.css'].includes(path.extname(name))).map((name) => path.join(root, name)),
   ...walk(path.join(root, 'data')),
-  ...walk(path.join(root, 'preview'))
+  ...walk(path.join(root, 'preview')),
+  ...walk(path.join(root, 'assets/email'))
 ].filter((file) => runtimeExtensions.has(path.extname(file)));
 
 for (const file of files) {
   const relative = path.relative(root, file);
   const source = fs.readFileSync(file, 'utf8');
   if (path.extname(file) !== '.css') {
+    const rejectedCopy = /示意图为\s*AI\s*生成|未使用真实用户照片|OEDRO订阅原有10%优惠|导入邮件系统用文件|Company mailing address|成员总数包含机器人|成员与在线状态为当时快照/;
+    if (rejectedCopy.test(source)) errors.push(`${relative}: 被用户退回的过程说明或占位文案重新出现`);
     for (const [label, pattern] of highRiskCopy) {
       const match = source.match(pattern);
       if (match) errors.push(`${relative}: 高风险模板句式 ${label}: ${match[0]}`);
@@ -73,6 +76,10 @@ if (!fs.existsSync(identityBackgroundPath)) {
 }
 
 if (!process.env.PUBLIC_SITE_ROOT && !fs.existsSync(path.join(root, 'design.md'))) errors.push('缺少 design.md');
+const navigation = JSON.parse(fs.readFileSync(path.join(root, 'data/content.json'), 'utf8'));
+if (navigation.nav.some(item => item.id === 'overview') || navigation.overview) errors.push('禁止恢复重复总览');
+const emailRenderer = fs.readFileSync(path.join(root, 'email-templates.js'), 'utf8');
+if (/discord-member-offer|email-files|email-proposal/.test(emailRenderer)) errors.push('邮件页不得恢复未批准优惠预览或技术说明区');
 const theme = fs.readFileSync(path.join(root, 'theme.css'), 'utf8');
 const identityReferences = theme.match(/url\('assets\/background\.png'\)/g) || [];
 const bodyBefore = theme.match(/body::before\s*\{([^}]*)\}/s)?.[1] || '';

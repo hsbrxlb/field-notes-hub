@@ -1,26 +1,16 @@
 body[data-page="email-templates"] .main-content { max-width: var(--content-wide); }
-.email-index { display: flex; gap: 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px; flex-wrap: wrap; }
-.email-index a { display: inline-flex; align-items: center; min-height: 44px; padding-bottom: 12px; }
 .email-section { scroll-margin-top: 72px; margin-bottom: 64px; }
-.email-section h2, .email-proposal h2 { font-size: 24px; margin: 0 0 24px; }
+.email-section h2 { font-size: 24px; margin: 0 0 24px; }
 .email-layout { display: flex; flex-direction: column; gap: 24px; }
-.email-canvas { width: 100%; min-width: 0; background: #f5f2ea; }
-.email-frame { display: block; width: 100%; border: 0; background: #f5f2ea; height: 1200px; }
+.email-canvas { width: 100%; min-width: 0; background: #fff; }
+.email-frame { display: block; width: 100%; border: 0; background: #fff; height: 1200px; }
 .email-details { width: 100%; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
 .email-details h3 { margin: 24px 0 8px; font-size: 18px; }
 .email-details p { margin: 0; font-size: 16px; line-height: 1.8; }
+.email-details p + p { margin-top: 12px; }
 .email-details dl { margin: 0; }
 .email-details dt { color: var(--text-muted); margin: 16px 0 4px; font-size: 15px; }
 .email-details dd { margin: 0; font-size: 16px; line-height: 1.7; overflow-wrap: anywhere; }
-.email-proposal { border-top: 1px solid var(--border); margin-top: 32px; padding-top: 24px; }
-.email-proposal p { font-size: 16px; }
-.email-proposal ol { padding-left: 24px; }
-.email-proposal li { margin-bottom: 12px; font-size: 16px; }
-.email-proposal-note { margin: -12px 0 20px; color: var(--text-muted); font-size: 15px; }
-.email-files { border-top: 1px solid var(--border); margin-top: 24px; padding-top: 12px; }
-.email-files summary { min-height: 44px; cursor: pointer; line-height: 44px; }
-.email-files a { min-height: 44px; display: inline-flex; align-items: center; margin-right: 24px; }
 @media (max-width: 600px) {
-  .email-section h2, .email-proposal h2 { font-size: 22px; }
-  .email-index { gap: 16px; margin-bottom: 24px; }
+  .email-section h2 { font-size: 22px; }
 }

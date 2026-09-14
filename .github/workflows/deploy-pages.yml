@@ -40,6 +40,7 @@ jobs:
       - name: Validate static work records
         run: |
           node scripts/check-brand-plans.js
+          node scripts/check-email-templates.js
           node scripts/check-content-studio.js
           node scripts/check-content-pipeline-tests.js
           node scripts/check-mascot-page.js

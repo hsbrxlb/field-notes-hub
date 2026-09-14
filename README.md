@@ -10,7 +10,7 @@
 - `fakesite/editor.html`：可预览、在浏览器保存并下载 Markdown/JSON 草稿；这不是员工登录后台，也不会把内容提交到仓库。正式发文优先接公司现有后台；没有现成能力时再评估 Pages CMS 或 Decap 的认证与仓库授权。
 - 样站检查：`node scripts/check-fakesite.js`；发布流程同时检查源码和最终 Pages 文件。公开目录只包含运行所需网页、脚本、字体和图片，没有研究原件或本地运行记录。
 
-- `index.html`：最近成果、工作入口和运营专题
+- `index.html`：直接进入 Discord 社群
 - `research.html`：统一的“AI智能用户调研”，完整界面预览与“开始AI调研问卷”入口。`light-research.html` 保留为同内容兼容入口；独立应用源码位于 `apps/light-research`。
 - `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
 - `content-studio.html`：已制作的社媒内容；研究与方案、网站与系统分别进入 `research-library.html` 和 `sites-systems.html`
@@ -47,6 +47,8 @@ python3 -m http.server 4173
 ```
 
 打开`http://127.0.0.1:4173/`。
+
+首页直接进入 Discord 社群；工作入口统一由左侧导航提供，不恢复总览和重复成果摘要。
 
 ## 重要工作完成后的更新
 
@@ -113,6 +115,7 @@ Bluesky检查每天通过现有Tavily免费额度运行1组限定`bsky.app`的`O
 
 ```bash
 node scripts/check-anti-slop.js
+node scripts/check-email-templates.js
 ```
 
 ## Light Research

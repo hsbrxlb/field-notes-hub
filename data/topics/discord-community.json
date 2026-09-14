@@ -8,7 +8,6 @@
       "id": "oedro",
       "name": "OEDRO",
       "members": "不足 20 名成员",
-      "member_note": "成员总数包含机器人。",
       "bots": [
         "Dyno",
         "Sapphire",
@@ -18,103 +17,37 @@
       "settings": [
         [
           "新人引导",
-          "Onboarding 未开启"
-        ],
-        [
-          "应用管理",
-          "4 个机器人已安装，检查时均在线"
-        ],
-        [
-          "集成",
-          "未配置 Webhook 或频道关注同步"
-        ],
-        [
-          "功能验证",
-          "工单、欢迎消息、自动角色和等级奖励尚未实测"
+          "未开启"
         ]
       ],
       "groups": [
         {
-          "name": "入门与支持",
+          "name": "入门",
           "channels": [
-            "welcome-and-rules",
-            "verify",
-            "fitment-check",
-            "install-help",
-            "order-support"
+            "welcome-and-rules"
           ]
         },
         {
           "name": "OEDRO HQ",
           "channels": [
-            "oedro-news",
             "start-here",
             "official-links",
-            "help-and-faq",
-            "service-ticket",
-            "introduce-your-ride"
+            "help-and-faq"
           ]
         },
         {
           "name": "The Garage",
           "channels": [
             "fitment-install-help",
-            "garage-talk",
-            "product-feedback",
-            "creator-garage"
-          ]
-        },
-        {
-          "name": "Build Zones",
-          "channels": [
-            "running-boards",
-            "tonneau-cover",
-            "floor-mats",
-            "towing-mirror",
-            "underseat-storage"
-          ]
-        },
-        {
-          "name": "Garage Events",
-          "channels": [
-            "gear-giveaways",
-            "garage-missions",
-            "build-votes"
-          ]
-        },
-        {
-          "name": "Content Hub",
-          "channels": [
-            "tiktok-shorts",
-            "youtube-builds"
+            "garage-talk"
           ]
         }
-      ],
-      "bot_details": [
-        [
-          "Dyno",
-          "已注册管理、角色、抽奖和投票等命令；未实测。"
-        ],
-        [
-          "Sapphire",
-          "已授予服务器、角色、频道和消息管理等权限；未核实自动化规则。"
-        ],
-        [
-          "Tickets v2",
-          "已授予频道、消息和 Webhook 等权限；未验证工单面板。"
-        ],
-        [
-          "Arcane",
-          "已授予角色和消息管理等权限；未核实等级奖励。"
-        ]
-      ],
-      "note": "结构图展示可见的主要频道；内部管理与产品内测分区未展开。已核对四个机器人的权限，均未授予 Administrator。"
+      ]
     },
     {
       "id": "cozeware",
       "name": "COZEWARE",
       "members": "600 余名成员",
-      "member_note": "成员总数包含机器人；频道侧栏人数不等于服务器总人数。",
       "bots": [
         "Dyno",
         "Sapphire",
@@ -122,20 +55,7 @@
         "Arcane",
         "MEE6"
       ],
-      "settings": [
-        [
-          "应用管理",
-          "5 个机器人已安装，检查时均在线"
-        ],
-        [
-          "管理权限",
-          "当前账号未显示成员、角色与集成管理入口"
-        ],
-        [
-          "配置范围",
-          "未核实 Bot 权限、自动角色、工单和等级规则"
-        ]
-      ],
+      "settings": [],
       "groups": [
         {
           "name": "入门",
@@ -143,56 +63,8 @@
             "welcome",
             "verify"
           ]
-        },
-        {
-          "name": "COZEWARE",
-          "channels": [
-            "announcements",
-            "start-here",
-            "official-links",
-            "roadmap",
-            "faq",
-            "ticket"
-          ]
-        },
-        {
-          "name": "Community",
-          "channels": [
-            "general-chat",
-            "show-off",
-            "suggestions-help",
-            "kickstarter",
-            "creator-spotlight",
-            "wip"
-          ]
-        },
-        {
-          "name": "Activities",
-          "channels": [
-            "giveaways",
-            "task",
-            "vote"
-          ]
-        },
-        {
-          "name": "Security",
-          "channels": [
-            "close-dm-guide",
-            "scam-report"
-          ]
-        },
-        {
-          "name": "Information",
-          "channels": [
-            "media",
-            "blog",
-            "tiktok",
-            "youtube"
-          ]
         }
-      ],
-      "bot_details": [],
-      "note": "当前账号可以看到频道和在线机器人，无法核对集成设置。"
+      ]
     }
   ]
 }

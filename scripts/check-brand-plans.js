@@ -73,7 +73,7 @@ async function checkPlan(plan) {
     assert.equal(element.innerHTML, '<article>Readable plan</article>', `${plan.id}: static content survives ${failed ? 'failed' : 'successful'} initialization`);
     assert.equal(element.attributes['aria-busy'], 'false', `${plan.id}: startup settles busy state`);
     assert.equal(reportedErrors.length, failed ? 1 : 0, `${plan.id}: initialization errors remain observable`);
-    if (failed) assert.match(nav.innerHTML, /role="alert"[\s\S]*重新加载[\s\S]*返回总览/, `${plan.id}: navigation failure offers visible recovery`);
+    if (failed) assert.match(nav.innerHTML, /role="alert"[\s\S]*重新加载[\s\S]*返回首页/, `${plan.id}: navigation failure offers visible recovery`);
   }
 }
 

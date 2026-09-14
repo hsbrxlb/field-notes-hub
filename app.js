@@ -68,27 +68,6 @@ function renderShell(data) {
 }
 
 
-function renderOverview(data, results) {
-  const o = data.overview;
-  const recentResults = [...(results?.results || [])]
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 3);
-  document.title = `海外用户运营｜${data.site.title}`;
-  document.querySelector('meta[name="description"]').content = o.meta_description;
-  document.querySelector('#content').innerHTML = `
-    ${pageHeading('海外用户运营')}
-    <section class="section" data-searchable>
-      ${sectionHead('最近成果')}
-      <div class="topic-list">${recentResults.length ? recentResults.map((item) => `<a class="topic-row" href="${({content: 'content-studio.html', research: 'research-library.html', system: 'sites-systems.html'})[item.category]}#${encodeURIComponent(item.id)}"><div><span class="result-date">${escapeHtml(item.date)}</span><strong>${escapeHtml(item.title)}</strong></div>${statusMarkup(item.status)}</a>`).join('') : '<p class="empty-state">暂无已记录的成果</p>'}</div>
-    </section>
-    <section class="section" data-searchable>
-      ${sectionHead('工作入口')}
-      <nav class="workspace-links" aria-label="工作入口">
-        ${data.nav.filter((item) => item.id !== 'overview').map((item) => `<a href="${escapeHtml(item.file)}" ${item.external ? 'class="nav-external" aria-label="' + escapeHtml(item.label) + '（离开工作台，进入样站）"' : ''}><span>${escapeHtml(item.label)}</span><b aria-hidden="true">${item.external ? '↗' : '→'}</b></a>`).join('')}
-      </nav>
-    </section>`;
-}
-
 function methodStageMarkup(stage) {
   return `<article class="method-detail" id="method-stage-${escapeHtml(stage.id)}" data-searchable>
     <header><span class="stage-number">${String(stage.id).padStart(2, '0')}</span><h2>${escapeHtml(stage.name)}</h2></header>
@@ -262,14 +241,13 @@ function renderDiscord(topic, data) {
   document.title = `${topic.title}｜${data.site.title}`;
   document.querySelector('meta[name="description"]').content = topic.description;
   document.querySelector('#content').innerHTML = `
-    ${pageHeading(topic.title, `${topic.checked_at} 核对；成员与在线状态为当时快照。`)}
+    ${pageHeading(topic.title)}
     <nav class="discord-server-nav" aria-label="服务器">
       ${topic.servers.map(server => `<a href="#${escapeHtml(server.id)}">${escapeHtml(server.name)}</a>`).join('')}
     </nav>
     ${topic.servers.map(server => `
       <section class="discord-server section" id="${escapeHtml(server.id)}">
         <header class="discord-server-heading"><h2>${escapeHtml(server.name)}</h2><span>${escapeHtml(server.members)}</span></header>
-        <p class="discord-member-note">${escapeHtml(server.member_note)}</p>
         <div class="discord-layout">
           <section class="discord-channel-map" aria-label="${escapeHtml(server.name)} 频道结构">
             <h3>频道结构</h3>
@@ -279,10 +257,8 @@ function renderDiscord(topic, data) {
               </section>`).join('')}</div>
           </section>
           <section class="discord-configuration"><h3>设置与机器人</h3>
-            <p class="discord-bots">${server.bots.map(escapeHtml).join(' · ')}</p>
+            <p class="discord-bots">已安装：${server.bots.map(escapeHtml).join(' · ')}</p>
             <dl>${server.settings.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}</dl>
-            ${server.bot_details.length ? `<dl class="discord-bot-details">${server.bot_details.map(([name, detail]) => `<div><dt>${escapeHtml(name)}</dt><dd>${escapeHtml(detail)}</dd></div>`).join('')}</dl>` : ''}
-            <p class="discord-scope">${escapeHtml(server.note)}</p>
           </section>
         </div>
       </section>`).join('')}`;
@@ -369,23 +345,20 @@ async function init() {
     location.replace('user-voice.html#feedback-method');
     return;
   }
-  const [dataResponse, topicsResponse, voiceResponse, resultsResponse, radarResponse] = await Promise.all([
+  const [dataResponse, topicsResponse, voiceResponse, radarResponse] = await Promise.all([
     fetch('data/content.json', { cache: 'no-store' }),
     fetch('data/topics.json', { cache: 'no-store' }),
     page === 'voice' ? fetch('data/user-voice.json', { cache: 'no-store' }) : Promise.resolve(null),
-    page === 'overview' ? fetch('data/content-studio.json', { cache: 'no-store' }) : Promise.resolve(null),
     page === 'voice' ? fetch('data/demand-radar.json', { cache: 'no-store' }) : Promise.resolve(null)
   ]);
-  if (!dataResponse.ok || !topicsResponse.ok || (page === 'voice' && (!voiceResponse?.ok || !radarResponse?.ok)) || (page === 'overview' && !resultsResponse?.ok)) throw new Error('页面数据加载失败');
-  const [data, topics, voice, results, radar] = await Promise.all([
+  if (!dataResponse.ok || !topicsResponse.ok || (page === 'voice' && (!voiceResponse?.ok || !radarResponse?.ok))) throw new Error('页面数据加载失败');
+  const [data, topics, voice, radar] = await Promise.all([
     dataResponse.json(),
     topicsResponse.json(),
     voiceResponse ? voiceResponse.json() : Promise.resolve(null),
-    resultsResponse ? resultsResponse.json() : Promise.resolve(null),
     radarResponse ? radarResponse.json() : Promise.resolve(null)
   ]);
   renderShell(data);
-  if (page === 'overview') renderOverview(data, results);
   if (page === 'playbook') renderPlaybook(data);
   if (page === 'research') renderResearch(data);
   if (page === 'flipbooks') renderFlipbooks(data);
@@ -410,12 +383,12 @@ init().catch((error) => {
   if (staticContentPage) {
     const navigation = document.querySelector('#nav-list');
     if (navigation && !navigation.querySelector('a')) {
-      navigation.innerHTML = '<p role="alert">导航暂时无法加载</p><a href="">重新加载</a><a href="index.html">返回总览</a>';
+      navigation.innerHTML = '<p role="alert">导航暂时无法加载</p><a href="">重新加载</a><a href="index.html">返回首页</a>';
     }
     console.error(error);
     return;
   }
-  mainContent.innerHTML = '<div class="load-error" role="alert"><h1>页面暂时无法加载</h1><p>检查连接后重试，或返回总览。</p><button type="button" id="reload-page">重试</button><a href="index.html">返回总览</a></div>';
+  mainContent.innerHTML = '<div class="load-error" role="alert"><h1>页面暂时无法加载</h1><p>检查连接后重试，或返回首页。</p><button type="button" id="reload-page">重试</button><a href="index.html">返回首页</a></div>';
   document.querySelector('#reload-page').addEventListener('click', () => location.reload());
   console.error(error);
 }).finally(() => mainContent.setAttribute('aria-busy', 'false'));

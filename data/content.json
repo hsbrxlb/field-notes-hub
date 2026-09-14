@@ -11,11 +11,6 @@
       "external": true
     },
     {
-      "id": "overview",
-      "label": "总览",
-      "file": "index.html"
-    },
-    {
       "id": "discord-community",
       "label": "Discord社群",
       "file": "topic.html?slug=discord-community"
@@ -110,75 +105,6 @@
         "image_width": 1086,
         "image_height": 1448,
         "href": "experiences/flipbooks/?book=owner-field-notes&return=../../flipbooks.html"
-      }
-    ]
-  },
-  "overview": {
-    "meta_description": "OEDRO 海外用户运营的当前重点、最近成果和工作入口。",
-    "title": "海外用户运营",
-    "description": "",
-    "why_title": "为什么做海外用户运营",
-    "why_label": "背景",
-    "why_paragraphs": [
-      "赢他2015年启航，2024年开始从渠道业务转向产品驱动。2026年新设专职海外用户运营岗位，从OEDRO汽配业务开始搭建相关工作。",
-      "OEDRO公开业务包括脚垫、保险杠、货箱盖和脚踏板，购买过程强调车型适配。公司已经通过独立站、EDM、客服、KOL、TikTok、Reddit、论坛、PR、联盟和Discord接触海外用户。"
-    ],
-    "maturity_title": "现在做到哪里",
-    "maturity_label": "",
-    "maturity_description": "已经完成第一轮渠道、用户来源、协作方和研究方法盘点。当前需要补齐统一用户资料、车型、分项授权、参与记录、研究入口和现状数据。",
-    "timeline_title": "这项工作怎么发展到现在",
-    "timeline_label": "",
-    "timeline": [
-      {
-        "period": "2015–2023",
-        "title": "渠道阶段",
-        "description": "赢他2015年启航，业务以渠道拓展和运营为主。"
-      },
-      {
-        "period": "2024–2025",
-        "title": "转向产品驱动",
-        "description": "2024年开始从渠道业务转向产品驱动，为后续用户运营做准备。"
-      },
-      {
-        "period": "2026",
-        "title": "设立海外用户运营岗位",
-        "description": "2026年新设专职海外用户运营岗位，从OEDRO汽配业务开始搭建相关工作。"
-      }
-    ],
-    "foundations_title": "已有基础",
-    "foundations_label": "",
-    "foundations": [
-      "已通过独立站、EDM、客服、KOL、TikTok、Reddit、论坛、PR、联盟和Discord接触海外用户。",
-      "已完成第一轮渠道、用户来源、协作方和研究方法盘点。"
-    ],
-    "gaps_title": "待补齐",
-    "gaps": [
-      "统一用户资料",
-      "车型数据",
-      "分项授权",
-      "参与记录",
-      "研究入口",
-      "现状数据"
-    ],
-    "stages_title": "从哪里开始，接着做什么",
-    "stages_label": "",
-    "capabilities_title": "这份工作具体管什么",
-    "capabilities_label": "",
-    "entry_title": "工作入口",
-    "entry_label": "",
-    "topics_title": "正在准备的运营专题",
-    "topics_text": "专题页集中保存关键决定、稳定方法和需要持续复用的经验。",
-    "decisions_title": "关键决定",
-    "decisions": [
-      {
-        "date": "2026-08-26",
-        "title": "Hub只负责记录与展示",
-        "summary": "研究、分析、内容生成和文件制作继续由本地Codex与现有工具完成。"
-      },
-      {
-        "date": "2026-08-26",
-        "title": "暂不引入在线后端和AI接口",
-        "summary": "没有网页编辑、多人协作或在线私密数据需求前，继续使用GitHub Pages静态架构。"
       }
     ]
   },
