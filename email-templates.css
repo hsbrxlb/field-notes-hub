@@ -1,4 +1,4 @@
-body[data-page="email-templates"] .main-content { max-width: 1180px; }
+body[data-page="email-templates"] .main-content { max-width: var(--content-wide); }
 .email-index { display: flex; gap: 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px; flex-wrap: wrap; }
 .email-index a { display: inline-flex; align-items: center; min-height: 44px; padding-bottom: 12px; }
 .email-section { scroll-margin-top: 72px; margin-bottom: 64px; }

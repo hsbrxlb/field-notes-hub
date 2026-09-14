@@ -20,7 +20,7 @@ async function checkPlan(plan) {
   assert.equal(html.match(/<h1>([^<]+)<\/h1>/)?.[1], plan.title, `${plan.id}: visible title`);
   assert.equal((html.match(/<h1>/g) || []).length, 1, `${plan.id}: one main title`);
   assert.ok(html.includes(`data-page="${plan.id}"`), `${plan.id}: route identity`);
-  assert.ok(html.includes(`href="${plan.other}.html"`), `${plan.id}: companion link`);
+  assert.ok(navigation.some(item => item.id === plan.other && item.file === `${plan.other}.html`), `${plan.id}: companion page remains available in shared navigation`);
   assert.match(html, /<script src="app\.js(?:\?[^\"]*)?"><\/script>/, `${plan.id}: shared shell script`);
   for (const stylesheet of ['base.css', 'theme.css', 'brand-plan.css']) {
     assert.ok([...html.matchAll(/href="([^\"]+)"/g)].some(match => match[1].split('?')[0] === stylesheet), `${plan.id}: shared stylesheet ${stylesheet}`);

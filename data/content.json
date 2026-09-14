@@ -16,11 +16,6 @@
       "file": "index.html"
     },
     {
-      "id": "work",
-      "label": "当前进展",
-      "file": "work.html"
-    },
-    {
       "id": "discord-community",
       "label": "Discord社群",
       "file": "topic.html?slug=discord-community"
@@ -41,14 +36,24 @@
       "file": "social-brand.html"
     },
     {
+      "id": "merch-plan",
+      "label": "OEDRO Merch 企划",
+      "file": "merch-plan.html"
+    },
+    {
       "id": "studio",
       "label": "社媒内容生产",
       "file": "content-studio.html"
     },
     {
-      "id": "merch-plan",
-      "label": "OEDRO Merch 企划",
-      "file": "merch-plan.html"
+      "id": "research-library",
+      "label": "研究与方案",
+      "file": "research-library.html"
+    },
+    {
+      "id": "sites-systems",
+      "label": "网站与系统",
+      "file": "sites-systems.html"
     },
     {
       "id": "seo-geo",
@@ -161,7 +166,6 @@
     "capabilities_label": "",
     "entry_title": "工作入口",
     "entry_label": "",
-    "entry_text": "查看项目状态和下一步，进入当前进展；查看已经形成的内容、研究和方案，进入内容成果；稳定方法与专题记录保留在工作方法和运营专题。",
     "topics_title": "正在准备的运营专题",
     "topics_text": "专题页集中保存关键决定、稳定方法和需要持续复用的经验。",
     "decisions_title": "关键决定",
@@ -347,175 +351,6 @@
       }
     ]
   },
-  "work": {
-    "meta_description": "OEDRO海外用户运营当前进展，包括项目状态、重点事项、受阻问题和下一步安排。",
-    "title": "当前进展",
-    "description": "查看具体项目的状态、下一步和当前卡点。",
-    "status_title": "项目状态",
-    "status_label": "",
-    "statuses": [
-      {
-        "name": "待确认",
-        "description": "事项已提出，等待确认范围、资源和时间。"
-      },
-      {
-        "name": "进行中",
-        "description": "已经启动，正在推进。"
-      },
-      {
-        "name": "准备中",
-        "description": "正在做启动前的准备。"
-      },
-      {
-        "name": "受阻",
-        "description": "推进中遇到依赖或资源问题。"
-      },
-      {
-        "name": "已完成",
-        "description": "本轮工作已完成，结果已记录。"
-      }
-    ],
-    "focus_title": "当前重点",
-    "focus_label": "",
-    "focus": [
-      {
-        "title": "确认工作灯研究要支持的产品决定",
-        "status": "待确认"
-      },
-      {
-        "title": "确认历史问卷用户的二次研究联系范围",
-        "status": "待确认"
-      },
-      {
-        "title": "确认访谈激励的形式、负责人和发放流程",
-        "status": "待确认"
-      }
-    ],
-    "projects_title": "项目进展",
-    "projects_label": "",
-    "projects": [
-      {
-        "id": "seo-geo-lab",
-        "name": "OEDRO SEO与AI搜索实验",
-        "status": "进行中",
-        "progress": "本机已形成公开技术审计、三个品类九页静态Demo、六十条买家问题和公开结果边界。",
-          "next": "保留按需检查入口；取得技术部代码、测试环境和搜索数据权限后再启动线上试点。",
-        "dependency": "需要网站模板或代码仓库、测试环境、Search Console、Bing Webmaster和GA4只读权限。"
-      },
-      {
-        "id": "user-member-profile",
-        "name": "用户与会员资料",
-        "status": "待确认",
-        "progress": "订单、车型、授权和参与记录需要统一字段口径。",
-        "next": "确认稳定用户ID、车型、授权和累计购买字段。",
-        "dependency": "需要数据或独立站同事提供字段定义与入口。"
-      },
-      {
-        "id": "site-data",
-        "name": "独立站数据",
-        "status": "待确认",
-        "progress": "商品、用户和关键事件的统计口径需要继续核对。",
-        "next": "整理影响用户分析的字段和事件问题。",
-        "dependency": "需要投放、技术和独立站同事确认口径。"
-      },
-      {
-        "id": "webgains-reconciliation",
-        "name": "Webgains对账",
-        "status": "待确认",
-        "progress": "渠道、订单和站内分析数据需要按同一口径复核。",
-        "next": "完成渠道后台、订单和GA4或Clarity对账。",
-        "dependency": "需要渠道与数据同事提供publisher和订单口径。"
-      },
-      {
-        "id": "90-day-plan",
-        "name": "用户运营90天计划",
-        "status": "待确认",
-        "progress": "阶段目标、动作顺序和所需资源已经列出。",
-        "next": "形成第一版计划并核对职责、节奏和资源。",
-        "dependency": "需要先完成现状盘点，正式指标等待主管确认。"
-      },
-      {
-        "id": "work-light-research",
-        "name": "工作灯研究",
-        "status": "受阻",
-        "progress": "产品版本、候选来源和研究前置条件已经整理。",
-        "next": "确认研究必须支持的业务决定。",
-        "dependency": "需要确认研究问题和二次联系范围。"
-      },
-      {
-        "id": "discord-prep",
-        "name": "OEDRO Discord试跑",
-        "status": "待确认",
-        "progress": "频道、验证、工单和内容同步框架已核查，多数公共频道还没有真实用户讨论。",
-        "next": "确认管理权限、核心频道、Bot配置、客服边界、首批车主和首月内容。",
-        "dependency": "需要服务器Owner、用户联系许可和日常维护分工。"
-      },
-      {
-        "id": "f150-data-link",
-        "name": "F-150数据关联",
-        "status": "受阻",
-        "progress": "车型与订单关联方式等待可靠字段支持。",
-        "next": "用稳定用户标识关联车型、订单、品类和货斗长度。",
-        "dependency": "需要可靠的车型与订单关联字段。"
-      },
-      {
-        "id": "oedro-listening-agent",
-        "name": "OEDRO公开问题与反馈回复准备",
-        "status": "进行中",
-        "progress": "本机私有问题与反馈收集、事实阻断、人工审核和回复记录已经运行；免费网页与YouTube入口已配置，公开站不保存用户资料。",
-        "next": "运行14天只读与人工复核试跑，核对召回率、有效队列率和额度。",
-        "dependency": "需要持续复核产品事实、来源覆盖和具体答复负责人。"
-      },
-      {
-        "id": "ai-tool-support",
-        "name": "AI工具支持",
-        "status": "待确认",
-        "progress": "使用场景和成果记录方式已经整理。",
-        "next": "确认采购、报销、账号归属和安全范围。",
-        "dependency": "需要确认预算与账号管理规则。"
-      },
-      {
-        "id": "social-takeover",
-        "name": "主要社媒接手与内容规划",
-        "status": "待确认",
-        "progress": "等待确认交接范围、账号权限、历史内容和历史数据。",
-        "next": "分别制定各平台的受众、目的、内容主题、发布节奏、素材来源、互动分工和衡量方式。",
-        "dependency": "需要账号权限、历史内容、历史表现和现有素材。"
-      }
-    ],
-    "blocked_title": "受阻事项",
-    "blocked_label": "",
-    "blocked": [
-      {
-        "title": "F-150车型与订单关联",
-        "reason": "需要可靠的用户、车型和订单关联字段。"
-      },
-      {
-        "title": "工作灯访谈大纲",
-        "reason": "需要产品同事列出希望用户帮助判断的问题。"
-      },
-      {
-        "title": "工作灯访谈候选",
-        "reason": "需要确认筛选标准和二次联系范围。"
-      }
-    ],
-    "next_title": "下一步",
-    "next_label": "",
-    "next_items": [
-      "建立统一的研究需求入口和方法规则",
-      "建立可重复联系的长期参与用户名单",
-      "形成用户运营90天计划第一版",
-      "完成独立站用户分析字段清单",
-      "确认主要社媒的交接范围和账号资料"
-    ],
-    "foundations_title": "基础事项",
-    "foundation_items": [
-      "专职岗位已经建立",
-      "用户来源、渠道和内部协作方完成第一轮盘点",
-      "任务、项目、决策和知识入口已经建立",
-      "访谈、问卷、A/B投票、资料调研和条件式产品测试的使用范围已经整理"
-    ]
-  },
   "research": {
     "title": "AI智能用户调研",
     "meta_description": "打开 OEDRO AI 文字访谈，查看调研准备、结果整理与参与说明。",
@@ -533,10 +368,26 @@
     "description": "记录本机问题处理工作的公开汇总、重复主题、结论和后续动作。",
     "snapshot_title": "最近汇总",
     "snapshot": [
-      {"label": "已接入来源", "value": "2", "note": "Tavily、YouTube"},
-      {"label": "累计记录", "value": "117", "note": "完整明细保留在本机"},
-      {"label": "当前待处理", "value": "0", "note": "暂无安全候选"},
-      {"label": "已确认公开洞察", "value": "0", "note": "不补写空结果"}
+      {
+        "label": "已接入来源",
+        "value": "2",
+        "note": "Tavily、YouTube"
+      },
+      {
+        "label": "累计记录",
+        "value": "117",
+        "note": "完整明细保留在本机"
+      },
+      {
+        "label": "当前待处理",
+        "value": "0",
+        "note": "暂无安全候选"
+      },
+      {
+        "label": "已确认公开洞察",
+        "value": "0",
+        "note": "不补写空结果"
+      }
     ],
     "findings_title": "当前结论",
     "findings": [

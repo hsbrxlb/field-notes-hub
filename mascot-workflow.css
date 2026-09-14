@@ -1,4 +1,4 @@
-.mascot-workflow-main { max-width: 960px; }
+.mascot-workflow-main { max-width: var(--content-max); }
 .mascot-workflow-main article { max-width: 740px; }
 .mascot-workflow-main .page-heading p { font-size: 16px; line-height: 1.8; }
 .workflow-section { margin-top: var(--space-6); padding-top: var(--space-5); border-top: 1px solid var(--border); }

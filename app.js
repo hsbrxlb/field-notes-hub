@@ -77,15 +77,9 @@ function renderOverview(data, results) {
   document.querySelector('meta[name="description"]').content = o.meta_description;
   document.querySelector('#content').innerHTML = `
     ${pageHeading('海外用户运营')}
-    <section class="section overview-focus" data-searchable>
-      ${sectionHead('当前重点', '<a class="text-link" href="work.html">查看全部项目 →</a>')}
-      <div class="priority-list">
-        ${data.work.focus.map((item) => `<div class="priority-row"><strong>${escapeHtml(item.title)}</strong>${statusMarkup(item.status)}</div>`).join('')}
-      </div>
-    </section>
     <section class="section" data-searchable>
-      ${sectionHead('最近成果', '<a class="text-link" href="content-studio.html">查看全部 →</a>')}
-      <div class="topic-list">${recentResults.length ? recentResults.map((item) => `<a class="topic-row" href="content-studio.html#${encodeURIComponent(item.id)}"><div><span class="result-date">${escapeHtml(item.date)}</span><strong>${escapeHtml(item.title)}</strong></div>${statusMarkup(item.status)}</a>`).join('') : '<p class="empty-state">暂无已记录的成果</p>'}</div>
+      ${sectionHead('最近成果')}
+      <div class="topic-list">${recentResults.length ? recentResults.map((item) => `<a class="topic-row" href="${({content: 'content-studio.html', research: 'research-library.html', system: 'sites-systems.html'})[item.category]}#${encodeURIComponent(item.id)}"><div><span class="result-date">${escapeHtml(item.date)}</span><strong>${escapeHtml(item.title)}</strong></div>${statusMarkup(item.status)}</a>`).join('') : '<p class="empty-state">暂无已记录的成果</p>'}</div>
     </section>
     <section class="section" data-searchable>
       ${sectionHead('工作入口')}
@@ -114,27 +108,6 @@ function renderPlaybook(data) {
   document.querySelector('#content').innerHTML = `
     ${pageHeading('工作方法')}
     <section class="section method-stack">${data.stages.map(methodStageMarkup).join('')}</section>`;
-}
-
-function renderWork(data) {
-  const w = data.work;
-  document.title = `${w.title}｜${data.site.title}`;
-  document.querySelector('meta[name="description"]').content = w.meta_description;
-  document.querySelector('#content').innerHTML = `
-    ${pageHeading(w.title)}
-    <section class="section work-surface">
-      <div class="table-toolbar">
-        <span class="count-note" id="project-count"></span>
-      </div>
-      <div class="data-table-wrap"><table class="data-table project-table"><thead><tr><th>项目</th><th>当前情况</th><th>下一步</th><th>需要配合</th></tr></thead><tbody id="project-rows">
-        ${w.projects.map((item) => `<tr data-searchable data-status="${escapeHtml(item.status)}"><td class="cell-title" data-label="项目">${escapeHtml(item.name)}</td><td data-label="当前情况">${escapeHtml(item.progress)}</td><td data-label="下一步">${escapeHtml(item.next)}</td><td data-label="需要配合">${escapeHtml(item.dependency)}</td></tr>`).join('')}
-      </tbody></table></div>
-      <p class="empty-state" id="project-empty" role="status" hidden>这个状态下暂无项目</p>
-    </section>
-    <section class="section" data-searchable>${sectionHead('当前阻塞')}<div class="topic-list">${w.blocked.map((item) => `<div class="topic-row"><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.reason)}</p></div>${statusMarkup('受阻')}</div>`).join('')}</div></section>
-    `;
-  document.querySelector('#status-filter')?.addEventListener('change', runFilters);
-  runFilters();
 }
 
 function renderResearch(data) {
@@ -285,17 +258,38 @@ function topicSectionMarkup(section, index) {
   return `<section class="topic-content-section" id="topic-section-${index}" data-searchable><h2>${escapeHtml(title)}</h2>${paragraphs}${items}${rows}</section>`;
 }
 
-function discordSections(topic) {
-  return [
-    { title: '当前情况', paragraphs: topic.summary },
-    { title: '启动前', items: topic.before_launch },
-    { title: '前30天', rows: topic.first_month },
-    { title: '参与边界', items: topic.boundaries }
-  ];
+function renderDiscord(topic, data) {
+  document.title = `${topic.title}｜${data.site.title}`;
+  document.querySelector('meta[name="description"]').content = topic.description;
+  document.querySelector('#content').innerHTML = `
+    ${pageHeading(topic.title, `${topic.checked_at} 核对；成员与在线状态为当时快照。`)}
+    <nav class="discord-server-nav" aria-label="服务器">
+      ${topic.servers.map(server => `<a href="#${escapeHtml(server.id)}">${escapeHtml(server.name)}</a>`).join('')}
+    </nav>
+    ${topic.servers.map(server => `
+      <section class="discord-server section" id="${escapeHtml(server.id)}">
+        <header class="discord-server-heading"><h2>${escapeHtml(server.name)}</h2><span>${escapeHtml(server.members)}</span></header>
+        <p class="discord-member-note">${escapeHtml(server.member_note)}</p>
+        <div class="discord-layout">
+          <section class="discord-channel-map" aria-label="${escapeHtml(server.name)} 频道结构">
+            <h3>频道结构</h3>
+            <div class="discord-groups">${server.groups.map(group => `
+              <section class="discord-group"><h4>${escapeHtml(group.name)}</h4>
+                <ul>${group.channels.map(channel => `<li><span aria-hidden="true">#</span> ${escapeHtml(channel)}</li>`).join('')}</ul>
+              </section>`).join('')}</div>
+          </section>
+          <section class="discord-configuration"><h3>设置与机器人</h3>
+            <p class="discord-bots">${server.bots.map(escapeHtml).join(' · ')}</p>
+            <dl>${server.settings.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}</dl>
+            ${server.bot_details.length ? `<dl class="discord-bot-details">${server.bot_details.map(([name, detail]) => `<div><dt>${escapeHtml(name)}</dt><dd>${escapeHtml(detail)}</dd></div>`).join('')}</dl>` : ''}
+            <p class="discord-scope">${escapeHtml(server.note)}</p>
+          </section>
+        </div>
+      </section>`).join('')}`;
 }
 
 function visibleTopicSections(topic) {
-  if (!topic.sections?.length) return discordSections(topic);
+  if (!topic.sections?.length) return [];
   const ids = {
     'brand-voice-system': ['current', 'principles', 'channels', 'donts'],
     'seo-geo': ['current', 'milestones', 'baseline', 'next']
@@ -316,6 +310,7 @@ async function renderTopic(data) {
   const response = await fetch(`data/topics/${encodeURIComponent(slug)}.json`, { cache: 'no-store' });
   if (!response.ok) throw new Error('专题加载失败');
   const topic = await response.json();
+  if (slug === 'discord-community') return renderDiscord(topic, data);
   const sections = visibleTopicSections(topic);
   document.title = `${topic.title}｜${data.site.title}`;
   document.querySelector('meta[name="description"]').content = topic.description;
@@ -392,7 +387,6 @@ async function init() {
   renderShell(data);
   if (page === 'overview') renderOverview(data, results);
   if (page === 'playbook') renderPlaybook(data);
-  if (page === 'work') renderWork(data);
   if (page === 'research') renderResearch(data);
   if (page === 'flipbooks') renderFlipbooks(data);
   if (page === 'voice') {
@@ -402,7 +396,7 @@ async function init() {
   if (page === 'topics' && location.pathname.endsWith('topics.html')) renderTopics(data, topics);
   if (page === 'topics' && location.pathname.endsWith('topic.html')) await renderTopic(data);
   if (page === 'studio' && location.pathname.endsWith('content-pipeline-test.html')) await window.initContentPipelineTests?.();
-  if (page === 'studio' && !location.pathname.endsWith('content-pipeline-test.html')) await window.initContentStudio?.();
+  if (['studio', 'research-library', 'sites-systems'].includes(page) && !location.pathname.endsWith('content-pipeline-test.html')) await window.initContentStudio?.();
   if (page === 'mascot') await window.initMascot?.();
   if (page === 'email-templates') await window.initEmailTemplates?.();
 }

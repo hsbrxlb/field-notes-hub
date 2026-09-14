@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Add one public-safe work result and optionally update its related project."""
+"""Add one public-safe work result."""
 
 from __future__ import annotations
 
@@ -13,12 +13,10 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS_PATH = ROOT / "data" / "content-studio.json"
-CONTENT_PATH = ROOT / "data" / "content.json"
 RESULT_FIELDS = {
     "id", "date", "project", "type", "category", "title", "description",
     "purpose", "status", "related_work", "links",
 }
-PROJECT_FIELDS = {"id", "status", "progress", "next", "dependency"}
 CATEGORIES = {"content", "research", "system"}
 STATUSES = {"已完成", "进行中", "概念", "待确认"}
 FORBIDDEN = re.compile(
@@ -79,14 +77,6 @@ def validate_result(raw: Any) -> dict[str, Any]:
     return result
 
 
-def validate_project_update(raw: Any) -> dict[str, str] | None:
-    if raw is None:
-        return None
-    if not isinstance(raw, dict) or not set(raw).issubset(PROJECT_FIELDS) or "id" not in raw:
-        raise ValueError("project_update字段不正确")
-    return {key: validate_text(value, f"project_update.{key}") for key, value in raw.items()}
-
-
 def main() -> None:
     parser = argparse.ArgumentParser(description="更新OEDRO Hub成果记录")
     parser.add_argument("--input", required=True, type=Path)
@@ -94,10 +84,11 @@ def main() -> None:
     args = parser.parse_args()
 
     packet = load_json(args.input.resolve())
-    if not isinstance(packet, dict) or set(packet) - {"result", "project_update"}:
-        raise ValueError("输入只允许result和project_update")
+    if isinstance(packet, dict) and "project_update" in packet:
+        raise ValueError("当前进展栏目已删除，不再支持project_update；请仅提供result")
+    if not isinstance(packet, dict) or set(packet) != {"result"}:
+        raise ValueError("输入只允许result")
     result = validate_result(packet.get("result"))
-    project_update = validate_project_update(packet.get("project_update"))
 
     results_data = load_json(RESULTS_PATH)
     current = [item for item in results_data["results"] if item.get("id") != result["id"]]
@@ -105,34 +96,20 @@ def main() -> None:
     current.sort(key=lambda item: (item["date"], item["id"]), reverse=True)
     results_data["results"] = current
 
-    content_data = load_json(CONTENT_PATH)
-    if project_update:
-        project = next(
-            (item for item in content_data["work"]["projects"] if item.get("id") == project_update["id"]),
-            None,
-        )
-        if project is None:
-            raise ValueError("project_update.id没有对应项目")
-        project.update({key: value for key, value in project_update.items() if key != "id"})
-
     if args.dry_run:
         print(json.dumps({
             "ok": True,
             "dry_run": True,
             "result_id": result["id"],
             "result_count": len(current),
-            "project_updated": bool(project_update),
         }, ensure_ascii=False))
         return
 
     atomic_write(RESULTS_PATH, results_data)
-    if project_update:
-        atomic_write(CONTENT_PATH, content_data)
     print(json.dumps({
         "ok": True,
         "result_id": result["id"],
         "result_count": len(current),
-        "project_updated": bool(project_update),
     }, ensure_ascii=False))
 
 

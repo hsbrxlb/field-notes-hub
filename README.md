@@ -1,6 +1,6 @@
 # OEDRO 海外用户运营 Hub
 
-这是 Oliver 的在线版上班记事本、项目进展仪表盘和工作成果档案，主要供 Oliver 日常查看。网站通过公开 GitHub Pages 发布，URL 仍可公开访问。
+这是 Oliver 的在线版上班记事本和工作成果档案，主要供 Oliver 日常查看。网站通过公开 GitHub Pages 发布，URL 仍可公开访问。
 
 研究、分析、内容生成、方案和文件制作继续由本地 Codex 与现有本地工具完成。Hub页面不调用AI、不提供在线编辑，也不保存完整私有工作数据。OEDRO公开问题由本机Codex自动任务每天检查，GitHub Actions只在收到代码推送后校验并发布网页。
 
@@ -10,12 +10,11 @@
 - `fakesite/editor.html`：可预览、在浏览器保存并下载 Markdown/JSON 草稿；这不是员工登录后台，也不会把内容提交到仓库。正式发文优先接公司现有后台；没有现成能力时再评估 Pages CMS 或 Decap 的认证与仓库授权。
 - 样站检查：`node scripts/check-fakesite.js`；发布流程同时检查源码和最终 Pages 文件。公开目录只包含运行所需网页、脚本、字体和图片，没有研究原件或本地运行记录。
 
-- `index.html`：当前重点、最近成果、工作入口和运营专题
-- `work.html`：项目状态、待办、阻塞和下一动作
+- `index.html`：最近成果、工作入口和运营专题
 - `research.html`：统一的“AI智能用户调研”，完整界面预览与“开始AI调研问卷”入口。`light-research.html` 保留为同内容兼容入口；独立应用源码位于 `apps/light-research`。
 - `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
-- `content-studio.html`：已经形成的内容、研究、方案和工作成果
-- `social-brand.html`：社媒品牌升级讨论方案，保留成交内容并新增车主关系内容；平台分工、四周试验与待决事项。
+- `content-studio.html`：已制作的社媒内容；研究与方案、网站与系统分别进入 `research-library.html` 和 `sites-systems.html`
+- `social-brand.html`：社媒品牌升级讨论方案，产品与购买信息、车主交流内容与平台分工。
 - `merch-plan.html`：周边共创企划，含四张概念图、产品优先级、投票/投稿流程和到手成本核对；不是已启动活动或在售商品。
 - 两页使用 `brand-plan.css`，正文为静态 HTML，共用 `data/content.json` 导航；验证：`node scripts/check-brand-plans.js`。更新不能把企划改写成已经执行的运营结果。
 - `content-pipeline-test.html`：仅展示当前 Instagram、X 和 YouTube 社区图文的 Prompt、简短目的与作品，中文对照默认展开。历史作品和公开安全的来源、审核记录保留在数据中，不在当前审阅页展示。
@@ -58,7 +57,7 @@ python3 scripts/update-hub-record.py --input <记录.json> --dry-run
 python3 scripts/update-hub-record.py --input <记录.json>
 ```
 
-记录可以同时更新一条成果和对应项目进度。正式提交前运行：
+记录只更新成果；项目进展栏目已移除，`project_update` 输入会明确拒绝。正式提交前运行：
 
 ```bash
 node scripts/check-content-studio.js

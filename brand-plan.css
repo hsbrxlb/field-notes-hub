@@ -1,4 +1,4 @@
-.brand-plan { max-width: var(--content-max); background: rgba(8, 10, 8, .55); }
+.brand-plan { max-width: var(--content-max); background: var(--content-surface); }
 .plan-document { padding: var(--space-2) 0; }
 .brand-plan .page-heading { margin-bottom: var(--space-5); padding: 0; background: none; }
 .brand-plan h1 { font-size: var(--type-h1); line-height: 1.3; }
@@ -19,7 +19,7 @@
 .plan-flow { display: flex; flex-wrap: wrap; list-style: none; padding: 0; gap: var(--space-2); margin: var(--space-3) 0 var(--space-5); }
 .plan-flow li { display: flex; align-items: center; gap: var(--space-2); color: var(--text); }
 .plan-flow li:not(:last-child)::after { content: '→'; color: var(--accent); }
-.plan-flow.relationship { padding: var(--space-4); background: rgba(8,10,8,.28); border-left: 2px solid var(--accent); }
+.plan-flow.relationship { padding: var(--space-4); background: var(--surface-raised); border-left: 2px solid var(--accent); }
 .plan-rows { margin: 0; }
 .plan-rows > div { display: grid; grid-template-columns: 160px minmax(0,1fr); gap: var(--space-5); padding: var(--space-4) 0; border-bottom: 1px solid var(--border); }
 .plan-rows > div:first-child { padding-top: 0; }

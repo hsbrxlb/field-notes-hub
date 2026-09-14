@@ -2,10 +2,22 @@
   "title": "社媒内容生产",
   "intro": "AI根据需求自动化生产和审核用于社媒社群的图文内容",
   "categories": [
-    { "id": "all", "label": "全部" },
-    { "id": "content", "label": "内容" },
-    { "id": "research", "label": "研究与方案" },
-    { "id": "system", "label": "网站与系统" }
+    {
+      "id": "all",
+      "label": "全部"
+    },
+    {
+      "id": "content",
+      "label": "内容"
+    },
+    {
+      "id": "research",
+      "label": "研究与方案"
+    },
+    {
+      "id": "system",
+      "label": "网站与系统"
+    }
   ],
   "results": [
     {
@@ -20,7 +32,10 @@
       "status": "待确认",
       "related_work": "欧美多社媒内容准备",
       "links": [
-        {"label": "查看测试记录", "href": "content-pipeline-test.html"}
+        {
+          "label": "查看测试记录",
+          "href": "content-pipeline-test.html"
+        }
       ]
     },
     {
@@ -35,7 +50,10 @@
       "status": "进行中",
       "related_work": "OEDRO SEO与AI搜索可见度",
       "links": [
-        {"label": "查看专题", "href": "topic.html?slug=seo-geo"}
+        {
+          "label": "查看专题",
+          "href": "topic.html?slug=seo-geo"
+        }
       ]
     },
     {
@@ -43,29 +61,35 @@
       "date": "2026-08-25",
       "project": "OEDRO品牌声音",
       "type": "内容",
-      "category": "content",
+      "category": "research",
       "title": "品牌人格与跨渠道声音专题",
       "description": "整理Email、Discord、调研、客服和内容合作中的说话原则，以及不同渠道需要守住的事实和联系边界。",
       "purpose": "作为后续内容、用户联系和本地Codex工作的共同参考。",
       "status": "进行中",
       "related_work": "品牌人格与用户联系",
       "links": [
-        { "label": "查看专题", "href": "topic.html?slug=brand-voice-system" }
+        {
+          "label": "查看专题",
+          "href": "topic.html?slug=brand-voice-system"
+        }
       ]
     },
     {
       "id": "discord-audit",
-      "date": "2026-08-26",
-      "project": "OEDRO Discord试跑",
+      "date": "2026-09-14",
+      "project": "OEDRO 与 COZEWARE Discord",
       "type": "研究与方案",
       "category": "research",
-      "title": "Discord现状复核与方案",
-      "description": "完成关键频道的只读复核，记录频道用途、验证、工单、内容同步和真实讨论情况。",
-      "purpose": "帮助后续确认管理权限、新人路径、首批车主和日常维护分工。",
+      "title": "Discord 频道与机器人配置",
+      "description": "展示 OEDRO 与 COZEWARE 的主要频道结构、成员规模、机器人及已核实设置。",
+      "purpose": "查看两套服务器的实际结构与配置范围。",
       "status": "已完成",
-      "related_work": "Discord社区试跑",
+      "related_work": "Discord社群配置",
       "links": [
-        { "label": "查看专题", "href": "topic.html?slug=discord-community" }
+        {
+          "label": "查看专题",
+          "href": "topic.html?slug=discord-community"
+        }
       ]
     },
     {
@@ -80,7 +104,10 @@
       "status": "进行中",
       "related_work": "公开问题与反馈回复准备",
       "links": [
-        { "label": "查看页面", "href": "user-voice.html" }
+        {
+          "label": "查看页面",
+          "href": "user-voice.html"
+        }
       ]
     },
     {
@@ -95,7 +122,10 @@
       "status": "进行中",
       "related_work": "通用 AI智能对话问卷工具",
       "links": [
-        { "label": "查看介绍", "href": "research.html" }
+        {
+          "label": "查看介绍",
+          "href": "research.html"
+        }
       ]
     },
     {
@@ -105,13 +135,15 @@
       "type": "网站与系统",
       "category": "system",
       "title": "Hub信息架构与内容成果静态页面",
-      "description": "建立总览、当前进展、用户调研/问卷、问题与反馈、内容成果和运营专题等在线工作档案入口。",
+      "description": "建立总览、用户调研/问卷、问题与反馈、内容成果和运营专题等在线工作档案入口。",
       "purpose": "让本地Codex完成的工作有一个清楚、可回顾的在线记录位置。",
       "status": "已完成",
       "related_work": "海外用户运营工作台",
       "links": [
-        { "label": "查看工作台", "href": "index.html" },
-        { "label": "查看当前进展", "href": "work.html" }
+        {
+          "label": "查看工作台",
+          "href": "index.html"
+        }
       ]
     }
   ]

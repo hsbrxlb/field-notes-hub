@@ -1,84 +1,198 @@
 {
   "slug": "discord-community",
   "title": "Discord社群",
-  "description": "把真实车主留在一个方便交流安装、适配、改装和产品反馈的长期空间。",
-  "area": "社群",
-  "status": "待确认",
-  "summary": [
-    "服务器已经启用社区功能，频道覆盖验证、适配、安装、订单支持、改装分享、产品分类、活动和内容同步。",
-    "最近一次只读检查打开了19个关键频道，其中约15个为空或只有频道起始提示；当前可见内容主要来自自动同步、系统和Bot，没有看到真实车主之间的连续讨论。",
-    "管理权限、核心频道、新人路径和首批外部车主还要确认。"
-  ],
-  "purpose": [
-    "帮助车主交流车型适配和安装问题。",
-    "收集真实改装作品、使用经验和产品建议。",
-    "在公开条件、联系许可和参与规则明确时，邀请合适的车主参加调研、条件式产品测试或内容任务。",
-    "建立持续联系，记录用户是否愿意再次参与。"
-  ],
-  "before_launch": [
-    "确认服务器管理权限和日常维护人。",
-    "核对现有Bot、频道权限、验证和安全设置。",
-    "按Discord Onboarding要求设置至少7个默认频道，其中至少5个允许普通成员查看并发言；再用Server Guide把新人行动压缩到3至5项。",
-    "确认首批车主的联系许可和退订状态。",
-    "排好首月内容，并准备可随时关闭的邀请链接。"
-  ],
-  "first_month": [
+  "description": "OEDRO 与 COZEWARE 的频道结构、成员规模和机器人配置。",
+  "checked_at": "2026-09-14",
+  "servers": [
     {
-      "label": "准备",
-      "text": "确认权限、维护分工、核心频道、规则、Bot和客服分流。"
+      "id": "oedro",
+      "name": "OEDRO",
+      "members": "不足 20 名成员",
+      "member_note": "成员总数包含机器人。",
+      "bots": [
+        "Dyno",
+        "Sapphire",
+        "Tickets v2",
+        "Arcane"
+      ],
+      "settings": [
+        [
+          "新人引导",
+          "Onboarding 未开启"
+        ],
+        [
+          "应用管理",
+          "4 个机器人已安装，检查时均在线"
+        ],
+        [
+          "集成",
+          "未配置 Webhook 或频道关注同步"
+        ],
+        [
+          "功能验证",
+          "工单、欢迎消息、自动角色和等级奖励尚未实测"
+        ]
+      ],
+      "groups": [
+        {
+          "name": "入门与支持",
+          "channels": [
+            "welcome-and-rules",
+            "verify",
+            "fitment-check",
+            "install-help",
+            "order-support"
+          ]
+        },
+        {
+          "name": "OEDRO HQ",
+          "channels": [
+            "oedro-news",
+            "start-here",
+            "official-links",
+            "help-and-faq",
+            "service-ticket",
+            "introduce-your-ride"
+          ]
+        },
+        {
+          "name": "The Garage",
+          "channels": [
+            "fitment-install-help",
+            "garage-talk",
+            "product-feedback",
+            "creator-garage"
+          ]
+        },
+        {
+          "name": "Build Zones",
+          "channels": [
+            "running-boards",
+            "tonneau-cover",
+            "floor-mats",
+            "towing-mirror",
+            "underseat-storage"
+          ]
+        },
+        {
+          "name": "Garage Events",
+          "channels": [
+            "gear-giveaways",
+            "garage-missions",
+            "build-votes"
+          ]
+        },
+        {
+          "name": "Content Hub",
+          "channels": [
+            "tiktok-shorts",
+            "youtube-builds"
+          ]
+        }
+      ],
+      "bot_details": [
+        [
+          "Dyno",
+          "已注册管理、角色、抽奖和投票等命令；未实测。"
+        ],
+        [
+          "Sapphire",
+          "已授予服务器、角色、频道和消息管理等权限；未核实自动化规则。"
+        ],
+        [
+          "Tickets v2",
+          "已授予频道、消息和 Webhook 等权限；未验证工单面板。"
+        ],
+        [
+          "Arcane",
+          "已授予角色和消息管理等权限；未核实等级奖励。"
+        ]
+      ],
+      "note": "结构图展示可见的主要频道；内部管理与产品内测分区未展开。已核对四个机器人的权限，均未授予 Administrator。"
     },
     {
-      "label": "邀请",
-      "text": "首批邀请5至8名联系许可清楚、关系已核实的近期互动用户；路径可用后扩大邀请。"
-    },
-    {
-      "label": "主持",
-      "text": "固定发起安装适配、改装展示和具体问题投票，确保新成员第一次发言有人回应。"
-    },
-    {
-      "label": "复核",
-      "text": "查看验证、新人动作、首次发言和7日回访，再决定是否邀请第二批。"
-    }
-  ],
-  "weekly": [
-    "每周两次安装或适配讨论。",
-    "每周一次车辆或改装作品展示。",
-    "每周一次具体问题投票或产品反馈。",
-    "每周整理一次值得继续讨论的内容。"
-  ],
-  "measure": [
-    "完成验证和新人动作的人数。",
-    "首次发言、7日回访和再次参与的人数。",
-    "安装或适配问题得到回应的数量。",
-    "单独取得授权的用户内容数量。",
-    "被产品、内容或客服采用的反馈数量。"
-  ],
-  "boundaries": [
-    "订单、物流、退款和换货转入正式客服渠道。",
-    "用户原话和AI整理结果分开保存。",
-    "用户内容用于官网、社媒或广告前，需要再次说明用途并取得授权。",
-    "产品测试和参与权益需要公开条件；加入社区不会自动获得资格。",
-    "首轮使用 Discord 原生功能和现有工具。付费功能以实际配置需求为准。"
-  ],
-  "pending": [
-    "服务器Owner和可授予的管理权限。",
-    "日常维护人、客服对接人和产品反馈接收人。",
-    "现有Bot的实际配置和功能重叠。",
-    "新人默认频道和验证流程。",
-    "首批车主名单、联系许可和邀请文案。"
-  ],
-  "sources": [
-    {
-      "label": "Discord Community Onboarding",
-      "url": "https://support.discord.com/hc/en-us/articles/11074987197975-Community-Onboarding-FAQ"
-    },
-    {
-      "label": "Discord Server Guide",
-      "url": "https://support.discord.com/hc/en-us/articles/13497665141655-Server-Guide-FAQ"
-    },
-    {
-      "label": "Discord AutoMod",
-      "url": "https://support.discord.com/hc/en-us/articles/4421269296535-AutoMod-FAQ"
+      "id": "cozeware",
+      "name": "COZEWARE",
+      "members": "600 余名成员",
+      "member_note": "成员总数包含机器人；频道侧栏人数不等于服务器总人数。",
+      "bots": [
+        "Dyno",
+        "Sapphire",
+        "Tickets v2",
+        "Arcane",
+        "MEE6"
+      ],
+      "settings": [
+        [
+          "应用管理",
+          "5 个机器人已安装，检查时均在线"
+        ],
+        [
+          "管理权限",
+          "当前账号未显示成员、角色与集成管理入口"
+        ],
+        [
+          "配置范围",
+          "未核实 Bot 权限、自动角色、工单和等级规则"
+        ]
+      ],
+      "groups": [
+        {
+          "name": "入门",
+          "channels": [
+            "welcome",
+            "verify"
+          ]
+        },
+        {
+          "name": "COZEWARE",
+          "channels": [
+            "announcements",
+            "start-here",
+            "official-links",
+            "roadmap",
+            "faq",
+            "ticket"
+          ]
+        },
+        {
+          "name": "Community",
+          "channels": [
+            "general-chat",
+            "show-off",
+            "suggestions-help",
+            "kickstarter",
+            "creator-spotlight",
+            "wip"
+          ]
+        },
+        {
+          "name": "Activities",
+          "channels": [
+            "giveaways",
+            "task",
+            "vote"
+          ]
+        },
+        {
+          "name": "Security",
+          "channels": [
+            "close-dm-guide",
+            "scam-report"
+          ]
+        },
+        {
+          "name": "Information",
+          "channels": [
+            "media",
+            "blog",
+            "tiktok",
+            "youtube"
+          ]
+        }
+      ],
+      "bot_details": [],
+      "note": "当前账号可以看到频道和在线机器人，无法核对集成设置。"
     }
   ]
 }

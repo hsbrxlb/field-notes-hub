@@ -1,13 +1,12 @@
 (() => {
-  const categories = [
-    { id: 'all', label: '全部' },
-    { id: 'content', label: '内容' },
-    { id: 'research', label: '研究与方案' },
-    { id: 'system', label: '网站与系统' }
-  ];
+  const pages = {
+    studio: { category: 'content', title: '社媒内容生产', description: '已制作的社媒图文内容。', href: 'content-studio.html' },
+    'research-library': { category: 'research', title: '研究与方案', description: '用户研究、运营分析与工作方案。', href: 'research-library.html' },
+    'sites-systems': { category: 'system', title: '网站与系统', description: '网站、工具与系统的制作成果。', href: 'sites-systems.html' }
+  };
+  const page = pages[document.body.dataset.page];
   const allowedStatuses = new Set(['已完成', '进行中', '概念', '待确认']);
   let resultsConfig;
-  let activeCategory = 'all';
 
   function text(value) {
     return String(value ?? '');
@@ -42,7 +41,7 @@
 
   function visibleResults() {
     return resultsConfig.results
-      .filter((item) => activeCategory === 'all' || item.category === activeCategory)
+      .filter((item) => item.category === page.category)
       .sort((a, b) => b.date.localeCompare(a.date));
   }
 
@@ -50,35 +49,21 @@
     const content = document.querySelector('#content');
     if (!content) return;
     const results = visibleResults();
-    const total = resultsConfig.results.length;
-    const categoryLabel = categories.find((item) => item.id === activeCategory)?.label || '全部';
     content.innerHTML = `
       <header class="page-heading">
-        <h1>${escapeHtml(resultsConfig.title)}</h1>
+        <h1 id="results-list-title">${escapeHtml(page.title)}</h1>
       </header>
       <section class="section results-surface" aria-labelledby="results-list-title">
-        <div class="section-head">
-          <h2 id="results-list-title">工作结果</h2>
-          <span class="count-note" id="results-count">${results.length} 项</span>
-        </div>
-        <div class="results-filter" role="tablist" aria-label="成果类别">
-          ${categories.map((item) => `<button type="button" role="tab" aria-selected="${item.id === activeCategory}" data-results-category="${item.id}" class="${item.id === activeCategory ? 'active' : ''}">${escapeHtml(item.label)}</button>`).join('')}
-        </div>
         <div class="result-list" id="result-list">${results.map(resultMarkup).join('')}</div>
-        <div class="empty-state result-empty" id="result-empty"${results.length ? ' hidden' : ''}><strong>暂无${escapeHtml(categoryLabel)}成果</strong></div>
+        <div class="empty-state result-empty" id="result-empty"${results.length ? ' hidden' : ''}><strong>暂无${escapeHtml(page.title)}记录</strong></div>
       </section>`;
 
-    content.querySelectorAll('[data-results-category]').forEach((button) => {
-      button.addEventListener('click', () => {
-        activeCategory = button.dataset.resultsCategory || 'all';
-        renderResults();
-      });
-    });
     const anchor = decodeURIComponent(window.location.hash.slice(1));
     if (anchor) requestAnimationFrame(() => document.getElementById(anchor)?.scrollIntoView({ block: 'start' }));
   }
 
   window.initContentStudio = async () => {
+    if (!page) throw new Error('内容页面入口不正确');
     const response = await fetch('data/content-studio.json', { cache: 'no-store' });
     if (!response.ok) throw new Error('社媒内容生产数据加载失败');
     const config = await response.json();
@@ -86,14 +71,21 @@
       throw new Error('社媒内容生产数据格式不正确');
     }
     config.results.forEach((item) => {
-      if (!item.id || !item.date || !allowedStatuses.has(item.status) || !categories.some((category) => category.id === item.category)) {
+      if (!item.id || !item.date || !allowedStatuses.has(item.status) || !Object.values(pages).some((entry) => entry.category === item.category)) {
         throw new Error('内容成果中有未完成的记录');
       }
     });
     resultsConfig = config;
-    document.title = `${config.title}｜海外用户运营`;
+    const anchor = decodeURIComponent(window.location.hash.slice(1));
+    const linkedResult = config.results.find((item) => item.id === anchor);
+    if (linkedResult && linkedResult.category !== page.category) {
+      const destination = Object.values(pages).find((entry) => entry.category === linkedResult.category);
+      window.location.replace(`${destination.href}#${encodeURIComponent(anchor)}`);
+      return;
+    }
+    document.title = `${page.title}｜海外用户运营`;
     const description = document.querySelector('meta[name="description"]');
-    if (description) description.content = config.intro;
+    if (description) description.content = page.description;
     renderResults();
   };
 })();

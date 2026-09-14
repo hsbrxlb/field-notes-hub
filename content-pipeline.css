@@ -1,7 +1,7 @@
 .pipeline-main {
   width: min(var(--content-wide), calc(100% - var(--space-7)));
   max-width: none;
-  background: rgba(8, 10, 8, .55);
+  background: var(--content-surface);
   --surface-raised: rgba(8, 10, 8, .28);
 }
 
