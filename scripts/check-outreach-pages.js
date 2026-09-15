@@ -13,6 +13,11 @@ async function check() {
     assert.equal((html.match(/<h1>/g) || []).length, 1, `${id}: one heading`);
     assert.ok(!/CONTENT_PENDING|待填|\[[^\]]*待[^\]]*\]|@|客户ID|customer[_-]?id/i.test(html), `${id}: no unfinished copy or customer identifiers`);
     assert.ok((html.match(/<section\b/g) || []).length >= 3, `${id}: useful reading sections`);
+    if (id === 'first-outreach') {
+      assert.ok(!/会话|名单生成|User-ID|客户标识|候选池/.test(html), 'audience page: keep the user-requested plain-language copy');
+    } else {
+      assert.ok(!/Oliver|尚未启动|不保证 100 人入群/.test(html), 'invitation page: keep removed names and redundant notes out');
+    }
     for (const stylesheet of ['base.css', 'theme.css', 'brand-plan.css', 'outreach-plan.css']) {
       assert.ok(html.includes(`href="${stylesheet}?`), `${id}: shared reading styles`);
     }
