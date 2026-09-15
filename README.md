@@ -14,7 +14,8 @@
 - `index.html`：直接进入 Discord 社群
 - `research.html`：统一的“AI问卷”，完整界面预览与“开始AI调研问卷”入口。`light-research.html` 保留为同内容兼容入口；独立应用源码位于 `apps/light-research`。
 - `user-voice.html`：OEDRO讨论全网捕捉，展示公开汇总、结论和行动。
-- `first-outreach.html`：首批触达用户，展示筛选区间、聚合分层与试发建议；个人标识和打码邮箱仅保存在私有本地目录，不进入Hub。
+- `first-outreach.html`：首批触达用户，展示筛选区间、分层与试发建议；人数链接进入 `first-outreach-users.html`，在线查看全部1,365人的分页表格，不设搜索。
+- 2026-09-15 Oliver明确批准本批客户编号、打码邮箱、历史订单数与金额、订阅状态随Hub发布，同一范围不再重复确认。仅适用于该批指定字段，不扩大到完整邮箱或其他名单。
 - `discord-invite-plan.html`：邀请加入Discord活动方案，展示待审批的优惠、申领流程、额度与发送批次；未启动，不代表已经发券或发信。两页检查为 `node scripts/check-outreach-pages.js`，已接入源码及最终发布目录的校验。
 - `content-studio.html`：直接展示当前 Instagram、X 和 YouTube 社区作品、Prompt、目的及中文对照，不再要求进入测试记录。
 - `social-brand.html`：社媒品牌升级讨论方案，产品与购买信息、车主交流内容与平台分工。
@@ -26,7 +27,7 @@
 - `flipbooks.html`：Flip Book Demo（翻页书），进入 Brand Story 与 Car Owner Survey
 - `mascot.html`：OEDRO 吉祥物角色档案，24 个角色区共 130 张独立高清图；机械与配件角色在前，动物与人物在后。新增轻拟人连接件伙伴咔咔四张视角与动作图，保留全部历史图、页内跳转与对应版本的小尺寸对照，不设置选角标签。
 - `mascot-workflow.html`：吉祥物设计的skill，可直接复制或下载完整的跨品牌吉祥物工作包，供其他 Codex 或 AI 使用，不依赖本机私有路径。
-- 侧栏分别进入“SEO与AI搜索”“Oedro-Discord”“Oedro persona”，沿用对应的 `topic.html?slug=...` 网址。“Oedro-Discord”位于侧栏最底部，新触达名单与邀请活动方案位于用户邮件模板之后。`topics.html` 仅保留旧链接所需的资料索引。
+- 侧栏分别进入“SEO与AI搜索”“Discord频道设计”“Oedro persona”，沿用对应的 `topic.html?slug=...` 网址。“Discord频道设计”位于侧栏最底部，新触达名单与邀请活动方案位于用户邮件模板之后。`topics.html` 仅保留旧链接所需的资料索引。
 - Discord 配置位于频道结构下方；没有实际用途证据的机器人与空配置区不显示。品牌表达页包含品牌名大小写建议和六个双语场景示例，示例不代表已发送消息。
 - 原“公开信号与用户关系”是公开评论的留存、核实、采用与许可方法，已归入 `user-voice.html#feedback-method`；原专题网址自动跳转到该位置。
 - `research-library.html`、`sites-systems.html`、`playbook.html` 已退出导航，只保留旧网址的定向跳转。

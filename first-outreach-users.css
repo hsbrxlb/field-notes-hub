@@ -1,0 +1,16 @@
+.list-back { color:#e8bf69; display:inline-flex; align-items:center; min-height:44px; }
+.list-toolbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding:16px 0; border-top:1px solid var(--border-strong); }
+.list-toolbar p { margin:0; }
+.list-pagination { display:flex; align-items:center; gap:16px; }
+.list-pagination button { min-height:44px; padding:8px 16px; color:var(--text); background:transparent; border:1px solid var(--border-strong); border-radius:4px; font:inherit; cursor:pointer; }
+.list-pagination button:disabled { opacity:.4; cursor:default; }
+.list-pagination button:not(:disabled):hover { border-color:#e8bf69; color:#e8bf69; }
+.list-scroll { max-height:68vh; overflow:auto; border-block:1px solid var(--border-strong); background:rgba(8,14,13,.76); }
+.outreach-table { width:100%; border-collapse:separate; border-spacing:0; font-size:14px; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.outreach-table th,.outreach-table td { padding:14px 16px; text-align:left; border-bottom:1px solid rgba(255,255,255,.12); }
+.outreach-table th { position:sticky; top:0; z-index:1; background:#17201c; color:#e8bf69; font-weight:600; }
+.outreach-table tbody tr:nth-child(even) { background:rgba(255,255,255,.025); }
+.outreach-table tbody tr:hover { background:rgba(232,191,105,.08); }
+.list-pagination button:focus-visible,.list-back:focus-visible,.list-scroll:focus-visible { outline:2px solid #e8bf69; outline-offset:3px; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+@media(max-width:700px) { .list-toolbar { align-items:flex-start; } .list-pagination { width:100%; justify-content:space-between; } .outreach-table th,.outreach-table td { padding:12px; } }

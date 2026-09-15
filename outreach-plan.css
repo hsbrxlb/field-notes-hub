@@ -14,3 +14,6 @@
   .outreach-plan .plan-rows > div { grid-template-columns: 1fr; }
   .outreach-plan .outreach-summary dd { font-size: var(--type-h1-mobile); }
 }
+.outreach-plan .outreach-count-link { display:inline-flex; gap:10px; align-items:center; min-height:44px; color:#e8bf69; font-weight:700; text-decoration:underline; text-underline-offset:5px; }
+.outreach-plan .outreach-count-link:hover { color:#ffe1a2; }
+.outreach-plan .outreach-count-link:focus-visible { outline:2px solid #e8bf69; outline-offset:5px; }

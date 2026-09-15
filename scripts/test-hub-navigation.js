@@ -7,7 +7,7 @@ const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const nav = JSON.parse(read('data/content.json')).nav;
 
 for (const [id, label] of Object.entries({
-  'discord-community': 'Oedro-Discord', research: 'AI问卷',
+  'discord-community': 'Discord频道设计', research: 'AI问卷',
   voice: 'OEDRO讨论全网捕捉', 'brand-voice-system': 'Oedro persona',
   'merch-plan': 'Oedro周边', 'first-outreach': '首批触达用户', 'discord-invite-plan': '邀请加入Discord活动方案',
   products: '产品知识库', 'mascot-workflow': '吉祥物设计的skill'

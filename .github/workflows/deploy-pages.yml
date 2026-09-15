@@ -42,6 +42,7 @@ jobs:
         run: |
           node scripts/check-brand-plans.js
           node scripts/check-outreach-pages.js
+          node scripts/check-outreach-users.js
           node scripts/check-email-templates.js
           node scripts/check-content-studio.js
           node scripts/test-hub-navigation.js
@@ -61,6 +62,7 @@ jobs:
           PUBLIC_SITE_ROOT=public-dist node scripts/check-content-pipeline-tests.js
           PUBLIC_SITE_ROOT=public-dist node scripts/check-public-pages.js
           PUBLIC_SITE_ROOT=public-dist node scripts/check-outreach-pages.js
+          PUBLIC_SITE_ROOT=public-dist node scripts/check-outreach-users.js
           PUBLIC_SITE_ROOT=public-dist node scripts/check-fakesite.js
           PUBLIC_SITE_ROOT=public-dist node scripts/check-anti-slop.js
           PUBLIC_SITE_ROOT=public-dist node scripts/check-field-books.js
