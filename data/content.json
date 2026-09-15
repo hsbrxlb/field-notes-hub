@@ -11,6 +11,11 @@
       "external": true
     },
     {
+      "id": "products",
+      "label": "产品资料库",
+      "file": "products.html"
+    },
+    {
       "id": "discord-community",
       "label": "Discord社群",
       "file": "topic.html?slug=discord-community"

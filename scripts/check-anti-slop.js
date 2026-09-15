@@ -40,9 +40,12 @@ for (const file of files) {
   if (path.extname(file) !== '.css') {
     const rejectedCopy = /示意图为\s*AI\s*生成|未使用真实用户照片|OEDRO订阅原有10%优惠|导入邮件系统用文件|Company mailing address|成员总数包含机器人|成员与在线状态为当时快照/;
     if (rejectedCopy.test(source)) errors.push(`${relative}: 被用户退回的过程说明或占位文案重新出现`);
-    for (const [label, pattern] of highRiskCopy) {
-      const match = source.match(pattern);
-      if (match) errors.push(`${relative}: 高风险模板句式 ${label}: ${match[0]}`);
+    const officialProductSnapshot = /^data\/products\/category-\d+\.json$/.test(relative);
+    if (!officialProductSnapshot) {
+      for (const [label, pattern] of highRiskCopy) {
+        const match = source.match(pattern);
+        if (match) errors.push(`${relative}: 高风险模板句式 ${label}: ${match[0]}`);
+      }
     }
     const helperCount = ['<small', 'section-note', 'helper-text', 'class="muted"'].reduce((count, marker) => count + source.split(marker).length - 1, 0);
     if (helperCount >= 5) errors.push(`${relative}: 同页解释性小字标记达到 ${helperCount} 处`);

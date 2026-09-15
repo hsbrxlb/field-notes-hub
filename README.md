@@ -6,6 +6,7 @@
 
 ## 当前页面
 
+- `products.html`：OEDRO 官网产品资料库；1,209 条目录记录按 12 个分类拆分加载，每页只渲染 24 件，完整适配、规格、说明、媒体和政策快照可按商品展开。
 - `fakesite/`：独立站样站，侧栏直接进入首页；包含 Blog、两篇完整指南、FAQ 和草稿编辑演示。保留独立的品牌页面外观，不套 Hub 阅读外壳。页面标明设计演示并禁止索引，不连接购物或真实发布。
 - `fakesite/editor.html`：可预览、在浏览器保存并下载 Markdown/JSON 草稿；这不是员工登录后台，也不会把内容提交到仓库。正式发文优先接公司现有后台；没有现成能力时再评估 Pages CMS 或 Decap 的认证与仓库授权。
 - 样站检查：`node scripts/check-fakesite.js`；发布流程同时检查源码和最终 Pages 文件。公开目录只包含运行所需网页、脚本、字体和图片，没有研究原件或本地运行记录。
@@ -69,6 +70,8 @@ node scripts/check-public-pages.js
 node scripts/check-public-user-voice.js
 node scripts/test-public-user-voice-check.js
 python3 scripts/test-update-hub-record.py
+python3 scripts/build-products-data.py
+node scripts/check-products.js
 ```
 
 本地预览确认后提交并推送，GitHub Actions会自动发布。

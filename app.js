@@ -372,6 +372,7 @@ async function init() {
   if (['studio', 'research-library', 'sites-systems'].includes(page) && !location.pathname.endsWith('content-pipeline-test.html')) await window.initContentStudio?.();
   if (page === 'mascot') await window.initMascot?.();
   if (page === 'email-templates') await window.initEmailTemplates?.();
+  if (page === 'products') await window.initProducts?.();
 }
 
 const mainContent = document.querySelector('#content');

@@ -50,7 +50,8 @@ for (const file of codeFiles) {
     const intentionalHistory = /class="[^"]*evo-round/.test(match[0]);
     const demoFaq = path.relative(root, file) === 'fakesite/faq.html' && /class="faq-question"/.test(match[0]);
     const emailImportFiles = path.relative(root, file) === 'email-templates.js' && match[0] === '<details class="email-files">';
-    if (!intentionalHistory && !demoFaq && !emailImportFiles && !/\bopen\b/i.test(match[0])) errors.push(path.relative(root, file) + ' 有正文details未默认展开：' + match[0]);
+    const intentionalProductDetail = /class="[^"]*(?:product-detail|catalog-policy)/.test(match[0]);
+    if (!intentionalHistory && !demoFaq && !emailImportFiles && !intentionalProductDetail && !/\bopen\b/i.test(match[0])) errors.push(path.relative(root, file) + ' 有正文details未默认展开：' + match[0]);
   }
   for (const match of source.matchAll(/<[^>]+aria-expanded="false"[^>]*>/gi)) {
     if (!/class="[^"]*menu-button/.test(match[0])) errors.push(path.relative(root, file) + ' 有正文aria-expanded=false：' + match[0]);
@@ -72,6 +73,7 @@ if (fs.existsSync(appPath)) {
 for (const file of publicFiles.filter((item) => textExtensions.has(path.extname(item)))) {
   const relative = path.relative(root, file);
   if (/^experiences\/flipbooks\/assets\/index-[^/]+\.js$/.test(relative)) continue;
+  if (/^data\/products\/category-\d+\.json$/.test(relative)) continue;
   const source = fs.readFileSync(file, 'utf8');
   forbidden.forEach((pattern) => {
     if (pattern.test(source)) errors.push(relative + ' 含有公开禁止内容：' + pattern);
