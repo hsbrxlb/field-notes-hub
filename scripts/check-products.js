@@ -10,6 +10,7 @@ if (!fs.existsSync(path.join(root, 'products.html'))) fail('products.html is mis
 if (!fs.existsSync(path.join(root, 'products.js'))) fail('products.js is missing');
 if (!fs.existsSync(path.join(root, 'products.css'))) fail('products.css is missing');
 if (manifest.productCount !== 1209) fail(`expected 1209 products, got ${manifest.productCount}`);
+if (manifest.uncoveredSitemapUrls !== 41) fail(`expected 41 uncovered sitemap URLs, got ${manifest.uncoveredSitemapUrls}`);
 if (!Array.isArray(manifest.categories) || manifest.categories.length !== 12) fail('expected 12 product categories');
 
 let count = 0;
@@ -42,5 +43,6 @@ if (!/page === 'products'/.test(app) || !/initProducts/.test(app)) fail('app.js 
 const productsJs = fs.readFileSync(path.join(root, 'products.js'), 'utf8');
 if (!/requestId !== state\.requestId/.test(productsJs)) fail('category requests are missing stale-response protection');
 if (!/retry-category/.test(productsJs) || !/retry-policies/.test(productsJs)) fail('interactive data loads are missing retry controls');
+if (!/uncoveredSitemapUrls/.test(productsJs) || !/目录缺口/.test(productsJs)) fail('public catalog coverage gap is not rendered');
 
 console.log(`Product catalog check passed: ${count} products, ${manifest.categories.length} categories.`);

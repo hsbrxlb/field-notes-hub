@@ -8,6 +8,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 SOURCE_ROOT = Path("/Users/oliver/AI/knowledge/oedro-products/normalized")
+REPORT_PATH = SOURCE_ROOT.parent / "reports" / "latest.json"
 OUTPUT_ROOT = Path(__file__).resolve().parents[1] / "data" / "products"
 
 CATEGORY_NAMES = {
@@ -153,6 +154,14 @@ def main():
             })
     write_json(OUTPUT_ROOT / "policies.json", {"policies": policies})
 
+    report = json.loads(REPORT_PATH.read_text(encoding="utf-8")) if REPORT_PATH.exists() else {}
+    report_results = report.get("results", {})
+    uncovered_sitemap_urls = int(
+        report_results.get("uncovered_redirects")
+        or report_results.get("failed_or_uncovered")
+        or len(report.get("failures", []))
+    )
+
     manifest = {
         "title": "OEDRO 官网产品资料库",
         "description": "按官网分类浏览 OEDRO、OEDRO PRO 与 YITAMOTOR 商品资料。",
@@ -163,10 +172,12 @@ def main():
         "brandCounts": dict(brands),
         "warningCounts": dict(warnings),
         "duplicateRecords": duplicate_records,
+        "uncoveredSitemapUrls": uncovered_sitemap_urls,
         "categories": categories,
         "policyFile": "data/products/policies.json",
         "notes": [
             "价格、库存、评分和配送信息是抓取时快照，购买或对外引用前请打开官网复核。",
+            f"另有 {uncovered_sitemap_urls} 条官网站点地图商品链接跳转首页，无法形成商品记录；本页没有把它们计入商品总数。",
             "分类 1009 是官网接口中的测试商品，保留用于完整性核对，不作为正式选品。",
         ],
     }

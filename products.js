@@ -34,6 +34,7 @@
           <div><dt>品牌</dt><dd>${Object.keys(m.brandCounts).length}</dd></div>
           <div><dt>快照</dt><dd>${h(dateText(m.capturedAt))}</dd></div>
         </dl>
+        <p class="catalog-coverage" role="note"><strong>目录缺口</strong><span>${m.uncoveredSitemapUrls.toLocaleString('zh-CN')} 条官网站点地图链接跳转首页，未计入上方商品总数。</span></p>
       </header>
       <section class="catalog-section category-section" aria-labelledby="category-heading">
         <div class="catalog-section-head"><div><span class="index-number">01</span><h2 id="category-heading">按官网分类浏览</h2></div><a href="${h(m.sourceUrl)}" target="_blank" rel="noreferrer">打开 OEDRO 官网 ↗</a></div>
