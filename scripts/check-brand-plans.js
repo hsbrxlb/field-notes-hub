@@ -48,9 +48,8 @@ async function checkPlan(plan) {
   assert.ok(sourceCount >= 4, `${plan.id}: retained research references`);
   for (const source of sources) assert.match(source.url, /^https:\/\//, `${plan.id}: valid reference URL`);
   if (sources.length) assert.equal(footer, '', `${plan.id}: references stay outside reading UI`);
-  for (const figure of html.matchAll(/<figure\b[^>]*>([\s\S]*?)<\/figure>/g)) {
-    assert.match(figure[1], /<figcaption[^>]*>[\s\S]*概念效果图/, `${plan.id}: concept disclosure outside image`);
-  }
+  assert.doesNotMatch(html, /<figcaption[^>]*>[\s\S]*?概念效果图/, `${plan.id}: no repeated concept caption boilerplate`);
+  if (plan.id === 'merch-plan') assert.match(html, /周边设计与试验建议/, 'merch-plan: proposal context remains clear');
   for (const image of html.matchAll(/<img\b[^>]*>/g)) {
     assert.match(image[0], /\balt="[^"]+"/, `${plan.id}: descriptive image alternative`);
     assert.match(image[0], /\bwidth="\d+"/, `${plan.id}: image width`);
@@ -78,7 +77,7 @@ async function checkPlan(plan) {
 }
 
 Promise.all(plans.map(checkPlan)).then(() => {
-  console.log('Brand plans PASS: page content, routes, local resources, concept disclosures, and static startup on success/failure.');
+  console.log('Brand plans PASS: page content, routes, local resources, proposal context, and static startup on success/failure.');
 }).catch(error => {
   console.error(error.message);
   process.exitCode = 1;

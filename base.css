@@ -281,3 +281,11 @@ p, ul, ol, dl, figure { margin-top: 0; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+
+/* Search findings and follow-up actions use a continuous reading column. */
+[data-topic="seo-geo"] .topic-content-section p,
+[data-topic="seo-geo"] .topic-content-section li,
+[data-topic="seo-geo"] .topic-steps strong { color: var(--text); font-size: 16px; line-height: 1.8; }
+[data-topic="seo-geo"] .topic-steps { grid-template-columns: 1fr; }
+[data-topic="seo-geo"] .topic-steps > div { padding: 16px 0; border-right: 0; }
+.nav-list a span { min-width: 0; overflow-wrap: anywhere; }

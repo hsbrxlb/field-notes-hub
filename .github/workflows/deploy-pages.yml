@@ -43,6 +43,7 @@ jobs:
           node scripts/check-brand-plans.js
           node scripts/check-email-templates.js
           node scripts/check-content-studio.js
+          node scripts/test-hub-navigation.js
           node scripts/check-content-pipeline-tests.js
           node scripts/check-mascot-page.js
           python3 scripts/test-update-hub-record.py

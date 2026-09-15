@@ -1,6 +1,12 @@
 {
   "page": "merch-plan.html",
   "sources": [
+    {"url":"https://www.xiexingift.com/magnet.html","supports":"2026-09-15官网自述MOQ100、最快3天打样、大货7-15工作日；非正式报价或验厂结果"},
+    {"url":"https://www.ouyihats.com/custom-baseball-caps-manufacturer.html","supports":"2026-09-15每款每色MOQ50、FOB2.50-8美元；样品7-10天与12-15天矛盾，需书面确认"},
+    {"url":"https://www.roughcountry.com/product/rough-country-mesh-hat-84119","supports":"Richardson 112网帽与棕色品牌章，SKU84119"},
+    {"url":"https://www.lasfit.com/products/black-round-neck-t-shirt","supports":"十周年黑色圆领T恤，商品页存在不代表当前可购"},
+    {"url":"https://www.lasfit.com/blogs/news/everything-you-need-to-know-about-lasfit-10th-anniversary","supports":"2025年周年活动使用T恤作为奖品"},
+    {"url":"https://www.weathertech.com/weathertech-water-bottle.html","supports":"Water Bottle运动水瓶，8ABTL1，日常携带场景"},
     {"url":"https://www.roughcountry.com/lifestyle","supports":"品牌周边"},
     {"url":"https://www.roughcountry.com/gallery","supports":"车主改装展示"},
     {"url":"https://www.lasfit.com/pages/community-gallery","supports":"车型与产品连接"},
@@ -8,5 +14,9 @@
     {"url":"https://www.oedro.com/article/shipping-delivery-policy.html?aid=91","supports":"配送网络"},
     {"url":"https://support.threadless.com/article/165-how-are-the-submissions-chosen","supports":"投稿选择机制"},
     {"url":"https://help.x.com/en/using-x/x-polls","supports":"投票限制"}
+  ],
+  "reference_images": [
+    {"asset":"assets/merch-references/lasfit-shirt.png","source":"https://www.lasfit.com/cdn/shop/files/black-round-neck-t-shirt-XL_2_grande.png?v=1788854743","use":"单张商品缩略图配对应官网链接，用于比较周边形式，不冒充OEDRO产品"},
+    {"asset":"assets/merch-references/weathertech-bottle.jpg","source":"https://images.weathertech.com/c80a2a2f-38c8-4ae5-bd2f-b1af00326f0d/WT_Bottle_13_Original%20file.jpg?fit=bounds&height=800&width=800","use":"单张商品缩略图配对应官网链接，用于比较周边形式，不冒充OEDRO产品"}
   ]
 }

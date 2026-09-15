@@ -12,23 +12,23 @@
 - 样站检查：`node scripts/check-fakesite.js`；发布流程同时检查源码和最终 Pages 文件。公开目录只包含运行所需网页、脚本、字体和图片，没有研究原件或本地运行记录。
 
 - `index.html`：直接进入 Discord 社群
-- `research.html`：统一的“AI智能用户调研”，完整界面预览与“开始AI调研问卷”入口。`light-research.html` 保留为同内容兼容入口；独立应用源码位于 `apps/light-research`。
-- `user-voice.html`：本机问题处理工作的公开汇总、结论和行动
-- `content-studio.html`：已制作的社媒内容；研究与方案、网站与系统分别进入 `research-library.html` 和 `sites-systems.html`
+- `research.html`：统一的“AI问卷”，完整界面预览与“开始AI调研问卷”入口。`light-research.html` 保留为同内容兼容入口；独立应用源码位于 `apps/light-research`。
+- `user-voice.html`：全网搜-关于Oedro的讨论/问题，展示公开汇总、结论和行动。
+- `content-studio.html`：直接展示当前 Instagram、X 和 YouTube 社区作品、Prompt、目的及中文对照，不再要求进入测试记录。
 - `social-brand.html`：社媒品牌升级讨论方案，产品与购买信息、车主交流内容与平台分工。
-- `merch-plan.html`：周边共创企划，含四张概念图、产品优先级、投票/投稿流程和到手成本核对；不是已启动活动或在售商品。
+- `merch-plan.html`：周边共创企划，含四张概念图、产品优先级和同行实物参考；周边覆盖日常使用、赠送、购买和活动参与。
 - 两页使用 `brand-plan.css`，正文为静态 HTML，共用 `data/content.json` 导航；验证：`node scripts/check-brand-plans.js`。更新不能把企划改写成已经执行的运营结果。
 - `content-pipeline-test.html`：仅展示当前 Instagram、X 和 YouTube 社区图文的 Prompt、简短目的与作品，中文对照默认展开。历史作品和公开安全的来源、审核记录保留在数据中，不在当前审阅页展示。
 
   维护说明：Hub 的 `youtube` 对应 Skill 的 `youtube_community`。本次验收范围是静态作品页，完整自动管线尚未通过；Instagram 原生图片为 1122×1402，低于预设目标，保持原尺寸。
 - `flipbooks.html`：Flip Book Demo（翻页书），进入 Brand Story 与 Car Owner Survey
 - `mascot.html`：OEDRO 吉祥物角色档案，24 个角色区共 130 张独立高清图；机械与配件角色在前，动物与人物在后。新增轻拟人连接件伙伴咔咔四张视角与动作图，保留全部历史图、页内跳转与对应版本的小尺寸对照，不设置选角标签。
-- `mascot-workflow.html`：吉祥物设计方法，位于角色档案下方的侧栏子入口，说明主图审查、身份一致性、反馈处理、跨品牌适配及交付验证。
-- 侧栏分别进入“SEO与AI搜索”“Discord社群”“品牌与说话风格”，沿用对应的 `topic.html?slug=...` 网址。`topics.html` 仅保留旧链接所需的资料索引。
+- `mascot-workflow.html`：Skills / Workflows，可直接复制或下载完整的跨品牌吉祥物工作包，供其他 Codex 或 AI 使用，不依赖本机私有路径。
+- 侧栏分别进入“SEO与AI搜索”“Oedro-Discord”“Oedro persona”，沿用对应的 `topic.html?slug=...` 网址。`topics.html` 仅保留旧链接所需的资料索引。
 - 原“公开信号与用户关系”是公开评论的留存、核实、采用与许可方法，已归入 `user-voice.html#feedback-method`；原专题网址自动跳转到该位置。
-- `playbook.html`：工作方法和完成标准
+- `research-library.html`、`sites-systems.html`、`playbook.html` 已退出导航，只保留旧网址的定向跳转。
 
-`content-studio.html`路径为兼容旧链接而保留。页面已经改为只读成果档案，读取`data/content-studio.json`；没有填写表单、在线生成、浏览器草稿、版本审核、登录或数据库。
+`content-studio.html` 为只读作品页，与独立测试页复用当前作品数据和渲染器；没有填写表单、在线生成、浏览器草稿、版本审核、登录或数据库。
 
 维护记录：2026年9月9日创意样稿由现有 Skills 与总控整合完成；完整自动内容包校验尚未通过，Hub 展示验收不代表整套工作流通过。
 
@@ -64,6 +64,7 @@ python3 scripts/update-hub-record.py --input <记录.json>
 
 ```bash
 node scripts/check-content-studio.js
+node scripts/test-hub-navigation.js
 node scripts/check-content-pipeline-tests.js
 node scripts/test-content-pipeline-records.js
 node scripts/check-public-pages.js
@@ -123,6 +124,6 @@ node scripts/check-email-templates.js
 
 ## Light Research
 
-侧边栏的“AI智能用户调研”进入 `research.html`，可打开云端真实 AI 访谈（https://oedro-light-research.onrender.com/）。GitHub Pages 发布的是入口和界面预览，不执行模型调用。完整 Next.js 应用位于 `apps/light-research`，由 Render 免费 Web Service 运行，回答与访谈进度保存于 Neon 免费 PostgreSQL；模型凭据只配置在服务端。它不进入 Pages 静态发布目录，也不依赖本机开机。
+侧边栏的“AI问卷”进入 `research.html`，可打开云端真实 AI 访谈（https://oedro-light-research.onrender.com/）。GitHub Pages 发布的是入口和界面预览，不执行模型调用。完整 Next.js 应用位于 `apps/light-research`，由 Render 免费 Web Service 运行，回答与访谈进度保存于 Neon 免费 PostgreSQL；模型凭据只配置在服务端。它不进入 Pages 静态发布目录，也不依赖本机开机。
 
 当前只保留 Oliver 选定的 Hawthorne 字体版本。参见应用目录的 README 获取启动和验证命令。

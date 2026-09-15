@@ -73,23 +73,24 @@
     </article>`;
   }
 
-  function renderPageMarkup(config) {
+  function renderPageMarkup(config, { inline = false } = {}) {
     const record = config.active_run_id
       ? config.records.find((item) => item.run_id === config.active_run_id)
       : sortRecords(config.records)[0];
     if (!record) throw new Error('当前内容记录不存在');
-    return `<header class="page-heading pipeline-heading"><a class="text-link" href="content-studio.html">← 社媒内容生产</a><h1>${escapeHtml(config.title)}</h1></header>${recordMarkup(record)}`;
+    return `<header class="page-heading pipeline-heading">${inline ? '' : '<a class="text-link" href="content-studio.html">← 社媒内容生产</a>'}<h1>${escapeHtml(inline ? '社媒内容生产' : config.title)}</h1></header>${recordMarkup(record)}`;
   }
 
-  async function initContentPipelineTests() {
+  async function initContentPipelineTests(options = {}) {
     const response = await fetch('data/content-pipeline-tests.json', { cache: 'no-store' });
     if (!response.ok) throw new Error('内容生产测试加载失败');
     const config = await response.json();
     if (!config || !Array.isArray(config.records) || !config.records.length) throw new Error('内容生产测试格式不正确');
-    document.querySelector('#content').innerHTML = renderPageMarkup(config);
-    document.title = `${config.title}｜海外用户运营`;
+    document.querySelector('#content').innerHTML = renderPageMarkup(config, options);
+    const title = options.inline ? '社媒内容生产' : config.title;
+    document.title = `${title}｜海外用户运营`;
     const breadcrumb = document.querySelector('#breadcrumb-page');
-    if (breadcrumb) breadcrumb.textContent = config.title;
+    if (breadcrumb) breadcrumb.textContent = title;
     const description = document.querySelector('meta[name="description"]');
     if (description) description.content = 'OEDRO社媒内容生产的 Prompt、目的、平台作品。';
   }

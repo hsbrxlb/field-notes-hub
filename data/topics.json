@@ -12,7 +12,7 @@
     },
     {
       "slug": "discord-community",
-      "title": "Discord社群",
+      "title": "Oedro-Discord",
       "area": "社群",
       "status": "待确认",
       "summary": "频道、验证、工单和内容同步框架已经搭好，下一步确认管理权限、新人路径、首批车主和日常维护分工。",
@@ -20,7 +20,7 @@
     },
     {
       "slug": "brand-voice-system",
-      "title": "品牌与说话风格",
+      "title": "Oedro persona",
       "area": "品牌声音",
       "status": "进行中",
       "summary": "统一Email、Discord、调研、客服和内容合作的说话原则；内部规则已经形成，真实用户反应仍待验证。",

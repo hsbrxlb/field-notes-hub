@@ -17,7 +17,7 @@
     },
     {
       "id": "discord-community",
-      "label": "Discord社群",
+      "label": "Oedro-Discord",
       "file": "topic.html?slug=discord-community"
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "id": "research",
-      "label": "AI智能用户调研",
+      "label": "AI问卷",
       "file": "research.html"
     },
     {
@@ -46,28 +46,18 @@
       "file": "content-studio.html"
     },
     {
-      "id": "research-library",
-      "label": "研究与方案",
-      "file": "research-library.html"
-    },
-    {
-      "id": "sites-systems",
-      "label": "网站与系统",
-      "file": "sites-systems.html"
-    },
-    {
       "id": "seo-geo",
       "label": "SEO与AI搜索",
       "file": "topic.html?slug=seo-geo"
     },
     {
       "id": "voice",
-      "label": "问题与反馈",
+      "label": "全网搜-关于Oedro的讨论/问题",
       "file": "user-voice.html"
     },
     {
       "id": "brand-voice-system",
-      "label": "品牌与说话风格",
+      "label": "Oedro persona",
       "file": "topic.html?slug=brand-voice-system"
     },
     {
@@ -77,19 +67,13 @@
     },
     {
       "id": "mascot-workflow",
-      "label": "吉祥物设计流程",
-      "file": "mascot-workflow.html",
-      "parent": "mascot"
+      "label": "Skills / Workflows",
+      "file": "mascot-workflow.html"
     },
     {
       "id": "flipbooks",
       "label": "Flip Book Demo",
       "file": "flipbooks.html"
-    },
-    {
-      "id": "playbook",
-      "label": "工作方法",
-      "file": "playbook.html"
     }
   ],
   "flipbooks": {
@@ -113,120 +97,6 @@
       }
     ]
   },
-  "stages": [
-    {
-      "id": 1,
-      "name": "摸清现状",
-      "summary": "盘点已有渠道、用户来源、协作方和研究方法，明确当前数据和授权缺口。",
-      "prerequisite": "需要先整理独立站、EDM、客服、KOL、TikTok、Reddit、论坛、PR、联盟和Discord的现有接触方式。",
-      "actions": [
-        "整理各渠道现有用户接触方式",
-        "列出用户来源和协作方",
-        "核对已有研究方法和数据记录",
-        "标记缺失的用户资料、车型和授权信息"
-      ],
-      "deliverables": [
-        "渠道与用户来源盘点表",
-        "协作方清单",
-        "研究方法清单",
-        "数据缺口清单"
-      ],
-      "done_when": "能清楚说明当前有哪些用户接触渠道、哪些数据可用、哪些需要补齐。"
-    },
-    {
-      "id": 2,
-      "name": "整理用户资料",
-      "summary": "建立统一用户资料，补充车型、分项授权和参与记录。",
-      "prerequisite": "完成第一轮渠道和用户来源盘点。",
-      "actions": [
-        "整理统一用户资料字段",
-        "补充车型数据",
-        "建立分项授权记录",
-        "记录用户参与历史"
-      ],
-      "deliverables": [
-        "用户资料字段表",
-        "车型数据表",
-        "分项授权记录",
-        "参与记录表"
-      ],
-      "done_when": "用户资料、车型、授权和参与记录可以在一个地方查看和更新。"
-    },
-    {
-      "id": 3,
-      "name": "持续收集反馈",
-      "summary": "通过现有渠道和研究方法持续收集用户反馈，形成可追踪的记录。",
-      "prerequisite": "用户资料和授权记录可用。",
-      "actions": [
-        "确定反馈收集渠道",
-        "设置反馈记录方式",
-        "按车型和用户类型整理反馈",
-        "定期汇总反馈要点"
-      ],
-      "deliverables": [
-        "反馈收集清单",
-        "反馈记录模板",
-        "按车型整理的反馈表",
-        "定期反馈汇总"
-      ],
-      "done_when": "用户反馈能持续进入记录，并能按车型或用户类型查看。"
-    },
-    {
-      "id": 4,
-      "name": "邀请参与",
-      "summary": "在联系许可、执行方案和所需权益获批后，启动用户调研、条件式产品测试、用户内容（UGC）、长期用户反馈组和社群等项目。",
-      "prerequisite": "已有可用的用户资料和反馈记录。",
-      "actions": [
-        "确定首批用户参与项目",
-        "邀请符合条件的用户",
-        "记录参与过程和结果",
-        "整理项目产出"
-      ],
-      "deliverables": [
-        "项目参与名单",
-        "项目任务说明",
-        "参与记录",
-        "项目产出汇总"
-      ],
-      "done_when": "至少一个用户参与项目完成首轮邀请和记录。"
-    },
-    {
-      "id": 5,
-      "name": "推动业务改进",
-      "summary": "把用户反馈和参与结果用于产品、内容和运营调整。",
-      "prerequisite": "已有可用的反馈和参与记录。",
-      "actions": [
-        "识别可改进的业务点",
-        "与相关同事确认改进事项",
-        "跟进改进结果",
-        "记录改进前后变化"
-      ],
-      "deliverables": [
-        "改进事项清单",
-        "改进跟进记录",
-        "结果对比记录"
-      ],
-      "done_when": "至少一项用户反馈或参与结果进入业务改进并完成跟进。"
-    },
-    {
-      "id": 6,
-      "name": "固定有效做法",
-      "summary": "把有效做法整理成团队可以重复执行的流程。",
-      "prerequisite": "已有至少一轮完整的反馈收集、参与和业务改进。",
-      "actions": [
-        "整理有效流程",
-        "明确各环节负责人和协作方",
-        "形成标准操作步骤",
-        "定期复盘和调整"
-      ],
-      "deliverables": [
-        "常规流程说明",
-        "协作分工表",
-        "复盘记录"
-      ],
-      "done_when": "团队按固定流程持续开展用户运营。"
-    }
-  ],
   "capabilities": [
     {
       "name": "用户资料和联系许可",
@@ -259,31 +129,8 @@
       "minimum": "至少能识别可参与复购或推荐的用户群体。"
     }
   ],
-  "playbook": {
-    "meta_description": "从零开始搭建海外用户运营的步骤和结果，包含用户资料、有效参与和业务改进。",
-    "title": "工作方法",
-    "description": "",
-    "section_title": "从哪里开始，接着做什么",
-    "section_label": "",
-    "results_title": "要形成的结果",
-    "results_label": "",
-    "results": [
-      {
-        "name": "用户资料",
-        "description": "统一用户资料、车型、分项授权和参与记录，支持后续所有用户运营动作。"
-      },
-      {
-        "name": "有效参与",
-        "description": "用户能通过调研、用户内容（UGC）、长期用户反馈组和社群参与；产品测试在条件具备并获批后开展，所有参与过程留下记录。"
-      },
-      {
-        "name": "业务改进",
-        "description": "用户反馈和参与结果能进入产品、内容和运营调整，并完成跟进。"
-      }
-    ]
-  },
   "research": {
-    "title": "AI智能用户调研",
+    "title": "AI问卷",
     "meta_description": "打开 OEDRO AI 文字访谈，查看调研准备、结果整理与参与说明。",
     "description": "与 Oedro Buddy 进行一对一文字访谈。",
     "prepare": [
@@ -295,7 +142,7 @@
   },
   "user_voice": {
     "meta_description": "OEDRO公开问题与反馈的阶段性工作汇总。",
-    "title": "问题与反馈",
+    "title": "全网搜-关于Oedro的讨论/问题",
     "description": "记录本机问题处理工作的公开汇总、重复主题、结论和后续动作。",
     "snapshot_title": "最近汇总",
     "snapshot": [

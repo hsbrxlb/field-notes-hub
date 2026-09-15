@@ -1,5 +1,6 @@
 {
   "page": "social-brand.html",
+  "illustrations": [{"asset":"assets/brand-social/daily-merch.jpg","kind":"proposed merchandise use scene","brand_reference":"assets/brand/oedro-logo-official.png","provenance":"Codex built-in image_gen","claim_boundary":"Illustrative proposal, not existing merchandise or customer testimony"}],
   "sources": [
     {"url": "https://www.oedro.com/ugc-gallery", "supports": "OEDRO 创作者内容图库"},
     {"url": "https://www.roughcountry.com/gallery", "supports": "车主改装展示"},

@@ -19,6 +19,9 @@ assert.match(invitation, /\.email-pad \{ padding-left:24px !important; padding-r
 assert.match(invitation, /bgcolor="#195c96"/);
 assert.doesNotMatch(invitation, /#d6e289|Thanks for sharing your feedback|Let’s talk cars|A community invitation from OEDRO/);
 assert.match(invitation, /A muddy floor mat after a weekend drive/);
+assert.match(invitation, /a photo is plenty/);
+assert.match(invitation, /a quick question about your setup, or just browse/);
+assert.doesNotMatch(invitation, /those stories|need a little explanation|story that goes with it/);
 assert.doesNotMatch(source, /优惠券|<details|AI 生成|发送安排|download|Company mailing address/);
 assert.ok(fs.existsSync(path.join(root, 'assets/brand/oedro-logo-official.png')));
 const content = { innerHTML: '' };
@@ -36,6 +39,6 @@ require('node:vm').runInNewContext(source, context);
   assert.match(frame.srcdoc, /Unsubscribe from marketing emails/);
   const preheader = invitation.match(/mso-hide:all;">([^<]+)<\/div>/)[1];
   assert.ok(content.innerHTML.includes(preheader), 'Inbox summary must match the email preheader');
-  assert.match(content.innerHTML, /OEDRO on Discord: bring your garage stories/);
+  assert.match(content.innerHTML, /Come take a look at OEDRO on Discord/);
   console.log('Email checks passed: one preview, matching preheader, aligned padding, blue CTA, import tokens, no public coupon.');
 })().catch((error) => { console.error(error); process.exitCode = 1; });

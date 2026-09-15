@@ -68,27 +68,6 @@ function renderShell(data) {
 }
 
 
-function methodStageMarkup(stage) {
-  return `<article class="method-detail" id="method-stage-${escapeHtml(stage.id)}" data-searchable>
-    <header><span class="stage-number">${String(stage.id).padStart(2, '0')}</span><h2>${escapeHtml(stage.name)}</h2></header>
-    <div class="method-content">
-      <p><strong>前提</strong>${escapeHtml(stage.prerequisite)}</p>
-      <ul>${stage.actions.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
-      <p><strong>产出</strong>${stage.deliverables.map(escapeHtml).join('；')}</p>
-      <p><strong>完成</strong>${escapeHtml(stage.done_when)}</p>
-    </div>
-  </article>`;
-}
-
-function renderPlaybook(data) {
-  const p = data.playbook;
-  document.title = `工作方法｜${data.site.title}`;
-  document.querySelector('meta[name="description"]').content = p.meta_description;
-  document.querySelector('#content').innerHTML = `
-    ${pageHeading('工作方法')}
-    <section class="section method-stack">${data.stages.map(methodStageMarkup).join('')}</section>`;
-}
-
 function renderResearch(data) {
   const r = data.research;
   document.title = `${r.title}｜${data.site.title}`;
@@ -286,6 +265,7 @@ async function renderTopic(data) {
   const response = await fetch(`data/topics/${encodeURIComponent(slug)}.json`, { cache: 'no-store' });
   if (!response.ok) throw new Error('专题加载失败');
   const topic = await response.json();
+  document.querySelector('#content').dataset.topic = slug;
   if (slug === 'discord-community') return renderDiscord(topic, data);
   const sections = visibleTopicSections(topic);
   document.title = `${topic.title}｜${data.site.title}`;
@@ -359,7 +339,6 @@ async function init() {
     radarResponse ? radarResponse.json() : Promise.resolve(null)
   ]);
   renderShell(data);
-  if (page === 'playbook') renderPlaybook(data);
   if (page === 'research') renderResearch(data);
   if (page === 'flipbooks') renderFlipbooks(data);
   if (page === 'voice') {
@@ -369,7 +348,7 @@ async function init() {
   if (page === 'topics' && location.pathname.endsWith('topics.html')) renderTopics(data, topics);
   if (page === 'topics' && location.pathname.endsWith('topic.html')) await renderTopic(data);
   if (page === 'studio' && location.pathname.endsWith('content-pipeline-test.html')) await window.initContentPipelineTests?.();
-  if (['studio', 'research-library', 'sites-systems'].includes(page) && !location.pathname.endsWith('content-pipeline-test.html')) await window.initContentStudio?.();
+  if (page === 'studio' && !location.pathname.endsWith('content-pipeline-test.html')) await window.initContentStudio?.();
   if (page === 'mascot') await window.initMascot?.();
   if (page === 'email-templates') await window.initEmailTemplates?.();
   if (page === 'products') await window.initProducts?.();

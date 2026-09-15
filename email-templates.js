@@ -3,11 +3,11 @@ window.initEmailTemplates = async function () {
     {
       id: 'discord-invite', title: 'Discord 社群邀请',
       file: 'assets/email/discord-invite.html',
-      subject: 'OEDRO on Discord: bring your garage stories',
-      subjectTranslation: '来 OEDRO 的 Discord，聊聊车库里的故事',
-      preview: 'A photo from the garage, with the story that goes with it.',
-      previewTranslation: '一张车库里的照片，还有它背后的故事。',
-      translation: ['有没有那种“你看看这个”的照片？', '周末开完车后沾满泥的脚垫。一个小改动让装东西更省事。有些用车照片，确实得配几句说明。', '我们正在 OEDRO 的 Discord 上开一个地方，聊聊这些故事。来看看，想分享的话就发一个。', '加入 OEDRO 的 Discord']
+      subject: 'Come take a look at OEDRO on Discord',
+      subjectTranslation: '来看看 OEDRO 的 Discord',
+      preview: 'Share a photo, ask a quick question, or just browse.',
+      previewTranslation: '发张照片，问个小问题，或者随便逛逛。',
+      translation: ['聊聊日常用车的地方', '周末开完车，脚垫上全是泥。后备箱里全是狗毛。这些日常用车的事，都欢迎发到 OEDRO 的 Discord。发张照片，就能聊起来。', '这个空间刚起步。你可以进来说说你的用车问题，也可以随便逛逛，看看什么有意思。', '加入 OEDRO 的 Discord']
     }
   ];
   const section = (item) => `
