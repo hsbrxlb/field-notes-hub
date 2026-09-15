@@ -33,12 +33,24 @@
 .plan-concepts article { min-width: 0; }
 .brand-plan figure { margin: var(--space-5) 0; }
 .brand-plan img { display: block; width: 100%; height: auto; }
-.brand-plan .plan-daily-image { max-width: 600px; }
+.brand-plan .plan-daily-image { max-width: none; }
+.brand-plan .plan-product-image { max-width: 640px; }
+.editorial-examples { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--space-6); }
+.editorial-examples article { min-width: 0; }
+.editorial-examples img { height: 300px; object-fit: contain; margin: var(--space-4) 0; }
+.peer-examples, .distribution-examples { display: grid; grid-template-columns: 1fr; gap: var(--space-7); }
+.peer-examples article + article, .distribution-examples article + article, .sourcing-item + .sourcing-item { padding-top: var(--space-6); border-top: 1px solid var(--border); }
+.peer-examples .peer-portrait { max-width: 400px; }
+.brand-plan .peer-square { max-width: 640px; }
+.peer-examples a, .supplier-list a, .editorial-examples a { display: inline-flex; align-items: center; min-height: var(--touch-size); }
+.post-draft { padding-left: var(--space-4); border-left: 2px solid var(--accent); margin-bottom: var(--space-5); }
+.sourcing-item { margin: var(--space-6) 0; }
+.supplier-list p { margin: var(--space-2) 0 0; }
 .contact-paths { margin: var(--space-5) 0; }
 .contact-paths span { color: var(--accent); padding: 0 var(--space-2); }
-.merch-references { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
+.merch-references { display: grid; grid-template-columns: 1fr; gap: var(--space-7); }
 .merch-references article { min-width: 0; }
-.brand-plan .merch-references img { width: 100%; height: 180px; object-fit: contain; background: #fff; margin-bottom: var(--space-4); }
+.brand-plan .merch-references img { width: 100%; max-width: 640px; height: auto; margin-bottom: var(--space-4); }
 .merch-references a { display: inline-flex; align-items: center; min-height: var(--touch-size); }
 .brand-plan figcaption { padding-top: var(--space-3); font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
 .plan-sources { margin-top: var(--space-6); padding-top: var(--space-5); border-top: 1px solid var(--border-strong); }
@@ -47,7 +59,8 @@
 @media (max-width: 1100px) { .plan-concepts { grid-template-columns: 1fr; } }
 @media (max-width: 700px) {
   .merch-references { grid-template-columns: 1fr; }
-  .brand-plan .merch-references img { max-width: 320px; height: 220px; }
+  .editorial-examples { grid-template-columns: 1fr; }
+  .editorial-examples img { height: auto; }
   .plan-document { padding: 0; }
   .brand-plan h1 { font-size: var(--type-h1-mobile); }
   .brand-plan h2 { font-size: 22px; }

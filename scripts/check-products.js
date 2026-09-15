@@ -41,6 +41,7 @@ if (!/data-page="products"/.test(html) || !/products\.js/.test(html) || !/produc
 const app = fs.readFileSync(path.join(root, 'app.js'), 'utf8');
 if (!/page === 'products'/.test(app) || !/initProducts/.test(app)) fail('app.js does not initialize the product catalog');
 const productsJs = fs.readFileSync(path.join(root, 'products.js'), 'utf8');
+if (!/document\.title\s*=\s*['"]产品知识库｜OEDRO 海外用户运营['"]/.test(productsJs)) fail('runtime product page title must retain 产品知识库');
 if (!/requestId !== state\.requestId/.test(productsJs)) fail('category requests are missing stale-response protection');
 if (!/retry-category/.test(productsJs) || !/retry-policies/.test(productsJs)) fail('interactive data loads are missing retry controls');
 if (!/uncoveredSitemapUrls/.test(productsJs) || !/目录缺口/.test(productsJs)) fail('public catalog coverage gap is not rendered');

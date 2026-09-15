@@ -5,7 +5,7 @@
   "description": "具体、直接、实用。不同渠道保持同一套事实边界，语气按任务变化。",
   "area": "品牌表达",
   "status": "进行中",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "public_safe": true,
   "sections": [
     {
@@ -24,6 +24,73 @@
         "把OEDRO已确认的信息与车主经验分开，避免把个体体验写成产品规格。",
         "尊重收件人的真实关系和车辆信息，不把订阅者自动称为买家，也不靠适配记录猜车型。",
         "每条消息保留一个清楚、真实的行动入口。"
+      ]
+    },
+    {
+      "id": "brand-name",
+      "title": "品牌名的大小写",
+      "paragraphs": [
+        "建议正式品牌名统一写 OEDRO，适用于邮件署名、正文、商品与周边。官网主宣传使用 OEDRO，About 页也出现 Oedro，现有用法并不完全一致。统一写法有利于让读者把邮件、官网和实物上的品牌对应起来。",
+        "Oedro 在普通句子里视觉上更柔和；OEDRO 更贴近现有标识，但重复过多会显得生硬。正文需要识别品牌时写 OEDRO，其余用 we；句子照常大小写，避免整句大写。亲和感用具体、轻松的表达来建立。",
+        "账号名、网址、原话和既定专名保留原样。这个选择是统一表达的建议，不代表已经做过用户偏好或转化测试。"
+      ]
+    },
+    {
+      "id": "everyday-example",
+      "title": "社媒：泥鞋带来的小麻烦",
+      "paragraphs": [
+        "配一张雨后鞋底与脚垫的场景图，语气可以轻松，不必每条都推产品。",
+        "The hike ended an hour ago. The mud is still coming home with us.",
+        "徒步一小时前就结束了，泥巴还在跟我们回家。"
+      ]
+    },
+    {
+      "id": "discord-example",
+      "title": "Discord：让新人容易开口",
+      "paragraphs": [
+        "Got a photo from your weekend drive? Drop it here. Just browsing is fine too.",
+        "周末开车出去拍了照片吗？可以发在这里，只看看也没关系。",
+        "一张照片、一个短问题就能参与，不要求写完整故事，也不承诺随时有人答复。"
+      ]
+    },
+    {
+      "id": "fitment-example",
+      "title": "适配问题：信息不够时怎么回答",
+      "paragraphs": [
+        "We haven't confirmed that fit yet. What year and model is your truck, and which product are you looking at?",
+        "这个适配我们还没确认。你的车是哪一年的、什么车型？你看的是哪款产品？"
+      ],
+      "rows": [
+        {"label": "避免", "text": "It should fit.（应该能装。）缺少车辆和产品信息时，这句话会让对方误以为已经确认。"}
+      ]
+    },
+    {
+      "id": "support-example",
+      "title": "售后：收到损坏反馈",
+      "paragraphs": [
+        "I'm sorry it arrived damaged. Please email service@oedro.com with your order number and a photo of the damage.",
+        "很抱歉商品送到时出现了损坏。请把订单号和损坏照片发到 service@oedro.com。",
+        "给出处理入口，不在公开评论里索要订单信息，不擅自承诺换货、退款或完成时间。"
+      ]
+    },
+    {
+      "id": "research-example",
+      "title": "调研：提问保持中性",
+      "paragraphs": [
+        "What, if anything, has been difficult about keeping your truck's interior clean?",
+        "保持车内清洁时，你遇到过什么麻烦吗？没有也可以。"
+      ],
+      "rows": [
+        {"label": "避免", "text": "Wouldn't better floor mats solve that?（换更好的脚垫不就解决了吗？）这会把答案引向产品，而不是了解真实情况。"}
+      ]
+    },
+    {
+      "id": "ugc-example",
+      "title": "用户照片：询问转发意愿",
+      "paragraphs": [
+        "Would you be open to us reposting this photo on OEDRO's Instagram? We can send the caption and usage details for you to review before you decide.",
+        "你愿意考虑让我们把这张照片转发到 OEDRO 的 Instagram 吗？我们可以先发文案和使用细节，供你看过后决定。",
+        "这句话只询问意愿。正式使用前还要确认具体图片、编辑方式、使用期限与是否用于广告。"
       ]
     },
     {
@@ -74,6 +141,18 @@
     }
   ],
   "sources": [
+    {
+      "label": "OEDRO 官网",
+      "url": "https://www.oedro.com/",
+      "published_or_updated": "2026-09-15复核",
+      "supports": "首页宣传使用 OEDRO；大小写统一为编辑建议，不是用户测试结论。"
+    },
+    {
+      "label": "OEDRO About 页",
+      "url": "https://www.oedro.com/about-oedro",
+      "published_or_updated": "2026-09-15复核",
+      "supports": "About 页混用 Oedro 与 OEDRO，不能声称官网已有完全一致的大小写标准。"
+    },
     {
       "label": "Dimensions of Brand Personality",
       "url": "https://doi.org/10.1177/002224379703400304",

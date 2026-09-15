@@ -27,7 +27,7 @@
     const m = state.manifest;
     return `
       <header class="catalog-hero">
-        <div><span class="eyebrow">OFFICIAL CATALOG SNAPSHOT</span><h1>${h(m.title)}</h1><p>${h(m.description)}</p></div>
+        <div><h1>产品知识库</h1><p>${h(m.description)}</p></div>
         <dl class="catalog-stats">
           <div><dt>商品</dt><dd>${m.productCount.toLocaleString('zh-CN')}</dd></div>
           <div><dt>分类</dt><dd>${m.categories.length}</dd></div>
@@ -181,9 +181,9 @@
 
   window.initProducts = async () => {
     const response = await fetch('data/products/manifest.json', { cache: 'no-store' });
-    if (!response.ok) throw new Error('产品资料库清单加载失败');
+    if (!response.ok) throw new Error('产品知识库清单加载失败');
     state.manifest = await response.json();
-    document.title = `${state.manifest.title}｜OEDRO 海外用户运营`;
+    document.title = '产品知识库｜OEDRO 海外用户运营';
     document.querySelector('#content').innerHTML = shellMarkup();
     document.querySelectorAll('[data-category]').forEach((button) => button.addEventListener('click', () => loadCategory(button.dataset.category)));
     document.querySelector('.load-policies').addEventListener('click', loadPolicies);

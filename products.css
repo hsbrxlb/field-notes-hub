@@ -1,6 +1,6 @@
 .products-main { width: min(var(--content-wide), calc(100% - 40px)); }
-.catalog-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .72fr); gap: 48px; align-items: end; padding: 18px 0 32px; border-bottom: 1px solid var(--border-strong); }
-.catalog-hero h1 { max-width: 720px; margin: 0; font-family: var(--font-heading); font-size: clamp(30px, 3.2vw, 38px); line-height: 1.08; letter-spacing: -.035em; }
+.catalog-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .85fr); gap: 32px; align-items: start; padding: 18px 0 32px; border-bottom: 1px solid var(--border-strong); }
+.catalog-hero h1 { max-width: 720px; margin: 0; font-family: var(--font-heading); font-size: clamp(28px, 3.2vw, 34px); line-height: 1.2; letter-spacing: -.035em; }
 .catalog-hero p { max-width: 620px; margin: 15px 0 0; color: var(--text-secondary); }
 .catalog-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; border-top: 1px solid var(--border-strong); }
 .catalog-stats div { min-width: 0; padding: 13px 8px 14px 0; border-bottom: 1px solid var(--border); }

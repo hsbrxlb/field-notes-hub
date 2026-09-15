@@ -97,7 +97,7 @@ body::after { background: rgba(2, 4, 2, .22); }
 .discord-server-heading h2 { margin-bottom: var(--space-2); font-size: 26px; }
 .discord-server-heading span { color: var(--accent); }
 .discord-member-note { color: var(--text-secondary); font-size: 14px; }
-.discord-layout { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(260px, 1fr); gap: var(--space-7); margin-top: var(--space-6); }
+.discord-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-7); margin-top: var(--space-6); }
 .discord-layout h3 { font-size: 20px; margin-bottom: var(--space-5); }
 .discord-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6) var(--space-5); }
 .discord-group { border-left: 1px solid var(--accent); padding-left: var(--space-4); min-width: 0; }

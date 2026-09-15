@@ -1,25 +1,15 @@
 {
   "slug": "discord-community",
   "title": "Oedro-Discord",
-  "description": "OEDRO 与 COZEWARE 的频道结构、成员规模和机器人配置。",
+  "description": "OEDRO 与 COZEWARE 的频道结构和成员规模。",
   "checked_at": "2026-09-14",
   "servers": [
     {
       "id": "oedro",
       "name": "OEDRO",
       "members": "不足 20 名成员",
-      "bots": [
-        "Dyno",
-        "Sapphire",
-        "Tickets v2",
-        "Arcane"
-      ],
-      "settings": [
-        [
-          "新人引导",
-          "未开启"
-        ]
-      ],
+      "bots": [],
+      "settings": [],
       "groups": [
         {
           "name": "入门",
@@ -48,13 +38,7 @@
       "id": "cozeware",
       "name": "COZEWARE",
       "members": "600 余名成员",
-      "bots": [
-        "Dyno",
-        "Sapphire",
-        "Tickets v2",
-        "Arcane",
-        "MEE6"
-      ],
+      "bots": [],
       "settings": [],
       "groups": [
         {

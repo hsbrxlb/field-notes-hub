@@ -43,10 +43,23 @@ async function checkPlan(plan) {
   }
   const footer = html.match(/<footer class="plan-sources">([\s\S]*?)<\/footer>/)?.[1] || '';
   const sourceFile = path.join(root, `data/${plan.id}-sources.json`);
-  const sources = fs.existsSync(sourceFile) ? JSON.parse(fs.readFileSync(sourceFile, 'utf8')).sources : [];
+  const sourceData = fs.existsSync(sourceFile) ? JSON.parse(fs.readFileSync(sourceFile, 'utf8')) : {};
+  const sources = sourceData.sources || [];
   const sourceCount = sources.length || [...footer.matchAll(/href="https:\/\//g)].length;
   assert.ok(sourceCount >= 4, `${plan.id}: retained research references`);
   for (const source of sources) assert.match(source.url, /^https:\/\//, `${plan.id}: valid reference URL`);
+  for (const reference of sourceData.reference_images || []) {
+    assert.match(reference.source, /^https:\/\//, `${plan.id}: official image source retained`);
+    assert.ok(fs.existsSync(path.join(root, reference.asset)), `${plan.id}: referenced image exists ${reference.asset}`);
+  }
+  if (plan.id === 'merch-plan') {
+    assert.doesNotMatch(html, /xiexingift\.com|ouyihats\.com|亚克力印刷款与软胶款/, 'merch-plan: superseded sourcing direction must not return');
+    assert.match(html, /不是正式报价或已批准预算/, 'merch-plan: planning numbers cannot become approved quote or budget');
+  }
+  if (plan.id === 'social-brand') {
+    assert.match(html, /不是真实用户留言/, 'social-brand: illustrative comment examples remain distinguishable from testimony');
+    assert.doesNotMatch(html, /<h[23][^>]*>[^<]*半年/, 'social-brand: no invented duration in test topic heading');
+  }
   if (sources.length) assert.equal(footer, '', `${plan.id}: references stay outside reading UI`);
   assert.doesNotMatch(html, /<figcaption[^>]*>[\s\S]*?概念效果图/, `${plan.id}: no repeated concept caption boilerplate`);
   if (plan.id === 'merch-plan') assert.match(html, /周边设计与试验建议/, 'merch-plan: proposal context remains clear');

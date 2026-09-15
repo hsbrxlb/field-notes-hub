@@ -9,10 +9,47 @@ const nav = JSON.parse(read('data/content.json')).nav;
 for (const [id, label] of Object.entries({
   'discord-community': 'Oedro-Discord', research: 'AI问卷',
   voice: '全网搜-关于Oedro的讨论/问题', 'brand-voice-system': 'Oedro persona',
-  'mascot-workflow': 'Skills / Workflows'
+  products: '产品知识库', 'mascot-workflow': '吉祥物设计的skill'
 })) assert.equal(nav.find(item => item.id === id)?.label, label);
 assert.ok(nav.some(item => item.id === 'products' && item.file === 'products.html'));
 assert.ok(!nav.some(item => ['research-library', 'sites-systems', 'playbook'].includes(item.id)));
+
+const discord = JSON.parse(read('data/topics/discord-community.json'));
+const discordContent = {};
+const discordRenderer = read('app.js').match(/function renderDiscord\(topic, data\) \{[\s\S]*?\n\}/)[0];
+const discordContext = {
+  document: { querySelector: selector => selector === '#content' ? discordContent : {} },
+  escapeHtml: value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;'),
+  pageHeading: title => `<h1>${title}</h1>`
+};
+vm.createContext(discordContext);
+vm.runInContext(discordRenderer, discordContext);
+discordContext.renderDiscord(discord, { site: { title: 'Hub' } });
+assert.ok(!discordContent.innerHTML.includes('discord-configuration'), 'omit empty settings and unsupported bot claims');
+assert.ok(!/已安装|未开启/.test(discordContent.innerHTML));
+for (const server of discord.servers) {
+  assert.ok(discordContent.innerHTML.includes(`id="${server.id}"`));
+  for (const group of server.groups) for (const channel of group.channels) assert.ok(discordContent.innerHTML.includes(channel));
+}
+const configuredDiscord = structuredClone(discord);
+configuredDiscord.servers[0].bots = [{ name: 'Example bot', purpose: 'Handle <help> requests' }];
+configuredDiscord.servers[0].settings = [['Example setting', 'Enabled']];
+discordContext.renderDiscord(configuredDiscord, { site: { title: 'Hub' } });
+assert.equal((discordContent.innerHTML.match(/class="discord-configuration"/g) || []).length, 1);
+assert.ok(discordContent.innerHTML.indexOf('discord-configuration') > discordContent.innerHTML.indexOf('garage-talk'));
+assert.ok(discordContent.innerHTML.includes('Handle &lt;help&gt; requests'));
+assert.ok(discordContent.innerHTML.includes('<dt>Example setting</dt><dd>Enabled</dd>'));
+
+const persona = JSON.parse(read('data/topics/brand-voice-system.json'));
+const topicVisibility = read('app.js').match(/function visibleTopicSections\(topic\) \{[\s\S]*?\n\}/)[0];
+const topicContext = {};
+vm.createContext(topicContext);
+vm.runInContext(topicVisibility, topicContext);
+const visiblePersona = topicContext.visibleTopicSections(persona);
+for (const id of ['brand-name', 'everyday-example', 'discord-example', 'fitment-example', 'support-example', 'research-example', 'ugc-example']) {
+  assert.ok(visiblePersona.some(section => section.id === id && section.paragraphs.length >= 2), `${id} reaches the page renderer`);
+}
+assert.ok(!visiblePersona.some(section => section.id === 'validation'), 'internal review state stays out of the reading page');
 
 for (const [page, hash, expected] of [
   ['research-library', '', 'research.html'],

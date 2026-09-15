@@ -6,7 +6,7 @@
 
 ## 当前页面
 
-- `products.html`：OEDRO 官网产品资料库；1,209 条目录记录按 12 个分类拆分加载，每页只渲染 24 件，完整适配、规格、说明、媒体和政策快照可按商品展开。
+- `products.html`：产品知识库；1,209 条目录记录按 12 个分类拆分加载，每页只渲染 24 件，完整适配、规格、说明、媒体和政策快照可按商品展开。标题与统计区顶部对齐。
 - `fakesite/`：独立站样站，侧栏直接进入首页；包含 Blog、两篇完整指南、FAQ 和草稿编辑演示。保留独立的品牌页面外观，不套 Hub 阅读外壳。页面标明设计演示并禁止索引，不连接购物或真实发布。
 - `fakesite/editor.html`：可预览、在浏览器保存并下载 Markdown/JSON 草稿；这不是员工登录后台，也不会把内容提交到仓库。正式发文优先接公司现有后台；没有现成能力时再评估 Pages CMS 或 Decap 的认证与仓库授权。
 - 样站检查：`node scripts/check-fakesite.js`；发布流程同时检查源码和最终 Pages 文件。公开目录只包含运行所需网页、脚本、字体和图片，没有研究原件或本地运行记录。
@@ -23,8 +23,9 @@
   维护说明：Hub 的 `youtube` 对应 Skill 的 `youtube_community`。本次验收范围是静态作品页，完整自动管线尚未通过；Instagram 原生图片为 1122×1402，低于预设目标，保持原尺寸。
 - `flipbooks.html`：Flip Book Demo（翻页书），进入 Brand Story 与 Car Owner Survey
 - `mascot.html`：OEDRO 吉祥物角色档案，24 个角色区共 130 张独立高清图；机械与配件角色在前，动物与人物在后。新增轻拟人连接件伙伴咔咔四张视角与动作图，保留全部历史图、页内跳转与对应版本的小尺寸对照，不设置选角标签。
-- `mascot-workflow.html`：Skills / Workflows，可直接复制或下载完整的跨品牌吉祥物工作包，供其他 Codex 或 AI 使用，不依赖本机私有路径。
+- `mascot-workflow.html`：吉祥物设计的skill，可直接复制或下载完整的跨品牌吉祥物工作包，供其他 Codex 或 AI 使用，不依赖本机私有路径。
 - 侧栏分别进入“SEO与AI搜索”“Oedro-Discord”“Oedro persona”，沿用对应的 `topic.html?slug=...` 网址。`topics.html` 仅保留旧链接所需的资料索引。
+- Discord 配置位于频道结构下方；没有实际用途证据的机器人与空配置区不显示。品牌表达页包含品牌名大小写建议和六个双语场景示例，示例不代表已发送消息。
 - 原“公开信号与用户关系”是公开评论的留存、核实、采用与许可方法，已归入 `user-voice.html#feedback-method`；原专题网址自动跳转到该位置。
 - `research-library.html`、`sites-systems.html`、`playbook.html` 已退出导航，只保留旧网址的定向跳转。
 

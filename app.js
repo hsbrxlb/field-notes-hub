@@ -235,10 +235,9 @@ function renderDiscord(topic, data) {
                 <ul>${group.channels.map(channel => `<li><span aria-hidden="true">#</span> ${escapeHtml(channel)}</li>`).join('')}</ul>
               </section>`).join('')}</div>
           </section>
-          <section class="discord-configuration"><h3>设置与机器人</h3>
-            <p class="discord-bots">已安装：${server.bots.map(escapeHtml).join(' · ')}</p>
-            <dl>${server.settings.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}</dl>
-          </section>
+          ${server.bots.length || server.settings.length ? `<section class="discord-configuration"><h3>设置与机器人</h3>
+            <dl>${server.bots.map(bot => `<div><dt>${escapeHtml(bot.name)}</dt><dd>${escapeHtml(bot.purpose)}</dd></div>`).join('')}${server.settings.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}</dl>
+          </section>` : ''}
         </div>
       </section>`).join('')}`;
 }
@@ -246,7 +245,7 @@ function renderDiscord(topic, data) {
 function visibleTopicSections(topic) {
   if (!topic.sections?.length) return [];
   const ids = {
-    'brand-voice-system': ['current', 'principles', 'channels', 'donts'],
+    'brand-voice-system': ['current', 'brand-name', 'everyday-example', 'discord-example', 'fitment-example', 'support-example', 'research-example', 'ugc-example', 'principles', 'channels', 'donts'],
     'seo-geo': ['current', 'milestones', 'baseline', 'next']
   }[topic.slug];
   return ids ? topic.sections.filter((section) => ids.includes(section.id)) : topic.sections;

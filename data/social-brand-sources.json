@@ -1,7 +1,21 @@
 {
   "page": "social-brand.html",
+  "checked_at": "2026-09-15",
+  "reference_images": [
+    {"asset":"assets/brand-social/r6/references/roughcountry-build.webp","source":"https://images.ctfassets.net/auc1ums13y5u/6NwAp8jAoNGDCd9IZFRCqO/d2c6c3ac265615e3c55d94ca6a70969b/rc-2019-chevy-silverado-z71-crop.jpg?fit=fill&fm=webp&h=450&q=75&w=960","use":"Official Customer Builds banner, linked to source gallery"},
+    {"asset":"assets/brand-social/r6/references/lasfit-gallery.jpg","source":"https://cdn.shopify.com/s/files/1/1827/4457/files/The_LC250_4Runner_got_some_much_needed_upgrades_with_lasfitautolighting_floor_mats._Sleek_1.jpg?v=1777456370&width=400","use":"Official community gallery product-in-use image"},
+    {"asset":"assets/brand-social/r6/references/threadless-products.jpg","source":"https://i0.wp.com/dafb3cv85j5xj.cloudfront.net/blog/wp-content/uploads/2024/12/24DCWinners_Nocturnalism_array.jpg?ssl=1&w=800","use":"Official blog winning-product array; not generated"},
+    {"asset":"assets/brand-social/r6/references/oedro-running-boards.jpg","source":"https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202507/4F1DDED9-864E-C717-19EE-8C4E275D5C88.jpg","use":"Official product image from existing verified product catalog"}
+  ],
+  "new_concepts": [
+    {"asset":"assets/brand-social/r6/everyday-photo.jpg","boundary":"Generated owner-photo scenario, not a real owner submission or product performance proof"},
+    {"asset":"assets/brand-social/r6/muddy-shoes.jpg","boundary":"Generated scenario, not owner testimony or product performance proof"},
+    {"asset":"assets/brand-social/r6/post-example.jpg","boundary":"Generated proposed post and explicitly simulated comments"},
+    {"asset":"assets/brand-social/r6/cap-choice.jpg","boundary":"Generated proposed cap designs, not supplier samples"}
+  ],
   "illustrations": [{"asset":"assets/brand-social/daily-merch.jpg","kind":"proposed merchandise use scene","brand_reference":"assets/brand/oedro-logo-official.png","provenance":"Codex built-in image_gen","claim_boundary":"Illustrative proposal, not existing merchandise or customer testimony"}],
   "sources": [
+    {"url":"https://blog.threadless.com/2024-design-challenge-winners-the-art-that-ruled-them-all/","supports":"Official blog displays selected designs on merchandise"},
     {"url": "https://www.oedro.com/ugc-gallery", "supports": "OEDRO 创作者内容图库"},
     {"url": "https://www.roughcountry.com/gallery", "supports": "车主改装展示"},
     {"url": "https://www.lasfit.com/pages/community-gallery", "supports": "用户内容图库"},

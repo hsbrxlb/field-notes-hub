@@ -12,7 +12,7 @@
     },
     {
       "id": "products",
-      "label": "产品资料库",
+      "label": "产品知识库",
       "file": "products.html"
     },
     {
@@ -67,7 +67,7 @@
     },
     {
       "id": "mascot-workflow",
-      "label": "Skills / Workflows",
+      "label": "吉祥物设计的skill",
       "file": "mascot-workflow.html"
     },
     {
