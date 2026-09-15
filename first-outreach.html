@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="首批触达用户">
+  <link rel="icon" href="data:,">
+  <title>首批触达用户｜OEDRO 海外用户运营</title>
+  <link rel="stylesheet" href="base.css?v=20260915-r5">
+  <link rel="stylesheet" href="theme.css?v=20260915-r6">
+  <link rel="stylesheet" href="brand-plan.css?v=20260915-r6">
+  <link rel="stylesheet" href="outreach-plan.css?v=20260915-r1">
+</head>
+<body data-page="first-outreach">
+  <a class="skip-link" href="#content">跳到正文</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="工作台导航">
+      <a class="sidebar-head" href="index.html" aria-label="海外用户运营工作台首页">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-copy"><strong id="site-title">海外用户运营</strong><span id="site-subtitle">OEDRO 工作台</span></span>
+      </a>
+      <nav class="nav-list" id="nav-list" aria-label="主页面"></nav>
+    </aside>
+    <div class="mobile-overlay" hidden></div>
+    <div class="workspace">
+      <header class="topbar">
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false">☰</button>
+        <div class="breadcrumb">海外用户运营 / <strong id="breadcrumb-page">首批触达用户</strong></div>
+      </header>
+      <main class="main-content brand-plan outreach-plan" id="content">
+        <article class="plan-document">
+          <header class="page-heading"><h1>首批触达用户</h1></header>
+          <section aria-labelledby="scope">
+            <h2 id="scope">筛选范围</h2>
+            <dl class="plan-rows">
+              <div><dt>最近会话</dt><dd>2026-06-17 00:00:00 至 2026-09-15 23:59:59</dd></div>
+              <div><dt>候选记录</dt><dd>1,365 条，已按客户标识去重。</dd></div>
+            </dl>
+            <p>这个数字说明该时间窗内已记录的近期会话候选池规模，不是 GA 全部访客，也不是可以直接发送的人数。</p>
+            <p>本批记录的注册方式均显示为 Google，筛选覆盖范围仍需开发核验，不能据此视为全站全部近期用户。</p>
+            <p>后台在基础、来源、销售等标签之间切换时会清空前一组条件，因此不能把不同标签下的结果当作条件相交来使用。实际操作中应固定日期范围，整批提取记录后，按订阅状态和订单情况做离线分层。</p>
+          </section>
+          <section aria-labelledby="layers">
+            <h2 id="layers">分层与排除</h2>
+            <dl class="plan-rows">
+              <div><dt>优先层 · 861 人</dt><dd>已订阅，近期有会话且已有历史订单。</dd></div>
+              <div><dt>第二层 · 490 人</dt><dd>已订阅，近期有会话且无订单。这一层还需要再查购物车和心愿单，不能直接统称高意向。</dd></div>
+              <div><dt>暂不纳入 · 14 人</dt><dd>未订阅 5 人，已退订 9 人。</dd></div>
+              <div><dt>排除范围</dt><dd>非订阅、已退订或订阅状态不明的记录，不进入发送名单。很久没有会话记录的，暂不纳入首轮。数据缺失说明记录不足，不能证明对方绝对不活跃。</dd></div>
+            </dl>
+          </section>
+          <section aria-labelledby="list">
+            <h2 id="list">名单生成</h2>
+            <p>内部去重按客户标识进行。打码字符串不能当作去重键使用；完整邮箱须由开发按内部标识导出。</p>
+            <p>GA 当前使用混合报告身份，包含 User-ID 与设备标识。这不证明已有与客户库的对应关系；目前没有可导出联系人的映射证据。GA 用于观察回访频次和互动，回访人数不能直接作为发送名单。候选记录仍需与订阅、订单信息离线对齐，再按分层结果导出可发送名单。</p>
+            <p id="layer-counts">已订阅的候选用户共 1,351 人，由 861 名有历史订单的用户与 490 名无订单的用户组成。是否发送仍需核对完整邮箱与订阅状态。</p>
+          </section>
+          <section aria-labelledby="send">
+            <h2 id="send">首轮发送</h2>
+            <p>首发建议做 100 封实收测试，核对退信与投诉情况后追加 400 封，累计发送 500 封并继续评估。首轮不按全量候选池发送，也不把未完成分层的数据直接推入发送流程。</p>
+            <p>候选记录数、发送量和最多 100 名领券分别计数。</p>
+          </section>
+        </article>
+      </main>
+    </div>
+  </div>
+  <script src="app.js?v=20260915-r7"></script>
+</body>
+</html>

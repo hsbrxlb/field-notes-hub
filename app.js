@@ -354,7 +354,7 @@ async function init() {
 }
 
 const mainContent = document.querySelector('#content');
-const staticContentPage = ['mascot-workflow', 'social-brand', 'merch-plan'].includes(page);
+const staticContentPage = ['mascot-workflow', 'social-brand', 'merch-plan', 'first-outreach', 'discord-invite-plan'].includes(page);
 mainContent.setAttribute('tabindex', '-1');
 mainContent.setAttribute('aria-busy', 'true');
 if (!staticContentPage) mainContent.innerHTML = '<p class="loading-state" role="status">正在加载…</p>';

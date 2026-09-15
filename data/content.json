@@ -16,14 +16,19 @@
       "file": "products.html"
     },
     {
-      "id": "discord-community",
-      "label": "Oedro-Discord",
-      "file": "topic.html?slug=discord-community"
-    },
-    {
       "id": "email-templates",
       "label": "用户邮件模板",
       "file": "email-templates.html"
+    },
+    {
+      "id": "first-outreach",
+      "label": "首批触达用户",
+      "file": "first-outreach.html"
+    },
+    {
+      "id": "discord-invite-plan",
+      "label": "邀请加入Discord活动方案",
+      "file": "discord-invite-plan.html"
     },
     {
       "id": "research",
@@ -37,7 +42,7 @@
     },
     {
       "id": "merch-plan",
-      "label": "OEDRO Merch 企划",
+      "label": "Oedro周边",
       "file": "merch-plan.html"
     },
     {
@@ -52,7 +57,7 @@
     },
     {
       "id": "voice",
-      "label": "全网搜-关于Oedro的讨论/问题",
+      "label": "OEDRO讨论全网捕捉",
       "file": "user-voice.html"
     },
     {
@@ -74,6 +79,11 @@
       "id": "flipbooks",
       "label": "Flip Book Demo",
       "file": "flipbooks.html"
+    },
+    {
+      "id": "discord-community",
+      "label": "Oedro-Discord",
+      "file": "topic.html?slug=discord-community"
     }
   ],
   "flipbooks": {
@@ -142,7 +152,7 @@
   },
   "user_voice": {
     "meta_description": "OEDRO公开问题与反馈的阶段性工作汇总。",
-    "title": "全网搜-关于Oedro的讨论/问题",
+    "title": "OEDRO讨论全网捕捉",
     "description": "记录本机问题处理工作的公开汇总、重复主题、结论和后续动作。",
     "snapshot_title": "最近汇总",
     "snapshot": [

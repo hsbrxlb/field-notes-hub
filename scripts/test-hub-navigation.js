@@ -8,9 +8,17 @@ const nav = JSON.parse(read('data/content.json')).nav;
 
 for (const [id, label] of Object.entries({
   'discord-community': 'Oedro-Discord', research: 'AI问卷',
-  voice: '全网搜-关于Oedro的讨论/问题', 'brand-voice-system': 'Oedro persona',
+  voice: 'OEDRO讨论全网捕捉', 'brand-voice-system': 'Oedro persona',
+  'merch-plan': 'Oedro周边', 'first-outreach': '首批触达用户', 'discord-invite-plan': '邀请加入Discord活动方案',
   products: '产品知识库', 'mascot-workflow': '吉祥物设计的skill'
 })) assert.equal(nav.find(item => item.id === id)?.label, label);
+assert.equal(nav.at(-1).id, 'discord-community');
+const emailIndex = nav.findIndex(item => item.id === 'email-templates');
+assert.deepEqual(nav.slice(emailIndex + 1, emailIndex + 3).map(item => item.id), ['first-outreach', 'discord-invite-plan']);
+for (const id of ['first-outreach', 'discord-invite-plan']) {
+  assert.ok(read(`${id}.html`).includes(`data-page="${id}"`));
+  assert.ok(read('app.js').includes(`'${id}'`), 'static pages retain their content during navigation loading');
+}
 assert.ok(nav.some(item => item.id === 'products' && item.file === 'products.html'));
 assert.ok(!nav.some(item => ['research-library', 'sites-systems', 'playbook'].includes(item.id)));
 
