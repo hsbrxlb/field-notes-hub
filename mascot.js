@@ -51,6 +51,24 @@
       + '</div></nav>';
   }
 
+  function applicationMarkup(characters) {
+    const examples = [
+      { family: 'headlight', name: '车主调研', title: 'OEDRO Driver Research', copy: 'What does a typical drive look like for you?' },
+      { family: 'recovery-board', name: '网站答疑', title: 'OEDRO Support', copy: 'What vehicle do you drive? Tell us the year, make and model.' },
+      { family: 'dog', name: '邮件结尾', title: 'Your OEDRO team', copy: 'Thanks for sharing your experience. We’re glad to hear from you.' }
+    ];
+    if (!examples.every((example) => characters.some((character) => character.family === example.family))) return '';
+    return '<section class="evo-applications" aria-labelledby="evo-applications-title"><h2 id="evo-applications-title">应用效果</h2>'
+      + '<p>对话与邮件示意</p><div class="evo-application-list">'
+      + examples.map((example) => {
+        const character = characters.find((entry) => entry.family === example.family);
+        return '<section class="evo-application"><h3>' + safe(example.name) + '</h3>'
+          + '<div class="evo-application-preview"><img src="' + safe(character.assets[0].src)
+          + '" width="96" height="96" alt="' + safe(character.name_cn) + '头像" loading="lazy">'
+          + '<div lang="en"><strong>' + safe(example.title) + '</strong><p>' + safe(example.copy) + '</p></div></div></section>';
+      }).join('') + '</div></section>';
+  }
+
   window.initMascot = async function initMascot() {
     const response = await fetch('data/mascot.json', { cache: 'no-store' });
     if (!response.ok) throw new Error('吉祥物档案加载失败');
@@ -61,6 +79,7 @@
       + '<div class="evo-layout">' + tocMarkup(data.characters)
       + '<div class="evo-character-list">'
       + data.characters.map((character, index) => characterMarkup(character, index === 0)).join('')
+      + applicationMarkup(data.characters)
       + '</div></div>';
   };
 })();
