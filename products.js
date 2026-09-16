@@ -111,6 +111,7 @@
 
   function renderProducts() {
     const products = visibleProducts();
+    document.dispatchEvent(new CustomEvent('catalog:ready', { detail: { manifest: state.manifest, category: state.category, categoryData: state.categoryData, products, brand: state.brand, quality: state.quality } }));
     const pages = Math.max(1, Math.ceil(products.length / PAGE_SIZE));
     state.page = Math.min(state.page, pages);
     const start = (state.page - 1) * PAGE_SIZE;
@@ -136,6 +137,9 @@
 
   async function loadCategory(categoryId) {
     const requestId = ++state.requestId;
+    document.dispatchEvent(new CustomEvent('catalog:loading'));
+    document.querySelector('#catalog-toolbar').innerHTML = '';
+    document.querySelector('#catalog-pagination').innerHTML = '';
     const category = state.manifest.categories.find((item) => item.id === categoryId) || state.manifest.categories[0];
     state.category = category;
     state.brand = '全部'; state.quality = '全部'; state.page = 1;
@@ -149,6 +153,7 @@
       if (!response.ok) throw new Error('商品分类数据加载失败');
       const data = await response.json();
       if (requestId !== state.requestId) return;
+      state.categoryData = data;
       state.products = data.products;
       const url = new URL(location.href); url.searchParams.set('category', category.id); history.replaceState(null, '', url);
       renderProducts();

@@ -133,3 +133,9 @@ node scripts/check-email-templates.js
 侧边栏的“AI问卷”进入 `research.html`，可打开云端真实 AI 访谈（https://oedro-light-research.onrender.com/）。GitHub Pages 发布的是入口和界面预览，不执行模型调用。完整 Next.js 应用位于 `apps/light-research`，由 Render 免费 Web Service 运行，回答与访谈进度保存于 Neon 免费 PostgreSQL；模型凭据只配置在服务端。它不进入 Pages 静态发布目录，也不依赖本机开机。
 
 当前只保留 Oliver 选定的 Hawthorne 字体版本。参见应用目录的 README 获取启动和验证命令。
+
+## 产品资料分享页
+
+`product-library.html` 是供同事直接浏览的独立入口，复用产品图片、分类、详情与 `data/products` 数据，不加载 Hub 导航或工作计划。它仍是公开静态页面，独立入口不构成访问控制。
+
+“下载 Markdown”在浏览器本地生成当前分类、品牌及资料状态筛选下的全部记录，包含所有分页。文件保留清单、分类元信息与每条产品的完整 JSON 字段，供 AI 读取；价格库存是原抓取时快照。无上传或模型调用。验证：`node scripts/check-product-library.js` 和 `node scripts/check-products.js`。

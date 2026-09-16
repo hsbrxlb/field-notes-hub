@@ -1,0 +1,6 @@
+body[data-page="product-library"] .products-main { position: relative; z-index: 1; width: min(var(--content-wide), 100%); min-height: 100vh; }
+.catalog-export { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; margin-bottom: 22px; }
+.catalog-export button { min-height: var(--touch-size); padding: 8px 16px; color: var(--page-bg); background: var(--accent); border: 1px solid var(--accent); border-radius: var(--radius-control); cursor: pointer; }
+.catalog-export button:disabled { opacity: .55; cursor: not-allowed; }
+.catalog-export p { margin: 0; color: var(--text-secondary); font-size: 12px; }
+body[data-page="product-library"] .filter-group button { min-height: var(--touch-size); }
