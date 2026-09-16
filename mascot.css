@@ -45,7 +45,7 @@
   gap: 6px;
   align-items: center;
   color: var(--text-muted);
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.3;
   border-left: 1px solid var(--border);
   padding: 6px 0 6px 10px;
@@ -82,12 +82,12 @@
 
 .evo-character-index {
   color: var(--accent);
-  font: 700 14px/1.4 var(--font-heading);
+  font: 700 13px/1.4 var(--font-heading);
 }
 
 .evo-character-head h2 {
   margin: 0;
-  font: 700 23px/1.25 var(--font-heading);
+  font: 700 22px/1.25 var(--font-heading);
   letter-spacing: -.01em;
 }
 
@@ -97,7 +97,7 @@
   max-width: 720px;
   margin: 8px 0 0;
   color: var(--text-secondary);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.65;
 }
 
@@ -132,15 +132,15 @@
 }
 
 .evo-version { min-width: 0; }
-.evo-version h3 { margin: 0; font-size: 18px; line-height: 1.4; }
-.evo-version-note { margin: 8px 0 20px; color: var(--text-secondary); font-size: 15px; line-height: 1.65; }
+.evo-version h3 { margin: 0; font-size: 17px; line-height: 1.4; }
+.evo-version-note { margin: 8px 0 20px; color: var(--text-secondary); font-size: 14px; line-height: 1.65; }
 .evo-version-images { display: grid; gap: 36px; }
 .evo-size-preview { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 16px; }
-.evo-size-preview > p { margin: 0 0 16px; font-size: 14px; color: var(--text-secondary); }
+.evo-size-preview > p { margin: 0 0 16px; font-size: 13px; color: var(--text-secondary); }
 .evo-size-pair { display: flex; align-items: flex-end; gap: 24px; }
 .evo-size-pair figure { margin: 0; }
 .evo-size-pair img { display: block; max-width: none; }
-.evo-size-pair figcaption { margin-top: 8px; font-size: 13px; color: var(--text-muted); }
+.evo-size-pair figcaption { margin-top: 8px; font-size: 12px; color: var(--text-muted); }
 
 .evo-asset-image img {
   display: block;
@@ -152,7 +152,7 @@
 .evo-asset figcaption {
   padding-top: 10px;
   color: var(--text-muted);
-  font-size: 13px;
+  font-size: 12px;
 }
 
 @media (max-width: 1180px) {
@@ -190,7 +190,7 @@
   .evo-character { padding: 26px 0 46px; }
   .evo-character:first-child { padding-top: 22px; }
   .evo-character-head { grid-template-columns: 34px minmax(0, 1fr); gap: 8px; padding-bottom: 16px; }
-  .evo-character-head h2 { font-size: 20px; }
-  .evo-character-head p { font-size: 14px; }
+  .evo-character-head h2 { font-size: 19px; }
+  .evo-character-head p { font-size: 13px; }
   .evo-assets { gap: 28px; }
 }

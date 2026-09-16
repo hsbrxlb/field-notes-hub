@@ -8,26 +8,26 @@
 .topbar { background: var(--surface); }
 .pipeline-heading { min-height: 0; padding: var(--space-4) 0 var(--space-5); }
 .pipeline-heading > .text-link { width: max-content; margin-bottom: var(--space-3); }
-.pipeline-heading h1 { font-size: clamp(28px, 3vw, var(--type-h1)); }
+.pipeline-heading h1 { font-size: clamp(27px, calc(3vw - 1px), var(--type-h1)); }
 .pipeline-record-index { display: flex; flex-wrap: wrap; gap: var(--space-5); padding-bottom: var(--space-5); }
 .pipeline-record-index a { display: grid; gap: var(--space-1); }
-.pipeline-record-index time { color: var(--text-muted); font-size: 13px; }
+.pipeline-record-index time { color: var(--text-muted); font-size: 12px; }
 .pipeline-record { border-top: 1px solid var(--border-strong); }
 .pipeline-record-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-3); padding: var(--space-4) 0; }
 .pipeline-record-head > div { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2) var(--space-4); }
-.pipeline-record-head time, .pipeline-record-head > div > span { color: var(--text-muted); font-size: 13px; }
-.pipeline-record-head h2 { margin: 0; font-size: 18px; }
-.record-status { width: max-content; padding: 0; color: var(--status-pending); background: transparent; border: 0; font-size: 13px; font-weight: 700; }
+.pipeline-record-head time, .pipeline-record-head > div > span { color: var(--text-muted); font-size: 12px; }
+.pipeline-record-head h2 { margin: 0; font-size: 17px; }
+.record-status { width: max-content; padding: 0; color: var(--status-pending); background: transparent; border: 0; font-size: 12px; font-weight: 700; }
 .record-status.status-ready { color: var(--status-ready); }
 .record-status.status-blocked { color: var(--status-blocked); }
 .record-status.status-done { color: var(--status-done); }
 
-.pipeline-prompt h2, .pipeline-purpose h2, .pipeline-outputs > .section-head h2 { margin: 0; font-family: var(--font-heading); font-size: 20px; }
+.pipeline-prompt h2, .pipeline-purpose h2, .pipeline-outputs > .section-head h2 { margin: 0; font-family: var(--font-heading); font-size: 19px; }
 .pipeline-prompt { padding: var(--space-4) 0; }
-.pipeline-prompt blockquote { margin: var(--space-3) 0 0; padding: var(--space-4) var(--space-5); color: var(--text); background: var(--surface-raised); border-left: 3px solid var(--accent); font-size: 16px; line-height: 1.8; white-space: pre-wrap; }
+.pipeline-prompt blockquote { margin: var(--space-3) 0 0; padding: var(--space-4) var(--space-5); color: var(--text); background: var(--surface-raised); border-left: 3px solid var(--accent); font-size: 15px; line-height: 1.8; white-space: pre-wrap; }
 .pipeline-purpose { max-width: 900px; padding: var(--space-4) 0 var(--space-5); }
-.pipeline-purpose h2 { font-size: 18px; }
-.pipeline-purpose p { margin: var(--space-2) 0 0; color: var(--text-secondary); font-size: 16px; }
+.pipeline-purpose h2 { font-size: 17px; }
+.pipeline-purpose p { margin: var(--space-2) 0 0; color: var(--text-secondary); font-size: 15px; }
 .pipeline-outputs { padding-top: var(--space-5); border-top: 1px solid var(--border-strong); }
 .pipeline-outputs > .section-head { margin-bottom: var(--space-2); }
 .platform-index { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); }
@@ -35,20 +35,20 @@
 
 .pipeline-platform { padding: var(--space-5) 0 var(--space-6); border-bottom: 1px solid var(--border-strong); scroll-margin-top: 72px; }
 .platform-head { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: var(--space-5); align-items: baseline; margin-bottom: var(--space-4); }
-.platform-head h3 { margin: 0; font-family: var(--font-heading); font-size: 22px; }
+.platform-head h3 { margin: 0; font-family: var(--font-heading); font-size: 21px; }
 .platform-post { max-width: 760px; padding: var(--space-5); background: var(--surface-raised); border: 1px solid var(--border); }
 .platform-post.post-with-image { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); align-items: start; gap: var(--space-5); max-width: none; }
 .platform-image { margin: 0; }
 .platform-image img { display: block; width: 100%; height: auto; }
 .platform-text { min-width: 0; }
 .platform-translation { margin-top: var(--space-4); border-top: 1px solid var(--border); }
-.platform-translation .platform-copy { color: var(--text-secondary); font-size: 16px; }
-.platform-media-state { margin: 0 0 var(--space-5); padding-bottom: var(--space-3); border-bottom: 1px solid var(--border); color: var(--status-blocked); font-size: 14px; }
-.platform-copy { font-size: 17px; line-height: 1.75; color: var(--text); overflow-wrap: anywhere; }
+.platform-translation .platform-copy { color: var(--text-secondary); font-size: 15px; }
+.platform-media-state { margin: 0 0 var(--space-5); padding-bottom: var(--space-3); border-bottom: 1px solid var(--border); color: var(--status-blocked); font-size: 13px; }
+.platform-copy { font-size: 16px; line-height: 1.75; color: var(--text); overflow-wrap: anywhere; }
 .platform-copy p { margin: 0 0 var(--space-4); white-space: pre-wrap; }
 .platform-copy p:last-child { margin-bottom: 0; }
-.platform-copy h4 { margin: 0 0 var(--space-4); font-size: 19px; line-height: 1.5; }
-.pipeline-main summary { min-height: 44px; padding: var(--space-3) 0; color: var(--text-secondary); cursor: pointer; font-size: 15px; }
+.platform-copy h4 { margin: 0 0 var(--space-4); font-size: 18px; line-height: 1.5; }
+.pipeline-main summary { min-height: 44px; padding: var(--space-3) 0; color: var(--text-secondary); cursor: pointer; font-size: 14px; }
 .pipeline-main summary:hover { color: var(--text); }
 .pipeline-main summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
@@ -60,10 +60,10 @@
 
 @media (max-width: 760px) {
   .pipeline-main { width: 100%; }
-  .pipeline-prompt blockquote { padding: var(--space-3) var(--space-4); font-size: 15px; }
+  .pipeline-prompt blockquote { padding: var(--space-3) var(--space-4); font-size: 14px; }
   .pipeline-record-head > div { column-gap: var(--space-3); }
   .pipeline-record-head h2 { flex-basis: 100%; order: -1; }
   .platform-post { padding: var(--space-4); }
-  .platform-copy { font-size: 16px; }
+  .platform-copy { font-size: 15px; }
   .pipeline-platform { scroll-margin-top: 64px; }
 }

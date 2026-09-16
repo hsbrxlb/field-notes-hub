@@ -6,11 +6,11 @@
   <meta name="description" content="首批触达用户完整名单">
   <link rel="icon" href="data:,">
   <title>首批触达用户名单｜OEDRO 海外用户运营</title>
-  <link rel="stylesheet" href="base.css?v=20260915-r5">
-  <link rel="stylesheet" href="theme.css?v=20260915-r6">
-  <link rel="stylesheet" href="brand-plan.css?v=20260915-r6">
-  <link rel="stylesheet" href="outreach-plan.css?v=20260915-r1">
-  <link rel="stylesheet" href="first-outreach-users.css">
+  <link rel="stylesheet" href="base.css?v=20260916-type">
+  <link rel="stylesheet" href="theme.css?v=20260916-type">
+  <link rel="stylesheet" href="brand-plan.css?v=20260916-type">
+  <link rel="stylesheet" href="outreach-plan.css?v=20260916-type">
+  <link rel="stylesheet" href="first-outreach-users.css?v=20260916-type">
 </head>
 <body data-page="first-outreach">
   <a class="skip-link" href="#content">跳到正文</a>
@@ -32,7 +32,14 @@
 
         <article class="plan-document">
           <a class="list-back" href="first-outreach.html">↖ 返回首批触达用户</a>
-          <header class="page-heading"><h1>首批触达用户名单</h1><p>2026年6月17日—9月15日访问过官网的用户</p></header>
+          <header class="page-heading"><h1>首批触达用户名单</h1><p>近期访问用户与累计订单金额满 1,000 美元的客户；分类可重叠，全部名单已去重。</p></header>
+          <div class="list-filters" role="group" aria-label="按客户分类浏览">
+            <button type="button" disabled data-segment="all" aria-pressed="true">全部 <span>—</span></button>
+            <button type="button" disabled data-segment="high" aria-pressed="false">高消费客户 <span>—</span></button>
+            <button type="button" disabled data-segment="buyers" aria-pressed="false">近期买家 <span>—</span></button>
+            <button type="button" disabled data-segment="prospects" aria-pressed="false">近期未下单 <span>—</span></button>
+            <button type="button" disabled data-segment="excluded" aria-pressed="false">暂不邀请 <span>—</span></button>
+          </div>
           <div class="list-toolbar">
             <p id="list-status" role="status">正在加载名单…</p>
             <div class="list-pagination" aria-label="名单翻页">
@@ -44,7 +51,7 @@
           <div class="list-scroll" tabindex="0" role="region" aria-label="首批触达用户名单，可横向滚动">
             <table class="outreach-table">
               <caption class="sr-only">首批触达用户明细，金额为历史订单总金额</caption>
-              <thead><tr><th scope="col">序号</th><th scope="col">客户编号</th><th scope="col">打码邮箱</th><th scope="col">历史订单数</th><th scope="col">历史订单金额（美元）</th><th scope="col">邮件订阅</th><th scope="col">邀请顺序</th></tr></thead>
+              <thead><tr><th scope="col">序号</th><th scope="col">客户编号</th><th scope="col">打码邮箱</th><th scope="col">历史订单数</th><th scope="col">历史订单金额（美元）</th><th scope="col">邮件订阅</th><th scope="col">客户分类</th><th scope="col">邀请顺序</th></tr></thead>
               <tbody id="list-body"></tbody>
             </table>
           </div>
@@ -54,7 +61,7 @@
     </div>
   </div>
   <script src="app.js?v=20260915-r7"></script>
-  <script src="first-outreach-users.js"></script>
+  <script src="first-outreach-users.js?v=20260916-segments"></script>
 </body>
 </html>
 

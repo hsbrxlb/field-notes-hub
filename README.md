@@ -6,6 +6,8 @@
 
 ## 当前页面
 
+- `first-outreach.html` / `first-outreach-users.html`：近期访问与累计高消费客户的筛选说明、合并去重名单和分类分页；只展示获授权的客户编号、打码邮箱、历史订单、订阅状态与分类。`data/first-outreach-users.json` 保留原近期批次作为核对基准，当前名单读取 `data/outreach-users.json`；发布前运行 `node scripts/check-outreach-users.js`。
+
 - `products.html`：产品知识库；1,209 条目录记录按 12 个分类拆分加载，每页只渲染 24 件，完整适配、规格、说明、媒体和政策快照可按商品展开。标题与统计区顶部对齐。
 - `fakesite/`：独立站样站，侧栏直接进入首页；包含 Blog、两篇完整指南、FAQ 和草稿编辑演示。保留独立的品牌页面外观，不套 Hub 阅读外壳。页面标明设计演示并禁止索引，不连接购物或真实发布。
 - `fakesite/editor.html`：可预览、在浏览器保存并下载 Markdown/JSON 草稿；这不是员工登录后台，也不会把内容提交到仓库。正式发文优先接公司现有后台；没有现成能力时再评估 Pages CMS 或 Decap 的认证与仓库授权。
