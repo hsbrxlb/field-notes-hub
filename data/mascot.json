@@ -10,35 +10,35 @@
       "role": "brand",
       "name_cn": "小欧",
       "name_en": "Ollie",
-      "blurb": "圆圆的车灯亮起来，箱子里的小伙伴也准备出发了。",
+      "blurb": "小车灯拎着工具箱出发，照亮前路，也带来帮得上忙的小伙伴。",
       "assets": [
         {
-          "code": "OK-O-01",
+          "code": "OR-O-01",
           "caption": "拎上箱子打招呼",
-          "src": "assets/mascot-evolution/ollie-kit/OK-O-01.webp",
+          "src": "assets/mascot-evolution/ollie-refined/OR-O-01.webp",
           "alt": "车灯小欧拎着工具箱招手",
-          "source_round": "ollie-kit"
+          "source_round": "ollie-refined"
         },
         {
-          "code": "OK-O-02",
+          "code": "OR-O-02",
           "caption": "转过身来",
-          "src": "assets/mascot-evolution/ollie-kit/OK-O-02.webp",
+          "src": "assets/mascot-evolution/ollie-refined/OR-O-02.webp",
           "alt": "小欧（Ollie）转过身来",
-          "source_round": "ollie-kit"
+          "source_round": "ollie-refined"
         },
         {
-          "code": "OK-O-03",
+          "code": "OR-O-03",
           "caption": "踏踏，从这里出来",
-          "src": "assets/mascot-evolution/ollie-kit/OK-O-03.webp",
+          "src": "assets/mascot-evolution/ollie-refined/OR-O-03.webp",
           "alt": "小欧打开工具箱迎接迷你踏板伙伴",
-          "source_round": "ollie-kit"
+          "source_round": "ollie-refined"
         },
         {
-          "code": "OK-O-04",
+          "code": "OR-O-04",
           "caption": "照亮脚下的路",
-          "src": "assets/mascot-evolution/ollie-kit/OK-O-04.webp",
-          "alt": "小欧拎着工具箱俯身照亮脚下",
-          "source_round": "ollie-kit"
+          "src": "assets/mascot-evolution/ollie-refined/OR-O-04.webp",
+          "alt": "小欧拎着工具箱迈步照亮前方地面",
+          "source_round": "ollie-refined"
         }
       ]
     },

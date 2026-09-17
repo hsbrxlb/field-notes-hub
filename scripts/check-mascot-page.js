@@ -85,8 +85,8 @@ if (mascot.characters.slice(0, 3).some((character) => character.role !== 'brand'
   || mascot.characters[3].role !== 'product') fail('three brand partners must precede the product partner');
 if (mascot.characters.some((character, index) => character.index !== String(index + 1).padStart(2, '0'))) fail('navigation numbering must follow the display order');
 
-const additions = mascot.characters.flatMap((character) => character.assets).filter((asset) => asset.source_round === 'ollie-kit');
-const newCodes = ['OK-O-01', 'OK-O-02', 'OK-O-03', 'OK-O-04', 'OK-DOG-01', 'OK-DOG-03', 'OK-BULL-01', 'OK-BULL-03'];
+const additions = mascot.characters.flatMap((character) => character.assets).filter((asset) => ['ollie-kit', 'ollie-refined'].includes(asset.source_round));
+const newCodes = ['OR-O-01', 'OR-O-02', 'OR-O-03', 'OR-O-04', 'OK-DOG-01', 'OK-DOG-03', 'OK-BULL-01', 'OK-BULL-03'];
 if (additions.length !== 8 || newCodes.some((code) => !additions.some((asset) => asset.code === code))) fail('eight lamp and toolcase images must be present');
 const historicalCodes = ['DOG-02', 'DOG-04', 'BULL-02', 'BULL-04', 'MR-BOARD-A', 'MR-BOARD-B'];
 if (historicalCodes.some((code) => !codes.includes(code))) fail('a retained comparison image is missing');

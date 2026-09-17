@@ -1,24 +1,13 @@
 .automation-main { --automation-line: #555443; }
 .automation-heading { padding-bottom: 32px; }
 .automation-heading p { max-width: 800px; color: var(--text-secondary); font-size: 16px; line-height: 1.8; margin-top: 16px; }
-.automation-flow { display: grid; grid-template-columns: 1fr 32px 2.6fr 32px 1fr; gap: 20px; align-items: center; padding: 32px 0; border-block: 1px solid var(--automation-line); }
+.automation-flow { padding: 0 0 24px; border-bottom: 1px solid var(--automation-line); }
+.automation-editorial { display: block; width: 100%; height: auto; }
+.automation-stages { display: grid; grid-template-columns: 1fr 1.5fr 1fr; gap: 32px; margin: 24px 0 0; padding: 0; list-style: none; }
+.automation-stages li { min-width: 0; }
 .automation-step { display: block; color: var(--accent); font-size: 12px; letter-spacing: .07em; }
-.automation-flow h2 { font-size: 20px; font-weight: 600; margin: 16px 0 8px; }
-.automation-flow p { color: var(--text-secondary); font-size: 12px; line-height: 1.7; margin: 0; }
-.automation-arrow { font-size: 28px; color: var(--accent); text-align: center; }
-.automation-topic-symbol { width: 76px; height: 72px; margin-top: 24px; position: relative; }
-.automation-topic-symbol i { position: absolute; inset: 8px; border: 1px solid #b79a65; }
-.automation-topic-symbol i:nth-child(1) { transform: rotate(-12deg); }
-.automation-topic-symbol i:nth-child(2) { transform: rotate(9deg); }
-.automation-topic-symbol i:nth-child(3) { background: #22261c; }
-.automation-platforms { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 24px; align-items: end; }
-.automation-platform h3 { font-size: 14px; margin: 16px 0 4px; white-space: nowrap; }
-.automation-print { width: 100%; max-width: 132px; margin: 0 auto; padding: 8px; border: 1px solid #85744f; background: #141a13; }
-.automation-print svg { display: block; width: 100%; aspect-ratio: 1; background: #252d22; fill: #717352; }
-.automation-print.portrait svg { aspect-ratio: 4 / 5; }
-.automation-print span { display: block; height: 2px; width: 84%; background: #98967c; margin-top: 8px; }
-.automation-print span:last-child { width: 56%; margin-bottom: 4px; }
-.automation-check { display: grid; place-items: center; width: 64px; height: 64px; margin-top: 24px; border: 1px solid #9b855a; border-radius: 50%; color: var(--accent); font-size: 30px; }
+.automation-flow h2 { font-size: 19px; font-weight: 600; margin: 8px 0; }
+.automation-flow p { color: var(--text-secondary); font-size: 14px; line-height: 1.7; margin: 0; }
 .automation-brief { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 32px 0; }
 .automation-brief h2 { font-size: 17px; margin: 0 0 8px; }
 .automation-brief p { margin: 0; font-size: 14px; line-height: 1.8; color: var(--text-secondary); max-width: 480px; }
@@ -31,22 +20,10 @@
 .automation-example img { display: block; width: 100%; height: 190px; object-fit: contain; background: #10150f; }
 .automation-example h3 { font-size: 14px; margin: 16px 0 8px; }
 .automation-example p { margin: 0; font-size: 13px; line-height: 1.7; color: var(--text-secondary); }
-@media (max-width: 1250px) {
-  .automation-flow { grid-template-columns: 1fr 20px 2.5fr 20px 1fr; gap: 12px; }
-  .automation-platforms { gap: 12px; }
-  .automation-platform h3 { font-size: 12px; }
-}
 @media (max-width: 760px) {
   .automation-heading p { font-size: 14px; }
-  .automation-flow { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 24px 0; }
-  .automation-origin, .automation-use { display: grid; grid-template-columns: 56px 1fr; column-gap: 20px; }
-  .automation-origin .automation-step, .automation-use .automation-step { grid-column: 2; }
-  .automation-topic-symbol, .automation-check { grid-column: 1; grid-row: 1 / 4; width: 52px; height: 52px; margin: 0; align-self: center; }
-  .automation-flow h2 { margin: 8px 0 4px; }
-  .automation-origin p, .automation-use p { grid-column: 2; }
-  .automation-arrow { transform: rotate(90deg); line-height: 1; justify-self: center; }
-  .automation-platforms { gap: 16px; margin-top: 16px; }
-  .automation-print { max-width: 100px; }
+  .automation-stages { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .automation-stages li { border-left: 1px solid var(--automation-line); padding-left: 16px; }
   .automation-brief { grid-template-columns: 1fr; gap: 24px; padding: 24px 0; }
   .automation-sample-grid { grid-template-columns: 1fr; gap: 32px; }
   .automation-example { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 16px; }

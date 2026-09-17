@@ -55,6 +55,12 @@ async function checkPlan(plan) {
   if (plan.id === 'merch-plan') {
     assert.doesNotMatch(html, /xiexingift\.com|ouyihats\.com|亚克力印刷款与软胶款/, 'merch-plan: superseded sourcing direction must not return');
     assert.match(html, /不是正式报价或已批准预算/, 'merch-plan: planning numbers cannot become approved quote or budget');
+    const refreshed = [...html.matchAll(/src="(assets\/merch-trucker\/[^\"]+)"/g)].map(match => match[1]);
+    assert.equal(refreshed.length, 8, 'merch-plan: eight refreshed merchandise images');
+    assert.equal(new Set(refreshed).size, 8, 'merch-plan: no duplicate refreshed image');
+    assert.doesNotMatch(html, /src="assets\/(?:brand-plan\/merch-|brand-social\/daily-merch|brand-social\/r6\/references\/singular-cotton-cap)/, 'merch-plan: superseded soft caps removed from active page');
+    assert.match(html, /trucker hat/, 'merch-plan: current cap construction specified');
+    assert.match(html, /不是当前网帽规格的报价/, 'merch-plan: old budget must not imply a new quote');
   }
   if (plan.id === 'social-brand') {
     assert.match(html, /不是真实用户留言/, 'social-brand: illustrative comment examples remain distinguishable from testimony');

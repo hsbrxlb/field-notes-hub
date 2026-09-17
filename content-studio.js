@@ -20,18 +20,19 @@
   }
   const text = value => String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
   const platforms = [
-    { id: 'instagram', name: 'Instagram', format: '竖版图片 · 配文', shape: 'portrait' },
-    { id: 'x', name: 'X', format: '图片 · 短文', shape: 'square' },
-    { id: 'youtube', name: 'YouTube 社区', format: '图片 · 社区帖', shape: 'square' }
+    { id: 'instagram', name: 'Instagram' },
+    { id: 'x', name: 'X' },
+    { id: 'youtube', name: 'YouTube 社区' }
   ];
 
   function diagram() {
     return `<section class="automation-flow" aria-label="一个选题做成各平台图文，人工确认后使用">
-      <div class="automation-origin"><span class="automation-step">01 / 选题</span><div class="automation-topic-symbol" aria-hidden="true"><i></i><i></i><i></i></div><h2>一个选题</h2><p>输入选题与受众目的。</p></div>
-      <span class="automation-arrow" aria-hidden="true">→</span>
-      <div class="automation-outputs"><span class="automation-step">02 / AI 图文制作</span><div class="automation-platforms">${platforms.map(platform => `<div class="automation-platform"><div class="automation-print ${platform.shape}" aria-hidden="true"><svg viewBox="0 0 120 100"><path d="M0 90 38 40 66 70 92 30 120 61V100H0Z"/><circle cx="30" cy="24" r="9"/></svg><span></span><span></span></div><h3>${platform.name}</h3><p>${platform.format}</p></div>`).join('')}</div></div>
-      <span class="automation-arrow" aria-hidden="true">→</span>
-      <div class="automation-use"><span class="automation-step">03 / 人工确认</span><div class="automation-check" aria-hidden="true">✓</div><h2>确认后使用</h2><p>终点是人确认可用后自行发布。</p></div>
+      <img class="automation-editorial" src="assets/content-studio/trail-editorial-desk.webp" width="1942" height="809" alt="编辑桌上，徒步后的泥鞋选题笔记展开成车门、车内与皮卡尾门三幅画面，右侧有人持笔校看。" fetchpriority="high" decoding="async">
+      <ol class="automation-stages">
+        <li><span class="automation-step">01 / 选题</span><h2>徒步后的泥鞋</h2><p>把车主熟悉的日常写成选题。</p></li>
+        <li><span class="automation-step">02 / AI 图文制作</span><h2>三平台图文</h2><p>Instagram、X、YouTube 社区，各配英文文案与中文对照。</p></li>
+        <li><span class="automation-step">03 / 人工确认</span><h2>校看与使用</h2><p>确认画面与文案后，自行发布。</p></li>
+      </ol>
     </section>`;
   }
 
