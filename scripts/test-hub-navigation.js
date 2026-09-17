@@ -12,9 +12,11 @@ for (const [id, label] of Object.entries({
   'merch-plan': 'Oedro周边', 'first-outreach': '首批触达用户', 'discord-invite-plan': '邀请加入Discord活动方案',
   products: '产品知识库', 'mascot-workflow': '吉祥物设计的skill'
 })) assert.equal(nav.find(item => item.id === id)?.label, label);
-assert.equal(nav.at(-1).id, 'discord-community');
-const emailIndex = nav.findIndex(item => item.id === 'email-templates');
-assert.deepEqual(nav.slice(emailIndex + 1, emailIndex + 3).map(item => item.id), ['first-outreach', 'discord-invite-plan']);
+assert.deepEqual(nav.map(item => item.id), [
+  'fakesite', 'first-outreach', 'email-templates', 'discord-invite-plan',
+  'studio', 'voice', 'products', 'research', 'discord-community', 'seo-geo',
+  'social-brand', 'brand-voice-system', 'mascot', 'merch-plan', 'mascot-workflow', 'flipbooks'
+]);
 for (const id of ['first-outreach', 'discord-invite-plan']) {
   assert.ok(read(`${id}.html`).includes(`data-page="${id}"`));
   assert.ok(read('app.js').includes(`'${id}'`), 'static pages retain their content during navigation loading');

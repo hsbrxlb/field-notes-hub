@@ -11,9 +11,9 @@
       "external": true
     },
     {
-      "id": "products",
-      "label": "产品知识库",
-      "file": "products.html"
+      "id": "first-outreach",
+      "label": "首批触达用户",
+      "file": "first-outreach.html"
     },
     {
       "id": "email-templates",
@@ -21,29 +21,9 @@
       "file": "email-templates.html"
     },
     {
-      "id": "first-outreach",
-      "label": "首批触达用户",
-      "file": "first-outreach.html"
-    },
-    {
       "id": "discord-invite-plan",
       "label": "邀请加入Discord活动方案",
       "file": "discord-invite-plan.html"
-    },
-    {
-      "id": "research",
-      "label": "AI问卷",
-      "file": "research.html"
-    },
-    {
-      "id": "social-brand",
-      "label": "社媒品牌升级",
-      "file": "social-brand.html"
-    },
-    {
-      "id": "merch-plan",
-      "label": "Oedro周边",
-      "file": "merch-plan.html"
     },
     {
       "id": "studio",
@@ -51,14 +31,34 @@
       "file": "content-studio.html"
     },
     {
+      "id": "voice",
+      "label": "OEDRO讨论全网捕捉",
+      "file": "user-voice.html"
+    },
+    {
+      "id": "products",
+      "label": "产品知识库",
+      "file": "products.html"
+    },
+    {
+      "id": "research",
+      "label": "AI问卷",
+      "file": "research.html"
+    },
+    {
+      "id": "discord-community",
+      "label": "Discord频道设计",
+      "file": "topic.html?slug=discord-community"
+    },
+    {
       "id": "seo-geo",
       "label": "SEO与AI搜索",
       "file": "topic.html?slug=seo-geo"
     },
     {
-      "id": "voice",
-      "label": "OEDRO讨论全网捕捉",
-      "file": "user-voice.html"
+      "id": "social-brand",
+      "label": "社媒品牌升级",
+      "file": "social-brand.html"
     },
     {
       "id": "brand-voice-system",
@@ -71,6 +71,11 @@
       "file": "mascot.html"
     },
     {
+      "id": "merch-plan",
+      "label": "Oedro周边",
+      "file": "merch-plan.html"
+    },
+    {
       "id": "mascot-workflow",
       "label": "吉祥物设计的skill",
       "file": "mascot-workflow.html"
@@ -79,11 +84,6 @@
       "id": "flipbooks",
       "label": "Flip Book Demo",
       "file": "flipbooks.html"
-    },
-    {
-      "id": "discord-community",
-      "label": "Discord频道设计",
-      "file": "topic.html?slug=discord-community"
     }
   ],
   "flipbooks": {
