@@ -11,6 +11,11 @@
       "external": true
     },
     {
+      "id": "customer-analytics",
+      "label": "用户数据分析",
+      "file": "customer-analytics.html"
+    },
+    {
       "id": "first-outreach",
       "label": "首批触达用户",
       "file": "first-outreach.html"
@@ -27,7 +32,7 @@
     },
     {
       "id": "studio",
-      "label": "社媒内容生产",
+      "label": "社媒内容自动化生产",
       "file": "content-studio.html"
     },
     {

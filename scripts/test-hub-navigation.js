@@ -13,7 +13,7 @@ for (const [id, label] of Object.entries({
   products: '产品知识库', 'mascot-workflow': '吉祥物设计的skill'
 })) assert.equal(nav.find(item => item.id === id)?.label, label);
 assert.deepEqual(nav.map(item => item.id), [
-  'fakesite', 'first-outreach', 'email-templates', 'discord-invite-plan',
+  'fakesite', 'customer-analytics', 'first-outreach', 'email-templates', 'discord-invite-plan',
   'studio', 'voice', 'products', 'research', 'discord-community', 'seo-geo',
   'social-brand', 'brand-voice-system', 'mascot', 'merch-plan', 'mascot-workflow', 'flipbooks'
 ]);

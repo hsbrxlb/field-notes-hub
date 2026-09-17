@@ -101,9 +101,37 @@ function renderFlipbooks(data) {
     </section>`;
 }
 
+function voiceThreadContext(item) {
+  const url = new URL(item.source_link);
+  const reddit = url.pathname.match(/^\/r\/([^/]+)\/comments\/[^/]+\/([^/]+)/);
+  const forum = url.pathname.match(/\/threads\/([^/.]+)/);
+  const slug = reddit?.[2] || forum?.[1] || '';
+  // These headings translate only the public URL slugs, never unverified comment bodies.
+  const headings = {
+    tonneau_covers: 'Nissan Frontier 货箱盖讨论',
+    oedro_running_boards: 'OEDRO 脚踏板讨论',
+    please_help_me_pick_some_side_railsstepsrunning: '侧护栏、踏步、脚踏板怎么选？',
+    oedro_low_profile_hard_quad_fold_tonneau_cover: 'OEDRO 低平四折硬质货箱盖讨论',
+    recommendations_for_a_truck_bed_cover: '想选一款货箱盖，有什么推荐？',
+    hard_tonneau_worth_it: '硬质货箱盖值得买吗？',
+    'oedro-low-profile-tri-fold-tonneau-cover': 'OEDRO 低平三折货箱盖讨论',
+    '4-fold-low-prifile-tonneau-cover-409-79': '低平四折货箱盖讨论'
+  };
+  const topicLabels = {
+    tonneau_cover: '货箱盖', running_boards: '脚踏板', floor_mats: '脚垫', bumper: '保险杠',
+    complaint: '产品讨论', recommendation: '选购建议', fitment: '车型适配', installation: '安装',
+    warranty: '保修', product_quality: '产品质量', shipping_returns: '配送与退换', support: '售后支持', general: '产品讨论'
+  };
+  return {
+    heading: headings[slug] || topicLabels[item.topic] || '产品讨论',
+    community: reddit ? `r/${reddit[1]}` : url.hostname.replace(/^www\./, ''),
+    category: topicLabels[item.topic] || '产品讨论'
+  };
+}
+
 function renderUserVoice(data, voice, radar) {
   const copy = data.user_voice || {};
-  const insights = Array.isArray(voice.actions)
+  const insights = Array.isArray(voice?.actions)
     ? voice.actions.filter((item) => item && ['approved', 'routed', 'closed'].includes(item.status))
     : [];
   const actionLabels = {
@@ -111,79 +139,40 @@ function renderUserVoice(data, voice, radar) {
     product_feedback: '产品反馈', support_feedback: '支持反馈', content_idea: '内容方向',
     official_site_article_candidate: '官网内容'
   };
-  const strengthLabels = {
-    urgent_single_signal: '需优先关注', repeated_multi_source: '多来源重复出现',
-    single_or_thin_signal: '证据仍少', single_signal: '单一信号'
-  };
   const topicLabels = {
     tonneau_cover: '货箱盖', running_boards: '脚踏板', floor_mats: '脚垫', bumper: '保险杠',
     complaint: '产品问题', recommendation: '选购建议', fitment: '车型适配', installation: '安装', warranty: '保修', product_quality: '产品质量',
     shipping_returns: '配送与退换', support: '售后支持', community: '社区', general: '通用问题'
   };
-  const sourceLabels = { reddit: 'Reddit', forum: '车型论坛', youtube: 'YouTube', bluesky: 'Bluesky', tavily: '网页搜索', official_facts: '产品事实库' };
-  const sourceStatusLabels = { ok: '正常', blocked: '受阻', failed: '失败', skipped: '跳过' };
-  const radarTopicTitles = {
-    complaint: '产品问题', support: '售后支持', installation: '安装问题', fitment: '车型适配',
-    recommendation: '选购建议', tonneau_cover: '货箱盖问题', running_boards: '脚踏板问题',
-    floor_mats: '脚垫问题', bumper: '保险杠问题', general: '其他问题'
-  };
-  const actionLabelsRadar = {
-    verify_product_facts: '核对产品事实',
-    review_reply_opportunity: '查看是否值得人工回复'
-  };
+  const sourceLabels = { reddit: 'Reddit', forum: '车型论坛', youtube: 'YouTube', bluesky: 'Bluesky' };
   const radarItems = Array.isArray(radar?.items) ? radar.items : [];
-  const lastSuccess = radar?.last_success_at ? new Date(radar.last_success_at) : null;
-  const staleAfter = Number(radar?.stale_after_hours) || 36;
-  const stale = !lastSuccess || Number.isNaN(lastSuccess.getTime()) || Date.now() - lastSuccess.getTime() > staleAfter * 3600000;
-  const formatTime = (value) => {
-    if (!value) return '尚未成功运行';
-    const date = new Date(value);
-    return Number.isNaN(date.getTime()) ? '时间无效' : date.toLocaleString('zh-CN', { hour12: false });
-  };
-  const radarStatus = radar?.status === 'success' ? '检查完成' : radar?.status === 'partial' ? '部分来源失败' : radar?.status === 'failed' ? '检查失败' : '尚未运行';
   document.title = `${copy.title || '问题与反馈'}｜${data.site.title}`;
-  document.querySelector('meta[name="description"]').content = 'OEDRO公开问题检查、值得查看的问题和已确认行动汇总。';
+  document.querySelector('meta[name="description"]').content = 'OEDRO 货箱盖、脚踏板与车型相关的公开讨论和原帖。';
   document.querySelector('#content').innerHTML = `
     ${pageHeading(copy.title || '问题与反馈')}
-    <section class="section demand-radar-summary" data-searchable>
-      <div class="section-head"><h2>最近检查</h2><span class="status ${stale ? 'status-blocked' : radar?.status === 'success' ? 'status-done' : 'status-pending'}">${stale ? '数据可能过期' : escapeHtml(radarStatus)}</span></div>
-      <p class="radar-updated">${escapeHtml(formatTime(radar?.last_success_at))}</p>
-      <dl class="radar-health">
-        <div><dt>产品事实</dt><dd>${escapeHtml(radar?.truth_status === 'verified' ? '已核对' : radar?.truth_status === 'blocked' ? '受阻' : '待核对')}</dd></div>
-        ${(Array.isArray(radar?.sources) ? radar.sources : []).map((item) => `<div><dt>${escapeHtml(sourceLabels[item.source] || item.source)}</dt><dd>${escapeHtml(sourceStatusLabels[item.status] || item.status)} · ${Number(item.accepted_count) || 0} 条采用</dd></div>`).join('')}
-      </dl>
-    </section>
-    <section class="section demand-radar-items" data-searchable>
-      <div class="section-head"><h2>值得查看的问题</h2></div>
-      <div class="radar-item-list">
-        ${radarItems.map((item) => `<article class="radar-item">
-          <div class="radar-item-meta"><span class="eyebrow">${escapeHtml(sourceLabels[item.source_family] || item.source_family)}</span><span class="status ${item.triage_status === 'DRAFT_READY' ? 'status-done' : 'status-pending'}">${item.triage_status === 'DRAFT_READY' ? '可评估回复' : '需要事实'}</span></div>
-          <h3>${escapeHtml(radarTopicTitles[item.topic] || topicLabels[item.topic] || item.topic)}</h3>
-          <div class="radar-item-footer"><strong>${escapeHtml(actionLabelsRadar[item.next_action] || item.next_action)}</strong><a href="${escapeHtml(item.source_link)}" target="_blank" rel="noreferrer">打开原帖 →</a></div>
-        </article>`).join('')}
+    <section class="voice-discussions" aria-label="公开讨论">
+      <div class="voice-card-grid">
+        ${radarItems.map((item, index) => {
+          const thread = voiceThreadContext(item);
+          return `<article class="voice-thread" data-searchable>
+            <div class="voice-thread-top"><span class="voice-thread-category">${escapeHtml(thread.category)}</span><span class="voice-thread-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span></div>
+            <h2>${escapeHtml(thread.heading)}</h2>
+            <p class="voice-thread-community">${escapeHtml(thread.community)}</p>
+            <div class="voice-thread-bottom"><span>${escapeHtml(sourceLabels[item.source_family] || item.source_family)}</span><a href="${escapeHtml(item.source_link)}" target="_blank" rel="noopener noreferrer" aria-label="查看原帖：${escapeHtml(thread.heading)}">查看原帖 <span aria-hidden="true">↗</span></a></div>
+          </article>`;
+        }).join('')}
       </div>
-      <div class="empty-state voice-empty"${radarItems.length ? ' hidden' : ''}><strong>暂无值得处理的问题</strong></div>
+      ${radarItems.length ? '' : '<p class="empty-state">暂无公开问题记录</p>'}
     </section>
-    <section class="section user-voice-surface">
+    ${insights.length ? `<section class="section user-voice-surface">
       <div class="section-head"><h2>已确认的洞察与行动</h2></div>
-      <div class="voice-insights" id="voice-insights">
+      <div class="voice-insights">
         ${insights.map((item) => `<article class="voice-insight" data-searchable>
-          <div><span class="eyebrow">${escapeHtml(actionLabels[item.action_type] || item.action_type)}</span></div>
-          <div><h3>${escapeHtml(topicLabels[item.public_topic] || item.public_topic)} · ${escapeHtml(actionLabels[item.action_type] || item.action_type)}</h3><p class="voice-evidence">${escapeHtml(strengthLabels[item.evidence_strength] || item.evidence_strength)} · ${Number(item.source_count) || 0} 个公开来源 · ${Number(item.independent_voice_count) || 0} 个独立声音</p></div>
+          <h3>${escapeHtml(topicLabels[item.public_topic] || item.public_topic)} · ${escapeHtml(actionLabels[item.action_type] || item.action_type)}</h3>
+          <p class="voice-evidence">${Number(item.source_count) || 0} 个公开来源 · ${Number(item.independent_voice_count) || 0} 个独立声音</p>
         </article>`).join('')}
       </div>
-      <div class="empty-state voice-empty" id="voice-empty"${insights.length ? ' hidden' : ''}><strong>${escapeHtml(copy.empty_message || '暂无可公开洞察')}</strong></div>
-    </section>
-    <section class="section feedback-method" id="feedback-method">
-      <h2>反馈怎么处理</h2>
-      <ol>
-        <li>保留评论来源与上下文，合并重复记录，区分适配、安装和使用问题。</li>
-        <li>人工核对事实与重复主题；涉及安全、适配或产品损坏的问题优先处理。</li>
-        <li>把确认的问题用于 FAQ、调研、内容或产品反馈，并记录后续处理结果。</li>
-      </ol>
-      <p>公开评论不等于营销许可。继续邀请调研、社群或复用用户内容，需要分别取得同意。</p>
-      <a class="text-link" href="research.html">继续做用户调研 →</a>
-    </section>`;
+    </section>` : ''}`;
 }
 
 function renderTopics(data, topics) {
@@ -344,7 +333,7 @@ async function init() {
   if (page === 'flipbooks') renderFlipbooks(data);
   if (page === 'voice') {
     renderUserVoice(data, voice, radar);
-    if (location.hash === '#feedback-method') document.querySelector('#feedback-method').scrollIntoView({ behavior: 'instant', block: 'start' });
+    if (location.hash === '#feedback-method') document.querySelector('.voice-discussions')?.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
   if (page === 'topics' && location.pathname.endsWith('topics.html')) renderTopics(data, topics);
   if (page === 'topics' && location.pathname.endsWith('topic.html')) await renderTopic(data);
@@ -356,7 +345,7 @@ async function init() {
 }
 
 const mainContent = document.querySelector('#content');
-const staticContentPage = ['mascot-workflow', 'social-brand', 'merch-plan', 'first-outreach', 'discord-invite-plan'].includes(page);
+const staticContentPage = ['customer-analytics', 'mascot-workflow', 'social-brand', 'merch-plan', 'first-outreach', 'discord-invite-plan'].includes(page);
 mainContent.setAttribute('tabindex', '-1');
 mainContent.setAttribute('aria-busy', 'true');
 if (!staticContentPage) mainContent.innerHTML = '<p class="loading-state" role="status">正在加载…</p>';

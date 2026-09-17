@@ -47,6 +47,9 @@ jobs:
           node scripts/check-email-templates.js
           node scripts/check-content-studio.js
           node scripts/test-hub-navigation.js
+          node scripts/test-user-voice-render.js
+          node scripts/test-content-automation.js
+          python3 scripts/test-customer-analytics.py
           node scripts/check-content-pipeline-tests.js
           node scripts/check-mascot-page.js
           python3 scripts/test-update-hub-record.py
@@ -57,6 +60,7 @@ jobs:
           cp -R assets data preview experiences fakesite public-dist/
       - name: Validate complete public artifact
         run: |
+          PUBLIC_SITE_ROOT=public-dist python3 scripts/test-customer-analytics.py
           PUBLIC_SITE_ROOT=public-dist node scripts/check-public-user-voice.js
           PUBLIC_SITE_ROOT=public-dist node scripts/check-demand-radar.js
           PUBLIC_SITE_ROOT=public-dist node scripts/check-mascot-page.js

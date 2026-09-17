@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="用户数据分析">
+  <link rel="icon" href="data:,">
+  <title>用户数据分析｜OEDRO 海外用户运营</title>
+  <link rel="stylesheet" href="base.css?v=20260916-type">
+  <link rel="stylesheet" href="theme.css?v=20260916-type">
+  <link rel="stylesheet" href="customer-analytics.css?v=20260917">
+</head>
+<body data-page="customer-analytics">
+  <a class="skip-link" href="#content">跳到正文</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="工作台导航">
+      <a class="sidebar-head" href="index.html" aria-label="海外用户运营工作台首页">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-copy"><strong id="site-title">海外用户运营</strong><span id="site-subtitle">OEDRO 工作台</span></span>
+      </a>
+      <nav class="nav-list" id="nav-list" aria-label="主页面"></nav>
+    </aside>
+    <div class="mobile-overlay" hidden></div>
+    <div class="workspace">
+      <header class="topbar">
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false">☰</button>
+        <div class="breadcrumb">海外用户运营 / <strong id="breadcrumb-page">用户数据分析</strong></div>
+      </header>
+      <main class="main-content analytics" id="content">
+        <header class="page-heading"><h1>用户数据分析</h1><p id="analytics-date">正在读取客户数据…</p></header>
+        <div class="analytics-toolbar">
+          <div class="scope-switch" role="group" aria-label="分析范围">
+            <button type="button" data-scope="snapshot" aria-pressed="true">全体客户</button>
+            <button type="button" data-scope="outreach" aria-pressed="false">首批触达</button>
+          </div>
+          <span id="scope-denominator"></span>
+        </div>
+        <div id="analytics-view" aria-busy="true"><p role="status" class="load-message">正在加载数据…</p></div>
+        <noscript><p>请启用 JavaScript 以读取客户统计与切换分析范围。</p></noscript>
+      </main>
+    </div>
+  </div>
+  <script src="app.js?v=20260917-hub"></script>
+  <script src="customer-analytics.js?v=20260917"></script>
+</body>
+</html>

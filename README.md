@@ -6,6 +6,8 @@
 
 ## 当前页面
 
+- `customer-analytics.html`：切换全体客户与首批触达样本，查看购买次数、历史累计订单金额分布和邮件订阅状态；首批另有订阅与购买交叉、名单来源重叠。图表可点选查看人数和占比，分母随范围切换。新增 JSON 只含聚合人数，不含客户明细或财务总额；样本不能外推全体，无日期字段不展示趋势。
+
 - `first-outreach.html` / `first-outreach-users.html`：近期访问与累计高消费客户的筛选说明、合并去重名单和分类分页；只展示获授权的客户编号、打码邮箱、历史订单、订阅状态与分类。`data/first-outreach-users.json` 保留原近期批次作为核对基准，当前名单读取 `data/outreach-users.json`；发布前运行 `node scripts/check-outreach-users.js`。
 
 - `products.html`：产品知识库；1,209 条目录记录按 12 个分类拆分加载，每页只渲染 24 件，完整适配、规格、说明、媒体和政策快照可按商品展开。标题与统计区顶部对齐。
@@ -15,11 +17,11 @@
 
 - `index.html`：直接进入 Discord 社群
 - `research.html`：统一的“AI问卷”，完整界面预览与“开始AI调研问卷”入口。`light-research.html` 保留为同内容兼容入口；独立应用源码位于 `apps/light-research`。
-- `user-voice.html`：OEDRO讨论全网捕捉，展示公开汇总、结论和行动。
-- `first-outreach.html`：首批触达用户，展示筛选区间、分层与试发建议；人数链接进入 `first-outreach-users.html`，在线查看全部1,365人的分页表格，不设搜索。
+- `user-voice.html`：OEDRO讨论全网捕捉，以讨论卡片展示具体主题、社区、平台和原帖入口；仅在存在已批准记录时呈现洞察与行动。抓取状态和内部处理字段保留在数据中，不占据阅读页面。
+- `first-outreach.html`：首批触达用户，展示筛选区间、分层与试发建议；人数链接进入 `first-outreach-users.html`，在线查看合并后 5,232 人的分页表格，不设搜索。
 - 2026-09-15 Oliver明确批准本批客户编号、打码邮箱、历史订单数与金额、订阅状态随Hub发布，同一范围不再重复确认。仅适用于该批指定字段，不扩大到完整邮箱或其他名单。
 - `discord-invite-plan.html`：邀请加入Discord活动方案，展示待审批的优惠、申领流程、额度与发送批次；未启动，不代表已经发券或发信。两页检查为 `node scripts/check-outreach-pages.js`，已接入源码及最终发布目录的校验。
-- `content-studio.html`：直接展示当前 Instagram、X 和 YouTube 社区作品、Prompt、目的及中文对照，不再要求进入测试记录。
+- `content-studio.html`：社媒内容自动化生产，先展示一个选题形成三平台 AI 图文、人工确认后使用的流程，再说明输入与交付；三平台样稿作为下方实例，完整 Prompt、作品和中文对照进入 `content-pipeline-test.html` 查看。
 - `social-brand.html`：社媒品牌升级讨论方案，产品与购买信息、车主交流内容与平台分工。
 - `merch-plan.html`：Oedro周边，含四张概念图、产品优先级和同行实物参考；周边覆盖日常使用、赠送、购买和活动参与。
 - 两页使用 `brand-plan.css`，正文为静态 HTML，共用 `data/content.json` 导航；验证：`node scripts/check-brand-plans.js`。更新不能把企划改写成已经执行的运营结果。
@@ -31,10 +33,10 @@
 - `mascot-workflow.html`：吉祥物设计的skill，可直接复制或下载完整的跨品牌吉祥物工作包，供其他 Codex 或 AI 使用，不依赖本机私有路径。
 - 侧栏分别进入“SEO与AI搜索”“Discord频道设计”“Oedro persona”，沿用对应的 `topic.html?slug=...` 网址。“Discord频道设计”位于侧栏最底部，新触达名单与邀请活动方案位于用户邮件模板之后。`topics.html` 仅保留旧链接所需的资料索引。
 - Discord 配置位于频道结构下方；没有实际用途证据的机器人与空配置区不显示。品牌表达页包含品牌名大小写建议和六个双语场景示例，示例不代表已发送消息。
-- 原“公开信号与用户关系”是公开评论的留存、核实、采用与许可方法，已归入 `user-voice.html#feedback-method`；原专题网址自动跳转到该位置。
+- 原“公开信号与用户关系”网址兼容跳转至讨论卡片；页面已移除通用处理流程说明，旧 `#feedback-method` 链接仍可打开。
 - `research-library.html`、`sites-systems.html`、`playbook.html` 已退出导航，只保留旧网址的定向跳转。
 
-`content-studio.html` 为只读作品页，与独立测试页复用当前作品数据和渲染器；没有填写表单、在线生成、浏览器草稿、版本审核、登录或数据库。
+`content-studio.html` 为只读流程介绍页，与独立样稿页复用 `data/content-pipeline-tests.json` 的当前作品数据，分别渲染概览与完整样稿；页面不触发生成或发布，不提供表单、登录或数据库。
 
 维护记录：2026年9月9日创意样稿由现有 Skills 与总控整合完成；完整自动内容包校验尚未通过，Hub 展示验收不代表整套工作流通过。
 
@@ -71,6 +73,9 @@ python3 scripts/update-hub-record.py --input <记录.json>
 ```bash
 node scripts/check-content-studio.js
 node scripts/test-hub-navigation.js
+node scripts/test-user-voice-render.js
+node scripts/test-content-automation.js
+python3 scripts/test-customer-analytics.py
 node scripts/check-content-pipeline-tests.js
 node scripts/test-content-pipeline-records.js
 node scripts/check-public-pages.js
@@ -82,6 +87,8 @@ node scripts/check-products.js
 ```
 
 本地预览确认后提交并推送，GitHub Actions会自动发布。
+
+用户数据分析更新时，将已核实的后台计数作为 `--snapshot` 输入运行 `scripts/build-customer-analytics.py`，首批样本从既有 `data/outreach-users.json` 聚合。省略 `--snapshot` 会生成待补数据状态，不能覆盖已核实的全体快照。`test-customer-analytics.py` 只读取并核对已发布聚合，不重写数据；发布流程同时检查源码和最终产物中的聚合文件。
 
 ## 成果展示
 

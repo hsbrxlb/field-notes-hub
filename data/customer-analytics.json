@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "snapshot": {
+    "as_of": "2026-09-17",
+    "scope": "all_customers",
+    "status": "verified_counts",
+    "total": 511392,
+    "dimensions": [
+      {
+        "key": "purchase_frequency",
+        "label": "购买次数",
+        "denominator": 511392,
+        "partition": true,
+        "buckets": [
+          {
+            "key": "0",
+            "label": "未下单",
+            "count": 286558
+          },
+          {
+            "key": "1",
+            "label": "1单",
+            "count": 197805
+          },
+          {
+            "key": "2_3",
+            "label": "2–3单",
+            "count": 24468
+          },
+          {
+            "key": "4_9",
+            "label": "4–9单",
+            "count": 2435
+          },
+          {
+            "key": "10_plus",
+            "label": "10单及以上",
+            "count": 126
+          }
+        ]
+      },
+      {
+        "key": "historical_amount",
+        "label": "历史累计订单金额",
+        "denominator": 511392,
+        "partition": true,
+        "buckets": [
+          {
+            "key": "under_100",
+            "label": "不足$100（含$0）",
+            "count": 329187
+          },
+          {
+            "key": "100_499",
+            "label": "$100–不足500",
+            "count": 158376
+          },
+          {
+            "key": "500_999",
+            "label": "$500–不足1,000",
+            "count": 19899
+          },
+          {
+            "key": "1000_2499",
+            "label": "$1,000–不足2,500",
+            "count": 3602
+          },
+          {
+            "key": "2500_4999",
+            "label": "$2,500–不足5,000",
+            "count": 275
+          },
+          {
+            "key": "5000_plus",
+            "label": "$5,000及以上",
+            "count": 53
+          }
+        ]
+      },
+      {
+        "key": "subscription",
+        "label": "邮件订阅状态",
+        "denominator": 511392,
+        "partition": true,
+        "buckets": [
+          {
+            "key": "subscribed",
+            "label": "已订阅",
+            "count": 332443
+          },
+          {
+            "key": "unsubscribed",
+            "label": "未订阅",
+            "count": 173488
+          },
+          {
+            "key": "opted_out",
+            "label": "已退订",
+            "count": 5461
+          }
+        ]
+      }
+    ]
+  },
+  "outreach": {
+    "scope": "selected_outreach",
+    "total": 5232,
+    "summary": {
+      "buyers": 4733,
+      "non_buyers": 499,
+      "repeat_buyers": 3927,
+      "historical_orders": 15592
+    },
+    "purchase_frequency": [
+      {
+        "key": "0",
+        "label": "未下单",
+        "count": 499
+      },
+      {
+        "key": "1",
+        "label": "1单",
+        "count": 806
+      },
+      {
+        "key": "2_3",
+        "label": "2–3单",
+        "count": 2479
+      },
+      {
+        "key": "4_9",
+        "label": "4–9单",
+        "count": 1331
+      },
+      {
+        "key": "10_plus",
+        "label": "10单及以上",
+        "count": 117
+      }
+    ],
+    "historical_amount": [
+      {
+        "key": "0",
+        "label": "$0",
+        "count": 499
+      },
+      {
+        "key": "under_100",
+        "label": "$0以上、不足100",
+        "count": 54
+      },
+      {
+        "key": "100_499",
+        "label": "$100–不足500",
+        "count": 555
+      },
+      {
+        "key": "500_999",
+        "label": "$500–不足1,000",
+        "count": 202
+      },
+      {
+        "key": "1000_2499",
+        "label": "$1,000–不足2,500",
+        "count": 3595
+      },
+      {
+        "key": "2500_4999",
+        "label": "$2,500–不足5,000",
+        "count": 274
+      },
+      {
+        "key": "5000_plus",
+        "label": "$5,000及以上",
+        "count": 53
+      }
+    ],
+    "subscription": [
+      {
+        "key": "subscribed",
+        "label": "已订阅",
+        "count": 4790
+      },
+      {
+        "key": "unsubscribed",
+        "label": "未订阅",
+        "count": 390
+      },
+      {
+        "key": "opted_out",
+        "label": "已退订",
+        "count": 52
+      }
+    ],
+    "subscription_purchase": [
+      {
+        "key": "subscribed",
+        "label": "已订阅",
+        "buyers": 4300,
+        "non_buyers": 490
+      },
+      {
+        "key": "unsubscribed",
+        "label": "未订阅",
+        "buyers": 385,
+        "non_buyers": 5
+      },
+      {
+        "key": "opted_out",
+        "label": "已退订",
+        "buyers": 48,
+        "non_buyers": 4
+      }
+    ],
+    "source_membership": [
+      {
+        "key": "recent_only",
+        "label": "仅近期访问来源",
+        "count": 1310
+      },
+      {
+        "key": "high_only",
+        "label": "仅高消费来源",
+        "count": 3867
+      },
+      {
+        "key": "both",
+        "label": "两类来源重叠",
+        "count": 55
+      }
+    ],
+    "limitations": [
+      "这是近期访问与高消费筛选后的名单，不能代表全体客户。",
+      "金额沿用历史订单总额，尚未核实退款和取消订单的扣除口径。",
+      "名单没有注册日期和订单日期，不能据此分析注册分布或销售趋势。"
+    ]
+  }
+}
