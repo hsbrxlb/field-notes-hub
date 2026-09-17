@@ -49,6 +49,7 @@ jobs:
           node scripts/test-hub-navigation.js
           node scripts/test-user-voice-render.js
           node scripts/test-content-automation.js
+          node scripts/test-customer-analytics-render.js
           python3 scripts/test-customer-analytics.py
           node scripts/check-content-pipeline-tests.js
           node scripts/check-mascot-page.js
