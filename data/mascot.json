@@ -1,7 +1,127 @@
 {
   "title": "吉祥物迭代",
-  "meta_description": "OEDRO 车灯、救援踏板与车库伙伴的角色形象。",
+  "meta_description": "OEDRO 小欧、金金、阿稳与救援踏板伙伴的形象与动作。",
   "characters": [
+    {
+      "id": "character-click-helper",
+      "index": "01",
+      "family": "o-partner",
+      "type": "mechanical",
+      "role": "brand",
+      "name_cn": "小欧",
+      "name_en": "Ollie",
+      "blurb": "从 OEDRO 的 O 里走出来，抬抬手，就想替你搭把手。",
+      "assets": [
+        {
+          "code": "O-01",
+          "caption": "见面打招呼",
+          "src": "assets/mascot-evolution/chat-refresh/O-01.webp",
+          "alt": "小欧（Ollie）见面打招呼",
+          "source_round": "chat-refresh"
+        },
+        {
+          "code": "O-02",
+          "caption": "转过身来",
+          "src": "assets/mascot-evolution/chat-refresh/O-02.webp",
+          "alt": "小欧（Ollie）转过身来",
+          "source_round": "chat-refresh"
+        },
+        {
+          "code": "O-03",
+          "caption": "接住小支架",
+          "src": "assets/mascot-evolution/chat-refresh/O-03.webp",
+          "alt": "小欧（Ollie）接住小支架",
+          "source_round": "chat-refresh"
+        },
+        {
+          "code": "O-04",
+          "caption": "迈步招手",
+          "src": "assets/mascot-evolution/chat-refresh/O-04.webp",
+          "alt": "小欧（Ollie）迈步招手",
+          "source_round": "chat-refresh"
+        }
+      ]
+    },
+    {
+      "id": "character-01-dog",
+      "index": "02",
+      "family": "dog",
+      "type": "animal",
+      "role": "brand",
+      "name_cn": "金金",
+      "name_en": "Sunny",
+      "blurb": "穿上工装的金毛搭档，热情地迎人，也耐心陪着小伙伴干活。",
+      "assets": [
+        {
+          "code": "DOG-01",
+          "caption": "欢迎来到车库",
+          "src": "assets/mascot-evolution/chat-refresh/DOG-01.webp",
+          "alt": "金金（Sunny）欢迎来到车库",
+          "source_round": "chat-refresh"
+        },
+        {
+          "code": "DOG-02",
+          "caption": "回头招呼你",
+          "src": "assets/mascot-evolution/chat-refresh/DOG-02.webp",
+          "alt": "金金（Sunny）回头招呼你",
+          "source_round": "chat-refresh"
+        },
+        {
+          "code": "DOG-03",
+          "caption": "和踏踏一起干活",
+          "src": "assets/mascot-evolution/chat-refresh/DOG-03.webp",
+          "alt": "金金（Sunny）和踏踏一起干活",
+          "source_round": "chat-refresh"
+        },
+        {
+          "code": "DOG-04",
+          "caption": "带上工具出发",
+          "src": "assets/mascot-evolution/chat-refresh/DOG-04.webp",
+          "alt": "金金（Sunny）带上工具出发",
+          "source_round": "chat-refresh"
+        }
+      ]
+    },
+    {
+      "id": "character-06-bison",
+      "index": "03",
+      "family": "bison",
+      "type": "animal",
+      "role": "brand",
+      "name_cn": "阿稳",
+      "name_en": "Bruno",
+      "blurb": "肩膀宽，脾气好。拿起工具时认真，讲起小零件也有耐心。",
+      "assets": [
+        {
+          "code": "BULL-01",
+          "caption": "站稳来帮忙",
+          "src": "assets/mascot-evolution/chat-refresh/BULL-01.webp",
+          "alt": "阿稳（Bruno）站稳来帮忙",
+          "source_round": "chat-refresh"
+        },
+        {
+          "code": "BULL-02",
+          "caption": "转身听你说",
+          "src": "assets/mascot-evolution/chat-refresh/BULL-02.webp",
+          "alt": "阿稳（Bruno）转身听你说",
+          "source_round": "chat-refresh"
+        },
+        {
+          "code": "BULL-03",
+          "caption": "讲讲这个小支架",
+          "src": "assets/mascot-evolution/chat-refresh/BULL-03.webp",
+          "alt": "阿稳（Bruno）讲讲这个小支架",
+          "source_round": "chat-refresh"
+        },
+        {
+          "code": "BULL-04",
+          "caption": "提上工具箱",
+          "src": "assets/mascot-evolution/chat-refresh/BULL-04.webp",
+          "alt": "阿稳（Bruno）提上工具箱",
+          "source_round": "chat-refresh"
+        }
+      ]
+    },
     {
       "id": "character-recovery-board",
       "family": "recovery-board",
@@ -25,205 +145,8 @@
           "source_round": "meeting-refresh"
         }
       ],
-      "index": "01"
-    },
-    {
-      "id": "character-16-parts-spirit",
-      "index": "02",
-      "family": "headlight",
-      "type": "mechanical",
-      "name_cn": "圈圈",
-      "name_en": "Halo",
-      "blurb": "圆圆的车灯抬起眼睛，陪你看清前面的路。",
-      "assets": [
-        {
-          "code": "MR-LAMP-A",
-          "caption": "亮起光圈",
-          "src": "assets/mascot-evolution/meeting-refresh/MR-LAMP-A.webp",
-          "alt": "圈圈（Halo）亮起光圈",
-          "source_round": "meeting-refresh"
-        },
-        {
-          "code": "MR-LAMP-B",
-          "caption": "照亮前面的路",
-          "src": "assets/mascot-evolution/meeting-refresh/MR-LAMP-B.webp",
-          "alt": "圈圈（Halo）照亮前面的路",
-          "source_round": "meeting-refresh"
-        },
-        {
-          "code": "R2-1A",
-          "caption": "圆环外壳",
-          "src": "assets/mascot-evolution/round2/R2_1A.webp",
-          "alt": "第二轮圆环精灵",
-          "source_round": "round-2"
-        }
-      ]
-    },
-    {
-      "id": "character-wheel",
-      "family": "wheel",
-      "type": "mechanical",
-      "name_cn": "滚滚",
-      "name_en": "Rollie",
-      "blurb": "轮毂藏着一张爱笑的脸，出门总比你先准备好。",
-      "assets": [
-        {
-          "code": "MR-WHEEL-A",
-          "caption": "准备出发",
-          "src": "assets/mascot-evolution/meeting-refresh/MR-WHEEL-A.webp",
-          "alt": "滚滚（Rollie）准备出发",
-          "source_round": "meeting-refresh"
-        }
-      ],
-      "index": "03"
-    },
-    {
-      "id": "character-click-helper",
       "index": "04",
-      "family": "click-helper",
-      "type": "mechanical",
-      "name_cn": "咔咔",
-      "name_en": "Click",
-      "blurb": "它爱抬眼打招呼，也愿意伸出短夹爪，帮你把零件稳稳对齐。",
-      "assets": [
-        {
-          "code": "M18-A",
-          "caption": "招呼伙伴",
-          "src": "assets/mascot-evolution/round18/M18-A.webp",
-          "alt": "咔咔（Click）招呼伙伴",
-          "source_round": "round-18"
-        },
-        {
-          "code": "M18-B",
-          "caption": "回头看看",
-          "src": "assets/mascot-evolution/round18/M18-B.webp",
-          "alt": "咔咔（Click）回头看看",
-          "source_round": "round-18"
-        }
-      ]
-    },
-    {
-      "id": "character-13-compass",
-      "index": "05",
-      "family": "compass",
-      "type": "mechanical",
-      "name_cn": "向向",
-      "name_en": "Scout",
-      "blurb": "小罗盘有了表情，歪歪身子，招呼你一起认路。",
-      "assets": [
-        {
-          "code": "MR-COMPASS-A",
-          "caption": "认准方向",
-          "src": "assets/mascot-evolution/meeting-refresh/MR-COMPASS-A.webp",
-          "alt": "向向（Scout）认准方向",
-          "source_round": "meeting-refresh"
-        },
-        {
-          "code": "R12-F5A",
-          "caption": "指向前方",
-          "src": "assets/mascot-evolution/round12/R12_F5A.webp",
-          "alt": "低矮不对称的路向罗盘指向前方",
-          "source_round": "round-12",
-          "source_file": "R12_F5A_路向罗盘_Trail_Compass_Pointing.png"
-        }
-      ]
-    },
-    {
-      "id": "character-01-dog",
-      "index": "06",
-      "family": "dog",
-      "type": "animal",
-      "name_cn": "路伴犬",
-      "name_en": "Trail Dog",
-      "blurb": "金毛背上轻便的小装备，愿意陪你出门，也乐意叼来需要的东西。",
-      "assets": [
-        {
-          "code": "MR-DOG-A",
-          "caption": "金毛来报到",
-          "src": "assets/mascot-evolution/meeting-refresh/MR-DOG-A.webp",
-          "alt": "路伴犬（Trail Dog）金毛来报到",
-          "source_round": "meeting-refresh"
-        },
-        {
-          "code": "MR-DOG-B",
-          "caption": "叼来一卷织带",
-          "src": "assets/mascot-evolution/meeting-refresh/MR-DOG-B.webp",
-          "alt": "路伴犬（Trail Dog）叼来一卷织带",
-          "source_round": "meeting-refresh"
-        },
-        {
-          "code": "R8-F1A",
-          "caption": "安静站定",
-          "src": "assets/mascot-evolution/round8/R8_F1A.webp",
-          "alt": "自然四足、短腿低重心的路伴犬安静站定",
-          "source_round": "round-8",
-          "source_file": "R8_F1A_路伴犬_Trail_Dog_Calm.png"
-        },
-        {
-          "code": "R2-2B",
-          "caption": "半机械装束",
-          "src": "assets/mascot-evolution/round2/R2_2B.webp",
-          "alt": "第二轮半机械车库狗",
-          "source_round": "round-2"
-        }
-      ]
-    },
-    {
-      "id": "character-05-raccoon",
-      "index": "07",
-      "family": "raccoon",
-      "type": "animal",
-      "name_cn": "车库浣熊",
-      "name_en": "Garage Raccoon",
-      "blurb": "它爱翻工具箱，手快眼尖，总能先找到那颗松掉的小零件。",
-      "assets": [
-        {
-          "code": "MR-RACCOON-A",
-          "caption": "找到顺手的工具",
-          "src": "assets/mascot-evolution/meeting-refresh/MR-RACCOON-A.webp",
-          "alt": "车库浣熊（Garage Raccoon）找到顺手的工具",
-          "source_round": "meeting-refresh"
-        },
-        {
-          "code": "R2-3A",
-          "caption": "轻机械装束",
-          "src": "assets/mascot-evolution/round2/R2_3A.webp",
-          "alt": "第二轮轻机械浣熊",
-          "source_round": "round-2"
-        },
-        {
-          "code": "R3-F3B",
-          "caption": "简洁色块",
-          "src": "assets/mascot-round3/F3B.webp",
-          "alt": "第三轮浣熊技师品牌图形",
-          "source_round": "round-3"
-        }
-      ]
-    },
-    {
-      "id": "character-06-bison",
-      "index": "08",
-      "family": "bison",
-      "type": "animal",
-      "name_cn": "稳角野牛",
-      "name_en": "Steady Bison",
-      "blurb": "低下的角和宽肩代表承载，重活交给它，车就像多了一道支撑。",
-      "assets": [
-        {
-          "code": "R4-F1A",
-          "caption": "氧化橙",
-          "src": "assets/mascot-evolution/round4/R4_F1A.webp",
-          "alt": "第四轮工作野牛氧化橙方案",
-          "source_round": "round-4"
-        },
-        {
-          "code": "R3-F4B",
-          "caption": "简洁色块",
-          "src": "assets/mascot-round3/F4B.webp",
-          "alt": "第三轮工作野牛品牌图形",
-          "source_round": "round-3"
-        }
-      ]
+      "role": "product"
     }
   ]
 }

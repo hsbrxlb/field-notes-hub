@@ -38,6 +38,13 @@
 
 .evo-toc-list { display: grid; }
 
+.evo-group-label {
+  margin: 24px 0 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
 .evo-toc a {
   min-height: var(--touch-size);
   display: grid;

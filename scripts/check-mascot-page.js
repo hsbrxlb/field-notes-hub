@@ -37,11 +37,10 @@ for (const token of forbiddenUi) {
   if (script.includes(token)) fail(`unnecessary mascot interaction remains: ${token}`);
 }
 
-if ('rounds' in mascot || !Array.isArray(mascot.characters) || mascot.characters.length !== 8) fail('the gallery must contain eight focused character sections');
+if ('rounds' in mascot || !Array.isArray(mascot.characters) || mascot.characters.length !== 4) fail('the gallery must contain four focused character sections');
 
 const expected = new Map([
-  ['recovery-board', 2], ['headlight', 3], ['wheel', 1], ['click-helper', 2],
-  ['compass', 2], ['dog', 4], ['raccoon', 3], ['bison', 2]
+  ['o-partner', 4], ['dog', 4], ['bison', 4], ['recovery-board', 2]
 ]);
 
 const codes = [];
@@ -79,16 +78,16 @@ for (const character of mascot.characters) {
   }
 }
 
-if (new Set(families).size !== 8) fail('each character family must appear in one section only');
-if (codes.length !== 19 || new Set(codes).size !== 19 || new Set(sources).size !== 19) fail('nineteen unique gallery images are required');
-const mechanicalFamilies = new Set(['recovery-board', 'headlight', 'wheel', 'click-helper', 'compass']);
-if (mascot.characters.slice(0, 5).some((character) => !mechanicalFamilies.has(character.family) || character.type !== 'mechanical')
-  || mascot.characters.slice(5).some((character) => mechanicalFamilies.has(character.family))) fail('mechanical and accessory families must precede animals');
+if (new Set(families).size !== 4) fail('each character family must appear in one section only');
+if (codes.length !== 14 || new Set(codes).size !== 14 || new Set(sources).size !== 14) fail('fourteen unique gallery images are required');
+if (families.join(',') !== [...expected.keys()].join(',')) fail('display order must be O, dog, bull, board');
+if (mascot.characters.slice(0, 3).some((character) => character.role !== 'brand')
+  || mascot.characters[3].role !== 'product') fail('three brand partners must precede the product partner');
 if (mascot.characters.some((character, index) => character.index !== String(index + 1).padStart(2, '0'))) fail('navigation numbering must follow the display order');
 
-const additions = mascot.characters.flatMap((character) => character.assets).filter((asset) => asset.source_round === 'meeting-refresh');
-if (additions.length !== 9) fail('nine new images must be present');
-const historicalCodes = ['R2-1A', 'M18-A', 'M18-B', 'R12-F5A', 'R8-F1A', 'R2-2B', 'R2-3A', 'R3-F3B', 'R4-F1A', 'R3-F4B'];
+const additions = mascot.characters.flatMap((character) => character.assets).filter((asset) => asset.source_round === 'chat-refresh');
+if (additions.length !== 12) fail('twelve new images must be present');
+const historicalCodes = ['MR-BOARD-A', 'MR-BOARD-B'];
 if (historicalCodes.some((code) => !codes.includes(code))) fail('a retained comparison image is missing');
 
 const publicText = [JSON.stringify(mascot), html, script, css].join('\n');
@@ -96,4 +95,4 @@ if (/已淘汰|当前候选|候选|已选定|首选|备选|Rejected|Shortlisted|
 if (/"date"\s*:|"goal"\s*:|独立画面|身份｜|结构｜|工作｜|动态｜/.test(JSON.stringify(mascot))) fail('dates or design-process copy must not appear in the role archive');
 if (/\/Users\/|127\.0\.0\.1|localhost|API[_ -]?KEY|COOKIE|PASSWORD/i.test(publicText)) fail('local-only or sensitive text appears in the public mascot page');
 
-console.log('Mascot gallery check passed: 8 character sections, 19 unique images, 9 new images, mechanical families first, no selection labels or process UI.');
+console.log('Mascot gallery check passed: 4 character sections, 14 unique images, 12 new images, 3 brand and 1 product partner, no selection labels or process UI.');

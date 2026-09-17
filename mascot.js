@@ -53,8 +53,8 @@
 
   function applicationMarkup(characters) {
     const examples = [
-      { family: 'headlight', name: '车主调研', title: 'OEDRO Driver Research', copy: 'What does a typical drive look like for you?' },
-      { family: 'recovery-board', name: '网站答疑', title: 'OEDRO Support', copy: 'What vehicle do you drive? Tell us the year, make and model.' },
+      { family: 'o-partner', name: '车主调研', title: 'OEDRO Driver Research', copy: 'What does a typical drive look like for you?' },
+      { family: 'bison', name: '网站答疑', title: 'OEDRO Support', copy: 'What vehicle do you drive? Tell us the year, make and model.' },
       { family: 'dog', name: '邮件结尾', title: 'Your OEDRO team', copy: 'Thanks for sharing your experience. We’re glad to hear from you.' }
     ];
     if (!examples.every((example) => characters.some((character) => character.family === example.family))) return '';
@@ -78,7 +78,10 @@
     document.querySelector('#content').innerHTML = '<header class="page-heading evo-heading"><h1>吉祥物迭代</h1></header>'
       + '<div class="evo-layout">' + tocMarkup(data.characters)
       + '<div class="evo-character-list">'
-      + data.characters.map((character, index) => characterMarkup(character, index === 0)).join('')
+      + data.characters.map((character, index) =>
+        (index === 0 || character.role !== data.characters[index - 1].role
+          ? '<p class="evo-group-label">' + (character.role === 'product' ? '产品伙伴' : '品牌伙伴') + '</p>' : '')
+        + characterMarkup(character, index === 0)).join('')
       + applicationMarkup(data.characters)
       + '</div></div>';
   };
