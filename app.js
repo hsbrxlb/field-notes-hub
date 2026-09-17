@@ -213,11 +213,9 @@ function renderDiscord(topic, data) {
     <nav class="discord-server-nav" aria-label="服务器">
       ${topic.servers.map(server => `<a href="#${escapeHtml(server.id)}">${escapeHtml(server.name)}</a>`).join('')}
     </nav>
-    <p>频道核对日期：${escapeHtml(topic.checked_at)}。成员总数本次未核实，暂不展示。</p>
     ${topic.servers.map(server => `
       <section class="discord-server section" id="${escapeHtml(server.id)}">
         <header class="discord-server-heading"><h2>${escapeHtml(server.name)}</h2>${server.members ? `<span>${escapeHtml(server.members)}</span>` : ''}</header>
-        ${server.scope ? `<p>${escapeHtml(server.scope)}</p>` : ''}
         <div class="discord-layout">
           <section class="discord-channel-map" aria-label="${escapeHtml(server.name)} 频道结构">
             <h3>频道结构</h3>
