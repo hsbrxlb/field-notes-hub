@@ -10,35 +10,35 @@
       "role": "brand",
       "name_cn": "小欧",
       "name_en": "Ollie",
-      "blurb": "从 OEDRO 的 O 里走出来，抬抬手，就想替你搭把手。",
+      "blurb": "圆圆的车灯亮起来，箱子里的小伙伴也准备出发了。",
       "assets": [
         {
-          "code": "O-01",
-          "caption": "见面打招呼",
-          "src": "assets/mascot-evolution/chat-refresh/O-01.webp",
-          "alt": "小欧（Ollie）见面打招呼",
-          "source_round": "chat-refresh"
+          "code": "OK-O-01",
+          "caption": "拎上箱子打招呼",
+          "src": "assets/mascot-evolution/ollie-kit/OK-O-01.webp",
+          "alt": "车灯小欧拎着工具箱招手",
+          "source_round": "ollie-kit"
         },
         {
-          "code": "O-02",
+          "code": "OK-O-02",
           "caption": "转过身来",
-          "src": "assets/mascot-evolution/chat-refresh/O-02.webp",
+          "src": "assets/mascot-evolution/ollie-kit/OK-O-02.webp",
           "alt": "小欧（Ollie）转过身来",
-          "source_round": "chat-refresh"
+          "source_round": "ollie-kit"
         },
         {
-          "code": "O-03",
-          "caption": "接住小支架",
-          "src": "assets/mascot-evolution/chat-refresh/O-03.webp",
-          "alt": "小欧（Ollie）接住小支架",
-          "source_round": "chat-refresh"
+          "code": "OK-O-03",
+          "caption": "踏踏，从这里出来",
+          "src": "assets/mascot-evolution/ollie-kit/OK-O-03.webp",
+          "alt": "小欧打开工具箱迎接迷你踏板伙伴",
+          "source_round": "ollie-kit"
         },
         {
-          "code": "O-04",
-          "caption": "迈步招手",
-          "src": "assets/mascot-evolution/chat-refresh/O-04.webp",
-          "alt": "小欧（Ollie）迈步招手",
-          "source_round": "chat-refresh"
+          "code": "OK-O-04",
+          "caption": "照亮脚下的路",
+          "src": "assets/mascot-evolution/ollie-kit/OK-O-04.webp",
+          "alt": "小欧拎着工具箱俯身照亮脚下",
+          "source_round": "ollie-kit"
         }
       ]
     },
@@ -53,11 +53,11 @@
       "blurb": "穿上工装的金毛搭档，热情地迎人，也耐心陪着小伙伴干活。",
       "assets": [
         {
-          "code": "DOG-01",
+          "code": "OK-DOG-01",
           "caption": "欢迎来到车库",
-          "src": "assets/mascot-evolution/chat-refresh/DOG-01.webp",
+          "src": "assets/mascot-evolution/ollie-kit/OK-DOG-01.webp",
           "alt": "金金（Sunny）欢迎来到车库",
-          "source_round": "chat-refresh"
+          "source_round": "ollie-kit"
         },
         {
           "code": "DOG-02",
@@ -67,11 +67,11 @@
           "source_round": "chat-refresh"
         },
         {
-          "code": "DOG-03",
-          "caption": "和踏踏一起干活",
-          "src": "assets/mascot-evolution/chat-refresh/DOG-03.webp",
-          "alt": "金金（Sunny）和踏踏一起干活",
-          "source_round": "chat-refresh"
+          "code": "OK-DOG-03",
+          "caption": "伸手接住小伙伴",
+          "src": "assets/mascot-evolution/ollie-kit/OK-DOG-03.webp",
+          "alt": "金金跪在打开的工具箱旁迎接踏踏",
+          "source_round": "ollie-kit"
         },
         {
           "code": "DOG-04",
@@ -93,11 +93,11 @@
       "blurb": "肩膀宽，脾气好。拿起工具时认真，讲起小零件也有耐心。",
       "assets": [
         {
-          "code": "BULL-01",
+          "code": "OK-BULL-01",
           "caption": "站稳来帮忙",
-          "src": "assets/mascot-evolution/chat-refresh/BULL-01.webp",
+          "src": "assets/mascot-evolution/ollie-kit/OK-BULL-01.webp",
           "alt": "阿稳（Bruno）站稳来帮忙",
-          "source_round": "chat-refresh"
+          "source_round": "ollie-kit"
         },
         {
           "code": "BULL-02",
@@ -107,11 +107,11 @@
           "source_round": "chat-refresh"
         },
         {
-          "code": "BULL-03",
-          "caption": "讲讲这个小支架",
-          "src": "assets/mascot-evolution/chat-refresh/BULL-03.webp",
-          "alt": "阿稳（Bruno）讲讲这个小支架",
-          "source_round": "chat-refresh"
+          "code": "OK-BULL-03",
+          "caption": "今天轮到踏踏帮忙",
+          "src": "assets/mascot-evolution/ollie-kit/OK-BULL-03.webp",
+          "alt": "阿稳在工作台上打开工具箱介绍踏板伙伴",
+          "source_round": "ollie-kit"
         },
         {
           "code": "BULL-04",

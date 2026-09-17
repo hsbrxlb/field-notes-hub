@@ -85,9 +85,10 @@ if (mascot.characters.slice(0, 3).some((character) => character.role !== 'brand'
   || mascot.characters[3].role !== 'product') fail('three brand partners must precede the product partner');
 if (mascot.characters.some((character, index) => character.index !== String(index + 1).padStart(2, '0'))) fail('navigation numbering must follow the display order');
 
-const additions = mascot.characters.flatMap((character) => character.assets).filter((asset) => asset.source_round === 'chat-refresh');
-if (additions.length !== 12) fail('twelve new images must be present');
-const historicalCodes = ['MR-BOARD-A', 'MR-BOARD-B'];
+const additions = mascot.characters.flatMap((character) => character.assets).filter((asset) => asset.source_round === 'ollie-kit');
+const newCodes = ['OK-O-01', 'OK-O-02', 'OK-O-03', 'OK-O-04', 'OK-DOG-01', 'OK-DOG-03', 'OK-BULL-01', 'OK-BULL-03'];
+if (additions.length !== 8 || newCodes.some((code) => !additions.some((asset) => asset.code === code))) fail('eight lamp and toolcase images must be present');
+const historicalCodes = ['DOG-02', 'DOG-04', 'BULL-02', 'BULL-04', 'MR-BOARD-A', 'MR-BOARD-B'];
 if (historicalCodes.some((code) => !codes.includes(code))) fail('a retained comparison image is missing');
 
 const publicText = [JSON.stringify(mascot), html, script, css].join('\n');
@@ -95,4 +96,4 @@ if (/已淘汰|当前候选|候选|已选定|首选|备选|Rejected|Shortlisted|
 if (/"date"\s*:|"goal"\s*:|独立画面|身份｜|结构｜|工作｜|动态｜/.test(JSON.stringify(mascot))) fail('dates or design-process copy must not appear in the role archive');
 if (/\/Users\/|127\.0\.0\.1|localhost|API[_ -]?KEY|COOKIE|PASSWORD/i.test(publicText)) fail('local-only or sensitive text appears in the public mascot page');
 
-console.log('Mascot gallery check passed: 4 character sections, 14 unique images, 12 new images, 3 brand and 1 product partner, no selection labels or process UI.');
+console.log('Mascot gallery check passed: 4 character sections, 14 unique images, 8 lamp/toolcase revisions and 6 retained images, 3 brand and 1 product partner, no selection labels or process UI.');

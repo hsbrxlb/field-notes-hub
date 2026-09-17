@@ -29,7 +29,7 @@
 
   维护说明：Hub 的 `youtube` 对应 Skill 的 `youtube_community`。本次验收范围是静态作品页，完整自动管线尚未通过；Instagram 原生图片为 1122×1402，低于预设目标，保持原尺寸。
 - `flipbooks.html`：Flip Book Demo（翻页书），进入 Brand Story 与 Car Owner Survey
-- `mascot.html`：OEDRO 吉祥物角色展示：小欧、金金、阿稳三个品牌伙伴方向与救援踏板产品伙伴，共十四张大图及对话、邮件应用示意。不设置选角标签；未使用的旧图从当前发布资源中移除，版本历史保留于 Git。
+- `mascot.html`：OEDRO 吉祥物角色展示：车灯小欧、金金、阿稳三个品牌伙伴方向与救援踏板产品伙伴，共十四张大图及对话、邮件应用示意。三位主角都有随身工具箱与开箱介绍产品伙伴的画面。不设置选角标签；旧版本保留于 Git。
 - `mascot-workflow.html`：吉祥物设计的skill，可直接复制或下载完整的跨品牌吉祥物工作包，供其他 Codex 或 AI 使用，不依赖本机私有路径。
 - 侧栏分别进入“SEO与AI搜索”“Discord频道设计”“Oedro persona”，沿用对应的 `topic.html?slug=...` 网址。“Discord频道设计”位于侧栏最底部，新触达名单与邀请活动方案位于用户邮件模板之后。`topics.html` 仅保留旧链接所需的资料索引。
 - Discord 配置位于频道结构下方；没有实际用途证据的机器人与空配置区不显示。品牌表达页包含品牌名大小写建议和六个双语场景示例，示例不代表已发送消息。
