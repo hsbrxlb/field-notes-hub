@@ -1,16 +1,14 @@
 .automation-main { --automation-line: #555443; }
 .automation-heading { padding-bottom: 32px; }
 .automation-heading p { max-width: 800px; color: var(--text-secondary); font-size: 16px; line-height: 1.8; margin-top: 16px; }
-.automation-flow { padding: 0 0 24px; border-bottom: 1px solid var(--automation-line); }
-.automation-editorial { display: block; width: 100%; height: auto; }
-.automation-stages { display: grid; grid-template-columns: 1fr 1.5fr 1fr; gap: 32px; margin: 24px 0 0; padding: 0; list-style: none; }
+.automation-flow { padding-bottom: 24px; }
+.automation-stage-image { display: block; width: 100%; height: auto; }
+.automation-stages { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; max-width: 880px; margin: 0 auto; padding: 0; list-style: none; }
 .automation-stages li { min-width: 0; }
+.automation-stage-number { color: var(--text-secondary); font-size: 12px; font-weight: 400; margin-right: 12px; }
 .automation-step { display: block; color: var(--accent); font-size: 12px; letter-spacing: .07em; }
-.automation-flow h2 { font-size: 19px; font-weight: 600; margin: 8px 0; }
-.automation-flow p { color: var(--text-secondary); font-size: 14px; line-height: 1.7; margin: 0; }
-.automation-brief { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 32px 0; }
-.automation-brief h2 { font-size: 17px; margin: 0 0 8px; }
-.automation-brief p { margin: 0; font-size: 14px; line-height: 1.8; color: var(--text-secondary); max-width: 480px; }
+.automation-flow h2 { font-size: 14px; font-weight: 500; margin: 0 0 12px; }
+.automation-flow p { color: var(--text-secondary); font-size: 14px; line-height: 1.7; margin: 16px 0 0; }
 .automation-sample { margin-top: 16px; border-top: 1px solid var(--automation-line); padding-top: 24px; }
 .automation-section-head { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
 .automation-section-head h2 { font-size: 21px; margin: 8px 0 0; }
@@ -22,9 +20,7 @@
 .automation-example p { margin: 0; font-size: 13px; line-height: 1.7; color: var(--text-secondary); }
 @media (max-width: 760px) {
   .automation-heading p { font-size: 14px; }
-  .automation-stages { grid-template-columns: minmax(0, 1fr); gap: 24px; }
-  .automation-stages li { border-left: 1px solid var(--automation-line); padding-left: 16px; }
-  .automation-brief { grid-template-columns: 1fr; gap: 24px; padding: 24px 0; }
+  .automation-stages { gap: 32px; }
   .automation-sample-grid { grid-template-columns: 1fr; gap: 32px; }
   .automation-example { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 16px; }
   .automation-example img { height: 145px; }

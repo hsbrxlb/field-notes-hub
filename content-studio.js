@@ -26,14 +26,17 @@
   ];
 
   function diagram() {
-    return `<section class="automation-flow" aria-label="一个选题做成各平台图文，人工确认后使用">
-      <img class="automation-editorial" src="assets/content-studio/trail-editorial-desk.webp" width="1942" height="809" alt="编辑桌上，徒步后的泥鞋选题笔记展开成车门、车内与皮卡尾门三幅画面，右侧有人持笔校看。" fetchpriority="high" decoding="async">
-      <ol class="automation-stages">
-        <li><span class="automation-step">01 / 选题</span><h2>徒步后的泥鞋</h2><p>把车主熟悉的日常写成选题。</p></li>
-        <li><span class="automation-step">02 / AI 图文制作</span><h2>三平台图文</h2><p>Instagram、X、YouTube 社区，各配英文文案与中文对照。</p></li>
-        <li><span class="automation-step">03 / 人工确认</span><h2>校看与使用</h2><p>确认画面与文案后，自行发布。</p></li>
-      </ol>
-    </section>`;
+    const steps = [
+      { image: 'editorial-01', title: '确定要求', description: '提供主题、受众、目标平台，以及已确认的品牌事实和可用素材。', alt: '主题便签、受众肖像、平台清单与品牌摄影资料，沿细线汇成制作简报。' },
+      { image: 'editorial-02', title: '生成图文', description: 'AI 按要求制作图片和英文文案，并提供对应的中文译文。', alt: '制作简报经 AI 制作形成汽车摄影成片，与英文文案和中文对照组成配套图文。' },
+      { image: 'editorial-03', title: '适配平台', description: '按 Instagram、X、YouTube 社区的用途，调整图片画幅、文案角度与篇幅。', alt: '同一汽车主题形成 Instagram 竖图与配文、X 方图与短文、YouTube 社区方图与完整社区帖。' },
+      { image: 'editorial-04', title: '人工审核交付', description: '人工核对画面、文案和事实，反馈修改；确认后整理素材，自行发布。', alt: '图文稿进入人工审核，有问题返回修改，确认后交付含图片、英文文案与中文对照的素材包，由人自行发布。' }
+    ];
+    return `<section class="automation-flow" aria-label="社媒图文生产的四个步骤"><ol class="automation-stages">${steps.map((step, index) => `<li>
+      <h2><span class="automation-stage-number">${String(index + 1).padStart(2, '0')}</span>${step.title}</h2>
+      <a href="assets/content-studio/${step.image}.webp" aria-label="查看原图：${step.title}"><img class="automation-stage-image" src="assets/content-studio/${step.image}.webp" width="1536" height="1024" alt="${step.alt}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></a>
+      <p>${step.description}</p>
+    </li>`).join('')}</ol></section>`;
   }
 
   function sample(record) {
@@ -57,7 +60,6 @@
     if (!record) throw new Error('当前社媒样稿不存在');
     document.querySelector('#content').innerHTML = `<header class="page-heading automation-heading"><h1>社媒内容自动化生产</h1><p>AI 围绕一个主题，为 Instagram、X 和 YouTube 社区分别制作配图与英文文案，附中文对照，省去每个平台从零重做。</p></header>
       ${diagram()}
-      <section class="automation-brief" aria-label="输入与交付"><div><h2>输入</h2><p>输入需选题、目标平台、品牌语气、已确认产品信息和可用素材。</p></div><div><h2>交付</h2><p>交付为成套图文供人工确认后使用，现有案例仍为样稿。</p></div></section>
       ${sample(record)}`;
     document.title = '社媒内容自动化生产｜海外用户运营';
     document.querySelector('#breadcrumb-page').textContent = '社媒内容自动化生产';

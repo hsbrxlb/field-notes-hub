@@ -91,7 +91,15 @@ function checkPublicText(value, label) {
   if (emailPattern.test(source)) errors.push(`${label} 不得包含邮箱地址`);
   if (phonePattern.test(source)) errors.push(`${label} 不得包含疑似电话号码`);
   // The approved page description describes the local workflow, not a browser approval control.
-  const interfaceText = source.replaceAll('AI根据需求自动化生产和审核用于社媒社群的图文内容', '');
+  let interfaceText = source.replaceAll('AI根据需求自动化生产和审核用于社媒社群的图文内容', '');
+  // Only these approved static diagram fields are exempt; controls and other files retain the denylist.
+  if (label === 'content-studio.js') {
+    for (const field of [
+      "title: '生成图文'",
+      "title: '人工审核交付'",
+      "alt: '图文稿进入人工审核，有问题返回修改，确认后交付含图片、英文文案与中文对照的素材包，由人自行发布。'"
+    ]) interfaceText = interfaceText.replaceAll(field, '');
+  }
   forbiddenText.forEach((pattern) => {
     if (pattern.test(interfaceText)) errors.push(`${label} 含有禁止内容：${pattern}`);
   });

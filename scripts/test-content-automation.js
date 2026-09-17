@@ -21,17 +21,22 @@ vm.runInNewContext(source, context);
   assert.equal(breadcrumb.textContent, '社媒内容自动化生产');
   assert.ok(content.innerHTML.includes('<h1>社媒内容自动化生产</h1>'));
   assert.ok(content.innerHTML.indexOf('automation-flow') < content.innerHTML.indexOf('automation-sample'));
-  assert.equal((content.innerHTML.match(/<img /g) || []).length, 4);
-  assert.ok(content.innerHTML.includes('assets/content-studio/trail-editorial-desk.webp'));
-  assert.ok(fs.existsSync(path.join(root, 'assets/content-studio/trail-editorial-desk.webp')));
+  assert.equal((content.innerHTML.match(/<img /g) || []).length, 7);
+  for (const name of ['editorial-01', 'editorial-02', 'editorial-03', 'editorial-04']) {
+    assert.ok(content.innerHTML.includes(`assets/content-studio/${name}.webp`));
+    assert.ok(content.innerHTML.includes(`href="assets/content-studio/${name}.webp"`), 'each diagram retains its full-size image link');
+    assert.ok(fs.existsSync(path.join(root, `assets/content-studio/${name}.webp`)));
+  }
+  assert.ok(!/01-requirements|02-create|03-adapt|04-review/.test(content.innerHTML), 'the rejected white slides must not return');
+  assert.ok(!content.innerHTML.includes('trail-editorial-desk'), 'the rejected metaphor must not return');
   assert.ok(!content.innerHTML.includes('<svg'), 'the rejected landscape placeholders must not return');
-  assert.ok(content.innerHTML.includes('确认画面与文案后，自行发布。'));
+  assert.ok(content.innerHTML.includes('确认后整理素材，自行发布。'));
   assert.ok(content.innerHTML.includes('content-pipeline-test.html'));
-  assert.ok(content.innerHTML.includes('现有案例仍为样稿'));
+  assert.ok(content.innerHTML.includes('>样稿</span>'));
   assert.ok(content.innerHTML.includes('AI 围绕一个主题'));
-  assert.ok(content.innerHTML.includes('02 / AI 图文制作'));
+  for (const title of ['确定要求', '生成图文', '适配平台', '人工审核交付']) assert.ok(content.innerHTML.includes(title));
   assert.ok(content.innerHTML.includes('配图与英文文案，附中文对照'));
-  assert.ok(!/提供什么|拿到什么|起点是/.test(content.innerHTML));
+  assert.ok(!/提供什么|拿到什么|起点是|校看与使用|徒步后的泥鞋/.test(content.innerHTML));
   const record = config.records.find(item => item.run_id === config.active_run_id);
   for (const variant of record.variants.filter(item => ['instagram', 'x', 'youtube'].includes(item.id))) {
     assert.ok(content.innerHTML.includes(variant.visual.image.src));
