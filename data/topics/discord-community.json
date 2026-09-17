@@ -1,13 +1,14 @@
 {
   "slug": "discord-community",
   "title": "Discord频道设计",
-  "description": "OEDRO 与 COZEWARE 的频道结构和成员规模。",
-  "checked_at": "2026-09-14",
+  "description": "OEDRO 的主要公开入口与 COZEWARE 当前可见的频道结构。",
+  "checked_at": "2026-09-17",
   "servers": [
     {
       "id": "oedro",
       "name": "OEDRO",
-      "members": "不足 20 名成员",
+      "members": "",
+      "scope": "主要公开入口；不包含管理员可见的内部及保留频道。“入门”是本页整理标签，不是 Discord 分类名。fitment-install-help 是论坛式提问区，garage-talk 是自由闲聊区。",
       "bots": [],
       "settings": [],
       "groups": [
@@ -37,16 +38,37 @@
     {
       "id": "cozeware",
       "name": "COZEWARE",
-      "members": "600 余名成员",
+      "members": "",
+      "scope": "本次登录账号可见的频道，不代表未验证新人的可见范围。verify 提示完成验证后取得 COZER 身份；多数后续频道带有权限锁，但不等于员工专用。general-chat 已实际打开，能看到历史聊天和发言框；本次未发送消息，也未重新测试新人验证流程。",
       "bots": [],
       "settings": [],
       "groups": [
         {
           "name": "入门",
           "channels": [
-            "welcome",
+            "👋welcome",
             "verify"
           ]
+        },
+        {
+          "name": "COZEWARE",
+          "channels": ["announcements", "start-here", "official-links", "roadmap", "faq", "ticket"]
+        },
+        {
+          "name": "Community · 社区交流",
+          "channels": ["general-chat", "show-off", "suggestions-help", "kickstarter", "creator-spotlight", "wip"]
+        },
+        {
+          "name": "Activities · 活动",
+          "channels": ["giveaways", "task", "vote"]
+        },
+        {
+          "name": "Security · 安全",
+          "channels": ["close-dm-guide", "scam-report"]
+        },
+        {
+          "name": "Information · 内容资讯",
+          "channels": ["media", "blog", "tiktok", "youtube"]
         }
       ]
     }
