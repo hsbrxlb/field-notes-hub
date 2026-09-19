@@ -438,14 +438,14 @@
     {
       "id": "concept",
       "label": "Concept",
-      "objective": "Record the participant's spontaneous concept reaction before detailed price interpretation.",
-      "question": "What is your first honest reaction to this configurable auxiliary-light concept?",
+      "objective": "Explain in plain text a hypothetical auxiliary light available in different sizes, then record the participant's spontaneous reaction. No image is provided; do not ask about appearance or imply they have seen the product. Do not invent features or performance claims.",
+      "question": "Imagine an auxiliary light available in different sizes to choose from for your vehicle. What is your first reaction to that idea?",
       "questionLocales": {
-        "en": "What is your first honest reaction to this configurable auxiliary-light concept?",
-        "zh-CN": "你对这个可配置辅助灯概念的第一真实反应是什么？",
-        "es": "¿Cuál es su primera reacción sincera a este concepto de luz auxiliar configurable?"
+        "en": "Imagine an auxiliary light available in different sizes to choose from for your vehicle. What is your first reaction to that idea?",
+        "zh-CN": "设想一款辅助车灯，有不同尺寸可供选择。结合你自己的用车需要，你对这个想法的第一反应是什么？",
+        "es": "Imagina una luz auxiliar disponible en varios tamaños para tu vehículo. ¿Cuál es tu primera reacción a esa idea?"
       },
-      "clarification": "I want your first reaction to the idea shown here, including what feels useful or concerning.",
+      "clarification": "The idea is an auxiliary vehicle light offered in different sizes. What feels useful or concerning about that idea?",
       "clarificationLocales": {
         "en": "I want to understand your most direct reaction to the idea. What stands out most?",
         "zh-CN": "我想确认你对这个想法最直接的感受。最突出的一点是什么？",
@@ -470,23 +470,13 @@
       "claimRefs": [
         "concept_sizes"
       ],
-      "media": [
-        {
-          "type": "image",
-          "src": "/study-assets/concept-placeholder.svg",
-          "alt": {
-            "en": "Placeholder for an approved product concept image",
-            "zh-CN": "待批准产品概念图占位",
-            "es": "Marcador para una imagen aprobada del concepto"
-          }
-        }
-      ],
+      "media": [],
       "input": {
         "type": "text",
         "placeholder": {
-          "en": "React to the idea, not the placeholder artwork…",
-          "zh-CN": "请评价产品想法，不用评价占位图…",
-          "es": "Comenta la idea, no el marcador de imagen…"
+          "en": "An auxiliary vehicle light offered in different sizes. Share your first reaction…",
+          "zh-CN": "设想一款提供不同尺寸选择的辅助车灯，写下你的第一反应…",
+          "es": "Una luz auxiliar disponible en varios tamaños. Comparte tu primera reacción…"
         }
       },
       "followUpQuestions": {

@@ -587,7 +587,6 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
           {storageFeedback}
           {conflictedAnswer && <section className="recoveryNotice" role="alert"><p>{dataUi.conflict}</p><blockquote>{conflictedAnswer}</blockquote><button className="textButton" onClick={() => setConflictedAnswer("")}>{dataUi.dismiss}</button></section>}
           {!busy && (retryAnswer || conversation.retryExhausted) && <p className="recoveryNotice" role="alert">{conversation.retryExhausted ? recoveryUi.exhausted : answerSaved || conversation.retry ? recoveryUi.saved : recoveryUi.uncertain}</p>}
-          {conversation.media.map((item) => <figure className="studyMedia" key={item.src}><Image src={item.src} alt={pickLocale(item.alt, activeLocale, baseLocale)} width={1200} height={720} unoptimized /></figure>)}
           {(activeInput.type === "single_choice" || activeInput.type === "multiple_choice") && <div className="choiceGrid" data-choice-type={activeInput.type}>{activeInput.options.map((option) => {
             const checked = selected.includes(option.id);
             return <button key={option.id} type="button" disabled={busy || !!retryAnswer} aria-pressed={checked} className={checked ? "choice selected" : "choice"} onClick={() => toggleOption(option.id)}><span className="choiceIndicator" aria-hidden="true" /><span>{pickLocale(option.labels, activeLocale, baseLocale)}</span></button>;
