@@ -105,8 +105,6 @@ button { touch-action: manipulation; }
 .scaleInput > span:last-child { text-align: right; }
 .studyMedia { margin: 0 0 18px; }
 .studyMedia img { display: block; max-width: 100%; width: auto; height: auto; max-height: 220px; object-fit: contain; }
-.latestButton { justify-self: end; min-height: 44px; padding: 8px 4px; border: 0; background: transparent; color: var(--action); font-size: 15px; }
-.conversationArea.hasEarlier { grid-template-rows: minmax(0, 1fr) auto auto; }
 .recoveryNotice, .storageNotice, .errorMessage { margin: 0 0 14px; padding: 12px 14px; border-left: 2px solid var(--action); background: #eee4d6; color: #69351f; font-size: 14px; line-height: 1.55; }
 .recoveryNotice blockquote { margin: 12px 0; white-space: pre-wrap; overflow-wrap: anywhere; }
 .errorMessage { border-color: var(--danger); color: var(--danger); }
@@ -332,7 +330,7 @@ body { background: #f1eee7 url("/study-assets/cast-light.png") center / cover fi
 .sessionTools summary { font-size: 20px; }
 .sessionPopover p, .sessionPopover dl { font-size: 18px; }
 .primaryButton, .secondaryButton { font-size: 21px; }
-.textButton, .latestButton { font-size: 18px; }
+.textButton { font-size: 18px; }
 .composerFootnote { font-size: 16px; color: #665846; }
 .recoveryNotice, .storageNotice, .errorMessage { font-size: 18px; }
 .choiceGrid { gap: 0 28px; margin-bottom: 20px; }
@@ -361,7 +359,7 @@ body { background: #f1eee7 url("/study-assets/cast-light.png") center / cover fi
   .textInput textarea, .composer:has(.choiceGrid) .textInput textarea { min-height: 52px; font-size: 21px; }
   .choice { min-height: 52px; font-size: 21px; }
   .choiceGrid { gap: 0; margin-bottom: 14px; }
-  .textButton, .latestButton { font-size: 17px; }
+  .textButton { font-size: 17px; }
   .composerFootnote { font-size: 16px; }
   .isOpening .conversationArea { padding-bottom: max(20px, env(safe-area-inset-bottom)); }
 }

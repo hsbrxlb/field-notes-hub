@@ -117,13 +117,11 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
   const [storageNotice, setStorageNotice] = useState("");
   const [exporting, setExporting] = useState(false);
   const [freshMessageId, setFreshMessageId] = useState<string | null>(null);
-  const [showLatest, setShowLatest] = useState(false);
   const [historyOpen, setHistoryOpen] = useState(false);
   const exportingRef = useRef(false);
   const shellRef = useRef<HTMLElement>(null);
   const transcriptRef = useRef<HTMLDivElement>(null);
   const answerRef = useRef<HTMLTextAreaElement>(null);
-  const followingLatestRef = useRef(true);
   const submittingRef = useRef(false);
   const stoppedRef = useRef(false);
   const directStartRef = useRef(false);
@@ -168,11 +166,7 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
   const followCurrentQuestion = useCallback(() => {
     const element = transcriptRef.current;
     if (!element) return;
-    const question = element.querySelector<HTMLElement>('[data-current-question="true"]');
-    const target = question || element.lastElementChild as HTMLElement | null;
-    if (!target) return;
-    const offset = target.getBoundingClientRect().top - element.getBoundingClientRect().top + element.scrollTop;
-    element.scrollTo({ top: Math.max(0, target.offsetHeight > element.clientHeight - 24 ? offset : offset + target.offsetHeight - element.clientHeight + 24), behavior: "instant" });
+    element.scrollTo({ top: element.scrollHeight, behavior: "instant" });
   }, []);
 
   const fetchConversation = useCallback(async (entryToken: string) => {
@@ -257,7 +251,6 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
   }, [baseLocale, consentKey, fetchConversation, initializeSession, pendingKey, requireConsent, restoreDraft, sessionKey, study.study.version]);
 
   useEffect(() => {
-    if (!followingLatestRef.current) { setShowLatest(true); return; }
     const frame = requestAnimationFrame(followCurrentQuestion);
     return () => cancelAnimationFrame(frame);
   }, [conversation?.messages.length, conversation?.prompt, busy, followCurrentQuestion]);
@@ -269,15 +262,25 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
       const height = viewport?.height || window.innerHeight;
       shellRef.current?.style.setProperty("--survey-viewport", `${height}px`);
       shellRef.current?.toggleAttribute("data-compact-viewport", height < 590);
-      if (followingLatestRef.current) followCurrentQuestion();
+      followCurrentQuestion();
     };
-    const observer = new ResizeObserver(() => { if (followingLatestRef.current) followCurrentQuestion(); });
-    if (transcriptRef.current) observer.observe(transcriptRef.current);
+    // Follow content growth and viewport/composer resizing. Scrolling itself
+    // does not trigger this observer, so earlier messages remain readable.
+    let frame = 0;
+    const observer = new ResizeObserver(() => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(followCurrentQuestion);
+    });
+    const transcript = transcriptRef.current;
+    if (transcript) {
+      observer.observe(transcript);
+      for (const message of transcript.children) observer.observe(message);
+    }
     window.addEventListener("resize", resize);
     viewport?.addEventListener("resize", resize);
     resize();
-    return () => { observer.disconnect(); window.removeEventListener("resize", resize); viewport?.removeEventListener("resize", resize); };
-  }, [appState, followCurrentQuestion]);
+    return () => { cancelAnimationFrame(frame); observer.disconnect(); window.removeEventListener("resize", resize); viewport?.removeEventListener("resize", resize); };
+  }, [appState, conversation?.messages.length, busy, followCurrentQuestion]);
 
   // Keep the composer compact when empty and grow with typing or a restored draft.
   // ResizeObserver covers wrapping after rotation; font readiness covers the local display face.
@@ -332,8 +335,6 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
     };
     if (!request.text.trim()) return;
     submittingRef.current = true;
-    followingLatestRef.current = true;
-    setShowLatest(false);
     setBusy(true);
     setError("");
     setPendingAnswer(request);
@@ -557,10 +558,10 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
   const completed = conversation?.status === "completed";
   const currentQuestionIndex = conversation?.messages.findLastIndex((message) => message.role === "assistant" && message.text === conversation.prompt);
   const visualUi = activeLocale.startsWith("zh")
-    ? { pauseMotion: "暂停背景动态", resumeMotion: "开启背景动态", history: "查看本次对话", session: "访谈选项", topic: "访谈进度", latest: "回到当前问题", shortcut: "⌘ / Ctrl + Enter 发送" }
+    ? { pauseMotion: "暂停背景动态", resumeMotion: "开启背景动态", history: "查看本次对话", session: "访谈选项", topic: "访谈进度", shortcut: "⌘ / Ctrl + Enter 发送" }
     : activeLocale.startsWith("es")
-    ? { pauseMotion: "Pausar movimiento", resumeMotion: "Activar movimiento", history: "Ver esta conversación", session: "Opciones", topic: "Progreso", latest: "Volver a la pregunta", shortcut: "⌘ / Ctrl + Enter para enviar" }
-    : { pauseMotion: "Pause background motion", resumeMotion: "Resume background motion", history: "Review this conversation", session: "Options", topic: "Interview progress", latest: "Back to current question", shortcut: "⌘ / Ctrl + Enter to send" };
+    ? { pauseMotion: "Pausar movimiento", resumeMotion: "Activar movimiento", history: "Ver esta conversación", session: "Opciones", topic: "Progreso", shortcut: "⌘ / Ctrl + Enter para enviar" }
+    : { pauseMotion: "Pause background motion", resumeMotion: "Resume background motion", history: "Review this conversation", session: "Options", topic: "Interview progress", shortcut: "⌘ / Ctrl + Enter to send" };
   return (
     <main ref={shellRef} lang={activeLocale} className={`appShell lightResearchShell motionPaused${completed ? ` isComplete${historyOpen ? " showHistory" : ""}` : ""}${conversation?.messages.length === 1 ? " isOpening" : ""}`}>
       <header className="appHeader">
@@ -576,12 +577,11 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
         </div>
         </div>
       </aside>
-      <section className={`conversationArea${showLatest && !completed ? " hasEarlier" : ""}`} aria-label={recoveryUi.conversation}>
-        <div className="transcript" ref={transcriptRef} role="log" aria-live="polite" aria-relevant="additions text" onScroll={() => { const element = transcriptRef.current; if (element) { followingLatestRef.current = element.scrollHeight - element.scrollTop - element.clientHeight < 64; setShowLatest(!followingLatestRef.current); } }}>
+      <section className="conversationArea" aria-label={recoveryUi.conversation}>
+        <div className="transcript" ref={transcriptRef} role="log" aria-live="polite" aria-relevant="additions text">
           {conversation?.messages.map((message, index) => <article className={`message ${message.role}${message.id === freshMessageId ? " freshMessage" : ""}`} data-current-question={index === currentQuestionIndex || undefined} key={message.id}><span>{message.role === "assistant" ? ui.researchAi : ui.you}</span><p id={index === currentQuestionIndex ? "current-question" : undefined}>{message.text}</p></article>)}
           {busy && <article className="message assistant pending" role="status"><span>{ui.researchAi}</span><p>{ui.reviewing}</p></article>}
         </div>
-        {!completed && showLatest && <button className="latestButton" onClick={() => { followingLatestRef.current = true; setShowLatest(false); followCurrentQuestion(); }}>{visualUi.latest} ↓</button>}
         {!completed && conversation && activeInput && <section className="composer" aria-label={recoveryUi.composer} aria-busy={busy}>
           <div className="composerBody">
           {storageFeedback}
