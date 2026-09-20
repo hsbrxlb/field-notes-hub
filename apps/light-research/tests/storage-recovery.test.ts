@@ -6,7 +6,7 @@ import { getStudyConfig } from "@/lib/study-config";
 
 const state = createModeratorState(getStudyConfig());
 const request = { entryToken: "synthetic-test-token", clientAttemptId: "attempt", expectedRevision: 0, anchorId: state.activeAnchorId!, moveKind: "anchor" as const, canonicalPrompt: "Question?", localizedPrompt: "Question?", rawText: "Saved answer", inputPayload: { type: "text" as const, freeText: "Saved answer" } };
-const session = { id: "session", status: "active", state, created_at: new Date(), study_snapshot: getStudyConfig() };
+const session = { id: "session", prompt_version: "old-prompt", policy_version: getStudyConfig().moderation.policyVersion, status: "active", state, created_at: new Date(), study_snapshot: getStudyConfig() };
 const previous = { id: "turn", turn_index: 1, anchor_id: request.anchorId, move_kind: "anchor", raw_text: request.rawText, input_payload: request.inputPayload, processing_status: "failed", processing_attempts: 1, request_intent: "answer", state_before: state };
 
 function database(existing: object | null = previous, status = "active", processing = false, lease = true) {
@@ -56,6 +56,33 @@ describe("persisted retry lease boundaries", () => {
     database(previous, "active", false, false);
     await expect(commitTurn({ sessionId: "session", turnId: "turn", expectedRevision: 0, state, processingAttempt: 1 } as Parameters<typeof commitTurn>[0])).rejects.toThrow(/processing revision/);
   });
+  const upgradedCommit = () => ({
+    sessionId: "session", turnId: "turn", expectedRevision: 0,
+    state: { ...state, revision: 1 }, processingAttempt: 2,
+    turn: { rawText: request.rawText, anchorId: request.anchorId, inputPayload: request.inputPayload,
+      promptVersion: "new-prompt", policyVersion: session.policy_version, serverAction: "immediate_clarify",
+      extractedFields: [], rejectedFieldUpdates: [] },
+    assessment: { promptVersion: "new-prompt" }, expectedSessionPromptVersion: "old-prompt",
+  } as unknown as Parameters<typeof commitTurn>[0]);
+
+  it("commits a new prompt revision to an existing session without rewriting its original version", async () => {
+    const query = database();
+    await expect(commitTurn(upgradedCommit())).resolves.toBe("active");
+    const sessionWrite = query.mock.calls.find(([sql]) => sql.startsWith("UPDATE research_sessions"))?.[0] ?? "";
+    expect(sessionWrite).not.toContain("prompt_version");
+    expect(query.mock.calls.some(([sql]) => sql.includes("prompt_version = $9"))).toBe(true);
+    expect(query.mock.calls.some(([sql]) => sql.startsWith("INSERT INTO research_turns"))).toBe(false);
+  });
+
+  it("still rejects an unacknowledged session prompt change and mismatched assessment version", async () => {
+    const query = database();
+    await expect(commitTurn({ ...upgradedCommit(), expectedSessionPromptVersion: "other-version" })).rejects.toThrow(/payload or version/);
+    const bad = upgradedCommit();
+    bad.assessment.promptVersion = "different-assessment";
+    await expect(commitTurn(bad)).rejects.toThrow(/payload or version/);
+    expect(query.mock.calls.some(([sql]) => sql.startsWith("UPDATE research_sessions"))).toBe(false);
+  });
+
   it("late failure cannot overwrite a completed or newer attempt", async () => {
     const query = database();
     await failTurn("turn", "timeout", 1);

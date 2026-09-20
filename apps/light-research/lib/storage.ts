@@ -362,7 +362,7 @@ export const reserveTurn = async ({ entryToken, clientAttemptId, expectedRevisio
   });
 };
 
-export const commitTurn = async ({ sessionId, turnId, expectedRevision, state, turn, assessment, processingAttempt = 1, providerDiagnostics = [] }: {
+export const commitTurn = async ({ sessionId, turnId, expectedRevision, state, turn, assessment, processingAttempt = 1, providerDiagnostics = [], expectedSessionPromptVersion }: {
   sessionId: string;
   turnId: string;
   expectedRevision: number;
@@ -371,6 +371,7 @@ export const commitTurn = async ({ sessionId, turnId, expectedRevision, state, t
   assessment: ModeratorAssessment;
   processingAttempt?: number;
   providerDiagnostics?: unknown[];
+  expectedSessionPromptVersion?: string | null;
 }) => {
   await ensureSchema();
   return withTransaction(async (client) => {
@@ -382,9 +383,13 @@ export const commitTurn = async ({ sessionId, turnId, expectedRevision, state, t
     const lease = await client.query<TurnRow>(`SELECT ${turnColumns} FROM research_turns WHERE id = $1 AND session_id = $2 AND processing_status = 'received' AND processing_attempts = $3 FOR UPDATE`, [turnId, sessionId, processingAttempt]);
     if (!lease.rowCount) throw new Error("turn processing revision changed before commit");
     const saved = lease.rows[0];
+    // A wording-only prompt upgrade may continue an existing instrument. Keep
+    // the session's original version immutable, compare the reserved snapshot,
+    // and persist the actual prompt version on this turn and its assessment.
     if (saved.state_before.revision !== expectedRevision || state.revision !== expectedRevision + 1
       || saved.raw_text !== turn.rawText || saved.anchor_id !== turn.anchorId || !sameInputPayload(saved.input_payload, turn.inputPayload)
-      || turn.policyVersion !== session.policy_version || turn.promptVersion !== session.prompt_version) throw new Error("turn payload or version revision changed before commit");
+      || turn.policyVersion !== session.policy_version || (expectedSessionPromptVersion === undefined ? turn.promptVersion : expectedSessionPromptVersion) !== session.prompt_version
+      || turn.promptVersion !== assessment.promptVersion) throw new Error("turn payload or version revision changed before commit");
     const status = turn.serverAction === "stop" ? "paused" : state.activeAnchorId === null ? (state.completionQuality === "with_evidence_gaps" ? "completed_with_gaps" : "completed") : "active";
     await client.query(`UPDATE research_sessions SET state = $2::jsonb, status = $3, updated_at = NOW() WHERE id = $1`, [sessionId, JSON.stringify(state), status]);
     await client.query(

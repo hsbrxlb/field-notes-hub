@@ -302,7 +302,7 @@ export const respondToConversation = async ({
       promptVersion: assessment.promptVersion,
       policyVersion: study.moderation.policyVersion,
     };
-    await commitTurn({ sessionId: session.id, turnId: reservation.turnId, expectedRevision: stateRevision, state: applied.state, turn, assessment, processingAttempt: reservation.processingAttempt, providerDiagnostics });
+    await commitTurn({ sessionId: session.id, turnId: reservation.turnId, expectedRevision: stateRevision, state: applied.state, turn, assessment, processingAttempt: reservation.processingAttempt, providerDiagnostics, expectedSessionPromptVersion: session.prompt_version });
     return conversationView(entryToken);
   } catch (error) {
     if (error instanceof StorageAccessError) throw error;
