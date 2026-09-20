@@ -109,6 +109,25 @@ describe("DeepSeek response contract and bounded recovery", () => {
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
+  it("separates selected wording from assessment and preserves reported metadata for validation", async () => {
+    const fixture = input();
+    fixture.state.lastParticipantIntent = "asks_clarification";
+    fixture.selectedMove = { action: "immediate_clarify", anchorId: fixture.anchor.id, fieldId: "use_context", kind: "anchor", language: "zh-CN" };
+    const reported = { ...validAssessment(), next_action: "advance", candidate_anchor_id: fixture.anchor.id, candidate_field_id: "use_context" };
+    const fetchMock = vi.fn().mockResolvedValue(response(JSON.stringify(reported)));
+    vi.stubGlobal("fetch", fetchMock);
+    const result = await evaluateTurn(fixture);
+    const prompt = requestBody(fetchMock, 0).messages[0].content;
+    expect(prompt).toContain('"next_action":"immediate_clarify"');
+    expect(prompt).toContain('"candidate_field_id":"use_context"');
+    expect(prompt).toContain("generate only candidate_reply");
+    expect(prompt).not.toContain("If topic_coverage is covered");
+    expect(prompt).toContain("Do not list suggested answers");
+    // A bad model action is not silently relabelled as the requested action.
+    expect(result.nextAction).toBe("advance");
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
   it("retries a token-truncated response with a larger bounded budget and explicit repair feedback", async () => {
     const fetchMock = vi.fn().mockResolvedValueOnce(response('{"participant_intent":', "length")).mockResolvedValueOnce(response());
     vi.stubGlobal("fetch", fetchMock);

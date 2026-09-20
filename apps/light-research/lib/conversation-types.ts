@@ -113,6 +113,7 @@ export type PendingGap = UnresolvedPoint & {
 export type ActiveMove = {
   kind: "anchor" | "checkpoint_gap" | "final_audit";
   responseType?: "text";
+  fieldId?: string;
   anchorId: string;
   gapId?: string;
   resumeAnchorId?: string | null;

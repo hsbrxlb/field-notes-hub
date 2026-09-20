@@ -152,19 +152,34 @@ export const semanticSimilarity = (left: string, right: string) => {
   return (2 * overlap) / (a.size + b.size);
 };
 
-const safeReply = (candidate: string, recentPrompts: string[], isConversationRepair = false) => {
+export type ReplyRejection = "action_mismatch" | "scope_mismatch" | "abandons_current_question" | "language_mismatch" | "empty_reply" | "question_count" | "personal_identifier_request" | "leading_premise" | "persuasion" | "praise" | "generic_prompt" | "suggested_answers" | "repeated_wording";
+
+const safeReply = (candidate: string, recentPrompts: string[], isConversationRepair = false, allowCategoryExamples = false): { text: string | null; rejection: ReplyRejection | null } => {
   const cleaned = compact(candidate).slice(0, 480);
   const questionCount = cleaned.match(/[?？؟]/g)?.length ?? 0;
   const praise = /\b(great|excellent|insightful|smart|good answer|well said)\b|很有意思|说得很好|非常棒|excelente|interesante/iu.test(cleaned);
   const generic = /\b(tell me more|elaborate|provide more detail)\b|详细说说|展开一下|多说一点/iu.test(cleaned);
-  const leading = /,\s*like\s+|\b(is it because|would you say|does that mean|for example|such as|if (?:price|cost|installation) (?:isn't|is not|weren't|were not))\b|是不是.{0,40}[?？]|也就是说|比如|例如|对吗[?？]|如果.{0,30}(?:不是问题|没有限制|不考虑).{0,20}[?？]|超过.{0,12}(美元|dollars?)/iu.test(cleaned);
+  const exampleMarker = /,\s*like\s+|\b(?:for example|such as|por ejemplo)\b|比如|例如/iu;
+  const suggestedAnswers = exampleMarker.test(cleaned);
+  // Permitted examples explain a category before an open question; they must
+  // not turn the question into a forced choice among model-supplied answers.
+  const finalQuestion = cleaned.split(/[.!。！]\s*/u).filter(Boolean).at(-1) ?? cleaned;
+  const closedCategoryExamples = allowCategoryExamples && (exampleMarker.test(finalQuestion)
+    || /\b(?:which of (?:these|those)|cu[aá]l de (?:estos|esos|estas|esas))\b|这些.{0,8}(?:哪|选)|(?:市区|乡间|城市|高速).{0,15}还是/iu.test(finalQuestion));
+  const leading = /\b(is it because|would you say|does that mean|if (?:price|cost|installation) (?:isn't|is not|weren't|were not))\b|是不是.{0,40}[?？]|也就是说|对吗[?？]|如果.{0,30}(?:不是问题|没有限制|不考虑).{0,20}[?？]|超过.{0,12}(美元|dollars?)/iu.test(cleaned);
   // A repair must retain the same research objective. Shared vocabulary is
   // expected, so reject only near-verbatim copies here. Optional research probes
   // retain the stricter redundancy guard to avoid re-asking answered questions.
   const repetitionThreshold = isConversationRepair ? 0.97 : 0.82;
   const repeated = recentPrompts.some((prompt) => semanticSimilarity(cleaned, prompt) >= repetitionThreshold);
-  const questionSafe = questionCount === 1;
-  return cleaned && questionSafe && !questionPolicyViolation(cleaned) && !praise && !generic && !leading && !repeated ? cleaned : null;
+  const policyViolation = questionPolicyViolation(cleaned);
+  const rejection: ReplyRejection | null = !cleaned ? "empty_reply"
+    : questionCount !== 1 ? "question_count"
+    : policyViolation === "personal_identifier_request" ? "personal_identifier_request"
+    : policyViolation === "leading_premise" ? "leading_premise"
+    : policyViolation === "persuasion" ? "persuasion"
+    : praise ? "praise" : generic ? "generic_prompt" : leading ? "leading_premise" : (suggestedAnswers && !allowCategoryExamples) || closedCategoryExamples ? "suggested_answers" : repeated ? "repeated_wording" : null;
+  return { text: rejection ? null : cleaned, rejection };
 };
 
 const repairCandidate = (candidate: string) => {
@@ -224,6 +239,24 @@ const topPendingGap = (state: ModeratorState, anchorId?: string, excludeAnchorId
   .filter((gap) => gap.status === "pending" && gap.attempts < 2 && (stage === "final_audit" || !gap.notBeforeStage) && gap.answerability >= 0.45 && gap.priority !== "nice_to_have" && (!anchorId || gap.anchorId === anchorId) && (!excludeAnchorId || gap.anchorId !== excludeAnchorId))
   .sort((left, right) => right.score - left.score)[0] ?? null;
 
+// One authority for the active wording target, shared by validation and the
+// bounded wording pass. Older saved probes lack fieldId: infer only a single
+// still-missing field on that same text follow-up, never a competing gap.
+export const resolvedReplyField = (study: StudyManifest, state: ModeratorState): string | null => {
+  const move = state.activeMove;
+  if (!move) return null;
+  const owns = (fieldId: string | null | undefined): fieldId is string => Boolean(fieldId && anchorOwnsGapField(study, move.anchorId, fieldId));
+  if (move.gapId) {
+    const gap = state.pendingGaps.find((item) => item.id === move.gapId && item.anchorId === move.anchorId);
+    return owns(gap?.fieldId) ? gap.fieldId : null;
+  }
+  if (move.fieldId) return owns(move.fieldId) ? move.fieldId : null;
+  if (move.kind !== "anchor" || move.responseType !== "text") return null;
+  const missing = state.pendingGaps.filter((item) => item.anchorId === move.anchorId && item.status === "pending"
+    && (!item.fieldId || !hasFact(state, item.fieldId)));
+  return missing.length === 1 && owns(missing[0].fieldId) ? missing[0].fieldId : null;
+};
+
 const scheduleGap = (study: StudyManifest, state: ModeratorState, gap: PendingGap, kind: ActiveMove["kind"], resumeAnchorId: string | null, askedTurnId: string) => {
   gap.status = "asked";
   gap.attempts += 1;
@@ -258,6 +291,7 @@ export type AppliedTurn = {
   acceptedUpdates: FieldUpdate[];
   rejectedUpdates: RejectedFieldUpdate[];
   actionReason: string;
+  replyRejection?: ReplyRejection | null;
 };
 
 const planAssessment = ({
@@ -284,6 +318,8 @@ const planAssessment = ({
   if (!["advance", "probe_now", "immediate_clarify", "defer_gap", "repair_conversation", "soft_redirect", "complete"].includes(assessment.nextAction)) throw new Error("Invalid moderator action");
   if (!previous.activeAnchorId || !previous.activeMove) throw new Error("session is already complete");
   const state = structuredClone(previous);
+  const retainedField = resolvedReplyField(study, previous);
+  if (retainedField && state.activeMove && !state.activeMove.gapId) state.activeMove.fieldId = retainedField;
   const anchor = study.anchors.find((item) => item.id === previous.activeAnchorId);
   if (!anchor) throw new Error("active anchor is not in the study manifest");
   const acceptedUpdates: FieldUpdate[] = [];
@@ -383,7 +419,7 @@ const planAssessment = ({
     return { state, serverAction: "repair_conversation", prompt: state.activePrompt, displayedReply: null, acceptedUpdates, rejectedUpdates, actionReason: "Skipping is disabled. Keep this question open; explain that the participant may answer it or stop the interview, without pressure." };
   }
 
-  const currentMove = previous.activeMove;
+  const currentMove = state.activeMove!;
   const factsCoverAnchor = isAnchorCovered(study, state, anchor.id);
   const modelCoversAnchor = assessment.topicCoverage.anchorId === anchor.id && assessment.topicCoverage.status === "covered";
   const activeGap = currentMove.gapId ? state.pendingGaps.find((gap) => gap.id === currentMove.gapId) : undefined;
@@ -470,7 +506,10 @@ const planAssessment = ({
 
   const repairCanAdvance = serverAction === "repair_conversation" && (factsCoverAnchor || modelCoversAnchor);
   if (stayActions.has(serverAction) && !repairCanAdvance) {
-    if (serverAction === "probe_now") state.activeMove = { ...currentMove, responseType: "text" };
+    if (serverAction === "probe_now") {
+      const focusedField = topPendingGap(state, anchor.id)?.fieldId;
+      state.activeMove = { ...currentMove, responseType: "text", fieldId: focusedField ?? undefined };
+    }
     const prompt = localizedAnchorQuestion(anchor, state.activeLanguage);
     state.activePrompt = prompt;
     return { state, serverAction, prompt, displayedReply: prompt, acceptedUpdates, rejectedUpdates, actionReason: assessment.actionReason };
@@ -517,20 +556,36 @@ const planAssessment = ({
   return { state, serverAction: "complete", prompt: null, displayedReply: completion, acceptedUpdates, rejectedUpdates, actionReason: assessment.actionReason };
 };
 
+// Permission is about one declared objective field in an actual clarification,
+// never about all questions on a topic or a model's choice of wording.
+export const categoryExamplesAllowed = (study: StudyManifest, applied: AppliedTurn, candidateFieldId?: string | null): boolean => {
+  const move = applied.state.activeMove;
+  const fieldId = resolvedReplyField(study, applied.state) ?? candidateFieldId;
+  return Boolean(applied.state.lastParticipantIntent === "asks_clarification"
+    && applied.serverAction === "immediate_clarify" && move && fieldId
+    && anchorOwnsGapField(study, move.anchorId, fieldId)
+    && study.fields.find((field) => field.id === fieldId)?.clarificationStyle === "objective_categories");
+};
+
 // Planning may use canonical scope references internally. Only validated AI wording
 // leaves applyAssessment; a rejected candidate requires bounded regeneration.
 export const acceptPlannedReply = (study: StudyManifest, applied: AppliedTurn, assessment: ModeratorAssessment, recentPrompts: string[]): boolean => {
-  if (applied.serverAction === "stop" || applied.serverAction === "complete") return true;
+  if (applied.serverAction === "stop" || applied.serverAction === "complete") {
+    applied.replyRejection = null;
+    return true;
+  }
   const move = applied.state.activeMove;
   const anchor = study.anchors.find((item) => item.id === move?.anchorId);
-  const gap = move?.gapId ? applied.state.pendingGaps.find((item) => item.id === move.gapId) : undefined;
-  const probeGap = applied.serverAction === "probe_now" ? topPendingGap(applied.state, anchor?.id) : null;
-  const fieldId = gap?.fieldId ?? probeGap?.fieldId;
+  const fieldId = resolvedReplyField(study, applied.state);
   const actionMatches = assessment.nextAction === applied.serverAction || (applied.serverAction === "skip" && assessment.nextAction === "defer_gap");
   const scopeMatches = Boolean(anchor && assessment.candidateAnchorId === anchor.id && (!fieldId || assessment.candidateFieldId === fieldId) && (!assessment.candidateFieldId || anchorOwnsGapField(study, anchor.id, assessment.candidateFieldId)));
   const abandonsRepair = stayActions.has(applied.serverAction) && /\b(?:let['’]?s move on|(?:we['’]?ll|I['’]?ll) (?:move on|leave (?:that|this|it) (?:aside|open))|next (?:topic|question))\b|(?:跳过|先放下|换个话题|下一个(?:问题|话题))/iu.test(assessment.candidateReply);
-  const candidate = actionMatches && scopeMatches && !abandonsRepair && questionMatchesLanguage(assessment.candidateReply, applied.state.activeLanguage)
-    ? safeReply(assessment.candidateReply, recentPrompts, ["soft_redirect", "immediate_clarify", "repair_conversation"].includes(applied.serverAction)) : null;
+  const routingRejection: ReplyRejection | null = !actionMatches ? "action_mismatch" : !scopeMatches ? "scope_mismatch"
+    : abandonsRepair ? "abandons_current_question" : !questionMatchesLanguage(assessment.candidateReply, applied.state.activeLanguage) ? "language_mismatch" : null;
+  const validation = routingRejection ? { text: null, rejection: routingRejection }
+    : safeReply(assessment.candidateReply, recentPrompts, ["soft_redirect", "immediate_clarify", "repair_conversation"].includes(applied.serverAction), categoryExamplesAllowed(study, applied, assessment.candidateFieldId));
+  applied.replyRejection = validation.rejection;
+  const candidate = validation.text;
   applied.prompt = candidate ? normalizeLocalizedPunctuation(candidate, applied.state.activeLanguage) : null;
   applied.displayedReply = applied.prompt;
   applied.state.activePrompt = applied.prompt;

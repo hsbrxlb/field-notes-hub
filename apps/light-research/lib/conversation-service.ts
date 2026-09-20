@@ -274,6 +274,7 @@ export const respondToConversation = async ({
     });
     await resolvePlannedReply({ study, anchor, state: session.state, turnId: reservation.turnId, rawText: text, inputPayload, transcript: priorTurns,
       onDiagnostic: (diagnostic) => providerDiagnostics.push({ ...diagnostic, phase: "selected_move_wording" }),
+      onWordingDiagnostic: (diagnostic) => providerDiagnostics.push(diagnostic),
     }, applied, assessment, [...priorTurns.map((turn) => turn.localizedPrompt), localizedPrompt]);
     const turn: ConversationTurn = {
       id: reservation.turnId,

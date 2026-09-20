@@ -284,7 +284,7 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
 
   // Keep the composer compact when empty and grow with typing or a restored draft.
   // ResizeObserver covers wrapping after rotation; font readiness covers the local display face.
-  const answerText = retryAnswer ? retryAnswer.inputPayload.freeText || retryAnswer.text : freeText;
+  const answerText = busy || retryAnswer ? "" : freeText;
   useLayoutEffect(() => {
     const textarea = answerRef.current;
     if (!textarea) return;
@@ -338,6 +338,9 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
     setBusy(true);
     setError("");
     setPendingAnswer(request);
+    setFreeText("");
+    setSelected([]);
+    clearDraft();
     try { sessionStorage.setItem(pendingKey, JSON.stringify(request)); } catch { setStorageNotice("draft"); }
     if (!retryAnswer) {
       const optimistic: VisibleMessage = { id: `local-${request.clientAttemptId}`, role: "user", text: request.text };
@@ -359,6 +362,7 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
         setAnswerSaved(payload.answerSaved === true);
         if (!payload.answerSaved && response.status >= 400 && response.status < 500 && response.status !== 409) {
           setPendingAnswer(null);
+          updateDraft(request.inputPayload.freeText || "", request.inputPayload.selectedValues || []);
           try { sessionStorage.removeItem(pendingKey); } catch { /* optional browser storage */ }
         }
         throw new Error(payload.message || "The answer could not be processed.");

@@ -112,6 +112,7 @@ export const studyManifestSchema = z.object({
     description: z.string().min(1),
     type: z.enum(["text", "number", "string_list", "choice", "scale"]),
     decisionRelevance: z.enum(["critical", "important", "context"]),
+    clarificationStyle: z.enum(["open", "objective_categories"]).optional(),
   }).strict()).min(1),
   anchors: z.array(z.object({
     id: idSchema,
