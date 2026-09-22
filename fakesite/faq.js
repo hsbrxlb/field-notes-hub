@@ -11,7 +11,7 @@ function filterQuestions() {
     if(match)visible++;
   });
   document.querySelector('#faq-empty').hidden = visible>0;
-  document.querySelector('#faq-status').textContent = `${visible} matching questions`;
+  document.querySelector('#faq-status').textContent = `${visible} matching ${visible === 1 ? 'question' : 'questions'}`;
 }
 faqSearch.addEventListener('input',filterQuestions);
 topicButtons.forEach(button=>button.addEventListener('click',()=>{

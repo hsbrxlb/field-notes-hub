@@ -22,7 +22,13 @@ for (const page of pages) {
     if(hash && path.extname(resolved)==='.html') assert.match(fs.readFileSync(resolved,'utf8'),new RegExp(`id="${hash}"`),`${page}: missing target ${hash}`);
     references++;
   }
-  assert.match(html,/href="\.\/faq.html"/);
+  if (page !== 'editor.html') {
+    assert.match(html,/href="\.\/faq.html"/);
+    assert.doesNotMatch(html,/href="\.\/editor.html"/, 'Storefront must not advertise editor access');
+  } else {
+    assert.doesNotMatch(html,/class="site-header"|class="desktop-nav"/, 'Editor must be independent of store navigation');
+    assert.match(html,/local|browser/i);
+  }
 }
 const blog = fs.readFileSync(path.join(root,'blog.html'),'utf8');
 assert.match(blog,/class="sr-only" role="status"/);

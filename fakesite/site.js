@@ -1,7 +1,22 @@
 const menuButton = document.querySelector('[data-menu-toggle]');
 const mobileMenu = document.querySelector('#mobile-menu');
 const contents = document.querySelector('.toc');
-if (contents && window.matchMedia('(max-width:800px)').matches) contents.open = false;
+const readingBreakpoint = window.matchMedia('(min-width:801px)');
+if (contents) {
+  contents.open = readingBreakpoint.matches;
+  readingBreakpoint.addEventListener('change', event => { contents.open = event.matches; });
+  const links = [...contents.querySelectorAll('a')];
+  const sections = links.map(link => document.getElementById(link.hash.slice(1))).filter(Boolean);
+  const observer = new IntersectionObserver(entries => {
+    const visible = entries.find(entry => entry.isIntersecting);
+    if (!visible) return;
+    links.forEach(link => {
+      if (link.hash === '#'+visible.target.id) link.setAttribute('aria-current','location');
+      else link.removeAttribute('aria-current');
+    });
+  }, {rootMargin:'-10% 0px -65% 0px'});
+  sections.forEach(section => observer.observe(section));
+}
 menuButton?.addEventListener('click', () => {
   const open = menuButton.getAttribute('aria-expanded') !== 'true';
   menuButton.setAttribute('aria-expanded', String(open));

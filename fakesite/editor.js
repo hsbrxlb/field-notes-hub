@@ -3,6 +3,9 @@
   const STORAGE_KEY = 'oedro-blog-draft-v1';
   const categories = {'tonneau-covers': 'Tonneau covers', 'running-boards': 'Running boards'};
   const fields = ['title', 'slug', 'description', 'category', 'author', 'bodyMarkdown'];
+  function slugFromTitle(title) {
+    return title.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 120).replace(/-$/, '');
+  }
   function normalizeDraft(value) {
     if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('Draft data is invalid.');
     const draft = {schemaVersion: 1, status: 'draft'};
@@ -49,7 +52,7 @@
     const metadata = ['schemaVersion: 1', 'status: draft', ...['title', 'slug', 'description', 'category', 'author'].map(key => key + ': ' + JSON.stringify(draft[key]))];
     return '---\n' + metadata.join('\n') + '\n---\n\n' + draft.bodyMarkdown + '\n';
   }
-  const api = {normalizeDraft, validateDraft, markdownBlocks, saveDraft, restoreDraft, toMarkdown, STORAGE_KEY};
+  const api = {normalizeDraft, validateDraft, markdownBlocks, saveDraft, restoreDraft, toMarkdown, slugFromTitle, STORAGE_KEY};
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   if (!root.document) return;
   function start() {
@@ -59,11 +62,27 @@
     const status = document.getElementById('draft-status');
     const preview = document.getElementById('draft-preview-content');
     let dirty = false;
+    let slugEdited = false;
+    const settings = document.getElementById('draft-settings');
+    const writing = document.getElementById('draft-writing');
+    const previewPanel = document.getElementById('draft-preview-panel');
+    const writeButton = document.getElementById('draft-write');
+    const previewButton = document.getElementById('draft-preview-toggle');
+    function setView(isPreview) {
+      writing.hidden = isPreview;
+      previewPanel.hidden = !isPreview;
+      writeButton.setAttribute('aria-pressed', String(!isPreview));
+      previewButton.setAttribute('aria-pressed', String(isPreview));
+    }
+    writeButton.addEventListener('click', () => setView(false));
+    previewButton.addEventListener('click', () => {render();setView(true);});
     function message(text, error = false) {status.textContent = text; status.dataset.error = String(error);}
     function read() {return normalizeDraft(Object.fromEntries(fields.map(key => [key, form.elements.namedItem(key).value])));}
     function node(tag, text, className) {const element = document.createElement(tag); element.textContent = text; if (className) element.className = className; return element;}
     function render() {
       const draft = read();
+      const words = draft.bodyMarkdown.match(/\S+/g) || [];
+      document.getElementById('draft-word-count').textContent = words.length + (words.length === 1 ? ' word' : ' words');
       preview.replaceChildren();
       if (!fields.some(key => draft[key])) {preview.append(node('p', 'Your draft will appear here as you type.', 'draft-empty')); return;}
       preview.append(node('h2', draft.title || 'Untitled draft'));
@@ -80,20 +99,70 @@
       }
       preview.append(body);
     }
-    function fill(draft) {for (const key of fields) form.elements.namedItem(key).value = draft[key] || '';render();}
-    function canReplace() {return !dirty || root.confirm('Replace your unsaved changes?');}
-    function validated() {if (!form.reportValidity()) return null;try {return validateDraft(read());} catch (error) {message(error.message, true);return null;}}
-    form.addEventListener('input', () => {dirty = true;render();message('Unsaved changes. Save in this browser or download a copy.');});
-    form.addEventListener('submit', event => {event.preventDefault();const draft = validated();if (!draft) return;try {const previous=root.localStorage.getItem(STORAGE_KEY);if(previous && previous!==JSON.stringify(draft) && !root.confirm("Replace the draft already saved in this browser? Cancel to restore and download it first."))return;saveDraft(root.localStorage, draft);dirty = false;message('Saved in this browser. Nothing has been published.');} catch (error) {message('Could not save in this browser. Download a copy to keep your work.', true);}});
-    document.getElementById('draft-restore').addEventListener('click', () => {try {const draft = restoreDraft(root.localStorage);if (!draft) {message('No saved draft found in this browser.');return;}if (!canReplace()) return;fill(draft);dirty = false;message('Restored the saved draft from this browser.');} catch (error) {message('Could not restore a valid saved draft. Your current text is unchanged.', true);}});
-    document.getElementById('draft-sample').addEventListener('click', () => {if (!canReplace()) return;fill({title:'Before choosing a tonneau cover',slug:'before-choosing-a-tonneau-cover',description:'A short checklist to start your fitment research.',category:'tonneau-covers',author:'',bodyMarkdown:'## Start with your truck\n\n- Record the year, make, and model.\n- Measure the inside bed length.\n- Check the product listing for fitment details.\n\nConfirm compatibility before ordering.'});dirty = true;message('Sample loaded. It has not been saved.');});
-    document.getElementById('draft-clear').addEventListener('click', () => {if (!root.confirm('Clear the current text and delete the saved draft from this browser? This cannot be undone.')) return;try {root.localStorage.removeItem(STORAGE_KEY);} catch (error) {message('Could not delete the saved draft. Current text has been kept.', true);return;}fill({});dirty = false;message('Current text and the saved browser draft were cleared.');});
+    function fill(draft) {for (const key of fields) form.elements.namedItem(key).value = draft[key] || '';slugEdited = !!draft.slug;render();}
+    const confirmation = document.getElementById('draft-confirm');
+    const cancelConfirmation = document.getElementById('draft-confirm-cancel');
+    const acceptConfirmation = document.getElementById('draft-confirm-accept');
+    let resolveConfirmation = null;
+    function confirmChange(title, description, action, destructive = false) {
+      if (resolveConfirmation) return Promise.resolve(false);
+      const previousFocus = document.activeElement;
+      document.getElementById('draft-confirm-title').textContent = title;
+      document.getElementById('draft-confirm-description').textContent = description;
+      acceptConfirmation.textContent = action;
+      confirmation.dataset.destructive = String(destructive);
+      confirmation.returnValue = 'cancel';
+      return new Promise(resolve => {
+        resolveConfirmation = accepted => {
+          resolveConfirmation = null;
+          if (previousFocus && previousFocus.isConnected) previousFocus.focus();
+          resolve(accepted);
+        };
+        confirmation.showModal();
+        cancelConfirmation.focus();
+      });
+    }
+    cancelConfirmation.addEventListener('click', () => confirmation.close('cancel'));
+    acceptConfirmation.addEventListener('click', () => confirmation.close('accept'));
+    confirmation.addEventListener('cancel', event => {event.preventDefault();confirmation.close('cancel');});
+    confirmation.addEventListener('close', () => {if (resolveConfirmation) resolveConfirmation(confirmation.returnValue === 'accept');});
+    async function canReplace() {return !dirty || await confirmChange('Replace unsaved changes?', 'The current text has unsaved changes. Replacing it will discard those changes. Cancel to save or download it first.', 'Replace current text');}
+    function revealInvalid() {
+      const invalid = form.querySelector(':invalid');
+      if (!invalid) return;
+      if (settings.contains(invalid)) settings.open = true;
+      if (writing.contains(invalid)) setView(false);
+      message('Complete the highlighted required field before saving or exporting.', true);
+    }
+    function validated() {revealInvalid();if (!form.reportValidity()) return null;try {return validateDraft(read());} catch (error) {message(error.message, true);return null;}}
+    // Native submit validation runs before the submit event; reveal hidden fields first.
+    form.addEventListener('invalid', revealInvalid, true);
+    form.addEventListener('input', event => {
+      if (event.target.name === 'slug') slugEdited = true;
+      if (event.target.name === 'title' && !slugEdited) form.elements.namedItem('slug').value = slugFromTitle(event.target.value);
+      dirty = true;render();message('Unsaved changes. Save in this browser or download a copy.');
+    });
+    function insertMarkdown(kind) {
+      const body = form.elements.namedItem('bodyMarkdown');
+      const start = body.selectionStart, end = body.selectionEnd;
+      const selected = body.value.slice(start, end);
+      const prefix = start > 0 && body.value[start - 1] !== '\n' && kind !== 'link' ? '\n' : '';
+      const text = kind === 'heading' ? '# ' + (selected || 'Heading') : kind === 'list' ? (selected || 'List item').split('\n').map(line => '- ' + line).join('\n') : '[' + (selected || 'Link text') + '](https://example.com)';
+      body.setRangeText(prefix + text, start, end, 'select');
+      body.focus();body.dispatchEvent(new root.Event('input', {bubbles:true}));
+    }
+    for (const kind of ['heading', 'list', 'link']) document.getElementById('draft-insert-' + kind).addEventListener('click', () => insertMarkdown(kind));
+    form.addEventListener('submit', async event => {event.preventDefault();const draft = validated();if (!draft) return;try {const previous=root.localStorage.getItem(STORAGE_KEY);if(previous && previous!==JSON.stringify(draft) && !await confirmChange('Replace the saved draft?', 'This browser keeps one saved draft. Saving this version replaces the previous copy. Cancel to restore and download it first.', 'Replace saved draft'))return;saveDraft(root.localStorage, draft);dirty = false;message('Saved in this browser. Nothing has been published.');} catch (error) {message('Could not save in this browser. Download a copy to keep your work.', true);}});
+    document.getElementById('draft-restore').addEventListener('click', async () => {try {const draft = restoreDraft(root.localStorage);if (!draft) {message('No saved draft found in this browser.');return;}if (!await canReplace()) return;fill(draft);dirty = false;message('Restored the saved draft from this browser.');} catch (error) {message('Could not restore a valid saved draft. Your current text is unchanged.', true);}});
+    document.getElementById('draft-sample').addEventListener('click', async () => {if (!await canReplace()) return;fill({title:'Before choosing a tonneau cover',slug:'before-choosing-a-tonneau-cover',description:'A short checklist to start your fitment research.',category:'tonneau-covers',author:'',bodyMarkdown:'## Start with your truck\n\n- Record the year, make, and model.\n- Measure the inside bed length.\n- Check the product listing for fitment details.\n\nConfirm compatibility before ordering.'});dirty = true;message('Sample loaded. It has not been saved.');});
+    document.getElementById('draft-clear').addEventListener('click', async () => {if (!await confirmChange('Delete this draft?', 'This clears all current text and deletes the saved draft from this browser. This cannot be undone. Download a copy first if you need to keep it.', 'Delete draft and clear text', true)) return;try {root.localStorage.removeItem(STORAGE_KEY);} catch (error) {message('Could not delete the saved draft. Current text has been kept.', true);return;}fill({});dirty = false;message('Current text and the saved browser draft were cleared.');});
     function download(format) {const draft = validated();if (!draft) return;let url;try {const content = format === 'md' ? toMarkdown(draft) : JSON.stringify(draft, null, 2) + '\n';url = root.URL.createObjectURL(new root.Blob([content], {type:format === 'md' ? 'text/markdown;charset=utf-8' : 'application/json'}));const link = document.createElement('a');link.href = url;link.download = draft.slug + '.' + format;document.body.append(link);link.click();link.remove();message('Download requested. Check your browser downloads. This does not save changes in the editor.');} catch (error) {message('Could not start the download. Your text is still in the editor.', true);} finally {if (url) root.setTimeout(() => root.URL.revokeObjectURL(url), 1000);}}
     document.getElementById('draft-markdown').addEventListener('click', () => download('md'));
     document.getElementById('draft-json').addEventListener('click', () => download('json'));
     root.addEventListener('beforeunload', event => {if (dirty) {event.preventDefault();event.returnValue = '';}});
     render();
     form.inert = false;
+    document.getElementById('draft-save').disabled = false;
     try {if(root.localStorage.getItem(STORAGE_KEY))message("A saved draft is available. Restore it to continue. This browser keeps one saved draft.");} catch {message("Browser saving is unavailable. You can still write and download a draft.",true);}
   }
   if (root.document.readyState === 'loading') root.document.addEventListener('DOMContentLoaded', start, {once:true}); else start();
