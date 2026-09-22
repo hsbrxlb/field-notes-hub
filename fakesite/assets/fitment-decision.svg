@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" role="img" aria-labelledby="title desc">
+<title id="title">Four checks before ordering a truck accessory</title><desc id="desc">Start with vehicle identity, identify the relevant body and interior configuration, compare the exact product listing and instructions, then check exclusions. If anything is unclear, ask the seller to confirm before ordering.</desc>
+<defs><marker id="next" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#006a9f"/></marker></defs>
+<rect width="960" height="700" fill="#f3f4f2"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#161b20">
+<text x="42" y="55" font-size="28" font-weight="700">A model name is only the first check</text>
+<text x="42" y="88" font-size="17" fill="#5d6670">Follow all four checks for the exact accessory you plan to buy.</text>
+<path d="M75 153v354" fill="none" stroke="#006a9f" stroke-width="3"/>
+<g fill="#fff" stroke="#d7dcdf"><rect x="112" y="122" width="806" height="96"/><rect x="112" y="237" width="806" height="96"/><rect x="112" y="352" width="806" height="96"/><rect x="112" y="467" width="806" height="96"/></g>
+<g fill="#006a9f"><circle cx="75" cy="154" r="22"/><circle cx="75" cy="269" r="22"/><circle cx="75" cy="384" r="22"/><circle cx="75" cy="499" r="22"/></g>
+<g text-anchor="middle" font-size="20" font-weight="700" fill="#fff"><text x="75" y="161">1</text><text x="75" y="276">2</text><text x="75" y="391">3</text><text x="75" y="506">4</text></g>
+<text x="138" y="157" font-size="20" font-weight="700">Identify the vehicle</text><text x="138" y="188" font-size="17" fill="#5d6670">Model year, make, model, generation and body style.</text>
+<text x="138" y="272" font-size="20" font-weight="700">Identify the accessory-specific details</text><text x="138" y="303" font-size="17" fill="#5d6670">Cover: bed + rails · Steps: cab · Mats: seats + storage · Bumper: equipment</text>
+<text x="138" y="387" font-size="20" font-weight="700">Match the exact product</text><text x="138" y="418" font-size="17" fill="#5d6670">Compare the SKU, fitment section, included parts and installation instructions.</text>
+<text x="138" y="502" font-size="20" font-weight="700">Read every exclusion</text><text x="138" y="533" font-size="17" fill="#5d6670">Special trims, tailgates, storage, sensors or existing accessories may matter.</text>
+<path d="M514 570v24" fill="none" stroke="#006a9f" stroke-width="2" marker-end="url(#next)"/>
+<text x="480" y="626" font-size="21" font-weight="700" text-anchor="middle">Any mismatch or uncertainty? Pause the order.</text>
+<text x="480" y="660" font-size="17" text-anchor="middle" fill="#5d6670">Send the exact vehicle configuration and product link to the seller for confirmation.</text>
+</g></svg>

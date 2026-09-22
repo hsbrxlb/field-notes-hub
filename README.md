@@ -11,8 +11,8 @@
 - `first-outreach.html` / `first-outreach-users.html`：近期访问与累计高消费客户的筛选说明、合并去重名单和分类分页；只展示获授权的客户编号、打码邮箱、历史订单、订阅状态与分类。`data/first-outreach-users.json` 保留原近期批次作为核对基准，当前名单读取 `data/outreach-users.json`；发布前运行 `node scripts/check-outreach-users.js`。
 
 - `products.html`：产品知识库；1,209 条目录记录按 12 个分类拆分加载，每页只渲染 24 件，完整适配、规格、说明、媒体和政策快照可按商品展开。标题与统计区顶部对齐。
-- `fakesite/`：独立站样站，侧栏直接进入首页；包含 Blog、两篇完整指南、FAQ 和草稿编辑演示。保留独立的品牌页面外观，不套 Hub 阅读外壳。页面标明设计演示并禁止索引，不连接购物或真实发布。
-- `fakesite/editor.html`：可预览、在浏览器保存并下载 Markdown/JSON 草稿；这不是员工登录后台，也不会把内容提交到仓库。正式发文优先接公司现有后台；没有现成能力时再评估 Pages CMS 或 Decap 的认证与仓库授权。
+- `fakesite/`：独立品牌内容站样站，侧栏直接进入首页；包含 Blog、12篇有来源的完整指南及34条可搜索FAQ。采用独立的阅读版式，不套Hub外壳。公开演示禁止索引，不接购物或公司正式发布。
+- `fakesite/admin/index.html`：与顾客页面分开的员工内容演示；富文本、图片、文章与FAQ、草稿审核、发布快照、撤回、版本记录及备份导入导出均在浏览器内操作。角色切换仅为演示，不是登录或生产权限。公司身份、共享数据/图片存储及发布接口尚未连接。旧`fakesite/editor.html`转入该独立工作台，顾客导航不提供后台入口。
 - 样站检查：`node scripts/check-fakesite.js`；发布流程同时检查源码和最终 Pages 文件。公开目录只包含运行所需网页、脚本、字体和图片，没有研究原件或本地运行记录。
 
 - `index.html`：直接进入 Discord 社群

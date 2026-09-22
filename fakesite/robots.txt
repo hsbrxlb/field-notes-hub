@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /field-notes-hub/fakesite/
+Disallow: /field-notes-hub/fakesite/admin/
+Disallow: /field-notes-hub/fakesite/editor.html
+Sitemap: https://hsbrxlb.github.io/field-notes-hub/fakesite/sitemap.xml

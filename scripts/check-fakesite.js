@@ -1,56 +1,61 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
-const repo = path.resolve(__dirname,'..');
-const publicRoot = process.env.PUBLIC_SITE_ROOT ? path.resolve(repo,process.env.PUBLIC_SITE_ROOT) : repo;
-const root = path.join(publicRoot,'fakesite');
-const pages = ['index.html','blog.html','faq.html','editor.html','how-to-measure-truck-bed-for-tonneau-cover.html','how-to-choose-running-boards-fitment.html'];
-let references=0;
+const repo = path.resolve(__dirname, '..');
+const publicRoot = process.env.PUBLIC_SITE_ROOT ? path.resolve(repo, process.env.PUBLIC_SITE_ROOT) : repo;
+const root = path.join(publicRoot, 'fakesite');
+const seed = JSON.parse(fs.readFileSync(path.join(root,'admin/seed.json'),'utf8'));
+assert.ok(seed.articles.length >= 12 && seed.faqs.length >= 30, 'Complete editorial library required');
+const pages = ['index.html','blog.html','faq.html',...seed.articles.map(a=>a.slug+'.html')];
+let references = 0;
+const titles = new Set(), descriptions = new Set();
 for (const page of pages) {
   const html = fs.readFileSync(path.join(root,page),'utf8');
-  assert.match(html,/name="robots" content="noindex,nofollow"/,page);
+  assert.match(html,/name="robots" content="noindex,follow"/,page);
   assert.equal((html.match(/<h1[ >]/g)||[]).length,1,page);
   assert.doesNotMatch(html,/127\.0\.0\.1|\/Users\/|file:\/\//,page);
   assert.doesNotMatch(html,/<script[^>]+src="https?:/,page);
-  const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match=>match[1]);
-  assert.equal(new Set(ids).size,ids.length,`${page}: duplicate IDs`);
-  for (const [,url] of html.matchAll(/(?:src|srcset|href)="([^"]+)"/g)) {
+  assert.doesNotMatch(html,/<a[^>]+href="(?:\.\/)?(?:admin\/|editor\.html)/,'No customer route to employee workspace');
+  const title=html.match(/<title>([^<]+)<\/title>/)?.[1], description=html.match(/name="description" content="([^"]+)"/)?.[1];
+  assert.ok(title && description && !titles.has(title) && !descriptions.has(description),page);
+  titles.add(title); descriptions.add(description);
+  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
+  assert.equal(new Set(ids).size,ids.length,page+': duplicate IDs');
+  for (const [,url] of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
     if (/^(https:|data:|mailto:)/.test(url)) continue;
-    const [target,hash] = url.split('#');
-    const resolved = target ? path.resolve(root,target) : path.join(root,page);
-    assert.ok(fs.existsSync(resolved),`${page}: missing ${url}`);
-    if(hash && path.extname(resolved)==='.html') assert.match(fs.readFileSync(resolved,'utf8'),new RegExp(`id="${hash}"`),`${page}: missing target ${hash}`);
+    const parsed = new URL(url,'https://example.invalid/'+page);
+    const resolved=path.join(root,decodeURIComponent(parsed.pathname));
+    assert.ok(fs.existsSync(resolved),page+': missing '+url);
+    if(parsed.hash && path.extname(resolved)==='.html') assert.ok(fs.readFileSync(resolved,'utf8').includes('id="'+decodeURIComponent(parsed.hash.slice(1))+'"'),page+': missing anchor '+url);
     references++;
   }
-  if (page !== 'editor.html') {
-    assert.match(html,/href="\.\/faq.html"/);
-    assert.doesNotMatch(html,/href="\.\/editor.html"/, 'Storefront must not advertise editor access');
-  } else {
-    assert.doesNotMatch(html,/class="site-header"|class="desktop-nav"/, 'Editor must be independent of store navigation');
-    assert.match(html,/local|browser/i);
+  assert.match(html,/href="\.\/faq.html"/);
+  assert.match(html,/rel="canonical"/);
+  for (const attr of ['og:title','og:image','og:url','og:description']) assert.ok(html.includes('property="'+attr+'"'),page);
+  const article = seed.articles.find(a=>page===a.slug+'.html');
+  if (article) {
+    const graph = JSON.parse(html.match(/<script type="application\/ld\+json">([^<]+)<\/script>/)[1]);
+    const schema = graph.find(g=>g['@type']==='BlogPosting');
+    assert.equal(schema.headline,article.title);
+    assert.equal(schema.datePublished,article.publishedAt);
+    assert.equal(schema.dateModified,article.modifiedAt);
+    assert.ok(html.includes('datetime="'+schema.datePublished+'"') && html.includes('datetime="'+schema.dateModified+'"'));
+    assert.ok(article.bodyHtml.replace(/<[^>]+>/g,' ').split(/\s+/).length >= 550);
+    assert.ok(article.sources.length >= 2 && article.related.length >= 2);
   }
 }
-const blog = fs.readFileSync(path.join(root,'blog.html'),'utf8');
-assert.match(blog,/class="sr-only" role="status"/);
-assert.match(blog,/cover-truck-bed.png/);
-assert.match(blog,/cover-running-boards.png/);
-const faq = fs.readFileSync(path.join(root,'faq.html'),'utf8');
-assert.equal((faq.match(/class="faq-question"/g)||[]).length,10);
-for (const page of pages.filter(page=>page.startsWith('how-to'))) {
-  const html=fs.readFileSync(path.join(root,page),'utf8');
-  assert.ok(html.replace(/<[^>]+>/g,' ').length>5000);
-  assert.match(html,/<table>/);
-}
-const editor = require(path.join(root,'editor.js'));
-const valid = {title:'Example',slug:'example',description:'A summary',category:'running-boards',author:'',bodyMarkdown:'<img src=x onerror=alert(1)>\n\n## Heading'};
-const memory = new Map();
-const storage = {setItem:(key,value)=>memory.set(key,value),getItem:key=>memory.get(key)??null};
-editor.saveDraft(storage,valid);
-assert.deepEqual(editor.restoreDraft(storage),editor.validateDraft(valid));
-assert.equal(editor.restoreDraft(storage).status,'draft');
-assert.throws(()=>editor.validateDraft({...valid,slug:'../unsafe'}));
-assert.throws(()=>editor.saveDraft({setItem(){throw Error('storage unavailable');}},valid));
-assert.equal(editor.markdownBlocks(valid.bodyMarkdown)[0].text,'<img src=x onerror=alert(1)>');
-assert.match(fs.readFileSync(path.join(root,'editor.html'),'utf8'),/<form[^>]+inert/);
-assert.doesNotMatch(fs.readFileSync(path.join(root,'editor.js'),'utf8'),/innerHTML|fetch\(|XMLHttpRequest/);
-console.log(`Fakesite passes: ${pages.length} pages, ${references} references, 10 FAQs, draft safety checks.`);
+const faq=fs.readFileSync(path.join(root,'faq.html'),'utf8');
+assert.equal((faq.match(/class="faq-item"/g)||[]).length,seed.faqs.length);
+assert.doesNotMatch(faq,/"@type":"FAQPage"/);
+assert.match(fs.readFileSync(path.join(root,'blog.html'),'utf8'),/data-filter-status aria-live="polite"/);
+const admin=fs.readFileSync(path.join(root,'admin/index.html'),'utf8');
+assert.match(admin,/noindex,nofollow/);
+assert.match(admin,/Content-Security-Policy/);
+assert.match(admin,/Role switching is a simulation/);
+assert.match(admin,/Official publishing is disconnected/);
+assert.doesNotMatch(admin,/class="site-header"/);
+assert.ok(fs.existsSync(path.join(root,'admin/model.mjs')));
+assert.doesNotMatch(fs.readFileSync(path.join(root,'admin/seed.json'),'utf8'),/factNotes|\/Users\//);
+assert.match(fs.readFileSync(path.join(root,'editor.html'),'utf8'),/url=admin\/index.html/);
+assert.doesNotMatch(fs.readFileSync(path.join(root,'sitemap.xml'),'utf8'),/admin\/|editor\.html/);
+console.log('Fakesite passes: '+pages.length+' public pages, '+references+' references, '+seed.articles.length+' researched guides, '+seed.faqs.length+' FAQs, separated CMS.');
