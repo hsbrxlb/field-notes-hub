@@ -458,6 +458,28 @@ export const deleteSession = async (entryToken: string) => {
   });
 };
 
+// Idempotent retention sweep. The stored manifest sets each session's own
+// deadline, so later study versions cannot silently shorten older records.
+export const purgeExpiredSessions = async (): Promise<number> => {
+  await ensureSchema();
+  return withTransaction(async (client) => {
+    const result = await client.query<{ id: string }>(`
+      WITH expired AS (
+        SELECT id, token_hash FROM research_sessions
+        WHERE jsonb_typeof(study_snapshot #> '{dataPolicy,retentionDays}') = 'number'
+          AND created_at + (LEAST(3650, GREATEST(1, (study_snapshot #>> '{dataPolicy,retentionDays}')::integer)) * INTERVAL '1 day') <= NOW()
+        ORDER BY created_at
+        LIMIT 1000 FOR UPDATE SKIP LOCKED
+      ), erased AS (
+        INSERT INTO research_erasure_tombstones (token_hash)
+        SELECT token_hash FROM expired ON CONFLICT DO NOTHING
+      )
+      DELETE FROM research_sessions WHERE id IN (SELECT id FROM expired) RETURNING id
+    `);
+    return result.rowCount ?? 0;
+  });
+};
+
 export const exportSession = async (entryToken: string) => {
   await ensureSchema();
   return withTransaction(async (client) => {

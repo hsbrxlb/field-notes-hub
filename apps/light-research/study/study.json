@@ -55,7 +55,7 @@
         "title": "Before we begin",
         "intro": "OEDRO is asking about your real experience with vehicle lights and a possible new light-bar idea. This is a text interview of about 10 minutes. The idea is not a finished or tested product.",
         "items": [
-          "Your answers are saved for this research, processed by an AI service, and retained for up to 30 days. You can stop or delete your answers here.",
+          "Your answers are saved for this research and processed by an AI service. Access to the interview expires after 30 days; a daily cleanup deletes expired records. You can stop or delete your answers sooner.",
           "Please do not enter your name, email, phone number, address, or other contact details. There is no automatic reward on this page."
         ],
         "checkbox": "I understand and agree to take part.",
@@ -69,7 +69,7 @@
         "title": "开始之前",
         "intro": "OEDRO 想了解你实际用车灯的经历，以及一款仍在设想中的长条灯。文字访谈大约需要 10 分钟；这不是已上市或已验证的产品。",
         "items": [
-          "回答会用于本次研究，由 AI 服务处理，最多保留 30 天。你可以停止访谈，或在页面上删除回答。",
+          "回答会用于本次研究，并由 AI 服务处理。访谈记录在 30 天后无法再访问，每日清理会删除到期记录；你也可以提前停止或删除回答。",
           "请不要填写姓名、邮箱、电话、住址等联系信息。本页面不会自动发放奖励。"
         ],
         "checkbox": "我已了解并同意参与。",
@@ -83,7 +83,7 @@
         "title": "Antes de empezar",
         "intro": "OEDRO quiere conocer tu experiencia real con las luces del vehículo y una posible idea para una barra de luces. La entrevista escrita dura unos 10 minutos. No es un producto terminado ni probado.",
         "items": [
-          "Tus respuestas se guardan para esta investigación, las procesa un servicio de IA y se conservan hasta 30 días. Puedes parar o borrar tus respuestas aquí.",
+          "Tus respuestas se guardan para esta investigación y las procesa un servicio de IA. El acceso vence a los 30 días y una limpieza diaria borra los registros vencidos. Puedes parar o borrar tus respuestas antes.",
           "No escribas tu nombre, correo, teléfono, dirección ni otros datos de contacto. Esta página no entrega recompensas automáticamente."
         ],
         "checkbox": "Entiendo la información y acepto participar.",
