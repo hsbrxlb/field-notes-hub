@@ -70,7 +70,7 @@ export const studyManifestSchema = z.object({
   }).strict()),
   consent: z.object({
     version: z.string().min(1),
-    enabledByDefault: z.literal(false),
+    enabledByDefault: z.boolean(),
     internalOnly: z.boolean(),
     locales: z.record(z.string().min(2), z.object({
       languageLabel: z.string().min(1),

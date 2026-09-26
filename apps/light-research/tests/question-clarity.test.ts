@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getStudyConfig } from "@/lib/study-config";
+import { getLegacyStudyConfig as getStudyConfig } from "@/lib/study-config";
 import { questionPolicyViolation } from "@/lib/question-policy";
 
 const study = getStudyConfig();

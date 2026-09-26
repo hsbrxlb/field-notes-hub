@@ -116,6 +116,8 @@ button { touch-action: manipulation; }
 .lead { font-size: 17px; color: var(--muted); line-height: 1.7; margin-bottom: 28px; }
 .eyebrow { margin: 0 0 12px; color: var(--action); font-size: 14px; line-height: 1.5; letter-spacing: .08em; }
 .consentTopline { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; font-size: 14px; }
+.consentLanguage { display: flex; align-items: center; gap: 12px; font-size: 16px; }
+.consentLanguage select { min-height: 44px; padding: 8px 12px; border: 1px solid currentColor; border-radius: 4px; color: inherit; background: rgba(255,255,255,.7); font: inherit; }
 .consentList { padding: 20px; border-block: 1px solid var(--line); line-height: 1.7; }
 .consentCheck { display: flex; gap: 12px; margin: 24px 0; line-height: 1.5; }
 .consentCheck input { width: 20px; height: 20px; accent-color: var(--action); }

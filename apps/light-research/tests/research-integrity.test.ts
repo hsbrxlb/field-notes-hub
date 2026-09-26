@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { applyAssessment, createModeratorState, isAnchorCovered } from "@/lib/moderator-state";
-import { getStudyConfig } from "@/lib/study-config";
+import { getLegacyStudyConfig as getStudyConfig } from "@/lib/study-config";
 import type { ModeratorAssessment, ModeratorState } from "@/lib/conversation-types";
 
 const study = getStudyConfig();

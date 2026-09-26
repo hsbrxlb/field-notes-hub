@@ -1,4 +1,4 @@
-import { getStudyConfig, localized } from "./study-config";
+import { getStudyConfig, getSessionStudyConfig, localized } from "./study-config";
 import { applyAssessment, createModeratorState } from "./moderator-state";
 import { resolvePlannedReply } from "./moderator-dialogue";
 import { evaluateTurn, ProviderError } from "./moderator-provider";
@@ -108,12 +108,11 @@ const failureNotice = (language: string) => {
 };
 
 const conversationView = async (entryToken: string) => {
-  const study = getStudyConfig();
   const session = await getSessionByToken(entryToken);
   if (!session) throw new ConversationError(404, "not_found", "Study session not found.");
-  if (session.study_id !== study.study.id || session.study_version !== study.study.version) {
-    throw new ConversationError(409, "version_mismatch", "This session belongs to an older study version.");
-  }
+  let study: StudyManifest;
+  try { study = getSessionStudyConfig(session.study_snapshot, session.study_version); }
+  catch { throw new ConversationError(409, "version_mismatch", "This study version is no longer available."); }
   const storedTurns = await listTurns(session.id, true);
   const messages = storedTurns.flatMap((stored) => {
     if (stored.processing_status === "completed") {
@@ -173,7 +172,7 @@ const conversationView = async (entryToken: string) => {
 
 export const startConversation = async (consentVersion?: string, consentLocale?: string) => {
   const study = getStudyConfig();
-  const requireConsent = process.env.SURVEY_CONSENT_MODE === "1";
+  const requireConsent = study.consent.enabledByDefault || process.env.SURVEY_CONSENT_MODE === "1";
   if (requireConsent) {
     if (consentVersion !== study.consent.version) throw new ConversationError(400, "consent_version", "Consent version is missing or outdated.");
     if (!consentLocale || !study.consent.locales[consentLocale]) throw new ConversationError(400, "consent_locale", "Consent locale is not supported.");
@@ -182,6 +181,11 @@ export const startConversation = async (consentVersion?: string, consentLocale?:
     consentLocale = study.study.languagePolicy.entryLanguage;
   }
   const state = createModeratorState(study);
+  if (requireConsent && consentLocale) {
+    state.activeLanguage = consentLocale;
+    const first = study.anchors[0];
+    state.activePrompt = localized(first.questionLocales ?? { [study.study.languagePolicy.entryLanguage]: first.question }, consentLocale);
+  }
   const created = await createSession({
     study,
     state,
@@ -212,10 +216,11 @@ export const respondToConversation = async ({
   intent?: "answer" | "skip";
 }) => {
   if (intent === "skip") throw new ConversationError(400, "skip_disabled", "Please answer the current question or stop the interview.");
-  const study = getStudyConfig();
   let session = await getSessionByToken(entryToken);
   if (!session) throw new ConversationError(404, "not_found", "Study session not found.");
-  if (session.study_id !== study.study.id || session.study_version !== study.study.version) throw new ConversationError(409, "version_mismatch", "This session belongs to another study or version.");
+  let study: StudyManifest;
+  try { study = getSessionStudyConfig(session.study_snapshot, session.study_version); }
+  catch { throw new ConversationError(409, "version_mismatch", "This study version is no longer available."); }
   const existing = (await listTurns(session.id, true)).find((turn) => turn.client_attempt_id === clientAttemptId);
   if (existing) {
     if (existing.raw_text !== text || existing.anchor_id !== anchorId || existing.state_before.revision !== stateRevision || existing.request_intent !== intent || !sameInputPayload(existing.input_payload, inputPayload)) throw new ConversationError(409, "attempt_conflict", "This attempt belongs to a different saved answer.", true);

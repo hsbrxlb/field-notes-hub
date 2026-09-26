@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { applyAssessment, createModeratorState, semanticSimilarity } from "@/lib/moderator-state";
-import { getStudyConfig } from "@/lib/study-config";
+import { getLegacyStudyConfig as getStudyConfig } from "@/lib/study-config";
 import type { ModeratorAssessment } from "@/lib/conversation-types";
 
 const makeAssessment = (overrides: Partial<ModeratorAssessment> = {}): ModeratorAssessment => {

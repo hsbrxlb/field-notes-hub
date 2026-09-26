@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { applyAssessment, createModeratorState } from "@/lib/moderator-state";
-import { getStudyConfig } from "@/lib/study-config";
+import { getLegacyStudyConfig as getStudyConfig } from "@/lib/study-config";
 import type { ActiveMove, ModeratorAssessment, ParticipantIntent } from "@/lib/conversation-types";
 
 const study = getStudyConfig(), anchor = study.anchors[0];

@@ -1,5 +1,13 @@
 # OEDRO AI Research for Drivers
 
+## Five-owner pilot (2026-09-27)
+
+The active study now asks eight text-only topics: an actual after-dark task, a specific visibility outcome, the owner's existing-light criterion, a hypothetical switchable near-wide/farther-forward beam, evidence needed to judge its lens-shaped beams, practical barriers, an exploratory total cost, and one change. The concept is not a performance or launch claim. English, Simplified Chinese and Spanish have reviewed authored questions; the participant chooses one of those languages on the consent screen. The study records participant provenance, explicit consent, a 30-day retention policy, and no automatic reward. Recruitment and any promotional material require separate review and verified contact permissions.
+
+Existing `fixture-3.5-natural-buddy` sessions retain their exact original study snapshot, questions and seven-topic progress through `/legacy`. The root page detects an active legacy session on the same browser and returns it to that route. The old synthetic fixture and its price-tier regressions remain under `study/legacy-fixture-3.5.json`; the active manifest is `study/study.json`. The optional isolated database test `SURVEY_MIGRATION_DB=1 AI_PROVIDER=mock npm test -- tests/participant-migration-db.test.ts` verifies continuation after the upgrade.
+
+The production URL is still a free Render service. The separate English invitation landing page and channel copy are review-only local artifacts, not deployed from this repository. Do not count local or synthetic acceptance sessions toward the five real interviews.
+
 Oedro Buddy runs a conversational lighting study with natural model-generated replies, source-linked evidence and saved-answer retry. Questions cannot be skipped: both the API and moderator enforce this, including typed skip requests. Participants can stop at any time; the stopped screen retains export and deletion controls. The header uses the official OEDRO logo. Background motion is disabled rather than keeping an Options menu.
 
 This directory contains the complete Next.js application. GitHub Pages publishes the Hub's entry page and screenshot only; it cannot execute these route handlers. The Hub entry opens `https://oedro-light-research.onrender.com/`, hosted on Render Free in Singapore with Neon Free PostgreSQL. It does not depend on a local Mac.

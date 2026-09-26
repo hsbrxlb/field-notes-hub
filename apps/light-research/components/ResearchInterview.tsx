@@ -93,13 +93,13 @@ const pickExactLocale = (values: Record<string, string>, locale: string) => {
   return (key && values[key]) || "";
 };
 
-export function ResearchInterview({ study, requireConsent = false }: { study: PublicStudyConfig; requireConsent?: boolean }) {
+export function ResearchInterview({ study, requireConsent = false, legacySession, restoreOnly = false }: { study: PublicStudyConfig; requireConsent?: boolean; legacySession?: { key: string; path: string }; restoreOnly?: boolean }) {
   const baseLocale = study.study.languagePolicy.entryLanguage;
   const sessionKey = `research-session:${study.study.id}:${study.study.version}`;
   const pendingKey = `${sessionKey}:pending-answer`;
   const consentKey = `research-consent:${study.study.id}:${study.consent.version}`;
   const [appState, setAppState] = useState<AppState>("loading");
-  const locale = baseLocale;
+  const [locale, setLocale] = useState(baseLocale);
   const [consentChecked, setConsentChecked] = useState(false);
   const [session, setSession] = useState<SessionData | null>(null);
   const [conversation, setConversation] = useState<ConversationView | null>(null);
@@ -214,6 +214,24 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
       let restoringSession = false;
       try {
         const storedSession = JSON.parse(localStorage.getItem(sessionKey) || "null") as SessionData | null;
+        if (restoreOnly && !storedSession?.entryToken) {
+          window.location.replace("/");
+          return;
+        }
+        if (!storedSession?.entryToken && legacySession) {
+          const prior = JSON.parse(localStorage.getItem(legacySession.key) || "null") as SessionData | null;
+          if (prior?.entryToken) {
+            try {
+              const previous = await fetchConversation(prior.entryToken);
+              if (previous.status === "active" || previous.status === "paused") {
+                window.location.replace(legacySession.path);
+                return;
+              }
+            } catch {
+              // A stale legacy session must not prevent a new interview.
+            }
+          }
+        }
         if (storedSession?.entryToken && storedSession.studyVersion === study.study.version) {
           restoringSession = true;
           setSession(storedSession);
@@ -248,7 +266,7 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
       }
     }, 0);
     return () => window.clearTimeout(timer);
-  }, [baseLocale, consentKey, fetchConversation, initializeSession, pendingKey, requireConsent, restoreDraft, sessionKey, study.study.version]);
+  }, [baseLocale, consentKey, fetchConversation, initializeSession, legacySession, pendingKey, requireConsent, restoreDraft, restoreOnly, sessionKey, study.study.version]);
 
   useEffect(() => {
     const frame = requestAnimationFrame(followCurrentQuestion);
@@ -462,7 +480,8 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
       sessionStorage.removeItem(pendingKey);
       localStorage.removeItem(consentKey);
       localStorage.removeItem(sessionKey);
-      window.location.reload();
+      if (restoreOnly) window.location.replace("/");
+      else window.location.reload();
     } catch { setError("This browser could not clear the session. No new interview was started."); }
   };
 
@@ -546,7 +565,12 @@ export function ResearchInterview({ study, requireConsent = false }: { study: Pu
   if (appState === "consent") return (
     <main className="consentShell">
       <section className="consentPanel" aria-labelledby="consent-title">
-        <div className="consentTopline"><span className="brandMark">{study.brand.shortLabel}</span><span>About {study.study.estimatedMinutes} min</span></div>
+        <div className="consentTopline"><span className="brandMark">{study.brand.shortLabel}</span><span>~{study.study.estimatedMinutes} min</span></div>
+        <label className="consentLanguage">{consentCopy.languageLabel}
+          <select value={locale} onChange={(event) => setLocale(event.target.value)}>
+            {Object.entries(study.consent.locales).map(([code, copy]) => <option key={code} value={code}>{code === "en" ? "English" : code === "zh-CN" ? "简体中文" : code === "es" ? "Español" : copy.languageLabel}</option>)}
+          </select>
+        </label>
         <p className="eyebrow">{ui.before}</p>
         <h1 id="consent-title">{consentCopy.title}</h1>
         <p className="lead">{consentCopy.intro}</p>

@@ -1,4 +1,5 @@
 import manifestJson from "@/study/study.json";
+import legacyManifestJson from "@/study/legacy-fixture-3.5.json";
 import { studyManifestSchema, type PublicStudyConfig, type StudyManifest } from "./study-schema";
 
 let cached: StudyManifest | undefined;
@@ -6,6 +7,16 @@ let cached: StudyManifest | undefined;
 export const getStudyConfig = (): StudyManifest => {
   if (!cached) cached = studyManifestSchema.parse(manifestJson);
   return cached;
+};
+
+export const getLegacyStudyConfig = (): StudyManifest => studyManifestSchema.parse(legacyManifestJson);
+
+export const getSessionStudyConfig = (snapshot: unknown, version: string): StudyManifest => {
+  if (version === getStudyConfig().study.version) return getStudyConfig();
+  const parsed = studyManifestSchema.safeParse(snapshot);
+  if (parsed.success && parsed.data.study.version === version && parsed.data.study.id === getStudyConfig().study.id) return parsed.data;
+  if (version === getLegacyStudyConfig().study.version) return getLegacyStudyConfig();
+  throw new Error("Study version is no longer available.");
 };
 
 export const toPublicStudyConfig = (manifest: StudyManifest): PublicStudyConfig => {

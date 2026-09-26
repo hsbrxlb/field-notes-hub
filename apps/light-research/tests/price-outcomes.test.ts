@@ -1,7 +1,7 @@
 import { afterAll, describe, expect, it, vi } from "vitest";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { randomUUID } from "node:crypto";
-import { getStudyConfig } from "@/lib/study-config";
+import { getLegacyStudyConfig as getStudyConfig } from "@/lib/study-config";
 import { applyAssessment, createModeratorState, isAnchorCovered } from "@/lib/moderator-state";
 import { respondToConversation, validateInputPayload } from "@/lib/conversation-service";
 import { createSession, exportSession, getPool } from "@/lib/storage";

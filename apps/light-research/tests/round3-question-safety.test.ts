@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { applyAssessment, createModeratorState, isAnchorCovered } from "@/lib/moderator-state";
-import { getStudyConfig } from "@/lib/study-config";
+import { getLegacyStudyConfig as getStudyConfig } from "@/lib/study-config";
 import { studyManifestSchema } from "@/lib/study-schema";
 import type { ModeratorAssessment } from "@/lib/conversation-types";
 import purchase from "./fixtures/purchase-round3.study.json";

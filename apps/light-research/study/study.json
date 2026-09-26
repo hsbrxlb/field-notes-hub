@@ -2,21 +2,23 @@
   "schemaVersion": "2.0",
   "study": {
     "id": "worklight-regression",
-    "version": "fixture-3.5-natural-buddy",
+    "version": "pilot-1.0-dual-beam",
     "title": "OEDRO AI Research for Drivers",
     "status": "review_ready",
     "readiness": "technical_prototype",
-    "sampleKind": "synthetic",
-    "goal": "Test whether a controlled-autonomy AI interviewer can understand vehicle-lighting experiences, repair conversation breakdowns, and preserve auditable evidence without work-light-specific runtime code.",
+    "sampleKind": "participant",
+    "goal": "Learn from five real vehicle owners whether a switchable wide-versus-distance light bar solves a real task, what each mode must show, and what would prevent installation or use.",
     "decisionQuestions": [
-      "Which real use situations and visibility problems deserve further product research?",
-      "Which concept, installation, or price concerns need stronger evidence?"
+      "Which real night-driving or work situations are poorly served by the lights owners already use?",
+      "When, if ever, would owners use one proposed light bar with switchable near-wide and forward-distance beams?",
+      "What comparable evidence, tradeoffs, fitment and cost questions determine whether the concept deserves development?"
     ],
     "audience": {
-      "description": "Synthetic adult vehicle-owner personas used only for local acceptance testing.",
+      "description": "Adult vehicle owners who use their vehicle after dark, especially recent light buyers or active owners with relevant real use. Five complete, comprehensible interviews are the research target.",
       "eligibility": [
-        "Uses a vehicle after dark",
-        "Can describe a real lighting situation"
+        "Adult vehicle owner",
+        "Has driven, worked, camped or otherwise used a vehicle after dark, or can explicitly say they have not",
+        "Voluntarily agrees to this research interview"
       ]
     },
     "languagePolicy": {
@@ -25,7 +27,7 @@
       "autoReplyLanguage": true,
       "preserveOriginal": true
     },
-    "estimatedMinutes": 8
+    "estimatedMinutes": 10
   },
   "brand": {
     "name": "OEDRO",
@@ -37,30 +39,58 @@
   },
   "claims": [
     {
-      "id": "concept_sizes",
-      "text": "The synthetic concept includes example size and price tiers from 7–8 inches at $129.99 to 48–52 inches at $499.99.",
+      "id": "dual_beam_concept",
+      "text": "Hypothetical lens-based added light bar with a user-switchable wide nearby beam and a farther-reaching forward beam. No brightness, fitment, release date or performance is established.",
       "status": "approved_for_participants",
-      "source": "Synthetic research configuration fixture; sample concepts and price tiers for internal testing."
+      "source": "User-directed qualitative concept test; internal work-light MRD and prior owner feedback. Concept description only, not a tested product claim."
     }
   ],
   "consent": {
-    "version": "fixture-consent-2",
-    "enabledByDefault": false,
+    "version": "pilot-consent-1",
+    "enabledByDefault": true,
     "internalOnly": false,
     "locales": {
       "en": {
         "languageLabel": "Language",
-        "title": "Review how this synthetic test uses your answers",
-        "intro": "This optional screen is dormant unless a specific project explicitly enables it.",
+        "title": "Before we begin",
+        "intro": "OEDRO is asking about your real experience with vehicle lights and a possible new light-bar idea. This is a text interview of about 10 minutes. The idea is not a finished or tested product.",
         "items": [
-          "Written answers are stored in the local test database and processed by the configured AI provider.",
-          "Do not enter names, email addresses, phone numbers, addresses, or other contact details."
+          "Your answers are saved for this research, processed by an AI service, and retained for up to 30 days. You can stop or delete your answers here.",
+          "Please do not enter your name, email, phone number, address, or other contact details. There is no automatic reward on this page."
         ],
-        "checkbox": "I understand and want to start this synthetic study.",
-        "accept": "Agree and start",
+        "checkbox": "I understand and agree to take part.",
+        "accept": "Start interview",
         "decline": "Not now",
-        "declinedTitle": "The study was not started",
-        "declinedText": "No research session was created."
+        "declinedTitle": "Interview not started",
+        "declinedText": "No answers were collected."
+      },
+      "zh-CN": {
+        "languageLabel": "语言",
+        "title": "开始之前",
+        "intro": "OEDRO 想了解你实际用车灯的经历，以及一款仍在设想中的长条灯。文字访谈大约需要 10 分钟；这不是已上市或已验证的产品。",
+        "items": [
+          "回答会用于本次研究，由 AI 服务处理，最多保留 30 天。你可以停止访谈，或在页面上删除回答。",
+          "请不要填写姓名、邮箱、电话、住址等联系信息。本页面不会自动发放奖励。"
+        ],
+        "checkbox": "我已了解并同意参与。",
+        "accept": "开始访谈",
+        "decline": "暂不参与",
+        "declinedTitle": "访谈未开始",
+        "declinedText": "尚未收集回答。"
+      },
+      "es": {
+        "languageLabel": "Idioma",
+        "title": "Antes de empezar",
+        "intro": "OEDRO quiere conocer tu experiencia real con las luces del vehículo y una posible idea para una barra de luces. La entrevista escrita dura unos 10 minutos. No es un producto terminado ni probado.",
+        "items": [
+          "Tus respuestas se guardan para esta investigación, las procesa un servicio de IA y se conservan hasta 30 días. Puedes parar o borrar tus respuestas aquí.",
+          "No escribas tu nombre, correo, teléfono, dirección ni otros datos de contacto. Esta página no entrega recompensas automáticamente."
+        ],
+        "checkbox": "Entiendo la información y acepto participar.",
+        "accept": "Empezar la entrevista",
+        "decline": "Ahora no",
+        "declinedTitle": "La entrevista no ha comenzado",
+        "declinedText": "No se recogieron respuestas."
       }
     }
   },
@@ -71,7 +101,7 @@
     "providerDisclosure": "Answers are processed by a configured third-party AI provider for interview understanding, controlled follow-up, and evidence extraction."
   },
   "moderation": {
-    "policyVersion": "controlled-autonomy-3.6-understanding-gate",
+    "policyVersion": "controlled-autonomy-3.7-dual-beam-pilot",
     "maxTotalProbes": 6,
     "checkpointEveryAnchors": 3,
     "maxCheckpointQuestions": 2,
@@ -83,7 +113,7 @@
   "model": {
     "provider": "deepseek",
     "model": "deepseek-v4-flash",
-    "promptVersion": "interviewer-3.7-concrete-multilingual",
+    "promptVersion": "interviewer-3.8-dual-beam-pilot",
     "timeoutMs": 25000,
     "maxRetries": 1
   },
@@ -145,14 +175,14 @@
     },
     {
       "id": "concept_reaction",
-      "description": "First reaction to the hypothetical extra vehicle light offered in different sizes, including uncertainty or insufficient information; no appearance or performance is shown or established.",
+      "description": "Spontaneous reaction to a hypothetical single added light bar with switchable wide nearby and farther-forward beam settings; preserve rejection and uncertainty.",
       "type": "text",
       "decisionRelevance": "important"
     },
     {
       "id": "price_fit",
-      "description": "Explicit response about the listed synthetic tiers: small_129, medium_279, large_499, none (explicitly considers none of these tiers), or not_sure (explicitly undecided). Missing, skipped, refused, or unrelated answers do not establish any price_fit. none does not by itself mean no product need; keep the participant's stated reason separately in price_reason.",
-      "type": "choice",
+      "description": "Exploratory self-stated total cost, including installation, that the owner might consider for this unpriced concept, or explicit no interest/uncertainty. Do not treat as willingness-to-pay evidence for a specified product or infer a price.",
+      "type": "text",
       "decisionRelevance": "important"
     },
     {
@@ -166,41 +196,47 @@
       "description": "The participant's desired first change to the hypothetical extra vehicle light, or an explicit statement that no change is needed or there is not enough information to judge.",
       "type": "text",
       "decisionRelevance": "critical"
+    },
+    {
+      "id": "beam_use",
+      "description": "The specific real situation, if any, in which the owner would use either proposed beam setting. Keep wide and forward uses distinct.",
+      "type": "text",
+      "decisionRelevance": "critical"
+    },
+    {
+      "id": "proof_needed",
+      "description": "Evidence or comparable night-test conditions the owner would need to judge both proposed settings, including concern that one or both settings might compromise performance.",
+      "type": "text",
+      "decisionRelevance": "critical"
     }
   ],
   "anchors": [
     {
       "id": "use_context",
       "label": "Use context",
-      "objective": "Understand the purpose of ordinary after-dark vehicle use. Retain volunteered vehicle details; clarify vehicle identity only if it changes fitment or interpretation. Do not require a model year, brand, or model merely to fill a field.",
-      "question": "How do you usually use your vehicle after dark?",
+      "objective": "Establish one real recent trip or task before describing any new product. Accept no recent after-dark use.",
+      "question": "The last time you used your vehicle after dark, what were you doing?",
       "questionLocales": {
-        "en": "How do you usually use your vehicle after dark?",
-        "zh-CN": "你天黑后通常用车做什么？",
-        "es": "¿Para qué usas normalmente tu vehículo después de anochecer?"
+        "en": "The last time you used your vehicle after dark, what were you doing?",
+        "zh-CN": "最近一次天黑后用车时，你在做什么？",
+        "es": "La última vez que usaste tu vehículo de noche, ¿qué estabas haciendo?"
       },
-      "clarification": "What do you use your vehicle to do after dark?",
+      "clarification": "The last time you used your vehicle after dark, what were you doing?",
       "clarificationLocales": {
-        "en": "What do you use your vehicle to do after dark?",
-        "zh-CN": "我是想问，你通常为了做什么事情在天黑后用车？",
-        "es": "¿Para hacer qué usas tu vehículo después de anochecer?"
+        "en": "The last time you used your vehicle after dark, what were you doing?",
+        "zh-CN": "最近一次天黑后用车时，你在做什么？",
+        "es": "La última vez que usaste tu vehículo de noche, ¿qué estabas haciendo?"
       },
       "sufficiencyCriteria": [
-        "The purpose of after-dark vehicle use is understood, or the participant explicitly reports no such use or uncertainty.",
-        "Retain vehicle details when stated; missing vehicle identity alone is not a reason to demand more detail."
+        "A concrete answer, an explicit no need or no experience, or honest uncertainty is understood in the owner’s own words. Do not invent a problem or force agreement."
       ],
       "highValueProbeTargets": [
-        "One missing trip or activity purpose, without asking simultaneously about roads, lighting, or weather.",
-        "Vehicle identity only when an actual fitment or interpretation question depends on it."
+        "Clarify the one activity or trip purpose only when the answer is not understandable."
       ],
       "requiredFields": [
-        "vehicle_model",
         "use_context"
       ],
       "evidenceFields": [
-        "vehicle_year",
-        "vehicle_make",
-        "vehicle_model",
         "use_context"
       ],
       "optional": false,
@@ -212,121 +248,78 @@
       "input": {
         "type": "text",
         "placeholder": {
-          "en": "Write your answer in your own words…",
-          "zh-CN": "按你的实际情况回答…",
+          "en": "Answer in your own words…",
+          "zh-CN": "按自己的实际情况回答…",
           "es": "Responde con tus propias palabras…"
         }
       },
-      "followUpQuestions": {
-        "vehicle_year": {
-          "en": "What model year is your vehicle?",
-          "zh-CN": "你的车是哪一款年份的车型？",
-          "es": "¿De qué año de modelo es tu vehículo?"
-        },
-        "vehicle_make": {
-          "en": "Who makes your vehicle?",
-          "zh-CN": "你的车是什么品牌？",
-          "es": "¿De qué marca es tu vehículo?"
-        },
-        "vehicle_model": {
-          "en": "What model is your vehicle?",
-          "zh-CN": "你的车是什么型号？",
-          "es": "¿Qué modelo es tu vehículo?"
-        },
-        "use_context": {
-          "en": "How do you usually use your vehicle after dark?",
-          "zh-CN": "你天黑后通常用车做什么？",
-          "es": "¿Para qué usas normalmente tu vehículo después de anochecer?"
-        }
-      }
+      "followUpQuestions": {}
     },
     {
       "id": "recent_experience",
       "label": "Recent experience",
-      "objective": "Understand what the participant could or could not see on their most recent after-dark vehicle use. Distinguish road type, available light, weather, and activity purpose. Ask only one missing dimension that affects understanding, using their own context; never ask a broad environment question or require all dimensions. Accept a short concrete answer and explicit absence of a visibility problem.",
-      "question": "The last time you used your vehicle after dark, was anything difficult to see?",
+      "objective": "Record one concrete visibility outcome during the same event, including no difficulty. Clarify road or task setting only when it changes the meaning.",
+      "question": "During that same trip or task, was anything hard to see? If so, what?",
       "questionLocales": {
-        "en": "The last time you used your vehicle after dark, was anything difficult to see?",
-        "zh-CN": "最近一次天黑后用车时，有什么东西看不清吗？",
-        "es": "La última vez que usaste tu vehículo de noche, ¿hubo algo que te costara ver?"
+        "en": "During that same trip or task, was anything hard to see? If so, what?",
+        "zh-CN": "那次用车时，有什么东西看不清吗？如果有，是什么？",
+        "es": "Durante ese mismo viaje o tarea, ¿hubo algo que te costara ver? Si lo hubo, ¿qué fue?"
       },
-      "clarification": "Thinking of that last time, what could you not see clearly, if anything?",
+      "clarification": "During that same trip or task, was anything hard to see? If so, what?",
       "clarificationLocales": {
-        "en": "Thinking of that last time, what could you not see clearly, if anything?",
-        "zh-CN": "我是问最近那次夜间用车，有没有什么东西没看清？",
-        "es": "Piensa en esa última vez: ¿hubo algo que no pudieras ver con claridad?"
+        "en": "During that same trip or task, was anything hard to see? If so, what?",
+        "zh-CN": "那次用车时，有什么东西看不清吗？如果有，是什么？",
+        "es": "Durante ese mismo viaje o tarea, ¿hubo algo que te costara ver? Si lo hubo, ¿qué fue?"
       },
       "sufficiencyCriteria": [
-        "The participant describes what was difficult to see, or explicitly reports no visibility problem or being unable to recall.",
-        "Preserve any stated context. A brief answer does not require a road, lighting, and weather checklist; missing context is probed only if it changes the interpretation."
+        "A concrete answer, an explicit no need or no experience, or honest uncertainty is understood in the owner’s own words. Do not invent a problem or force agreement."
       ],
       "highValueProbeTargets": [
-        "One unclear object or task that was difficult to see, without assuming there was a problem.",
-        "One missing road type, available-light condition, or weather detail only when it explains a stated difficulty; never ask all three together.",
-        "The participant's response to a stated visibility problem, only if that action is still unknown."
+        "Clarify one object, area or task that was hard to see, without assuming a problem."
       ],
       "requiredFields": [
-        "recent_location",
         "visibility_problem"
       ],
       "evidenceFields": [
-        "recent_location",
-        "visibility_problem",
-        "user_action"
+        "visibility_problem"
       ],
       "optional": false,
       "skipWhenCovered": true,
-      "maxImmediateProbes": 2,
+      "maxImmediateProbes": 1,
       "measurementStage": "conversation",
       "claimRefs": [],
       "media": [],
       "input": {
         "type": "text",
         "placeholder": {
-          "en": "Describe what you could or could not see…",
-          "zh-CN": "说说当时能不能看清…",
-          "es": "Cuenta qué podías o no podías ver…"
+          "en": "Answer in your own words…",
+          "zh-CN": "按自己的实际情况回答…",
+          "es": "Responde con tus propias palabras…"
         }
       },
-      "followUpQuestions": {
-        "recent_location": {
-          "en": "What type of road were you on that time?",
-          "zh-CN": "那次你开的是哪一类道路？",
-          "es": "¿Por qué tipo de vía conducías esa vez?"
-        },
-        "visibility_problem": {
-          "en": "What could you not see clearly that time, if anything?",
-          "zh-CN": "那次有什么东西没看清吗？",
-          "es": "¿Hubo algo que no pudieras ver con claridad esa vez?"
-        },
-        "user_action": {
-          "en": "What did you do when you had trouble seeing?",
-          "zh-CN": "发现看不清时，你做了什么？",
-          "es": "¿Qué hiciste cuando te costó ver?"
-        }
-      }
+      "followUpQuestions": {}
     },
     {
       "id": "priorities",
       "label": "Priorities",
-      "objective": "Understand what matters when the participant chooses vehicle lights. Ask openly without presenting the stored option labels as suggested answers. One stated priority is sufficient; no ranking or quota is required.",
-      "question": "What matters most to you when choosing lights for your vehicle?",
+      "objective": "Identify one owner-selected criterion before the concept; factory lights count and no extra-light experience is valid.",
+      "question": "From the vehicle lights you have used, what one thing matters most to you in real use?",
       "questionLocales": {
-        "en": "What matters most to you when choosing lights for your vehicle?",
-        "zh-CN": "给车选灯时，你最在意什么？",
-        "es": "¿Qué es lo que más te importa al elegir luces para tu vehículo?"
+        "en": "From the vehicle lights you have used, what one thing matters most to you in real use?",
+        "zh-CN": "在你用过的车灯里，实际使用时你最在意哪一点？",
+        "es": "De las luces de vehículo que has usado, ¿qué es lo que más te importa en la práctica?"
       },
-      "clarification": "What do you care about most when deciding which vehicle lights to use?",
+      "clarification": "From the vehicle lights you have used, what one thing matters most to you in real use?",
       "clarificationLocales": {
-        "en": "What do you care about most when deciding which vehicle lights to use?",
-        "zh-CN": "决定给车用哪款灯时，你最看重什么？",
-        "es": "¿Qué es lo que más te importa al decidir qué luces usar en tu vehículo?"
+        "en": "From the vehicle lights you have used, what one thing matters most to you in real use?",
+        "zh-CN": "在你用过的车灯里，实际使用时你最在意哪一点？",
+        "es": "De las luces de vehículo que has usado, ¿qué es lo que más te importa en la práctica?"
       },
       "sufficiencyCriteria": [
-        "At least one priority is stated, or the participant explicitly has no preference or is unsure. Do not force a choice from the stored labels."
+        "A concrete answer, an explicit no need or no experience, or honest uncertainty is understood in the owner’s own words. Do not invent a problem or force agreement."
       ],
       "highValueProbeTargets": [
-        "Clarify one unclear priority in the participant's own words only if it affects interpretation; do not force a tradeoff between compatible priorities."
+        "Clarify a vague criterion with the owner’s own example, only if needed."
       ],
       "requiredFields": [
         "priority"
@@ -341,73 +334,129 @@
       "claimRefs": [],
       "media": [],
       "input": {
-        "type": "multiple_choice",
-        "allowOther": true,
-        "maxSelections": 3,
-        "options": [
-          {
-            "id": "wider_view",
-            "labels": {
-              "en": "Light a wider area",
-              "zh-CN": "照亮的范围更宽",
-              "es": "Iluminar una zona más amplia"
-            }
-          },
-          {
-            "id": "longer_distance",
-            "labels": {
-              "en": "Light farther ahead",
-              "zh-CN": "照得更远",
-              "es": "Iluminar más lejos"
-            }
-          },
-          {
-            "id": "easy_install",
-            "labels": {
-              "en": "Easier installation",
-              "zh-CN": "更容易安装",
-              "es": "Instalación más sencilla"
-            }
-          },
-          {
-            "id": "durability",
-            "labels": {
-              "en": "Durability",
-              "zh-CN": "耐用性",
-              "es": "Durabilidad"
-            }
-          }
-        ]
-      },
-      "followUpQuestions": {
-        "priority": {
-          "en": "What matters most to you when choosing lights for your vehicle?",
-          "zh-CN": "给车选灯时，你最在意什么？",
-          "es": "¿Qué es lo que más te importa al elegir luces para tu vehículo?"
+        "type": "text",
+        "placeholder": {
+          "en": "Answer in your own words…",
+          "zh-CN": "按自己的实际情况回答…",
+          "es": "Responde con tus propias palabras…"
         }
-      }
+      },
+      "followUpQuestions": {}
+    },
+    {
+      "id": "concept",
+      "label": "Concept",
+      "objective": "Present an untested switchable wide-versus-distance concept without promising performance. Learn whether either mode fits a specific actual task, or not.",
+      "question": "Imagine one added light bar with two settings you can switch between: a wide beam for nearby ground and side areas, and a narrower beam that reaches farther ahead. In what real situation, if any, would you use it?",
+      "questionLocales": {
+        "en": "Imagine one added light bar with two settings you can switch between: a wide beam for nearby ground and side areas, and a narrower beam that reaches farther ahead. In what real situation, if any, would you use it?",
+        "zh-CN": "设想在车上加装一根长条灯，可以切换两种光型：一种照亮近处和两侧较宽的区域，另一种照向更远的前方。你会在什么实际场景使用它？如果不会，也可以直说。",
+        "es": "Imagina una barra de luces adicional con dos modos: uno amplio para el suelo cercano y los lados, y otro más estrecho que ilumina más lejos hacia delante. ¿En qué situación real la usarías, si es que la usarías?"
+      },
+      "clarification": "Imagine one added light bar with two settings you can switch between: a wide beam for nearby ground and side areas, and a narrower beam that reaches farther ahead. In what real situation, if any, would you use it?",
+      "clarificationLocales": {
+        "en": "Imagine one added light bar with two settings you can switch between: a wide beam for nearby ground and side areas, and a narrower beam that reaches farther ahead. In what real situation, if any, would you use it?",
+        "zh-CN": "设想在车上加装一根长条灯，可以切换两种光型：一种照亮近处和两侧较宽的区域，另一种照向更远的前方。你会在什么实际场景使用它？如果不会，也可以直说。",
+        "es": "Imagina una barra de luces adicional con dos modos: uno amplio para el suelo cercano y los lados, y otro más estrecho que ilumina más lejos hacia delante. ¿En qué situación real la usarías, si es que la usarías?"
+      },
+      "sufficiencyCriteria": [
+        "A concrete answer, an explicit no need or no experience, or honest uncertainty is understood in the owner’s own words. Do not invent a problem or force agreement."
+      ],
+      "highValueProbeTargets": [
+        "Ask which setting maps to a real situation, only if an interested response leaves that unclear."
+      ],
+      "requiredFields": [
+        "beam_use"
+      ],
+      "evidenceFields": [
+        "beam_use",
+        "concept_reaction"
+      ],
+      "optional": false,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 0,
+      "measurementStage": "conversation",
+      "claimRefs": [
+        "dual_beam_concept"
+      ],
+      "media": [],
+      "input": {
+        "type": "text",
+        "placeholder": {
+          "en": "Answer in your own words…",
+          "zh-CN": "按自己的实际情况回答…",
+          "es": "Responde con tus propias palabras…"
+        }
+      },
+      "followUpQuestions": {}
+    },
+    {
+      "id": "optics_proof",
+      "label": "Night-test evidence",
+      "objective": "Explain lens in terms of the beam outcome. Do not claim lenses are brighter or better. Capture comparable proof needed and any concern about one mode weakening the other.",
+      "question": "The idea would use lenses to shape those two beams. What would you need to see in a real night test to judge whether both settings work for you?",
+      "questionLocales": {
+        "en": "The idea would use lenses to shape those two beams. What would you need to see in a real night test to judge whether both settings work for you?",
+        "zh-CN": "这个设想会用透镜形成刚才说的两种光型。要判断两种光型是否适合你，你想在真实夜间测试里看到什么？",
+        "es": "La idea usaría lentes para formar esos dos haces. ¿Qué tendrías que ver en una prueba nocturna real para juzgar si ambos modos te sirven?"
+      },
+      "clarification": "The idea would use lenses to shape those two beams. What would you need to see in a real night test to judge whether both settings work for you?",
+      "clarificationLocales": {
+        "en": "The idea would use lenses to shape those two beams. What would you need to see in a real night test to judge whether both settings work for you?",
+        "zh-CN": "这个设想会用透镜形成刚才说的两种光型。要判断两种光型是否适合你，你想在真实夜间测试里看到什么？",
+        "es": "La idea usaría lentes para formar esos dos haces. ¿Qué tendrías que ver en una prueba nocturna real para juzgar si ambos modos te sirven?"
+      },
+      "sufficiencyCriteria": [
+        "A concrete answer, an explicit no need or no experience, or honest uncertainty is understood in the owner’s own words. Do not invent a problem or force agreement."
+      ],
+      "highValueProbeTargets": [
+        "Clarify one test condition or comparison the owner would trust."
+      ],
+      "requiredFields": [
+        "proof_needed"
+      ],
+      "evidenceFields": [
+        "proof_needed"
+      ],
+      "optional": false,
+      "skipWhenCovered": true,
+      "maxImmediateProbes": 1,
+      "measurementStage": "conversation",
+      "claimRefs": [
+        "dual_beam_concept"
+      ],
+      "media": [],
+      "input": {
+        "type": "text",
+        "placeholder": {
+          "en": "Answer in your own words…",
+          "zh-CN": "按自己的实际情况回答…",
+          "es": "Responde con tus propias palabras…"
+        }
+      },
+      "followUpQuestions": {}
     },
     {
       "id": "constraints",
       "label": "Constraints",
-      "objective": "Understand practical obstacles to adding or using a light beyond the vehicle's existing lights. Explain that object plainly; do not suggest obstacles or assume any exist. A report of no obstacle or uncertainty is valid.",
-      "question": "What, if anything, would prevent you from adding an extra light to your vehicle or using it?",
+      "objective": "Find concrete fitment, wiring, control, heat, wind, legal-use or other barriers only when the owner volunteers them; no obstacle is valid.",
+      "question": "For your vehicle, what could make installing or using that two-setting light difficult, if anything?",
       "questionLocales": {
-        "en": "What, if anything, would prevent you from adding an extra light to your vehicle or using it?",
-        "zh-CN": "如果给车加装一盏灯，有什么事情会让你装不了或用不了吗？",
-        "es": "¿Hay algo que te impediría añadir una luz más a tu vehículo o usarla?"
+        "en": "For your vehicle, what could make installing or using that two-setting light difficult, if anything?",
+        "zh-CN": "对你的车来说，安装或使用这款可切换两种光型的灯，有什么可能的困难？如果没有，也可以说没有。",
+        "es": "En tu vehículo, ¿qué podría dificultar instalar o usar esa luz de dos modos, si hubiera algo?"
       },
-      "clarification": "Thinking of a light added to the lights already on your vehicle, is there anything that would stop you from installing or using it?",
+      "clarification": "For your vehicle, what could make installing or using that two-setting light difficult, if anything?",
       "clarificationLocales": {
-        "en": "Thinking of a light added to the lights already on your vehicle, is there anything that would stop you from installing or using it?",
-        "zh-CN": "这里说的是在车上现有的灯之外再加一盏灯，有什么会让你无法安装或使用吗？",
-        "es": "Me refiero a una luz añadida a las que ya tiene tu vehículo: ¿hay algo que te impediría instalarla o usarla?"
+        "en": "For your vehicle, what could make installing or using that two-setting light difficult, if anything?",
+        "zh-CN": "对你的车来说，安装或使用这款可切换两种光型的灯，有什么可能的困难？如果没有，也可以说没有。",
+        "es": "En tu vehículo, ¿qué podría dificultar instalar o usar esa luz de dos modos, si hubiera algo?"
       },
       "sufficiencyCriteria": [
-        "A practical obstacle, explicit absence of obstacles, or explicit uncertainty is recorded without inventing a reason."
+        "A concrete answer, an explicit no need or no experience, or honest uncertainty is understood in the owner’s own words. Do not invent a problem or force agreement."
       ],
       "highValueProbeTargets": [
-        "A concrete barrier that changes product requirements"
+        "Clarify one owner-mentioned obstacle that could affect use."
       ],
       "requiredFields": [
         "constraint"
@@ -424,190 +473,78 @@
       "input": {
         "type": "text",
         "placeholder": {
-          "en": "Write what would stop you, if anything…",
-          "zh-CN": "按实际情况说，没有障碍也可以…",
-          "es": "Cuenta qué te lo impediría, si hay algo…"
+          "en": "Answer in your own words…",
+          "zh-CN": "按自己的实际情况回答…",
+          "es": "Responde con tus propias palabras…"
         }
       },
-      "followUpQuestions": {
-        "constraint": {
-          "en": "Thinking of a light added to the lights already on your vehicle, is there anything that would stop you from installing or using it?",
-          "zh-CN": "这里说的是在车上现有的灯之外再加一盏灯，有什么会让你无法安装或使用吗？",
-          "es": "Me refiero a una luz añadida a las que ya tiene tu vehículo: ¿hay algo que te impediría instalarla o usarla?"
-        }
-      }
-    },
-    {
-      "id": "concept",
-      "label": "Concept",
-      "objective": "Introduce in plain text a hypothetical extra vehicle light offered in different sizes and capture a spontaneous reaction. Extra means in addition to existing vehicle lights. No image or performance information is provided: do not imply the participant has seen it, ask about appearance, or invent features. Uncertainty and insufficient information are valid reactions.",
-      "question": "Imagine an extra light for your vehicle, offered in different sizes. What do you think of that idea?",
-      "questionLocales": {
-        "en": "Imagine an extra light for your vehicle, offered in different sizes. What do you think of that idea?",
-        "zh-CN": "设想给车加装一盏灯，有不同尺寸可选。你觉得这个想法怎么样？",
-        "es": "Imagina una luz adicional para tu vehículo, disponible en varios tamaños. ¿Qué te parece esa idea?"
-      },
-      "clarification": "The idea is a light added to your vehicle's existing lights, with different sizes to choose from. What is your first reaction?",
-      "clarificationLocales": {
-        "en": "The idea is a light added to your vehicle's existing lights, with different sizes to choose from. What is your first reaction?",
-        "zh-CN": "这个想法是在车上现有的灯之外再加一盏灯，有不同尺寸可选。你听到后的第一反应是什么？",
-        "es": "La idea es añadir una luz a las que ya tiene tu vehículo, con distintos tamaños para elegir. ¿Cuál es tu primera reacción?"
-      },
-      "sufficiencyCriteria": [
-        "A spontaneous reaction is recorded, including no interest, uncertainty, or insufficient information; do not require a benefit or concern."
-      ],
-      "highValueProbeTargets": [
-        "A specific concern that changes the concept"
-      ],
-      "requiredFields": [
-        "concept_reaction"
-      ],
-      "evidenceFields": [
-        "concept_reaction"
-      ],
-      "optional": false,
-      "skipWhenCovered": true,
-      "maxImmediateProbes": 1,
-      "measurementStage": "conversation",
-      "claimRefs": [
-        "concept_sizes"
-      ],
-      "media": [],
-      "input": {
-        "type": "text",
-        "placeholder": {
-          "en": "Write your first reaction…",
-          "zh-CN": "写下你的第一反应…",
-          "es": "Escribe tu primera reacción…"
-        }
-      },
-      "followUpQuestions": {
-        "concept_reaction": {
-          "en": "What do you think of the idea of an extra vehicle light with different sizes to choose from?",
-          "zh-CN": "对于这种有不同尺寸可选的加装车灯，你有什么想法？",
-          "es": "¿Qué te parece la idea de una luz adicional para el vehículo con varios tamaños para elegir?"
-        }
-      }
+      "followUpQuestions": {}
     },
     {
       "id": "price",
       "label": "Price",
-      "objective": "Record a considered synthetic tier, an explicit decision to consider none of the tiers, or explicit uncertainty. Preserve the stated reason without inferring that rejecting these tiers always means no product need.",
-      "question": "For this hypothetical extra vehicle light, the sample sizes and prices are 7–8 inches at US$129.99, 19–22 inches at US$279.99, and 48–52 inches at US$499.99. Which, if any, would you consider?",
+      "objective": "Exploratory cost threshold only. No invented size, price tier or purchase intent; explicit no interest and uncertainty are valid.",
+      "question": "No size or price has been set for this idea. Including installation, roughly what total cost would you consider, if you would consider it at all?",
       "questionLocales": {
-        "en": "For this hypothetical extra vehicle light, the sample sizes and prices are 7–8 inches at US$129.99, 19–22 inches at US$279.99, and 48–52 inches at US$499.99. Which, if any, would you consider?",
-        "zh-CN": "这款假设的加装车灯有三组示例尺寸和价格：7–8 英寸为 129.99 美元，19–22 英寸为 279.99 美元，48–52 英寸为 499.99 美元。你会考虑其中哪一组吗？",
-        "es": "Para esta luz adicional hipotética, los tamaños y precios de ejemplo son 7–8 pulgadas por US$129.99, 19–22 pulgadas por US$279.99 y 48–52 pulgadas por US$499.99. ¿Considerarías alguna de estas opciones?"
+        "en": "No size or price has been set for this idea. Including installation, roughly what total cost would you consider, if you would consider it at all?",
+        "zh-CN": "这个设想还没有确定尺寸和价格。算上安装，如果你会考虑它，大约什么总价在你的考虑范围内？不考虑也可以直说。",
+        "es": "Esta idea aún no tiene tamaño ni precio definidos. Incluida la instalación, ¿qué coste total aproximado considerarías, si la considerarías?"
       },
-      "clarification": "These are example size and price combinations for the hypothetical extra light. Is there one you would consider?",
+      "clarification": "No size or price has been set for this idea. Including installation, roughly what total cost would you consider, if you would consider it at all?",
       "clarificationLocales": {
-        "en": "These are example size and price combinations for the hypothetical extra light. Is there one you would consider?",
-        "zh-CN": "这里问的是刚才列出的加装车灯尺寸和价格组合，有哪一组是你会考虑的吗？",
-        "es": "Son combinaciones de tamaño y precio de ejemplo para la luz adicional hipotética. ¿Hay alguna que considerarías?"
+        "en": "No size or price has been set for this idea. Including installation, roughly what total cost would you consider, if you would consider it at all?",
+        "zh-CN": "这个设想还没有确定尺寸和价格。算上安装，如果你会考虑它，大约什么总价在你的考虑范围内？不考虑也可以直说。",
+        "es": "Esta idea aún no tiene tamaño ni precio definidos. Incluida la instalación, ¿qué coste total aproximado considerarías, si la considerarías?"
       },
       "sufficiencyCriteria": [
-        "Record the declared option ID matching the explicit answer: small_129, medium_279, large_499, none, or not_sure.",
-        "Explicitly considering no listed tier is none; explicitly being undecided is not_sure. Neither requires choosing a price tier. A missing, skipped, refused, or unrelated answer is not none or not_sure.",
-        "Keep any stated reason in price_reason; do not invent no purchase need, a budget problem, or a selected tier."
+        "A concrete answer, an explicit no need or no experience, or honest uncertainty is understood in the owner’s own words. Do not invent a problem or force agreement."
       ],
       "highValueProbeTargets": [
-        "One reason for the participant's actual answer, whether a considered option, none, or uncertainty; do not assume a purchase need or cost objection."
+        "If a number is given, clarify whether it includes installation only when necessary."
       ],
       "requiredFields": [
         "price_fit"
       ],
       "evidenceFields": [
-        "price_fit",
-        "price_reason"
+        "price_fit"
       ],
       "optional": true,
       "skipWhenCovered": true,
       "maxImmediateProbes": 1,
       "measurementStage": "post_intervention",
-      "claimRefs": [
-        "concept_sizes"
-      ],
+      "claimRefs": [],
       "media": [],
       "input": {
-        "type": "single_choice",
-        "allowOther": true,
-        "options": [
-          {
-            "id": "small_129",
-            "labels": {
-              "en": "7–8 in · $129.99",
-              "zh-CN": "7–8 英寸 · 129.99 美元",
-              "es": "7–8 pulg · $129.99"
-            }
-          },
-          {
-            "id": "medium_279",
-            "labels": {
-              "en": "19–22 in · $279.99",
-              "zh-CN": "19–22 英寸 · 279.99 美元",
-              "es": "19–22 pulg · $279.99"
-            }
-          },
-          {
-            "id": "large_499",
-            "labels": {
-              "en": "48–52 in · $499.99",
-              "zh-CN": "48–52 英寸 · 499.99 美元",
-              "es": "48–52 pulg · $499.99"
-            }
-          },
-          {
-            "id": "none",
-            "labels": {
-              "en": "None of these",
-              "zh-CN": "以上都不选",
-              "es": "Ninguna de estas opciones"
-            }
-          },
-          {
-            "id": "not_sure",
-            "labels": {
-              "en": "Not sure yet",
-              "zh-CN": "暂不确定",
-              "es": "Aún no lo sé"
-            }
-          }
-        ]
-      },
-      "followUpQuestions": {
-        "price_fit": {
-          "en": "For this hypothetical extra vehicle light, the sample sizes and prices are 7–8 inches at US$129.99, 19–22 inches at US$279.99, and 48–52 inches at US$499.99. Which, if any, would you consider?",
-          "zh-CN": "这款假设的加装车灯有三组示例尺寸和价格：7–8 英寸为 129.99 美元，19–22 英寸为 279.99 美元，48–52 英寸为 499.99 美元。你会考虑其中哪一组吗？",
-          "es": "Para esta luz adicional hipotética, los tamaños y precios de ejemplo son 7–8 pulgadas por US$129.99, 19–22 pulgadas por US$279.99 y 48–52 pulgadas por US$499.99. ¿Considerarías alguna de estas opciones?"
-        },
-        "price_reason": {
-          "en": "What led you to that answer about the listed sizes and prices?",
-          "zh-CN": "对于刚才列出的尺寸和价格，你这样回答的原因是什么？",
-          "es": "¿Qué te llevó a responder así sobre los tamaños y precios indicados?"
+        "type": "text",
+        "placeholder": {
+          "en": "Answer in your own words…",
+          "zh-CN": "按自己的实际情况回答…",
+          "es": "Responde con tus propias palabras…"
         }
-      }
+      },
+      "followUpQuestions": {}
     },
     {
       "id": "final_change",
       "label": "Final change",
-      "objective": "Understand whether the participant wants anything changed about the hypothetical extra vehicle light just discussed, and their first change if any. Keep the referent explicit. No change, uncertainty, and insufficient information are valid; never force a criticism or new detail.",
-      "question": "What, if anything, would you change first about the extra vehicle light we just discussed?",
+      "objective": "Record one owner-generated change after evaluating use, proof, fit and exploratory cost; no change is valid.",
+      "question": "What one change, if any, would make this two-setting light idea more useful for your own vehicle?",
       "questionLocales": {
-        "en": "What, if anything, would you change first about the extra vehicle light we just discussed?",
-        "zh-CN": "对于刚才讨论的加装车灯，有没有你最想先改的地方？",
-        "es": "¿Qué cambiarías primero, si cambiarías algo, de la luz adicional para el vehículo que acabamos de comentar?"
+        "en": "What one change, if any, would make this two-setting light idea more useful for your own vehicle?",
+        "zh-CN": "如果要让这款可切换两种光型的灯更适合你的车，你最希望改哪一点？没有想改的也可以说。",
+        "es": "¿Qué cambiarías, si cambiarías algo, para que esta idea de luz de dos modos te sirva más en tu vehículo?"
       },
-      "clarification": "Thinking only of the extra vehicle light we discussed, is there anything you would want changed?",
+      "clarification": "What one change, if any, would make this two-setting light idea more useful for your own vehicle?",
       "clarificationLocales": {
-        "en": "Thinking only of the extra vehicle light we discussed, is there anything you would want changed?",
-        "zh-CN": "我是问刚才讨论的那款加装车灯，有没有你希望改动的地方？",
-        "es": "Pensando en la luz adicional que comentamos, ¿hay algo que quisieras cambiar?"
+        "en": "What one change, if any, would make this two-setting light idea more useful for your own vehicle?",
+        "zh-CN": "如果要让这款可切换两种光型的灯更适合你的车，你最希望改哪一点？没有想改的也可以说。",
+        "es": "¿Qué cambiarías, si cambiarías algo, para que esta idea de luz de dos modos te sirva más en tu vehículo?"
       },
       "sufficiencyCriteria": [
-        "Record a desired first change, no desired change, uncertainty, or insufficient information. Do not require an invented improvement."
+        "A concrete answer, an explicit no need or no experience, or honest uncertainty is understood in the owner’s own words. Do not invent a problem or force agreement."
       ],
       "highValueProbeTargets": [
-        "Clarify the object of one proposed change only if unclear; do not demand alternatives or a ranking."
+        "Clarify one proposed change only when its object is unclear."
       ],
       "requiredFields": [
         "final_change"
@@ -624,18 +561,12 @@
       "input": {
         "type": "text",
         "placeholder": {
-          "en": "Share a change you want, if any…",
-          "zh-CN": "说说有没有想改的地方…",
-          "es": "Escribe qué cambiarías, si cambiarías algo…"
+          "en": "Answer in your own words…",
+          "zh-CN": "按自己的实际情况回答…",
+          "es": "Responde con tus propias palabras…"
         }
       },
-      "followUpQuestions": {
-        "final_change": {
-          "en": "What, if anything, would you change first about the extra vehicle light we just discussed?",
-          "zh-CN": "对于刚才讨论的加装车灯，有没有你最想先改的地方？",
-          "es": "¿Qué cambiarías primero, si cambiarías algo, de la luz adicional para el vehículo que acabamos de comentar?"
-        }
-      }
+      "followUpQuestions": {}
     }
   ],
   "completion": {
@@ -644,21 +575,22 @@
       "recent_experience",
       "priorities",
       "concept",
+      "optics_proof",
       "final_change"
     ],
     "messages": {
-      "en": "Your synthetic interview record is complete. No reward or follow-up is attached to this fixture.",
-      "zh-CN": "这次模拟访谈已经完成，不会触发奖励或后续联系。",
-      "es": "Tu registro sintético está completo. Esta prueba no incluye recompensa ni seguimiento."
+      "en": "Thank you for sharing your experience. Your interview is saved. Keep your reference code; this page does not issue a reward automatically.",
+      "zh-CN": "谢谢你分享真实经历。访谈已保存，请保留参与编号；本页面不会自动发放奖励。",
+      "es": "Gracias por compartir tu experiencia. La entrevista está guardada. Conserva tu código de referencia; esta página no entrega recompensas automáticamente."
     }
   },
   "analysis": {
     "outputs": [
-      "evidence_packet",
       "individual_summary",
       "theme_matrix",
-      "decision_report"
+      "decision_report",
+      "evidence_packet"
     ],
-    "primaryDecisionQuestion": "Which use situations and visibility problems deserve further real-user study?"
+    "primaryDecisionQuestion": "Do five actual vehicle owners have use cases and credible evidence requirements for a switchable lens-shaped wide and distance light-bar concept?"
   }
 }
