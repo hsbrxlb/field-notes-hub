@@ -2,7 +2,7 @@ import { afterAll, expect, it } from "vitest";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { randomUUID } from "node:crypto";
 import { createModeratorState } from "@/lib/moderator-state";
-import { getStudyConfig } from "@/lib/study-config";
+import { getLegacyStudyConfig as getStudyConfig } from "@/lib/study-config";
 import { respondToConversation } from "@/lib/conversation-service";
 import { createSession, exportSession, getPool, pauseSession } from "@/lib/storage";
 

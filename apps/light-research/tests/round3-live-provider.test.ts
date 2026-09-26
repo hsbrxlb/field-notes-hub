@@ -1,6 +1,6 @@
 import { afterAll, describe, expect, it } from "vitest";
 import { writeFileSync } from "node:fs";
-import { getStudyConfig } from "@/lib/study-config";
+import { getLegacyStudyConfig as getStudyConfig } from "@/lib/study-config";
 import { studyManifestSchema } from "@/lib/study-schema";
 import { evaluateTurn } from "@/lib/moderator-provider";
 import { applyAssessment, createModeratorState } from "@/lib/moderator-state";

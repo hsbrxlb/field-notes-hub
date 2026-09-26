@@ -1,6 +1,6 @@
 import { afterAll, describe, expect, it } from 'vitest';
 import { mkdirSync, writeFileSync } from 'node:fs';
-import { getStudyConfig } from '@/lib/study-config';
+import { getLegacyStudyConfig as getStudyConfig } from '@/lib/study-config';
 import { evaluateTurn, type ProviderTurnInput } from '@/lib/moderator-provider';
 import { applyAssessment, createModeratorState, acceptPlannedReply, type AppliedTurn } from '@/lib/moderator-state';
 import { resolvePlannedReply } from '@/lib/moderator-dialogue';
