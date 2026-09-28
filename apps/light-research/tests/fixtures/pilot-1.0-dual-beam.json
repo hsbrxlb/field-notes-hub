@@ -2,7 +2,7 @@
   "schemaVersion": "2.0",
   "study": {
     "id": "worklight-regression",
-    "version": "pilot-1.1-dual-beam",
+    "version": "pilot-1.0-dual-beam",
     "title": "OEDRO AI Research for Drivers",
     "status": "review_ready",
     "readiness": "technical_prototype",
@@ -101,7 +101,7 @@
     "providerDisclosure": "Answers are processed by a configured third-party AI provider for interview understanding, controlled follow-up, and evidence extraction."
   },
   "moderation": {
-    "policyVersion": "controlled-autonomy-3.8-dual-beam-pilot",
+    "policyVersion": "controlled-autonomy-3.7-dual-beam-pilot",
     "maxTotalProbes": 6,
     "checkpointEveryAnchors": 3,
     "maxCheckpointQuestions": 2,
@@ -113,7 +113,7 @@
   "model": {
     "provider": "deepseek",
     "model": "deepseek-v4-flash",
-    "promptVersion": "interviewer-3.9-dual-beam-pilot",
+    "promptVersion": "interviewer-3.8-dual-beam-pilot",
     "timeoutMs": 25000,
     "maxRetries": 1
   },
@@ -157,13 +157,7 @@
     },
     {
       "id": "user_action",
-      "description": "What the owner actually did when visibility was poor on the recalled trip, including doing nothing. Do not invent a response when they saw clearly or cannot recall a trip.",
-      "type": "text",
-      "decisionRelevance": "critical"
-    },
-    {
-      "id": "current_lights",
-      "description": "Vehicle lights actually used during the recalled trip or task, including factory lights only, added lights, no lights, or an honest inability to remember. Do not infer equipment from vehicle model or desired lighting.",
+      "description": "What the participant did in response",
       "type": "text",
       "decisionRelevance": "important"
     },
@@ -206,12 +200,6 @@
     {
       "id": "beam_use",
       "description": "The specific real situation, if any, in which the owner would use either proposed beam setting. Keep wide and forward uses distinct.",
-      "type": "text",
-      "decisionRelevance": "critical"
-    },
-    {
-      "id": "switch_use",
-      "description": "When the owner would switch between the nearby-wide and farther-forward settings, or that they would use only one or neither. Capture the owner's actual task, not a hypothetical benefit supplied by the interviewer.",
       "type": "text",
       "decisionRelevance": "critical"
     },
@@ -270,7 +258,7 @@
     {
       "id": "recent_experience",
       "label": "Recent experience",
-      "objective": "Record one concrete visibility outcome during the same event, including no difficulty. If the owner reports a real difficulty, learn what they did in response when that action is not already stated. Do not invent a problem or response.",
+      "objective": "Record one concrete visibility outcome during the same event, including no difficulty. Clarify road or task setting only when it changes the meaning.",
       "question": "During that same trip or task, was anything hard to see? If so, what?",
       "questionLocales": {
         "en": "During that same trip or task, was anything hard to see? If so, what?",
@@ -287,65 +275,18 @@
         "A concrete answer, an explicit no need or no experience, or honest uncertainty is understood in the owner’s own words. Do not invent a problem or force agreement."
       ],
       "highValueProbeTargets": [
-        "If a real visibility problem is understood but the response is missing, ask what the owner did at that moment. Otherwise clarify one unclear object or area without assuming a problem."
+        "Clarify one object, area or task that was hard to see, without assuming a problem."
       ],
       "requiredFields": [
         "visibility_problem"
       ],
       "evidenceFields": [
-        "visibility_problem",
-        "user_action"
+        "visibility_problem"
       ],
       "optional": false,
       "skipWhenCovered": true,
       "maxImmediateProbes": 1,
       "measurementStage": "conversation",
-      "claimRefs": [],
-      "media": [],
-      "input": {
-        "type": "text",
-        "placeholder": {
-          "en": "Answer in your own words…",
-          "zh-CN": "按自己的实际情况回答…",
-          "es": "Responde con tus propias palabras…"
-        }
-      },
-      "followUpQuestions": {
-        "user_action": {
-          "en": "What did you do when you could not see that clearly?",
-          "zh-CN": "当时看不清时，你做了什么？",
-          "es": "¿Qué hiciste cuando no podías ver bien eso?"
-        }
-      }
-    },
-    {
-      "id": "current_lights",
-      "label": "Lights in use",
-      "objective": "Establish which vehicle lights the owner actually used during the recalled night trip or task, before discussing the new product. Factory lights only, no lights and uncertainty are valid.",
-      "question": "During that trip or task, which lights on your vehicle were you using?",
-      "questionLocales": {
-        "en": "During that trip or task, which lights on your vehicle were you using?",
-        "zh-CN": "那次用车时，你用了车上的哪些灯？",
-        "es": "Durante ese viaje o tarea, ¿qué luces de tu vehículo estabas usando?"
-      },
-      "clarification": "During that trip or task, which lights on your vehicle were you using?",
-      "clarificationLocales": {
-        "en": "During that trip or task, which lights on your vehicle were you using?",
-        "zh-CN": "那次用车时，你用了车上的哪些灯？",
-        "es": "Durante ese viaje o tarea, ¿qué luces de tu vehículo estabas usando?"
-      },
-      "sufficiencyCriteria": [
-        "Record the lights actually used, or an explicit no lights, no recalled trip, or uncertainty. Do not infer equipment from a vehicle model."
-      ],
-      "highValueProbeTargets": [
-        "Clarify whether a mentioned light was actually used during that trip only if the answer is ambiguous."
-      ],
-      "requiredFields": ["current_lights"],
-      "evidenceFields": ["current_lights"],
-      "optional": false,
-      "skipWhenCovered": true,
-      "maxImmediateProbes": 1,
-      "measurementStage": "baseline",
       "claimRefs": [],
       "media": [],
       "input": {
@@ -405,7 +346,7 @@
     {
       "id": "concept",
       "label": "Concept",
-      "objective": "Present an untested switchable wide-versus-distance concept without promising performance. Learn whether either mode fits a specific actual task, and, only if useful to the owner, when they would switch modes or use only one.",
+      "objective": "Present an untested switchable wide-versus-distance concept without promising performance. Learn whether either mode fits a specific actual task, or not.",
       "question": "Imagine one added light bar with two settings you can switch between: a wide beam for nearby ground and side areas, and a narrower beam that reaches farther ahead. In what real situation, if any, would you use it?",
       "questionLocales": {
         "en": "Imagine one added light bar with two settings you can switch between: a wide beam for nearby ground and side areas, and a narrower beam that reaches farther ahead. In what real situation, if any, would you use it?",
@@ -422,19 +363,18 @@
         "A concrete answer, an explicit no need or no experience, or honest uncertainty is understood in the owner’s own words. Do not invent a problem or force agreement."
       ],
       "highValueProbeTargets": [
-        "After an interested but vague response, ask when the owner would switch from the nearby-wide setting to the farther-forward setting, if at all. Accept one-mode use or no need."
+        "Ask which setting maps to a real situation, only if an interested response leaves that unclear."
       ],
       "requiredFields": [
         "beam_use"
       ],
       "evidenceFields": [
         "beam_use",
-        "concept_reaction",
-        "switch_use"
+        "concept_reaction"
       ],
       "optional": false,
       "skipWhenCovered": true,
-      "maxImmediateProbes": 1,
+      "maxImmediateProbes": 0,
       "measurementStage": "conversation",
       "claimRefs": [
         "dual_beam_concept"
@@ -448,13 +388,7 @@
           "es": "Responde con tus propias palabras…"
         }
       },
-      "followUpQuestions": {
-        "switch_use": {
-          "en": "When would you switch from the wide setting to the farther-reaching one, if at all?",
-          "zh-CN": "什么情况下你会从近处宽照明切换到照向远处的光型？如果不会切换，也可以说。",
-          "es": "¿Cuándo cambiarías del modo amplio al que ilumina más lejos, si es que lo harías?"
-        }
-      }
+      "followUpQuestions": {}
     },
     {
       "id": "optics_proof",
@@ -575,7 +509,6 @@
         "price_fit"
       ],
       "optional": true,
-      "allowRefusal": true,
       "skipWhenCovered": true,
       "maxImmediateProbes": 1,
       "measurementStage": "post_intervention",
@@ -640,7 +573,6 @@
     "requiredAnchors": [
       "use_context",
       "recent_experience",
-      "current_lights",
       "priorities",
       "concept",
       "optics_proof",

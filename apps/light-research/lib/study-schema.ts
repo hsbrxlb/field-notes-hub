@@ -128,6 +128,7 @@ export const studyManifestSchema = z.object({
     requiredFields: z.array(idSchema),
     evidenceFields: z.array(idSchema).min(1).optional(),
     optional: z.boolean(),
+    allowRefusal: z.boolean().optional(),
     skipWhenCovered: z.boolean(),
     maxImmediateProbes: z.number().int().min(0).max(3),
     measurementStage: z.enum(["baseline", "conversation", "post_intervention"]),

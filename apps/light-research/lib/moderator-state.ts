@@ -18,6 +18,14 @@ const stayActions = new Set<ServerAction>(["probe_now", "immediate_clarify", "re
 
 const unique = <T>(items: T[]) => [...new Set(items)];
 const compact = (value: string) => value.normalize("NFKC").trim().replace(/\s+/g, " ");
+const noVisibilityProblem = (value: unknown) => {
+  const text = compact(String(value ?? ""));
+  return /\b(?:nothing (?:was )?hard to see|no (?:visibility )?(?:issue|problem|difficulty)|could see (?:everything|fine|clearly)|everything was (?:visible|clear)|did not have trouble seeing|can'?t remember|not sure)\b|^(?:no|没有|没什么|ninguno)[,.。]?\s*$|(?:没有(?:什么|东西)?看不清|没什么看不清|看得(?:很)?清楚|都能看清|没有视野问题|不记得|不确定)|(?:nada (?:me )?(?:costaba|fue difícil) ver|no (?:tuve|había) problemas? (?:para ver|de visibilidad)|veía (?:todo )?bien|no recuerdo)/iu.test(text);
+};
+const noSwitchUse = (value: unknown) => {
+  const text = compact(String(value ?? ""));
+  return /\b(?:would(?:n'?t| not) use|no use for|not interested|only (?:the )?(?:wide|far|near|distance)|just (?:the )?(?:wide|far|near|distance)|no switch|not sure)\b|(?:不会用|不需要|没兴趣|只用(?:近|远|宽)|不会切换|不确定)|(?:no (?:lo )?usar[ií]a|no me interesa|solo (?:el modo|la luz)|no cambiar[ií]a)/iu.test(text);
+};
 
 export const createModeratorState = (study: StudyManifest): ModeratorState => {
   const first = study.anchors[0];
@@ -31,6 +39,7 @@ export const createModeratorState = (study: StudyManifest): ModeratorState => {
     activeMove: { kind: "anchor", anchorId: first.id },
     activeLanguage: study.study.languagePolicy.entryLanguage,
     completedAnchors: [],
+    declinedAnchors: [],
     facts: {},
     pendingGaps: [],
     contradictions: [],
@@ -236,7 +245,7 @@ const localizedStop = (language: string) => {
 };
 
 const topPendingGap = (state: ModeratorState, anchorId?: string, excludeAnchorId?: string, stage: "checkpoint_gap" | "final_audit" = "checkpoint_gap") => state.pendingGaps
-  .filter((gap) => gap.status === "pending" && gap.attempts < 2 && (stage === "final_audit" || !gap.notBeforeStage) && gap.answerability >= 0.45 && gap.priority !== "nice_to_have" && (!anchorId || gap.anchorId === anchorId) && (!excludeAnchorId || gap.anchorId !== excludeAnchorId))
+  .filter((gap) => gap.status === "pending" && !(state.declinedAnchors ?? []).includes(gap.anchorId) && gap.attempts < 2 && (stage === "final_audit" || !gap.notBeforeStage) && gap.answerability >= 0.45 && gap.priority !== "nice_to_have" && (!anchorId || gap.anchorId === anchorId) && (!excludeAnchorId || gap.anchorId !== excludeAnchorId))
   .sort((left, right) => right.score - left.score)[0] ?? null;
 
 // One authority for the active wording target, shared by validation and the
@@ -383,11 +392,13 @@ const planAssessment = ({
     }
   }
   const eligibleGapAnchors = new Set([...previous.completedAnchors, anchor.id]);
-  const anchorEligiblePoints = assessment.unresolvedPoints.filter((point) => eligibleGapAnchors.has(point.anchorId));
+  const anchorEligiblePoints = assessment.unresolvedPoints.filter((point) => eligibleGapAnchors.has(point.anchorId) && !(state.declinedAnchors ?? []).includes(point.anchorId));
   if (anchorEligiblePoints.length !== assessment.unresolvedPoints.length) {
     state.riskFlags = unique([...state.riskFlags, "rejected_future_topic_gap"]);
   }
-  const fieldEligiblePoints = anchorEligiblePoints.filter((point) => anchorOwnsGapField(study, point.anchorId, point.fieldId));
+  const fieldEligiblePoints = anchorEligiblePoints.filter((point) => anchorOwnsGapField(study, point.anchorId, point.fieldId)
+    && !(point.anchorId === "recent_experience" && point.fieldId === "user_action" && hasFact(state, "visibility_problem") && noVisibilityProblem(state.facts.visibility_problem.value))
+    && !(point.anchorId === "concept" && point.fieldId === "switch_use" && hasFact(state, "beam_use") && (noSwitchUse(state.facts.beam_use.value) || noSwitchUse(state.facts.concept_reaction?.value))));
   if (fieldEligiblePoints.length !== anchorEligiblePoints.length) {
     state.riskFlags = unique([...state.riskFlags, "rejected_mismatched_gap_field"]);
   }
@@ -395,6 +406,25 @@ const planAssessment = ({
   if (missingOrContradictoryPoints.length !== fieldEligiblePoints.length) {
     state.riskFlags = unique([...state.riskFlags, "rejected_known_field_gap"]);
   }
+  // The two core research decisions must not depend on the model remembering
+  // to request a probe. A clear negative/unknown answer never triggers one.
+  const needsAction = anchor.id === "recent_experience" && anchorOwnsGapField(study, anchor.id, "user_action") && state.activeMove?.kind === "anchor"
+    && (state.probeCounts[anchor.id] ?? 0) === 0 && hasFact(state, "visibility_problem")
+    && !hasFact(state, "user_action") && !noVisibilityProblem(state.facts.visibility_problem.value);
+  const needsSwitch = anchor.id === "concept" && anchorOwnsGapField(study, anchor.id, "switch_use") && state.activeMove?.kind === "anchor"
+    && (state.probeCounts[anchor.id] ?? 0) === 0 && hasFact(state, "beam_use")
+    && !hasFact(state, "switch_use") && !noSwitchUse(state.facts.beam_use.value)
+    && !noSwitchUse(state.facts.concept_reaction?.value);
+  const focusedField = needsAction ? "user_action" : needsSwitch ? "switch_use" : null;
+  if (focusedField) for (const point of missingOrContradictoryPoints) {
+    if (point.anchorId === anchor.id && point.fieldId === focusedField) point.priority = "critical";
+  }
+  const focusedProbe = focusedField && !missingOrContradictoryPoints.some((point) => point.anchorId === anchor.id && point.fieldId === focusedField)
+    ? { anchorId: anchor.id, fieldId: focusedField, question: anchor.followUpQuestions?.[focusedField]?.en ?? anchor.clarification,
+        reason: "A core decision fact is missing from an otherwise understood answer.", priority: "critical" as const,
+        uncertainty: 0.8, answerability: 0.9, evidenceTurnIds: [turnId] }
+    : null;
+  if (focusedProbe) missingOrContradictoryPoints.push(focusedProbe);
   const normalizeLaterAnswerability = participantExpectsLaterAnswer(rawText);
   const eligibleUnresolvedPoints = missingOrContradictoryPoints.map((point) => normalizeLaterAnswerability && point.anchorId === anchor.id && point.answerability < 0.55
     ? { ...point, answerability: 0.65 }
@@ -411,10 +441,17 @@ const planAssessment = ({
     return { state, serverAction: "stop", prompt: null, displayedReply: localizedStop(state.activeLanguage), acceptedUpdates, rejectedUpdates, actionReason: assessment.actionReason };
   }
 
-  // Skipping is disabled in this study, including typed requests and legacy
-  // callers. Refusing an answer leaves the question open without inventing facts.
-  // Participants may still explicitly stop at any time.
-  if (forceAdvance || assessment.participantIntent === "skip" || assessment.participantIntent === "refusal") {
+  // Only a topic that explicitly permits refusal can be left unanswered.
+  // Do not create a price fact or reopen a declined price at a later checkpoint.
+  const acceptedRefusal = anchor.allowRefusal === true && anchor.optional
+    && (assessment.participantIntent === "skip" || assessment.participantIntent === "refusal");
+  if (acceptedRefusal) {
+    state.declinedAnchors = unique([...(state.declinedAnchors ?? []), anchor.id]);
+    for (const gap of state.pendingGaps) {
+      if (gap.anchorId === anchor.id && (gap.status === "pending" || gap.status === "asked")) gap.status = "dropped";
+    }
+  }
+  if (forceAdvance || ((assessment.participantIntent === "skip" || assessment.participantIntent === "refusal") && !acceptedRefusal)) {
     state.activePrompt = previous.activePrompt;
     return { state, serverAction: "repair_conversation", prompt: state.activePrompt, displayedReply: null, acceptedUpdates, rejectedUpdates, actionReason: "Skipping is disabled. Keep this question open; explain that the participant may answer it or stop the interview, without pressure." };
   }
@@ -440,7 +477,7 @@ const planAssessment = ({
   const lacksUsableAnswer = !(currentMove.kind === "anchor" ? factsCoverAnchor : gapCovered)
     && !normalizeLaterAnswerability
     && (assessment.topicCoverage.status === "missing" || (!canAskFocusedProbe && (currentMove.kind !== "anchor" || !modelCoversAnchor)));
-  if (cannotInterpret || needsExplanation || unresolvedRepair || lacksUsableAnswer) {
+  if (!acceptedRefusal && (cannotInterpret || needsExplanation || unresolvedRepair || lacksUsableAnswer)) {
     const serverAction = cannotInterpret ? "soft_redirect" : unresolvedRepair ? "repair_conversation" : "immediate_clarify";
     state.repairCount += 1;
     if (activeGap) { activeGap.status = "asked"; delete activeGap.resolvedTurnId; }
@@ -450,8 +487,8 @@ const planAssessment = ({
   if (currentMove.kind !== "anchor") {
     if (activeGap) {
       const deferUntilEnd = currentMove.kind === "checkpoint_gap" && normalizeLaterAnswerability && activeGap.attempts < 2;
-      activeGap.status = gapCovered ? "resolved" : deferUntilEnd ? "pending" : "unresolved";
-      if (deferUntilEnd) activeGap.notBeforeStage = "final_audit";
+      activeGap.status = acceptedRefusal ? "dropped" : gapCovered ? "resolved" : deferUntilEnd ? "pending" : "unresolved";
+      if (!acceptedRefusal && deferUntilEnd) activeGap.notBeforeStage = "final_audit";
       else activeGap.resolvedTurnId = turnId;
     }
     if (currentMove.kind === "checkpoint_gap" && currentMove.resumeAnchorId) {
@@ -479,6 +516,9 @@ const planAssessment = ({
   else if (assessment.participantIntent === "asks_clarification") serverAction = "immediate_clarify";
   else if (assessment.participantIntent === "already_answered" || assessment.participantIntent === "frustration") serverAction = "repair_conversation";
   else serverAction = assessment.nextAction;
+
+  if (acceptedRefusal) serverAction = "advance";
+  else if (focusedField && ["answer", "partial_answer", "correction"].includes(assessment.participantIntent)) serverAction = "probe_now";
 
   const probeBudgetAvailable = (state.probeCounts[anchor.id] ?? 0) < anchor.maxImmediateProbes && state.totalProbeCount < study.moderation.maxTotalProbes;
   if (serverAction === "probe_now" && !currentUnresolvedPoints.length) {
@@ -517,7 +557,7 @@ const planAssessment = ({
 
   state.completedAnchors = unique([...state.completedAnchors, anchor.id]);
   state.anchorsSinceCheckpoint += 1;
-  if (!factsCoverAnchor) for (const missingField of anchor.requiredFields.filter((field) => !hasFact(state, field))) {
+  if (!factsCoverAnchor && !acceptedRefusal) for (const missingField of anchor.requiredFields.filter((field) => !hasFact(state, field))) {
     mergePendingGaps(state, [{
       anchorId: anchor.id,
       fieldId: missingField,

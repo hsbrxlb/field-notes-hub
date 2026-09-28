@@ -130,6 +130,7 @@ export type ModeratorState = {
   activeMove: ActiveMove | null;
   activeLanguage: string;
   completedAnchors: string[];
+  declinedAnchors?: string[];
   facts: Record<string, FactRecord>;
   pendingGaps: PendingGap[];
   contradictions: Contradiction[];
