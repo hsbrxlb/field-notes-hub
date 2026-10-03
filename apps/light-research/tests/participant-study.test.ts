@@ -55,7 +55,7 @@ describe("five-owner dual-beam pilot", () => {
       }
     }
     expect(study.anchors.find((anchor) => anchor.id === "concept")?.question).toMatch(/wide beam.*farther ahead/);
-    expect(study.anchors.find((anchor) => anchor.id === "optics_proof")?.question).toMatch(/lenses.*night test/);
+    expect(study.anchors.find((anchor) => anchor.id === "optics_proof")?.question).toMatch(/tested at night.*two settings/);
     expect(study.anchors.find((anchor) => anchor.id === "price")?.question).toMatch(/No size or price has been set/);
     expect(study.anchors.find((anchor) => anchor.id === "concept")?.maxImmediateProbes).toBe(1);
     expect(study.anchors.find((anchor) => anchor.id === "price")?.allowRefusal).toBe(true);

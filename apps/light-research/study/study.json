@@ -2,7 +2,7 @@
   "schemaVersion": "2.0",
   "study": {
     "id": "worklight-regression",
-    "version": "pilot-1.1-dual-beam",
+    "version": "pilot-1.2-question-clarity",
     "title": "OEDRO AI Research for Drivers",
     "status": "review_ready",
     "readiness": "technical_prototype",
@@ -101,7 +101,7 @@
     "providerDisclosure": "Answers are processed by a configured third-party AI provider for interview understanding, controlled follow-up, and evidence extraction."
   },
   "moderation": {
-    "policyVersion": "controlled-autonomy-3.8-dual-beam-pilot",
+    "policyVersion": "controlled-autonomy-3.9-semantic-followups",
     "maxTotalProbes": 6,
     "checkpointEveryAnchors": 3,
     "maxCheckpointQuestions": 2,
@@ -113,7 +113,7 @@
   "model": {
     "provider": "deepseek",
     "model": "deepseek-v4-flash",
-    "promptVersion": "interviewer-3.9-dual-beam-pilot",
+    "promptVersion": "interviewer-3.10-semantic-followups",
     "timeoutMs": 25000,
     "maxRetries": 1
   },
@@ -271,17 +271,17 @@
       "id": "recent_experience",
       "label": "Recent experience",
       "objective": "Record one concrete visibility outcome during the same event, including no difficulty. If the owner reports a real difficulty, learn what they did in response when that action is not already stated. Do not invent a problem or response.",
-      "question": "During that same trip or task, was anything hard to see? If so, what?",
+      "question": "During that trip or task, what, if anything, was hard to see?",
       "questionLocales": {
-        "en": "During that same trip or task, was anything hard to see? If so, what?",
-        "zh-CN": "那次用车时，有什么东西看不清吗？如果有，是什么？",
-        "es": "Durante ese mismo viaje o tarea, ¿hubo algo que te costara ver? Si lo hubo, ¿qué fue?"
+        "en": "During that trip or task, what, if anything, was hard to see?",
+        "zh-CN": "那次用车时，有什么东西看不清？如果都看得清，也可以说。",
+        "es": "Durante ese viaje o tarea, ¿qué te costó ver, si hubo algo?"
       },
-      "clarification": "During that same trip or task, was anything hard to see? If so, what?",
+      "clarification": "During that trip or task, what, if anything, was hard to see?",
       "clarificationLocales": {
-        "en": "During that same trip or task, was anything hard to see? If so, what?",
-        "zh-CN": "那次用车时，有什么东西看不清吗？如果有，是什么？",
-        "es": "Durante ese mismo viaje o tarea, ¿hubo algo que te costara ver? Si lo hubo, ¿qué fue?"
+        "en": "During that trip or task, what, if anything, was hard to see?",
+        "zh-CN": "那次用车时，有什么东西看不清？如果都看得清，也可以说。",
+        "es": "Durante ese viaje o tarea, ¿qué te costó ver, si hubo algo?"
       },
       "sufficiencyCriteria": [
         "A concrete answer, an explicit no need or no experience, or honest uncertainty is understood in the owner’s own words. Do not invent a problem or force agreement."
@@ -340,8 +340,12 @@
       "highValueProbeTargets": [
         "Clarify whether a mentioned light was actually used during that trip only if the answer is ambiguous."
       ],
-      "requiredFields": ["current_lights"],
-      "evidenceFields": ["current_lights"],
+      "requiredFields": [
+        "current_lights"
+      ],
+      "evidenceFields": [
+        "current_lights"
+      ],
       "optional": false,
       "skipWhenCovered": true,
       "maxImmediateProbes": 1,
@@ -409,14 +413,14 @@
       "question": "Imagine one added light bar with two settings you can switch between: a wide beam for nearby ground and side areas, and a narrower beam that reaches farther ahead. In what real situation, if any, would you use it?",
       "questionLocales": {
         "en": "Imagine one added light bar with two settings you can switch between: a wide beam for nearby ground and side areas, and a narrower beam that reaches farther ahead. In what real situation, if any, would you use it?",
-        "zh-CN": "设想在车上加装一根长条灯，可以切换两种光型：一种照亮近处和两侧较宽的区域，另一种照向更远的前方。你会在什么实际场景使用它？如果不会，也可以直说。",
-        "es": "Imagina una barra de luces adicional con dos modos: uno amplio para el suelo cercano y los lados, y otro más estrecho que ilumina más lejos hacia delante. ¿En qué situación real la usarías, si es que la usarías?"
+        "zh-CN": "设想在车上加装一根长条灯，可以切换两种照明方式：一种照亮近处地面和两侧，另一种照向更远的前方。你会在什么实际情况下使用它？如果不会，也可以直说。",
+        "es": "Imagina una barra de luces adicional con dos modos entre los que puedes cambiar: uno amplio para el suelo cercano y los lados, y otro más estrecho que ilumina más lejos hacia delante. ¿En qué situación real la usarías, si es que la usarías?"
       },
       "clarification": "Imagine one added light bar with two settings you can switch between: a wide beam for nearby ground and side areas, and a narrower beam that reaches farther ahead. In what real situation, if any, would you use it?",
       "clarificationLocales": {
         "en": "Imagine one added light bar with two settings you can switch between: a wide beam for nearby ground and side areas, and a narrower beam that reaches farther ahead. In what real situation, if any, would you use it?",
-        "zh-CN": "设想在车上加装一根长条灯，可以切换两种光型：一种照亮近处和两侧较宽的区域，另一种照向更远的前方。你会在什么实际场景使用它？如果不会，也可以直说。",
-        "es": "Imagina una barra de luces adicional con dos modos: uno amplio para el suelo cercano y los lados, y otro más estrecho que ilumina más lejos hacia delante. ¿En qué situación real la usarías, si es que la usarías?"
+        "zh-CN": "设想在车上加装一根长条灯，可以切换两种照明方式：一种照亮近处地面和两侧，另一种照向更远的前方。你会在什么实际情况下使用它？如果不会，也可以直说。",
+        "es": "Imagina una barra de luces adicional con dos modos entre los que puedes cambiar: uno amplio para el suelo cercano y los lados, y otro más estrecho que ilumina más lejos hacia delante. ¿En qué situación real la usarías, si es que la usarías?"
       },
       "sufficiencyCriteria": [
         "A concrete answer, an explicit no need or no experience, or honest uncertainty is understood in the owner’s own words. Do not invent a problem or force agreement."
@@ -451,7 +455,7 @@
       "followUpQuestions": {
         "switch_use": {
           "en": "When would you switch from the wide setting to the farther-reaching one, if at all?",
-          "zh-CN": "什么情况下你会从近处宽照明切换到照向远处的光型？如果不会切换，也可以说。",
+          "zh-CN": "什么情况下你会把灯从照亮近处和两侧，切换成照向远处前方？如果只用一种，也可以说。",
           "es": "¿Cuándo cambiarías del modo amplio al que ilumina más lejos, si es que lo harías?"
         }
       }
@@ -459,18 +463,18 @@
     {
       "id": "optics_proof",
       "label": "Night-test evidence",
-      "objective": "Explain lens in terms of the beam outcome. Do not claim lenses are brighter or better. Capture comparable proof needed and any concern about one mode weakening the other.",
-      "question": "The idea would use lenses to shape those two beams. What would you need to see in a real night test to judge whether both settings work for you?",
+      "objective": "Capture what the owner would need to see in a real night test to judge whether the near-wide and farther-forward settings are useful. Lenses are a proposed way to form these beams, not a promise of greater brightness or better performance. Ask about a comparison only if the owner brings one up.",
+      "question": "If you could watch this light being tested at night, what would you want to see before deciding whether its two settings would help you?",
       "questionLocales": {
-        "en": "The idea would use lenses to shape those two beams. What would you need to see in a real night test to judge whether both settings work for you?",
-        "zh-CN": "这个设想会用透镜形成刚才说的两种光型。要判断两种光型是否适合你，你想在真实夜间测试里看到什么？",
-        "es": "La idea usaría lentes para formar esos dos haces. ¿Qué tendrías que ver en una prueba nocturna real para juzgar si ambos modos te sirven?"
+        "en": "If you could watch this light being tested at night, what would you want to see before deciding whether its two settings would help you?",
+        "zh-CN": "如果能看到这款灯在夜间实际使用，你想看清哪些东西，才能判断这两种照明方式对你有没有用？",
+        "es": "Si pudieras ver cómo se prueba esta luz de noche, ¿qué querrías ver para decidir si sus dos modos te servirían?"
       },
-      "clarification": "The idea would use lenses to shape those two beams. What would you need to see in a real night test to judge whether both settings work for you?",
+      "clarification": "If you could watch this light being tested at night, what would you want to see before deciding whether its two settings would help you?",
       "clarificationLocales": {
-        "en": "The idea would use lenses to shape those two beams. What would you need to see in a real night test to judge whether both settings work for you?",
-        "zh-CN": "这个设想会用透镜形成刚才说的两种光型。要判断两种光型是否适合你，你想在真实夜间测试里看到什么？",
-        "es": "La idea usaría lentes para formar esos dos haces. ¿Qué tendrías que ver en una prueba nocturna real para juzgar si ambos modos te sirven?"
+        "en": "If you could watch this light being tested at night, what would you want to see before deciding whether its two settings would help you?",
+        "zh-CN": "如果能看到这款灯在夜间实际使用，你想看清哪些东西，才能判断这两种照明方式对你有没有用？",
+        "es": "Si pudieras ver cómo se prueba esta luz de noche, ¿qué querrías ver para decidir si sus dos modos te servirían?"
       },
       "sufficiencyCriteria": [
         "A concrete answer, an explicit no need or no experience, or honest uncertainty is understood in the owner’s own words. Do not invent a problem or force agreement."
@@ -550,17 +554,17 @@
       "id": "price",
       "label": "Price",
       "objective": "Exploratory cost threshold only. No invented size, price tier or purchase intent; explicit no interest and uncertainty are valid.",
-      "question": "No size or price has been set for this idea. Including installation, roughly what total cost would you consider, if you would consider it at all?",
+      "question": "No size or price has been set for this idea. Including installation, roughly what total cost would you consider, if any? You can skip this question.",
       "questionLocales": {
-        "en": "No size or price has been set for this idea. Including installation, roughly what total cost would you consider, if you would consider it at all?",
-        "zh-CN": "这个设想还没有确定尺寸和价格。算上安装，如果你会考虑它，大约什么总价在你的考虑范围内？不考虑也可以直说。",
-        "es": "Esta idea aún no tiene tamaño ni precio definidos. Incluida la instalación, ¿qué coste total aproximado considerarías, si la considerarías?"
+        "en": "No size or price has been set for this idea. Including installation, roughly what total cost would you consider, if any? You can skip this question.",
+        "zh-CN": "这个设想还没有确定尺寸和价格。算上安装，你大约会考虑什么总价？不考虑、暂时不知道或不想回答，都可以直接说。",
+        "es": "Esta idea aún no tiene tamaño ni precio definidos. Incluida la instalación, ¿qué coste total aproximado considerarías, si considerarías alguno? Puedes omitir esta pregunta."
       },
-      "clarification": "No size or price has been set for this idea. Including installation, roughly what total cost would you consider, if you would consider it at all?",
+      "clarification": "No size or price has been set for this idea. Including installation, roughly what total cost would you consider, if any? You can skip this question.",
       "clarificationLocales": {
-        "en": "No size or price has been set for this idea. Including installation, roughly what total cost would you consider, if you would consider it at all?",
-        "zh-CN": "这个设想还没有确定尺寸和价格。算上安装，如果你会考虑它，大约什么总价在你的考虑范围内？不考虑也可以直说。",
-        "es": "Esta idea aún no tiene tamaño ni precio definidos. Incluida la instalación, ¿qué coste total aproximado considerarías, si la considerarías?"
+        "en": "No size or price has been set for this idea. Including installation, roughly what total cost would you consider, if any? You can skip this question.",
+        "zh-CN": "这个设想还没有确定尺寸和价格。算上安装，你大约会考虑什么总价？不考虑、暂时不知道或不想回答，都可以直接说。",
+        "es": "Esta idea aún no tiene tamaño ni precio definidos. Incluida la instalación, ¿qué coste total aproximado considerarías, si considerarías alguno? Puedes omitir esta pregunta."
       },
       "sufficiencyCriteria": [
         "A concrete answer, an explicit no need or no experience, or honest uncertainty is understood in the owner’s own words. Do not invent a problem or force agreement."

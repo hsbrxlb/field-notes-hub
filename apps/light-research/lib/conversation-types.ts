@@ -25,6 +25,7 @@ export type ServerAction = ModelNextAction | "skip" | "stop";
 export type CoverageStatus = "covered" | "partial" | "missing";
 export type GapPriority = "critical" | "important" | "nice_to_have";
 export type GapStatus = "pending" | "asked" | "resolved" | "unresolved" | "dropped";
+export type EvidenceMeaning = "reported_problem" | "no_problem" | "possible_use" | "no_need" | "one_mode_only" | "unknown";
 
 export type FactRecord = {
   factId: string;
@@ -39,6 +40,7 @@ export type FactRecord = {
   evidenceTurnIds: string[];
   supersedesFactId?: string;
   updatedAt: string;
+  evidenceMeaning?: EvidenceMeaning;
 };
 
 export type FieldUpdate = {
@@ -47,6 +49,7 @@ export type FieldUpdate = {
   confidence: "high" | "medium" | "low";
   correction: boolean;
   evidenceTurnIds: string[];
+  evidenceMeaning?: EvidenceMeaning;
 };
 
 export type RejectedFieldUpdate = {

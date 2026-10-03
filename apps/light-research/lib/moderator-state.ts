@@ -18,14 +18,15 @@ const stayActions = new Set<ServerAction>(["probe_now", "immediate_clarify", "re
 
 const unique = <T>(items: T[]) => [...new Set(items)];
 const compact = (value: string) => value.normalize("NFKC").trim().replace(/\s+/g, " ");
-const noVisibilityProblem = (value: unknown) => {
-  const text = compact(String(value ?? ""));
-  return /\b(?:nothing (?:was )?hard to see|no (?:visibility )?(?:issue|problem|difficulty)|could see (?:everything|fine|clearly)|everything was (?:visible|clear)|did not have trouble seeing|can'?t remember|not sure)\b|^(?:no|没有|没什么|ninguno)[,.。]?\s*$|(?:没有(?:什么|东西)?看不清|没什么看不清|看得(?:很)?清楚|都能看清|没有视野问题|不记得|不确定)|(?:nada (?:me )?(?:costaba|fue difícil) ver|no (?:tuve|había) problemas? (?:para ver|de visibilidad)|veía (?:todo )?bien|no recuerdo)/iu.test(text);
-};
-const noSwitchUse = (value: unknown) => {
-  const text = compact(String(value ?? ""));
-  return /\b(?:would(?:n'?t| not) use|no use for|not interested|only (?:the )?(?:wide|far|near|distance)|just (?:the )?(?:wide|far|near|distance)|no switch|not sure)\b|(?:不会用|不需要|没兴趣|只用(?:近|远|宽)|不会切换|不确定)|(?:no (?:lo )?usar[ií]a|no me interesa|solo (?:el modo|la luz)|no cambiar[ií]a)/iu.test(text);
-};
+// Classifications come from source-linked, validated model facts. Never infer
+// absence or interest by matching words in the owner's language.
+const meaning = (state: ModeratorState, fieldId: string) =>
+  state.facts[fieldId]?.status === "confirmed" ? state.facts[fieldId].evidenceMeaning : undefined;
+const noVisibilityProblem = (state: ModeratorState) =>
+  ["no_problem", "unknown"].includes(meaning(state, "visibility_problem") ?? "");
+const noSwitchUse = (state: ModeratorState) =>
+  ["no_need", "one_mode_only", "unknown"].includes(meaning(state, "beam_use") ?? "")
+  || ["no_need", "one_mode_only"].includes(meaning(state, "concept_reaction") ?? "");
 
 export const createModeratorState = (study: StudyManifest): ModeratorState => {
   const first = study.anchors[0];
@@ -64,6 +65,9 @@ const hasFact = (state: ModeratorState, fieldId: string) => {
 
 export const isAnchorCovered = (study: StudyManifest, state: ModeratorState, anchorId: string) => {
   const anchor = study.anchors.find((item) => item.id === anchorId);
+  // A sourced rejection answers the concept question without inventing a use case.
+  if (anchor?.id === "concept" && anchor.evidenceFields?.includes("concept_reaction")
+    && hasFact(state, "concept_reaction") && meaning(state, "concept_reaction") === "no_need") return true;
   return Boolean(anchor && anchor.requiredFields.length > 0 && anchor.requiredFields.every((field) => hasFact(state, field)));
 };
 
@@ -96,6 +100,11 @@ const participantExpectsLaterAnswer = (rawText: string) =>
 const validateFieldUpdate = (study: StudyManifest, update: FieldUpdate): string | null => {
   const field = study.fields.find((item) => item.id === update.fieldId);
   if (!field) return "field is not declared";
+  if (update.evidenceMeaning) {
+    const allowed = update.fieldId === "visibility_problem" ? ["reported_problem", "no_problem", "unknown"]
+      : ["beam_use", "concept_reaction"].includes(update.fieldId) ? ["possible_use", "no_need", "one_mode_only", "unknown"] : [];
+    if (!allowed.includes(update.evidenceMeaning)) return "evidence meaning does not belong to this field";
+  }
   if (field.type === "text" && typeof update.value !== "string") return "text field requires a string";
   if (field.type === "number" && typeof update.value !== "number") return "number field requires a number";
   if (field.type === "string_list" && (!Array.isArray(update.value) || update.value.some((value) => typeof value !== "string"))) return "string_list field requires strings";
@@ -362,6 +371,7 @@ const planAssessment = ({
       evidenceTurnIds: unique([...update.evidenceTurnIds, turnId]),
       supersedesFactId: existing?.factId,
       updatedAt: new Date().toISOString(),
+      ...(update.evidenceMeaning ? { evidenceMeaning: update.evidenceMeaning } : {}),
     };
     acceptedUpdates.push(update);
   }
@@ -391,14 +401,27 @@ const planAssessment = ({
       gap.resolvedTurnId = turnId;
     }
   }
+  for (const gap of state.pendingGaps) {
+    if (gap.status !== "pending" && gap.status !== "asked") continue;
+    const noApplicableAction = gap.anchorId === "recent_experience" && gap.fieldId === "user_action" && noVisibilityProblem(state);
+    const noApplicableSwitch = gap.anchorId === "concept" && gap.fieldId === "switch_use" && noSwitchUse(state);
+    const rejectedConcept = gap.anchorId === "concept" && (gap.fieldId === "beam_use" || !gap.fieldId)
+      && hasFact(state, "concept_reaction") && meaning(state, "concept_reaction") === "no_need";
+    if (noApplicableAction || noApplicableSwitch || rejectedConcept) {
+      gap.status = "dropped";
+      gap.resolvedTurnId = turnId;
+    }
+  }
   const eligibleGapAnchors = new Set([...previous.completedAnchors, anchor.id]);
   const anchorEligiblePoints = assessment.unresolvedPoints.filter((point) => eligibleGapAnchors.has(point.anchorId) && !(state.declinedAnchors ?? []).includes(point.anchorId));
   if (anchorEligiblePoints.length !== assessment.unresolvedPoints.length) {
     state.riskFlags = unique([...state.riskFlags, "rejected_future_topic_gap"]);
   }
   const fieldEligiblePoints = anchorEligiblePoints.filter((point) => anchorOwnsGapField(study, point.anchorId, point.fieldId)
-    && !(point.anchorId === "recent_experience" && point.fieldId === "user_action" && hasFact(state, "visibility_problem") && noVisibilityProblem(state.facts.visibility_problem.value))
-    && !(point.anchorId === "concept" && point.fieldId === "switch_use" && hasFact(state, "beam_use") && (noSwitchUse(state.facts.beam_use.value) || noSwitchUse(state.facts.concept_reaction?.value))));
+    && !(point.anchorId === "recent_experience" && point.fieldId === "user_action" && hasFact(state, "visibility_problem") && noVisibilityProblem(state))
+    && !(point.anchorId === "concept" && point.fieldId === "switch_use" && noSwitchUse(state))
+    && !(point.anchorId === "concept" && (point.fieldId === "beam_use" || !point.fieldId)
+      && hasFact(state, "concept_reaction") && meaning(state, "concept_reaction") === "no_need"));
   if (fieldEligiblePoints.length !== anchorEligiblePoints.length) {
     state.riskFlags = unique([...state.riskFlags, "rejected_mismatched_gap_field"]);
   }
@@ -410,11 +433,10 @@ const planAssessment = ({
   // to request a probe. A clear negative/unknown answer never triggers one.
   const needsAction = anchor.id === "recent_experience" && anchorOwnsGapField(study, anchor.id, "user_action") && state.activeMove?.kind === "anchor"
     && (state.probeCounts[anchor.id] ?? 0) === 0 && hasFact(state, "visibility_problem")
-    && !hasFact(state, "user_action") && !noVisibilityProblem(state.facts.visibility_problem.value);
+    && !hasFact(state, "user_action") && meaning(state, "visibility_problem") === "reported_problem";
   const needsSwitch = anchor.id === "concept" && anchorOwnsGapField(study, anchor.id, "switch_use") && state.activeMove?.kind === "anchor"
     && (state.probeCounts[anchor.id] ?? 0) === 0 && hasFact(state, "beam_use")
-    && !hasFact(state, "switch_use") && !noSwitchUse(state.facts.beam_use.value)
-    && !noSwitchUse(state.facts.concept_reaction?.value);
+    && !hasFact(state, "switch_use") && meaning(state, "beam_use") === "possible_use" && !noSwitchUse(state);
   const focusedField = needsAction ? "user_action" : needsSwitch ? "switch_use" : null;
   if (focusedField) for (const point of missingOrContradictoryPoints) {
     if (point.anchorId === anchor.id && point.fieldId === focusedField) point.priority = "critical";

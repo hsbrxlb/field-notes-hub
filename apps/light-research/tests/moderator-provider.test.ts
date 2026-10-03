@@ -109,6 +109,21 @@ describe("DeepSeek response contract and bounded recovery", () => {
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
+  it("preserves a sourced semantic classification rather than matching the owner's words", async () => {
+    const fixture = input();
+    fixture.anchor = study.anchors.find((anchor) => anchor.id === "recent_experience")!;
+    const assessment = { ...validAssessment(), understood_facts: [{ field_id: "visibility_problem", value: "No me costó ver nada", evidence_meaning: "no_problem", confidence: "high", correction: false, evidence_turn_ids: ["turn-current"] }] };
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(response(JSON.stringify(assessment))));
+    const result = await evaluateTurn(fixture);
+    expect(result.understoodFacts[0]).toMatchObject({ fieldId: "visibility_problem", value: "No me costó ver nada", evidenceMeaning: "no_problem", evidenceTurnIds: ["turn-current"] });
+  });
+
+  it("fails closed if a decision fact lacks its semantic classification", async () => {
+    const assessment = { ...validAssessment(), understood_facts: [{ field_id: "visibility_problem", value: "Something blocked my view", confidence: "high", correction: false, evidence_turn_ids: ["turn-current"] }] };
+    vi.stubGlobal("fetch", vi.fn(async () => response(JSON.stringify(assessment))));
+    await expect(evaluateTurn(input())).rejects.toMatchObject({ code: "invalid_response" });
+  });
+
   it("separates selected wording from assessment and preserves reported metadata for validation", async () => {
     const fixture = input();
     fixture.state.lastParticipantIntent = "asks_clarification";

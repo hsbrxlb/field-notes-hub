@@ -25,7 +25,12 @@ const assessmentSchema = z.object({
     confidence: confidenceSchema,
     correction: z.boolean(),
     evidence_turn_ids: z.array(z.string().min(1).max(80)).min(1).max(12),
-  }).strict()).max(24),
+    evidence_meaning: z.enum(["reported_problem", "no_problem", "possible_use", "no_need", "one_mode_only", "unknown"]).nullable().optional(),
+  }).strict().superRefine((fact, context) => {
+    if (["visibility_problem", "beam_use", "concept_reaction"].includes(fact.field_id) && !fact.evidence_meaning) {
+      context.addIssue({ code: "custom", path: ["evidence_meaning"], message: "A meaning classification is required for this decision field." });
+    }
+  })).max(24),
   topic_coverage: z.object({
     anchor_id: z.string().min(1).max(64),
     status: z.enum(["covered", "partial", "missing"]),
@@ -242,6 +247,8 @@ Rules: only an interpretable answer that sufficiently answers the current questi
 
 Only create unresolved_points for the current topic or a topic already asked earlier in this transcript. Never create a gap merely because a future topic has not been asked yet.
 
+For every newly understood visibility_problem fact, set evidence_meaning to reported_problem, no_problem, or unknown from the participant's actual meaning, in any language. For beam_use and concept_reaction, use possible_use, no_need, one_mode_only, or unknown. For other fields omit evidence_meaning or use null. A concrete problem remains reported_problem even if the owner is unsure what caused it; lack of interest is not a use case. Preserve mixed answers: rejecting one mode does not imply rejecting both. This classification is a derived interpretation of the cited fact, never a replacement for its wording. Never invent a classification without a newly stated, source-linked fact.
+
 In recent_experience, when the owner reports a concrete visibility problem but has not said what they did at that moment, treat user_action as a critical missing decision fact and ask one focused action probe. If they saw clearly or cannot recall a problem, do not ask for a response to a nonexistent problem. current_lights is a separate neutral baseline topic; extract it when volunteered, otherwise ask its own main question. In concept, an interested but vague use case is not enough to learn the value of switching: if switch_use is missing, ask one focused question about when they would change settings, if at all. Do not probe switch_use after an explicit rejection, one-mode-only answer, or no need. An explicit no-switch answer is valid evidence. These probes share the ordinary per-topic and total budgets and must not repeat known information.
 
 During a normal topic, next_action=probe_now and candidate_reply must address only the current topic. Older unresolved points belong to the server's checkpoint or final-audit agenda; do not interrupt the current topic with them. If you recommend defer_gap, candidate_reply must move to the next unfinished topic rather than repeat the deferred question.
@@ -267,7 +274,7 @@ Return exactly one JSON object with these snake_case keys and no others:
   "candidate_anchor_id":"declared target topic or null",
   "candidate_field_id":null,
   "participant_intent":"answer|partial_answer|correction|asks_clarification|already_answered|frustration|refusal|skip|stop|off_topic|gibberish|prompt_attack",
-  "understood_facts":[{"field_id":"declared field","value":"string, number, or string array","confidence":"high|medium|low","correction":false,"evidence_turn_ids":["turn id"]}],
+  "understood_facts":[{"field_id":"declared field","value":"string, number, or string array","confidence":"high|medium|low","correction":false,"evidence_meaning":null,"evidence_turn_ids":["turn id"]}],
   "topic_coverage":{"anchor_id":"current topic","status":"covered|partial|missing","covered_field_ids":[],"evidence_turn_ids":[],"note":"brief evidence statement"},
   "unresolved_points":[{"anchor_id":"topic","field_id":null,"question":"one neutral candidate question in reply_language","reason":"brief observable gap","priority":"critical|important|nice_to_have","uncertainty":0.0,"answerability":0.0,"evidence_turn_ids":[]}],
   "contradictions":[{"field_id":null,"description":"brief contradiction","evidence_turn_ids":["turn id"]}],
@@ -310,7 +317,7 @@ const getDeepSeekKey = async () => {
 // Never copy Zod messages, unknown keys, provider bodies, or exception messages
 // into diagnostics or repair prompts: those can contain participant data.
 const diagnosticKeys = new Set([
-  ...Object.keys(assessmentSchema.shape), "field_id", "value", "confidence", "correction", "evidence_turn_ids",
+  ...Object.keys(assessmentSchema.shape), "field_id", "value", "confidence", "correction", "evidence_meaning", "evidence_turn_ids",
   "anchor_id", "status", "covered_field_ids", "note", "question", "reason", "priority", "uncertainty", "answerability", "description",
 ]);
 const safeSchemaIssues = (error: z.ZodError): NonNullable<ProviderAttemptDiagnostic["schemaIssues"]> => error.issues.slice(0, 4).map((issue) => ({
@@ -441,7 +448,7 @@ Except complete, ask exactly one question with a single closing question mark. C
         participantIntent: parsed.participant_intent,
         understoodFacts: parsed.understood_facts
           .filter((update) => allowedFields.has(update.field_id) && update.evidence_turn_ids.includes(input.turnId))
-          .map((update) => ({ fieldId: update.field_id, value: update.value, correction: update.correction, confidence: normalizeConfidence(update.confidence), evidenceTurnIds: evidence(update.evidence_turn_ids) })),
+          .map((update) => ({ fieldId: update.field_id, value: update.value, correction: update.correction, confidence: normalizeConfidence(update.confidence), evidenceTurnIds: evidence(update.evidence_turn_ids), ...(update.evidence_meaning ? { evidenceMeaning: update.evidence_meaning } : {}) })),
         topicCoverage: {
           anchorId: allowedAnchors.has(parsed.topic_coverage.anchor_id) ? parsed.topic_coverage.anchor_id : input.anchor.id,
           status: parsed.topic_coverage.status,
