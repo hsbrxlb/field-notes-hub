@@ -31,6 +31,11 @@
       "file": "discord-invite-plan.html"
     },
     {
+      "id": "sema-plan",
+      "label": "SEMA门票活动",
+      "file": "sema-plan.html"
+    },
+    {
       "id": "studio",
       "label": "社媒内容自动化生产",
       "file": "content-studio.html"
