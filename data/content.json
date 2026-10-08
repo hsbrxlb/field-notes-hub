@@ -26,6 +26,11 @@
       "file": "email-templates.html"
     },
     {
+      "id": "newsletter",
+      "label": "The Glovebox Newsletter",
+      "file": "newsletter.html"
+    },
+    {
       "id": "discord-invite-plan",
       "label": "邀请加入Discord活动方案",
       "file": "discord-invite-plan.html"

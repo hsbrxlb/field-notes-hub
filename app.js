@@ -26,18 +26,6 @@ function setSidebar(open, restoreFocus = true) {
   else if (restoreFocus && compactNavigation.matches) menuButton?.focus();
 }
 
-function statusClass(status) {
-  return {
-    待确认: 'pending', 进行中: 'active', 准备中: 'ready', 筹备: 'ready',
-    受阻: 'blocked', 已完成: 'done', 归档: 'archived'
-  }[status] || 'pending';
-}
-
-function statusMarkup(status) {
-  if (/^(待确认|待审.*|进行中|准备中|筹备|受阻|已完成|归档)$/.test(status)) return '';
-  return `<span class="status status-${statusClass(status)}">${escapeHtml(status)}</span>`;
-}
-
 function pageHeading(title, description = '') {
   return `<header class="page-heading"><h1>${escapeHtml(title)}</h1>${description ? `<p>${escapeHtml(description)}</p>` : ''}</header>`;
 }
@@ -49,7 +37,6 @@ function sectionHead(title, action = '') {
 function topicLink(item) {
   return `<a class="topic-row" href="topic.html?slug=${encodeURIComponent(item.slug)}" data-searchable data-status="${escapeHtml(item.status)}">
     <strong>${escapeHtml(item.title)}</strong>
-    ${statusMarkup(item.status)}
   </a>`;
 }
 
@@ -339,6 +326,7 @@ async function init() {
   if (page === 'studio' && !location.pathname.endsWith('content-pipeline-test.html')) await window.initContentStudio?.();
   if (page === 'mascot') await window.initMascot?.();
   if (page === 'email-templates') await window.initEmailTemplates?.();
+  if (page === 'newsletter') await window.initNewsletter?.();
   if (page === 'products') await window.initProducts?.();
 }
 

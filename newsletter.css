@@ -1,0 +1,30 @@
+body[data-page="newsletter"] .main-content { max-width: var(--content-wide); }
+.newsletter-issue { margin-top: 32px; }
+.newsletter-issue > h2 { margin: 0 0 16px; font-size: 23px; line-height: 1.4; }
+.newsletter-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.newsletter-controls button { min-height: 44px; padding: 8px 20px; border: 1px solid var(--border); border-radius: 0; background: transparent; color: var(--text); font: inherit; cursor: pointer; }
+.newsletter-controls button[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); }
+.newsletter-controls a { display: inline-flex; align-items: center; min-height: 44px; margin-left: auto; color: var(--accent); text-underline-offset: 4px; }
+.newsletter-canvas { width: 100%; overflow: hidden; }
+.newsletter-viewport { position: relative; margin: 0 auto; max-width: 100%; }
+.newsletter-frame { display: block; position: absolute; top: 0; left: 0; border: 0; background: #d7d9d8; transform-origin: top left; }
+.newsletter-comparison { margin-top: 48px; max-width: 1100px; }
+.newsletter-comparison > h2 { margin: 0 0 24px; font-size: 23px; }
+.newsletter-pair { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; margin: 0 0 24px; }
+.newsletter-pair > * { min-width: 0; margin: 0; overflow-wrap: anywhere; font-size: 15px; line-height: 1.8; }
+.newsletter-title-pair > * { font-size: 22px; line-height: 1.4; }
+.newsletter-section { border-top: 1px solid var(--border); padding-top: 24px; margin-top: 32px; }
+.newsletter-section h3 { font-size: 19px; line-height: 1.5; }
+.newsletter-language-labels { color: var(--text-muted); margin-bottom: 12px; }
+.newsletter-language-labels > * { font-size: 12px; }
+.newsletter-step-number { display: inline-block; color: var(--accent); font-weight: 700; margin-right: 8px; }
+.newsletter-closing { border-top: 1px solid var(--border); padding-top: 24px; margin-top: 32px; }
+@media (max-width: 600px) {
+  .newsletter-issue > h2, .newsletter-comparison > h2 { font-size: 21px; }
+  .newsletter-controls button { padding-right: 16px; padding-left: 16px; }
+  .newsletter-controls a { margin-left: 8px; }
+  .newsletter-pair { grid-template-columns: 1fr; gap: 8px; }
+  .newsletter-language-labels { display: none; }
+  .newsletter-title-pair > * { font-size: 20px; }
+  .newsletter-pair [lang="zh-CN"] { color: var(--text-muted); }
+}

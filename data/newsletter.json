@@ -1,0 +1,98 @@
+{
+  "title": {
+    "en": "Why the tire light shows up on cold mornings.",
+    "zh": "为什么天冷的早晨，胎压灯容易亮？"
+  },
+  "description": {
+    "en": "Cold air can lower tire pressure overnight. A gauge and your vehicle’s label tell you what to do next.",
+    "zh": "冷空气可能让胎压在一夜之间下降。用胎压表测量，再查看车辆的胎压标签，就知道接下来该怎么做。"
+  },
+  "opening": {
+    "en": "The morning is colder than yesterday. You start the car, and the tire-pressure light appears before you leave the driveway. Temperature can explain the timing. You still need to inspect the tires and check their pressure as soon as possible.",
+    "zh": "今天早上比昨天冷。你启动车辆，还没驶出车道，胎压灯就亮了。降温可能解释了它为什么这时亮起，但你仍需要尽快检查轮胎外观并测量胎压。"
+  },
+  "sections": [
+    {
+      "heading": {
+        "en": "Cold air can push pressure below the warning threshold.",
+        "zh": "降温可能让胎压低于报警值。"
+      },
+      "paragraphs": [
+        {
+          "en": "As the air inside a tire cools, it pushes less strongly against the tire’s walls. Pressure falls, even without a sudden leak. If a tire was already a little low, an overnight temperature drop may be enough to trigger the warning.",
+          "zh": "轮胎里的空气冷却后，对胎壁的压力会减小。即使没有突然漏气，胎压也会下降。如果某个轮胎原本就有些缺气，一夜降温就可能让胎压灯亮起。"
+        },
+        {
+          "en": "Driving warms the tires and raises the pressure again. That can switch the light off without restoring the correct cold reading. Check with a gauge even if the warning disappears; a tire can look normal while underinflated.",
+          "zh": "行驶会让轮胎升温，胎压也会回升。胎压灯可能因此熄灭，但冷胎时的胎压未必已经达标。即使灯灭了，也要用胎压表检查；轮胎看起来正常，也可能缺气。"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "en": "The target is on your vehicle’s label.",
+        "zh": "车辆的胎压标签告诉你该充到多少。"
+      },
+      "paragraphs": [
+        {
+          "en": "Open the driver’s door and look for the tire-information label on the door edge or doorjamb. It gives your vehicle’s recommended cold pressure; your owner’s manual has that information too.",
+          "zh": "打开驾驶员侧车门，在车门边缘或门框上找到轮胎信息标签。上面写着这辆车建议的冷胎胎压，车主手册里也有这项信息。"
+        },
+        {
+          "en": "The pressure molded into the tire’s sidewall is a maximum, not your car’s target. Front and rear recommendations may differ, so read each entry rather than choosing one number for every tire.",
+          "zh": "轮胎侧壁上标出的胎压是最大值，不是这辆车的建议值。前轮和后轮的建议胎压可能不同，要逐项查看标签，不要把所有轮胎都充到同一个数值。"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "en": "A pressure check you can repeat.",
+        "zh": "每次都可以照着做的胎压检查。"
+      },
+      "paragraphs": [
+        {
+          "en": "Already driven? If a warm tire is low, NHTSA advises adding air to the vehicle’s listed cold pressure, then checking and adjusting again when cold. That is a temporary correction. Do not let air out simply because a warm reading is above the cold target.",
+          "zh": "已经开过车了？如果热胎胎压偏低，美国国家公路交通安全管理局（NHTSA）建议充气到车辆标注的冷胎胎压。轮胎冷却后，还需要重新测量并调整。这只是临时处理。不要因为热胎读数高于冷胎建议值，就直接放气。"
+        }
+      ],
+      "steps": [
+        {
+          "en": "Inspect promptly. If a tire is visibly flat or damaged, avoid driving on it and arrange help. A warning is a reason to check now, even when a cold reading must come later.",
+          "zh": "尽快检查。如果轮胎明显瘪了或有损伤，避免继续行驶，并寻求帮助。胎压灯亮起就应当马上检查，即使需要等轮胎冷却后才能取得冷胎读数。"
+        },
+        {
+          "en": "Get a cold baseline. For a routine check, measure after the vehicle has not been driven for at least three hours. “Cold” describes the tire’s driving history, not the weather.",
+          "zh": "测量冷胎胎压。日常检查时，应在车辆至少三小时未行驶后测量。“冷胎”取决于轮胎此前是否行驶过，不是看天气冷不冷。"
+        },
+        {
+          "en": "Match each reading to the label. Use a gauge on all tires, including the spare if fitted. Add air as needed and measure again. Use the spare’s own specified pressure.",
+          "zh": "逐个对照标签。用胎压表测量所有轮胎，包括车辆配备的备胎。按需要补气，再测一次。备胎要使用它自己规定的胎压。"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "en": "A flashing light can mean a system fault.",
+        "zh": "胎压灯闪烁，可能是监测系统出了故障。"
+      },
+      "paragraphs": [
+        {
+          "en": "A light that flashes for about 60 to 90 seconds, then stays on, may indicate a tire-pressure monitoring system fault. Arrange a system inspection and follow your vehicle’s manual. Keep checking pressure with a gauge; the monitoring system may not warn you reliably.",
+          "zh": "如果胎压灯闪烁约 60 至 90 秒后持续亮着，可能表示胎压监测系统有故障。应安排系统检查，并遵照车辆手册处理。继续用胎压表测量；监测系统可能无法可靠地发出警告。"
+        },
+        {
+          "en": "Repeated pressure loss, cuts, bulges, or unusual vibration need a tire professional’s attention. Cold weather should never become the explanation you use to dismiss them.",
+          "zh": "轮胎反复掉压、有割伤或鼓包，或车辆出现异常振动，都需要请轮胎专业人员检查。不能因为天气冷，就忽略这些问题。"
+        }
+      ]
+    }
+  ],
+  "closing": {
+    "en": "Next cold morning, check promptly, use the label’s recommendation, and confirm the cold reading. Keep a gauge in the glovebox, and make a cold-pressure check part of your monthly routine.",
+    "zh": "下次遇到寒冷的早晨，要及时检查胎压，按车辆标签上的建议处理，并确认冷胎读数。把胎压表放在手套箱里，每个月做一次冷胎胎压检查。"
+  },
+  "editorial": {
+    "en": "From the OEDRO editors’ glovebox.",
+    "zh": "OEDRO 编辑的手套箱笔记。"
+  }
+}
