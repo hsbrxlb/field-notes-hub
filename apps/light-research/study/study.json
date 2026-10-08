@@ -113,7 +113,7 @@
   "model": {
     "provider": "deepseek",
     "model": "deepseek-v4-flash",
-    "promptVersion": "interviewer-3.11-cross-topic-evidence",
+    "promptVersion": "interviewer-3.12-current-turn-wording",
     "timeoutMs": 25000,
     "maxRetries": 1
   },
