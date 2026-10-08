@@ -33,6 +33,7 @@ const inputSchema = z.discriminatedUnion("type", [
 
 export const studyManifestSchema = z.object({
   schemaVersion: z.literal("2.0"),
+  syntheticTest: z.object({ providerFailureOnce: z.literal(true) }).strict().optional(),
   study: z.object({
     id: idSchema,
     version: z.string().min(1),
@@ -149,6 +150,9 @@ export const studyManifestSchema = z.object({
     primaryDecisionQuestion: z.string().min(1),
   }).strict(),
 }).strict().superRefine((manifest, context) => {
+  if (manifest.syntheticTest && manifest.study.sampleKind !== "synthetic") {
+    context.addIssue({ code: "custom", message: "test faults require synthetic provenance", path: ["syntheticTest"] });
+  }
   const fieldSet = new Set(manifest.fields.map((field) => field.id));
   const anchorSet = new Set(manifest.anchors.map((anchor) => anchor.id));
   const claimMap = new Map(manifest.claims.map((claim) => [claim.id, claim]));

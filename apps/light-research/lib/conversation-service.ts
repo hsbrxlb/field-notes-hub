@@ -1,5 +1,5 @@
 import { testRunSchema } from "./api-schemas";
-import { sessionSampleKind } from "./synthetic-entry";
+import { sessionSampleKind, shouldFailSyntheticProviderOnce } from "./synthetic-entry";
 import { getStudyConfig, getSessionStudyConfig, localized } from "./study-config";
 import { applyAssessment, createModeratorState } from "./moderator-state";
 import { resolvePlannedReply } from "./moderator-dialogue";
@@ -178,7 +178,8 @@ export const startConversation = async (consentVersion?: string, consentLocale?:
   if (!validatedRun.success) throw new ConversationError(400, "test_run", "The test run tag is invalid.");
   const currentStudy = getStudyConfig();
   const study: StudyManifest = validatedRun.data
-    ? { ...currentStudy, study: { ...currentStudy.study, sampleKind: "synthetic" } }
+    ? { ...currentStudy, study: { ...currentStudy.study, sampleKind: "synthetic" },
+      ...(validatedRun.data.endsWith("-provider-failure-once") ? { syntheticTest: { providerFailureOnce: true as const } } : {}) }
     : currentStudy;
   const requireConsent = study.consent.enabledByDefault || process.env.SURVEY_CONSENT_MODE === "1";
   if (requireConsent) {
@@ -263,6 +264,9 @@ export const respondToConversation = async ({
   const priorTurns = (await listTurns(session.id)).map(toConversationTurn).filter((turn): turn is ConversationTurn => Boolean(turn));
   const providerDiagnostics: unknown[] = [];
   try {
+    if (shouldFailSyntheticProviderOnce(session.study_snapshot, stateRevision, reservation.processingAttempt)) {
+      throw new ProviderError("simulated_failure", "Controlled one-time failure for synthetic retry acceptance.");
+    }
     const assessed: ModeratorAssessment = await evaluateTurn({
       study,
       anchor,

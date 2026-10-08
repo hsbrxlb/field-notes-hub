@@ -25,3 +25,11 @@ export const sessionSampleKind = (snapshot: unknown): SampleKind => {
   }
   return "unspecified";
 };
+
+// The stored synthetic snapshot, not client answer text, authorizes the fault.
+export const shouldFailSyntheticProviderOnce = (snapshot: unknown, stateRevision: number, processingAttempt: number) => {
+  if (sessionSampleKind(snapshot) !== "synthetic" || stateRevision !== 0 || processingAttempt !== 1) return false;
+  if (!snapshot || typeof snapshot !== "object" || !("syntheticTest" in snapshot)) return false;
+  const config = snapshot.syntheticTest;
+  return Boolean(config && typeof config === "object" && "providerFailureOnce" in config && config.providerFailureOnce === true);
+};

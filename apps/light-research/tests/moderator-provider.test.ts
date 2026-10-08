@@ -109,6 +109,21 @@ describe("DeepSeek response contract and bounded recovery", () => {
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
+  it("sends the cross-topic extraction and missing-only rules to the assessment provider", async () => {
+    const fetchMock = vi.fn().mockResolvedValue(response());
+    vi.stubGlobal("fetch", fetchMock);
+    await evaluateTurn(input());
+    const prompt = requestBody(fetchMock, 0).messages[0].content;
+    expect(prompt).toContain("Evidence extraction spans all declared study fields");
+    expect(prompt).toContain("include each such newly understood fact separately in understood_facts with the current turn ID");
+    expect(prompt).toContain("Skip a later topic marked skipWhenCovered");
+    expect(prompt).toContain("for a partly answered topic ask only for the missing declared detail");
+    expect(prompt).toContain("I slowed from about 25 mph to 10 mph and used the factory high beams; the sides still stayed dark.");
+    expect(prompt).toContain("This does not establish that factory lights were the ONLY lights used");
+    expect(prompt).toContain("Do not fill unstated fields");
+    // This checks the request contract, not what a real model will extract.
+  });
+
   it("preserves a sourced semantic classification rather than matching the owner's words", async () => {
     const fixture = input();
     fixture.anchor = study.anchors.find((anchor) => anchor.id === "recent_experience")!;

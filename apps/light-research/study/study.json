@@ -113,7 +113,7 @@
   "model": {
     "provider": "deepseek",
     "model": "deepseek-v4-flash",
-    "promptVersion": "interviewer-3.10-semantic-followups",
+    "promptVersion": "interviewer-3.11-cross-topic-evidence",
     "timeoutMs": 25000,
     "maxRetries": 1
   },

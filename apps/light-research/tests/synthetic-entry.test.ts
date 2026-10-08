@@ -1,8 +1,9 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { startRequestSchema } from "@/lib/api-schemas";
-import { interviewStorageKeys, sessionSampleKind } from "@/lib/synthetic-entry";
+import { interviewStorageKeys, sessionSampleKind, shouldFailSyntheticProviderOnce } from "@/lib/synthetic-entry";
 import { getStudyConfig } from "@/lib/study-config";
 import { startConversation, getConversation } from "@/lib/conversation-service";
+import { studyManifestSchema } from "@/lib/study-schema";
 
 const storage = vi.hoisted(() => ({ createSession: vi.fn(), getSessionByToken: vi.fn(), listTurns: vi.fn() }));
 vi.mock("@/lib/storage", async (importOriginal) => ({ ...await importOriginal<typeof import("@/lib/storage")>(), ...storage }));
@@ -76,5 +77,20 @@ describe("real-runtime synthetic entry", () => {
     expect(storage.createSession.mock.calls[0][0].study).toBe(study);
     await expect(startConversation(study.consent.version, "en", "../bad")).rejects.toMatchObject({ code: "test_run" });
     expect(storage.createSession).toHaveBeenCalledTimes(1);
+  });
+
+  it("only the explicit synthetic retry route can fail the first saved attempt", async () => {
+    const study = getStudyConfig();
+    await startConversation(study.consent.version, "en", "e2e-provider-failure-once");
+    const saved = storage.createSession.mock.calls[0][0].study;
+    expect(studyManifestSchema.safeParse(saved).success).toBe(true);
+    expect(shouldFailSyntheticProviderOnce(saved, 0, 1)).toBe(true);
+    expect(shouldFailSyntheticProviderOnce(saved, 0, 2)).toBe(false);
+    expect(shouldFailSyntheticProviderOnce(saved, 1, 1)).toBe(false);
+    expect(shouldFailSyntheticProviderOnce(study, 0, 1)).toBe(false);
+    const forged = { ...saved, study: { ...saved.study, sampleKind: "participant" } };
+    expect(shouldFailSyntheticProviderOnce(forged, 0, 1)).toBe(false);
+    expect(studyManifestSchema.safeParse(forged).success).toBe(false);
+    expect(getStudyConfig().syntheticTest).toBeUndefined();
   });
 });

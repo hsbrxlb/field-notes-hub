@@ -6,6 +6,8 @@ Use `/?testRun=e2e-20261008-en-normal` with a unique safe tag for each synthetic
 
 Study-scoped `scripts/export-sessions.mjs` defaults to `--sample-kind participant`, excluding test and unknown-provenance records. Explicit `--sample-kind synthetic` selects QA records; `all` must be deliberate. Exact-session exports retain their original behavior. The export's matched count includes excluded records; eligible is an export count, not a count of verified owners or completed research.
 
+For a controlled online retry check, a testRun ending in `-provider-failure-once` stores an explicit synthetic-only failure flag. The first saved answer's first processing attempt returns a real 503 through normal failure handling. Refresh and retry that same saved answer to check recovery; subsequent processing calls the real provider. A new request ID at revision zero can fail again, so this tests same-request recovery, not a globally one-use fault. The flag never changes an ordinary participant session or supplies a fabricated AI answer.
+
 ## Five-owner pilot (2026-09-27)
 
 The current instrument is `pilot-1.2-question-clarity` with prompt `interviewer-3.10-semantic-followups`. The moderator records a source-linked meaning classification for visibility problems and concept use, instead of detecting rejection or uncertainty with fixed phrases. A genuine problem can trigger one action question; a possible use can trigger one switching question. No difficulty, no need, and one-mode-only answers cancel irrelevant queued questions too. Missing classifications in real-provider responses fail validation and leave the saved answer available for retry. Historical session snapshots keep their original questions and topic count.
