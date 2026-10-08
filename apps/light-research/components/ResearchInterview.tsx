@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { interviewStorageKeys } from "@/lib/synthetic-entry";
 import Image from "next/image";
 import type { PublicStudyConfig, StudyInput } from "@/lib/study-schema";
 
@@ -13,6 +14,7 @@ type RetryAnswer = {
 };
 type PendingAnswer = RetryAnswer & { stateRevision: number; anchorId: string };
 type ConversationView = {
+  sampleKind: PublicStudyConfig["study"]["sampleKind"];
   status: "active" | "completed" | "paused";
   completionQuality: "complete" | "with_evidence_gaps" | null;
   stateRevision: number;
@@ -93,11 +95,9 @@ const pickExactLocale = (values: Record<string, string>, locale: string) => {
   return (key && values[key]) || "";
 };
 
-export function ResearchInterview({ study, requireConsent = false, legacySession, restoreOnly = false }: { study: PublicStudyConfig; requireConsent?: boolean; legacySession?: { key: string; path: string }; restoreOnly?: boolean }) {
+export function ResearchInterview({ study, requireConsent = false, legacySession, restoreOnly = false, testRun }: { study: PublicStudyConfig; requireConsent?: boolean; legacySession?: { key: string; path: string }; restoreOnly?: boolean; testRun?: string }) {
   const baseLocale = study.study.languagePolicy.entryLanguage;
-  const sessionKey = `research-session:${study.study.id}:${study.study.version}`;
-  const pendingKey = `${sessionKey}:pending-answer`;
-  const consentKey = `research-consent:${study.study.id}:${study.consent.version}`;
+  const { sessionKey, pendingKey, consentKey } = interviewStorageKeys(study.study.id, study.study.version, study.consent.version, testRun);
   const [appState, setAppState] = useState<AppState>("loading");
   const [locale, setLocale] = useState(baseLocale);
   const [consentChecked, setConsentChecked] = useState(false);
@@ -132,6 +132,8 @@ export function ResearchInterview({ study, requireConsent = false, legacySession
   const recoveryUi = RECOVERY_COPY[activeLocale] || (activeLocale.startsWith("zh") ? RECOVERY_COPY["zh-CN"] : RECOVERY_COPY[activeLocale.split("-")[0]]) || RECOVERY_COPY.en;
   const dataUi = DATA_COPY[activeLocale] || (activeLocale.startsWith("zh") ? DATA_COPY["zh-CN"] : DATA_COPY[activeLocale.split("-")[0]]) || DATA_COPY.en;
   const localUi = LOCAL_COPY[activeLocale] || (activeLocale.startsWith("zh") ? LOCAL_COPY["zh-CN"] : LOCAL_COPY[activeLocale.split("-")[0]]) || LOCAL_COPY.en;
+  const synthetic = Boolean(testRun) || conversation?.sampleKind === "synthetic" || study.study.sampleKind === "synthetic";
+  const syntheticNotice = synthetic ? <p className="draftNotice" role="note">{dataUi.synthetic}. {activeLocale.startsWith("zh") ? "仅用于测试，不计入正式访谈，不发放奖励。编号仅用于追踪记录。" : activeLocale.startsWith("es") ? "Solo para pruebas. No cuenta como entrevista real ni otorga recompensas. El código solo identifica el registro." : "Test only. Does not count as a real interview and earns no reward. The code is a tracking reference only."}</p> : null;
   const retryAnswer = conversation?.retry && conversation.anchorId
     ? { ...conversation.retry, stateRevision: conversation.stateRevision, anchorId: conversation.anchorId }
     : pendingAnswer;
@@ -187,6 +189,7 @@ export function ResearchInterview({ study, requireConsent = false, legacySession
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          testRun,
           consentVersion: withConsent ? study.consent.version : undefined,
           consentLocale: withConsent ? requestedLocale : undefined,
         }),
@@ -207,7 +210,7 @@ export function ResearchInterview({ study, requireConsent = false, legacySession
     } finally {
       setBusy(false);
     }
-  }, [consentKey, sessionKey, study.consent.version]);
+  }, [consentKey, sessionKey, study.consent.version, testRun]);
 
   useEffect(() => {
     const timer = window.setTimeout(async () => {
@@ -218,7 +221,7 @@ export function ResearchInterview({ study, requireConsent = false, legacySession
           window.location.replace("/");
           return;
         }
-        if (!storedSession?.entryToken && legacySession) {
+        if (!storedSession?.entryToken && legacySession && !testRun) {
           const prior = JSON.parse(localStorage.getItem(legacySession.key) || "null") as SessionData | null;
           if (prior?.entryToken) {
             try {
@@ -266,7 +269,7 @@ export function ResearchInterview({ study, requireConsent = false, legacySession
       }
     }, 0);
     return () => window.clearTimeout(timer);
-  }, [baseLocale, consentKey, fetchConversation, initializeSession, legacySession, pendingKey, requireConsent, restoreDraft, restoreOnly, sessionKey, study.study.version]);
+  }, [baseLocale, consentKey, fetchConversation, initializeSession, legacySession, pendingKey, requireConsent, restoreDraft, restoreOnly, sessionKey, study.study.version, testRun]);
 
   useEffect(() => {
     const frame = requestAnimationFrame(followCurrentQuestion);
@@ -551,6 +554,7 @@ export function ResearchInterview({ study, requireConsent = false, legacySession
     <main className="consentShell">
       <section className="consentPanel">
         <p className="eyebrow">{study.brand.shortLabel}</p>
+        {syntheticNotice}
         <h1>{ui.stoppedTitle}</h1>
         <p className="lead">{ui.stoppedText}</p>
         <button className="secondaryButton" type="button" disabled={exporting} onClick={exportRecord}>{exporting ? localUi.exporting : ui.download}</button>
@@ -572,6 +576,7 @@ export function ResearchInterview({ study, requireConsent = false, legacySession
           </select>
         </label>
         <p className="eyebrow">{ui.before}</p>
+        {syntheticNotice}
         <h1 id="consent-title">{consentCopy.title}</h1>
         <p className="lead">{consentCopy.intro}</p>
         <ul className="consentList">{consentCopy.items.map((item) => <li key={item}>{item}</li>)}</ul>
@@ -593,7 +598,7 @@ export function ResearchInterview({ study, requireConsent = false, legacySession
   return (
     <main ref={shellRef} lang={activeLocale} className={`appShell lightResearchShell motionPaused${completed ? ` isComplete${historyOpen ? " showHistory" : ""}` : ""}${conversation?.messages.length === 1 ? " isOpening" : ""}`}>
       <header className="appHeader">
-        <div className="identity"><Image className="officialLogo" src="/oedro-logo.png" alt="OEDRO" width={160} height={48} unoptimized /><h1>AI Research for Drivers</h1></div>
+        <div className="identity"><Image className="officialLogo" src="/oedro-logo.png" alt="OEDRO" width={160} height={48} unoptimized /><h1>{synthetic ? dataUi.synthetic : "AI Research for Drivers"}</h1></div>
       </header>
       <aside className="studyRail" aria-label={`${visualUi.topic} ${conversation?.progress.current ?? 1} / ${conversation?.progress.total ?? study.anchors.length}`}>
         <span className="progressLabel">{visualUi.topic}</span>
@@ -625,7 +630,7 @@ export function ResearchInterview({ study, requireConsent = false, legacySession
           </div>
           <div className="composerActions"><div><button className="textButton" type="button" disabled={stopping} onClick={stop}>{ui.stop}</button></div><button className="primaryButton" aria-label={busy ? ui.reviewing : retryAnswer || conversation.retryExhausted ? recoveryUi.retry : ui.send} type="button" disabled={busy || stopping || conversation.retryExhausted || (!retryAnswer && !freeText.trim() && !selected.length)} onClick={() => void submit()}>{busy ? ui.reviewing : retryAnswer || conversation.retryExhausted ? recoveryUi.retry : ui.send}</button></div>
         </section>}
-        {completed && conversation?.completion && <section className="completionPanel"><p className="eyebrow">{study.study.sampleKind === "synthetic" ? dataUi.synthetic : ui.complete}</p><h2>{ui.thanks}</h2><p>{conversation.completion.message}</p><p className="participationCode">{ui.reference} <strong>{conversation.completion.participationCode}</strong></p><button className="primaryButton" type="button" disabled={exporting} onClick={exportRecord}>{exporting ? localUi.exporting : ui.download}</button>{storageFeedback}{dataControls}<button className="textButton" aria-expanded={historyOpen} onClick={() => setHistoryOpen(!historyOpen)}>{visualUi.history}</button>{error && <p className="errorMessage" role="alert">{error}</p>}</section>}
+        {completed && conversation?.completion && <section className="completionPanel"><p className="eyebrow">{synthetic ? dataUi.synthetic : ui.complete}</p><h2>{ui.thanks}</h2>{syntheticNotice}<p>{conversation.completion.message}</p><p className="participationCode">{ui.reference} <strong>{conversation.completion.participationCode}</strong></p><button className="primaryButton" type="button" disabled={exporting} onClick={exportRecord}>{exporting ? localUi.exporting : ui.download}</button>{storageFeedback}{dataControls}<button className="textButton" type="button" onClick={clearLocalSession}>{dataUi.restart}</button><button className="textButton" aria-expanded={historyOpen} onClick={() => setHistoryOpen(!historyOpen)}>{visualUi.history}</button>{error && <p className="errorMessage" role="alert">{error}</p>}</section>}
       </section>
     </main>
   );

@@ -1,4 +1,6 @@
 // Shared by the token API and the explicitly scoped local operator exporter.
+export const matchesExportSample = (session, sampleKind) => sampleKind === "all" || session.study_snapshot?.study?.sampleKind === sampleKind;
+
 export const retentionExpiresAt = (session) => {
   const days = session.study_snapshot?.dataPolicy?.retentionDays;
   if (typeof days !== "number" || !Number.isInteger(days) || days < 1 || days > 3650) return null;

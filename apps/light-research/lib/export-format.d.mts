@@ -1,5 +1,7 @@
 import type { SessionRow, TurnRow } from "./storage";
 
+export function matchesExportSample(session: { study_snapshot?: { study?: { sampleKind?: string } } | null }, sampleKind: "participant" | "synthetic" | "all"): boolean;
+
 export function retentionExpiresAt(session: Pick<SessionRow, "created_at" | "study_snapshot">): Date | null;
 export function participantStudySnapshot(snapshot: SessionRow["study_snapshot"]): Record<string, unknown> | null;
 export function serializeSessionExport(session: SessionRow, turns: TurnRow[], options?: { audience?: "participant" | "operator" }): {

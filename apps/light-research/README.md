@@ -1,5 +1,11 @@
 # OEDRO AI Research for Drivers
 
+## Isolated online QA (2026-10-08)
+
+Use `/?testRun=e2e-20261008-en-normal` with a unique safe tag for each synthetic route. This uses the same live backend, database and AI as the ordinary entry. Its stored study snapshot is marked `synthetic`; browser session, consent, draft and retry keys are isolated from ordinary interviews and other tags. It earns no reward. Refresh resumes that tagged interview. Finished and stopped interviews offer a new-interview button which replaces only the browser pointer, preserving the stored answers.
+
+Study-scoped `scripts/export-sessions.mjs` defaults to `--sample-kind participant`, excluding test and unknown-provenance records. Explicit `--sample-kind synthetic` selects QA records; `all` must be deliberate. Exact-session exports retain their original behavior. The export's matched count includes excluded records; eligible is an export count, not a count of verified owners or completed research.
+
 ## Five-owner pilot (2026-09-27)
 
 The current instrument is `pilot-1.2-question-clarity` with prompt `interviewer-3.10-semantic-followups`. The moderator records a source-linked meaning classification for visibility problems and concept use, instead of detecting rejection or uncertainty with fixed phrases. A genuine problem can trigger one action question; a possible use can trigger one switching question. No difficulty, no need, and one-mode-only answers cancel irrelevant queued questions too. Missing classifications in real-provider responses fail validation and leave the saved answer available for retry. Historical session snapshots keep their original questions and topic count.

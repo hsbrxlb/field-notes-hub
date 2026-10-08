@@ -1,3 +1,5 @@
+import { testRunSchema } from "./api-schemas";
+import { sessionSampleKind } from "./synthetic-entry";
 import { getStudyConfig, getSessionStudyConfig, localized } from "./study-config";
 import { applyAssessment, createModeratorState } from "./moderator-state";
 import { resolvePlannedReply } from "./moderator-dialogue";
@@ -139,6 +141,7 @@ const conversationView = async (entryToken: string) => {
   const gapMove = session.state.activeMove?.kind !== "anchor" || Boolean(session.state.activeMove?.responseType);
   return {
     status: completed ? "completed" as const : session.status,
+    sampleKind: sessionSampleKind(session.study_snapshot),
     completionQuality: session.state.completionQuality,
     stateRevision: session.state.revision,
     anchorId: session.state.activeAnchorId,
@@ -170,8 +173,13 @@ const conversationView = async (entryToken: string) => {
   };
 };
 
-export const startConversation = async (consentVersion?: string, consentLocale?: string) => {
-  const study = getStudyConfig();
+export const startConversation = async (consentVersion?: string, consentLocale?: string, testRun?: string) => {
+  const validatedRun = testRunSchema.optional().safeParse(testRun);
+  if (!validatedRun.success) throw new ConversationError(400, "test_run", "The test run tag is invalid.");
+  const currentStudy = getStudyConfig();
+  const study: StudyManifest = validatedRun.data
+    ? { ...currentStudy, study: { ...currentStudy.study, sampleKind: "synthetic" } }
+    : currentStudy;
   const requireConsent = study.consent.enabledByDefault || process.env.SURVEY_CONSENT_MODE === "1";
   if (requireConsent) {
     if (consentVersion !== study.consent.version) throw new ConversationError(400, "consent_version", "Consent version is missing or outdated.");

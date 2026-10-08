@@ -1,16 +1,17 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import pg from "pg";
-import { retentionExpiresAt, serializeSessionExport } from "../lib/export-format.mjs";
+import { matchesExportSample, retentionExpiresAt, serializeSessionExport } from "../lib/export-format.mjs";
 
 const args = process.argv.slice(2);
 const value = (name) => { const index = args.indexOf(name); return index < 0 ? undefined : args[index + 1]; };
 const sessionId = value("--session-id");
 const studyId = value("--study-id");
 const studyVersion = value("--study-version");
+const sampleKind = value("--sample-kind") || (sessionId ? "all" : "participant");
 const write = args.includes("--write");
 const outputDir = resolve(value("--output") || "output/exports");
-const allowed = new Set(["--session-id", "--study-id", "--study-version", "--output", "--write", "--dry-run"]);
+const allowed = new Set(["--session-id", "--study-id", "--study-version", "--sample-kind", "--output", "--write", "--dry-run"]);
 for (let index = 0; index < args.length; index += 1) {
   const name = args[index];
   if (!allowed.has(name)) throw new Error("Unknown export argument.");
@@ -20,6 +21,7 @@ if (Boolean(sessionId) === Boolean(studyId && studyVersion) || (sessionId && (st
   throw new Error("Select exactly --session-id UUID or --study-id ID --study-version VERSION. No export-all mode.");
 }
 if (sessionId && !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(sessionId)) throw new Error("Invalid session ID.");
+if (!["participant", "synthetic", "all"].includes(sampleKind)) throw new Error("Invalid sample kind.");
 if (write && args.includes("--dry-run")) throw new Error("Choose --write or --dry-run.");
 if (!process.env.DATABASE_URL) throw new Error("DATABASE_URL is required.");
 const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL, max: 2 });
@@ -31,9 +33,11 @@ try {
     FROM research_sessions WHERE ${sessionId ? "id = $1" : "study_id = $1 AND study_version = $2"} ORDER BY created_at FOR SHARE`,
   sessionId ? [sessionId] : [studyId, studyVersion]);
   let eligible = 0;
+  let excludedByProvenance = 0;
   let expired = 0;
   let unknownRetention = 0;
   for (const session of sessions.rows) {
+    if (!matchesExportSample(session, sampleKind)) { excludedByProvenance += 1; continue; }
     const expiresAt = retentionExpiresAt(session);
     if (!expiresAt) { unknownRetention += 1; continue; }
     if (expiresAt.getTime() <= Date.now()) { expired += 1; continue; }
@@ -49,7 +53,7 @@ try {
     await writeFile(resolve(outputDir, `${record.participationCode}.json`), JSON.stringify(record, null, 2) + "\n", { encoding: "utf8", flag: "wx" });
   }
   await client.query("COMMIT");
-  console.log(JSON.stringify({ mode: write ? "write" : "dry-run", matched: sessions.rowCount, eligible, expired, unknownRetention, exported: write ? eligible : 0 }));
+  console.log(JSON.stringify({ mode: write ? "write" : "dry-run", sampleKind, matched: sessions.rowCount, excludedByProvenance, eligible, expired, unknownRetention, exported: write ? eligible : 0 }));
 } catch {
   await client.query("ROLLBACK");
   console.error("Scoped export failed; inspect the selected scope and output directory. Existing output files are never overwritten.");

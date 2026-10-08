@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 export async function POST(request: Request) {
   try {
     const input = startRequestSchema.parse(await request.json());
-    return NextResponse.json(await startConversation(input.consentVersion, input.consentLocale), { headers: { "Cache-Control": "no-store" } });
+    return NextResponse.json(await startConversation(input.consentVersion, input.consentLocale, input.testRun), { headers: { "Cache-Control": "no-store" } });
   } catch (error) {
     if (error instanceof ConversationError) return NextResponse.json({ error: error.code, message: error.message }, { status: error.status, headers: { "Cache-Control": "no-store" } });
     const invalid = error instanceof z.ZodError || error instanceof SyntaxError;
