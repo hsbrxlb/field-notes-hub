@@ -134,6 +134,7 @@ button { touch-action: manipulation; }
 .completionPanel { padding: clamp(32px, 10vh, 100px) 4px 24px; }
 .completionPanel::before { content: "✓"; display: grid; place-items: center; margin-bottom: 32px; width: 48px; height: 48px; border: 1px solid #a6ad98; border-radius: 50%; color: #52623f; font-size: 24px; }
 .completionPanel h2 { margin: 12px 0 20px; font: 400 40px/1.2 var(--serif); letter-spacing: -.025em; }
+.completionPanel > .textButton { display: block; width: fit-content; margin-top: 8px; }
 .completionPanel > p:not(.eyebrow) { max-width: 580px; font-size: 20px; line-height: 1.65; color: var(--muted); }
 .participationCode { padding: 18px 0; margin: 24px 0; border-block: 1px solid var(--line); }
 .participationCode strong { margin-left: 12px; color: var(--ink); font-size: 14px; }
