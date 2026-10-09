@@ -36,6 +36,11 @@
       "file": "discord-invite-plan.html"
     },
     {
+      "id": "ugc-activity",
+      "label": "投稿活动",
+      "file": "ugc-activity.html"
+    },
+    {
       "id": "sema-plan",
       "label": "SEMA门票活动",
       "file": "sema-plan.html"

@@ -1,0 +1,13 @@
+.garage-stories .plan-document { max-width: 1100px; }
+.garage-stories .activity-links { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 16px 0 24px; }
+.garage-stories .activity-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.garage-stories ul, .garage-stories ol { padding-left: 22px; margin: 0 0 16px; }
+.garage-stories li + li { margin-top: 8px; }
+.garage-stories .newsletter-issue, .garage-stories .newsletter-comparison { margin-top: 0; }
+.garage-stories .newsletter-pair > p { margin: 0; }
+.garage-stories .newsletter-title-pair > * { font-size: 19px; }
+.garage-stories .mail-field { display: block; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
+.garage-stories .preview-error { padding: 16px 0; }
+@media (max-width: 600px) {
+  .garage-stories .newsletter-controls a { flex-basis: 100%; margin-left: 0; }
+}

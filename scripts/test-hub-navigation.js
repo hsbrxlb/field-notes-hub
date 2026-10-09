@@ -10,14 +10,14 @@ for (const [id, label] of Object.entries({
   'discord-community': 'Discord频道设计', research: 'AI问卷',
   voice: 'OEDRO讨论全网捕捉', 'brand-voice-system': 'Oedro persona',
   'merch-plan': 'Oedro周边', 'first-outreach': '首批触达用户', 'discord-invite-plan': '邀请加入Discord活动方案',
-  products: '产品知识库', 'mascot-workflow': '吉祥物设计的skill'
+  products: '产品知识库', 'mascot-workflow': '吉祥物设计的skill', 'ugc-activity': '投稿活动'
 })) assert.equal(nav.find(item => item.id === id)?.label, label);
 assert.deepEqual(nav.map(item => item.id), [
-  'fakesite', 'customer-analytics', 'first-outreach', 'email-templates', 'newsletter', 'discord-invite-plan', 'sema-plan',
+  'fakesite', 'customer-analytics', 'first-outreach', 'email-templates', 'newsletter', 'discord-invite-plan', 'ugc-activity', 'sema-plan',
   'studio', 'voice', 'products', 'research', 'discord-community', 'seo-geo',
   'social-brand', 'brand-voice-system', 'mascot', 'merch-plan', 'mascot-workflow', 'flipbooks'
 ]);
-for (const id of ['first-outreach', 'discord-invite-plan']) {
+for (const id of ['first-outreach', 'discord-invite-plan', 'ugc-activity']) {
   assert.ok(read(`${id}.html`).includes(`data-page="${id}"`));
   assert.ok(read('app.js').includes(`'${id}'`), 'static pages retain their content during navigation loading');
 }
