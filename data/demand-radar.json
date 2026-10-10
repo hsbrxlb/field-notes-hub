@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-01T03:38:31+00:00",
-  "last_attempt_at": "2026-10-01T03:37:33+00:00",
-  "last_success_at": "2026-10-01T03:38:31+00:00",
+  "generated_at": "2026-10-09T10:54:13+00:00",
+  "last_attempt_at": "2026-10-09T10:53:18+00:00",
+  "last_success_at": "2026-10-09T10:54:13+00:00",
   "method": "deterministic_external_signal_scan",
   "status": "success",
   "stale_after_hours": 36,
   "truth_status": "blocked",
   "metrics": {
-    "raw_discovered": 166,
-    "accepted": 125,
-    "filtered": 41,
+    "raw_discovered": 174,
+    "accepted": 134,
+    "filtered": 40,
     "new_actionable": 0,
-    "duplicate_actionable": 3,
-    "open_items": 9,
-    "youtube_videos_checked": 8,
-    "youtube_comments_checked": 104,
-    "youtube_replies_checked": 32,
+    "duplicate_actionable": 1,
+    "open_items": 8,
+    "youtube_videos_checked": 9,
+    "youtube_comments_checked": 125,
+    "youtube_replies_checked": 36,
     "youtube_unavailable_videos": 0,
     "bluesky_posts_checked": 0
   },
@@ -24,12 +24,12 @@
     {
       "source": "tavily",
       "status": "ok",
-      "accepted_count": 14
+      "accepted_count": 2
     },
     {
       "source": "youtube",
       "status": "ok",
-      "accepted_count": 111
+      "accepted_count": 132
     },
     {
       "source": "bluesky",
@@ -43,6 +43,17 @@
     }
   ],
   "items": [
+    {
+      "signal_id": "6996ffc0e165c43fb192bfb563aafd8fd64c757f21d0bfd57e522fd05e563506",
+      "topic": "complaint",
+      "source_family": "reddit",
+      "source_link": "https://www.reddit.com/r/chevycolorado/comments/1sh85cx/please_help_me_pick_some_side_railsstepsrunning",
+      "reason_code": "direct_oedro_question",
+      "next_action": "verify_product_facts",
+      "triage_status": "NEEDS_FACTS",
+      "observed_at": "2026-10-09T10:53:30+00:00",
+      "last_seen_at": "2026-10-09T10:54:13+00:00"
+    },
     {
       "signal_id": "2fe8fcac771e0d3c0a983f688f3098989821f43b468b2e0920257af61819ba8c",
       "topic": "recommendation",
@@ -75,17 +86,6 @@
       "triage_status": "NEEDS_FACTS",
       "observed_at": "2026-10-01T03:37:47+00:00",
       "last_seen_at": "2026-10-01T03:38:31+00:00"
-    },
-    {
-      "signal_id": "6996ffc0e165c43fb192bfb563aafd8fd64c757f21d0bfd57e522fd05e563506",
-      "topic": "complaint",
-      "source_family": "reddit",
-      "source_link": "https://www.reddit.com/r/chevycolorado/comments/1sh85cx/please_help_me_pick_some_side_railsstepsrunning",
-      "reason_code": "direct_oedro_question",
-      "next_action": "verify_product_facts",
-      "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-09-28T03:36:01+00:00",
-      "last_seen_at": "2026-09-28T03:36:44+00:00"
     },
     {
       "signal_id": "572608de2b7e3db7b7a8cb9e17bd895f3d62e5521ed00dd271b66f0f51a9f849",
@@ -130,17 +130,6 @@
       "triage_status": "NEEDS_FACTS",
       "observed_at": "2026-09-19T03:34:24+00:00",
       "last_seen_at": "2026-09-19T03:35:11+00:00"
-    },
-    {
-      "signal_id": "e96e86c77db049075575f43e028a64b32cac6fbb9d0b633356ae3c7c060eba32",
-      "topic": "tonneau_cover",
-      "source_family": "forum",
-      "source_link": "https://www.mavericktruckclub.com/forum/threads/4-fold-low-prifile-tonneau-cover-409-79.86686/page-2",
-      "reason_code": "direct_oedro_question",
-      "next_action": "verify_product_facts",
-      "triage_status": "NEEDS_FACTS",
-      "observed_at": "2026-09-06T01:19:25+00:00",
-      "last_seen_at": "2026-09-06T01:19:58+00:00"
     }
   ]
 }
