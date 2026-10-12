@@ -162,7 +162,7 @@ function renderUserVoice(data, voice, radar) {
     if (typeof value !== 'string' || value.length > 2048 || /[\s\\]/.test(value)) return false;
     let url;
     try { url = new URL(value); } catch { return false; }
-    if (url.protocol !== 'https:' || url.username || url.password || url.port || url.hash) return false;
+    if (url.protocol !== 'https:' || !/^https:\/\/[a-z0-9.-]+\//i.test(value) || url.port || url.hash) return false;
     const host = url.hostname.toLowerCase();
     const onDomain = (domain) => host === domain || host === `www.${domain}`;
     const query = [...url.searchParams.keys()];
