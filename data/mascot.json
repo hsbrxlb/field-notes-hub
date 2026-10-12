@@ -1,10 +1,108 @@
 {
   "title": "吉祥物迭代",
-  "meta_description": "OEDRO 小欧、金金、阿稳与救援踏板伙伴的形象与动作。",
+  "meta_description": "OEDRO 布诺、阿朗、小欧与救援板小伙伴的形象、动作和应用。",
   "characters": [
     {
-      "id": "character-click-helper",
+      "id": "character-06-bison",
       "index": "01",
+      "family": "bison",
+      "type": "animal",
+      "role": "brand",
+      "name_cn": "布诺",
+      "name_en": "Bruno",
+      "blurb": "宽肩膀，慢脾气。带上工具包，认真听你说，也带小帮手一起出发。",
+      "assets": [
+        {
+          "code": "BULL-V2-01",
+          "caption": "拎上工具包",
+          "src": "assets/mascot-evolution/bull-v2/BULL-V2-01.webp",
+          "alt": "栗棕色公牛在车库里拎着深色工具包招手",
+          "source_round": "bull-v2",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "code": "BULL-V2-02",
+          "caption": "回身招呼",
+          "src": "assets/mascot-evolution/bull-v2/BULL-V2-02.webp",
+          "alt": "公牛背着工具包回身，网布帽侧与后背清楚可见",
+          "source_round": "bull-v2",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "code": "BULL-V2-03",
+          "caption": "介绍小伙伴",
+          "src": "assets/mascot-evolution/bull-v2/BULL-V2-03.webp",
+          "alt": "公牛打开工具包，接住从包中探身的红色救援板小伙伴",
+          "source_round": "bull-v2",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "code": "BULL-V2-04",
+          "caption": "看好路线再出发",
+          "src": "assets/mascot-evolution/bull-v2/BULL-V2-04.webp",
+          "alt": "公牛在山路皮卡旁拿着地图指向前路",
+          "source_round": "bull-v2",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "code": "BULL-V2-05",
+          "caption": "整理工具",
+          "src": "assets/mascot-evolution/bull-v2/BULL-V2-05.webp",
+          "alt": "公牛坐在皮卡尾门上整理打开的工具包",
+          "source_round": "bull-v2",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "avatar_src": "assets/mascot-evolution/bull-v2/BULL-V2-AVATAR.webp"
+    },
+    {
+      "id": "character-01-dog",
+      "index": "02",
+      "family": "dog",
+      "type": "animal",
+      "role": "brand",
+      "name_cn": "阿朗",
+      "name_en": "Sunny",
+      "blurb": "穿上工装的金毛搭档，热情地迎人，也耐心陪着小伙伴干活。",
+      "assets": [
+        {
+          "code": "OK-DOG-01",
+          "caption": "欢迎来到车库",
+          "src": "assets/mascot-evolution/ollie-kit/OK-DOG-01.webp",
+          "alt": "阿朗（Sunny）欢迎来到车库",
+          "source_round": "ollie-kit"
+        },
+        {
+          "code": "DOG-02",
+          "caption": "回头招呼你",
+          "src": "assets/mascot-evolution/chat-refresh/DOG-02.webp",
+          "alt": "阿朗（Sunny）回头招呼你",
+          "source_round": "chat-refresh"
+        },
+        {
+          "code": "OK-DOG-03",
+          "caption": "伸手接住小伙伴",
+          "src": "assets/mascot-evolution/ollie-kit/OK-DOG-03.webp",
+          "alt": "阿朗跪在打开的工具箱旁迎接踏踏",
+          "source_round": "ollie-kit"
+        },
+        {
+          "code": "DOG-04",
+          "caption": "带上工具出发",
+          "src": "assets/mascot-evolution/chat-refresh/DOG-04.webp",
+          "alt": "阿朗（Sunny）带上工具出发",
+          "source_round": "chat-refresh"
+        }
+      ]
+    },
+    {
+      "id": "character-click-helper",
+      "index": "03",
       "family": "o-partner",
       "type": "mechanical",
       "role": "brand",
@@ -43,86 +141,6 @@
       ]
     },
     {
-      "id": "character-01-dog",
-      "index": "02",
-      "family": "dog",
-      "type": "animal",
-      "role": "brand",
-      "name_cn": "金金",
-      "name_en": "Sunny",
-      "blurb": "穿上工装的金毛搭档，热情地迎人，也耐心陪着小伙伴干活。",
-      "assets": [
-        {
-          "code": "OK-DOG-01",
-          "caption": "欢迎来到车库",
-          "src": "assets/mascot-evolution/ollie-kit/OK-DOG-01.webp",
-          "alt": "金金（Sunny）欢迎来到车库",
-          "source_round": "ollie-kit"
-        },
-        {
-          "code": "DOG-02",
-          "caption": "回头招呼你",
-          "src": "assets/mascot-evolution/chat-refresh/DOG-02.webp",
-          "alt": "金金（Sunny）回头招呼你",
-          "source_round": "chat-refresh"
-        },
-        {
-          "code": "OK-DOG-03",
-          "caption": "伸手接住小伙伴",
-          "src": "assets/mascot-evolution/ollie-kit/OK-DOG-03.webp",
-          "alt": "金金跪在打开的工具箱旁迎接踏踏",
-          "source_round": "ollie-kit"
-        },
-        {
-          "code": "DOG-04",
-          "caption": "带上工具出发",
-          "src": "assets/mascot-evolution/chat-refresh/DOG-04.webp",
-          "alt": "金金（Sunny）带上工具出发",
-          "source_round": "chat-refresh"
-        }
-      ]
-    },
-    {
-      "id": "character-06-bison",
-      "index": "03",
-      "family": "bison",
-      "type": "animal",
-      "role": "brand",
-      "name_cn": "阿稳",
-      "name_en": "Bruno",
-      "blurb": "肩膀宽，脾气好。拿起工具时认真，讲起小零件也有耐心。",
-      "assets": [
-        {
-          "code": "OK-BULL-01",
-          "caption": "站稳来帮忙",
-          "src": "assets/mascot-evolution/ollie-kit/OK-BULL-01.webp",
-          "alt": "阿稳（Bruno）站稳来帮忙",
-          "source_round": "ollie-kit"
-        },
-        {
-          "code": "BULL-02",
-          "caption": "转身听你说",
-          "src": "assets/mascot-evolution/chat-refresh/BULL-02.webp",
-          "alt": "阿稳（Bruno）转身听你说",
-          "source_round": "chat-refresh"
-        },
-        {
-          "code": "OK-BULL-03",
-          "caption": "今天轮到踏踏帮忙",
-          "src": "assets/mascot-evolution/ollie-kit/OK-BULL-03.webp",
-          "alt": "阿稳在工作台上打开工具箱介绍踏板伙伴",
-          "source_round": "ollie-kit"
-        },
-        {
-          "code": "BULL-04",
-          "caption": "提上工具箱",
-          "src": "assets/mascot-evolution/chat-refresh/BULL-04.webp",
-          "alt": "阿稳（Bruno）提上工具箱",
-          "source_round": "chat-refresh"
-        }
-      ]
-    },
-    {
       "id": "character-recovery-board",
       "family": "recovery-board",
       "type": "mechanical",
@@ -147,6 +165,26 @@
       ],
       "index": "04",
       "role": "product"
+    }
+  ],
+  "applications": [
+    {
+      "code": "BULL-V2-SOCIAL",
+      "caption": "搭档一起出发",
+      "src": "assets/mascot-evolution/bull-v2/BULL-V2-SOCIAL.webp",
+      "alt": "公牛在皮卡尾门旁伸手接救援板小伙伴，小伙伴从工具包中爬出",
+      "width": 1122,
+      "height": 1402,
+      "source_round": "bull-v2"
+    },
+    {
+      "code": "BULL-V2-MERCH",
+      "caption": "帽子与贴纸",
+      "src": "assets/mascot-evolution/bull-v2/BULL-V2-MERCH.webp",
+      "alt": "深色网帽布章与模切贴纸上的公牛及救援板小伙伴",
+      "width": 1536,
+      "height": 1024,
+      "source_round": "bull-v2"
     }
   ]
 }

@@ -9,7 +9,7 @@
   function assetFigure(asset, eager = false) {
     return '<figure class="evo-asset">'
       + '<a class="evo-asset-image" href="' + safe(asset.src) + '" aria-label="查看原图：' + safe(asset.caption) + '"><img src="' + safe(asset.src) + '" alt="' + safe(asset.alt)
-      + '" width="1254" height="1254" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"></a>'
+      + '" width="' + (asset.width || 1254) + '" height="' + (asset.height || 1254) + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"></a>'
       + '<figcaption>' + safe(asset.caption) + '</figcaption></figure>';
   }
 
@@ -51,6 +51,11 @@
       + '</div></nav>';
   }
 
+  function sceneApplicationsMarkup(assets) {
+    return '<section class="evo-scene-applications" aria-labelledby="evo-scenes-title"><h3 id="evo-scenes-title">社媒与周边</h3>'
+      + '<div class="evo-assets">' + assets.map((asset) => assetFigure(asset)).join('') + '</div></section>';
+  }
+
   function applicationMarkup(characters) {
     const examples = [
       { family: 'o-partner', name: '车主调研', title: 'OEDRO Driver Research', copy: 'What does a typical drive look like for you?' },
@@ -63,7 +68,7 @@
       + examples.map((example) => {
         const character = characters.find((entry) => entry.family === example.family);
         return '<section class="evo-application"><h3>' + safe(example.name) + '</h3>'
-          + '<div class="evo-application-preview"><img src="' + safe(character.assets[0].src)
+          + '<div class="evo-application-preview"><img src="' + safe(character.avatar_src || character.assets[0].src)
           + '" width="96" height="96" alt="' + safe(character.name_cn) + '头像" loading="lazy">'
           + '<div lang="en"><strong>' + safe(example.title) + '</strong><p>' + safe(example.copy) + '</p></div></div></section>';
       }).join('') + '</div></section>';
@@ -81,7 +86,8 @@
       + data.characters.map((character, index) =>
         (index === 0 || character.role !== data.characters[index - 1].role
           ? '<p class="evo-group-label">' + (character.role === 'product' ? '产品伙伴' : '品牌伙伴') + '</p>' : '')
-        + characterMarkup(character, index === 0)).join('')
+        + characterMarkup(character, index === 0)
+        + (index === 0 ? sceneApplicationsMarkup(data.applications) : '')).join('')
       + applicationMarkup(data.characters)
       + '</div></div>';
   };

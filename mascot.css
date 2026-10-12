@@ -122,7 +122,6 @@
 .evo-asset-image {
   display: block;
   overflow: hidden;
-  aspect-ratio: 1;
   background: var(--evo-paper);
   border: 1px solid rgba(255, 255, 255, .16);
 }
@@ -152,7 +151,7 @@
 .evo-asset-image img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
 }
 
@@ -161,6 +160,9 @@
   color: var(--text-muted);
   font-size: 12px;
 }
+
+.evo-scene-applications { padding: 32px 0 48px; border-bottom: 1px solid var(--border-strong); }
+.evo-scene-applications h3 { margin: 0 0 24px; font-size: 20px; }
 
 .evo-applications { padding: 32px 0 48px; }
 .evo-applications h2 { font-size: 23px; margin: 0; }
@@ -209,6 +211,6 @@
   .evo-character:first-child { padding-top: 22px; }
   .evo-character-head { grid-template-columns: 34px minmax(0, 1fr); gap: 8px; padding-bottom: 16px; }
   .evo-character-head h2 { font-size: 19px; }
-  .evo-character-head p { font-size: 13px; }
+  .evo-character-head p { font-size: 15px; }
   .evo-assets { gap: 28px; }
 }

@@ -40,7 +40,7 @@ for (const token of forbiddenUi) {
 if ('rounds' in mascot || !Array.isArray(mascot.characters) || mascot.characters.length !== 4) fail('the gallery must contain four focused character sections');
 
 const expected = new Map([
-  ['o-partner', 4], ['dog', 4], ['bison', 4], ['recovery-board', 2]
+  ['bison', 5], ['dog', 4], ['o-partner', 4], ['recovery-board', 2]
 ]);
 
 const codes = [];
@@ -79,21 +79,32 @@ for (const character of mascot.characters) {
 }
 
 if (new Set(families).size !== 4) fail('each character family must appear in one section only');
-if (codes.length !== 14 || new Set(codes).size !== 14 || new Set(sources).size !== 14) fail('fourteen unique gallery images are required');
-if (families.join(',') !== [...expected.keys()].join(',')) fail('display order must be O, dog, bull, board');
+if (codes.length !== 15 || new Set(codes).size !== 15 || new Set(sources).size !== 15) fail('fifteen unique gallery images are required');
+if (families.join(',') !== [...expected.keys()].join(',')) fail('display order must be bull, dog, O, board');
 if (mascot.characters.slice(0, 3).some((character) => character.role !== 'brand')
   || mascot.characters[3].role !== 'product') fail('three brand partners must precede the product partner');
 if (mascot.characters.some((character, index) => character.index !== String(index + 1).padStart(2, '0'))) fail('navigation numbering must follow the display order');
 
-const additions = mascot.characters.flatMap((character) => character.assets).filter((asset) => ['ollie-kit', 'ollie-halo'].includes(asset.source_round));
-const newCodes = ['OH-O-01', 'OH-O-02', 'OH-O-03', 'OH-O-04', 'OK-DOG-01', 'OK-DOG-03', 'OK-BULL-01', 'OK-BULL-03'];
-if (additions.length !== 8 || newCodes.some((code) => !additions.some((asset) => asset.code === code))) fail('eight lamp and toolcase images must be present');
-const historicalCodes = ['DOG-02', 'DOG-04', 'BULL-02', 'BULL-04', 'MR-BOARD-A', 'MR-BOARD-B'];
-if (historicalCodes.some((code) => !codes.includes(code))) fail('a retained comparison image is missing');
+const bull = mascot.characters[0];
+if (bull.name_cn !== '布诺' || bull.name_en !== 'Bruno'
+  || bull.assets.some((asset) => asset.source_round !== 'bull-v2')) fail('the updated bull identity is missing');
+const retainedCodes = ['OH-O-01', 'OH-O-02', 'OH-O-03', 'OH-O-04', 'OK-DOG-01', 'OK-DOG-03', 'DOG-02', 'DOG-04', 'MR-BOARD-A', 'MR-BOARD-B'];
+if (retainedCodes.some((code) => !codes.includes(code))) fail('a retained character image is missing');
+if (!Array.isArray(mascot.applications) || mascot.applications.length !== 2) fail('social and merchandise applications are required');
+for (const asset of mascot.applications) {
+  if (!asset.code || !asset.caption || !asset.alt || !asset.src) fail('an application is incomplete');
+  const size = webpSize(path.join(root, asset.src));
+  if (!size || size.width < 1024 || size.height < 1024
+    || size.width !== asset.width || size.height !== asset.height) fail(`${asset.code} dimensions are incorrect`);
+  if (sources.includes(asset.src) || codes.includes(asset.code)) fail('an application duplicates a character image');
+  sources.push(asset.src);
+  codes.push(asset.code);
+}
+if (new Set(sources).size !== sources.length || new Set(codes).size !== codes.length) fail('application images are duplicated');
 
 const publicText = [JSON.stringify(mascot), html, script, css].join('\n');
 if (/已淘汰|当前候选|候选|已选定|首选|备选|Rejected|Shortlisted|Selected/.test(publicText)) fail('selection labels must not appear');
 if (/"date"\s*:|"goal"\s*:|独立画面|身份｜|结构｜|工作｜|动态｜/.test(JSON.stringify(mascot))) fail('dates or design-process copy must not appear in the role archive');
 if (/\/Users\/|127\.0\.0\.1|localhost|API[_ -]?KEY|COOKIE|PASSWORD/i.test(publicText)) fail('local-only or sensitive text appears in the public mascot page');
 
-console.log('Mascot gallery check passed: 4 character sections, 14 unique images, 8 lamp/toolcase revisions and 6 retained images, 3 brand and 1 product partner, no selection labels or process UI.');
+console.log('Mascot gallery check passed: bull first, 4 character sections, 15 unique images and 2 applications, retained comparison directions, no selection labels or process UI.');
