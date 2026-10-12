@@ -133,11 +133,156 @@ function renderUserVoice(data, voice, radar) {
   };
   const sourceLabels = { reddit: 'Reddit', forum: '车型论坛', youtube: 'YouTube', bluesky: 'Bluesky' };
   const radarItems = Array.isArray(radar?.items) ? radar.items : [];
+  const mentions = radar?.mentions?.schema_version === 1 ? radar.mentions : null;
+  const mentionKey = (item) => `${item.platform}:${item.object_id}`;
+  const forumDomains = ['f150forum.com', 'mavericktruckclub.com', 'tacomaworld.com', 'tundras.com',
+    'ramforum.com', 'silveradosierra.com', 'jeepforum.com', 'jlwranglerforums.com', 'jeepgladiatorforum.com', 'coloradofans.com'];
+
+  const awareIsoPattern = /^\d{4}-\d{2}-\d{2}T(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d(?:\.\d{1,9})?(?:Z|[+-](?:0\d|1[0-4]):[0-5]\d)$/;
+  const blockedPathPattern = /\/(?:user|users|profile|profiles|member|members|account|accounts)(?:\/|$)/i;
+  function calendarDate(value) {
+    if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+    const [year, month, day] = value.split('-').map(Number);
+    if (year < 1000 || month < 1 || month > 12 || day < 1) return false;
+    return day <= new Date(Date.UTC(year, month, 0)).getUTCDate();
+  }
+
+  function awareNanoseconds(value) {
+    if (typeof value !== 'string' || !awareIsoPattern.test(value) || !calendarDate(value.slice(0, 10))
+      || /[+-]14:(?!00)/.test(value)) return null;
+    const wholeSecond = Date.parse(value.replace(/\.\d+(?=Z|[+-]\d{2}:\d{2}$)/, ''));
+    if (!Number.isFinite(wholeSecond)) return null;
+    const fraction = /\.(\d+)(?=Z|[+-]\d{2}:\d{2}$)/.exec(value)?.[1] || '';
+    return BigInt(wholeSecond) * 1000000n + BigInt(fraction.padEnd(9, '0'));
+  }
+
+  function awareTimestamp(value) { return awareNanoseconds(value) !== null; }
+
+  function safeMentionLink(value, platform, objectId) {
+    if (typeof value !== 'string' || value.length > 2048 || /[\s\\]/.test(value)) return false;
+    let url;
+    try { url = new URL(value); } catch { return false; }
+    if (url.protocol !== 'https:' || url.username || url.password || url.port || url.hash) return false;
+    const host = url.hostname.toLowerCase();
+    const onDomain = (domain) => host === domain || host === `www.${domain}`;
+    const query = [...url.searchParams.keys()];
+    const matchesId = (id) => objectId === undefined || objectId === id;
+    if (platform === 'YouTube') {
+      const videoPath = /^\/(?:shorts\/|live\/)?([A-Za-z0-9_-]{11})\/?$/.exec(url.pathname);
+      if (onDomain('youtu.be') || onDomain('youtube.com') && /^\/(?:shorts|live)\//.test(url.pathname)) {
+        return !query.length && !!videoPath && matchesId(videoPath[1]);
+      }
+      const videoId = url.searchParams.get('v');
+      const commentId = url.searchParams.get('lc');
+      return onDomain('youtube.com') && url.pathname === '/watch'
+        && query.every((key) => ['v', 'lc'].includes(key)) && query.length <= 2
+        && /^[A-Za-z0-9_-]{11}$/.test(videoId || '')
+        && (!url.searchParams.has('lc') || /^[A-Za-z0-9_.-]{1,200}$/.test(commentId))
+        && matchesId(commentId ? `${videoId}:${commentId}` : videoId);
+    }
+    if (query.length) return false;
+    if (platform === 'Reddit') {
+      const post = /^\/(?:r\/[^/]+\/)?comments\/([a-z0-9]+)(?:\/([^/]+))?(?:\/([a-z0-9]+))?\/?$/i.exec(url.pathname);
+      return (onDomain('reddit.com') || host === 'old.reddit.com') && !!post
+        && matchesId(post[3] ? `t1_${post[3]}` : `t3_${post[1]}`);
+    }
+    if (platform === 'Bluesky') {
+      const post = /^\/profile\/([^/]+)\/post\/([A-Za-z0-9]+)\/?$/.exec(url.pathname);
+      return host === 'bsky.app' && !!post && matchesId(`${post[1]}/${post[2]}`);
+    }
+    if (platform === 'X') {
+      const post = /^\/(?:[^/]+|i\/web)\/status\/(\d+)\/?$/.exec(url.pathname);
+      return (onDomain('x.com') || onDomain('twitter.com')) && !!post && matchesId(post[1]);
+    }
+    if (platform === 'Trustpilot') {
+      const review = /^\/reviews\/([a-f0-9]+)\/?$/i.exec(url.pathname);
+      return onDomain('trustpilot.com') && !!review && matchesId(review[1]);
+    }
+    const forumId = /^\/(?:threads|posts)\/(?:[^/]*[.-])?(\d+)\/?$/i.exec(url.pathname)?.[1]
+      || /^\/f\d+\/[^/]+-(\d+)\/?$/i.exec(url.pathname)?.[1];
+    return platform === '汽车论坛' && forumDomains.some((domain) => host === domain || host.endsWith(`.${domain}`))
+      && !!forumId && !blockedPathPattern.test(url.pathname) && matchesId(`${host.replace(/^www\./, '')}:${forumId}`);
+  }
+
+  function publicationBounds(publication) {
+    if (publication.precision === 'datetime') {
+      const instant = awareNanoseconds(publication.published_at);
+      return [instant, instant];
+    }
+    if (publication.precision !== 'date') return null;
+    const [year, month, day] = publication.date.split('-').map(Number);
+    const midnight = Date.UTC(year, month - 1, day);
+    const zone = publication.source_timezone;
+    const offset = typeof zone === 'string' && /^(?:UTC)?([+-])(\d{2}):(\d{2})$/.exec(zone);
+    let minutes = null;
+    if (zone === 'UTC' || zone === 'Z') minutes = 0;
+    else if (offset && Number(offset[2]) <= 14 && Number(offset[3]) < 60
+      && (Number(offset[2]) < 14 || Number(offset[3]) === 0)) {
+      minutes = (Number(offset[2]) * 60 + Number(offset[3])) * (offset[1] === '+' ? 1 : -1);
+    }
+    // A source date without a usable offset spans all civil time zones (UTC-12 through UTC+14).
+    const bounds = minutes === null ? [midnight - 14 * 3600000, midnight + 36 * 3600000]
+      : [midnight - minutes * 60000, midnight + 86400000 - minutes * 60000];
+    return [BigInt(bounds[0]) * 1000000n, BigInt(bounds[1]) * 1000000n - 1n];
+  }
+
+  function orderMentionIntervals(items) {
+    const known = [], unknown = [];
+    items.forEach((item, index) => {
+      const bounds = publicationBounds(item.publication);
+      if (bounds) known.push({ item, index, start: bounds[0], end: bounds[1] });
+      else unknown.push(item);
+    });
+    known.sort((left, right) => left.start < right.start ? -1 : left.start > right.start ? 1 : left.index - right.index);
+    const groups = [];
+    for (const record of known) {
+      const group = groups.at(-1);
+      if (group && record.start <= group.end) {
+        group.records.push(record);
+        if (record.end > group.end) group.end = record.end;
+      } else groups.push({ end: record.end, records: [record] });
+    }
+    return groups.reverse().flatMap((group) => group.records.sort((left, right) => left.index - right.index).map((record) => record.item)).concat(unknown);
+  }
+  const visibleMentions = (items) => (Array.isArray(items) ? items : []).filter((item) => {
+    if (!item || typeof item.summary !== 'string' || !item.summary.trim() || [...item.summary].length > 300
+      || typeof item.object_id !== 'string' || !/^[A-Za-z0-9_.:/-]{1,200}$/.test(item.object_id)
+      || !safeMentionLink(item.source_link, item.platform, item.object_id) || !item.publication) return false;
+    const publication = item.publication;
+    return publication.precision === 'datetime' && awareTimestamp(publication.published_at)
+        && publication.date === publication.published_at.slice(0, 10)
+      || publication.precision === 'date' && calendarDate(publication.date) && publication.published_at === null
+      || publication.precision === 'unknown' && publication.date === null && publication.published_at === null;
+  });
+  const uniqueMentions = (items) => [...new Map(items.map((item) => [mentionKey(item), item])).values()];
+  const windowStart = awareNanoseconds(mentions?.batch?.window_start);
+  const windowEnd = awareNanoseconds(mentions?.batch?.window_end);
+  const currentMentions = orderMentionIntervals(uniqueMentions(visibleMentions(mentions?.batch?.items)).filter((item) => {
+    if (windowStart === null || windowEnd === null || windowEnd - windowStart !== 72n * 3600000000000n) return false;
+    const bounds = publicationBounds(item.publication);
+    return bounds !== null && bounds[0] >= windowStart && bounds[1] < windowEnd;
+  }));
+  const currentKeys = new Set(currentMentions.map(mentionKey));
+  const historyMentions = orderMentionIntervals(uniqueMentions(visibleMentions(mentions?.history)).filter((item) => !currentKeys.has(mentionKey(item))));
+  const renderMentions = (items) => `<div class="voice-card-grid">${items.map((item) => `<article class="voice-thread voice-mention" data-searchable>
+    <div class="voice-thread-top"><span class="voice-thread-category">${escapeHtml(item.platform)}</span>${item.publication.date ? `<time datetime="${escapeHtml(item.publication.published_at || item.publication.date)}">${escapeHtml(item.publication.date)}</time>` : '<span>日期不明</span>'}</div>
+    <p>${escapeHtml(item.summary)}</p>
+    <div class="voice-thread-bottom"><a href="${escapeHtml(item.source_link)}" target="_blank" rel="noopener noreferrer">查看原帖 <span aria-hidden="true">↗</span></a></div>
+  </article>`).join('')}</div>`;
   document.title = `${copy.title || '问题与反馈'}｜${data.site.title}`;
   document.querySelector('meta[name="description"]').content = 'OEDRO 货箱盖、脚踏板与车型相关的公开讨论和原帖。';
   document.querySelector('#content').innerHTML = `
     ${pageHeading(copy.title || '问题与反馈')}
+    <section class="section voice-discussions" aria-labelledby="recent-mentions-heading">
+      <div class="section-head"><h2 id="recent-mentions-heading">最近3天的OEDRO提及</h2></div>
+      ${currentMentions.length ? renderMentions(currentMentions) : '<p class="empty-state">最近3天暂无日期和原文均已核实的OEDRO提及。</p>'}
+    </section>
+    <section class="section voice-discussions" aria-labelledby="history-mentions-heading">
+      <div class="section-head"><h2 id="history-mentions-heading">历史提及</h2></div>
+      ${historyMentions.length ? renderMentions(historyMentions) : '<p class="empty-state">暂无历史提及</p>'}
+    </section>
     <section class="voice-discussions" aria-label="公开讨论">
+      <div class="section-head"><h2>待核实的历史线索</h2></div>
       <div class="voice-card-grid">
         ${radarItems.map((item, index) => {
           const thread = voiceThreadContext(item);

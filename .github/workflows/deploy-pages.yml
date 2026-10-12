@@ -38,6 +38,7 @@ jobs:
         run: |
           node scripts/check-demand-radar.js
           node scripts/test-demand-radar-check.js
+          node scripts/test-mention-batch.js
           python scripts/test_daily_demand_radar.py
       - name: Validate static work records
         run: |
