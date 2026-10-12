@@ -6,7 +6,12 @@ const path = require('node:path');
 const vm = require('node:vm');
 const { validateDemandRadar, validateMentions, safeMentionLink, awareNanoseconds, orderMentionIntervals } = require('./check-demand-radar');
 const root = path.resolve(__dirname, '..');
-const legacy = JSON.parse(fs.readFileSync(path.join(root, 'data/demand-radar.json'), 'utf8'));
+const liveSnapshot = JSON.parse(fs.readFileSync(path.join(root, 'data/demand-radar.json'), 'utf8'));
+const legacy = JSON.parse(JSON.stringify(liveSnapshot));
+// Test the legacy state explicitly; live data can already contain a completed batch.
+delete legacy.mentions;
+legacy.method = 'deterministic_external_signal_scan';
+legacy.stale_after_hours = 36;
 const clone = (value) => JSON.parse(JSON.stringify(value));
 const publication = (published_at) => ({ date: published_at.slice(0, 10), published_at, precision: 'datetime', source_timezone: null });
 const mention = (id, published_at = '2026-10-11T09:00:00Z') => ({
@@ -28,6 +33,7 @@ function invalid(change, expected) {
 
 check('legacy snapshot and optional extension stay compatible', () => {
   assert.equal(legacy.items.length, 9);
+  assert.deepEqual(validateDemandRadar(liveSnapshot), []);
   assert.deepEqual(validateDemandRadar(legacy), []);
   assert.deepEqual(validateDemandRadar(radar(fixture())), []);
   const candidate = radar(fixture()); candidate.stale_after_hours = 36;
