@@ -3,9 +3,9 @@
   "generated_at": "2026-10-10T03:54:08+00:00",
   "last_attempt_at": "2026-10-10T03:53:11+00:00",
   "last_success_at": "2026-10-10T03:54:08+00:00",
-  "method": "deterministic_external_signal_scan",
+  "method": "verified_mention_history_migration",
   "status": "success",
-  "stale_after_hours": 36,
+  "stale_after_hours": 96,
   "truth_status": "blocked",
   "metrics": {
     "raw_discovered": 173,
@@ -142,5 +142,112 @@
       "observed_at": "2026-09-19T03:34:24+00:00",
       "last_seen_at": "2026-09-19T03:35:11+00:00"
     }
-  ]
+  ],
+  "mentions": {
+    "schema_version": 1,
+    "batch": {
+      "id": "OEDRO-MIGRATION-20261012",
+      "window_start": "2026-10-09T02:21:26.000Z",
+      "window_end": "2026-10-12T02:21:26.000Z",
+      "items": []
+    },
+    "history": [
+      {
+        "platform": "Reddit",
+        "object_id": "t1_ofbf3yp",
+        "source_link": "https://www.reddit.com/r/chevycolorado/comments/1sh85cx/comment/ofbf3yp/",
+        "summary": "一位用户称OEDRO踏板较早出现生锈和漆面不均，需要补漆，但仍喜欢中间踏步带来的清洗便利。",
+        "publication": {
+          "date": "2026-04-10",
+          "published_at": "2026-04-10T03:35:43.985000+00:00",
+          "precision": "datetime",
+          "source_timezone": "UTC"
+        }
+      },
+      {
+        "platform": "Reddit",
+        "object_id": "t3_1scctq2",
+        "source_link": "https://www.reddit.com/r/chevycolorado/comments/1scctq2/oedro_running_boards/",
+        "summary": "一位用户询问OEDRO踏板的使用经验，对看到的折扣和材料质量提出疑问。",
+        "publication": {
+          "date": "2026-04-04",
+          "published_at": "2026-04-04T15:55:37.288000+00:00",
+          "precision": "datetime",
+          "source_timezone": "UTC"
+        }
+      },
+      {
+        "platform": "Reddit",
+        "object_id": "t3_1rw81jc",
+        "source_link": "https://www.reddit.com/r/ram_trucks/comments/1rw81jc/oedro_low_profile_hard_quad_fold_tonneau_cover/",
+        "summary": "一位用户分享OEDRO四折货箱盖体验，认为安装方便、适配良好，并指出塑料锁扣和无法固定半开状态的限制。",
+        "publication": {
+          "date": "2026-03-17",
+          "published_at": "2026-03-17T14:27:01.908000+00:00",
+          "precision": "datetime",
+          "source_timezone": "UTC"
+        }
+      },
+      {
+        "platform": "Reddit",
+        "object_id": "t1_o5j1jny",
+        "source_link": "https://www.reddit.com/r/nissanfrontier/comments/1r5h3mn/comment/o5j1jny/",
+        "summary": "一位用户称正在使用OEDRO软卷帘货箱盖，暂无抱怨，配套轨道支架适配良好。",
+        "publication": {
+          "date": "2026-02-15",
+          "published_at": "2026-02-15T16:21:52.345000+00:00",
+          "precision": "datetime",
+          "source_timezone": "UTC"
+        }
+      },
+      {
+        "platform": "Trustpilot",
+        "object_id": "6988abacd3525cdd90dd0f7a",
+        "source_link": "https://www.trustpilot.com/reviews/6988abacd3525cdd90dd0f7a",
+        "summary": "一位用户称OEDRO踏板经过冬季使用后出现锈蚀，随后加剧，准备更换。",
+        "publication": {
+          "date": "2026-02-08",
+          "published_at": null,
+          "precision": "date",
+          "source_timezone": null
+        }
+      },
+      {
+        "platform": "Trustpilot",
+        "object_id": "69832b86106d471c47965e3b",
+        "source_link": "https://www.trustpilot.com/reviews/69832b86106d471c47965e3b",
+        "summary": "一位用户提到购买的OEDRO踏板尺寸不合适，对退货沟通缓慢及补货费表示不满。",
+        "publication": {
+          "date": "2026-02-04",
+          "published_at": null,
+          "precision": "date",
+          "source_timezone": null
+        }
+      },
+      {
+        "platform": "Reddit",
+        "object_id": "t1_nvv04bg",
+        "source_link": "https://www.reddit.com/r/nissanfrontier/comments/1ptfhf5/comment/nvv04bg/",
+        "summary": "一位用户推荐OEDRO软卷帘货箱盖，称夹具适配货箱轨道、重量轻，卷起后不挡后窗。",
+        "publication": {
+          "date": "2025-12-25",
+          "published_at": "2025-12-25T12:15:30.657000+00:00",
+          "precision": "datetime",
+          "source_timezone": "UTC"
+        }
+      },
+      {
+        "platform": "Reddit",
+        "object_id": "t3_1nxpkrc",
+        "source_link": "https://www.reddit.com/r/ToyotaTacoma/comments/1nxpkrc/update_on_tonneau_cover/",
+        "summary": "一位用户分享选择OEDRO三折硬质货箱盖的经历，认为安装较容易，并介绍了自己的购买选择。",
+        "publication": {
+          "date": "2025-10-04",
+          "published_at": null,
+          "precision": "date",
+          "source_timezone": null
+        }
+      }
+    ]
+  }
 }
