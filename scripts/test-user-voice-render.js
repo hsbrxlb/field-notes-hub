@@ -18,13 +18,23 @@ const radar = JSON.parse(read('data/demand-radar.json'));
 const original = JSON.stringify(radar);
 const data = JSON.parse(read('data/content.json'));
 const voice = JSON.parse(read('data/user-voice.json'));
-context.renderUserVoice(data, voice, radar);
+const legacyView = { ...radar };
+delete legacyView.mentions;
+context.renderUserVoice(data, voice, legacyView);
 assert.equal((content.innerHTML.match(/class="voice-thread"/g) || []).length, radar.items.length);
 for (const item of radar.items) assert.ok(content.innerHTML.includes(item.source_link));
 assert.ok(content.innerHTML.includes('硬质货箱盖值得买吗？'));
 assert.ok(content.innerHTML.includes('r/f150'));
 assert.ok(!/数据可能过期|需要事实|核对产品事实|最近检查|radar-health|反馈怎么处理|继续做用户调研|已确认的洞察与行动/.test(content.innerHTML));
 assert.equal(JSON.stringify(radar), original, 'display changes preserve source and safety data');
+if (radar.mentions) {
+  context.renderUserVoice(data, voice, radar);
+  const ownObjects = new Set([...radar.mentions.batch.items, ...radar.mentions.history]
+    .map(item => `${item.platform}:${item.object_id}`));
+  assert.equal((content.innerHTML.match(/class="voice-thread voice-mention"/g) || []).length, ownObjects.size);
+  assert.ok(content.innerHTML.includes('历史提及'));
+  assert.equal(JSON.stringify(radar), original, 'current and history rendering never rewrites legacy source data');
+}
 context.renderUserVoice(data, { actions: [
   { status: 'draft', public_topic: 'floor_mats', action_type: 'faq' },
   { status: 'approved', public_topic: 'running_boards', action_type: 'faq', source_count: 2, independent_voice_count: 2 }

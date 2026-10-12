@@ -17,7 +17,7 @@ const current = mention('newpost');
 const fixture = () => ({ schema_version: 1, batch: {
   id: '20261012-72h', window_start: '2026-10-09T01:30:00Z', window_end: '2026-10-12T01:30:00Z', items: [clone(current)]
 }, history: [clone(current), mention('oldpost', '2026-09-01T06:00:00Z')] });
-const radar = (mentions) => ({ ...clone(legacy), stale_after_hours: 96, mentions });
+const radar = (mentions) => ({ ...clone(legacy), method: 'verified_mention_72h_cloud_batch', stale_after_hours: 96, mentions });
 let checks = 0;
 function check(label, run) { run(); checks += 1; console.log(`PASS ${label}`); }
 function invalid(change, expected) {
