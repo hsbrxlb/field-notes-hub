@@ -233,16 +233,14 @@ function renderUserVoice(data, voice, radar) {
       if (bounds) known.push({ item, index, start: bounds[0], end: bounds[1] });
       else unknown.push(item);
     });
-    known.sort((left, right) => left.start < right.start ? -1 : left.start > right.start ? 1 : left.index - right.index);
-    const groups = [];
-    for (const record of known) {
-      const group = groups.at(-1);
-      if (group && record.start <= group.end) {
-        group.records.push(record);
-        if (record.end > group.end) group.end = record.end;
-      } else groups.push({ end: record.end, records: [record] });
+    const ordered = [];
+    while (known.length) {
+      const latestStart = known.reduce((latest, record) => record.start > latest ? record.start : latest, known[0].start);
+      // Only incomparable intervals retain input order; definite chronology always wins.
+      const nextIndex = known.findIndex((record) => record.end >= latestStart);
+      ordered.push(known.splice(nextIndex, 1)[0].item);
     }
-    return groups.reverse().flatMap((group) => group.records.sort((left, right) => left.index - right.index).map((record) => record.item)).concat(unknown);
+    return ordered.concat(unknown);
   }
   const visibleMentions = (items) => (Array.isArray(items) ? items : []).filter((item) => {
     if (!item || typeof item.summary !== 'string' || !item.summary.trim() || [...item.summary].length > 300
@@ -264,6 +262,12 @@ function renderUserVoice(data, voice, radar) {
   }));
   const currentKeys = new Set(currentMentions.map(mentionKey));
   const historyMentions = orderMentionIntervals(uniqueMentions(visibleMentions(mentions?.history)).filter((item) => !currentKeys.has(mentionKey(item))));
+  const knownMentions = [...currentMentions, ...historyMentions];
+  const legacyItems = radarItems.filter((item) => !knownMentions.some((known) =>
+    safeMentionLink(item.source_link, known.platform, known.object_id)));
+  const currentEmptyText = !mentions || radar?.method === 'verified_mention_history_migration'
+    ? '三天批次尚待首次定时采集。'
+    : '最近3天暂无日期和原文均已核实的OEDRO提及。';
   const renderMentions = (items) => `<div class="voice-card-grid">${items.map((item) => `<article class="voice-thread voice-mention" data-searchable>
     <div class="voice-thread-top"><span class="voice-thread-category">${escapeHtml(item.platform)}</span>${item.publication.date ? `<time datetime="${escapeHtml(item.publication.published_at || item.publication.date)}">${escapeHtml(item.publication.date)}</time>` : '<span>日期不明</span>'}</div>
     <p>${escapeHtml(item.summary)}</p>
@@ -275,7 +279,7 @@ function renderUserVoice(data, voice, radar) {
     ${pageHeading(copy.title || '问题与反馈')}
     <section class="section voice-discussions" aria-labelledby="recent-mentions-heading">
       <div class="section-head"><h2 id="recent-mentions-heading">最近3天的OEDRO提及</h2></div>
-      ${currentMentions.length ? renderMentions(currentMentions) : '<p class="empty-state">最近3天暂无日期和原文均已核实的OEDRO提及。</p>'}
+      ${currentMentions.length ? renderMentions(currentMentions) : `<p class="empty-state">${currentEmptyText}</p>`}
     </section>
     <section class="section voice-discussions" aria-labelledby="history-mentions-heading">
       <div class="section-head"><h2 id="history-mentions-heading">历史提及</h2></div>
@@ -284,7 +288,7 @@ function renderUserVoice(data, voice, radar) {
     <section class="voice-discussions" aria-label="公开讨论">
       <div class="section-head"><h2>待核实的历史线索</h2></div>
       <div class="voice-card-grid">
-        ${radarItems.map((item, index) => {
+        ${legacyItems.map((item, index) => {
           const thread = voiceThreadContext(item);
           return `<article class="voice-thread" data-searchable>
             <div class="voice-thread-top"><span class="voice-thread-category">${escapeHtml(thread.category)}</span><span class="voice-thread-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span></div>
@@ -294,7 +298,7 @@ function renderUserVoice(data, voice, radar) {
           </article>`;
         }).join('')}
       </div>
-      ${radarItems.length ? '' : '<p class="empty-state">暂无公开问题记录</p>'}
+      ${legacyItems.length ? '' : '<p class="empty-state">暂无公开问题记录</p>'}
     </section>
     ${insights.length ? `<section class="section user-voice-surface">
       <div class="section-head"><h2>已确认的洞察与行动</h2></div>

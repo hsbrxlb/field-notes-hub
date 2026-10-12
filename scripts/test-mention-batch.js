@@ -173,7 +173,7 @@ check('deduplication permits matching current/history and rejects conflicts', ()
 
 const source = fs.readFileSync(path.join(root, 'app.js'), 'utf8');
 const renderSource = source.slice(source.indexOf('function voiceThreadContext('), source.indexOf('\nfunction renderTopics('));
-function render(mentions) {
+function render(mentions, method) {
   const content = { innerHTML: '' };
   const context = {
     URL, Date, document: { title: '', querySelector: (selector) => selector === '#content' ? content : {} },
@@ -183,7 +183,7 @@ function render(mentions) {
   vm.createContext(context); vm.runInContext(renderSource, context);
   context.renderUserVoice({ site: { title: 'Hub' } }, { actions: [
     { status: 'approved', public_topic: 'installation', action_type: 'faq', source_count: 2, independent_voice_count: 2 }
-  ] }, mentions === undefined ? legacy : radar(mentions));
+  ] }, mentions === undefined ? legacy : { ...radar(mentions), ...(method ? { method } : {}) });
   return content.innerHTML;
 }
 check('rendered sections sort publication, remove cross-batch duplicates, and preserve legacy insights', () => {
@@ -206,7 +206,11 @@ check('rendered sections sort publication, remove cross-batch duplicates, and pr
 });
 check('render empty state is exact and malformed current dates stay outside current section', () => {
   const html = render();
-  assert(html.includes('最近3天暂无日期和原文均已核实的OEDRO提及。'));
+  assert(html.includes('三天批次尚待首次定时采集。'));
+  const migration = fixture(); migration.batch.items = [];
+  assert(render(migration, 'verified_mention_history_migration').includes('三天批次尚待首次定时采集。'));
+  assert(!render(migration, 'verified_mention_history_migration').includes('最近3天暂无日期和原文均已核实的OEDRO提及。'));
+  assert(render(migration, 'verified_mention_72h_cloud_batch').includes('最近3天暂无日期和原文均已核实的OEDRO提及。'));
   const candidate = fixture(); candidate.batch.items[0].publication.published_at = '2026-10-11T09:00:00';
   assert(render(candidate).includes('最近3天暂无日期和原文均已核实的OEDRO提及。'));
   candidate.batch.items = [mention('outside', '2026-09-01T09:00:00Z')];
@@ -223,7 +227,7 @@ check('render date-only text survives timezone changes and HTML is escaped', () 
   assert(html.includes('<time datetime="2026-10-10">2026-10-10</time>')); assert(html.includes('&lt;example&gt; &amp;'));
   assert(!html.includes('<example>'));
 });
-check('overlapping intervals form connected groups and preserve input order', () => {
+check('overlapping intervals preserve uncertainty but never invert definite chronology', () => {
   const older = mention('older', '2026-10-08T03:00:00.123456789Z');
   const first = mention('first', '2026-10-10T08:00:00.123456789Z');
   const day = { ...mention('day'), publication: { date: '2026-10-10', published_at: null, precision: 'date', source_timezone: null } };
@@ -233,7 +237,7 @@ check('overlapping intervals form connected groups and preserve input order', ()
   const newest = mention('newest', '2026-10-13T03:00:00.123456789Z');
   const unknown = { ...mention('undated'), publication: { date: null, published_at: null, precision: 'unknown', source_timezone: null } };
   const items = [older, unknown, first, day, earlier, bridge, nextday, newest];
-  const expected = [newest, first, day, earlier, bridge, nextday, older, unknown];
+  const expected = [newest, bridge, nextday, first, day, earlier, older, unknown];
   assert.deepEqual(orderMentionIntervals(items), expected);
   const candidate = fixture(); candidate.batch.items = []; candidate.history = items;
   const html = render(candidate);
@@ -242,6 +246,9 @@ check('overlapping intervals form connected groups and preserve input order', ()
   }
   const fine = [mention('fine1', '2026-10-11T03:00:00.000000001Z'), mention('fine2', '2026-10-11T03:00:00.000000002Z')];
   assert.deepEqual(orderMentionIntervals(fine), [fine[1], fine[0]]);
+  const bridged = orderMentionIntervals([earlier, day, first]);
+  assert(bridged.indexOf(first) < bridged.indexOf(earlier));
+  assert.deepEqual(orderMentionIntervals([fine[0], fine[0]]), [fine[0], fine[0]]);
   const current = fixture(); current.batch.items = fine; current.history = clone(fine);
   assert(render(current).indexOf(fine[1].summary) < render(current).indexOf(fine[0].summary));
 });
@@ -252,11 +259,23 @@ if (process.env.VERIFIED_PUBLIC_HISTORY) {
     const candidate = fixture(); candidate.batch.items = []; candidate.history = history;
     assert.deepEqual(validateDemandRadar(radar(candidate)), []);
     const html = render(candidate);
-    assert.equal((html.match(/voice-thread(?: voice-mention)?" data-searchable/g) || []).length, legacy.items.length + history.length);
+    assert.equal((html.match(/voice-thread(?: voice-mention)?" data-searchable/g) || []).length, legacy.items.length + history.length - 2);
     for (const record of history) {
       assert(html.includes(record.summary));
       assert(html.includes(record.publication.published_at || record.publication.date));
     }
   });
 }
+check('legacy own posts are deduplicated without merging distinct comments or deleting stored history', () => {
+  const ownPost = { ...mention('1scctq2', '2026-04-04T15:55:37.288000Z'),
+    source_link: 'https://www.reddit.com/r/chevycolorado/comments/1scctq2/oedro_running_boards/' };
+  const ownComment = { ...mention('ofbf3yp', '2026-04-10T03:35:43.985000Z'), object_id: 't1_ofbf3yp',
+    source_link: 'https://www.reddit.com/r/chevycolorado/comments/1sh85cx/comment/ofbf3yp/' };
+  const candidate = fixture(); candidate.batch.items = []; candidate.history = [ownPost, ownComment];
+  const html = render(candidate);
+  assert.equal((html.match(/voice-thread(?: voice-mention)?" data-searchable/g) || []).length, legacy.items.length + 1);
+  assert.equal(legacy.items.length, 9);
+  assert(html.includes('comments/1sh85cx/please_help_me_pick_some_side_railsstepsrunning'));
+  assert(html.includes('comments/1sh85cx/comment/ofbf3yp/'));
+});
 console.log(`Mention batch checks passed (${checks} behavior groups; legacy=${legacy.items.length})`);

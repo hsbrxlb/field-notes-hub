@@ -239,16 +239,14 @@ function orderMentionIntervals(items) {
     if (bounds) known.push({ item, index, start: bounds[0], end: bounds[1] });
     else unknown.push(item);
   });
-  known.sort((left, right) => left.start < right.start ? -1 : left.start > right.start ? 1 : left.index - right.index);
-  const groups = [];
-  for (const record of known) {
-    const group = groups.at(-1);
-    if (group && record.start <= group.end) {
-      group.records.push(record);
-      if (record.end > group.end) group.end = record.end;
-    } else groups.push({ end: record.end, records: [record] });
+  const ordered = [];
+  while (known.length) {
+    const latestStart = known.reduce((latest, record) => record.start > latest ? record.start : latest, known[0].start);
+    // Only incomparable intervals retain input order; definite chronology always wins.
+    const nextIndex = known.findIndex((record) => record.end >= latestStart);
+    ordered.push(known.splice(nextIndex, 1)[0].item);
   }
-  return groups.reverse().flatMap((group) => group.records.sort((left, right) => left.index - right.index).map((record) => record.item)).concat(unknown);
+  return ordered.concat(unknown);
 }
 
 function validateMentions(candidate) {
