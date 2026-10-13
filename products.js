@@ -6,6 +6,9 @@
     .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;').replaceAll("'", '&#039;');
 
+  const plainText = (value) => new DOMParser().parseFromString(String(value ?? ''), 'text/html')
+    .body.textContent.replace(/\s+/g, ' ').trim();
+
   const money = (value, currency = 'USD') => {
     if (value === '' || value == null) return '价格未显示';
     const number = Number(value);
@@ -82,7 +85,7 @@
         <h3><a href="${h(item.url)}" target="_blank" rel="noreferrer">${h(item.name)}</a></h3>
         <p class="fitment">${h(item.fitment || (state.family === 'cozeware' ? '' : '官网未提供独立适配说明'))}</p>
         <div class="commercial-line"><strong>${h(money(item.price.sale, item.price.currency))}</strong><span>${h(item.price.discount)}</span></div>
-        <p class="stock-line">${h(item.price.stock || '库存状态未显示')} · ${h(review)}</p>
+        <p class="stock-line">${h(plainText(item.price.stock) || '库存状态未显示')} · ${h(review)}</p>
         ${item.warnings.length ? `<ul class="warning-list">${item.warnings.map((warning) => `<li>${h(warning)}</li>`).join('')}</ul>` : ''}
         <details class="product-detail"><summary>查看完整资料</summary><div class="product-detail-body" data-detail-id="${h(item.id)}"></div></details>
       </div>
