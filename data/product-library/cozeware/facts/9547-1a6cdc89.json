@@ -398,7 +398,7 @@
   },
   "warnings": [
     "官网质保范围或期限需要复核",
-    "官网文字与图片口径不一致"
+    "官网资料口径需要复核"
   ],
   "description": "18000 BTU AI-Powered Quick Cooling and Heating - Perfect for Large Living Room\n38% More Energy Savings Than 20 SEER2 Model - AI-Optimized ECO\n10 HSPF2 Heating Efficiency - Upgraded for Warmer Winters\n-13 °F Low-Ambient Heating and 140 °F High-Ambient Cooling\n32 dB Near-Slient Operation in Sleep Mode - Quieter Than a Light Rainfall\nWhole-room 4D Airflow with 1250 Sq Ft Coverage Area\nClean Air with Pet-safe R32 Refrigerant\nSmart Control via Cozeware App or Voice - Wi-Fi & Bluetooth Built-in\nAHRI and ETL Certified for Reliable Performance",
   "highlights": [],
@@ -953,5 +953,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-2e1e340d6a71"
+  "libraryVersion": "2026-10-13-341b61559e8f"
 }

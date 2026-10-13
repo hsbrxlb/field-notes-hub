@@ -357,7 +357,7 @@
   },
   "warnings": [
     "官网质保范围或期限需要复核",
-    "官网文字与图片口径不一致"
+    "官网资料口径需要复核"
   ],
   "description": "12000 BTU Quick Cooling and Heating\n30-45% Energy Savings with 20 SEER2 and 8.5 HSPF2\nWhole-room 4D Airflow with 750 Sq Ft Coverage Area\n31 dB Whisper-Quiet Operation in Sleep Mode\nClean Air with Pet-safe R32 Refrigerant\nSmart Control via Cozeware App or Voice\nAHRI and ETL Certified for Reliable Performance",
   "highlights": [],
@@ -890,5 +890,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-2e1e340d6a71"
+  "libraryVersion": "2026-10-13-341b61559e8f"
 }

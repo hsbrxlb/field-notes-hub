@@ -347,7 +347,7 @@
   },
   "warnings": [
     "官网质保范围或期限需要复核",
-    "官网文字与图片口径不一致"
+    "官网资料口径需要复核"
   ],
   "description": "12,000 BTU Power with Total 750 Sq Ft Fitting Area\n24 SEER2 Cooling Efficiency - Optimized for Hotter Summers\n10 HSPF2 Heating Efficiency - Upgraded for Warmer Winters\n30 dB Whisper-Quiet Operation in Sleep Mode\nLow GWP and Pet-safe R32 Refrigerant\nSmart Control via Cozeware App or Voice\nEnergy Star, AHRI and ETL Certified Performance",
   "highlights": [],
@@ -864,5 +864,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-2e1e340d6a71"
+  "libraryVersion": "2026-10-13-341b61559e8f"
 }

@@ -463,7 +463,7 @@
   },
   "warnings": [
     "官网质保范围或期限需要复核",
-    "官网文字与图片口径不一致"
+    "官网资料口径需要复核"
   ],
   "description": "18,000 BTU 2-Zone Cooling and Heating\n50-65% Energy Savings with 23 SEER2 and 9.5 HSPF2\nIndividual Room Control and Temperature Settings\nWhole-room 4D Airflow with Total 900 Sq Ft Coverage Area\n30 dB Whisper-Quiet Operation in Sleep Mode\nClean Air with Pet-safe R32 Refrigerant\nSmart Control via Cozeware App or Voice\nENERGY STAR, AHRI and ETL Certified Performance",
   "highlights": [],
@@ -1102,5 +1102,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-2e1e340d6a71"
+  "libraryVersion": "2026-10-13-341b61559e8f"
 }

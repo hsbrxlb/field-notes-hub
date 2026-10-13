@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "brand": "COZEWARE",
   "brandKey": "cozeware",
-  "version": "2026-10-13-2e1e340d6a71",
+  "version": "2026-10-13-341b61559e8f",
   "count": 27,
   "sourceCapturedFrom": "2026-10-13T07:29:41+00:00",
   "sourceCapturedUntil": "2026-10-13T08:35:02+00:00",
@@ -103,7 +103,7 @@
       "markdown": "cozeware/facts/8840-f5da85f6.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -119,7 +119,7 @@
       "markdown": "cozeware/facts/8862-80b857f5.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -135,7 +135,7 @@
       "markdown": "cozeware/facts/9450-fd065b7a.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -151,7 +151,7 @@
       "markdown": "cozeware/facts/9368-ecb02939.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -180,7 +180,7 @@
       "markdown": "cozeware/facts/9529-ecdf26b0.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -196,7 +196,7 @@
       "markdown": "cozeware/facts/9545-5f55938e.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -212,7 +212,7 @@
       "markdown": "cozeware/facts/9547-1a6cdc89.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -228,7 +228,7 @@
       "markdown": "cozeware/facts/9548-40eb4fc3.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -244,7 +244,7 @@
       "markdown": "cozeware/facts/8977-c6d77cf2.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -260,7 +260,7 @@
       "markdown": "cozeware/facts/8979-77691e2c.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -276,7 +276,7 @@
       "markdown": "cozeware/facts/9580-455ae0ba.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -292,7 +292,7 @@
       "markdown": "cozeware/facts/9581-8ef24e86.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -308,7 +308,7 @@
       "markdown": "cozeware/facts/9582-8a8c0f54.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -324,7 +324,7 @@
       "markdown": "cozeware/facts/10284-1dae5797.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -340,7 +340,7 @@
       "markdown": "cozeware/facts/10286-1bfdc0c4.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -356,7 +356,7 @@
       "markdown": "cozeware/facts/10288-b61d697a.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -372,7 +372,7 @@
       "markdown": "cozeware/facts/10289-97d70120.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -388,7 +388,7 @@
       "markdown": "cozeware/facts/10459-f330c50d.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -404,7 +404,7 @@
       "markdown": "cozeware/facts/10460-3b5ee4ef.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -420,7 +420,7 @@
       "markdown": "cozeware/facts/10461-ab74bc86.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -436,7 +436,7 @@
       "markdown": "cozeware/facts/10462-2f1fbdc3.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -452,7 +452,7 @@
       "markdown": "cozeware/facts/10458-5168ee79.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -468,7 +468,7 @@
       "markdown": "cozeware/facts/10456-663cf4e4.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -484,7 +484,7 @@
       "markdown": "cozeware/facts/9602-a727fc7c.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -500,7 +500,7 @@
       "markdown": "cozeware/facts/9607-5b1991f5.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     },
@@ -516,7 +516,7 @@
       "markdown": "cozeware/facts/9600-8af7972c.md",
       "warnings": [
         "官网质保范围或期限需要复核",
-        "官网文字与图片口径不一致"
+        "官网资料口径需要复核"
       ],
       "missingFields": []
     }
