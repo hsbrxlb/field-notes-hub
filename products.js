@@ -40,6 +40,10 @@
         </dl>
         <p class="catalog-coverage" role="note"><strong>目录核对</strong><span>${h(m.coverageText || `${m.uncoveredSitemapUrls || 0} 条链接未形成商品记录。`)} 图片文字的核对范围见商品详情。</span></p>
       </header>
+      <nav class="catalog-downloads" aria-label="品牌资料总稿">
+        <a href="data/product-library/brand-summaries/${encodeURIComponent('OEDRO_产品与官方资料汇总.md')}" download="OEDRO_产品与官方资料汇总.md">下载 OEDRO 官网总稿（MD）</a>
+        <a href="data/product-library/brand-summaries/${encodeURIComponent('Cozeware_产品与官方资料汇总.md')}" download="Cozeware_产品与官方资料汇总.md">下载 Cozeware 总稿（MD）</a>
+      </nav>
       <form id="product-search" class="product-search"><label for="sku-query">查商品名称或 SKU</label><input id="sku-query" type="search" autocomplete="off"><button type="submit">查找</button></form>
       <section class="catalog-section category-section" aria-labelledby="category-heading">
         <div class="catalog-section-head"><div><span class="index-number">01</span><h2 id="category-heading">按官网分类浏览</h2></div><a href="${h(m.sourceUrl)}" target="_blank" rel="noreferrer">打开${state.family === 'cozeware' ? ' Cozeware ' : ' OEDRO '}官网 ↗</a></div>
@@ -113,6 +117,7 @@
       <section><h4>规格</h4>${definitionList(item.specifications)}</section>
       ${item.package.length ? `<section><h4>包装清单</h4><ul>${item.package.map((value) => `<li>${h(value.name)}${value.num ? ` × ${h(value.num)}` : ''}</li>`).join('')}</ul></section>` : ''}
       <section><h4>安装与文档</h4>${item.installation.notes ? `<p>${h(item.installation.notes)}</p>` : ''}${documents.length ? `<ul>${documents.map((doc) => `<li><a href="${h(doc.url)}" target="_blank" rel="noreferrer">${h(doc.name || '安装文件')} ↗</a></li>`).join('')}</ul>` : '<p class="detail-empty">没有可用的官网安装文件。</p>'}</section>
+      ${(item.faq || []).length ? `<section><h4>官网问答</h4><p>通用答复可能涉及多个型号；型号参数仍需对照本条规格和冲突。</p><dl class="product-faq">${item.faq.map(faq => `<div><dt>${h(faq.question)}</dt><dd>${h(faq.answer)}</dd></div>`).join('')}</dl></section>` : ''}
       ${warranty.length ? `<section><h4>商品页质保口径</h4><ul>${warranty.map((value) => `<li>${h(value.label)}：${h(value.value)}</li>`).join('')}</ul></section>` : ''}
       ${variants.length > 1 ? `<section><h4>变体</h4><p>官网快照记录 ${variants.length} 个 SKU 选项。</p></section>` : ''}
       ${imageFacts.length ? `<section><h4>图片中已核对的事实</h4><ul>${imageFacts.flatMap(fact => (fact.facts || []).map(text => `<li>${h(text)}${(fact.limitations || []).length ? `<p>${fact.limitations.map(h).join(' ')}</p>` : ''} <a href="${h(fact.url || fact.image_url)}" target="_blank" rel="noreferrer">图片来源 ↗</a></li>`)).join('')}</ul></section>` : ''}

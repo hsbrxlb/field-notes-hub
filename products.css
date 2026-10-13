@@ -113,6 +113,13 @@
 .family-nav button, .product-search button { min-height: 44px; padding: 8px 16px; color: var(--text); background: var(--input-bg); border: 1px solid var(--border-strong); cursor: pointer; }
 .family-nav button[aria-pressed="true"] { color: var(--page-bg); background: var(--accent); }
 .family-nav a { padding: 10px; color: var(--text-secondary); }
+.catalog-downloads { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 18px 0 22px; }
+.catalog-downloads a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 12px; border: 1px solid var(--border-strong); color: var(--text-secondary); font-size: 13px; }
+.catalog-downloads a:hover, .catalog-downloads a:focus-visible { color: var(--accent); border-color: var(--accent); }
+.product-faq { margin: 0; }
+.product-faq > div + div { margin-top: 14px; }
+.product-faq dt { font-weight: 700; }
+.product-faq dd { margin: 6px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
 .product-search { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 16px; }
 .product-search input { min-height: 44px; min-width: 0; flex: 1; padding: 8px 12px; color: var(--text); background: var(--input-bg); border: 1px solid var(--border-strong); }
 .fact-text { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 13px; }

@@ -47,4 +47,30 @@ for (const [brandKey, brand] of Object.entries(manifest.brands)) {
   }
 }
 if (!manifest.brands.oedro || !manifest.brands.cozeware) throw Error('Both brands must exist');
+const summariesRoot = path.join(library, 'brand-summaries');
+const summaries = read(path.join(summariesRoot, 'manifest.json'));
+noPrivateFields(summaries);
+if (summaries.version !== manifest.version) throw Error('Summary version differs from product facts');
+for (const [family, brandKeys] of Object.entries({oedro:['oedro','oedro-pro','yitamotor'],cozeware:['cozeware']})) {
+  const document = summaries.documents?.[family];
+  if (!document || !document.file?.startsWith('brand-summaries/') || document.file.includes('..') || !document.file.endsWith('.md')) throw Error(`Missing or unsafe summary ${family}`);
+  const bytes = fs.readFileSync(path.join(library, document.file));
+  if (bytes.length !== document.byteSize || require('crypto').createHash('sha256').update(bytes).digest('hex') !== document.sha256) throw Error(`Summary hash differs ${family}`);
+  const expectedCount = brandKeys.reduce((sum,key) => sum + manifest.brands[key].count,0);
+  if (document.productRecords !== expectedCount) throw Error(`Incomplete summary product count ${family}`);
+  const expectedResources = new Set(brandKeys.flatMap(key => read(path.join(library, manifest.brands[key].index)).resources.map(resource => resource.url)));
+  if (document.resourceRecords !== expectedResources.size) throw Error(`Incomplete summary resource count ${family}`);
+  const content = bytes.toString('utf8');
+  if (!content.includes(manifest.version) || /\/Users\/|file:\/\/|\.html\.gz|request_sha256|output_sha256|plugins_6ac|owner_thread_id|private_helper/i.test(content)) throw Error(`Private or unversioned summary ${family}`);
+  for (const brandKey of brandKeys) {
+    const index = read(path.join(library, manifest.brands[brandKey].index));
+    if (document.brandCounts?.[brandKey] !== index.products.length) throw Error(`Wrong summary brand count ${brandKey}`);
+    for (const product of index.products) {
+      if (!content.includes(product.key) || !content.includes(product.url)) throw Error(`Summary omits exact product ${brandKey}:${product.key}`);
+    }
+    for (const resource of index.resources || []) {
+      if (!content.includes(resource.url)) throw Error(`Summary omits resource ${family}:${resource.url}`);
+    }
+  }
+}
 console.log(`Public product facts passed: ${total} records; ${manifest.version}`);
