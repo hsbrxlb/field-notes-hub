@@ -6,7 +6,7 @@
 
 主目录：OEDRO 442 条、OEDRO PRO 6 条。其他品牌附录：YITAMOTOR 790 条，不计入 OEDRO 商品数，参数和适配不得跨品牌借用。1238 是官网目录记录数，包含 1 条商品页别名记录；36 个目录链接已核实跳回首页，不据此确认产品下架。
 
-媒体仅有 32 份不同图片内容已实际审读，绑定 13 个产品。17513 个图资产尚未读，另 1 个选定媒体返回 HTML；594 个视频未审。官网共用质保弹窗指向其他品牌域名，不能直接作为本品牌售后依据。
+2026-10-13 专项媒体验收：32 份不同图片内容已实际审读，绑定 13 个产品；当时 17513 个图资产未读，另 1 个选定媒体返回 HTML，594 个视频未审。后续图审变化以逐型号的图像事实与来源日期为准，新增媒体不自动计为已审。官网共用质保弹窗指向其他品牌域名，不能直接作为本品牌售后依据。
 
 [完整事实版本清单](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/latest-manifest.json>)；[官方资料 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/oedro/policies.json>)
 
