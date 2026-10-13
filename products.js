@@ -11,7 +11,7 @@
 
   const money = (value, currency = 'USD') => {
     if (value === '' || value == null) return '价格未显示';
-    const number = Number(value);
+    const number = Number(String(value).replaceAll(',', ''));
     return Number.isFinite(number) ? new Intl.NumberFormat('en-US', { style: 'currency', currency }).format(number) : '价格未显示';
   };
 
