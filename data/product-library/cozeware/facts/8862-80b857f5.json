@@ -1,0 +1,951 @@
+{
+  "id": "8862",
+  "productId": "6355",
+  "sku": "HAHEAC-CZ0020",
+  "brand": "COZEWARE",
+  "categoryId": "1096",
+  "name": "COZEWARE Visio Series 12000 BTU 20 SEER2 Ductless Mini Split AC with Heat Pump, 230V",
+  "url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html",
+  "capturedAt": "2026-10-13T07:33:31+00:00",
+  "imageReview": {
+    "reviewed_urls": [
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202605/53151214-DFCB-977E-EB02-1C67CDB5BA3E.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/2751B924-5195-00D2-0DB8-0597FAB64BC5.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202604/B78E8420-36CE-59AE-4F65-FBA7D448061B.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202606/3A3F8F2F-6565-A51D-81BC-AD3462DD8EEC.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202606/AE35541A-42F3-0002-962C-0BA4881D3443.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202606/ACCB0CC1-4DB8-0076-B275-435BFC134BA4.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202512/73899DE1-1835-338E-550A-E55D3F25E14E.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202607/9BA123C8-C313-DC5A-34BC-1E713074F1A1.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202607/79179F60-F6FB-1FE0-4C23-FC335F5F071E.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202606/6ACB9142-F3D6-5D98-AC89-CF99CFB82ADE.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202607/018A7E4D-DD27-A674-93F0-64668DA24293.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202605/6672975D-EB89-F446-F240-D1D512E4772D.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202601/974F9444-3861-0B16-D1CD-3CECCC046C15.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202604/67318258-04E6-3B43-5F1D-34690A8795B2.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/DFA543B3-095E-A57B-3C66-25EA35E69E0C.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202604/78A12BFF-3BB1-C14E-0EF1-E0D329EBEA0A.jpg",
+      "https://img.yitashop.com/10006/banners/original/202605/6D344B77-E5B6-92DC-1139-5D12F881A620.jpg"
+    ],
+    "unreviewed_urls": []
+  },
+  "image_facts": [
+    {
+      "url": "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202605/53151214-DFCB-977E-EB02-1C67CDB5BA3E.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T07:52:23+00:00",
+      "sha256": "fdf0c280b3c1a14c051b5ab076e3da0ce9a73164d40adc7c1aabe3ae501af487",
+      "content_type": "image/jpeg",
+      "bytes": 47774,
+      "status": "success",
+      "reviewed_at": "2026-10-13T07:58:33.308705+00:00",
+      "method": "actual_visual_read",
+      "classification": "official_image_text",
+      "facts": [
+        "Product photograph with remote/app;no new quantitative specification."
+      ],
+      "limitations": [
+        "Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred."
+      ]
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/2751B924-5195-00D2-0DB8-0597FAB64BC5.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T08:05:11+00:00",
+      "sha256": "7e2c7ae181be102966843f3af83e602033c7cfa304258fe2700628e87e8fc81a",
+      "content_type": "image/jpeg",
+      "bytes": 62462,
+      "status": "success",
+      "final_url": "https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/2751B924-5195-00D2-0DB8-0597FAB64BC5.jpg",
+      "reviewed_at": "2026-10-13T08:14:39.227053+00:00",
+      "method": "actual_visual_read",
+      "classification": "official_image_text",
+      "facts": [
+        "Product/package photograph app/remote;noquantitativeparameterinferred."
+      ],
+      "limitations": [
+        "Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred."
+      ]
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202604/B78E8420-36CE-59AE-4F65-FBA7D448061B.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T07:52:05+00:00",
+      "sha256": "76b17aad9b58162eb6af0614afde8e046c625fd825c7266af3296cac4ee32222",
+      "content_type": "image/jpeg",
+      "bytes": 101784,
+      "status": "success",
+      "reviewed_at": "2026-10-13T07:58:33.308629+00:00",
+      "method": "actual_visual_read",
+      "classification": "official_image_text",
+      "facts": [
+        "1tonheatpump;125°Fambientcooling/5°Fambientheating;30sec cooling/60sec heating marketing without test conditions."
+      ],
+      "limitations": [
+        "Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred."
+      ]
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202606/3A3F8F2F-6565-A51D-81BC-AD3462DD8EEC.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T07:52:30+00:00",
+      "sha256": "8bb0249deaab2c9e057a466a081a7f0a4ecb851a1f52d40ed26e84573afac9c7",
+      "content_type": "image/jpeg",
+      "bytes": 101066,
+      "status": "success",
+      "reviewed_at": "2026-10-13T07:58:33.308713+00:00",
+      "method": "actual_visual_read",
+      "classification": "official_image_text",
+      "facts": [
+        "Same-room-size illustration:undersized82°F versusproperlysized68°F;no specified time/BTU/testconditions."
+      ],
+      "limitations": [
+        "Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred."
+      ]
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/800x800/10006/product/original/202606/AE35541A-42F3-0002-962C-0BA4881D3443.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T07:59:21+00:00",
+      "sha256": "051633519d0dd1cc7d3b444d75684c7a8a5250379d7ef4c1400f6483eb5307d1",
+      "content_type": "image/jpeg",
+      "bytes": 100787,
+      "status": "success",
+      "reviewed_at": "2026-10-13T08:02:34.967472+00:00",
+      "method": "actual_visual_read",
+      "classification": "official_image_text",
+      "facts": [
+        "Monthlycost$120(14SEER2)versus$60(20SEER2);higherSEER lowercostmarketing;unstatedcapacity/use/costassumptions."
+      ],
+      "limitations": [
+        "Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred."
+      ]
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/800x800/10006/product/original/202606/ACCB0CC1-4DB8-0076-B275-435BFC134BA4.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T07:59:19+00:00",
+      "sha256": "dd1aa2ac07ba3c4533d2700f3eddf63d17c986c9cffbb8ec904e97d3b6aff55e",
+      "content_type": "image/jpeg",
+      "bytes": 96275,
+      "status": "success",
+      "reviewed_at": "2026-10-13T08:02:34.967470+00:00",
+      "method": "actual_visual_read",
+      "classification": "official_image_text",
+      "facts": [
+        "31dB;4Dairflow/nohotcoldspots;measurementconditions unstated."
+      ],
+      "limitations": [
+        "Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred."
+      ]
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202512/73899DE1-1835-338E-550A-E55D3F25E14E.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T07:51:56+00:00",
+      "sha256": "48bb69ac620e60ce8f8cc531ea9e0f5f892d63cabfa27fa734952f47fabebfd0",
+      "content_type": "image/jpeg",
+      "bytes": 69379,
+      "status": "success",
+      "reviewed_at": "2026-10-13T07:58:33.308178+00:00",
+      "method": "actual_visual_read",
+      "classification": "official_image_text",
+      "facts": [
+        "8modes:auto,cool,heat,dry,fan,sleep,ECO,care;IFEEL button."
+      ],
+      "limitations": [
+        "Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred."
+      ]
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202607/9BA123C8-C313-DC5A-34BC-1E713074F1A1.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T07:52:42+00:00",
+      "sha256": "853bc51b9c593fb7482404467af75b28cb1e1eae932ff3ecca674e0adf17f620",
+      "content_type": "image/jpeg",
+      "bytes": 135827,
+      "status": "success",
+      "reviewed_at": "2026-10-13T07:58:33.308728+00:00",
+      "method": "actual_visual_read",
+      "classification": "official_image_text",
+      "facts": [
+        "Creator testimonial/marketing:safeoperation,fastcooling,comfort,everydaycontrol;not independent technical test or fullvideo."
+      ],
+      "limitations": [
+        "Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred."
+      ]
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202607/79179F60-F6FB-1FE0-4C23-FC335F5F071E.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T07:52:40+00:00",
+      "sha256": "2feeb23885617010be4e9680253003ed1828b95d0a4acab359c71d349017953a",
+      "content_type": "image/jpeg",
+      "bytes": 84943,
+      "status": "success",
+      "reviewed_at": "2026-10-13T07:58:33.308726+00:00",
+      "method": "actual_visual_read",
+      "classification": "official_image_text",
+      "facts": [
+        "7year reliable warranty badge;ETL/AHRI logos;R32;page image does not delimit badge warranty scope."
+      ],
+      "limitations": [
+        "Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred."
+      ]
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/800x800/10006/product/original/202606/6ACB9142-F3D6-5D98-AC89-CF99CFB82ADE.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T07:59:09+00:00",
+      "sha256": "ce4e6c0c5ea64c294e7baebc2517d383f2ce55d68e15b5752eefdb18ea735a56",
+      "content_type": "image/jpeg",
+      "bytes": 89265,
+      "status": "success",
+      "reviewed_at": "2026-10-13T08:02:34.967460+00:00",
+      "method": "actual_visual_read",
+      "classification": "official_image_text",
+      "facts": [
+        "136°Fhigh-temperature self-cleaning;condensation/frost/melting/sterilization;removablewashablefilter;pathogenefficacy unverified."
+      ],
+      "limitations": [
+        "Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred."
+      ]
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202607/018A7E4D-DD27-A674-93F0-64668DA24293.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T07:52:34+00:00",
+      "sha256": "05c3ce2eda6b4e495286fc8b2302546f7a5afebb369b338759687d0dc2fa52ed",
+      "content_type": "image/jpeg",
+      "bytes": 122725,
+      "status": "success",
+      "reviewed_at": "2026-10-13T07:58:33.308719+00:00",
+      "method": "actual_visual_read",
+      "classification": "official_image_text",
+      "facts": [
+        "6M+units exported globally;10M+delivered domestically;manufacturer marketing claim,scope/time and independent support not supplied."
+      ],
+      "limitations": [
+        "Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred."
+      ]
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/800x800/10006/product/original/202605/6672975D-EB89-F446-F240-D1D512E4772D.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T07:58:56+00:00",
+      "sha256": "1094dea180b84a87e840ad595a91d21ff242c286146f4e2e9e3cb5560692f040",
+      "content_type": "image/jpeg",
+      "bytes": 76521,
+      "status": "success",
+      "reviewed_at": "2026-10-13T08:02:34.967447+00:00",
+      "method": "actual_visual_read",
+      "classification": "official_image_text",
+      "facts": [
+        "Seriescomparison:Enduring/Visio9/12/18/24K,18SEER2(9K)/20others,R32,noise28/31/36/38dB,5–125°F;E-Save12/18/24K,20SEER2,R32,28/32/36dB,−13–140°F;notautomaticSKU mapping."
+      ],
+      "limitations": [
+        "Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred."
+      ]
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202601/974F9444-3861-0B16-D1CD-3CECCC046C15.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T07:51:59+00:00",
+      "sha256": "bf226374b7b3e55c8af10ed3974f21b6853479e4f342b7213d1e56edd38019d1",
+      "content_type": "image/jpeg",
+      "bytes": 106908,
+      "status": "success",
+      "reviewed_at": "2026-10-13T07:58:33.308616+00:00",
+      "method": "actual_visual_read",
+      "classification": "official_image_text",
+      "facts": [
+        "EnergyGuide modelCSAA12DC2AU-W;SEER2 20.00;HSPF2 8.50;installed coil and geography affect ratings."
+      ],
+      "limitations": [
+        "Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred."
+      ]
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202604/67318258-04E6-3B43-5F1D-34690A8795B2.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T07:52:03+00:00",
+      "sha256": "1653023bcac4a0d9db24d616c35d8c2acea81d17dc1ae0f288e86ca4eedb0ce8",
+      "content_type": "image/jpeg",
+      "bytes": 84768,
+      "status": "success",
+      "reviewed_at": "2026-10-13T07:58:33.308626+00:00",
+      "method": "actual_visual_read",
+      "classification": "official_image_text",
+      "facts": [
+        "12K comparison:price$649–669.99;12000cool/heat;20/8.5;750sqft;R32GWP≈675;16.4ft copper;app/Alexa/Google;5–125°F;5yearparts/7yearcompressor. Competitor claims/price not independently verified."
+      ],
+      "limitations": [
+        "Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred."
+      ]
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/DFA543B3-095E-A57B-3C66-25EA35E69E0C.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T08:07:33+00:00",
+      "sha256": "9c05de4bacde69f374f0c0320afa95274a16eca286725a2cf60735abfef04c8a",
+      "content_type": "image/jpeg",
+      "bytes": 121293,
+      "status": "success",
+      "final_url": "https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/DFA543B3-095E-A57B-3C66-25EA35E69E0C.jpg",
+      "reviewed_at": "2026-10-13T08:14:39.227125+00:00",
+      "method": "actual_visual_read",
+      "classification": "official_image_text",
+      "facts": [
+        "Package box1:indoor,signalcable,powercord,decorativebackcover,2screws,remote,2AAAbatteries,remotebracket,installationdiagram. Box2:outdoor,liquid/suctionlines,2drainhoses,2tapes,sealingclay,wallholecover,drainelbowconnector,4screws,4rubberfeet."
+      ],
+      "limitations": [
+        "Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred."
+      ]
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202604/78A12BFF-3BB1-C14E-0EF1-E0D329EBEA0A.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T07:36:33+00:00",
+      "sha256": "41e88a90b7f5c20940fc35240e73c63df92ed0a0a8c61d03434b6f413ac083c8",
+      "content_type": "image/jpeg",
+      "bytes": 100480,
+      "status": "success",
+      "reviewed_at": "2026-10-13T07:42:58.357031+00:00",
+      "method": "actual_visual_read",
+      "classification": "specification_or_package_text",
+      "facts": [
+        "Cooling/heating12000 BTU;20/8.5 SEER2/HSPF2;230V;1Ph60Hz inverter;max input1044W;indoor fuse15A/outdoor25A;750 Sq Ft;R32; indoor31.69×7.87×10.63 in;outdoor25.98×9.84×20.87 in."
+      ],
+      "limitations": [
+        "Official claim, not independent performance verification. Use only on attached exact page; max fuse indoor/outdoor values are not silently equated to MCA."
+      ]
+    },
+    {
+      "url": "https://img.yitashop.com/10006/banners/original/202605/6D344B77-E5B6-92DC-1139-5D12F881A620.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html"
+      ],
+      "captured_at": "2026-10-13T07:36:09+00:00",
+      "sha256": "df0ecbeae390b6fa4db8826a410cda7d862ad43e12828d9825dc6bcaba21191b",
+      "content_type": "image/jpeg",
+      "bytes": 583528,
+      "status": "success",
+      "reviewed_at": "2026-10-13T07:42:58.357034+00:00",
+      "method": "actual_visual_read",
+      "classification": "specification_or_package_text",
+      "facts": [
+        "Package image: signal cable18ft;power cord11.5ft;suction/liquid lines16.4ft;2 drain hoses6.6ft;mounting screws/anchors shown."
+      ],
+      "limitations": [
+        "Official claim, not independent performance verification. Use only on attached exact page; max fuse indoor/outdoor values are not silently equated to MCA."
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "field": "warranty_scope",
+      "status": "needs_clarification",
+      "values": [
+        {
+          "value": "5-Year Full Warranty; 7-Year Warranty on Compressor",
+          "source_url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html",
+          "sha256": "9fa51df3f83eef690c73c95d3554c4b2c2c3490c15dfc6fbd96d802a13372a0b",
+          "location": "specifications.Warranty"
+        },
+        {
+          "value": "Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.",
+          "source_url": "https://www.cozeware.com/article/warranty.html?aid=145",
+          "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947",
+          "location": "policy_warranty_definition_and_liability"
+        }
+      ],
+      "handling": "Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.",
+      "evidence_status": "current_source_match"
+    }
+  ],
+  "field_status": {
+    "documents": {
+      "official_urls": 4,
+      "invalid_placeholders": 0
+    },
+    "specifications": "present",
+    "image_review": "complete",
+    "dimensions_images": "present",
+    "faq": "present",
+    "conflicts": "unresolved"
+  },
+  "fitment": "",
+  "price": {
+    "sale": "499.99",
+    "market": "650",
+    "currency": "USD",
+    "discount": "-23%",
+    "stock": "<div>\n        <p style=\"color: #160302; font-family:DM Sans-Light;font-size:14px; letter-spacing: 1px;\">Estimated Delivery in 3-5 Days </p>\n      </div>",
+    "freeShipping": true
+  },
+  "review": {
+    "score": 4.94,
+    "count": 16
+  },
+  "warnings": [
+    "官网质保范围或期限需要复核",
+    "官网文字与图片口径不一致"
+  ],
+  "description": "12,000 BTU Delivers Fast Cooling & Heating for Up To 750 Sq Ft\n4D Airflow Ensures Balanced Comfort Across Every Corner of Your Room\nUltra-Quiet 31 dB Ensures Peaceful Sleep, Work, and Daily Use Without Disturbance\nHigh-Efficiency 20 SEER2 Cuts Energy Bills Up To 45%, Saving Approx. $60–75 Monthly\nETL Safety Certified and AHRI Verified For Trusted, Real-World Reliability\nComplete Installation Kit with 16.4 Ft Line Set, Reducing Installation Costs\nEco-Friendly R32 Refrigerant Delivers Higher Efficiency and Lower Environmental Impact\nSmart Control with App & Voice Control for Anytime, Anywhere Adjustment",
+  "highlights": [],
+  "specifications": {
+    "BTU Cooling": "12,000 BTU",
+    "BTU Heating": "12,000 BTU",
+    "Energy Efficiency Ratio (SEER2)": "20",
+    "Energy Efficiency Ratio (HSPF2)": "8.5",
+    "Voltage": "230V",
+    "Supply Voltage Range": "145-276V",
+    "Max. Fuse Size (MOP)": "25A",
+    "Min. Circuit Ampacity (MCA)": "16.6A",
+    "Fitting Area": "750 sq.ft",
+    "Adjustable Air Direction": "Yes",
+    "Ambient Temperature Range": "5 to 125 °F",
+    "Intelligent Anti-freezing": "Yes",
+    "Setpoint Temperature Range": "61-90 °F",
+    "Warranty": "5-Year Full Warranty; 7-Year Warranty on Compressor",
+    "Controller Type": "Remote & APP Control",
+    "Voice Control": "Cozeware APP; Google Assistant; Alexa",
+    "Timer": "24 hours",
+    "Refrigerant Included": "R32",
+    "Certification": "AHRI; ETL",
+    "Assembly Required": "Yes",
+    "Installation Guide Included": "Yes",
+    "3 ECO Modes": "75%, 60%, or 40% Power"
+  },
+  "package": [],
+  "installation": {
+    "notes": "",
+    "position": "",
+    "documents": [
+      {
+        "name": "COZEWARE_User_Manual.pdf",
+        "kind": "installation_or_product_file",
+        "url": "https://img.yitashop.com/doc_sku/vnboggslot/COZEWARE_User_Manual.pdf"
+      },
+      {
+        "name": "COZEWARE_WiFi_App_Guide.pdf",
+        "kind": "installation_or_product_file",
+        "url": "https://img.yitashop.com/doc_sku/wufilqinwb/COZEWARE_WiFi_App_Guide.pdf"
+      },
+      {
+        "name": "COZEWARE_AHRI_Certification.pdf",
+        "kind": "installation_or_product_file",
+        "url": "https://img.yitashop.com/doc_sku/pxcyykncfj/COZEWARE_AHRI_Certification.pdf"
+      },
+      {
+        "name": "COZEWARE_ETL_Certification.pdf",
+        "kind": "installation_or_product_file",
+        "url": "https://img.yitashop.com/doc_sku/ldfpnzhurx/COZEWARE_ETL_Certification.pdf"
+      }
+    ]
+  },
+  "media": {
+    "images": [
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202605/53151214-DFCB-977E-EB02-1C67CDB5BA3E.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/2751B924-5195-00D2-0DB8-0597FAB64BC5.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202604/B78E8420-36CE-59AE-4F65-FBA7D448061B.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202606/3A3F8F2F-6565-A51D-81BC-AD3462DD8EEC.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202606/AE35541A-42F3-0002-962C-0BA4881D3443.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202606/ACCB0CC1-4DB8-0076-B275-435BFC134BA4.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202512/73899DE1-1835-338E-550A-E55D3F25E14E.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202607/9BA123C8-C313-DC5A-34BC-1E713074F1A1.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202607/79179F60-F6FB-1FE0-4C23-FC335F5F071E.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202606/6ACB9142-F3D6-5D98-AC89-CF99CFB82ADE.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202607/018A7E4D-DD27-A674-93F0-64668DA24293.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202605/6672975D-EB89-F446-F240-D1D512E4772D.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202601/974F9444-3861-0B16-D1CD-3CECCC046C15.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202604/67318258-04E6-3B43-5F1D-34690A8795B2.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/DFA543B3-095E-A57B-3C66-25EA35E69E0C.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202604/78A12BFF-3BB1-C14E-0EF1-E0D329EBEA0A.jpg",
+      "https://img.yitashop.com/10006/banners/original/202605/6D344B77-E5B6-92DC-1139-5D12F881A620.jpg"
+    ],
+    "videos": [
+      "https://img.yitashop.com/video/cwlmshfojo/____-____.mp4",
+      "https://img.yitashop.com/video/zpzwntjwnp/2026.3.6-___1__1_1__.mp4"
+    ]
+  },
+  "variants": {
+    "options": [
+      {
+        "productsOptionsId": "2928",
+        "optionsSort": "1.00",
+        "optionsValueType": "1",
+        "productsOptionsName": "BTU",
+        "optionsValuesList": [
+          {
+            "productsOptionsValuesId": "18121",
+            "productsOptionsValuesName": "12000 BTU",
+            "optionsValuesSort": "1"
+          }
+        ]
+      }
+    ],
+    "selected": [
+      {
+        "productsOptionsId": "2928",
+        "optionsSort": "1.00",
+        "productsOptionsName": "BTU",
+        "productsOptionsValuesId": "18121",
+        "productsOptionsValuesName": "12000 BTU",
+        "valueUnit": ""
+      }
+    ],
+    "skus": [
+      {
+        "option_key": "18121",
+        "sku": "HAHEAC-CZ0020",
+        "sku_id": "8862",
+        "spu_id": "6355",
+        "url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html",
+        "status": "1",
+        "attribute_ids": {
+          "2928": "18121"
+        }
+      }
+    ],
+    "related": [
+      {
+        "sku": "HAHEAC-DC9K",
+        "sku_id": "9600",
+        "spu_id": "6679",
+        "option": "Visio | 9,000 BTU, 115V",
+        "url": "https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html"
+      },
+      {
+        "sku": "HAHEAC-CZ0018",
+        "sku_id": "8840",
+        "spu_id": "6347",
+        "option": "Visio | 12,000 BTU, 115V",
+        "url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html"
+      },
+      {
+        "sku": "",
+        "sku_id": "",
+        "spu_id": "6355",
+        "option": "Visio | 12,000 BTU, 230V",
+        "url": ""
+      },
+      {
+        "sku": "HAHEAC-DC18K",
+        "sku_id": "9602",
+        "spu_id": "6680",
+        "option": "Visio | 18,000 BTU, 230V",
+        "url": "https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html"
+      },
+      {
+        "sku": "HAHEAC-DC24K",
+        "sku_id": "9607",
+        "spu_id": "6681",
+        "option": "Visio | 24,000 BTU, 230V",
+        "url": "https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html"
+      }
+    ],
+    "factScope": "Specifications in this record apply to the primary SKU only; related SKU links require their own exact product facts."
+  },
+  "policies": {
+    "productWarranty": [
+      {
+        "label": "Warranty",
+        "value": "5-Year Full Warranty; 7-Year Warranty on Compressor",
+        "source": "product_specification"
+      },
+      {
+        "label": "Warranty",
+        "value": "1 Year Limited",
+        "source": "product_overview",
+        "url": "https://www.hernest.com/article/Warranty.html?aid=59"
+      }
+    ],
+    "pageClaims": [],
+    "returnUrl": "https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42",
+    "shippingUrl": "https://www.cozeware.com/article/Shipping-Guide.html?aid=43"
+  },
+  "document_image_facts": [],
+  "image_review": {
+    "reviewed_urls": [
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202605/53151214-DFCB-977E-EB02-1C67CDB5BA3E.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/2751B924-5195-00D2-0DB8-0597FAB64BC5.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202604/B78E8420-36CE-59AE-4F65-FBA7D448061B.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202606/3A3F8F2F-6565-A51D-81BC-AD3462DD8EEC.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202606/AE35541A-42F3-0002-962C-0BA4881D3443.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202606/ACCB0CC1-4DB8-0076-B275-435BFC134BA4.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202512/73899DE1-1835-338E-550A-E55D3F25E14E.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202607/9BA123C8-C313-DC5A-34BC-1E713074F1A1.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202607/79179F60-F6FB-1FE0-4C23-FC335F5F071E.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202606/6ACB9142-F3D6-5D98-AC89-CF99CFB82ADE.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202607/018A7E4D-DD27-A674-93F0-64668DA24293.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202605/6672975D-EB89-F446-F240-D1D512E4772D.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202601/974F9444-3861-0B16-D1CD-3CECCC046C15.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202604/67318258-04E6-3B43-5F1D-34690A8795B2.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/DFA543B3-095E-A57B-3C66-25EA35E69E0C.jpg",
+      "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202604/78A12BFF-3BB1-C14E-0EF1-E0D329EBEA0A.jpg",
+      "https://img.yitashop.com/10006/banners/original/202605/6D344B77-E5B6-92DC-1139-5D12F881A620.jpg"
+    ],
+    "unreviewed_urls": []
+  },
+  "faq": [
+    {
+      "question": "How well does it cool in summer?",
+      "answer": "Cozeware air conditioners deliver powerful and efficient cooling with 20 SEER2 efficiency (18 SEER2 for 9K BTU Models), significantly outperforming standard units (14-17 SEER2).\nAvailable in 9K, 12K, 18K and 24K capacities - suitable for 450, 750, 1,250 and 1,500 sq ft - a Cozeware mini split brings your space from hot to comfortable in minutes while keeping energy bills low.",
+      "scope": "official FAQ attached to this page; may describe multiple models"
+    },
+    {
+      "question": "Is the online manual different from the printed one included in the box?",
+      "answer": "For the most updated product information, always refer to the online version of the manual available on our official website. The printed copy provides reliable core guidance, but we recommend checking the online manual for any potential updates.",
+      "scope": "official FAQ attached to this page; may describe multiple models"
+    },
+    {
+      "question": "Do I need a circuit breaker for my split AC, and how do I size it correctly?",
+      "answer": "Yes, a dedicated circuit breaker is necessary. Size it according to the nameplate on the outdoor unit : the rating must be ≥ MCA (Minimum Circuit Ampacity) and ≤ MOP (Maximum Overcurrent Protection).\nFor example, if MCA=15A and MOP=25A, a 20A breaker works. Below MCA causes nuisance tripping; above MOP offers no overcurrent protection. Also ensure the supply wiring has a current capacity ≥ MCA.",
+      "scope": "official FAQ attached to this page; may describe multiple models"
+    },
+    {
+      "question": "Can I install the 230V option in my home? How do I know if I should choose 115V or 230V?",
+      "answer": "The choice between 115V and 230V depends entirely on your home's existing electrical wiring.\n115V Option: Hardwired to a standard 115V circuit via breaker panel (not plug-in). It is the direct choice for most room where a dedicated circuit may not be present.\n230V Option: Require a dedicated double-pole circuit breaker (similar to what is used for a dryer or oven). It offers higher efficiency and lower line loss.\nOur Strong Recommendation: Before purchasing, consult with a licensed HVAC installer or electrician to confirm if a dedicated 230V circuit is available.",
+      "scope": "official FAQ attached to this page; may describe multiple models"
+    },
+    {
+      "question": "What refrigerant does the system use? Is it pre-charged?",
+      "answer": "Cozeware air conditioner uses R32 refrigerant, which has a ~70% lower Global Warming Potential (GWP), making it a more environmental choice (classified as A2L safety).\nYes, the outdoor unit is fully pre-charged and sealed at the factory, ensuring optimal performance and easy installation. The indoor unit and suction line must be thoroughly evacuated to remove all air and moisture before opening the valves.",
+      "scope": "official FAQ attached to this page; may describe multiple models"
+    },
+    {
+      "question": "How much will I actually save on my electricity bill?",
+      "answer": "Savings depend on your local electricity rates, usage patterns, and the efficiency of the system you're replacing. For example, replacing an old 10 SEER2 window unit with a Cozeware 20 SEER2 mini split unit could reduce your summer cooling costs by 40-50% or more.",
+      "scope": "official FAQ attached to this page; may describe multiple models"
+    },
+    {
+      "question": "Is maintenance difficult? How do I clean the filters?",
+      "answer": "Routine maintenance is simple. We recommend:\nSeasonly: Check and clean the reusable air filter in the indoor unit. Simply remove it, rinse with water, and let it dry completely before reinserting.\nAnnually: Schedule a professional check-up with your HVAC technician, ensuring optimal performance and longevity.",
+      "scope": "official FAQ attached to this page; may describe multiple models"
+    },
+    {
+      "question": "What control options are available across different models?",
+      "answer": "All models include a remote control. The 9,000 BTU model is remote-only, while 12,000 / 18,000 / 24,000 BTU models also support app control and voice assistants (Google Assistant & Alexa).",
+      "scope": "official FAQ attached to this page; may describe multiple models"
+    },
+    {
+      "question": "Do you have the supplied lineset length?",
+      "answer": "Each system comes with a suction & liquid line set, a signal cable, drain hose(s), and a power cord (excluding E-Save Series).\n9,000 BTU models: Include 13.1 ft suction & liquid lines, a 14.8 ft signal cable, an 11.5 ft power cord, and a 6.6 ft drain hose.\n12,000 / 18,000 / 24,000 BTU models: Include 16.4 ft suction & liquid lines, an 18 ft signal cable, an 11.5 ft power cord, and two 6.6 ft drain hoses.\nException:\n1. Enduring 12,000 BTU model includes two 4.9 ft drain hoses instead.\n2. E-Save Series do not include the power cord.",
+      "scope": "official FAQ attached to this page; may describe multiple models"
+    },
+    {
+      "question": "Is there still warranty for DIY install?",
+      "answer": "The warranty remains valid for defects in materials and workmanship of the unit itself. However, any damage resulting from the installation process-including improper handling, incorrect setup, use of non-standard parts, or exceeding specified limits such as the maximum pre-charged line set length-will void the warranty coverage for resulting issues.",
+      "scope": "official FAQ attached to this page; may describe multiple models"
+    },
+    {
+      "question": "Why doesn't the ac stop running after reaching the set temperature in cooling or heating mode?",
+      "answer": "This is normal. The unit continues running at low power and low fan speed to maintain a stable room temperature. Avoiding frequent on/off cycles helps reduce noise, protect the compressor, extend service life and save more energy.",
+      "scope": "official FAQ attached to this page; may describe multiple models"
+    },
+    {
+      "question": "What are Auto, ECO, IFEEL, and Care Modes, and how to choose?",
+      "answer": "Auto Mode: Automatically switches between cooling and heating to reach and maintain your set temperature quickly.\nECO Mode: Reduces compressor and fan speed near your set temperature for maximum energy efficiency.\nIFEEL Mode: Uses intelligent ambient sensing to automatically adjust temperature, fan speed and airflow for personalized comfort.\nCare Mode: Maintains a gentle, consistent temperature for steady, quiet comfort.\nQuick Tip: Start with Auto for fast cooling/heating, switch to ECO for energy saving. Use IFEEL for smart, adaptive comfort or Care for stable, gentle cooling.",
+      "scope": "official FAQ attached to this page; may describe multiple models"
+    },
+    {
+      "question": "How should I handle and position the unit before installation?",
+      "answer": "Please handle the unit with care and keep it in the correct position shown on the packaging. Do not turn or place the unit upside down. Improper positioning may damage internal components. For the outdoor unit, take extra care to keep it upright to help prevent damage and potential refrigerant leaks.",
+      "scope": "official FAQ attached to this page; may describe multiple models"
+    },
+    {
+      "question": "More FAQ",
+      "answer": "https://www.cozeware.com/help?id=118",
+      "scope": "official FAQ attached to this page; may describe multiple models"
+    }
+  ],
+  "stage": {
+    "status_code": 1,
+    "is_deposit": false,
+    "presale_delivery_text": "",
+    "presale_price_snapshot": "499.99",
+    "captured_at": "2026-10-13T07:33:31+00:00",
+    "interpretation": "official codes/text preserved; stage not inferred solely from campaign name"
+  },
+  "usage_conditions": {
+    "official_sections": [
+      {
+        "field": "productsDescription",
+        "official_text": "12,000 BTU Delivers Fast Cooling & Heating for Up To 750 Sq Ft\n4D Airflow Ensures Balanced Comfort Across Every Corner of Your Room\nUltra-Quiet 31 dB Ensures Peaceful Sleep, Work, and Daily Use Without Disturbance\nHigh-Efficiency 20 SEER2 Cuts Energy Bills Up To 45%, Saving Approx. $60–75 Monthly\nETL Safety Certified and AHRI Verified For Trusted, Real-World Reliability\nComplete Installation Kit with 16.4 Ft Line Set, Reducing Installation Costs\nEco-Friendly R32 Refrigerant Delivers Higher Efficiency and Lower Environmental Impact\nSmart Control with App & Voice Control for Anytime, Anywhere Adjustment"
+      },
+      {
+        "field": "metaDescription",
+        "official_text": "Keep your garage, workshop, or home comfortable with the Cozeware 12000 BTU mini split AC unit. Ultra quiet, energy-efficient ductless inverter system with 230V power, eco-friendly R32, and designed for spaces up to 750 sq ft. WiFi, app & remote control provide easy operation, perfect for high-demand and larger spaces."
+      }
+    ],
+    "scope": "this exact product page; no cross-model inheritance"
+  },
+  "sourceStatus": "official_snapshot",
+  "recordKey": "8862-80b857f5",
+  "brandKey": "cozeware",
+  "fieldEvidence": {
+    "name": {
+      "url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html",
+      "capturedAt": "2026-10-13T07:33:31+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "COZEWARE Visio Series 12000 BTU 20 SEER2 Ductless Mini Split AC with Heat Pump, 230V"
+    },
+    "sku": {
+      "url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html",
+      "capturedAt": "2026-10-13T07:33:31+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "HAHEAC-CZ0020"
+    },
+    "brand": {
+      "url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html",
+      "capturedAt": "2026-10-13T07:33:31+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "COZEWARE"
+    },
+    "fitment": {
+      "url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html",
+      "capturedAt": "2026-10-13T07:33:31+00:00",
+      "status": "missing",
+      "excerpt": ""
+    },
+    "description": {
+      "url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html",
+      "capturedAt": "2026-10-13T07:33:31+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "12,000 BTU Delivers Fast Cooling & Heating for Up To 750 Sq Ft\n4D Airflow Ensures Balanced Comfort Across Every Corner of Your Room\nUltra-Quiet 31 dB Ensures Peaceful Sleep, Work, and Daily Use Without Disturbance\nHigh-Efficiency 20 SEER2 Cuts Energy Bills Up To 45%, Saving Approx. $60–75 Monthly\nETL Safety Certified and AHRI Verified For Trusted, Real-World Reliability\nComplete Installation Kit with 16.4 Ft Line Set, Reducing Installation Costs\nEco-Friendly R32 Refrigerant Delivers Higher Efficiency and Lower Environmental Impact\nSmart Control with App & Voice Control for Anytime, Anywhere Adjustment"
+    },
+    "specifications": {
+      "url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html",
+      "capturedAt": "2026-10-13T07:33:31+00:00",
+      "status": "unresolved_official_source_conflict",
+      "excerpt": {
+        "BTU Cooling": "12,000 BTU",
+        "BTU Heating": "12,000 BTU",
+        "Energy Efficiency Ratio (SEER2)": "20",
+        "Energy Efficiency Ratio (HSPF2)": "8.5",
+        "Voltage": "230V",
+        "Supply Voltage Range": "145-276V",
+        "Max. Fuse Size (MOP)": "25A",
+        "Min. Circuit Ampacity (MCA)": "16.6A",
+        "Fitting Area": "750 sq.ft",
+        "Adjustable Air Direction": "Yes",
+        "Ambient Temperature Range": "5 to 125 °F",
+        "Intelligent Anti-freezing": "Yes",
+        "Setpoint Temperature Range": "61-90 °F",
+        "Warranty": "5-Year Full Warranty; 7-Year Warranty on Compressor",
+        "Controller Type": "Remote & APP Control",
+        "Voice Control": "Cozeware APP; Google Assistant; Alexa",
+        "Timer": "24 hours",
+        "Refrigerant Included": "R32",
+        "Certification": "AHRI; ETL",
+        "Assembly Required": "Yes",
+        "Installation Guide Included": "Yes",
+        "3 ECO Modes": "75%, 60%, or 40% Power"
+      },
+      "conflicts": [
+        {
+          "field": "warranty_scope",
+          "status": "needs_clarification",
+          "values": [
+            {
+              "value": "5-Year Full Warranty; 7-Year Warranty on Compressor",
+              "source_url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html",
+              "sha256": "9fa51df3f83eef690c73c95d3554c4b2c2c3490c15dfc6fbd96d802a13372a0b",
+              "location": "specifications.Warranty"
+            },
+            {
+              "value": "Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.",
+              "source_url": "https://www.cozeware.com/article/warranty.html?aid=145",
+              "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947",
+              "location": "policy_warranty_definition_and_liability"
+            }
+          ],
+          "handling": "Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.",
+          "evidence_status": "current_source_match"
+        }
+      ],
+      "primarySku": "HAHEAC-CZ0020"
+    },
+    "variants": {
+      "url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html",
+      "capturedAt": "2026-10-13T07:33:31+00:00",
+      "status": "related_option_references",
+      "excerpt": {
+        "options": [
+          {
+            "productsOptionsId": "2928",
+            "optionsSort": "1.00",
+            "optionsValueType": "1",
+            "productsOptionsName": "BTU",
+            "optionsValuesList": [
+              {
+                "productsOptionsValuesId": "18121",
+                "productsOptionsValuesName": "12000 BTU",
+                "optionsValuesSort": "1"
+              }
+            ]
+          }
+        ],
+        "selected": [
+          {
+            "productsOptionsId": "2928",
+            "optionsSort": "1.00",
+            "productsOptionsName": "BTU",
+            "productsOptionsValuesId": "18121",
+            "productsOptionsValuesName": "12000 BTU",
+            "valueUnit": ""
+          }
+        ],
+        "skus": [
+          {
+            "option_key": "18121",
+            "sku": "HAHEAC-CZ0020",
+            "sku_id": "8862",
+            "spu_id": "6355",
+            "url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html",
+            "status": "1",
+            "attribute_ids": {
+              "2928": "18121"
+            }
+          }
+        ],
+        "related": [
+          {
+            "sku": "HAHEAC-DC9K",
+            "sku_id": "9600",
+            "spu_id": "6679",
+            "option": "Visio | 9,000 BTU, 115V",
+            "url": "https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html"
+          },
+          {
+            "sku": "HAHEAC-CZ0018",
+            "sku_id": "8840",
+            "spu_id": "6347",
+            "option": "Visio | 12,000 BTU, 115V",
+            "url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html"
+          },
+          {
+            "sku": "",
+            "sku_id": "",
+            "spu_id": "6355",
+            "option": "Visio | 12,000 BTU, 230V",
+            "url": ""
+          },
+          {
+            "sku": "HAHEAC-DC18K",
+            "sku_id": "9602",
+            "spu_id": "6680",
+            "option": "Visio | 18,000 BTU, 230V",
+            "url": "https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html"
+          },
+          {
+            "sku": "HAHEAC-DC24K",
+            "sku_id": "9607",
+            "spu_id": "6681",
+            "option": "Visio | 24,000 BTU, 230V",
+            "url": "https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html"
+          }
+        ],
+        "factScope": "Specifications in this record apply to the primary SKU only; related SKU links require their own exact product facts."
+      }
+    },
+    "price": {
+      "url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html",
+      "capturedAt": "2026-10-13T07:33:31+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": {
+        "sale": "499.99",
+        "market": "650",
+        "currency": "USD",
+        "discount": "-23%",
+        "stock": "<div>\n        <p style=\"color: #160302; font-family:DM Sans-Light;font-size:14px; letter-spacing: 1px;\">Estimated Delivery in 3-5 Days </p>\n      </div>",
+        "freeShipping": true
+      }
+    },
+    "policies": {
+      "url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html",
+      "capturedAt": "2026-10-13T07:33:31+00:00",
+      "status": "unresolved_official_source_conflict",
+      "excerpt": {
+        "productWarranty": [
+          {
+            "label": "Warranty",
+            "value": "5-Year Full Warranty; 7-Year Warranty on Compressor",
+            "source": "product_specification"
+          },
+          {
+            "label": "Warranty",
+            "value": "1 Year Limited",
+            "source": "product_overview",
+            "url": "https://www.hernest.com/article/Warranty.html?aid=59"
+          }
+        ],
+        "pageClaims": [],
+        "returnUrl": "https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42",
+        "shippingUrl": "https://www.cozeware.com/article/Shipping-Guide.html?aid=43"
+      },
+      "conflicts": [
+        {
+          "field": "warranty_scope",
+          "status": "needs_clarification",
+          "values": [
+            {
+              "value": "5-Year Full Warranty; 7-Year Warranty on Compressor",
+              "source_url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html",
+              "sha256": "9fa51df3f83eef690c73c95d3554c4b2c2c3490c15dfc6fbd96d802a13372a0b",
+              "location": "specifications.Warranty"
+            },
+            {
+              "value": "Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.",
+              "source_url": "https://www.cozeware.com/article/warranty.html?aid=145",
+              "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947",
+              "location": "policy_warranty_definition_and_liability"
+            }
+          ],
+          "handling": "Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.",
+          "evidence_status": "current_source_match"
+        }
+      ]
+    }
+  },
+  "volatileFields": [
+    "price",
+    "review",
+    "stage"
+  ],
+  "missingFields": [],
+  "libraryVersion": "2026-10-13-2e1e340d6a71"
+}

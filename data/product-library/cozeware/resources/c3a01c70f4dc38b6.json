@@ -1,0 +1,38 @@
+{
+  "brand": "COZEWARE",
+  "brandKey": "cozeware",
+  "version": "2026-10-13-2e1e340d6a71",
+  "title": "COZEWARE | promotion",
+  "kind": "campaign",
+  "officialText": "COZEWARE | promotion\nGet the Deals, Inspiration and Trends\nSubscribe\nFollow Us\nPrivacyTermsPromo Terms* Do Not Sell or Share My Personal Information\nCopyright © 2026 COZEWARE.com All Rights Reserved.\nBack to top\nChat with us",
+  "url": "https://www.cozeware.com/promo/business-cooperation-a-166.html",
+  "capturedAt": "2026-10-13T07:29:51+00:00",
+  "officialSections": [],
+  "imageFacts": [
+    {
+      "url": "https://img.yitashop.com/10006/banners/original/202606/74F4B562-2DED-9162-1C11-C6ECC5134F5D.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/promo/business-cooperation-a-166.html"
+      ],
+      "captured_at": "2026-10-13T07:36:10+00:00",
+      "sha256": "ff052317d3a4826bbcd4a35697c21ef16f38fc9566c8387c8d80fc3e025437b0",
+      "content_type": "image/jpeg",
+      "bytes": 225847,
+      "status": "success",
+      "reviewed_at": "2026-10-13T07:47:24.843883+00:00",
+      "method": "actual_visual_read",
+      "classification": "official_marketing_or_parameter_text",
+      "facts": [
+        "US-wide retail dealer program;flexible cooperation,steady on-hand inventory,end-to-end profit-focused support. Campaign snapshot,not stock promise for a SKU."
+      ],
+      "limitations": [
+        "Only applies to attached source pages; official claim is not independent verification. Unreadable small text is not inferred."
+      ]
+    }
+  ],
+  "stage": {
+    "status": "requires_current_verification",
+    "evidence_basis": "official page snapshot; banner does not establish launch/stock/crowdfunding completion"
+  },
+  "unreviewedImageUrls": []
+}

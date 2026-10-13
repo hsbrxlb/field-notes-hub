@@ -1,0 +1,57 @@
+{
+  "brand": "COZEWARE",
+  "brandKey": "cozeware",
+  "version": "2026-10-13-2e1e340d6a71",
+  "title": "COZEWARE | FreshFlow Early Access",
+  "kind": "campaign",
+  "officialText": "COZEWARE | FreshFlow Early Access\nGet the Deals, Inspiration and Trends\nSubscribe\nFollow Us\nPrivacyTermsPromo Terms* Do Not Sell or Share My Personal Information\nCopyright © 2026 COZEWARE.com All Rights Reserved.\nBack to top\nChat with us",
+  "url": "https://www.cozeware.com/promo/freshflow-early-access-a-165.html",
+  "capturedAt": "2026-10-13T07:29:41+00:00",
+  "officialSections": [],
+  "imageFacts": [
+    {
+      "url": "https://img.yitashop.com/10006/banners/original/202608/D49486DB-16EB-9FD6-3F50-A8A3FCE93DCD.jpg",
+      "applies_to_urls": [
+        "https://www.cozeware.com/promo/freshflow-early-access-a-165.html"
+      ],
+      "captured_at": "2026-10-13T07:36:13+00:00",
+      "sha256": "e052cfdac7836f2a7b794de1c1a1e3047c7a0073d8edc7a7a153a06e2d9c52f4",
+      "content_type": "image/jpeg",
+      "bytes": 1121833,
+      "status": "success",
+      "reviewed_at": "2026-10-13T07:42:58.357123+00:00",
+      "method": "actual_visual_read",
+      "classification": "freshflow_campaign_text",
+      "facts": [
+        "Fresh air for closed-window living. Fresh outdoor air without open window; No drilling. 47.1 CFM /80m³/h fresh air; H12 HEPA filtration;26dB quiet operation;Smart App Control."
+      ],
+      "limitations": [
+        "Banner does not state commercial launch date, sale/stock/crowdfunding completion or SKU. Do not infer those."
+      ]
+    }
+  ],
+  "stage": {
+    "status": "requires_current_verification",
+    "evidence_basis": "official page snapshot; banner does not establish launch/stock/crowdfunding completion",
+    "official_home_banner_claims": [
+      {
+        "image_url": "https://img.yitashop.com/10006/banners/original/202609/E2F7826E-A8FC-CA36-BF29-92802335F713.jpg",
+        "sha256": "0cbf761af3477f0fc69181b426886f69e4b3b560918cf2e65c620c2c2540aa36",
+        "captured_at": "2026-10-13T08:35:02+00:00",
+        "reviewed_at": "2026-10-13T08:36:19.301442+00:00",
+        "review_method": "actual_visual_read",
+        "classification": "official_home_banner",
+        "facts": [
+          "FreshFlow: fresh outdoor air without opening windows; filtered fresh air, no wall renovation. Banner literally says NOW LIVE ON KICKSTARTER."
+        ],
+        "applies_to_urls": [
+          "https://www.cozeware.com"
+        ],
+        "limitations": [
+          "Time-stamped official banner claim. Campaign fulfillment/current external Kickstarter state and exact SKU applicability not independently established."
+        ]
+      }
+    ]
+  },
+  "unreviewedImageUrls": []
+}

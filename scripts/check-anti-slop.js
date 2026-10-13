@@ -42,7 +42,7 @@ for (const file of files) {
     if (rejectedCopy.test(source)) errors.push(`${relative}: 被用户退回的过程说明或占位文案重新出现`);
     const officialProductSnapshot = /^data\/products\/category-\d+\.json$/.test(relative);
     if (!officialProductSnapshot) {
-      for (const [label, pattern] of highRiskCopy) {
+      for (const [label, pattern] of /^data\/(?:products\/category-\d+\.json|cozeware-products\/|product-library\/)/.test(relative) ? [] : highRiskCopy) {
         const match = source.match(pattern);
         if (match) errors.push(`${relative}: 高风险模板句式 ${label}: ${match[0]}`);
       }

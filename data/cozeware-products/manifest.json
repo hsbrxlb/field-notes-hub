@@ -1,0 +1,42 @@
+{
+  "title": "Cozeware 官网产品资料库",
+  "description": "按型号查看家居产品、规格、使用条件与官方资料。",
+  "sourceUrl": "https://www.cozeware.com/",
+  "capturedAt": "2026-10-13T07:33:32+00:00",
+  "productCount": 27,
+  "brandCounts": {
+    "COZEWARE": 27
+  },
+  "warningCounts": {
+    "官网质保范围或期限需要复核": 26,
+    "官网文字与图片口径不一致": 26
+  },
+  "categories": [
+    {
+      "id": "1096",
+      "name": "分体空调",
+      "count": 26,
+      "file": "data/cozeware-products/category-1096.json",
+      "brands": {
+        "COZEWARE": 26
+      }
+    },
+    {
+      "id": "1140",
+      "name": "Built-In 中央空调",
+      "count": 1,
+      "file": "data/cozeware-products/category-1140.json",
+      "brands": {
+        "COZEWARE": 1
+      }
+    }
+  ],
+  "policyFile": "data/cozeware-products/policies.json",
+  "policyCount": 90,
+  "uncoveredSitemapUrls": 0,
+  "coverageText": "27 个商品页已保存；0 条商品链接待核。",
+  "notes": [
+    "价格、库存、活动与预售阶段须在引用前打开对应官网页面核对。"
+  ],
+  "version": "2026-10-13-2e1e340d6a71"
+}

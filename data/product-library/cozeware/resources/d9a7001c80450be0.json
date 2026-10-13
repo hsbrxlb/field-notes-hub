@@ -1,0 +1,58 @@
+{
+  "brand": "COZEWARE",
+  "brandKey": "cozeware",
+  "version": "2026-10-13-2e1e340d6a71",
+  "title": "INSTALLATION GUIDE",
+  "kind": "policy",
+  "officialText": "TIP 1: SELECTION OF INSTALLATION LOCATION\nIndoor Unit\n-Air circulation: It should be installed at a position where the air can circulate throughout the room, avoiding the air outlet directly facing areas such as beds and sofas where people stay for a long time.\n-Distance from the ceiling: At least 8 inches (0.67 feet) from the ceiling to ensure smooth return air.\n-Ground height: Usually installed at a high place, but it is necessary to ensure that it can be reached during maintenance and cleaning.\n-Horizontal installation: A level must be used to ensure absolute levelness; otherwise, it will cause poor drainage of condensate water, leading to leakage.\n-Stay away from heat sources and steam: Keep away from heat sources such as lamps and stoves.\nOutdoor Unit\n-Stability and load-bearing capacity: It must be installed on a solid load-bearing wall or a reinforced platform. Concrete walls and solid brick walls are ideal choices.\n-Good ventilation: Leave sufficient space in front, back, left and right (usually more than 0.5 ft from the wall at the back, more than 1 ft from the left and right sides, and more than 6.5 ft from the front air outlet) to ensure heat dissipation effect. Poor heat dissipation can lead to a sharp decline in efficiency and an increase in power consumption.\n-Avoid direct sunlight and rain (as appropriate) : If conditions permit, a sunshade can be installed to prevent direct sunlight, but it must not affect ventilation.\n-Noise consideration: The outdoor unit generates noise during operation. It is advisable to avoid having its air outlet directly facing a neighbor's window or rest area.\n-Easy to maintain: The installation location should enable maintenance personnel to carry out maintenance safely and conveniently.\nTIP 2: ULTRA-LONG CONNECTION LINES\nFor optimal performance, please verify that your planned installation location is within the reach of the fixed-length pipelines. We recommend checking the length data prior to ensure a smooth installation.\n9,000 BTU Unit Pipelines: 13.1ft Suction Line, 13.1ft Liquid Line, 14.8ft Signal Cable (16AWG, 4 cores), 11.5ft Power Cord (14AWG, 3 cores), 6.6ft Drain Hose\n12,000 BTU Unit Pipelines: 16.4ft Suction Line, 16.4ft Liquid Line, 18ft Signal Cable (16AWG, 4 cores), 11.5ft Power Cord (14AWG, 3 cores), 2 * 6.6ft Drain Hoses (2 * 4.9 ft Drain Hoses for Enduring 12,000 BTU model)\n18,000 BTU Unit Pipelines: 16.4ft Suction Line, 16.4ft Liquid Line, 18ft Signal Cable (16AWG, 4 cores), 11.5ft Power Cord (14AWG, 3 cores), 2 * 6.6ft Drain Hoses\n24,000 BTU Unit Pipelines: 16.4ft Suction Line, 16.4ft Liquid Line, 18ft Signal Cable (16AWG, 4 cores), 11.5ft Power Cord (14AWG, 3 cores), 2 * 6.6ft Drain Hoses\nException: E-Save Series do not include the power cord.",
+  "url": "https://www.cozeware.com/article/installation-guide.html?aid=147",
+  "capturedAt": "2026-10-13T07:31:55+00:00",
+  "officialSections": [
+    {
+      "field": "articleName",
+      "official_text": "INSTALLATION GUIDE"
+    },
+    {
+      "field": "articleDescription",
+      "official_text": "TIP 1: SELECTION OF INSTALLATION LOCATION\nIndoor Unit\n-Air circulation: It should be installed at a position where the air can circulate throughout the room, avoiding the air outlet directly facing areas such as beds and sofas where people stay for a long time.\n-Distance from the ceiling: At least 8 inches (0.67 feet) from the ceiling to ensure smooth return air.\n-Ground height: Usually installed at a high place, but it is necessary to ensure that it can be reached during maintenance and cleaning.\n-Horizontal installation: A level must be used to ensure absolute levelness; otherwise, it will cause poor drainage of condensate water, leading to leakage.\n-Stay away from heat sources and steam: Keep away from heat sources such as lamps and stoves.\nOutdoor Unit\n-Stability and load-bearing capacity: It must be installed on a solid load-bearing wall or a reinforced platform. Concrete walls and solid brick walls are ideal choices.\n-Good ventilation: Leave sufficient space in front, back, left and right (usually more than 0.5 ft from the wall at the back, more than 1 ft from the left and right sides, and more than 6.5 ft from the front air outlet) to ensure heat dissipation effect. Poor heat dissipation can lead to a sharp decline in efficiency and an increase in power consumption.\n-Avoid direct sunlight and rain (as appropriate) : If conditions permit, a sunshade can be installed to prevent direct sunlight, but it must not affect ventilation.\n-Noise consideration: The outdoor unit generates noise during operation. It is advisable to avoid having its air outlet directly facing a neighbor's window or rest area.\n-Easy to maintain: The installation location should enable maintenance personnel to carry out maintenance safely and conveniently.\nTIP 2: ULTRA-LONG CONNECTION LINES\nFor optimal performance, please verify that your planned installation location is within the reach of the fixed-length pipelines. We recommend checking the length data prior to ensure a smooth installation.\n9,000 BTU Unit Pipelines: 13.1ft Suction Line, 13.1ft Liquid Line, 14.8ft Signal Cable (16AWG, 4 cores), 11.5ft Power Cord (14AWG, 3 cores), 6.6ft Drain Hose\n12,000 BTU Unit Pipelines: 16.4ft Suction Line, 16.4ft Liquid Line, 18ft Signal Cable (16AWG, 4 cores), 11.5ft Power Cord (14AWG, 3 cores), 2 * 6.6ft Drain Hoses (2 * 4.9 ft Drain Hoses for Enduring 12,000 BTU model)\n18,000 BTU Unit Pipelines: 16.4ft Suction Line, 16.4ft Liquid Line, 18ft Signal Cable (16AWG, 4 cores), 11.5ft Power Cord (14AWG, 3 cores), 2 * 6.6ft Drain Hoses\n24,000 BTU Unit Pipelines: 16.4ft Suction Line, 16.4ft Liquid Line, 18ft Signal Cable (16AWG, 4 cores), 11.5ft Power Cord (14AWG, 3 cores), 2 * 6.6ft Drain Hoses\nException: E-Save Series do not include the power cord."
+    }
+  ],
+  "imageFacts": [
+    {
+      "image_url": "https://img.yitashop.com/10006/ueditor/original/202606/848F0969-BC9B-F8CA-8678-6B5A1886A1DD.jpg",
+      "sha256": "3b43fac37e8789f1519c45d6456f0eb21a1f0bc39860178153dae447d8656599",
+      "captured_at": "2026-10-13T07:51:43+00:00",
+      "reviewed_at": "2026-10-13T08:33:40.013604+00:00",
+      "review_method": "actual_visual_read",
+      "classification": "generic_guide_image",
+      "facts": [
+        "Indoor installation illustration: ceiling gap >0.67ft (8in); floor-to-unit height >8ft; avoid prolonged direct airflow. Flame-warning icon shown; exact clearance requirements governed by matching model manual."
+      ],
+      "limitations": [
+        "Generic official article; not assigned as universal SKU specification."
+      ],
+      "applies_to_urls": [
+        "https://www.cozeware.com/article/installation-guide.html?aid=147"
+      ]
+    },
+    {
+      "image_url": "https://img.yitashop.com/10006/ueditor/original/202512/20B63A90-18FA-DCEC-33BE-6B467554B94D.jpg",
+      "sha256": "ee8e4130f48dbef24843e9c39c37539a6694b93c707e69ed8269d39dc43de3e6",
+      "captured_at": "2026-10-13T07:51:41+00:00",
+      "reviewed_at": "2026-10-13T08:33:40.014040+00:00",
+      "review_method": "actual_visual_read",
+      "classification": "generic_guide_image",
+      "facts": [
+        "Outdoor illustration: >6.5ft along discharge direction; keep exhaust side clear. Generic guide does not replace model-specific installation manual."
+      ],
+      "limitations": [
+        "Generic official article; not assigned as universal SKU specification."
+      ],
+      "applies_to_urls": [
+        "https://www.cozeware.com/article/installation-guide.html?aid=147"
+      ]
+    }
+  ],
+  "stage": {},
+  "unreviewedImageUrls": []
+}

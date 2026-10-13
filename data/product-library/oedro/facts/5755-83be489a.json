@@ -1,0 +1,392 @@
+{
+  "id": "5755",
+  "productId": "4006",
+  "sku": "OEIPFM-1195",
+  "brand": "OEDRO",
+  "categoryId": "990",
+  "name": "Floor Mats for 2015-2026 Ford F150 F-150 Super Cab Bucket Seat, Unique Black TPE All-Weather Guard Floor Liner",
+  "url": "https://www.oedro.com/products/2015-2022-ford-f150-super-cab-floor-mats-p-5755.html",
+  "capturedAt": "2026-10-13T07:27:54+00:00",
+  "imageReview": {
+    "reviewed_urls": [
+      "https://img.yitashop.com/fit-in/1000x1000/10004/banners/original/202503/5EF5417E-5D7B-836E-E5CA-DE284E694ED3.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/48F9A8BC-CD38-66F4-81DC-DE34647F4EEB.jpg"
+    ],
+    "unreviewed_urls": [
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202607/28D6CDFC-90D5-D5B4-C684-96F2D36597A6.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/F5104F62-C89D-BE4B-950A-9E65AAA47378.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/E093BD55-BCC4-5761-7DFD-CC69BFA165E4.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/5B5D372F-5D62-FA35-3EEC-83DFA01D9448.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202503/3203E078-D25B-2250-F53B-34EFF887521A.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/8E8DF6EC-A82E-EB9B-F937-8FFB41739294.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/905A9C17-1954-BF9C-E0B8-B5F5A7BE4C1A.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/4F44B7D6-27B4-18E9-9B7D-B1CA1BD4BA8A.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/80811980-95F7-2F26-2A43-C4833FA7B364.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/6A7766D0-67E9-1CC0-D072-A4C201F957BB.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202607/522F5F7B-F64E-DF68-05A7-E27A94C6ED60.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202607/B043D17A-B497-938E-8974-4DBA31708896.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202607/9E4F6A3D-AB2F-8CF9-DADE-C617F7DC32B4.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202607/235071EF-2DBD-F507-DA5A-679B54F9667D.jpg"
+    ]
+  },
+  "image_facts": [
+    {
+      "url": "https://img.yitashop.com/fit-in/1000x1000/10004/banners/original/202503/5EF5417E-5D7B-836E-E5CA-DE284E694ED3.jpg",
+      "applies_to_urls": [
+        "https://www.oedro.com/products/2015-2022-ford-f150-super-cab-floor-mats-p-5755.html"
+      ],
+      "captured_at": "2026-10-13T07:47:21+00:00",
+      "reviewed_at": "2026-10-13T08:03:40+00:00",
+      "classification": "product_visual",
+      "facts": [
+        ""
+      ],
+      "limitations": [
+        "Spill on floor liner shown; no numeric waterproof test or universal compatibility proven."
+      ],
+      "status": "official_image_claim_not_independently_tested"
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/48F9A8BC-CD38-66F4-81DC-DE34647F4EEB.jpg",
+      "applies_to_urls": [
+        "https://www.oedro.com/products/2015-2022-ford-f150-super-cab-floor-mats-p-5755.html"
+      ],
+      "captured_at": "2026-10-13T07:47:23+00:00",
+      "reviewed_at": "2026-10-13T08:03:40+00:00",
+      "classification": "fitment",
+      "facts": [
+        "SUPER CAB 2015-2026 Ford F-150 Super Cab. SUPERCREW CAB and REGULAR CAB crossed out."
+      ],
+      "limitations": [
+        "Only OEIPFM-1195. Retain HTML bucket-seat, vinyl-flooring and floor-shifter exclusions; do not silently redefine them from illustrative photos."
+      ],
+      "status": "official_image_claim_not_independently_tested"
+    }
+  ],
+  "conflicts": [],
+  "field_status": {
+    "product_warranty": "unresolved_official_source_conflict",
+    "warranty_popup": "external_brand_domain_not_verified"
+  },
+  "fitment": "Compatible for 2015-2026 Ford F-150 Super Cab with 1st Row Bucket Seat,\nDoes NOT fit vehicles with vinyl flooring.\nDoes NOT fit the Classis cab, or vehicles with a 4x4 manual shifter on the floor.",
+  "price": {
+    "sale": "109.99",
+    "market": "229.99",
+    "currency": "USD",
+    "discount": "52% Off",
+    "stock": "In Stock. Delivery in 3–5 Days",
+    "freeShipping": true
+  },
+  "review": {
+    "score": 4.74,
+    "count": 82
+  },
+  "warnings": [
+    "官网质保口径不一致",
+    "官网质保弹窗引用其他品牌"
+  ],
+  "description": "OEDRO floor mats are easy to clean, won't shed, and won't accumulate stains or build up. Quick and easy to get your car's carpets looking nice and new again. The mats are non-toxic, odorless, and contain no latex, cadmium, lead, or any harmful PVCs.\nFeatures\nDurability. One of the best things about OEDRO floor mats is that they are developed with strong rubber. This gives them longevity in comparison to other styles of mats. The floor mats are quite flexible. The heavy-duty material is also capable of withstanding constant rubbing and contacting of shoes.\nExcellent Visual Appearance. By adding an all-weather floor liner to your car’s interior, you will add color and class to your car. The mat’s unique appearance will accentuate the interior look of your car tenfold.\nProtecting the Interior. OEDRO Floor mats offer vehicles perhaps the most comprehensive interior protection in comparison to any other car mat. Your car’s carpet will remain clean and dry at all times.\nCleaning these Mats is Quite Easy. The materials used for creating floor mats are extremely simple to wash and clean. You can easily wash and clean the spillage on top of it. You can also spray it using soap and water. Also, there won’t be any odor remaining once the mat dries out.\nIt Traps Dirt and Moisture. The waterproof surface of all-weather floor mats makes sure to trap any kind of spillage on top of it. The mats can also trap dust, sand, and other dry particles effectively.\n1-Year Warranty | Professional installation is highly recommended for safety.\nFitment\nCompatible for 2015-2026 Ford F-150 Super Cab with 1st Row Bucket Seat,\nDoes NOT fit vehicles with vinyl flooring.\nDoes NOT fit the Classis cab, or vehicles with a 4x4 manual shifter on the floor.",
+  "highlights": [
+    "Premium Interior Protection: OEDRO Floor mats trap dirt, debris, and liquids to keep your vehicle floor clean and protected.",
+    "Secure Driving Confidence: Anti-slip texture keeps mats firmly in place, helping ensure a safer and more stable ride.",
+    "Built to Last: Durable, recyclable Thermoplastic Elastomer construction delivers long-term protection with easy maintenance."
+  ],
+  "specifications": {
+    "Brand": "OEDRO",
+    "Color": "Black",
+    "Material": "Thermoplastic elastomer",
+    "Package dimension": "27\"l x 23\"w x 6\"th",
+    "Position": "Inside",
+    "Warranty": "2 Years"
+  },
+  "package": [
+    {
+      "name": "The front mats (driver & passenger side)",
+      "num": 1
+    },
+    {
+      "name": "The rear liner",
+      "num": 1
+    },
+    {
+      "name": "Installation manual",
+      "num": 1
+    }
+  ],
+  "installation": {
+    "notes": "",
+    "position": "",
+    "documents": [
+      {
+        "name": "Installation_Guide_1.pdf",
+        "kind": "installation_or_product_file",
+        "url": "https://img.yitashop.com/doc_sku/cnyocawosj/SKU5755_Installation_Guide_1.pdf"
+      }
+    ]
+  },
+  "media": {
+    "images": [
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202607/28D6CDFC-90D5-D5B4-C684-96F2D36597A6.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/48F9A8BC-CD38-66F4-81DC-DE34647F4EEB.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/F5104F62-C89D-BE4B-950A-9E65AAA47378.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/E093BD55-BCC4-5761-7DFD-CC69BFA165E4.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/5B5D372F-5D62-FA35-3EEC-83DFA01D9448.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202503/3203E078-D25B-2250-F53B-34EFF887521A.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/8E8DF6EC-A82E-EB9B-F937-8FFB41739294.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/905A9C17-1954-BF9C-E0B8-B5F5A7BE4C1A.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/4F44B7D6-27B4-18E9-9B7D-B1CA1BD4BA8A.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/80811980-95F7-2F26-2A43-C4833FA7B364.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/6A7766D0-67E9-1CC0-D072-A4C201F957BB.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202607/522F5F7B-F64E-DF68-05A7-E27A94C6ED60.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202607/B043D17A-B497-938E-8974-4DBA31708896.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202607/9E4F6A3D-AB2F-8CF9-DADE-C617F7DC32B4.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202607/235071EF-2DBD-F507-DA5A-679B54F9667D.jpg"
+    ],
+    "videos": [
+      "https://img.yitashop.com/video/cakvwktukc/______-3pcs.mp4"
+    ]
+  },
+  "variants": {
+    "options": [
+      {
+        "optionsSort": "1.00",
+        "optionsValueType": "1",
+        "optionsValuesList": [
+          {
+            "optionsValuesSort": "1",
+            "productsOptionsValuesId": "20071",
+            "productsOptionsValuesName": "Bucket Seating"
+          }
+        ],
+        "productsOptionsId": "3080",
+        "productsOptionsName": "Seat Type"
+      },
+      {
+        "optionsSort": "2.00",
+        "optionsValueType": "1",
+        "optionsValuesList": [
+          {
+            "optionsValuesSort": "1",
+            "productsOptionsValuesId": "20106",
+            "productsOptionsValuesName": "Super Cab"
+          }
+        ],
+        "productsOptionsId": "3083",
+        "productsOptionsName": "Cab Type"
+      }
+    ],
+    "selected": [
+      {
+        "optionsSort": "1.00",
+        "productsOptionsId": "3080",
+        "productsOptionsName": "Seat Type",
+        "productsOptionsValuesId": "20071",
+        "productsOptionsValuesName": "Bucket Seating",
+        "valueUnit": ""
+      },
+      {
+        "optionsSort": "2.00",
+        "productsOptionsId": "3083",
+        "productsOptionsName": "Cab Type",
+        "productsOptionsValuesId": "20106",
+        "productsOptionsValuesName": "Super Cab",
+        "valueUnit": ""
+      }
+    ],
+    "skus": [
+      {
+        "attribute_ids": {
+          "3080": "20071",
+          "3083": "20106"
+        },
+        "option_key": "20071-20106",
+        "sku": "OEIPFM-1195",
+        "sku_id": "5755",
+        "spu_id": "4006",
+        "status": "1",
+        "url": "https://www.oedro.com/products/2015-2022-ford-f150-super-cab-floor-mats-p-5755.html"
+      }
+    ],
+    "related": [],
+    "factScope": "Specifications in this record apply to the primary SKU only; related SKU links require their own exact product facts."
+  },
+  "policies": {
+    "productWarranty": [
+      {
+        "label": "Warranty",
+        "source": "product_specification",
+        "value": "2 Years"
+      },
+      {
+        "label": "Warranty",
+        "source": "product_overview",
+        "url": "https://www.hernest.com/article/Warranty.html?aid=59",
+        "value": "1 Year Limited"
+      }
+    ],
+    "pageClaims": [],
+    "returnUrl": "https://www.oedro.com/article/Returns-&-Refunds.html?aid=42",
+    "shippingUrl": "https://www.oedro.com/article/Shipping-Guide.html?aid=43"
+  },
+  "sourceStatus": "official_snapshot",
+  "recordKey": "5755-83be489a",
+  "brandKey": "oedro",
+  "fieldEvidence": {
+    "name": {
+      "url": "https://www.oedro.com/products/2015-2022-ford-f150-super-cab-floor-mats-p-5755.html",
+      "capturedAt": "2026-10-13T07:27:54+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "Floor Mats for 2015-2026 Ford F150 F-150 Super Cab Bucket Seat, Unique Black TPE All-Weather Guard Floor Liner"
+    },
+    "sku": {
+      "url": "https://www.oedro.com/products/2015-2022-ford-f150-super-cab-floor-mats-p-5755.html",
+      "capturedAt": "2026-10-13T07:27:54+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "OEIPFM-1195"
+    },
+    "brand": {
+      "url": "https://www.oedro.com/products/2015-2022-ford-f150-super-cab-floor-mats-p-5755.html",
+      "capturedAt": "2026-10-13T07:27:54+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "OEDRO"
+    },
+    "fitment": {
+      "url": "https://www.oedro.com/products/2015-2022-ford-f150-super-cab-floor-mats-p-5755.html",
+      "capturedAt": "2026-10-13T07:27:54+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "Compatible for 2015-2026 Ford F-150 Super Cab with 1st Row Bucket Seat,\nDoes NOT fit vehicles with vinyl flooring.\nDoes NOT fit the Classis cab, or vehicles with a 4x4 manual shifter on the floor."
+    },
+    "description": {
+      "url": "https://www.oedro.com/products/2015-2022-ford-f150-super-cab-floor-mats-p-5755.html",
+      "capturedAt": "2026-10-13T07:27:54+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "OEDRO floor mats are easy to clean, won't shed, and won't accumulate stains or build up. Quick and easy to get your car's carpets looking nice and new again. The mats are non-toxic, odorless, and contain no latex, cadmium, lead, or any harmful PVCs.\nFeatures\nDurability. One of the best things about OEDRO floor mats is that they are developed with strong rubber. This gives them longevity in comparison to other styles of mats. The floor mats are quite flexible. The heavy-duty material is also capable of withstanding constant rubbing and contacting of shoes.\nExcellent Visual Appearance. By adding an all-weather floor liner to your car’s interior, you will add color and class to your car. The mat’s unique appearance will accentuate the interior look of your car tenfold.\nProtecting the Interior. OEDRO Floor mats offer vehicles perhaps the most comprehensive interior protection in comparison to any other car mat. Your car’s carpet will remain clean and dry at all times.\nCleaning these Mats is Quite Easy. The materials used for creating floor mats are extremely simple to wash and clean. You can easily wash and clean the spillage on top of it. You can also spray it using soap and water. Also, there won’t be any odor remaining once the mat dries out.\nIt Traps Dirt and Moisture. The waterproof surface of all-weather floor mats makes sure to trap any kind of spillage on top of it. The mats can also trap dust, sand, and other dry particles effectively.\n1-Year Warranty | Professional installation is highly recommended for safety.\nFitment\nCompatible for 2015-2026 Ford F-150 Super Cab with 1st Row Bucket Seat,\nDoes NOT fit vehicles with vinyl flooring.\nDoes NOT fit the Classis cab, or vehicles with a 4x4 manual shifter on the floor."
+    },
+    "specifications": {
+      "url": "https://www.oedro.com/products/2015-2022-ford-f150-super-cab-floor-mats-p-5755.html",
+      "capturedAt": "2026-10-13T07:27:54+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": {
+        "Brand": "OEDRO",
+        "Color": "Black",
+        "Material": "Thermoplastic elastomer",
+        "Package dimension": "27\"l x 23\"w x 6\"th",
+        "Position": "Inside",
+        "Warranty": "2 Years"
+      },
+      "primarySku": "OEIPFM-1195"
+    },
+    "variants": {
+      "url": "https://www.oedro.com/products/2015-2022-ford-f150-super-cab-floor-mats-p-5755.html",
+      "capturedAt": "2026-10-13T07:27:54+00:00",
+      "status": "related_option_references",
+      "excerpt": {
+        "options": [
+          {
+            "optionsSort": "1.00",
+            "optionsValueType": "1",
+            "optionsValuesList": [
+              {
+                "optionsValuesSort": "1",
+                "productsOptionsValuesId": "20071",
+                "productsOptionsValuesName": "Bucket Seating"
+              }
+            ],
+            "productsOptionsId": "3080",
+            "productsOptionsName": "Seat Type"
+          },
+          {
+            "optionsSort": "2.00",
+            "optionsValueType": "1",
+            "optionsValuesList": [
+              {
+                "optionsValuesSort": "1",
+                "productsOptionsValuesId": "20106",
+                "productsOptionsValuesName": "Super Cab"
+              }
+            ],
+            "productsOptionsId": "3083",
+            "productsOptionsName": "Cab Type"
+          }
+        ],
+        "selected": [
+          {
+            "optionsSort": "1.00",
+            "productsOptionsId": "3080",
+            "productsOptionsName": "Seat Type",
+            "productsOptionsValuesId": "20071",
+            "productsOptionsValuesName": "Bucket Seating",
+            "valueUnit": ""
+          },
+          {
+            "optionsSort": "2.00",
+            "productsOptionsId": "3083",
+            "productsOptionsName": "Cab Type",
+            "productsOptionsValuesId": "20106",
+            "productsOptionsValuesName": "Super Cab",
+            "valueUnit": ""
+          }
+        ],
+        "skus": [
+          {
+            "attribute_ids": {
+              "3080": "20071",
+              "3083": "20106"
+            },
+            "option_key": "20071-20106",
+            "sku": "OEIPFM-1195",
+            "sku_id": "5755",
+            "spu_id": "4006",
+            "status": "1",
+            "url": "https://www.oedro.com/products/2015-2022-ford-f150-super-cab-floor-mats-p-5755.html"
+          }
+        ],
+        "related": [],
+        "factScope": "Specifications in this record apply to the primary SKU only; related SKU links require their own exact product facts."
+      }
+    },
+    "price": {
+      "url": "https://www.oedro.com/products/2015-2022-ford-f150-super-cab-floor-mats-p-5755.html",
+      "capturedAt": "2026-10-13T07:27:54+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": {
+        "sale": "109.99",
+        "market": "229.99",
+        "currency": "USD",
+        "discount": "52% Off",
+        "stock": "In Stock. Delivery in 3–5 Days",
+        "freeShipping": true
+      }
+    },
+    "policies": {
+      "url": "https://www.oedro.com/products/2015-2022-ford-f150-super-cab-floor-mats-p-5755.html",
+      "capturedAt": "2026-10-13T07:27:54+00:00",
+      "status": "requires_scope_verification",
+      "excerpt": {
+        "productWarranty": [
+          {
+            "label": "Warranty",
+            "source": "product_specification",
+            "value": "2 Years"
+          },
+          {
+            "label": "Warranty",
+            "source": "product_overview",
+            "url": "https://www.hernest.com/article/Warranty.html?aid=59",
+            "value": "1 Year Limited"
+          }
+        ],
+        "pageClaims": [],
+        "returnUrl": "https://www.oedro.com/article/Returns-&-Refunds.html?aid=42",
+        "shippingUrl": "https://www.oedro.com/article/Shipping-Guide.html?aid=43"
+      }
+    }
+  },
+  "volatileFields": [
+    "price",
+    "review",
+    "stage"
+  ],
+  "missingFields": [],
+  "libraryVersion": "2026-10-13-2e1e340d6a71"
+}

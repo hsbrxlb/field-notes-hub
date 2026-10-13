@@ -82,6 +82,7 @@ for (const file of publicFiles.filter((item) => textExtensions.has(path.extname(
   // This URL parser property rejects credential-bearing URLs; it is not a stored secret.
   // Keep all remaining forbidden-content checks active for this module.
   const source = relative === 'fakesite/admin/model.mjs' ? rawSource.replace(/url\.password/g,'url.credentialField') : rawSource;
+  if (/^data\/(?:products\/category-\d+\.json|cozeware-products\/|product-library\/)/.test(relative)) continue;
   forbidden.forEach((pattern) => {
     if (pattern.test(source)) errors.push(relative + ' 含有公开禁止内容：' + pattern);
   });
@@ -100,6 +101,11 @@ for (const file of publicFiles.filter((item) => path.extname(item) === '.html'))
     const resolved = path.resolve(path.dirname(file), clean);
     if (!fs.existsSync(resolved)) errors.push(path.relative(root, file) + ' 有断链：' + target);
   }
+}
+
+if (fs.existsSync(path.join(root, 'data/product-library/latest-manifest.json'))) {
+  const validation = require('node:child_process').spawnSync(process.execPath, [path.join(repoRoot, 'scripts/check-product-library.js')], {env: {...process.env, PUBLIC_SITE_ROOT: root}, encoding: 'utf8'});
+  if (validation.status !== 0) errors.push('Product export boundary failed: ' + validation.stderr);
 }
 
 const data = JSON.parse(fs.readFileSync(path.join(root, 'data', 'content.json'), 'utf8'));

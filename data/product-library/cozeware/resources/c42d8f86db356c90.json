@@ -1,0 +1,23 @@
+{
+  "brand": "COZEWARE",
+  "brandKey": "cozeware",
+  "version": "2026-10-13-2e1e340d6a71",
+  "title": "Cart Return & Delivery",
+  "kind": "policy",
+  "officialText": "30-Day Easy Returns\nNot satisfied? Return eligible items in new, unused condition within 30 days for a refund or exchange. Exclusions apply: clearance, final sale, or used items.\nBest Price Guaranteed\nCOZEWARE will refund the price difference if you find the same item on our website at a lower price within 30 days. Exclusions for bundle offers, clearance items.\nOrder & Estimated Delivery\nAn order confirmation email with the Estimated Delivery Date will be sent to your mailbox. You can request to postpone delivery if you are not ready before shipment.",
+  "url": "https://www.cozeware.com/article/cart-return-delivery.html?aid=156",
+  "capturedAt": "2026-10-13T07:31:46+00:00",
+  "officialSections": [
+    {
+      "field": "articleName",
+      "official_text": "Cart Return & Delivery"
+    },
+    {
+      "field": "articleDescription",
+      "official_text": "30-Day Easy Returns\nNot satisfied? Return eligible items in new, unused condition within 30 days for a refund or exchange. Exclusions apply: clearance, final sale, or used items.\nBest Price Guaranteed\nCOZEWARE will refund the price difference if you find the same item on our website at a lower price within 30 days. Exclusions for bundle offers, clearance items.\nOrder & Estimated Delivery\nAn order confirmation email with the Estimated Delivery Date will be sent to your mailbox. You can request to postpone delivery if you are not ready before shipment."
+    }
+  ],
+  "imageFacts": [],
+  "stage": {},
+  "unreviewedImageUrls": []
+}

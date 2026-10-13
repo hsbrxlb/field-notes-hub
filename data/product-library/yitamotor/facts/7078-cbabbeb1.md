@@ -1,0 +1,335 @@
+# YITAMOTOR — YITAMOTOR® Running Boards & Side Steps Compatible with 2015-2026 Ford F150, 2017-2026 F250 F350 Super Duty Supercrew Cab, Black Powder Coated Nerf Bars, Two-Stair for Roof Operation
+
+SKU: OE-YTEPRB-6007
+Source: https://www.oedro.com/products/-p-7078.html
+Captured: 2026-10-13T07:34:48+00:00
+
+Prices, stock and campaign stage require a current source check before publication.
+
+```json
+{
+  "id": "7078",
+  "productId": "5327",
+  "sku": "OE-YTEPRB-6007",
+  "brand": "YITAMOTOR",
+  "categoryId": "995",
+  "name": "YITAMOTOR® Running Boards & Side Steps Compatible with 2015-2026 Ford F150, 2017-2026 F250 F350 Super Duty Supercrew Cab, Black Powder Coated Nerf Bars, Two-Stair for Roof Operation",
+  "url": "https://www.oedro.com/products/-p-7078.html",
+  "capturedAt": "2026-10-13T07:34:48+00:00",
+  "imageReview": {
+    "reviewed_urls": [],
+    "unreviewed_urls": [
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202504/F0A776E4-40D6-1927-8A1D-7C8035257EFA.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202504/82768A66-E634-E2F2-9918-75B9CDB60472.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202504/315A44CD-803C-4DE9-1633-DFED213E8653.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202504/6B250E1A-9B75-646E-0B89-554768B8F916.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202511/33A6039B-231C-9580-EA7E-A54B8AF749B7.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202504/F013E6A4-E30D-173D-CDFC-1D82E3DFE0CD.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202504/259E8599-BF7D-3BB1-672E-1336ED9E16B4.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202504/286BD7BB-3B1C-E423-9DA5-8E17EF5C7E51.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202509/70FA6C30-1D9C-CA43-AA28-07B586C55D1E.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202509/C1A698D6-F6CA-96CD-2015-1996A7B0F83E.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202509/725A50A7-8EE1-D2E6-8B69-60B771517B2B.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202509/0B0DBD60-BFBD-91DE-A6A0-A063B5A4F021.jpg"
+    ]
+  },
+  "image_facts": [],
+  "conflicts": [],
+  "field_status": {
+    "warranty_popup": "external_brand_domain_not_verified"
+  },
+  "fitment": "2015-2026 Ford F150 Super Crew Cab\n2017-2026 Ford F250 F350 Super Duty Crew Cab",
+  "price": {
+    "sale": "289.99",
+    "market": "699.99",
+    "currency": "USD",
+    "discount": "59% Off",
+    "stock": "In Stock. Delivery in 3–5 Days",
+    "freeShipping": true
+  },
+  "review": {
+    "score": 4.72,
+    "count": 29
+  },
+  "warnings": [
+    "官网质保弹窗引用其他品牌"
+  ],
+  "description": "YITAMOTOR is one of the largest automotive running boards and vehicle accessories retailers in the United States. We take pride in our quality control to assuring that providing only the highest quality running boards and auto accessories to our customers.\nFitment\n2015-2026 Ford F150 Super Crew Cab\n2017-2026 Ford F250 F350 Super Duty Crew Cab\nFeatures\nCompatibility: YITAMOTOR side steps for 2015-2026 Ford F150, 2017-2026 F250 F350 Super Duty Supercrew Cab; Easy no-drill installation\nTwo-Stair Layout: Unique two-stair layout makes these running boards easy for all ages to step in and out of the vehicle; The raised center step offers convenience for placing luggage or items on the roof\nHeavy-Duty Carbon Steel: YITAMOTOR running boards are made from high-quality carbon steel to offer sturdiness, durability, and the ability to support up to 550 LBS without deformation\nNon-Slip Design: The hollow design prevents water and sediment accumulation, keeping the running boards dry and clean; This feature enhances safety and durability by reducing the risk of slipping\nWeather Resistant: The surface is covered with a dual-stage textured black powder that withstands heavy rain and snowstorms, offering exceptional rust and corrosion resistance\nProfessional installation recommended",
+  "highlights": [],
+  "specifications": {
+    "Brand": "YITAMOTOR",
+    "Color": "Black",
+    "Exterior finish": "Powder Coated",
+    "Load bearing": "550 LBS; 550 LBS",
+    "Material": "Carbon Steel",
+    "Package Dimensions": "86.02 x 10.63 x 8.07 inches",
+    "Placement": "Left / Right",
+    "Warranty": "1 Year"
+  },
+  "package": [
+    {
+      "name": "Running Boards (Left & Right)",
+      "num": "2"
+    },
+    {
+      "name": "Mounting hardware",
+      "num": "1"
+    },
+    {
+      "name": "Mounting bracket",
+      "num": "1"
+    },
+    {
+      "name": "DIY instructions",
+      "num": "1"
+    }
+  ],
+  "installation": {
+    "notes": "",
+    "position": "",
+    "documents": [
+      {
+        "name": "Installation_Guide_1.pdf",
+        "kind": "installation_or_product_file",
+        "url": "https://img.yitashop.com/doc_sku/qefsjxqrxj/SKU7078_Installation_Guide_1.pdf"
+      }
+    ]
+  },
+  "media": {
+    "images": [
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202504/F0A776E4-40D6-1927-8A1D-7C8035257EFA.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202504/82768A66-E634-E2F2-9918-75B9CDB60472.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202504/315A44CD-803C-4DE9-1633-DFED213E8653.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202504/6B250E1A-9B75-646E-0B89-554768B8F916.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202511/33A6039B-231C-9580-EA7E-A54B8AF749B7.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202504/F013E6A4-E30D-173D-CDFC-1D82E3DFE0CD.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202504/259E8599-BF7D-3BB1-672E-1336ED9E16B4.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202504/286BD7BB-3B1C-E423-9DA5-8E17EF5C7E51.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202509/70FA6C30-1D9C-CA43-AA28-07B586C55D1E.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202509/C1A698D6-F6CA-96CD-2015-1996A7B0F83E.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202509/725A50A7-8EE1-D2E6-8B69-60B771517B2B.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202509/0B0DBD60-BFBD-91DE-A6A0-A063B5A4F021.jpg"
+    ],
+    "videos": [
+      "https://img.yitashop.com/video/tqhswsddnx/Black_Powder_Coated_Nerf_Bar_with_Two-Stair_for_Roof_Operation_20250220_15375767.mp4"
+    ]
+  },
+  "variants": {
+    "options": [],
+    "selected": [
+      {
+        "optionsSort": "1.00",
+        "productsOptionsId": "2236",
+        "productsOptionsName": "Title",
+        "productsOptionsValuesId": "11857",
+        "productsOptionsValuesName": "Default Title",
+        "valueUnit": ""
+      }
+    ],
+    "skus": [
+      {
+        "attribute_ids": {
+          "2236": "11857"
+        },
+        "option_key": "11857",
+        "sku": "OE-YTEPRB-6007",
+        "sku_id": "7078",
+        "spu_id": "5327",
+        "status": "1",
+        "url": "https://www.oedro.com/products/-p-7078.html"
+      }
+    ],
+    "related": [
+      {
+        "option": "15-26-Drop Black",
+        "sku": "",
+        "sku_id": "",
+        "spu_id": "5327",
+        "url": ""
+      },
+      {
+        "option": "15-26-Flat Chrome",
+        "sku": "OE-YTEPRB-4006",
+        "sku_id": "7060",
+        "spu_id": "5309",
+        "url": "https://www.oedro.com/products/-p-7060.html"
+      },
+      {
+        "option": "15-26-Honeycomb Black",
+        "sku": "OE-YTEPRB-8004",
+        "sku_id": "7087",
+        "spu_id": "5336",
+        "url": "https://www.oedro.com/products/-p-7087.html"
+      }
+    ],
+    "factScope": "Specifications in this record apply to the primary SKU only; related SKU links require their own exact product facts."
+  },
+  "policies": {
+    "productWarranty": [
+      {
+        "label": "Warranty",
+        "source": "product_specification",
+        "value": "1 Year"
+      },
+      {
+        "label": "Warranty",
+        "source": "product_overview",
+        "url": "https://www.hernest.com/article/Warranty.html?aid=59",
+        "value": "1 Year Limited"
+      }
+    ],
+    "pageClaims": [],
+    "returnUrl": "https://www.oedro.com/article/Returns-&-Refunds.html?aid=42",
+    "shippingUrl": "https://www.oedro.com/article/Shipping-Guide.html?aid=43"
+  },
+  "sourceStatus": "official_snapshot",
+  "recordKey": "7078-cbabbeb1",
+  "brandKey": "yitamotor",
+  "fieldEvidence": {
+    "name": {
+      "url": "https://www.oedro.com/products/-p-7078.html",
+      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "YITAMOTOR® Running Boards & Side Steps Compatible with 2015-2026 Ford F150, 2017-2026 F250 F350 Super Duty Supercrew Cab, Black Powder Coated Nerf Bars, Two-Stair for Roof Operation"
+    },
+    "sku": {
+      "url": "https://www.oedro.com/products/-p-7078.html",
+      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "OE-YTEPRB-6007"
+    },
+    "brand": {
+      "url": "https://www.oedro.com/products/-p-7078.html",
+      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "YITAMOTOR"
+    },
+    "fitment": {
+      "url": "https://www.oedro.com/products/-p-7078.html",
+      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "2015-2026 Ford F150 Super Crew Cab\n2017-2026 Ford F250 F350 Super Duty Crew Cab"
+    },
+    "description": {
+      "url": "https://www.oedro.com/products/-p-7078.html",
+      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "YITAMOTOR is one of the largest automotive running boards and vehicle accessories retailers in the United States. We take pride in our quality control to assuring that providing only the highest quality running boards and auto accessories to our customers.\nFitment\n2015-2026 Ford F150 Super Crew Cab\n2017-2026 Ford F250 F350 Super Duty Crew Cab\nFeatures\nCompatibility: YITAMOTOR side steps for 2015-2026 Ford F150, 2017-2026 F250 F350 Super Duty Supercrew Cab; Easy no-drill installation\nTwo-Stair Layout: Unique two-stair layout makes these running boards easy for all ages to step in and out of the vehicle; The raised center step offers convenience for placing luggage or items on the roof\nHeavy-Duty Carbon Steel: YITAMOTOR running boards are made from high-quality carbon steel to offer sturdiness, durability, and the ability to support up to 550 LBS without deformation\nNon-Slip Design: The hollow design prevents water and sediment accumulation, keeping the running boards dry and clean; This feature enhances safety and durability by reducing the risk of slipping\nWeather Resistant: The surface is covered with a dual-stage textured black powder that withstands heavy rain and snowstorms, offering exceptional rust and corrosion resistance\nProfessional installation recommended"
+    },
+    "specifications": {
+      "url": "https://www.oedro.com/products/-p-7078.html",
+      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": {
+        "Brand": "YITAMOTOR",
+        "Color": "Black",
+        "Exterior finish": "Powder Coated",
+        "Load bearing": "550 LBS; 550 LBS",
+        "Material": "Carbon Steel",
+        "Package Dimensions": "86.02 x 10.63 x 8.07 inches",
+        "Placement": "Left / Right",
+        "Warranty": "1 Year"
+      },
+      "primarySku": "OE-YTEPRB-6007"
+    },
+    "variants": {
+      "url": "https://www.oedro.com/products/-p-7078.html",
+      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "status": "related_option_references",
+      "excerpt": {
+        "options": [],
+        "selected": [
+          {
+            "optionsSort": "1.00",
+            "productsOptionsId": "2236",
+            "productsOptionsName": "Title",
+            "productsOptionsValuesId": "11857",
+            "productsOptionsValuesName": "Default Title",
+            "valueUnit": ""
+          }
+        ],
+        "skus": [
+          {
+            "attribute_ids": {
+              "2236": "11857"
+            },
+            "option_key": "11857",
+            "sku": "OE-YTEPRB-6007",
+            "sku_id": "7078",
+            "spu_id": "5327",
+            "status": "1",
+            "url": "https://www.oedro.com/products/-p-7078.html"
+          }
+        ],
+        "related": [
+          {
+            "option": "15-26-Drop Black",
+            "sku": "",
+            "sku_id": "",
+            "spu_id": "5327",
+            "url": ""
+          },
+          {
+            "option": "15-26-Flat Chrome",
+            "sku": "OE-YTEPRB-4006",
+            "sku_id": "7060",
+            "spu_id": "5309",
+            "url": "https://www.oedro.com/products/-p-7060.html"
+          },
+          {
+            "option": "15-26-Honeycomb Black",
+            "sku": "OE-YTEPRB-8004",
+            "sku_id": "7087",
+            "spu_id": "5336",
+            "url": "https://www.oedro.com/products/-p-7087.html"
+          }
+        ],
+        "factScope": "Specifications in this record apply to the primary SKU only; related SKU links require their own exact product facts."
+      }
+    },
+    "price": {
+      "url": "https://www.oedro.com/products/-p-7078.html",
+      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": {
+        "sale": "289.99",
+        "market": "699.99",
+        "currency": "USD",
+        "discount": "59% Off",
+        "stock": "In Stock. Delivery in 3–5 Days",
+        "freeShipping": true
+      }
+    },
+    "policies": {
+      "url": "https://www.oedro.com/products/-p-7078.html",
+      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "status": "requires_scope_verification",
+      "excerpt": {
+        "productWarranty": [
+          {
+            "label": "Warranty",
+            "source": "product_specification",
+            "value": "1 Year"
+          },
+          {
+            "label": "Warranty",
+            "source": "product_overview",
+            "url": "https://www.hernest.com/article/Warranty.html?aid=59",
+            "value": "1 Year Limited"
+          }
+        ],
+        "pageClaims": [],
+        "returnUrl": "https://www.oedro.com/article/Returns-&-Refunds.html?aid=42",
+        "shippingUrl": "https://www.oedro.com/article/Shipping-Guide.html?aid=43"
+      }
+    }
+  },
+  "volatileFields": [
+    "price",
+    "review",
+    "stage"
+  ],
+  "missingFields": [],
+  "libraryVersion": "2026-10-13-2e1e340d6a71"
+}
+```

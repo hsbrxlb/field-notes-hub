@@ -1,0 +1,325 @@
+# YITAMOTOR — YITAMOTOR Upgraded Floor Mats Compatible with Jeep Grand Cherokee 2016-2021/ WK 2022 / Dodge Durango 2016-2021 All Weather Floor Liners, TPE Anti-Slip Waterproof Floor Mats, Car Interior Accessories 
+
+SKU: OE-YTIPFM-1214
+Source: https://www.oedro.com/products/yitamotor-upgraded-floor-mats-compatible-with-jeep-grand-cherokee-2016-2021-wk-2022-dodge-durango-2016-2021-all-weather-floor-liners-tpe-anti-slip-waterproof-floor-mats-car-interior-accessories-p-8066.html
+Captured: 2026-10-13T07:36:40+00:00
+
+Prices, stock and campaign stage require a current source check before publication.
+
+```json
+{
+  "id": "8066",
+  "productId": "5953",
+  "sku": "OE-YTIPFM-1214",
+  "brand": "YITAMOTOR",
+  "categoryId": "990",
+  "name": "YITAMOTOR Upgraded Floor Mats Compatible with Jeep Grand Cherokee 2016-2021/ WK 2022 / Dodge Durango 2016-2021 All Weather Floor Liners, TPE Anti-Slip Waterproof Floor Mats, Car Interior Accessories ",
+  "url": "https://www.oedro.com/products/yitamotor-upgraded-floor-mats-compatible-with-jeep-grand-cherokee-2016-2021-wk-2022-dodge-durango-2016-2021-all-weather-floor-liners-tpe-anti-slip-waterproof-floor-mats-car-interior-accessories-p-8066.html",
+  "capturedAt": "2026-10-13T07:36:40+00:00",
+  "imageReview": {
+    "reviewed_urls": [],
+    "unreviewed_urls": [
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202508/85C8234B-E7DB-20F6-C360-99AD5A53D32B.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202508/611BC85A-237E-3322-12C5-39C750F654ED.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202508/AB8CA8A5-814B-3D57-710C-3B0E333D8754.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202508/0A88EE80-8DD2-8952-7B4E-2A4B5074EFB8.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202508/F9917633-C3C7-9987-45AD-EFFC18F40E62.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202508/6FFBDC5A-C042-AA77-5BBE-A191CD165CFE.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202508/EE7B51D1-D004-128F-692A-9674E7839B5D.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202511/5CCD288D-6934-AC39-E3B3-9A14BD808921.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202511/B544A794-D73F-3DC5-7B2D-3C408A776458.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202511/A529832E-D894-22AD-782D-C41EE5B661A4.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202511/1C74D976-3FFB-A079-A40A-7E43BE00680B.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202511/0913A4DA-3DCC-FEA1-F0AA-A4DDD07842B1.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202511/D678D24B-A001-88A1-4368-3312E24B4189.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202511/5FB1F226-D669-0464-ACB0-3E580FAB2D71.jpg"
+    ]
+  },
+  "image_facts": [],
+  "conflicts": [],
+  "field_status": {
+    "product_warranty": "unresolved_official_source_conflict",
+    "warranty_popup": "external_brand_domain_not_verified"
+  },
+  "fitment": "2016-2021 Dodge Durango with 2nd row bench seating ONLY\n2016-2021 Jeep Grand Cherokee (Not for 2022)\n2022 Jeep Grand Cherokee WK (NOT FOR Grand Cherokee L)\nNot for Vinyl Flooring,Only fit for carpet flooring.",
+  "price": {
+    "sale": "99.99",
+    "market": "699.99",
+    "currency": "USD",
+    "discount": "86% Off",
+    "stock": "In Stock. Delivery in 3–5 Days",
+    "freeShipping": true
+  },
+  "review": {
+    "score": 4.87,
+    "count": 15
+  },
+  "warnings": [
+    "官网质保口径不一致",
+    "官网质保弹窗引用其他品牌"
+  ],
+  "description": "YITAMOTOR floor mats are made with high-density TPE material, using advanced 3D laser technology, which not only provides a superb feel and extreme wear resistance but also offers a precise fit to your vehicle floor.\nFitment\n2016-2021 Dodge Durango with 2nd row bench seating ONLY\n2016-2021 Jeep Grand Cherokee (Not for 2022)\n2022 Jeep Grand Cherokee WK (NOT FOR Grand Cherokee L)\nNot for Vinyl Flooring,Only fit for carpet flooring.\nFeatures\nCustom Fit: YITAMOTOR floor mats fit for Jeep Grand Cherokee 2016-2021/ WK 2022 / Dodge Durango 2016-2021 use State-of-the-art 3D laser scanning technology ensures the perfect custom fit for your vehicle. Cherokee floor liners are precisely tailored for your vehicle-specific floor carpets\nHigh Durability: Floor mats made from TPE material, offer comfort and wear resistance; Flexible in extreme temperatures; Does not contain latex, cadmium, lead, or harmful PVC\nAll Season Protection & Non-Slip: The unique designed channels and raised edge can effectively trap liquids, snow, and sand to keep your car and shoes clean. Even in wet conditions, the hooks can effectively prevent the mats from slipping. The mats are available for children and the elderly.\nEasy To Clean: The textured skid-resistant surface is easily cleaned. Neither cumbersome vacuum cleaners nor harsh chemicals are needed; simply shake them out or spray them down with a hose.\nProduct Includes: Packages include 2 front floor mats, 1x rear floor liners, We work tirelessly to provide more efficient and comfortable floor protection than ever before",
+  "highlights": [],
+  "specifications": {
+    "Auto part position": "Inner",
+    "Automotive Fit Type": "Vehicle Specific Fit",
+    "Brand": "YITAMOTOR",
+    "Color": "Black",
+    "Item weight": "8 pounds",
+    "Material": "TPE",
+    "Package dimension": "31 x 22 x 5 inches",
+    "Position": "Inside",
+    "Special features": "Waterproof",
+    "Vehicle service type": "Car",
+    "Warranty": "2 Years"
+  },
+  "package": [
+    {
+      "name": "Front floor liners (driver’s & passenger’s side)",
+      "num": "2"
+    },
+    {
+      "name": "Rear mat",
+      "num": "1"
+    },
+    {
+      "name": "Installation manual",
+      "num": "1"
+    }
+  ],
+  "installation": {
+    "notes": "",
+    "position": "",
+    "documents": [
+      {
+        "name": "Installation_Guide_1.pdf",
+        "kind": "installation_or_product_file",
+        "url": "https://img.yitashop.com/doc_sku/tckagabfjk/SKU8066_Installation_Guide_1.pdf"
+      }
+    ]
+  },
+  "media": {
+    "images": [
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202508/85C8234B-E7DB-20F6-C360-99AD5A53D32B.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202508/611BC85A-237E-3322-12C5-39C750F654ED.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202508/AB8CA8A5-814B-3D57-710C-3B0E333D8754.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202508/0A88EE80-8DD2-8952-7B4E-2A4B5074EFB8.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202508/F9917633-C3C7-9987-45AD-EFFC18F40E62.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202508/6FFBDC5A-C042-AA77-5BBE-A191CD165CFE.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202508/EE7B51D1-D004-128F-692A-9674E7839B5D.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202511/5CCD288D-6934-AC39-E3B3-9A14BD808921.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202511/B544A794-D73F-3DC5-7B2D-3C408A776458.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202511/A529832E-D894-22AD-782D-C41EE5B661A4.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202511/1C74D976-3FFB-A079-A40A-7E43BE00680B.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202511/0913A4DA-3DCC-FEA1-F0AA-A4DDD07842B1.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202511/D678D24B-A001-88A1-4368-3312E24B4189.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202511/5FB1F226-D669-0464-ACB0-3E580FAB2D71.jpg"
+    ],
+    "videos": []
+  },
+  "variants": {
+    "options": [
+      {
+        "optionsSort": "1.00",
+        "optionsValueType": "1",
+        "optionsValuesList": [
+          {
+            "optionsValuesSort": "1",
+            "productsOptionsValuesId": "20070",
+            "productsOptionsValuesName": "Bench Seating"
+          }
+        ],
+        "productsOptionsId": "3080",
+        "productsOptionsName": "Seat Type"
+      }
+    ],
+    "selected": [
+      {
+        "optionsSort": "1.00",
+        "productsOptionsId": "3080",
+        "productsOptionsName": "Seat Type",
+        "productsOptionsValuesId": "20070",
+        "productsOptionsValuesName": "Bench Seating",
+        "valueUnit": ""
+      }
+    ],
+    "skus": [
+      {
+        "attribute_ids": {
+          "3080": "20070"
+        },
+        "option_key": "20070",
+        "sku": "OE-YTIPFM-1214",
+        "sku_id": "8066",
+        "spu_id": "5953",
+        "status": "1",
+        "url": "https://www.oedro.com/products/yitamotor-upgraded-floor-mats-compatible-with-jeep-grand-cherokee-2016-2021-wk-2022-dodge-durango-2016-2021-all-weather-floor-liners-tpe-anti-slip-waterproof-floor-mats-car-interior-accessories-p-8066.html"
+      }
+    ],
+    "related": [],
+    "factScope": "Specifications in this record apply to the primary SKU only; related SKU links require their own exact product facts."
+  },
+  "policies": {
+    "productWarranty": [
+      {
+        "label": "Warranty",
+        "source": "product_specification",
+        "value": "2 Years"
+      },
+      {
+        "label": "Warranty",
+        "source": "product_overview",
+        "url": "https://www.hernest.com/article/Warranty.html?aid=59",
+        "value": "1 Year Limited"
+      }
+    ],
+    "pageClaims": [],
+    "returnUrl": "https://www.oedro.com/article/Returns-&-Refunds.html?aid=42",
+    "shippingUrl": "https://www.oedro.com/article/Shipping-Guide.html?aid=43"
+  },
+  "sourceStatus": "official_snapshot",
+  "recordKey": "8066-dadc1bce",
+  "brandKey": "yitamotor",
+  "fieldEvidence": {
+    "name": {
+      "url": "https://www.oedro.com/products/yitamotor-upgraded-floor-mats-compatible-with-jeep-grand-cherokee-2016-2021-wk-2022-dodge-durango-2016-2021-all-weather-floor-liners-tpe-anti-slip-waterproof-floor-mats-car-interior-accessories-p-8066.html",
+      "capturedAt": "2026-10-13T07:36:40+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "YITAMOTOR Upgraded Floor Mats Compatible with Jeep Grand Cherokee 2016-2021/ WK 2022 / Dodge Durango 2016-2021 All Weather Floor Liners, TPE Anti-Slip Waterproof Floor Mats, Car Interior Accessories "
+    },
+    "sku": {
+      "url": "https://www.oedro.com/products/yitamotor-upgraded-floor-mats-compatible-with-jeep-grand-cherokee-2016-2021-wk-2022-dodge-durango-2016-2021-all-weather-floor-liners-tpe-anti-slip-waterproof-floor-mats-car-interior-accessories-p-8066.html",
+      "capturedAt": "2026-10-13T07:36:40+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "OE-YTIPFM-1214"
+    },
+    "brand": {
+      "url": "https://www.oedro.com/products/yitamotor-upgraded-floor-mats-compatible-with-jeep-grand-cherokee-2016-2021-wk-2022-dodge-durango-2016-2021-all-weather-floor-liners-tpe-anti-slip-waterproof-floor-mats-car-interior-accessories-p-8066.html",
+      "capturedAt": "2026-10-13T07:36:40+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "YITAMOTOR"
+    },
+    "fitment": {
+      "url": "https://www.oedro.com/products/yitamotor-upgraded-floor-mats-compatible-with-jeep-grand-cherokee-2016-2021-wk-2022-dodge-durango-2016-2021-all-weather-floor-liners-tpe-anti-slip-waterproof-floor-mats-car-interior-accessories-p-8066.html",
+      "capturedAt": "2026-10-13T07:36:40+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "2016-2021 Dodge Durango with 2nd row bench seating ONLY\n2016-2021 Jeep Grand Cherokee (Not for 2022)\n2022 Jeep Grand Cherokee WK (NOT FOR Grand Cherokee L)\nNot for Vinyl Flooring,Only fit for carpet flooring."
+    },
+    "description": {
+      "url": "https://www.oedro.com/products/yitamotor-upgraded-floor-mats-compatible-with-jeep-grand-cherokee-2016-2021-wk-2022-dodge-durango-2016-2021-all-weather-floor-liners-tpe-anti-slip-waterproof-floor-mats-car-interior-accessories-p-8066.html",
+      "capturedAt": "2026-10-13T07:36:40+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "YITAMOTOR floor mats are made with high-density TPE material, using advanced 3D laser technology, which not only provides a superb feel and extreme wear resistance but also offers a precise fit to your vehicle floor.\nFitment\n2016-2021 Dodge Durango with 2nd row bench seating ONLY\n2016-2021 Jeep Grand Cherokee (Not for 2022)\n2022 Jeep Grand Cherokee WK (NOT FOR Grand Cherokee L)\nNot for Vinyl Flooring,Only fit for carpet flooring.\nFeatures\nCustom Fit: YITAMOTOR floor mats fit for Jeep Grand Cherokee 2016-2021/ WK 2022 / Dodge Durango 2016-2021 use State-of-the-art 3D laser scanning technology ensures the perfect custom fit for your vehicle. Cherokee floor liners are precisely tailored for your vehicle-specific floor carpets\nHigh Durability: Floor mats made from TPE material, offer comfort and wear resistance; Flexible in extreme temperatures; Does not contain latex, cadmium, lead, or harmful PVC\nAll Season Protection & Non-Slip: The unique designed channels and raised edge can effectively trap liquids, snow, and sand to keep your car and shoes clean. Even in wet conditions, the hooks can effectively prevent the mats from slipping. The mats are available for children and the elderly.\nEasy To Clean: The textured skid-resistant surface is easily cleaned. Neither cumbersome vacuum cleaners nor harsh chemicals are needed; simply shake them out or spray them down with a hose.\nProduct Includes: Packages include 2 front floor mats, 1x rear floor liners, We work tirelessly to provide more efficient and comfortable floor protection than ever before"
+    },
+    "specifications": {
+      "url": "https://www.oedro.com/products/yitamotor-upgraded-floor-mats-compatible-with-jeep-grand-cherokee-2016-2021-wk-2022-dodge-durango-2016-2021-all-weather-floor-liners-tpe-anti-slip-waterproof-floor-mats-car-interior-accessories-p-8066.html",
+      "capturedAt": "2026-10-13T07:36:40+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": {
+        "Auto part position": "Inner",
+        "Automotive Fit Type": "Vehicle Specific Fit",
+        "Brand": "YITAMOTOR",
+        "Color": "Black",
+        "Item weight": "8 pounds",
+        "Material": "TPE",
+        "Package dimension": "31 x 22 x 5 inches",
+        "Position": "Inside",
+        "Special features": "Waterproof",
+        "Vehicle service type": "Car",
+        "Warranty": "2 Years"
+      },
+      "primarySku": "OE-YTIPFM-1214"
+    },
+    "variants": {
+      "url": "https://www.oedro.com/products/yitamotor-upgraded-floor-mats-compatible-with-jeep-grand-cherokee-2016-2021-wk-2022-dodge-durango-2016-2021-all-weather-floor-liners-tpe-anti-slip-waterproof-floor-mats-car-interior-accessories-p-8066.html",
+      "capturedAt": "2026-10-13T07:36:40+00:00",
+      "status": "related_option_references",
+      "excerpt": {
+        "options": [
+          {
+            "optionsSort": "1.00",
+            "optionsValueType": "1",
+            "optionsValuesList": [
+              {
+                "optionsValuesSort": "1",
+                "productsOptionsValuesId": "20070",
+                "productsOptionsValuesName": "Bench Seating"
+              }
+            ],
+            "productsOptionsId": "3080",
+            "productsOptionsName": "Seat Type"
+          }
+        ],
+        "selected": [
+          {
+            "optionsSort": "1.00",
+            "productsOptionsId": "3080",
+            "productsOptionsName": "Seat Type",
+            "productsOptionsValuesId": "20070",
+            "productsOptionsValuesName": "Bench Seating",
+            "valueUnit": ""
+          }
+        ],
+        "skus": [
+          {
+            "attribute_ids": {
+              "3080": "20070"
+            },
+            "option_key": "20070",
+            "sku": "OE-YTIPFM-1214",
+            "sku_id": "8066",
+            "spu_id": "5953",
+            "status": "1",
+            "url": "https://www.oedro.com/products/yitamotor-upgraded-floor-mats-compatible-with-jeep-grand-cherokee-2016-2021-wk-2022-dodge-durango-2016-2021-all-weather-floor-liners-tpe-anti-slip-waterproof-floor-mats-car-interior-accessories-p-8066.html"
+          }
+        ],
+        "related": [],
+        "factScope": "Specifications in this record apply to the primary SKU only; related SKU links require their own exact product facts."
+      }
+    },
+    "price": {
+      "url": "https://www.oedro.com/products/yitamotor-upgraded-floor-mats-compatible-with-jeep-grand-cherokee-2016-2021-wk-2022-dodge-durango-2016-2021-all-weather-floor-liners-tpe-anti-slip-waterproof-floor-mats-car-interior-accessories-p-8066.html",
+      "capturedAt": "2026-10-13T07:36:40+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": {
+        "sale": "99.99",
+        "market": "699.99",
+        "currency": "USD",
+        "discount": "86% Off",
+        "stock": "In Stock. Delivery in 3–5 Days",
+        "freeShipping": true
+      }
+    },
+    "policies": {
+      "url": "https://www.oedro.com/products/yitamotor-upgraded-floor-mats-compatible-with-jeep-grand-cherokee-2016-2021-wk-2022-dodge-durango-2016-2021-all-weather-floor-liners-tpe-anti-slip-waterproof-floor-mats-car-interior-accessories-p-8066.html",
+      "capturedAt": "2026-10-13T07:36:40+00:00",
+      "status": "requires_scope_verification",
+      "excerpt": {
+        "productWarranty": [
+          {
+            "label": "Warranty",
+            "source": "product_specification",
+            "value": "2 Years"
+          },
+          {
+            "label": "Warranty",
+            "source": "product_overview",
+            "url": "https://www.hernest.com/article/Warranty.html?aid=59",
+            "value": "1 Year Limited"
+          }
+        ],
+        "pageClaims": [],
+        "returnUrl": "https://www.oedro.com/article/Returns-&-Refunds.html?aid=42",
+        "shippingUrl": "https://www.oedro.com/article/Shipping-Guide.html?aid=43"
+      }
+    }
+  },
+  "volatileFields": [
+    "price",
+    "review",
+    "stage"
+  ],
+  "missingFields": [],
+  "libraryVersion": "2026-10-13-2e1e340d6a71"
+}
+```

@@ -1,0 +1,41 @@
+{
+  "brand": "COZEWARE",
+  "brandKey": "cozeware",
+  "version": "2026-10-13-2e1e340d6a71",
+  "title": "Mini Split Air Conditioner Sizing Guide",
+  "kind": "policy",
+  "officialText": "Choosing the right size mini split air conditioner is one of the most important steps in creating a comfortable and energy-efficient home. A system that's too small will struggle to keep up. A system that's too large can short cycle, waste energy, and reduce humidity control.\nThis guide will help you determine the right BTU size based on your room's square footage and real-world conditions.\nWhat Does BTU Mean?\nBTU (British Thermal Unit) measures cooling and heating capacity. The higher the BTU rating, the more heat the system can remove (or add) per hour.\nMini split systems commonly range from 6,000 BTU to 24,000+ BTU.\nKey Points to Remember\nCalculate Room Size\nCalculate the total square footage of the area you want to cool or heat.\nRefer to BTU Chart\nUse the BTU sizing chart to find the capacity that best fits your room size.\nConsider Real-World Conditions\nInsulation quality, ceiling height, sun exposure, and room usage can all impact the system size you need.\nGet Expert Support if Needed\nIf you're unsure, reach out to our customer support team for personalized guidance to ensure you choose the right size.\nMini Split BTU Sizing Chart\nRoom Size (Sq Ft)\nRecommended BTU\nTypical Case\n150-4509,000 BUTsSmall bedroom, Studio workspace\n450-75012,000 BUTsStandard primary bedroom, Medium-sized living room\n750-1,250\n18,000 BUTsLarge family room, Loft apartment\n1,250-1,500+24,000 BUTsLarge apartment unit, Small home\nReal-world Conditions That Impact Mini Split Sizing\nCeiling Height\nRooms with ceilings taller than 8 feet need extra BTUs. Make sure to increase your system size for cathedral ceilings, lofts, or other high-ceiling spaces.\nRegional Climate\nIn regions with very hot summers or harsh winters, choose a higher-capacity mini split to ensure it can handle extreme temperatures without overworking.\nInsulation Quality\nWell-insulated rooms hold temperature more efficiently, which can lower the BTU requirements. Conversely, poorly insulated spaces may require a larger unit to stay comfortable.\nEnvironmental Adjustment Ratio for Mini Split Sizing\nEnviromental Factor\nRecommended Ajustment\nCelings Taller Than 8 FeetAdd 10% BTUs for every 2 feet over 8 feet\nPoor InsulationAdd 15–20% BTUs to compensate\nExcellent Insulation\nNo adjustment needed, or can size slightly smaller\nHot Climate (Over 90℉)Add 15% BTUs to base recommendation\nCold Climate (Below 20℉)Add 20% BTUs and ensure unit is rated for low temps\nStill Not Sure?\nReach out to our Customer Support Team for personalized guidance to ensure you choose the right size.",
+  "url": "https://www.cozeware.com/article/mini-split-air-conditioner-sizing-guide.html?aid=159",
+  "capturedAt": "2026-10-13T07:31:41+00:00",
+  "officialSections": [
+    {
+      "field": "articleName",
+      "official_text": "Mini Split Air Conditioner Sizing Guide"
+    },
+    {
+      "field": "articleDescription",
+      "official_text": "Choosing the right size mini split air conditioner is one of the most important steps in creating a comfortable and energy-efficient home. A system that's too small will struggle to keep up. A system that's too large can short cycle, waste energy, and reduce humidity control.\nThis guide will help you determine the right BTU size based on your room's square footage and real-world conditions.\nWhat Does BTU Mean?\nBTU (British Thermal Unit) measures cooling and heating capacity. The higher the BTU rating, the more heat the system can remove (or add) per hour.\nMini split systems commonly range from 6,000 BTU to 24,000+ BTU.\nKey Points to Remember\nCalculate Room Size\nCalculate the total square footage of the area you want to cool or heat.\nRefer to BTU Chart\nUse the BTU sizing chart to find the capacity that best fits your room size.\nConsider Real-World Conditions\nInsulation quality, ceiling height, sun exposure, and room usage can all impact the system size you need.\nGet Expert Support if Needed\nIf you're unsure, reach out to our customer support team for personalized guidance to ensure you choose the right size.\nMini Split BTU Sizing Chart\nRoom Size (Sq Ft)\nRecommended BTU\nTypical Case\n150-4509,000 BUTsSmall bedroom, Studio workspace\n450-75012,000 BUTsStandard primary bedroom, Medium-sized living room\n750-1,250\n18,000 BUTsLarge family room, Loft apartment\n1,250-1,500+24,000 BUTsLarge apartment unit, Small home\nReal-world Conditions That Impact Mini Split Sizing\nCeiling Height\nRooms with ceilings taller than 8 feet need extra BTUs. Make sure to increase your system size for cathedral ceilings, lofts, or other high-ceiling spaces.\nRegional Climate\nIn regions with very hot summers or harsh winters, choose a higher-capacity mini split to ensure it can handle extreme temperatures without overworking.\nInsulation Quality\nWell-insulated rooms hold temperature more efficiently, which can lower the BTU requirements. Conversely, poorly insulated spaces may require a larger unit to stay comfortable.\nEnvironmental Adjustment Ratio for Mini Split Sizing\nEnviromental Factor\nRecommended Ajustment\nCelings Taller Than 8 FeetAdd 10% BTUs for every 2 feet over 8 feet\nPoor InsulationAdd 15–20% BTUs to compensate\nExcellent Insulation\nNo adjustment needed, or can size slightly smaller\nHot Climate (Over 90℉)Add 15% BTUs to base recommendation\nCold Climate (Below 20℉)Add 20% BTUs and ensure unit is rated for low temps\nStill Not Sure?\nReach out to our Customer Support Team for personalized guidance to ensure you choose the right size."
+    }
+  ],
+  "imageFacts": [
+    {
+      "image_url": "https://img.yitashop.com/10006/ueditor/original/202603/3C287785-59C2-6A43-D465-D80D70D4055A.png",
+      "sha256": "e9864944097f0d0b4fa26a520418895cb27e76df1641eb8d687c7b66e177a539",
+      "captured_at": "2026-10-13T07:51:42+00:00",
+      "reviewed_at": "2026-10-13T08:33:40.014054+00:00",
+      "review_method": "actual_visual_read",
+      "classification": "decorative_no_parameter_text",
+      "facts": [
+        "Black decorative ring icon; no product parameter text."
+      ],
+      "limitations": [
+        "Generic official article; not assigned as universal SKU specification."
+      ],
+      "applies_to_urls": [
+        "https://www.cozeware.com/article/mini-split-air-conditioner-sizing-guide.html?aid=159"
+      ]
+    }
+  ],
+  "stage": {},
+  "unreviewedImageUrls": []
+}

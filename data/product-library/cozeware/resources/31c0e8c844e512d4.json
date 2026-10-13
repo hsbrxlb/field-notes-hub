@@ -1,0 +1,23 @@
+{
+  "brand": "COZEWARE",
+  "brandKey": "cozeware",
+  "version": "2026-10-13-2e1e340d6a71",
+  "title": "INFORMATION SECURE UNDER LOCK AND KEY",
+  "kind": "policy",
+  "officialText": "We take all reasonable steps to protect our customers personal information against loss, misuse and alteration. We use encryption technology whenever receiving and transferring your personal information on our site.\nWhen you are viewing a page that is requesting personal information, the URL in the address bar at the top of your browser will start with \"https\". This indicates your transaction session is secured through Secure Sockets Layer (SSL). Note that some browsers do not display the full URL. In this case, click the URL address field and arrow left to the beginning of that field.\nIf you are viewing a web page requesting personal information on our web site that does not start with \"https\", please contact COZEWARE at +1 877-801-8599 to complete your purchase.",
+  "url": "https://www.cozeware.com/article/information-secure-under-lock-and-key.html?aid=151",
+  "capturedAt": "2026-10-13T07:31:49+00:00",
+  "officialSections": [
+    {
+      "field": "articleName",
+      "official_text": "INFORMATION SECURE UNDER LOCK AND KEY"
+    },
+    {
+      "field": "articleDescription",
+      "official_text": "We take all reasonable steps to protect our customers personal information against loss, misuse and alteration. We use encryption technology whenever receiving and transferring your personal information on our site.\nWhen you are viewing a page that is requesting personal information, the URL in the address bar at the top of your browser will start with \"https\". This indicates your transaction session is secured through Secure Sockets Layer (SSL). Note that some browsers do not display the full URL. In this case, click the URL address field and arrow left to the beginning of that field.\nIf you are viewing a web page requesting personal information on our web site that does not start with \"https\", please contact COZEWARE at +1 877-801-8599 to complete your purchase."
+    }
+  ],
+  "imageFacts": [],
+  "stage": {},
+  "unreviewedImageUrls": []
+}

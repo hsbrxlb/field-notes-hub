@@ -1,0 +1,317 @@
+{
+  "id": "7026",
+  "productId": "5277",
+  "sku": "OEIPFM-1312",
+  "brand": "OEDRO",
+  "categoryId": "990",
+  "name": "Floor Mats for Toyota Tacoma Double Cab 2024-2026 Auto Trans W/ Under-Seat Storage (NOT for Hybrid), Custom Fit TPE All Weather Floor Liners Full Set",
+  "url": "https://www.oedro.com/products/oedro-floor-mats-for-2024-2025-toyota-tacoma-double-cab-floor-liners-1312-p-7026.html",
+  "capturedAt": "2026-10-13T07:34:24+00:00",
+  "imageReview": {
+    "reviewed_urls": [
+      "https://img.yitashop.com/fit-in/1000x1000/10004/banners/original/202502/7AE5A627-2C75-6C88-B984-5146A64D3CFE.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/9686CAEE-FBEE-0737-F602-8C5CF50F96C5.jpg"
+    ],
+    "unreviewed_urls": [
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202607/7A1E398A-16B3-ABEF-61B8-3E2E60A5EA07.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/CF0B1A60-DCF0-4B1E-1464-504762C26699.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/D2D89B68-51CF-7D77-4FFF-6B12CBFD842A.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/B736F635-9C08-4CB8-0946-2BB821477FDE.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/380DFC8A-ED91-7E53-3FC0-789723804B4E.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/62C13D1D-1A79-0238-B265-7719A208EEB0.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/E82B3FCD-F22A-5C0D-9DB9-0A3570A09A94.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/17E5C59D-3BBF-952C-C193-742476FC25D7.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/AD60711A-85C2-5C81-3EAB-39AAF51BF787.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202607/8312D1AF-EBAD-B62F-8B04-688C2FF9B23E.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202607/E4CEB56C-EAED-2C47-B2F8-CB317945AE11.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202607/E8988ECA-A7A2-5361-445A-20B36FBBD696.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202607/7B8765D8-3C26-8969-7955-C5E173006C18.jpg"
+    ]
+  },
+  "image_facts": [
+    {
+      "url": "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/9686CAEE-FBEE-0737-F602-8C5CF50F96C5.jpg",
+      "applies_to_urls": [
+        "https://www.oedro.com/products/oedro-floor-mats-for-2024-2025-toyota-tacoma-double-cab-floor-liners-1312-p-7026.html"
+      ],
+      "captured_at": "2026-10-13T07:47:28+00:00",
+      "reviewed_at": "2026-10-13T08:03:40+00:00",
+      "classification": "fitment",
+      "facts": [
+        "Toyota Tacoma Double Cab 2024-2026 Automatic Transmission"
+      ],
+      "limitations": [
+        "Only OEIPFM-1312. Original HTML says not for Hybrid Models; title adds with under-seat storage. Image does not override these constraints."
+      ],
+      "status": "official_image_claim_not_independently_tested"
+    },
+    {
+      "url": "https://img.yitashop.com/fit-in/1000x1000/10004/banners/original/202502/7AE5A627-2C75-6C88-B984-5146A64D3CFE.jpg",
+      "applies_to_urls": [
+        "https://www.oedro.com/products/oedro-floor-mats-for-2024-2025-toyota-tacoma-double-cab-floor-liners-1312-p-7026.html"
+      ],
+      "captured_at": "2026-10-13T07:47:29+00:00",
+      "reviewed_at": "2026-10-13T08:03:40+00:00",
+      "classification": "product_visual",
+      "facts": [
+        ""
+      ],
+      "limitations": [
+        "Spill on floor liner shown; no numeric waterproof test or universal compatibility proven."
+      ],
+      "status": "official_image_claim_not_independently_tested"
+    }
+  ],
+  "conflicts": [],
+  "field_status": {
+    "product_warranty": "unresolved_official_source_conflict",
+    "warranty_popup": "external_brand_domain_not_verified"
+  },
+  "fitment": "Compatible for 2024-2026 Toyota Tacoma Double Cab - Automatic Transmission ONLY ( Doesn't fit manual transmission )\nNot for Hybrid Models",
+  "price": {
+    "sale": "109.99",
+    "market": "299.99",
+    "currency": "USD",
+    "discount": "63% Off",
+    "stock": "<span style=\"color: #DE3A38\">Pre-Order. Estimated Time of Delivery: Nov 10-Nov 25 </span>",
+    "freeShipping": true
+  },
+  "review": {
+    "score": 4.3,
+    "count": 87
+  },
+  "warnings": [
+    "官网质保口径不一致",
+    "官网质保弹窗引用其他品牌"
+  ],
+  "description": "Elevate your pickup truck with precision-engineered floor mats designed to deliver unmatched protection and style. Crafted using advanced 3D laser scanning technology, these mats provide a perfect custom fit tailored specifically for your vehicle, ensuring no pedal interference and enhanced driving safety.\nMade from high-quality, recyclable TPE material, these mats are odorless, pet-friendly, and weather-resistant, making them ideal for every season. Whether it’s mud, snow, or spills, they keep your interior spotless and looking brand new.\nFeatures\nPerfect Fit: Custom-designed for your pickup, offering full coverage and seamless integration.\nDurable & Eco-Friendly: Made from tough, recyclable TPE material that’s built to last.\nAll-Weather Protection: Resists water, dirt, and stains, keeping your floors clean in any condition.\nSleek Design: Inspired by your vehicle’s original aesthetics, these mats combine functionality with a stylish look.\nEasy to Clean: Simply wipe or rinse to remove dirt and debris – no hassle, no fuss.\nTrusted Expertise: Backed by over a decade of innovation and quality craftsmanship.\n2 Year Warranty Guarantee & For your safety, professional installation is highly appreciated recommended.\nFitment\nCompatible for 2024-2026 Toyota Tacoma Double Cab - Automatic Transmission ONLY ( Doesn't fit manual transmission )\nNot for Hybrid Models",
+  "highlights": [
+    "All-weather protection system with deep channels and raised edges that trap mud, snow, and spills, keeping your floor clean, dry, and fully protected year-round.",
+    "Made from eco-friendly TPE material that is odorless, durable, and flexible, offering long-lasting performance while remaining safe for family use and extreme temperatures.",
+    "Waterproof surface allows quick rinse or wipe cleaning, while anti-slip texture and secure fit system keep mats stable and firmly in place during daily driving."
+  ],
+  "specifications": {
+    "Brand": "OEDRO",
+    "Color": "Black",
+    "Material": "Thermoplastic elastomer",
+    "Position": "Inside",
+    "Warranty": "2 Years"
+  },
+  "package": [
+    {
+      "name": "The front mats (driver & passenger side)",
+      "num": 1
+    },
+    {
+      "name": "The rear liner",
+      "num": 1
+    },
+    {
+      "name": "Installation manual",
+      "num": 1
+    }
+  ],
+  "installation": {
+    "notes": "",
+    "position": "",
+    "documents": [
+      {
+        "name": "Installation_Guide_1.pdf",
+        "kind": "installation_or_product_file",
+        "url": "https://img.yitashop.com/doc_sku/uadbtzkbjb/SKU7026_Installation_Guide_1.pdf"
+      }
+    ]
+  },
+  "media": {
+    "images": [
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202607/7A1E398A-16B3-ABEF-61B8-3E2E60A5EA07.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/9686CAEE-FBEE-0737-F602-8C5CF50F96C5.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/CF0B1A60-DCF0-4B1E-1464-504762C26699.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/D2D89B68-51CF-7D77-4FFF-6B12CBFD842A.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/B736F635-9C08-4CB8-0946-2BB821477FDE.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/380DFC8A-ED91-7E53-3FC0-789723804B4E.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/62C13D1D-1A79-0238-B265-7719A208EEB0.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/E82B3FCD-F22A-5C0D-9DB9-0A3570A09A94.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/17E5C59D-3BBF-952C-C193-742476FC25D7.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202609/AD60711A-85C2-5C81-3EAB-39AAF51BF787.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202607/8312D1AF-EBAD-B62F-8B04-688C2FF9B23E.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202607/E4CEB56C-EAED-2C47-B2F8-CB317945AE11.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202607/E8988ECA-A7A2-5361-445A-20B36FBBD696.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202607/7B8765D8-3C26-8969-7955-C5E173006C18.jpg"
+    ],
+    "videos": [
+      "https://img.yitashop.com/video/raxbmjzilb/______-3pcs.mp4",
+      "https://img.yitashop.com/video/ctefgotazy/Product_video_show.mp4"
+    ]
+  },
+  "variants": {
+    "options": [],
+    "selected": [
+      {
+        "optionsSort": "1.00",
+        "productsOptionsId": "2236",
+        "productsOptionsName": "Title",
+        "productsOptionsValuesId": "11857",
+        "productsOptionsValuesName": "Default Title",
+        "valueUnit": ""
+      }
+    ],
+    "skus": [
+      {
+        "attribute_ids": {
+          "2236": "11857"
+        },
+        "option_key": "11857",
+        "sku": "OEIPFM-1312",
+        "sku_id": "7026",
+        "spu_id": "5277",
+        "status": "1",
+        "url": "https://www.oedro.com/products/oedro-floor-mats-for-2024-2025-toyota-tacoma-double-cab-floor-liners-1312-p-7026.html"
+      }
+    ],
+    "related": [],
+    "factScope": "Specifications in this record apply to the primary SKU only; related SKU links require their own exact product facts."
+  },
+  "policies": {
+    "productWarranty": [
+      {
+        "label": "Warranty",
+        "source": "product_specification",
+        "value": "2 Years"
+      },
+      {
+        "label": "Warranty",
+        "source": "product_overview",
+        "url": "https://www.hernest.com/article/Warranty.html?aid=59",
+        "value": "1 Year Limited"
+      }
+    ],
+    "pageClaims": [],
+    "returnUrl": "https://www.oedro.com/article/Returns-&-Refunds.html?aid=42",
+    "shippingUrl": "https://www.oedro.com/article/Shipping-Guide.html?aid=43"
+  },
+  "sourceStatus": "official_snapshot",
+  "recordKey": "7026-eb0b64cb",
+  "brandKey": "oedro",
+  "fieldEvidence": {
+    "name": {
+      "url": "https://www.oedro.com/products/oedro-floor-mats-for-2024-2025-toyota-tacoma-double-cab-floor-liners-1312-p-7026.html",
+      "capturedAt": "2026-10-13T07:34:24+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "Floor Mats for Toyota Tacoma Double Cab 2024-2026 Auto Trans W/ Under-Seat Storage (NOT for Hybrid), Custom Fit TPE All Weather Floor Liners Full Set"
+    },
+    "sku": {
+      "url": "https://www.oedro.com/products/oedro-floor-mats-for-2024-2025-toyota-tacoma-double-cab-floor-liners-1312-p-7026.html",
+      "capturedAt": "2026-10-13T07:34:24+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "OEIPFM-1312"
+    },
+    "brand": {
+      "url": "https://www.oedro.com/products/oedro-floor-mats-for-2024-2025-toyota-tacoma-double-cab-floor-liners-1312-p-7026.html",
+      "capturedAt": "2026-10-13T07:34:24+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "OEDRO"
+    },
+    "fitment": {
+      "url": "https://www.oedro.com/products/oedro-floor-mats-for-2024-2025-toyota-tacoma-double-cab-floor-liners-1312-p-7026.html",
+      "capturedAt": "2026-10-13T07:34:24+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "Compatible for 2024-2026 Toyota Tacoma Double Cab - Automatic Transmission ONLY ( Doesn't fit manual transmission )\nNot for Hybrid Models"
+    },
+    "description": {
+      "url": "https://www.oedro.com/products/oedro-floor-mats-for-2024-2025-toyota-tacoma-double-cab-floor-liners-1312-p-7026.html",
+      "capturedAt": "2026-10-13T07:34:24+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "Elevate your pickup truck with precision-engineered floor mats designed to deliver unmatched protection and style. Crafted using advanced 3D laser scanning technology, these mats provide a perfect custom fit tailored specifically for your vehicle, ensuring no pedal interference and enhanced driving safety.\nMade from high-quality, recyclable TPE material, these mats are odorless, pet-friendly, and weather-resistant, making them ideal for every season. Whether it’s mud, snow, or spills, they keep your interior spotless and looking brand new.\nFeatures\nPerfect Fit: Custom-designed for your pickup, offering full coverage and seamless integration.\nDurable & Eco-Friendly: Made from tough, recyclable TPE material that’s built to last.\nAll-Weather Protection: Resists water, dirt, and stains, keeping your floors clean in any condition.\nSleek Design: Inspired by your vehicle’s original aesthetics, these mats combine functionality with a stylish look.\nEasy to Clean: Simply wipe or rinse to remove dirt and debris – no hassle, no fuss.\nTrusted Expertise: Backed by over a decade of innovation and quality craftsmanship.\n2 Year Warranty Guarantee & For your safety, professional installation is highly appreciated recommended.\nFitment\nCompatible for 2024-2026 Toyota Tacoma Double Cab - Automatic Transmission ONLY ( Doesn't fit manual transmission )\nNot for Hybrid Models"
+    },
+    "specifications": {
+      "url": "https://www.oedro.com/products/oedro-floor-mats-for-2024-2025-toyota-tacoma-double-cab-floor-liners-1312-p-7026.html",
+      "capturedAt": "2026-10-13T07:34:24+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": {
+        "Brand": "OEDRO",
+        "Color": "Black",
+        "Material": "Thermoplastic elastomer",
+        "Position": "Inside",
+        "Warranty": "2 Years"
+      },
+      "primarySku": "OEIPFM-1312"
+    },
+    "variants": {
+      "url": "https://www.oedro.com/products/oedro-floor-mats-for-2024-2025-toyota-tacoma-double-cab-floor-liners-1312-p-7026.html",
+      "capturedAt": "2026-10-13T07:34:24+00:00",
+      "status": "related_option_references",
+      "excerpt": {
+        "options": [],
+        "selected": [
+          {
+            "optionsSort": "1.00",
+            "productsOptionsId": "2236",
+            "productsOptionsName": "Title",
+            "productsOptionsValuesId": "11857",
+            "productsOptionsValuesName": "Default Title",
+            "valueUnit": ""
+          }
+        ],
+        "skus": [
+          {
+            "attribute_ids": {
+              "2236": "11857"
+            },
+            "option_key": "11857",
+            "sku": "OEIPFM-1312",
+            "sku_id": "7026",
+            "spu_id": "5277",
+            "status": "1",
+            "url": "https://www.oedro.com/products/oedro-floor-mats-for-2024-2025-toyota-tacoma-double-cab-floor-liners-1312-p-7026.html"
+          }
+        ],
+        "related": [],
+        "factScope": "Specifications in this record apply to the primary SKU only; related SKU links require their own exact product facts."
+      }
+    },
+    "price": {
+      "url": "https://www.oedro.com/products/oedro-floor-mats-for-2024-2025-toyota-tacoma-double-cab-floor-liners-1312-p-7026.html",
+      "capturedAt": "2026-10-13T07:34:24+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": {
+        "sale": "109.99",
+        "market": "299.99",
+        "currency": "USD",
+        "discount": "63% Off",
+        "stock": "<span style=\"color: #DE3A38\">Pre-Order. Estimated Time of Delivery: Nov 10-Nov 25 </span>",
+        "freeShipping": true
+      }
+    },
+    "policies": {
+      "url": "https://www.oedro.com/products/oedro-floor-mats-for-2024-2025-toyota-tacoma-double-cab-floor-liners-1312-p-7026.html",
+      "capturedAt": "2026-10-13T07:34:24+00:00",
+      "status": "requires_scope_verification",
+      "excerpt": {
+        "productWarranty": [
+          {
+            "label": "Warranty",
+            "source": "product_specification",
+            "value": "2 Years"
+          },
+          {
+            "label": "Warranty",
+            "source": "product_overview",
+            "url": "https://www.hernest.com/article/Warranty.html?aid=59",
+            "value": "1 Year Limited"
+          }
+        ],
+        "pageClaims": [],
+        "returnUrl": "https://www.oedro.com/article/Returns-&-Refunds.html?aid=42",
+        "shippingUrl": "https://www.oedro.com/article/Shipping-Guide.html?aid=43"
+      }
+    }
+  },
+  "volatileFields": [
+    "price",
+    "review",
+    "stage"
+  ],
+  "missingFields": [],
+  "libraryVersion": "2026-10-13-2e1e340d6a71"
+}

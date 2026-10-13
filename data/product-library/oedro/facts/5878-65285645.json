@@ -1,0 +1,478 @@
+{
+  "id": "5878",
+  "productId": "4129",
+  "sku": "OEEPTC-3011",
+  "brand": "OEDRO",
+  "categoryId": "992",
+  "name": "OEDRO FRP Hard Tri-fold Tonneau Cover Fold Truck Bed Covers Compatible with 2016-2023 Toyota Tacoma (Excl. Trail Edition), fit to 5ft Bed with Tacoma Bed Rail only",
+  "url": "https://www.oedro.com/products/oedro-2016-2023-5ft-toyota-tacoma-tonneau-cover-3011-p-5878.html",
+  "capturedAt": "2026-10-13T07:28:29+00:00",
+  "imageReview": {
+    "reviewed_urls": [],
+    "unreviewed_urls": [
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202506/1F7DB51D-F30B-10BC-06A5-5D5D16DBACE3.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/o/e/oetetc-3011_1.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/6/_/6__2.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/8/_/8_12.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/1/0/10_9.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/9/_/9_14.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/1/1/11_3.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/2/_/2_25.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/7/_/7_15.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/3/_/3_31.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/4/_/4_18.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/5/_/5_18.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/6/_/6_19.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202502/DCFFE960-3D30-933F-4904-F1D93F1BD129.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202502/2D3D174F-2ECF-D6A9-F0CB-8A5948123362.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202502/B56C8B09-BD4D-7499-9D59-11D4E4462D22.jpg"
+    ]
+  },
+  "image_facts": [],
+  "conflicts": [
+    {
+      "captured_at": "2026-10-13T07:28:29+00:00",
+      "claims": [
+        {
+          "field": "specifications.Material",
+          "verbatim": "Polyvinyl chloride (pvc); 6063 aluminum alloy bracket"
+        },
+        {
+          "field": "identity.product_name",
+          "verbatim": "OEDRO FRP Hard Tri-fold Tonneau Cover Fold Truck Bed Covers Compatible with 2016-2023 Toyota Tacoma (Excl. Trail Edition), fit to 5ft Bed with Tacoma Bed Rail only"
+        },
+        {
+          "field": "description_text",
+          "verbatim": "Upgrade your Toyota Tacoma with this 5ft FRP Hard Tri-fold Tonneau Cover (2016-2023, excluding Trail Edition). Featuring a precise fit for seamless integration, it offers enhanced security and convenience. The durable FRP surface resists wear and water, while the internal Polypropylene honeycomb structure supports up to 400lbs. Protect your cargo from rain, snow, and dust, and prevent theft with a secure lock that only unlocks when the tailgate is open."
+        },
+        {
+          "field": "description_text",
+          "verbatim": "Superior Cargo Protection: Built with high-strength fiberglass (FRP) panels, this hard tri-fold tonneau cover offers exceptional protection against rain, snow, and road debris. It also resists impact and sharp objects, keeping your cargo safe and secure in all conditions."
+        },
+        {
+          "field": "description_text",
+          "verbatim": "Quick, No-Drill Installation: Designed for hassle-free setup, this FRP hard tri-fold tonneau cover installs easily with clear instructions and requires no drilling. Get it mounted quickly and ready to use. (Note: Cargo racks must be removed prior to installation.)"
+        },
+        {
+          "field": "description_text",
+          "verbatim": "Heavy-Duty Durability You Can Trust: Reinforced fiberglass panels deliver long-lasting strength and impressive load-bearing capacity. A robust locking system keeps the cover firmly closed while driving, giving you confidence on every trip."
+        }
+      ],
+      "field": "material",
+      "resolution": "Do not select FRP or PVC as a unified material fact before brand confirmation.",
+      "source_url": "https://www.oedro.com/products/oedro-2016-2023-5ft-toyota-tacoma-tonneau-cover-3011-p-5878.html",
+      "status": "unresolved_official_source_conflict"
+    }
+  ],
+  "field_status": {
+    "material": "unresolved_official_source_conflict",
+    "warranty_popup": "external_brand_domain_not_verified"
+  },
+  "fitment": "Compatible with 2016-2023 Toyota Tacoma (Excl. Trail Edition) with 5 Feet Bed with Tacoma Bed Rail.",
+  "price": {
+    "sale": "499.99",
+    "market": "899.99",
+    "currency": "USD",
+    "discount": "44% Off",
+    "stock": "In Stock. Delivery in 3–5 Days",
+    "freeShipping": true
+  },
+  "review": {
+    "score": 4.18,
+    "count": 60
+  },
+  "warnings": [
+    "官网质保弹窗引用其他品牌",
+    "官网材质口径不一致"
+  ],
+  "description": "Upgrade your Toyota Tacoma with this 5ft FRP Hard Tri-fold Tonneau Cover (2016-2023, excluding Trail Edition). Featuring a precise fit for seamless integration, it offers enhanced security and convenience. The durable FRP surface resists wear and water, while the internal Polypropylene honeycomb structure supports up to 400lbs. Protect your cargo from rain, snow, and dust, and prevent theft with a secure lock that only unlocks when the tailgate is open.\nFeatures\nSecure Fit with Added Convenience: This tonneau cover is engineered for a precise, secure fit and includes thoughtful upgrades. a complimentary LED light for improved nighttime visibility.\nSuperior Cargo Protection: Built with high-strength fiberglass (FRP) panels, this hard tri-fold tonneau cover offers exceptional protection against rain, snow, and road debris. It also resists impact and sharp objects, keeping your cargo safe and secure in all conditions.\nQuick, No-Drill Installation: Designed for hassle-free setup, this FRP hard tri-fold tonneau cover installs easily with clear instructions and requires no drilling. Get it mounted quickly and ready to use. (Note: Cargo racks must be removed prior to installation.)\nHeavy-Duty Durability You Can Trust: Reinforced fiberglass panels deliver long-lasting strength and impressive load-bearing capacity. A robust locking system keeps the cover firmly closed while driving, giving you confidence on every trip.\nSafe & Reliable Operation: Install the cover according to the included instructions and ensure all bolts are fully tightened before driving. For safety, do not drive with the tonneau cover partially open.\n1-year Warranty. For your safety, professional installation is recommended.\nFitment\nCompatible with 2016-2023 Toyota Tacoma (Excl. Trail Edition) with 5 Feet Bed with Tacoma Bed Rail.",
+  "highlights": [],
+  "specifications": {
+    "Bed size": "5 ft",
+    "Brand": "OEDRO",
+    "Color": "Black",
+    "Condition": "New",
+    "Lock type": "Tailgate",
+    "Material": "Polyvinyl chloride (pvc); 6063 aluminum alloy bracket",
+    "Tonneau cover style": "Hard  Tri-fold",
+    "Warranty": "1 Year"
+  },
+  "package": [
+    {
+      "name": "Truck tonneau cover",
+      "num": 1
+    }
+  ],
+  "installation": {
+    "notes": "",
+    "position": "",
+    "documents": [
+      {
+        "name": "OETETC-3011.pdf",
+        "kind": "installation_or_product_file",
+        "url": "https://img.yitashop.com/product_pdf/SKU5878.pdf"
+      }
+    ]
+  },
+  "media": {
+    "images": [
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202506/1F7DB51D-F30B-10BC-06A5-5D5D16DBACE3.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/o/e/oetetc-3011_1.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/6/_/6__2.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/8/_/8_12.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/1/0/10_9.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/9/_/9_14.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/1/1/11_3.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/2/_/2_25.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/7/_/7_15.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/3/_/3_31.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/4/_/4_18.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/5/_/5_18.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/6/_/6_19.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202502/DCFFE960-3D30-933F-4904-F1D93F1BD129.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202502/2D3D174F-2ECF-D6A9-F0CB-8A5948123362.jpg",
+      "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202502/B56C8B09-BD4D-7499-9D59-11D4E4462D22.jpg"
+    ],
+    "videos": [
+      "https://img.yitashop.com/video/hrwlpktnmx/Hard_Tri-fold_Tonneau_Cover_Installation_.mp4"
+    ]
+  },
+  "variants": {
+    "options": [
+      {
+        "optionsSort": "1.00",
+        "optionsValueType": "1",
+        "optionsValuesList": [
+          {
+            "optionsValuesSort": "1",
+            "productsOptionsValuesId": "17610",
+            "productsOptionsValuesName": "Low-Profile Hard Tri-Fold Tonneau Cover"
+          },
+          {
+            "optionsValuesSort": "2",
+            "productsOptionsValuesId": "15763",
+            "productsOptionsValuesName": "Hard Tri-Fold  Tonneau Cover"
+          }
+        ],
+        "productsOptionsId": "2499",
+        "productsOptionsName": "Style"
+      }
+    ],
+    "selected": [
+      {
+        "optionsSort": "1.00",
+        "productsOptionsId": "2499",
+        "productsOptionsName": "Style",
+        "productsOptionsValuesId": "15763",
+        "productsOptionsValuesName": "Hard Tri-Fold  Tonneau Cover",
+        "valueUnit": ""
+      }
+    ],
+    "skus": [
+      {
+        "attribute_ids": {
+          "2499": "15763"
+        },
+        "option_key": "15763",
+        "sku": "OEEPTC-3011",
+        "sku_id": "5878",
+        "spu_id": "4129",
+        "status": "1",
+        "url": "https://www.oedro.com/products/oedro-2016-2023-5ft-toyota-tacoma-tonneau-cover-3011-p-5878.html"
+      },
+      {
+        "attribute_ids": {
+          "2499": "17610"
+        },
+        "option_key": "17610",
+        "sku": "OEEPTC-6005",
+        "sku_id": "8798",
+        "spu_id": "4129",
+        "status": "1",
+        "url": "https://www.oedro.com/products/oedro-low-profile-hard-tri-fold-tonneau-cover-compatible-with-toyota-tacoma-2016-2023-excl-trail-edition-5ft-bed-with-tacoma-bed-rail-one-handed-quick-release-drainage-design-p-8798.html"
+      }
+    ],
+    "related": [],
+    "factScope": "Specifications in this record apply to the primary SKU only; related SKU links require their own exact product facts."
+  },
+  "policies": {
+    "productWarranty": [
+      {
+        "label": "Warranty",
+        "source": "product_specification",
+        "value": "1 Year"
+      },
+      {
+        "label": "Warranty",
+        "source": "product_overview",
+        "url": "https://www.hernest.com/article/Warranty.html?aid=59",
+        "value": "1 Year Limited"
+      }
+    ],
+    "pageClaims": [],
+    "returnUrl": "https://www.oedro.com/article/Returns-&-Refunds.html?aid=42",
+    "shippingUrl": "https://www.oedro.com/article/Shipping-Guide.html?aid=43"
+  },
+  "sourceStatus": "official_snapshot",
+  "recordKey": "5878-65285645",
+  "brandKey": "oedro",
+  "fieldEvidence": {
+    "name": {
+      "url": "https://www.oedro.com/products/oedro-2016-2023-5ft-toyota-tacoma-tonneau-cover-3011-p-5878.html",
+      "capturedAt": "2026-10-13T07:28:29+00:00",
+      "status": "unresolved_official_source_conflict",
+      "excerpt": "OEDRO FRP Hard Tri-fold Tonneau Cover Fold Truck Bed Covers Compatible with 2016-2023 Toyota Tacoma (Excl. Trail Edition), fit to 5ft Bed with Tacoma Bed Rail only",
+      "conflicts": [
+        {
+          "captured_at": "2026-10-13T07:28:29+00:00",
+          "claims": [
+            {
+              "field": "specifications.Material",
+              "verbatim": "Polyvinyl chloride (pvc); 6063 aluminum alloy bracket"
+            },
+            {
+              "field": "identity.product_name",
+              "verbatim": "OEDRO FRP Hard Tri-fold Tonneau Cover Fold Truck Bed Covers Compatible with 2016-2023 Toyota Tacoma (Excl. Trail Edition), fit to 5ft Bed with Tacoma Bed Rail only"
+            },
+            {
+              "field": "description_text",
+              "verbatim": "Upgrade your Toyota Tacoma with this 5ft FRP Hard Tri-fold Tonneau Cover (2016-2023, excluding Trail Edition). Featuring a precise fit for seamless integration, it offers enhanced security and convenience. The durable FRP surface resists wear and water, while the internal Polypropylene honeycomb structure supports up to 400lbs. Protect your cargo from rain, snow, and dust, and prevent theft with a secure lock that only unlocks when the tailgate is open."
+            },
+            {
+              "field": "description_text",
+              "verbatim": "Superior Cargo Protection: Built with high-strength fiberglass (FRP) panels, this hard tri-fold tonneau cover offers exceptional protection against rain, snow, and road debris. It also resists impact and sharp objects, keeping your cargo safe and secure in all conditions."
+            },
+            {
+              "field": "description_text",
+              "verbatim": "Quick, No-Drill Installation: Designed for hassle-free setup, this FRP hard tri-fold tonneau cover installs easily with clear instructions and requires no drilling. Get it mounted quickly and ready to use. (Note: Cargo racks must be removed prior to installation.)"
+            },
+            {
+              "field": "description_text",
+              "verbatim": "Heavy-Duty Durability You Can Trust: Reinforced fiberglass panels deliver long-lasting strength and impressive load-bearing capacity. A robust locking system keeps the cover firmly closed while driving, giving you confidence on every trip."
+            }
+          ],
+          "field": "material",
+          "resolution": "Do not select FRP or PVC as a unified material fact before brand confirmation.",
+          "source_url": "https://www.oedro.com/products/oedro-2016-2023-5ft-toyota-tacoma-tonneau-cover-3011-p-5878.html",
+          "status": "unresolved_official_source_conflict"
+        }
+      ]
+    },
+    "sku": {
+      "url": "https://www.oedro.com/products/oedro-2016-2023-5ft-toyota-tacoma-tonneau-cover-3011-p-5878.html",
+      "capturedAt": "2026-10-13T07:28:29+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "OEEPTC-3011"
+    },
+    "brand": {
+      "url": "https://www.oedro.com/products/oedro-2016-2023-5ft-toyota-tacoma-tonneau-cover-3011-p-5878.html",
+      "capturedAt": "2026-10-13T07:28:29+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "OEDRO"
+    },
+    "fitment": {
+      "url": "https://www.oedro.com/products/oedro-2016-2023-5ft-toyota-tacoma-tonneau-cover-3011-p-5878.html",
+      "capturedAt": "2026-10-13T07:28:29+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": "Compatible with 2016-2023 Toyota Tacoma (Excl. Trail Edition) with 5 Feet Bed with Tacoma Bed Rail."
+    },
+    "description": {
+      "url": "https://www.oedro.com/products/oedro-2016-2023-5ft-toyota-tacoma-tonneau-cover-3011-p-5878.html",
+      "capturedAt": "2026-10-13T07:28:29+00:00",
+      "status": "unresolved_official_source_conflict",
+      "excerpt": "Upgrade your Toyota Tacoma with this 5ft FRP Hard Tri-fold Tonneau Cover (2016-2023, excluding Trail Edition). Featuring a precise fit for seamless integration, it offers enhanced security and convenience. The durable FRP surface resists wear and water, while the internal Polypropylene honeycomb structure supports up to 400lbs. Protect your cargo from rain, snow, and dust, and prevent theft with a secure lock that only unlocks when the tailgate is open.\nFeatures\nSecure Fit with Added Convenience: This tonneau cover is engineered for a precise, secure fit and includes thoughtful upgrades. a complimentary LED light for improved nighttime visibility.\nSuperior Cargo Protection: Built with high-strength fiberglass (FRP) panels, this hard tri-fold tonneau cover offers exceptional protection against rain, snow, and road debris. It also resists impact and sharp objects, keeping your cargo safe and secure in all conditions.\nQuick, No-Drill Installation: Designed for hassle-free setup, this FRP hard tri-fold tonneau cover installs easily with clear instructions and requires no drilling. Get it mounted quickly and ready to use. (Note: Cargo racks must be removed prior to installation.)\nHeavy-Duty Durability You Can Trust: Reinforced fiberglass panels deliver long-lasting strength and impressive load-bearing capacity. A robust locking system keeps the cover firmly closed while driving, giving you confidence on every trip.\nSafe & Reliable Operation: Install the cover according to the included instructions and ensure all bolts are fully tightened before driving. For safety, do not drive with the tonneau cover partially open.\n1-year Warranty. For your safety, professional installation is recommended.\nFitment\nCompatible with 2016-2023 Toyota Tacoma (Excl. Trail Edition) with 5 Feet Bed with Tacoma Bed Rail.",
+      "conflicts": [
+        {
+          "captured_at": "2026-10-13T07:28:29+00:00",
+          "claims": [
+            {
+              "field": "specifications.Material",
+              "verbatim": "Polyvinyl chloride (pvc); 6063 aluminum alloy bracket"
+            },
+            {
+              "field": "identity.product_name",
+              "verbatim": "OEDRO FRP Hard Tri-fold Tonneau Cover Fold Truck Bed Covers Compatible with 2016-2023 Toyota Tacoma (Excl. Trail Edition), fit to 5ft Bed with Tacoma Bed Rail only"
+            },
+            {
+              "field": "description_text",
+              "verbatim": "Upgrade your Toyota Tacoma with this 5ft FRP Hard Tri-fold Tonneau Cover (2016-2023, excluding Trail Edition). Featuring a precise fit for seamless integration, it offers enhanced security and convenience. The durable FRP surface resists wear and water, while the internal Polypropylene honeycomb structure supports up to 400lbs. Protect your cargo from rain, snow, and dust, and prevent theft with a secure lock that only unlocks when the tailgate is open."
+            },
+            {
+              "field": "description_text",
+              "verbatim": "Superior Cargo Protection: Built with high-strength fiberglass (FRP) panels, this hard tri-fold tonneau cover offers exceptional protection against rain, snow, and road debris. It also resists impact and sharp objects, keeping your cargo safe and secure in all conditions."
+            },
+            {
+              "field": "description_text",
+              "verbatim": "Quick, No-Drill Installation: Designed for hassle-free setup, this FRP hard tri-fold tonneau cover installs easily with clear instructions and requires no drilling. Get it mounted quickly and ready to use. (Note: Cargo racks must be removed prior to installation.)"
+            },
+            {
+              "field": "description_text",
+              "verbatim": "Heavy-Duty Durability You Can Trust: Reinforced fiberglass panels deliver long-lasting strength and impressive load-bearing capacity. A robust locking system keeps the cover firmly closed while driving, giving you confidence on every trip."
+            }
+          ],
+          "field": "material",
+          "resolution": "Do not select FRP or PVC as a unified material fact before brand confirmation.",
+          "source_url": "https://www.oedro.com/products/oedro-2016-2023-5ft-toyota-tacoma-tonneau-cover-3011-p-5878.html",
+          "status": "unresolved_official_source_conflict"
+        }
+      ]
+    },
+    "specifications": {
+      "url": "https://www.oedro.com/products/oedro-2016-2023-5ft-toyota-tacoma-tonneau-cover-3011-p-5878.html",
+      "capturedAt": "2026-10-13T07:28:29+00:00",
+      "status": "unresolved_official_source_conflict",
+      "excerpt": {
+        "Bed size": "5 ft",
+        "Brand": "OEDRO",
+        "Color": "Black",
+        "Condition": "New",
+        "Lock type": "Tailgate",
+        "Material": "Polyvinyl chloride (pvc); 6063 aluminum alloy bracket",
+        "Tonneau cover style": "Hard  Tri-fold",
+        "Warranty": "1 Year"
+      },
+      "conflicts": [
+        {
+          "captured_at": "2026-10-13T07:28:29+00:00",
+          "claims": [
+            {
+              "field": "specifications.Material",
+              "verbatim": "Polyvinyl chloride (pvc); 6063 aluminum alloy bracket"
+            },
+            {
+              "field": "identity.product_name",
+              "verbatim": "OEDRO FRP Hard Tri-fold Tonneau Cover Fold Truck Bed Covers Compatible with 2016-2023 Toyota Tacoma (Excl. Trail Edition), fit to 5ft Bed with Tacoma Bed Rail only"
+            },
+            {
+              "field": "description_text",
+              "verbatim": "Upgrade your Toyota Tacoma with this 5ft FRP Hard Tri-fold Tonneau Cover (2016-2023, excluding Trail Edition). Featuring a precise fit for seamless integration, it offers enhanced security and convenience. The durable FRP surface resists wear and water, while the internal Polypropylene honeycomb structure supports up to 400lbs. Protect your cargo from rain, snow, and dust, and prevent theft with a secure lock that only unlocks when the tailgate is open."
+            },
+            {
+              "field": "description_text",
+              "verbatim": "Superior Cargo Protection: Built with high-strength fiberglass (FRP) panels, this hard tri-fold tonneau cover offers exceptional protection against rain, snow, and road debris. It also resists impact and sharp objects, keeping your cargo safe and secure in all conditions."
+            },
+            {
+              "field": "description_text",
+              "verbatim": "Quick, No-Drill Installation: Designed for hassle-free setup, this FRP hard tri-fold tonneau cover installs easily with clear instructions and requires no drilling. Get it mounted quickly and ready to use. (Note: Cargo racks must be removed prior to installation.)"
+            },
+            {
+              "field": "description_text",
+              "verbatim": "Heavy-Duty Durability You Can Trust: Reinforced fiberglass panels deliver long-lasting strength and impressive load-bearing capacity. A robust locking system keeps the cover firmly closed while driving, giving you confidence on every trip."
+            }
+          ],
+          "field": "material",
+          "resolution": "Do not select FRP or PVC as a unified material fact before brand confirmation.",
+          "source_url": "https://www.oedro.com/products/oedro-2016-2023-5ft-toyota-tacoma-tonneau-cover-3011-p-5878.html",
+          "status": "unresolved_official_source_conflict"
+        }
+      ],
+      "primarySku": "OEEPTC-3011"
+    },
+    "variants": {
+      "url": "https://www.oedro.com/products/oedro-2016-2023-5ft-toyota-tacoma-tonneau-cover-3011-p-5878.html",
+      "capturedAt": "2026-10-13T07:28:29+00:00",
+      "status": "related_option_references",
+      "excerpt": {
+        "options": [
+          {
+            "optionsSort": "1.00",
+            "optionsValueType": "1",
+            "optionsValuesList": [
+              {
+                "optionsValuesSort": "1",
+                "productsOptionsValuesId": "17610",
+                "productsOptionsValuesName": "Low-Profile Hard Tri-Fold Tonneau Cover"
+              },
+              {
+                "optionsValuesSort": "2",
+                "productsOptionsValuesId": "15763",
+                "productsOptionsValuesName": "Hard Tri-Fold  Tonneau Cover"
+              }
+            ],
+            "productsOptionsId": "2499",
+            "productsOptionsName": "Style"
+          }
+        ],
+        "selected": [
+          {
+            "optionsSort": "1.00",
+            "productsOptionsId": "2499",
+            "productsOptionsName": "Style",
+            "productsOptionsValuesId": "15763",
+            "productsOptionsValuesName": "Hard Tri-Fold  Tonneau Cover",
+            "valueUnit": ""
+          }
+        ],
+        "skus": [
+          {
+            "attribute_ids": {
+              "2499": "15763"
+            },
+            "option_key": "15763",
+            "sku": "OEEPTC-3011",
+            "sku_id": "5878",
+            "spu_id": "4129",
+            "status": "1",
+            "url": "https://www.oedro.com/products/oedro-2016-2023-5ft-toyota-tacoma-tonneau-cover-3011-p-5878.html"
+          },
+          {
+            "attribute_ids": {
+              "2499": "17610"
+            },
+            "option_key": "17610",
+            "sku": "OEEPTC-6005",
+            "sku_id": "8798",
+            "spu_id": "4129",
+            "status": "1",
+            "url": "https://www.oedro.com/products/oedro-low-profile-hard-tri-fold-tonneau-cover-compatible-with-toyota-tacoma-2016-2023-excl-trail-edition-5ft-bed-with-tacoma-bed-rail-one-handed-quick-release-drainage-design-p-8798.html"
+          }
+        ],
+        "related": [],
+        "factScope": "Specifications in this record apply to the primary SKU only; related SKU links require their own exact product facts."
+      }
+    },
+    "price": {
+      "url": "https://www.oedro.com/products/oedro-2016-2023-5ft-toyota-tacoma-tonneau-cover-3011-p-5878.html",
+      "capturedAt": "2026-10-13T07:28:29+00:00",
+      "status": "official_page_snapshot",
+      "excerpt": {
+        "sale": "499.99",
+        "market": "899.99",
+        "currency": "USD",
+        "discount": "44% Off",
+        "stock": "In Stock. Delivery in 3–5 Days",
+        "freeShipping": true
+      }
+    },
+    "policies": {
+      "url": "https://www.oedro.com/products/oedro-2016-2023-5ft-toyota-tacoma-tonneau-cover-3011-p-5878.html",
+      "capturedAt": "2026-10-13T07:28:29+00:00",
+      "status": "requires_scope_verification",
+      "excerpt": {
+        "productWarranty": [
+          {
+            "label": "Warranty",
+            "source": "product_specification",
+            "value": "1 Year"
+          },
+          {
+            "label": "Warranty",
+            "source": "product_overview",
+            "url": "https://www.hernest.com/article/Warranty.html?aid=59",
+            "value": "1 Year Limited"
+          }
+        ],
+        "pageClaims": [],
+        "returnUrl": "https://www.oedro.com/article/Returns-&-Refunds.html?aid=42",
+        "shippingUrl": "https://www.oedro.com/article/Shipping-Guide.html?aid=43"
+      }
+    }
+  },
+  "volatileFields": [
+    "price",
+    "review",
+    "stage"
+  ],
+  "missingFields": [],
+  "libraryVersion": "2026-10-13-2e1e340d6a71"
+}
