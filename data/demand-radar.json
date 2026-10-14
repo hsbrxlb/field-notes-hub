@@ -146,9 +146,10 @@
   "mentions": {
     "schema_version": 1,
     "batch": {
-      "id": "OEDRO-72H-SELF-PILOT-20261012-v1",
-      "window_start": "2026-10-09T03:56:21.000Z",
-      "window_end": "2026-10-12T03:56:21.000Z",
+      "schema_version": 1,
+      "id": "OEDRO-72H-20261014",
+      "window_start": "2026-10-11T01:36:24.000Z",
+      "window_end": "2026-10-14T01:36:24.000Z",
       "items": []
     },
     "history": [
