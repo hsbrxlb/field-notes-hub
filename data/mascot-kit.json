@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "character": "OEDRO bull",
+  "working_name": "Bruno / 布诺",
+  "name_status": "working_name",
+  "assets": [
+    {
+      "id": "bull-v2-06",
+      "sha256": "d3cedb3a97e78098af2d2c13e81449efa355eaf777de4c7d0d20b4ae48eb9c1a",
+      "bytes": 463497,
+      "width": 1122,
+      "height": 1402,
+      "alt": "公牛与工具包内的红色伙伴在皮卡尾门旁互相望向对方。",
+      "src": "assets/mascot-kit/social-journey.jpg"
+    },
+    {
+      "id": "avatar-32-png",
+      "sha256": "41fa9d5d0ab5f8735c998c91a5c0e559c5f4a22b18674bb52c63d09edc163875",
+      "bytes": 2625,
+      "width": 32,
+      "height": 32,
+      "alt": "OEDRO棕色公牛品牌角色的头部头像。",
+      "src": "assets/mascot-kit/bruno-avatar-32.png"
+    },
+    {
+      "id": "avatar-32-webp",
+      "sha256": "909bb0f6a00edea1bd303205e4a0d1a09c30939dad712a71891ea052292e9269",
+      "bytes": 832,
+      "width": 32,
+      "height": 32,
+      "alt": "OEDRO棕色公牛品牌角色的头部头像。",
+      "src": "assets/mascot-kit/bruno-avatar-32.webp"
+    },
+    {
+      "id": "avatar-64-png",
+      "sha256": "f6a5781fd500164e019534dea1c902469b5e774269f18ebbefe7179b142e7db8",
+      "bytes": 9329,
+      "width": 64,
+      "height": 64,
+      "alt": "OEDRO棕色公牛品牌角色的头部头像。",
+      "src": "assets/mascot-kit/bruno-avatar-64.png"
+    },
+    {
+      "id": "avatar-64-webp",
+      "sha256": "aebd802ed4db8ce6513a80db7c2a54a9e54a1a4c432f89b4be70eef97ae12237",
+      "bytes": 2310,
+      "width": 64,
+      "height": 64,
+      "alt": "OEDRO棕色公牛品牌角色的头部头像。",
+      "src": "assets/mascot-kit/bruno-avatar-64.webp"
+    },
+    {
+      "id": "avatar-128-png",
+      "sha256": "804c7d2e8991566f64f4c5db1208504885bc1dd998fd33052ab84d5704fa362b",
+      "bytes": 32656,
+      "width": 128,
+      "height": 128,
+      "alt": "OEDRO棕色公牛品牌角色的头部头像。",
+      "src": "assets/mascot-kit/bruno-avatar-128.png"
+    },
+    {
+      "id": "avatar-128-webp",
+      "sha256": "dcc8391970ed434a2a98fc1dc6248c13f95646df4e267554a163efda93eb5548",
+      "bytes": 6700,
+      "width": 128,
+      "height": 128,
+      "alt": "OEDRO棕色公牛品牌角色的头部头像。",
+      "src": "assets/mascot-kit/bruno-avatar-128.webp"
+    },
+    {
+      "id": "avatar-256-png",
+      "sha256": "0f834bb16a5dbb159336cf83b9712924c0c3ea54bb8adc0d7fa071f098a9fa01",
+      "bytes": 112290,
+      "width": 256,
+      "height": 256,
+      "alt": "OEDRO棕色公牛品牌角色的头部头像。",
+      "src": "assets/mascot-kit/bruno-avatar-256.png"
+    },
+    {
+      "id": "avatar-256-webp",
+      "sha256": "3265ff4f3aece59faf5c96c47001f41bcecd9d7ca3d6f4fedc595fd658c0645d",
+      "bytes": 20232,
+      "width": 256,
+      "height": 256,
+      "alt": "OEDRO棕色公牛品牌角色的头部头像。",
+      "src": "assets/mascot-kit/bruno-avatar-256.webp"
+    },
+    {
+      "id": "pose-welcome-512-png",
+      "sha256": "cb3be9f7d9c76d855e164d9e6e2ae13eeee8193baeda23d90b0e6cb825116fe9",
+      "bytes": 223632,
+      "width": 341,
+      "height": 512,
+      "alt": "戴网帽的成年棕色公牛挥手欢迎，另一手握着工具包肩带。",
+      "src": "assets/mascot-kit/pose-welcome-512.png"
+    },
+    {
+      "id": "pose-welcome-512-webp",
+      "sha256": "17d8be4ff308d1a49adc19979b5c30a1cc4c8fd476130af65510aee45dc8396b",
+      "bytes": 47068,
+      "width": 341,
+      "height": 512,
+      "alt": "戴网帽的成年棕色公牛挥手欢迎，另一手握着工具包肩带。",
+      "src": "assets/mascot-kit/pose-welcome-512.webp"
+    },
+    {
+      "id": "pose-welcome-768-webp",
+      "sha256": "413b6d01bfab3335c23b1602b8f71cf9af8b05c6c9f1a357ff5dc76aa7a1da89",
+      "bytes": 89628,
+      "width": 512,
+      "height": 768,
+      "alt": "戴网帽的成年棕色公牛挥手欢迎，另一手握着工具包肩带。",
+      "src": "assets/mascot-kit/pose-welcome-768.webp"
+    },
+    {
+      "id": "pose-explain-512-png",
+      "sha256": "5af435e28a02b601ac81b8a893f082bcea91f6b900288178e8756e89236d7fa8",
+      "bytes": 307889,
+      "width": 512,
+      "height": 512,
+      "alt": "同一公牛向旁边伸手示意，工具包和颈巾随上半身完整展示。",
+      "src": "assets/mascot-kit/pose-explain-512.png"
+    },
+    {
+      "id": "pose-explain-512-webp",
+      "sha256": "9280d9d310cf2edb7e4eaddf2d6c4b0106cd7a08795b15ddee4b298c518fb8e9",
+      "bytes": 56722,
+      "width": 512,
+      "height": 512,
+      "alt": "同一公牛向旁边伸手示意，工具包和颈巾随上半身完整展示。",
+      "src": "assets/mascot-kit/pose-explain-512.webp"
+    },
+    {
+      "id": "pose-explain-768-webp",
+      "sha256": "08ad8b196bcc6074e3ee4cfdc37a67e843b8739be36594e0f684a13f76387dd8",
+      "bytes": 114642,
+      "width": 768,
+      "height": 768,
+      "alt": "同一公牛向旁边伸手示意，工具包和颈巾随上半身完整展示。",
+      "src": "assets/mascot-kit/pose-explain-768.webp"
+    },
+    {
+      "id": "social-hero-jpeg",
+      "sha256": "bc45a4427c1e844399262278a8b1ef6c5d0049e45d634672c8283eb68eb49389",
+      "bytes": 393078,
+      "width": 1254,
+      "height": 1254,
+      "alt": "成年棕色公牛戴OEDRO网帽、穿工装并携工具包，朝来人招呼。",
+      "src": "assets/mascot-kit/social-hero-jpeg.jpg"
+    },
+    {
+      "id": "social-companion-jpeg",
+      "sha256": "9697bb21e2278accd1c84628a8175f6bdad7d96f75645af56fbbbcd32ec69cb8",
+      "bytes": 398190,
+      "width": 1254,
+      "height": 1254,
+      "alt": "公牛打开工具包，红色救援板伙伴从包沿探身。",
+      "src": "assets/mascot-kit/social-companion-jpeg.jpg"
+    }
+  ],
+  "download": "assets/mascot-kit/oedro-bull-digital-kit.zip",
+  "usage": "assets/mascot-kit/usage.txt",
+  "examples": [
+    {
+      "channel": "AI问卷",
+      "speaker": "OEDRO Research Guide · AI",
+      "copy": "I’m an AI research guide for OEDRO. You can skip a question or stop whenever you like. What would you like to improve about your current setup?",
+      "purpose": "角色放在开场与追问旁，让问题容易回答，保留跳过和停止。"
+    },
+    {
+      "channel": "网站购物助手",
+      "speaker": "OEDRO Garage Helper · AI",
+      "copy": "Let’s check the details. What’s the year, make and model, and which product are you looking at?",
+      "purpose": "悬浮入口用头像，展开后配半身解释图；适配以具体商品资料为准。"
+    },
+    {
+      "channel": "Discord",
+      "speaker": "OEDRO Garage Helper · AI",
+      "copy": "What’s the one thing in your tool bag you always reach for? Mine’s just a prop, so I’m taking notes.",
+      "purpose": "用一个具体问题邀请车主分享，角色不冒充有驾驶或维修经历。"
+    },
+    {
+      "channel": "社媒",
+      "speaker": "OEDRO",
+      "copy": "The toolbox finally has company. What should this little red sidekick help with next?",
+      "purpose": "围绕公牛和工具包里的红色伙伴展开，让真实用户故事继续当主角。"
+    },
+    {
+      "channel": "反馈感谢邮件",
+      "speaker": "Your OEDRO team",
+      "copy": "Thanks for sharing what worked and what didn’t. That’s useful to hear.",
+      "purpose": "有真实反馈时在结尾轻量出现，不挤占正文、发件信息和退订入口。"
+    },
+    {
+      "channel": "The Glovebox",
+      "speaker": "From the garage",
+      "copy": "Before your next project, keep the instructions for your exact product within reach. One less thing to hunt for.",
+      "purpose": "作为栏目旁的搭档，点出一个实用细节；阅读内容保持在前。"
+    }
+  ],
+  "bundle_asset_ids": [
+    "avatar-32-png",
+    "avatar-32-webp",
+    "avatar-64-png",
+    "avatar-64-webp",
+    "avatar-128-png",
+    "avatar-128-webp",
+    "avatar-256-png",
+    "avatar-256-webp",
+    "pose-welcome-512-webp",
+    "pose-welcome-768-webp",
+    "pose-explain-512-webp",
+    "pose-explain-768-webp"
+  ]
+}

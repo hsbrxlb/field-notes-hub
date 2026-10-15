@@ -91,6 +91,12 @@
       "file": "mascot.html"
     },
     {
+      "id": "mascot-applications",
+      "label": "吉祥物应用",
+      "file": "mascot.html#applications",
+      "parent": "mascot"
+    },
+    {
       "id": "merch-plan",
       "label": "Oedro周边",
       "file": "merch-plan.html"

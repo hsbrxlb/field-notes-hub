@@ -48,7 +48,7 @@
     return '<nav class="evo-toc" aria-label="角色跳转"><strong>角色</strong><div class="evo-toc-list">'
       + characters.map((character) => '<a href="#' + safe(character.id) + '"><span>'
         + safe(character.index) + '</span>' + safe(character.name_cn) + '</a>').join('')
-      + '</div></nav>';
+      + '<a class="evo-section-link" href="#applications">应用示意</a><a class="evo-section-link" href="#character-voice">角色表达</a><a class="evo-section-link" href="#digital-assets">数字素材</a></div></nav>';
   }
 
   function sceneApplicationsMarkup(assets) {
@@ -56,28 +56,48 @@
       + '<div class="evo-assets">' + assets.map((asset) => assetFigure(asset)).join('') + '</div></section>';
   }
 
-  function applicationMarkup(characters) {
-    const examples = [
-      { family: 'o-partner', name: '车主调研', title: 'OEDRO Driver Research', copy: 'What does a typical drive look like for you?' },
-      { family: 'bison', name: '网站答疑', title: 'OEDRO Support', copy: 'What vehicle do you drive? Tell us the year, make and model.' },
-      { family: 'dog', name: '邮件结尾', title: 'Your OEDRO team', copy: 'Thanks for sharing your experience. We’re glad to hear from you.' }
-    ];
-    if (!examples.every((example) => characters.some((character) => character.family === example.family))) return '';
-    return '<section class="evo-applications" aria-labelledby="evo-applications-title"><h2 id="evo-applications-title">应用效果</h2>'
-      + '<p>对话与邮件示意</p><div class="evo-application-list">'
-      + examples.map((example) => {
-        const character = characters.find((entry) => entry.family === example.family);
-        return '<section class="evo-application"><h3>' + safe(example.name) + '</h3>'
-          + '<div class="evo-application-preview"><img src="' + safe(character.avatar_src || character.assets[0].src)
-          + '" width="96" height="96" alt="' + safe(character.name_cn) + '头像" loading="lazy">'
-          + '<div lang="en"><strong>' + safe(example.title) + '</strong><p>' + safe(example.copy) + '</p></div></div></section>';
-      }).join('') + '</div></section>';
+  function applicationMarkup(kit) {
+    const avatar = kit.assets.find((asset) => asset.id === 'avatar-128-png');
+    const poses = ['pose-welcome-768-webp', 'pose-explain-768-webp'].map((id) => kit.assets.find((asset) => asset.id === id));
+    return '<section class="evo-applications" id="applications" aria-labelledby="evo-applications-title"><h2 id="evo-applications-title">应用示意</h2>'
+      + '<p>同一位车库搭档，出现在问卷、社群、购物答疑和阅读内容里。</p>'
+      + '<div class="kit-poses">' + poses.map((asset, index) => '<figure><a href="' + safe(asset.src) + '"><img src="' + safe(asset.src)
+        + '" alt="' + safe(asset.alt) + '" width="' + asset.width + '" height="' + asset.height + '" loading="lazy"></a><figcaption>'
+        + (index === 0 ? '挥手欢迎' : '帮你看细节') + '</figcaption></figure>').join('') + '</div>'
+      + '<div class="evo-application-list">' + kit.examples.map((example) =>
+        '<section class="evo-application"><h3>' + safe(example.channel) + '</h3><div class="evo-application-preview">'
+        + '<img src="' + safe(avatar.src) + '" width="64" height="64" alt="公牛角色头像" loading="lazy">'
+        + '<div lang="en"><strong>' + safe(example.speaker) + '</strong><p>' + safe(example.copy) + '</p></div></div>'
+        + '<p class="kit-purpose">' + safe(example.purpose) + '</p></section>').join('')
+      + '</div></section>';
+  }
+
+  function voiceMarkup() {
+    return '<section class="kit-section" id="character-voice"><h2>角色表达</h2>'
+      + '<p>布诺（Bruno）是工作名。这个成年公牛像一位有本事、愿意搭把手的车库伙伴：直接、实用，也有一点轻松的幽默。</p>'
+      + '<p>每次给一个有用细节，或问一个容易回答的具体问题。开心时轻快，用户遇到故障或安全问题时认真，不把句句卖萌当作性格。</p>'
+      + '<p>AI对话清楚标明AI身份；品牌帖保留真实发件团队。角色不伪装车主，不编造购买、安装或驾驶经历。车型适配、商品性能和安全回答都以准确资料为准。</p></section>';
+  }
+
+  function downloadsMarkup(kit) {
+    const links = [['avatar-256-png', '256px头像 PNG'], ['pose-welcome-512-png', '欢迎图 透明PNG'], ['pose-explain-512-png', '答疑图 透明PNG'],
+      ['pose-welcome-512-webp', '欢迎图 WebP'], ['pose-explain-512-webp', '答疑图 WebP'], ['social-companion-jpeg', '搭档图 JPEG']];
+    return '<section class="kit-section" id="digital-assets"><h2>数字素材</h2>'
+      + '<p>小组件用头部头像；完整姿势至少128px高，四周留16px。圆形头像会裁去少量角尖，完整角形用方形。</p>'
+      + '<div class="kit-downloads">' + links.map(([id, label]) => {
+        const asset = kit.assets.find((entry) => entry.id === id);
+        return '<a href="' + safe(asset.src) + '" download>' + label + '</a>';
+      }).join('') + '<a href="' + safe(kit.download) + '" download>下载头像与网页素材包</a><a href="' + safe(kit.usage) + '">使用要点</a></div>'
+      + '<p>制造需要另做准确字标、刀线、色样或模型。数字图像不代表已生产实物，也不证明正式命名、商标注册或排他版权。</p>'
+      + '<p><a href="merch-plan.html#bull-merch">看帽章与贴纸应用</a></p></section>';
   }
 
   window.initMascot = async function initMascot() {
-    const response = await fetch('data/mascot.json', { cache: 'no-store' });
-    if (!response.ok) throw new Error('吉祥物档案加载失败');
-    const data = await response.json();
+    const [response, kitResponse] = await Promise.all([
+      fetch('data/mascot.json', { cache: 'no-store' }), fetch('data/mascot-kit.json', { cache: 'no-store' })
+    ]);
+    if (!response.ok || !kitResponse.ok) throw new Error('吉祥物档案加载失败');
+    const [data, kit] = await Promise.all([response.json(), kitResponse.json()]);
     document.title = data.title + '｜OEDRO海外用户运营';
     document.querySelector('meta[name="description"]').content = data.meta_description;
     document.querySelector('#content').innerHTML = '<header class="page-heading evo-heading"><h1>吉祥物迭代</h1></header>'
@@ -88,7 +108,9 @@
           ? '<p class="evo-group-label">' + (character.role === 'product' ? '产品伙伴' : '品牌伙伴') + '</p>' : '')
         + characterMarkup(character, index === 0)
         + (index === 0 ? sceneApplicationsMarkup(data.applications) : '')).join('')
-      + applicationMarkup(data.characters)
+      + applicationMarkup(kit) + voiceMarkup() + downloadsMarkup(kit)
       + '</div></div>';
+    const target = document.getElementById(location.hash.slice(1));
+    if (target && document.querySelector('#content').contains(target)) requestAnimationFrame(() => target.scrollIntoView({ behavior: 'instant', block: 'start' }));
   };
 })();

@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const root = path.resolve(process.env.PUBLIC_SITE_ROOT || path.join(__dirname, '..'));
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
@@ -102,7 +103,20 @@ for (const asset of mascot.applications) {
 }
 if (new Set(sources).size !== sources.length || new Set(codes).size !== codes.length) fail('application images are duplicated');
 
-const publicText = [JSON.stringify(mascot), html, script, css].join('\n');
+const kit = JSON.parse(read('data/mascot-kit.json'));
+if (kit.name_status !== 'working_name') fail('working name must remain explicit');
+if (kit.examples.length !== 6 || kit.examples.slice(0, 3).some((example) => !example.speaker.includes('AI'))) fail('six channel concepts and explicit AI identity are required');
+for (const asset of kit.assets) {
+  if (!/^assets\/mascot-kit\/[a-z0-9.-]+$/.test(asset.src)) fail('public kit asset path is unsafe');
+  const bytes = fs.readFileSync(path.join(root, asset.src));
+  if (bytes.length !== asset.bytes || crypto.createHash('sha256').update(bytes).digest('hex') !== asset.sha256) fail(`public kit asset changed: ${asset.id}`);
+}
+for (const id of ['avatar-32-png', 'avatar-64-png', 'avatar-128-png', 'avatar-256-png', 'pose-welcome-512-png', 'pose-explain-512-png']) {
+  if (!kit.assets.some((asset) => asset.id === id)) fail(`missing kit asset: ${id}`);
+}
+if (!fs.existsSync(path.join(root, kit.download)) || !fs.existsSync(path.join(root, kit.usage))) fail('kit downloads are missing');
+if (!content.nav.some((item) => item.id === 'mascot-applications' && item.file === 'mascot.html#applications' && item.parent === 'mascot')) fail('application navigation is missing');
+const publicText = [JSON.stringify(mascot), JSON.stringify(kit), read(kit.usage), html, script, css].join('\n');
 if (/已淘汰|当前候选|候选|已选定|首选|备选|Rejected|Shortlisted|Selected/.test(publicText)) fail('selection labels must not appear');
 if (/"date"\s*:|"goal"\s*:|独立画面|身份｜|结构｜|工作｜|动态｜/.test(JSON.stringify(mascot))) fail('dates or design-process copy must not appear in the role archive');
 if (/\/Users\/|127\.0\.0\.1|localhost|API[_ -]?KEY|COOKIE|PASSWORD/i.test(publicText)) fail('local-only or sensitive text appears in the public mascot page');
