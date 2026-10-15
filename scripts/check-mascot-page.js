@@ -104,12 +104,18 @@ for (const asset of mascot.applications) {
 if (new Set(sources).size !== sources.length || new Set(codes).size !== codes.length) fail('application images are duplicated');
 
 const kit = JSON.parse(read('data/mascot-kit.json'));
-if (kit.name_status !== 'working_name') fail('working name must remain explicit');
-if (kit.examples.length !== 6 || kit.examples.slice(0, 3).some((example) => !example.speaker.includes('AI'))) fail('six channel concepts and explicit AI identity are required');
+if (kit.display_name !== 'Bruno') fail('the display name must be Bruno');
+if (kit.examples.length !== 6 || kit.examples.some((example) => example.speaker !== 'Bruno')) fail('all six application speakers must be Bruno');
+if (!kit.examples[0].copy.includes('AI research guide') || !script.includes('AI身份在首次互动')) fail('AI identity must remain in the introduction');
 for (const asset of kit.assets) {
   if (!/^assets\/mascot-kit\/[a-z0-9.-]+$/.test(asset.src)) fail('public kit asset path is unsafe');
   const bytes = fs.readFileSync(path.join(root, asset.src));
   if (bytes.length !== asset.bytes || crypto.createHash('sha256').update(bytes).digest('hex') !== asset.sha256) fail(`public kit asset changed: ${asset.id}`);
+  if (/^avatar-\d+-png$/.test(asset.id)) {
+    const size = Number(asset.id.split('-')[1]);
+    if (bytes.toString('hex', 0, 8) !== '89504e470d0a1a0a' || bytes[25] !== 6
+      || bytes.readUInt32BE(16) !== size || bytes.readUInt32BE(20) !== size) fail(`${asset.id} must be an RGBA PNG of its declared size`);
+  }
 }
 for (const id of ['avatar-32-png', 'avatar-64-png', 'avatar-128-png', 'avatar-256-png', 'pose-welcome-512-png', 'pose-explain-512-png']) {
   if (!kit.assets.some((asset) => asset.id === id)) fail(`missing kit asset: ${id}`);

@@ -74,21 +74,21 @@
 
   function voiceMarkup() {
     return '<section class="kit-section" id="character-voice"><h2>角色表达</h2>'
-      + '<p>布诺（Bruno）是工作名。这个成年公牛像一位有本事、愿意搭把手的车库伙伴：直接、实用，也有一点轻松的幽默。</p>'
+      + '<p>Bruno 是一位成年公牛，像一位有本事、愿意搭把手的车库伙伴：直接、实用，也有一点轻松的幽默。</p>'
       + '<p>每次给一个有用细节，或问一个容易回答的具体问题。开心时轻快，用户遇到故障或安全问题时认真，不把句句卖萌当作性格。</p>'
-      + '<p>AI对话清楚标明AI身份；品牌帖保留真实发件团队。角色不伪装车主，不编造购买、安装或驾驶经历。车型适配、商品性能和安全回答都以准确资料为准。</p></section>';
+      + '<p>名字统一显示 Bruno，AI身份在首次互动的介绍正文中说明；品牌帖保留真实发件团队。角色不伪装车主，不编造购买、安装或驾驶经历。车型适配、商品性能和安全回答都以准确资料为准。</p></section>';
   }
 
   function downloadsMarkup(kit) {
     const links = [['avatar-256-png', '256px头像 PNG'], ['pose-welcome-512-png', '欢迎图 透明PNG'], ['pose-explain-512-png', '答疑图 透明PNG'],
       ['pose-welcome-512-webp', '欢迎图 WebP'], ['pose-explain-512-webp', '答疑图 WebP'], ['social-companion-jpeg', '搭档图 JPEG']];
     return '<section class="kit-section" id="digital-assets"><h2>数字素材</h2>'
-      + '<p>小组件用头部头像；完整姿势至少128px高，四周留16px。圆形头像会裁去少量角尖，完整角形用方形。</p>'
+      + '<p>头像为透明PNG，保留完整牛角，可直接放在不同底色上。平台可能自行添加底色或裁切，上传后需检查。完整姿势至少128px高，四周留16px。</p>'
       + '<div class="kit-downloads">' + links.map(([id, label]) => {
         const asset = kit.assets.find((entry) => entry.id === id);
         return '<a href="' + safe(asset.src) + '" download>' + label + '</a>';
       }).join('') + '<a href="' + safe(kit.download) + '" download>下载头像与网页素材包</a><a href="' + safe(kit.usage) + '">使用要点</a></div>'
-      + '<p>制造需要另做准确字标、刀线、色样或模型。数字图像不代表已生产实物，也不证明正式命名、商标注册或排他版权。</p>'
+      + '<p>制造需要另做准确字标、刀线、色样或模型。数字图像不代表已生产实物，也不证明商标注册或排他版权。</p>'
       + '<p><a href="merch-plan.html#bull-merch">看帽章与贴纸应用</a></p></section>';
   }
 
