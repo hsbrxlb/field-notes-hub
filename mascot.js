@@ -13,41 +13,23 @@
       + '<figcaption>' + safe(asset.caption) + '</figcaption></figure>';
   }
 
-  function sizePreviewMarkup(preview) {
-    if (!preview) return '';
-    return '<div class="evo-size-preview"><p>' + safe(preview.label) + '</p><div class="evo-size-pair">'
-      + [64, 32].map((size) => '<figure><img src="' + safe(preview['src' + size])
-        + '" width="' + size + '" height="' + size + '" alt="' + safe(preview.label) + '，' + size
-        + '像素"><figcaption>' + size + 'px</figcaption></figure>').join('')
-      + '</div></div>';
-  }
-
-  function characterImages(character, isFirst) {
-    if (character.versions) {
-      return '<div class="evo-versions">' + character.versions.map((version) =>
-        '<div class="evo-version"><h3>' + safe(version.name) + '</h3><p class="evo-version-note">'
-        + safe(version.description) + '</p><div class="evo-version-images">'
-        + version.codes.map((code) => assetFigure(character.assets.find((asset) => asset.code === code))).join('')
-        + '</div>' + sizePreviewMarkup(version.sizePreview) + '</div>'
-      ).join('') + '</div>';
-    }
+  function characterImages(character) {
     return '<div class="evo-assets">'
-      + character.assets.map((asset, index) => assetFigure(asset, isFirst && index < 4)).join('')
-      + '</div>' + sizePreviewMarkup(character.sizePreview);
+      + character.assets.map((asset, index) => assetFigure(asset, index < 4)).join('')
+      + '</div>';
   }
 
-  function characterMarkup(character, isFirst) {
+  function characterMarkup(character) {
     return '<section class="evo-character" id="' + safe(character.id) + '" data-searchable>'
-      + '<header class="evo-character-head"><span class="evo-character-index">' + safe(character.index) + '</span>'
+      + '<header class="evo-character-head">'
       + '<div><h2>' + safe(character.name_cn) + '<span lang="en">（' + safe(character.name_en) + '）</span></h2>'
       + '<p>' + safe(character.blurb) + '</p></div></header>'
-      + characterImages(character, isFirst) + '</section>';
+      + characterImages(character) + '</section>';
   }
 
   function tocMarkup(characters) {
-    return '<nav class="evo-toc" aria-label="角色跳转"><strong>角色</strong><div class="evo-toc-list">'
-      + characters.map((character) => '<a href="#' + safe(character.id) + '"><span>'
-        + safe(character.index) + '</span>' + safe(character.name_cn) + '</a>').join('')
+    return '<nav class="evo-toc" aria-label="本页跳转"><strong>本页</strong><div class="evo-toc-list">'
+      + characters.map((character) => '<a href="#' + safe(character.id) + '">' + safe(character.name_cn) + '</a>').join('')
       + '<a class="evo-section-link" href="#applications">应用示意</a><a class="evo-section-link" href="#character-voice">角色表达</a><a class="evo-section-link" href="#digital-assets">数字素材</a></div></nav>';
   }
 
@@ -103,11 +85,8 @@
     document.querySelector('#content').innerHTML = '<header class="page-heading evo-heading"><h1>吉祥物迭代</h1></header>'
       + '<div class="evo-layout">' + tocMarkup(data.characters)
       + '<div class="evo-character-list">'
-      + data.characters.map((character, index) =>
-        (index === 0 || character.role !== data.characters[index - 1].role
-          ? '<p class="evo-group-label">' + (character.role === 'product' ? '产品伙伴' : '品牌伙伴') + '</p>' : '')
-        + characterMarkup(character, index === 0)
-        + (index === 0 ? sceneApplicationsMarkup(data.applications) : '')).join('')
+      + data.characters.map((character) => characterMarkup(character)).join('')
+      + sceneApplicationsMarkup(data.applications)
       + applicationMarkup(kit) + voiceMarkup() + downloadsMarkup(kit)
       + '</div></div>';
     const target = document.getElementById(location.hash.slice(1));

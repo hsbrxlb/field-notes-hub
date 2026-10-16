@@ -34,7 +34,7 @@
 
   维护说明：Hub 的 `youtube` 对应 Skill 的 `youtube_community`。本次验收范围是静态作品页，完整自动管线尚未通过；Instagram 原生图片为 1122×1402，低于预设目标，保持原尺寸。
 - `flipbooks.html`：Flip Book Demo（翻页书），进入 Brand Story 与 Car Owner Survey
-- `mascot.html`：公牛布诺在前，保留阿朗、小欧和救援板伙伴；六类应用示意、角色表达与数字素材下载分别有锚点。`data/mascot-kit.json`只收公开安全内容，素材路径和哈希由`check-mascot-page.js`核对；内部确认与厂家材料不进入公开包。
+- `mascot.html`：展示公牛布诺与随行的救援板小伙伴，包含五张角色图与两张社媒、周边场景图；六类应用示意、角色表达与数字素材下载分别有锚点。`data/mascot-kit.json`只收公开安全内容，素材路径和哈希由`check-mascot-page.js`核对；内部确认与厂家材料不进入公开包。
 - `mascot-workflow.html`：吉祥物设计的skill，可直接复制或下载完整的跨品牌吉祥物工作包，供其他 Codex 或 AI 使用，不依赖本机私有路径。
 - 侧栏分别进入“SEO与AI搜索”“Discord频道设计”“Oedro persona”，沿用对应的 `topic.html?slug=...` 网址。“Discord频道设计”位于侧栏最底部，新触达名单与邀请活动方案位于用户邮件模板之后。`topics.html` 仅保留旧链接所需的资料索引。
 - Discord 配置位于频道结构下方；没有实际用途证据的机器人与空配置区不显示。品牌表达页包含品牌名大小写建议和六个双语场景示例，示例不代表已发送消息。

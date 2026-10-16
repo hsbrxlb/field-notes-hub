@@ -1,6 +1,6 @@
 {
   "title": "吉祥物迭代",
-  "meta_description": "OEDRO 布诺、阿朗、小欧与救援板小伙伴的形象、动作和应用。",
+  "meta_description": "OEDRO 布诺（Bruno）与救援板小伙伴的形象、动作和应用。",
   "characters": [
     {
       "id": "character-06-bison",
@@ -59,112 +59,6 @@
         }
       ],
       "avatar_src": "assets/mascot-evolution/bull-v2/BULL-V2-AVATAR.webp"
-    },
-    {
-      "id": "character-01-dog",
-      "index": "02",
-      "family": "dog",
-      "type": "animal",
-      "role": "brand",
-      "name_cn": "阿朗",
-      "name_en": "Sunny",
-      "blurb": "穿上工装的金毛搭档，热情地迎人，也耐心陪着小伙伴干活。",
-      "assets": [
-        {
-          "code": "OK-DOG-01",
-          "caption": "欢迎来到车库",
-          "src": "assets/mascot-evolution/ollie-kit/OK-DOG-01.webp",
-          "alt": "阿朗（Sunny）欢迎来到车库",
-          "source_round": "ollie-kit"
-        },
-        {
-          "code": "DOG-02",
-          "caption": "回头招呼你",
-          "src": "assets/mascot-evolution/chat-refresh/DOG-02.webp",
-          "alt": "阿朗（Sunny）回头招呼你",
-          "source_round": "chat-refresh"
-        },
-        {
-          "code": "OK-DOG-03",
-          "caption": "伸手接住小伙伴",
-          "src": "assets/mascot-evolution/ollie-kit/OK-DOG-03.webp",
-          "alt": "阿朗跪在打开的工具箱旁迎接踏踏",
-          "source_round": "ollie-kit"
-        },
-        {
-          "code": "DOG-04",
-          "caption": "带上工具出发",
-          "src": "assets/mascot-evolution/chat-refresh/DOG-04.webp",
-          "alt": "阿朗（Sunny）带上工具出发",
-          "source_round": "chat-refresh"
-        }
-      ]
-    },
-    {
-      "id": "character-click-helper",
-      "index": "03",
-      "family": "o-partner",
-      "type": "mechanical",
-      "role": "brand",
-      "name_cn": "小欧",
-      "name_en": "Ollie",
-      "blurb": "一圈暖光，一个随身工具箱。小欧带着帮手来，也把前路照亮。",
-      "assets": [
-        {
-          "code": "OH-O-01",
-          "caption": "拎上箱子打招呼",
-          "src": "assets/mascot-evolution/ollie-halo/OH-O-01.webp",
-          "alt": "中空O形小欧在暖光车库拎着工具箱招手",
-          "source_round": "ollie-halo"
-        },
-        {
-          "code": "OH-O-02",
-          "caption": "转过身来",
-          "src": "assets/mascot-evolution/ollie-halo/OH-O-02.webp",
-          "alt": "小欧（Ollie）转过身来",
-          "source_round": "ollie-halo"
-        },
-        {
-          "code": "OH-O-03",
-          "caption": "踏踏，从这里出来",
-          "src": "assets/mascot-evolution/ollie-halo/OH-O-03.webp",
-          "alt": "小欧打开工具箱迎接迷你踏板伙伴",
-          "source_round": "ollie-halo"
-        },
-        {
-          "code": "OH-O-04",
-          "caption": "照亮脚下的路",
-          "src": "assets/mascot-evolution/ollie-halo/OH-O-04.webp",
-          "alt": "小欧拎着工具箱迈步照亮前方地面",
-          "source_round": "ollie-halo"
-        }
-      ]
-    },
-    {
-      "id": "character-recovery-board",
-      "family": "recovery-board",
-      "type": "mechanical",
-      "name_cn": "踏踏",
-      "name_en": "Tread",
-      "blurb": "红色抓地板和黑色踏板搭成一个小伙伴，伸手就想帮忙。",
-      "assets": [
-        {
-          "code": "MR-BOARD-A",
-          "caption": "伸手来帮忙",
-          "src": "assets/mascot-evolution/meeting-refresh/MR-BOARD-A.webp",
-          "alt": "踏踏（Tread）伸手来帮忙",
-          "source_round": "meeting-refresh"
-        },
-        {
-          "code": "MR-BOARD-B",
-          "caption": "指向车辙旁的干地",
-          "src": "assets/mascot-evolution/meeting-refresh/MR-BOARD-B.webp",
-          "alt": "踏踏（Tread）指向车辙旁的干地",
-          "source_round": "meeting-refresh"
-        }
-      ],
-      "index": "04",
-      "role": "product"
     }
   ],
   "applications": [

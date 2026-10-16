@@ -39,17 +39,9 @@
 .evo-toc-list { display: grid; }
 .evo-toc .evo-section-link { display: flex; }
 
-.evo-group-label {
-  margin: 24px 0 0;
-  color: var(--text-muted);
-  font-size: 13px;
-  font-weight: 600;
-}
-
 .evo-toc a {
   min-height: var(--touch-size);
-  display: grid;
-  grid-template-columns: 26px minmax(0, 1fr);
+  display: flex;
   gap: 6px;
   align-items: center;
   color: var(--text-muted);
@@ -57,11 +49,6 @@
   line-height: 1.3;
   border-left: 1px solid var(--border);
   padding: 6px 0 6px 10px;
-}
-
-.evo-toc a span {
-  color: var(--text-faint);
-  font-size: 12px;
 }
 
 .evo-toc a:hover,
@@ -81,16 +68,7 @@
 .evo-character:first-child { padding-top: 24px; }
 
 .evo-character-head {
-  display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
-  gap: 16px;
-  align-items: start;
   padding-bottom: 20px;
-}
-
-.evo-character-index {
-  color: var(--accent);
-  font: 700 13px/1.4 var(--font-heading);
 }
 
 .evo-character-head h2 {
@@ -131,23 +109,6 @@
   outline: 3px solid var(--accent);
   outline-offset: 4px;
 }
-
-.evo-versions {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px 18px;
-}
-
-.evo-version { min-width: 0; }
-.evo-version h3 { margin: 0; font-size: 17px; line-height: 1.4; }
-.evo-version-note { margin: 8px 0 20px; color: var(--text-secondary); font-size: 14px; line-height: 1.65; }
-.evo-version-images { display: grid; gap: 36px; }
-.evo-size-preview { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 16px; }
-.evo-size-preview > p { margin: 0 0 16px; font-size: 13px; color: var(--text-secondary); }
-.evo-size-pair { display: flex; align-items: flex-end; gap: 24px; }
-.evo-size-pair figure { margin: 0; }
-.evo-size-pair img { display: block; max-width: none; }
-.evo-size-pair figcaption { margin-top: 8px; font-size: 12px; color: var(--text-muted); }
 
 .evo-asset-image img {
   display: block;
@@ -216,7 +177,6 @@
   .evo-character { scroll-margin-top: calc(var(--topbar-height) + 66px); }
   .evo-applications, .kit-section { scroll-margin-top: calc(var(--topbar-height) + 80px); }
   .evo-assets { grid-template-columns: 1fr; }
-  .evo-versions { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 760px) {
@@ -230,7 +190,7 @@
   .evo-heading { min-height: 62px; padding: 12px 0 16px; }
   .evo-character { padding: 26px 0 46px; }
   .evo-character:first-child { padding-top: 22px; }
-  .evo-character-head { grid-template-columns: 34px minmax(0, 1fr); gap: 8px; padding-bottom: 16px; }
+  .evo-character-head { padding-bottom: 16px; }
   .evo-character-head h2 { font-size: 19px; }
   .evo-character-head p { font-size: 15px; }
   .evo-assets { gap: 28px; }
