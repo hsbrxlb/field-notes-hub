@@ -33,8 +33,10 @@ if (!css.includes('grid-template-columns: 150px minmax(0, 1fr)') || !css.include
 
 const forbiddenUi = [
   'evo-filter', '<details', '<summary', '<time', 'evo-round-toggle', 'evo-status',
-  'dialog', 'evo-lightbox', 'recommendedMarkup', 'data-evo-overview', '<button'
+  'dialog', 'evo-lightbox', 'recommendedMarkup', 'data-evo-overview'
 ];
+const buttons = script.match(/<button\b[^>]*>/g) || [];
+if (buttons.length !== 1 || buttons[0] !== '<button type="button" id="retry-mascot">') fail('only the loading-error retry button is allowed');
 for (const token of forbiddenUi) {
   if (script.includes(token)) fail(`unnecessary mascot interaction remains: ${token}`);
 }
@@ -114,9 +116,10 @@ if (/"date"\s*:|"goal"\s*:|独立画面|身份｜|结构｜|工作｜|动态｜/
 if (/\/Users\/|127\.0\.0\.1|localhost|API[_ -]?KEY|COOKIE|PASSWORD/i.test(publicText)) fail('local-only or sensitive text appears in the public mascot page');
 
 async function checkRenderedPage() {
-  const main = { innerHTML: '' };
+  const main = { innerHTML: '', setAttribute() {} };
   const description = { content: '' };
-  const page = { window: {}, document: {
+  const page = { window: { fetchHubJSON: async (file) => JSON.parse(read(file)) }, document: {
+    body: { dataset: {} },
     querySelector: (selector) => selector === '#content' ? main : description,
     getElementById: () => null
   }, location: { hash: '' }, fetch: async (file) => ({ ok: true, json: async () => JSON.parse(read(file)) }) };

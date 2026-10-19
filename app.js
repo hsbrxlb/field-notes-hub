@@ -444,6 +444,37 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+// Keep the mascot page independent from unrelated page data.
+window.fetchHubJSON = async function fetchHubJSON(url, { retry = false } = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 12000);
+  try {
+    const response = await fetch(url, { signal: controller.signal, cache: retry ? 'reload' : 'default' });
+    if (!response.ok) throw new Error('页面数据加载失败');
+    return await response.json();
+  } finally {
+    clearTimeout(timer);
+  }
+};
+
+async function initMascotNavigation(retry = false) {
+  const navigation = document.querySelector('#nav-list');
+  navigation.setAttribute('aria-busy', 'true');
+  navigation.innerHTML = '<p role="status">正在加载导航…</p><a href="index.html">返回首页</a>';
+  try {
+    renderShell(await window.fetchHubJSON('data/content.json', { retry }));
+  } catch (error) {
+    navigation.innerHTML = '<p role="alert">导航加载超时或连接失败</p><a href="mascot.html" id="retry-navigation">重试导航</a><a href="index.html">返回首页</a>';
+    navigation.querySelector('#retry-navigation').addEventListener('click', (event) => {
+      event.preventDefault();
+      initMascotNavigation(true);
+    });
+    console.error(error);
+  } finally {
+    navigation.setAttribute('aria-busy', 'false');
+  }
+}
+
 async function init() {
   if (location.pathname.endsWith('topic.html') && new URLSearchParams(location.search).get('slug') === 'external-signals-to-relationships') {
     location.replace('user-voice.html#feedback-method');
@@ -473,7 +504,6 @@ async function init() {
   if (page === 'topics' && location.pathname.endsWith('topic.html')) await renderTopic(data);
   if (page === 'studio' && location.pathname.endsWith('content-pipeline-test.html')) await window.initContentPipelineTests?.();
   if (page === 'studio' && !location.pathname.endsWith('content-pipeline-test.html')) await window.initContentStudio?.();
-  if (page === 'mascot') await window.initMascot?.();
   if (page === 'email-templates') await window.initEmailTemplates?.();
   if (page === 'newsletter') await window.initNewsletter?.();
   if (page === 'products') await window.initProducts?.();
@@ -481,19 +511,24 @@ async function init() {
 
 const mainContent = document.querySelector('#content');
 const staticContentPage = ['customer-analytics', 'mascot-workflow', 'social-brand', 'merch-plan', 'first-outreach', 'discord-invite-plan', 'ugc-activity', 'sema-plan'].includes(page);
-mainContent.setAttribute('tabindex', '-1');
-mainContent.setAttribute('aria-busy', 'true');
-if (!staticContentPage) mainContent.innerHTML = '<p class="loading-state" role="status">正在加载…</p>';
-init().catch((error) => {
-  if (staticContentPage) {
-    const navigation = document.querySelector('#nav-list');
-    if (navigation && !navigation.querySelector('a')) {
-      navigation.innerHTML = '<p role="alert">导航暂时无法加载</p><a href="">重新加载</a><a href="index.html">返回首页</a>';
+if (page === 'mascot') {
+  initMascotNavigation();
+} else {
+  mainContent.setAttribute('tabindex', '-1');
+  mainContent.setAttribute('aria-busy', 'true');
+  if (!staticContentPage) mainContent.innerHTML = '<p class="loading-state" role="status">正在加载…</p>';
+  init().catch((error) => {
+    if (staticContentPage) {
+      const navigation = document.querySelector('#nav-list');
+      if (navigation && !navigation.querySelector('a')) {
+        navigation.innerHTML = '<p role="alert">导航暂时无法加载</p><a href="">重新加载</a><a href="index.html">返回首页</a>';
+      }
+      console.error(error);
+      return;
     }
+    mainContent.innerHTML = '<div class="load-error" role="alert"><h1>页面暂时无法加载</h1><p>检查连接后重试，或返回首页。</p><button type="button" id="reload-page">重试</button><a href="index.html">返回首页</a></div>';
+    document.querySelector('#reload-page').addEventListener('click', () => location.reload());
     console.error(error);
-    return;
-  }
-  mainContent.innerHTML = '<div class="load-error" role="alert"><h1>页面暂时无法加载</h1><p>检查连接后重试，或返回首页。</p><button type="button" id="reload-page">重试</button><a href="index.html">返回首页</a></div>';
-  document.querySelector('#reload-page').addEventListener('click', () => location.reload());
-  console.error(error);
-}).finally(() => mainContent.setAttribute('aria-busy', 'false'));
+  }).finally(() => mainContent.setAttribute('aria-busy', 'false'));
+
+}

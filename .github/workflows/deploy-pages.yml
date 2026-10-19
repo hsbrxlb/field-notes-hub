@@ -55,6 +55,7 @@ jobs:
           python3 scripts/test-customer-analytics.py
           node scripts/check-content-pipeline-tests.js
           node scripts/check-mascot-page.js
+          node scripts/test-mascot-loading.js
           python3 scripts/test-update-hub-record.py
       - name: Build public artifact
         run: |

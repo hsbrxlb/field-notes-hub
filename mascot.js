@@ -6,16 +6,16 @@
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;');
 
-  function assetFigure(asset, eager = false) {
+  function assetFigure(asset, eager = false, priority = false) {
     return '<figure class="evo-asset">'
       + '<a class="evo-asset-image" href="' + safe(asset.src) + '" aria-label="查看原图：' + safe(asset.caption) + '"><img src="' + safe(asset.src) + '" alt="' + safe(asset.alt)
-      + '" width="' + (asset.width || 1254) + '" height="' + (asset.height || 1254) + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"></a>'
+      + '" width="' + (asset.width || 1254) + '" height="' + (asset.height || 1254) + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"' + (priority ? ' fetchpriority="high"' : '') + '></a>'
       + '<figcaption>' + safe(asset.caption) + '</figcaption></figure>';
   }
 
   function characterImages(character) {
     return '<div class="evo-assets">'
-      + character.assets.map((asset, index) => assetFigure(asset, index < 4)).join('')
+      + character.assets.map((asset, index) => assetFigure(asset, index < 2, index === 0)).join('')
       + '</div>';
   }
 
@@ -74,22 +74,35 @@
       + '<p><a href="merch-plan.html#bull-merch">看帽章与贴纸应用</a></p></section>';
   }
 
-  window.initMascot = async function initMascot() {
-    const [response, kitResponse] = await Promise.all([
-      fetch('data/mascot.json', { cache: 'no-store' }), fetch('data/mascot-kit.json', { cache: 'no-store' })
-    ]);
-    if (!response.ok || !kitResponse.ok) throw new Error('吉祥物档案加载失败');
-    const [data, kit] = await Promise.all([response.json(), kitResponse.json()]);
-    document.title = data.title + '｜OEDRO海外用户运营';
-    document.querySelector('meta[name="description"]').content = data.meta_description;
-    document.querySelector('#content').innerHTML = '<header class="page-heading evo-heading"><h1>吉祥物迭代</h1></header>'
-      + '<div class="evo-layout">' + tocMarkup(data.characters)
-      + '<div class="evo-character-list">'
-      + data.characters.map((character) => characterMarkup(character)).join('')
-      + sceneApplicationsMarkup(data.applications)
-      + applicationMarkup(kit) + voiceMarkup() + downloadsMarkup(kit)
-      + '</div></div>';
-    const target = document.getElementById(location.hash.slice(1));
-    if (target && document.querySelector('#content').contains(target)) requestAnimationFrame(() => target.scrollIntoView({ behavior: 'instant', block: 'start' }));
+  window.initMascot = async function initMascot(retry = false) {
+    const content = document.querySelector('#content');
+    content.setAttribute('tabindex', '-1');
+    content.setAttribute('aria-busy', 'true');
+    content.innerHTML = '<p class="loading-state" role="status">正在加载吉祥物…</p>';
+    try {
+      const [data, kit] = await Promise.all([
+        window.fetchHubJSON('data/mascot.json', { retry }),
+        window.fetchHubJSON('data/mascot-kit.json', { retry })
+      ]);
+      document.title = data.title + '｜OEDRO海外用户运营';
+      document.querySelector('meta[name="description"]').content = data.meta_description;
+      document.querySelector('#content').innerHTML = '<header class="page-heading evo-heading"><h1>吉祥物迭代</h1></header>'
+        + '<div class="evo-layout">' + tocMarkup(data.characters)
+        + '<div class="evo-character-list">'
+        + data.characters.map((character) => characterMarkup(character)).join('')
+        + sceneApplicationsMarkup(data.applications)
+        + applicationMarkup(kit) + voiceMarkup() + downloadsMarkup(kit)
+        + '</div></div>';
+      const target = document.getElementById(location.hash.slice(1));
+      if (target && document.querySelector('#content').contains(target)) requestAnimationFrame(() => target.scrollIntoView({ behavior: 'instant', block: 'start' }));
+    } catch (error) {
+      content.innerHTML = '<div class="load-error" role="alert"><h1>吉祥物暂时无法加载</h1><p>加载超时或连接失败，请重试。</p><button type="button" id="retry-mascot">重试吉祥物</button><a href="index.html">返回首页</a></div>';
+      document.querySelector('#retry-mascot').addEventListener('click', () => window.initMascot(true));
+      console.error(error);
+    } finally {
+      content.setAttribute('aria-busy', 'false');
+    }
   };
+
+  if (document.body.dataset.page === 'mascot') window.initMascot();
 })();
