@@ -56,7 +56,7 @@
 
 ## 吉祥物页加载
 
-`mascot.html` 的导航与完整正文在发布时从现有 JSON 和渲染器生成，打开页面无需等待数据请求，关闭 JavaScript 也能阅读。CI 自动运行 `node scripts/build-mascot-page.js`；本地修改导航或吉祥物数据后，运行同一命令更新 HTML。`node scripts/build-mascot-page.js --check` 检查同步情况。
+`mascot.html` 的导航、完整正文及首屏样式在发布时从现有 JSON、渲染器和三份 CSS 生成，打开页面无需等待数据请求，关闭 JavaScript 也能阅读。CI 自动运行 `node scripts/build-mascot-page.js`；本地修改导航或吉祥物数据后，运行同一命令更新 HTML。`node scripts/build-mascot-page.js --check` 检查同步情况。
 
 未预生成的页面仍有 12 秒请求超时与局部重试。首屏优先加载两张角色图，其他图片按需加载，保留原图入口与固定背景。回归检查：`node scripts/test-mascot-loading.js`。
 

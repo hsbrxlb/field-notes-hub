@@ -34,6 +34,7 @@ async function renderMascotPage() {
   if (!content.includes('class="evo-character-list"')) throw new Error('Mascot renderer did not produce the gallery');
   let html = read('mascot.html');
   for (const [name, value] of [
+    ['styles', '<style id="mascot-styles">' + ['base.css', 'theme.css', 'mascot.css'].map((name) => `/* ${name} */\n${read(name)}`).join('\n') + '</style>'],
     ['nav', element('#nav-list').innerHTML],
     ['breadcrumb', element('#breadcrumb-page').textContent],
     ['content', content]

@@ -25,6 +25,8 @@ function setup(page = 'mascot', fetcher = async (url) => ({ ok: true, json: asyn
   }
   if (snapshot) {
     const html = read('mascot.html');
+  assert(!/<link[^>]+rel="stylesheet"/.test(html), 'first paint does not wait for separate stylesheets');
+  for (const name of ['base.css', 'theme.css', 'mascot.css']) assert(html.includes(read(name)), `${name} is embedded from its canonical source`);
     for (const [name, id] of [['nav', '#nav-list'], ['content', '#content']]) {
       element(id).innerHTML = html.match(new RegExp(`<!-- mascot-${name}:start -->([^]*?)<!-- mascot-${name}:end -->`))[1];
     }
