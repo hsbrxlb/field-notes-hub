@@ -512,7 +512,7 @@ async function init() {
 const mainContent = document.querySelector('#content');
 const staticContentPage = ['customer-analytics', 'mascot-workflow', 'social-brand', 'merch-plan', 'first-outreach', 'discord-invite-plan', 'ugc-activity', 'sema-plan'].includes(page);
 if (page === 'mascot') {
-  initMascotNavigation();
+  if (!document.querySelector('#nav-list').querySelector('a')) initMascotNavigation();
 } else {
   mainContent.setAttribute('tabindex', '-1');
   mainContent.setAttribute('aria-busy', 'true');

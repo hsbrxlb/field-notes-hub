@@ -93,8 +93,7 @@
         + sceneApplicationsMarkup(data.applications)
         + applicationMarkup(kit) + voiceMarkup() + downloadsMarkup(kit)
         + '</div></div>';
-      const target = document.getElementById(location.hash.slice(1));
-      if (target && document.querySelector('#content').contains(target)) requestAnimationFrame(() => target.scrollIntoView({ behavior: 'instant', block: 'start' }));
+      scrollToMascotAnchor();
     } catch (error) {
       content.innerHTML = '<div class="load-error" role="alert"><h1>吉祥物暂时无法加载</h1><p>加载超时或连接失败，请重试。</p><button type="button" id="retry-mascot">重试吉祥物</button><a href="index.html">返回首页</a></div>';
       document.querySelector('#retry-mascot').addEventListener('click', () => window.initMascot(true));
@@ -104,5 +103,13 @@
     }
   };
 
-  if (document.body.dataset.page === 'mascot') window.initMascot();
+  function scrollToMascotAnchor() {
+    const target = document.getElementById(location.hash.slice(1));
+    if (target && document.querySelector('#content').contains(target)) requestAnimationFrame(() => target.scrollIntoView({ behavior: 'instant', block: 'start' }));
+  }
+
+  if (document.body.dataset.page === 'mascot') {
+    if (document.querySelector('#content').querySelector('.evo-character-list')) scrollToMascotAnchor();
+    else window.initMascot();
+  }
 })();

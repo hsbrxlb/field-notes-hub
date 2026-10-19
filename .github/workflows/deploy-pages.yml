@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Render mascot page
+        run: node scripts/build-mascot-page.js
       - name: Test public user voice boundary
         run: |
           node scripts/test-public-user-voice-check.js

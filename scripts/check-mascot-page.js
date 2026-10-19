@@ -126,6 +126,9 @@ async function checkRenderedPage() {
   vm.runInNewContext(script, page);
   await page.window.initMascot();
   const rendered = main.innerHTML;
+  if (!html.includes('<!-- mascot-content:start -->' + rendered + '<!-- mascot-content:end -->')) fail('static gallery must match the full current renderer');
+  const staticNavigation = html.match(/<!-- mascot-nav:start -->([^]*?)<!-- mascot-nav:end -->/);
+  if (!staticNavigation || (staticNavigation[1].match(/<a /g) || []).length !== content.nav.length) fail('static navigation must contain every shared navigation entry');
   if ((rendered.match(/class="evo-character"/g) || []).length !== 1
     || (rendered.match(/class="evo-asset"/g) || []).length !== 7) fail('rendered gallery must show one family and all seven accepted images');
   if ((rendered.match(/<strong>Bruno<\/strong>/g) || []).length !== 6) fail('rendered applications must keep all six Bruno speakers');
