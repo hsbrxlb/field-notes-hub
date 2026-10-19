@@ -55,8 +55,11 @@ for (const file of files) {
     for (const match of source.matchAll(/font-size\s*:\s*([0-9.]+)px/gi)) {
       if (Number(match[1]) < 12) errors.push(`${relative}: 可见字号低于12px: ${match[0]}`);
     }
-    for (const match of source.matchAll(/url\([^)]*background\.png[^)]*\)/gi)) {
-      if (relative !== 'theme.css' || match[0] !== `url('${identityBackground}')`) {
+    if (!['theme.css', 'mascot.css'].includes(relative) && /--identity-background|var\(--identity-background\)/.test(source)) errors.push(`${relative}: 固定背景变量不得在其他页面覆盖或复用`);
+    for (const match of source.matchAll(/url\([^)]*background\.(?:png|avif)[^)]*\)/gi)) {
+      const canonical = relative === 'theme.css' && match[0] === `url('${identityBackground}')`;
+      const mascotDerivative = relative === 'mascot.css' && ["url('assets/background.avif')", "url('assets/background.png')"].includes(match[0]);
+      if (!canonical && !mascotDerivative) {
         errors.push(`${relative}: 只有 theme.css 的 Hub 固定流体背景可以作为全页背景`);
       }
     }
@@ -86,9 +89,17 @@ if (/discord-member-offer|email-files|email-proposal/.test(emailRenderer)) error
 const theme = fs.readFileSync(path.join(root, 'theme.css'), 'utf8');
 const identityReferences = theme.match(/url\('assets\/background\.png'\)/g) || [];
 const bodyBefore = theme.match(/body::before\s*\{([^}]*)\}/s)?.[1] || '';
-if (identityReferences.length !== 1 || !bodyBefore.includes(`url('${identityBackground}')`)) {
-  errors.push(`theme.css: ${identityBackground} 必须且只能由 body::before 引用一次`);
+if (identityReferences.length !== 1 || !theme.includes(`--identity-background: url('${identityBackground}')`) || !bodyBefore.includes('var(--identity-background)')) {
+  errors.push(`theme.css: 固定 PNG 必须作为唯一背景变量默认值，由 body::before 引用`);
 }
+const mascotTheme = fs.readFileSync(path.join(root, 'mascot.css'), 'utf8');
+const derivativeRule = `body[data-page="mascot"] {
+    --identity-background: image-set(url('assets/background.avif') type('image/avif'), url('assets/background.png') type('image/png'));
+  }`;
+if (!mascotTheme.includes(derivativeRule)
+  || !mascotTheme.includes("@supports (background-image: image-set(url('assets/background.avif') type('image/avif')))")) errors.push('mascot.css: 同画面 AVIF 背景必须限定本页并保留 PNG 回退');
+if ((mascotTheme.match(/--identity-background\s*:/g) || []).length !== 1) errors.push('mascot.css: 背景衍生只允许一次限定覆盖');
+if (!fs.existsSync(path.join(root, 'assets/background.avif'))) errors.push('mascot.css: AVIF 背景衍生缺失');
 if (/display\s*:\s*none|visibility\s*:\s*hidden|opacity\s*:\s*0(?:\D|$)/i.test(bodyBefore)) {
   errors.push('theme.css: Hub 固定流体背景不得隐藏');
 }

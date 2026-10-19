@@ -7,9 +7,11 @@
     .replaceAll("'", '&#039;');
 
   function assetFigure(asset, eager = false, priority = false) {
+    const stem = asset.src.replace(/\.webp$/, '');
+    const sizes = '(max-width: 760px) calc(100vw - 36px), (max-width: 980px) calc(100vw - 84px), (max-width: 1180px) calc(100vw - 320px), min(741px, calc((100vw - 524px) / 2))';
     return '<figure class="evo-asset">'
-      + '<a class="evo-asset-image" href="' + safe(asset.src) + '" aria-label="查看原图：' + safe(asset.caption) + '"><img src="' + safe(asset.src) + '" alt="' + safe(asset.alt)
-      + '" width="' + (asset.width || 1254) + '" height="' + (asset.height || 1254) + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"' + (priority ? ' fetchpriority="high"' : '') + '></a>'
+      + '<a class="evo-asset-image" href="' + safe(asset.src) + '" aria-label="查看原图：' + safe(asset.caption) + '"><picture><source type="image/avif" srcset="' + safe(stem + '-768.avif') + ' 768w, ' + safe(stem + '.avif') + ' ' + (asset.width || 1254) + 'w" sizes="' + sizes + '"><img src="' + safe(asset.src) + '" alt="' + safe(asset.alt)
+      + '" width="' + (asset.width || 1254) + '" height="' + (asset.height || 1254) + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"' + (priority ? ' fetchpriority="high"' : '') + '></picture></a>'
       + '<figcaption>' + safe(asset.caption) + '</figcaption></figure>';
   }
 

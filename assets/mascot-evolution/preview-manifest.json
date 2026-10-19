@@ -1,0 +1,181 @@
+{
+  "format": "same-artwork-avif-previews-v1",
+  "images": [
+    {
+      "source": "assets/mascot-evolution/bull-v2/BULL-V2-01.webp",
+      "source_bytes": 237556,
+      "source_sha256": "08578d3974b35f74f606e94af11e90c6397f73f621a49ec513de5be4825a7a92",
+      "variants": [
+        {
+          "path": "assets/mascot-evolution/bull-v2/BULL-V2-01.avif",
+          "bytes": 104687,
+          "sha256": "05c505c0f940913b79ec10f51377b75cc7cba7c02c8bac38a3b87c86579a3a7f",
+          "width": 1254,
+          "height": 1254,
+          "quality": 55
+        },
+        {
+          "path": "assets/mascot-evolution/bull-v2/BULL-V2-01-768.avif",
+          "bytes": 48798,
+          "sha256": "448a5a1c01e8d488d392056ae726e4521861493e7aa23cc2e6e9cadfbccbb372",
+          "width": 768,
+          "height": 768,
+          "quality": 55
+        }
+      ]
+    },
+    {
+      "source": "assets/mascot-evolution/bull-v2/BULL-V2-02.webp",
+      "source_bytes": 202532,
+      "source_sha256": "2e01b972e63469ee8142c0d71fa4a05246355b9dd2063780809914390ff259b5",
+      "variants": [
+        {
+          "path": "assets/mascot-evolution/bull-v2/BULL-V2-02.avif",
+          "bytes": 89139,
+          "sha256": "5cca721837c2183ea23d79e55832d1ea40c6df7667b5efdd614ded78849b6cd0",
+          "width": 1254,
+          "height": 1254,
+          "quality": 55
+        },
+        {
+          "path": "assets/mascot-evolution/bull-v2/BULL-V2-02-768.avif",
+          "bytes": 42174,
+          "sha256": "66f85e51d3198abfe9ae45805a554ff0c16ffaa73b4cf6c639e02e99e5bf4979",
+          "width": 768,
+          "height": 768,
+          "quality": 55
+        }
+      ]
+    },
+    {
+      "source": "assets/mascot-evolution/bull-v2/BULL-V2-03.webp",
+      "source_bytes": 229424,
+      "source_sha256": "b8a4c62f8c3c3a58e3cbd636088fc6f2dd3fa7d7823e6346c95b052b4a56dffa",
+      "variants": [
+        {
+          "path": "assets/mascot-evolution/bull-v2/BULL-V2-03.avif",
+          "bytes": 98123,
+          "sha256": "81e1285a065ca4cf1ccdf3808c2faeb796f8db396febf0ad924fad7322063204",
+          "width": 1254,
+          "height": 1254,
+          "quality": 55
+        },
+        {
+          "path": "assets/mascot-evolution/bull-v2/BULL-V2-03-768.avif",
+          "bytes": 46482,
+          "sha256": "4623eebd9bab8ccb6526a6e2dcb871b5ad7ffe26dc297f2a7d1c0504e1f5cf1a",
+          "width": 768,
+          "height": 768,
+          "quality": 55
+        }
+      ]
+    },
+    {
+      "source": "assets/mascot-evolution/bull-v2/BULL-V2-04.webp",
+      "source_bytes": 368082,
+      "source_sha256": "d31dc2023ef216edacb12b2c7bf94f30f9d730a73a5764152989c19c49317183",
+      "variants": [
+        {
+          "path": "assets/mascot-evolution/bull-v2/BULL-V2-04.avif",
+          "bytes": 143725,
+          "sha256": "b1bd418454c42eded5ee22764b96cde70fcb5d6250e91d505cc25625c6c50923",
+          "width": 1254,
+          "height": 1254,
+          "quality": 55
+        },
+        {
+          "path": "assets/mascot-evolution/bull-v2/BULL-V2-04-768.avif",
+          "bytes": 68680,
+          "sha256": "92627f556fd9c0b917782863d06202c49871a135ae5b38927741992a28ac867e",
+          "width": 768,
+          "height": 768,
+          "quality": 55
+        }
+      ]
+    },
+    {
+      "source": "assets/mascot-evolution/bull-v2/BULL-V2-05.webp",
+      "source_bytes": 255684,
+      "source_sha256": "9283baa1f5da7aee2207a7bca6e0cf5a9e74ff0e75fc3fb7fc0e36b438cfce1f",
+      "variants": [
+        {
+          "path": "assets/mascot-evolution/bull-v2/BULL-V2-05.avif",
+          "bytes": 109115,
+          "sha256": "24146b83a91d061cec990df469728a4c111b9bca4c6ea20d774a275b9abae7f5",
+          "width": 1254,
+          "height": 1254,
+          "quality": 55
+        },
+        {
+          "path": "assets/mascot-evolution/bull-v2/BULL-V2-05-768.avif",
+          "bytes": 51463,
+          "sha256": "2bf9417cbe99410a254911863cbe4e79fc0256dca5255262570394dd1078012a",
+          "width": 768,
+          "height": 768,
+          "quality": 55
+        }
+      ]
+    },
+    {
+      "source": "assets/mascot-evolution/bull-v2/BULL-V2-SOCIAL.webp",
+      "source_bytes": 296802,
+      "source_sha256": "5fe74cb9ae5d64b39a3931a76af2f9ba86912a2555b3c961803c549484e408d0",
+      "variants": [
+        {
+          "path": "assets/mascot-evolution/bull-v2/BULL-V2-SOCIAL.avif",
+          "bytes": 122599,
+          "sha256": "404a24efed1f9aa9396d55a345fdbf633c50014694dd0de7aef0563b5f5f13ed",
+          "width": 1122,
+          "height": 1402,
+          "quality": 55
+        },
+        {
+          "path": "assets/mascot-evolution/bull-v2/BULL-V2-SOCIAL-768.avif",
+          "bytes": 67191,
+          "sha256": "6df11a2b7f28fe1e40651030d3643ea3a4c054d97a333edfef8ec1555edc0b73",
+          "width": 768,
+          "height": 960,
+          "quality": 55
+        }
+      ]
+    },
+    {
+      "source": "assets/mascot-evolution/bull-v2/BULL-V2-MERCH.webp",
+      "source_bytes": 365602,
+      "source_sha256": "d053c39ee78df365c96549163ce2aae0ddeb5ec8c4e8686c8811531fdc248606",
+      "variants": [
+        {
+          "path": "assets/mascot-evolution/bull-v2/BULL-V2-MERCH.avif",
+          "bytes": 146412,
+          "sha256": "39c0e8ee562374502ba43001a85e8211b9f242e83d27e2cbb923f9ecc264146f",
+          "width": 1536,
+          "height": 1024,
+          "quality": 55
+        },
+        {
+          "path": "assets/mascot-evolution/bull-v2/BULL-V2-MERCH-768.avif",
+          "bytes": 40957,
+          "sha256": "355710f4408e6884b9b5aaf6c30045d5e8dc15941c8b3b13453c8be0c20c3c09",
+          "width": 768,
+          "height": 512,
+          "quality": 55
+        }
+      ]
+    },
+    {
+      "source": "assets/background.png",
+      "source_bytes": 2120903,
+      "source_sha256": "7dc174d8d78bca4d895935e355ea81dca234d2bf5eb93b03aa9e70271b84ab92",
+      "variants": [
+        {
+          "path": "assets/background.avif",
+          "bytes": 74595,
+          "sha256": "a96d60c419817a776fa35e28136f00004543e96a281a3f9ef113edb50bf54ac9",
+          "width": 1626,
+          "height": 967,
+          "quality": 65
+        }
+      ]
+    }
+  ]
+}

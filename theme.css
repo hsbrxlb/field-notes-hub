@@ -1,6 +1,7 @@
 :root {
   color-scheme: dark;
   --page-bg: #080a08;
+  --identity-background: url('assets/background.png');
   --surface: #0d100d;
   --workspace-surface: rgba(8, 10, 8, .16);
   --content-surface: rgba(8, 10, 8, .40);
@@ -74,7 +75,7 @@ body::after {
   z-index: 0;
   pointer-events: none;
 }
-body::before { background: var(--page-bg) url('assets/background.png') 54% center / cover no-repeat; }
+body::before { background: var(--page-bg) var(--identity-background) 54% center / cover no-repeat; }
 body::after { background: rgba(2, 4, 2, .22); }
 .app-shell { z-index: 1; }
 

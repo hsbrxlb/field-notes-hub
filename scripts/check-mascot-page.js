@@ -88,6 +88,52 @@ for (const asset of mascot.applications) {
 }
 if (new Set(sources).size !== sources.length || new Set(codes).size !== codes.length) fail('application images are duplicated');
 
+// Validate committed same-artwork derivatives without requiring a codec at CI time.
+const previewManifest = JSON.parse(read('assets/mascot-evolution/preview-manifest.json'));
+if (previewManifest.format !== 'same-artwork-avif-previews-v1' || previewManifest.images.length !== 8) fail('the same-artwork preview manifest must cover seven gallery images and the background');
+const expectedSources = new Set([...sources, 'assets/background.png']);
+function avifSize(buffer) {
+  if (buffer.toString('ascii', 4, 8) !== 'ftyp') return null;
+  const ftypEnd = buffer.readUInt32BE(0);
+  if (ftypEnd < 16 || ftypEnd > buffer.length || !buffer.toString('ascii', 8, ftypEnd).includes('avif')) return null;
+  function boxes(start, end) {
+    for (let offset = start; offset + 8 <= end;) {
+      const length = buffer.readUInt32BE(offset);
+      if (length < 8 || offset + length > end) return null;
+      const kind = buffer.toString('ascii', offset + 4, offset + 8);
+      if (kind === 'ispe' && length >= 20) return { width: buffer.readUInt32BE(offset + 12), height: buffer.readUInt32BE(offset + 16) };
+      if (['meta', 'iprp', 'ipco'].includes(kind)) {
+        const result = boxes(offset + 8 + (kind === 'meta' ? 4 : 0), offset + length);
+        if (result) return result;
+      }
+      offset += length;
+    }
+    return null;
+  }
+  return boxes(0, buffer.length);
+}
+for (const entry of previewManifest.images) {
+  if (!expectedSources.delete(entry.source)) fail('unexpected or duplicate preview source');
+  const original = fs.readFileSync(path.join(root, entry.source));
+  if (entry.source_bytes !== original.length || crypto.createHash('sha256').update(original).digest('hex') !== entry.source_sha256) fail(`preview source changed: ${entry.source}`);
+  const background = entry.source === 'assets/background.png';
+  const originalSize = background ? { width: original.readUInt32BE(16), height: original.readUInt32BE(20) } : webpSize(path.join(root, entry.source));
+  const stem = entry.source.replace(/\.(png|webp)$/, '');
+  const expectedVariants = new Set(background ? [stem + '.avif'] : [stem + '.avif', stem + '-768.avif']);
+  for (const variant of entry.variants) {
+    if (!expectedVariants.delete(variant.path)) fail('unexpected or duplicate AVIF variant');
+    const bytes = fs.readFileSync(path.join(root, variant.path));
+    const size = avifSize(bytes);
+    const width = variant.path.endsWith('-768.avif') ? 768 : originalSize.width;
+    const height = Math.round(originalSize.height * width / originalSize.width);
+    if (!size || size.width !== width || size.height !== height || variant.width !== width || variant.height !== height) fail(`AVIF dimensions are incorrect: ${variant.path}`);
+    if (variant.bytes !== bytes.length || crypto.createHash('sha256').update(bytes).digest('hex') !== variant.sha256) fail(`AVIF variant changed: ${variant.path}`);
+    if (bytes.length >= original.length) fail(`AVIF preview must reduce bytes: ${variant.path}`);
+  }
+  if (expectedVariants.size) fail('an AVIF preview size is missing');
+}
+if (expectedSources.size) fail('a preview source is missing');
+
 const kit = JSON.parse(read('data/mascot-kit.json'));
 if (kit.display_name !== 'Bruno') fail('the display name must be Bruno');
 if (kit.examples.length !== 6 || kit.examples.some((example) => example.speaker !== 'Bruno')) fail('all six application speakers must be Bruno');
@@ -126,6 +172,11 @@ async function checkRenderedPage() {
   vm.runInNewContext(script, page);
   await page.window.initMascot();
   const rendered = main.innerHTML;
+  if ((rendered.match(/<picture><source type="image\/avif"/g) || []).length !== 7) fail('all seven gallery images need responsive AVIF sources');
+  for (const source of sources) {
+    const stem = source.replace(/\.webp$/, '');
+    if (!rendered.includes(stem + '-768.avif 768w, ' + stem + '.avif ') || !rendered.includes('<img src="' + source + '"')) fail('responsive AVIF and original WebP fallback are required');
+  }
   if (!html.includes('<!-- mascot-content:start -->' + rendered + '<!-- mascot-content:end -->')) fail('static gallery must match the full current renderer');
   const staticNavigation = html.match(/<!-- mascot-nav:start -->([^]*?)<!-- mascot-nav:end -->/);
   if (!staticNavigation || (staticNavigation[1].match(/<a /g) || []).length !== content.nav.length) fail('static navigation must contain every shared navigation entry');

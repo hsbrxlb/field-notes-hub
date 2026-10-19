@@ -58,7 +58,7 @@ function setup(page = 'mascot', fetcher = async (url) => ({ ok: true, json: asyn
 (async () => {
   // The ordered deferred scripts establish the helper before automatic page startup.
   const html = read('mascot.html');
-  assert.match(html, /<script defer src="app\.js\?v=20261019-static"><\/script>\s*<script defer src="mascot\.js\?v=20261019-static">/);
+  assert.match(html, /<script defer src="app\.js\?v=20261019-static"><\/script>\s*<script defer src="mascot\.js\?v=20261019-avif">/);
   assert.equal(await require('./build-mascot-page.js').renderMascotPage(), html);
   const staticPage = setup('mascot', async () => { throw new Error('Static page must not fetch data'); }, true);
   await flush();
@@ -77,6 +77,12 @@ function setup(page = 'mascot', fetcher = async (url) => ({ ok: true, json: asyn
   assert.equal(stalledNav.element('#content').attributes['aria-busy'], 'false');
   assert.equal((stalledNav.element('#content').innerHTML.match(/loading="eager"/g) || []).length, 2);
   assert.equal((stalledNav.element('#content').innerHTML.match(/fetchpriority="high"/g) || []).length, 1);
+  const galleryMarkup = stalledNav.element('#content').innerHTML;
+  assert.equal((galleryMarkup.match(/<picture>/g) || []).length, 7);
+  assert.equal((galleryMarkup.match(/<source type="image\/avif"/g) || []).length, 7);
+  assert.equal((galleryMarkup.match(/-768\.avif 768w/g) || []).length, 7);
+  assert.equal((galleryMarkup.match(/<img src="assets\/mascot-evolution\/bull-v2\/[^" ]+\.webp"/g) || []).length, 7);
+  assert.equal((galleryMarkup.match(/<source[^>]+sizes="\(max-width: 760px\) calc\(100vw - 36px\)/g) || []).length, 7);
   assert.deepEqual(stalledNav.calls.map((call) => call.url).sort(), ['data/content.json', 'data/mascot-kit.json', 'data/mascot.json']);
   assert(stalledNav.calls.every((call) => call.options.cache === 'default'));
   for (const timer of stalledNav.timers.values()) timer();

@@ -58,7 +58,7 @@
 
 `mascot.html` 的导航、完整正文及首屏样式在发布时从现有 JSON、渲染器和三份 CSS 生成，打开页面无需等待数据请求，关闭 JavaScript 也能阅读。CI 自动运行 `node scripts/build-mascot-page.js`；本地修改导航或吉祥物数据后，运行同一命令更新 HTML。`node scripts/build-mascot-page.js --check` 检查同步情况。
 
-未预生成的页面仍有 12 秒请求超时与局部重试。首屏优先加载两张角色图，其他图片按需加载，保留原图入口与固定背景。回归检查：`node scripts/test-mascot-loading.js`。
+未预生成的页面仍有 12 秒请求超时与局部重试。首屏优先加载两张角色图，其他图片按需加载。七张展示图提供 768px 与原尺寸 AVIF 预览，WebP 与原图链接保留；固定背景使用同画面 AVIF 并保留 PNG 回退。图片修改后，在支持 AVIF 的 Pillow 环境运行 `python3 scripts/build-mascot-previews.py`，再重建 HTML。提交的 `assets/mascot-evolution/preview-manifest.json` 保存原图与变体散列和尺寸，CI 检查同步与完整性，不在线调用图片服务。回归检查：`node scripts/test-mascot-loading.js`。
 
 ## 本地预览
 
