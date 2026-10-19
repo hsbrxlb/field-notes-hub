@@ -6,7 +6,7 @@
   "categoryId": "993",
   "name": "YITAMOTOR Rock Crawler Front Bumper Compatible with 1987-1995 Jeep Wrangler YJ & 1997-2006 Wrangler TJ, Powder-Coated Off-Road Bumper with LED Lights & D-Rings",
   "url": "https://www.oedro.com/products/yitamotor-jeep-wrangler-tj-bull-bumper-0003-p-6639.html",
-  "capturedAt": "2026-10-13T07:31:49+00:00",
+  "capturedAt": "2026-10-19T01:37:52+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -152,37 +152,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/yitamotor-jeep-wrangler-tj-bull-bumper-0003-p-6639.html",
-      "capturedAt": "2026-10-13T07:31:49+00:00",
+      "capturedAt": "2026-10-19T01:37:52+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR Rock Crawler Front Bumper Compatible with 1987-1995 Jeep Wrangler YJ & 1997-2006 Wrangler TJ, Powder-Coated Off-Road Bumper with LED Lights & D-Rings"
     },
     "sku": {
       "url": "https://www.oedro.com/products/yitamotor-jeep-wrangler-tj-bull-bumper-0003-p-6639.html",
-      "capturedAt": "2026-10-13T07:31:49+00:00",
+      "capturedAt": "2026-10-19T01:37:52+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OE-Y01-J004_X1Y"
     },
     "brand": {
       "url": "https://www.oedro.com/products/yitamotor-jeep-wrangler-tj-bull-bumper-0003-p-6639.html",
-      "capturedAt": "2026-10-13T07:31:49+00:00",
+      "capturedAt": "2026-10-19T01:37:52+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/yitamotor-jeep-wrangler-tj-bull-bumper-0003-p-6639.html",
-      "capturedAt": "2026-10-13T07:31:49+00:00",
+      "capturedAt": "2026-10-19T01:37:52+00:00",
       "status": "official_page_snapshot",
       "excerpt": "for 1987-2006 Jeep Wrangler YJ and TJ All models"
     },
     "description": {
       "url": "https://www.oedro.com/products/yitamotor-jeep-wrangler-tj-bull-bumper-0003-p-6639.html",
-      "capturedAt": "2026-10-13T07:31:49+00:00",
+      "capturedAt": "2026-10-19T01:37:52+00:00",
       "status": "official_page_snapshot",
       "excerpt": "We strive to do our best by minimizing product issues and maximizing service quality. If you have any questions, please feel free to let us know, and we will do our best to help you. Such as:\nMissing required mounting hardware\nMissing installation instructions\nReceived damaged products\nReceived the wrong products\nFitment\nfor 1987-2006 Jeep Wrangler YJ and TJ All models\nFeatures\nBuilt-in Front LED Lighting (as pictured)\nBuilt-in winch plate with a wide opening, winch plate for up to 12,000 lbs (winch not included)\nIncludes 2 x heavy duty clevis (D-ring) attachments,\nD-Rings included\nManufactured from durable 2.9mm steel sheet and 2\"X0.120\" steel tubing\nFor your safety, professional installation recommended\nNote\nThe shackle is not designed for towing and recovery, refer to the owner's manual for towing and rescue information. Overload is not included in after-sales service."
     },
     "specifications": {
       "url": "https://www.oedro.com/products/yitamotor-jeep-wrangler-tj-bull-bumper-0003-p-6639.html",
-      "capturedAt": "2026-10-13T07:31:49+00:00",
+      "capturedAt": "2026-10-19T01:37:52+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "YITAMOTOR",
@@ -199,7 +199,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/yitamotor-jeep-wrangler-tj-bull-bumper-0003-p-6639.html",
-      "capturedAt": "2026-10-13T07:31:49+00:00",
+      "capturedAt": "2026-10-19T01:37:52+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -232,7 +232,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/yitamotor-jeep-wrangler-tj-bull-bumper-0003-p-6639.html",
-      "capturedAt": "2026-10-13T07:31:49+00:00",
+      "capturedAt": "2026-10-19T01:37:52+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "259.99",
@@ -245,7 +245,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/yitamotor-jeep-wrangler-tj-bull-bumper-0003-p-6639.html",
-      "capturedAt": "2026-10-13T07:31:49+00:00",
+      "capturedAt": "2026-10-19T01:37:52+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -273,5 +273,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

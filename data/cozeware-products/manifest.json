@@ -2,7 +2,7 @@
   "title": "Cozeware 官网产品资料库",
   "description": "按型号查看家居产品、规格、使用条件与官方资料。",
   "sourceUrl": "https://www.cozeware.com/",
-  "capturedAt": "2026-10-13T07:33:32+00:00",
+  "capturedAt": "2026-10-19T01:35:32+00:00",
   "productCount": 27,
   "brandCounts": {
     "COZEWARE": 27
@@ -38,5 +38,5 @@
   "notes": [
     "价格、库存、活动与预售阶段须在引用前打开对应官网页面核对。"
   ],
-  "version": "2026-10-13-341b61559e8f"
+  "version": "2026-10-19-394e5303cf5e"
 }

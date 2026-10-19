@@ -6,7 +6,7 @@
   "categoryId": "1096",
   "name": "COZEWARE 12000 BTU 20 SEER2 Mini Split Air Conditioner, 230V",
   "url": "https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html",
-  "capturedAt": "2026-10-13T07:33:25+00:00",
+  "capturedAt": "2026-10-19T01:35:26+00:00",
   "imageReview": {
     "reviewed_urls": [
       "https://img.yitashop.com/fit-in/800x800/10006/product/original/202601/58103B2F-A591-4753-2051-439C03C9FEEB.jpg",
@@ -316,14 +316,30 @@
         {
           "value": "5-Year Full Warranty; 7-Year Warranty on Compressor",
           "source_url": "https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html",
-          "sha256": "4103ecb09266b1cf943f26fe816866cf4bbc1fad3550b032685f8b368c6c7c61",
-          "location": "specifications.Warranty"
+          "sha256": "d7f6139b81b6830ba4387e994e708017a400de9b40588ae9fa89fa8a0f99a829",
+          "location": "specifications.Warranty",
+          "source_history": [
+            {
+              "sha256": "4103ecb09266b1cf943f26fe816866cf4bbc1fad3550b032685f8b368c6c7c61"
+            }
+          ],
+          "captured_at": "2026-10-19T01:35:26+00:00",
+          "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+          "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
         },
         {
           "value": "Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.",
           "source_url": "https://www.cozeware.com/article/warranty.html?aid=145",
-          "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947",
-          "location": "policy_warranty_definition_and_liability"
+          "sha256": "356f79b46e7d2ca22e494573c9004ba418858b9a11da6f69afae355ae765835d",
+          "location": "policy_warranty_definition_and_liability",
+          "source_history": [
+            {
+              "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947"
+            }
+          ],
+          "captured_at": "2026-10-19T01:34:52+00:00",
+          "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+          "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
         }
       ],
       "handling": "Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.",
@@ -626,7 +642,7 @@
     "is_deposit": false,
     "presale_delivery_text": "",
     "presale_price_snapshot": "499.99",
-    "captured_at": "2026-10-13T07:33:25+00:00",
+    "captured_at": "2026-10-19T01:35:26+00:00",
     "interpretation": "official codes/text preserved; stage not inferred solely from campaign name"
   },
   "usage_conditions": {
@@ -648,37 +664,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:35:26+00:00",
       "status": "official_page_snapshot",
       "excerpt": "COZEWARE 12000 BTU 20 SEER2 Mini Split Air Conditioner, 230V"
     },
     "sku": {
       "url": "https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:35:26+00:00",
       "status": "official_page_snapshot",
       "excerpt": "HAHEAC-TS12K230V"
     },
     "brand": {
       "url": "https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:35:26+00:00",
       "status": "official_page_snapshot",
       "excerpt": "COZEWARE"
     },
     "fitment": {
       "url": "https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:35:26+00:00",
       "status": "missing",
       "excerpt": ""
     },
     "description": {
       "url": "https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:35:26+00:00",
       "status": "official_page_snapshot",
       "excerpt": "12000 BTU Quick Cooling and Heating\n30-45% Energy Savings with 20 SEER2 and 8.5 HSPF2\nWhole-room 4D Airflow with 750 Sq Ft Coverage Area\n31 dB Whisper-Quiet Operation in Sleep Mode\nClean Air with Pet-safe R32 Refrigerant\nSmart Control via Cozeware App or Voice\nAHRI and ETL Certified for Reliable Performance"
     },
     "specifications": {
       "url": "https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:35:26+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": {
         "BTU Cooling": "12,000 BTU",
@@ -711,14 +727,30 @@
             {
               "value": "5-Year Full Warranty; 7-Year Warranty on Compressor",
               "source_url": "https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html",
-              "sha256": "4103ecb09266b1cf943f26fe816866cf4bbc1fad3550b032685f8b368c6c7c61",
-              "location": "specifications.Warranty"
+              "sha256": "d7f6139b81b6830ba4387e994e708017a400de9b40588ae9fa89fa8a0f99a829",
+              "location": "specifications.Warranty",
+              "source_history": [
+                {
+                  "sha256": "4103ecb09266b1cf943f26fe816866cf4bbc1fad3550b032685f8b368c6c7c61"
+                }
+              ],
+              "captured_at": "2026-10-19T01:35:26+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             },
             {
               "value": "Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.",
               "source_url": "https://www.cozeware.com/article/warranty.html?aid=145",
-              "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947",
-              "location": "policy_warranty_definition_and_liability"
+              "sha256": "356f79b46e7d2ca22e494573c9004ba418858b9a11da6f69afae355ae765835d",
+              "location": "policy_warranty_definition_and_liability",
+              "source_history": [
+                {
+                  "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947"
+                }
+              ],
+              "captured_at": "2026-10-19T01:34:52+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             }
           ],
           "handling": "Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.",
@@ -729,7 +761,7 @@
     },
     "variants": {
       "url": "https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:35:26+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [
@@ -812,7 +844,7 @@
     },
     "price": {
       "url": "https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:35:26+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "499.99",
@@ -825,7 +857,7 @@
     },
     "policies": {
       "url": "https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:35:26+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": {
         "productWarranty": [
@@ -853,14 +885,30 @@
             {
               "value": "5-Year Full Warranty; 7-Year Warranty on Compressor",
               "source_url": "https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html",
-              "sha256": "4103ecb09266b1cf943f26fe816866cf4bbc1fad3550b032685f8b368c6c7c61",
-              "location": "specifications.Warranty"
+              "sha256": "d7f6139b81b6830ba4387e994e708017a400de9b40588ae9fa89fa8a0f99a829",
+              "location": "specifications.Warranty",
+              "source_history": [
+                {
+                  "sha256": "4103ecb09266b1cf943f26fe816866cf4bbc1fad3550b032685f8b368c6c7c61"
+                }
+              ],
+              "captured_at": "2026-10-19T01:35:26+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             },
             {
               "value": "Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.",
               "source_url": "https://www.cozeware.com/article/warranty.html?aid=145",
-              "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947",
-              "location": "policy_warranty_definition_and_liability"
+              "sha256": "356f79b46e7d2ca22e494573c9004ba418858b9a11da6f69afae355ae765835d",
+              "location": "policy_warranty_definition_and_liability",
+              "source_history": [
+                {
+                  "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947"
+                }
+              ],
+              "captured_at": "2026-10-19T01:34:52+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             }
           ],
           "handling": "Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.",
@@ -875,5 +923,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

@@ -6,7 +6,7 @@
   "categoryId": "999",
   "name": "YITAMOTOR 42\" Tow Behind Lawn Sweeper Leaf Collector Sweeper for Lawn",
   "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-sweeper-0135-p-6833.html",
-  "capturedAt": "2026-10-13T07:33:28+00:00",
+  "capturedAt": "2026-10-19T01:38:34+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -169,37 +169,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-sweeper-0135-p-6833.html",
-      "capturedAt": "2026-10-13T07:33:28+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR 42\" Tow Behind Lawn Sweeper Leaf Collector Sweeper for Lawn"
     },
     "sku": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-sweeper-0135-p-6833.html",
-      "capturedAt": "2026-10-13T07:33:28+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OE-FRSSPF-0135-YITA"
     },
     "brand": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-sweeper-0135-p-6833.html",
-      "capturedAt": "2026-10-13T07:33:28+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-sweeper-0135-p-6833.html",
-      "capturedAt": "2026-10-13T07:33:28+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "missing",
       "excerpt": ""
     },
     "description": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-sweeper-0135-p-6833.html",
-      "capturedAt": "2026-10-13T07:33:28+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": "Quickly pick up leaves, branches, grass, and other debris, it is a good helper to help you clean up the yard.\nFeatures\nAdjustable\nSweeping Height: Easily adjust the sweeping height to match varying lawn\nconditions for efficient debris and grass clippings collection. This\npush lawn sweeper enhances cleaning performance on lawns, sidewalks, and\nyards, effectively picking up leaves, grass, and light debris without\ndamaging the turf.\nLarge 12 cu.ft. Hopper Capacity: The high-capacity hopper accommodates\nhuge volumes of leaves, weeds, twigs, grass clippings, and pine cones,\nminimizing frequent stops for emptying. Ideal as a leaf picker upper and\nyard sweeper for large properties, it features a convenient dumping\nrope for quick debris disposal.\nUniversal Hitch System: Quickly attach this tow behind lawn sweeper to\nlawn tractors, zero-turn mowers, or ATVs for versatile yard cleanup. The\nwalk behind lawn sweeper design ensures broad compatibility, making it a\nuniversal leaf sweeper for lawn maintenance and grass picker upper\ntasks.\nFour Powerful 10-inch Brushes: High-speed rotating nylon brushes sweep\nup leaves, pine needles, twigs, grass clippings, and even dog poop with\nexceptional effectiveness. This push yard sweeper delivers thorough\ncleaning as a dedicated pine cone sweeper and debris collector for\nartificial or natural grass.\nSmooth Durable Operation: Non-slip, heavy-duty wheels ensure smooth\nmaneuvering and minimal lawn impact while collecting debris. The walk\nbehind lawn sweeper functions reliably as a leaf grabber and solution,\noffering effortless operation during extended yard cleanup sessions."
     },
     "specifications": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-sweeper-0135-p-6833.html",
-      "capturedAt": "2026-10-13T07:33:28+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "YITAMOTOR",
@@ -215,7 +215,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-sweeper-0135-p-6833.html",
-      "capturedAt": "2026-10-13T07:33:28+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -277,7 +277,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-sweeper-0135-p-6833.html",
-      "capturedAt": "2026-10-13T07:33:28+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "249.99",
@@ -290,7 +290,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-sweeper-0135-p-6833.html",
-      "capturedAt": "2026-10-13T07:33:28+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -318,5 +318,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

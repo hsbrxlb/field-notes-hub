@@ -6,7 +6,7 @@
   "categoryId": "992",
   "name": "OEDRO FRP Hard Tri-fold Tonneau Cover Fold Truck Bed Covers Compatible with Toyota Tacoma 2024-2026 (Excl. Trail Edition) with 5 Feet Bed with Tacoma Bed Rail",
   "url": "https://www.oedro.com/products/oedro-2024-hard-5ft-toyota-tacoma-tonneau-cover-3020-p-6762.html",
-  "capturedAt": "2026-10-13T07:32:36+00:00",
+  "capturedAt": "2026-10-19T01:38:11+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -30,7 +30,7 @@
   "image_facts": [],
   "conflicts": [
     {
-      "captured_at": "2026-10-13T07:32:36+00:00",
+      "captured_at": "2026-10-19T01:38:11+00:00",
       "claims": [
         {
           "field": "specifications.Material",
@@ -187,12 +187,12 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/oedro-2024-hard-5ft-toyota-tacoma-tonneau-cover-3020-p-6762.html",
-      "capturedAt": "2026-10-13T07:32:36+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": "OEDRO FRP Hard Tri-fold Tonneau Cover Fold Truck Bed Covers Compatible with Toyota Tacoma 2024-2026 (Excl. Trail Edition) with 5 Feet Bed with Tacoma Bed Rail",
       "conflicts": [
         {
-          "captured_at": "2026-10-13T07:32:36+00:00",
+          "captured_at": "2026-10-19T01:38:11+00:00",
           "claims": [
             {
               "field": "specifications.Material",
@@ -224,30 +224,30 @@
     },
     "sku": {
       "url": "https://www.oedro.com/products/oedro-2024-hard-5ft-toyota-tacoma-tonneau-cover-3020-p-6762.html",
-      "capturedAt": "2026-10-13T07:32:36+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEEPTC-3020"
     },
     "brand": {
       "url": "https://www.oedro.com/products/oedro-2024-hard-5ft-toyota-tacoma-tonneau-cover-3020-p-6762.html",
-      "capturedAt": "2026-10-13T07:32:36+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEDRO"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/oedro-2024-hard-5ft-toyota-tacoma-tonneau-cover-3020-p-6762.html",
-      "capturedAt": "2026-10-13T07:32:36+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "missing",
       "excerpt": ""
     },
     "description": {
       "url": "https://www.oedro.com/products/oedro-2024-hard-5ft-toyota-tacoma-tonneau-cover-3020-p-6762.html",
-      "capturedAt": "2026-10-13T07:32:36+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": "The Hard Tri-Fold Tonneau Cover for 2024-2026 Toyota Tacoma (5ft Bed). The premium hard tri-fold tonneau cover automatically latches securely into place when folded down, offering hassle-free operation for both enhanced security and convenience.\nFeatures:\nSecure Fit with Added Convenience: This tonneau cover is engineered for a precise, secure fit and includes thoughtful upgrades. a complimentary LED light for improved nighttime visibility.\nSuperior Cargo Protection: Built with high-strength fiberglass (FRP) panels, this hard tri-fold tonneau cover offers exceptional protection against rain, snow, and road debris. It also resists impact and sharp objects, keeping your cargo safe and secure in all conditions.\nQuick, No-Drill Installation: Designed for hassle-free setup, this FRP hard tri-fold tonneau cover installs easily with clear instructions and requires no drilling. Get it mounted quickly and ready to use. (Note: Cargo racks must be removed prior to installation.)\nHeavy-Duty Durability You Can Trust: Reinforced fiberglass panels deliver long-lasting strength and impressive load-bearing capacity. A robust locking system keeps the cover firmly closed while driving, giving you confidence on every trip.\nSafe & Reliable Operation: Install the cover according to the included instructions and ensure all bolts are fully tightened before driving. For safety, do not drive with the tonneau cover partially open.\n1-year Warranty. For your safety, professional installation is recommended.\nFitment:\nFits for the 2024-2026 Toyota Tacoma (Excluding Trail Edition) with a 5ft bed and Tacoma Bed Rail system.",
       "conflicts": [
         {
-          "captured_at": "2026-10-13T07:32:36+00:00",
+          "captured_at": "2026-10-19T01:38:11+00:00",
           "claims": [
             {
               "field": "specifications.Material",
@@ -279,7 +279,7 @@
     },
     "specifications": {
       "url": "https://www.oedro.com/products/oedro-2024-hard-5ft-toyota-tacoma-tonneau-cover-3020-p-6762.html",
-      "capturedAt": "2026-10-13T07:32:36+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": {
         "Bed size": "5 ft",
@@ -296,7 +296,7 @@
       },
       "conflicts": [
         {
-          "captured_at": "2026-10-13T07:32:36+00:00",
+          "captured_at": "2026-10-19T01:38:11+00:00",
           "claims": [
             {
               "field": "specifications.Material",
@@ -329,7 +329,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/oedro-2024-hard-5ft-toyota-tacoma-tonneau-cover-3020-p-6762.html",
-      "capturedAt": "2026-10-13T07:32:36+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -362,7 +362,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/oedro-2024-hard-5ft-toyota-tacoma-tonneau-cover-3020-p-6762.html",
-      "capturedAt": "2026-10-13T07:32:36+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "499.99",
@@ -375,7 +375,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/oedro-2024-hard-5ft-toyota-tacoma-tonneau-cover-3020-p-6762.html",
-      "capturedAt": "2026-10-13T07:32:36+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -403,5 +403,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

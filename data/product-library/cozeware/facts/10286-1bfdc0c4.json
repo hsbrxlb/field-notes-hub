@@ -6,7 +6,7 @@
   "categoryId": "1096",
   "name": "COZEWARE MultiCoze Pro Series 27000 BTU 3-Zone Mini Split AC (9K+9K+9K), 22 SEER2",
   "url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-  "capturedAt": "2026-10-13T07:32:40+00:00",
+  "capturedAt": "2026-10-19T01:35:07+00:00",
   "imageReview": {
     "reviewed_urls": [
       "https://img.yitashop.com/fit-in/800x800/10006/product/original/202607/EF60EC82-79F9-DD61-3162-B71DB1430DA3.jpg",
@@ -327,8 +327,16 @@
         {
           "value": "1350 sq ft (450+450+450)",
           "source_url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-          "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64",
-          "location": "specifications.Fitting Area"
+          "sha256": "19b005a4a7986d05fd256440ae72b9eede5e23fb49495e868add446f3e8d7765",
+          "location": "specifications.Fitting Area",
+          "source_history": [
+            {
+              "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64"
+            }
+          ],
+          "captured_at": "2026-10-19T01:35:07+00:00",
+          "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+          "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
         }
       ],
       "handling": "preserve both; do not select or repair an official claim without model-specific clarification",
@@ -348,8 +356,16 @@
         {
           "value": "5 to 125 °F",
           "source_url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-          "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64",
-          "location": "specifications_or_identity"
+          "sha256": "19b005a4a7986d05fd256440ae72b9eede5e23fb49495e868add446f3e8d7765",
+          "location": "specifications_or_identity",
+          "source_history": [
+            {
+              "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64"
+            }
+          ],
+          "captured_at": "2026-10-19T01:35:07+00:00",
+          "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+          "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
         }
       ],
       "handling": "image vs table temperature difference; preserve both",
@@ -369,8 +385,16 @@
         {
           "value": "9.5",
           "source_url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-          "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64",
-          "location": "specifications_or_identity"
+          "sha256": "19b005a4a7986d05fd256440ae72b9eede5e23fb49495e868add446f3e8d7765",
+          "location": "specifications_or_identity",
+          "source_history": [
+            {
+              "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64"
+            }
+          ],
+          "captured_at": "2026-10-19T01:35:07+00:00",
+          "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+          "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
         }
       ],
       "handling": "EnergyGuide rating requires verification of exact matched system/coil; preserve differing values",
@@ -384,14 +408,30 @@
         {
           "value": "5-Year Full Warranty; 7-Year Warranty on Compressor",
           "source_url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-          "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64",
-          "location": "specifications.Warranty"
+          "sha256": "19b005a4a7986d05fd256440ae72b9eede5e23fb49495e868add446f3e8d7765",
+          "location": "specifications.Warranty",
+          "source_history": [
+            {
+              "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64"
+            }
+          ],
+          "captured_at": "2026-10-19T01:35:07+00:00",
+          "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+          "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
         },
         {
           "value": "Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.",
           "source_url": "https://www.cozeware.com/article/warranty.html?aid=145",
-          "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947",
-          "location": "policy_warranty_definition_and_liability"
+          "sha256": "356f79b46e7d2ca22e494573c9004ba418858b9a11da6f69afae355ae765835d",
+          "location": "policy_warranty_definition_and_liability",
+          "source_history": [
+            {
+              "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947"
+            }
+          ],
+          "captured_at": "2026-10-19T01:34:52+00:00",
+          "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+          "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
         }
       ],
       "handling": "Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.",
@@ -404,8 +444,16 @@
         {
           "value": "9.5",
           "source_url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-          "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64",
-          "location": "specifications.Energy Efficiency Ratio (HSPF2)"
+          "sha256": "19b005a4a7986d05fd256440ae72b9eede5e23fb49495e868add446f3e8d7765",
+          "location": "specifications.Energy Efficiency Ratio (HSPF2)",
+          "source_history": [
+            {
+              "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64"
+            }
+          ],
+          "captured_at": "2026-10-19T01:35:07+00:00",
+          "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+          "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
         },
         {
           "value": 10,
@@ -424,8 +472,16 @@
         {
           "value": "27,000 BTU (9K+9K+9K)",
           "source_url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-          "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64",
-          "location": "specifications.BTU Cooling"
+          "sha256": "19b005a4a7986d05fd256440ae72b9eede5e23fb49495e868add446f3e8d7765",
+          "location": "specifications.BTU Cooling",
+          "source_history": [
+            {
+              "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64"
+            }
+          ],
+          "captured_at": "2026-10-19T01:35:07+00:00",
+          "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+          "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
         },
         {
           "value": 28000,
@@ -444,8 +500,16 @@
         {
           "value": "27,000 BTU (9K+9K+9K)",
           "source_url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-          "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64",
-          "location": "specifications.BTU Heating"
+          "sha256": "19b005a4a7986d05fd256440ae72b9eede5e23fb49495e868add446f3e8d7765",
+          "location": "specifications.BTU Heating",
+          "source_history": [
+            {
+              "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64"
+            }
+          ],
+          "captured_at": "2026-10-19T01:35:07+00:00",
+          "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+          "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
         },
         {
           "value": 28000,
@@ -629,7 +693,7 @@
         "sku": "HAHEAC-TP4Z42K",
         "sku_id": "10289",
         "spu_id": "6954",
-        "option": "MultiCoze Pro | 4-Zone 42,000 BTU (9K+9K+12K+12K)",
+        "option": "MultiCoze Pro | 4-Zone 38,000 BTU (9K+9K+12K+12K)",
         "url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html"
       }
     ],
@@ -778,7 +842,7 @@
     "is_deposit": false,
     "presale_delivery_text": "",
     "presale_price_snapshot": "1,799.99",
-    "captured_at": "2026-10-13T07:32:40+00:00",
+    "captured_at": "2026-10-19T01:35:07+00:00",
     "interpretation": "official codes/text preserved; stage not inferred solely from campaign name"
   },
   "usage_conditions": {
@@ -800,37 +864,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-      "capturedAt": "2026-10-13T07:32:40+00:00",
+      "capturedAt": "2026-10-19T01:35:07+00:00",
       "status": "official_page_snapshot",
       "excerpt": "COZEWARE MultiCoze Pro Series 27000 BTU 3-Zone Mini Split AC (9K+9K+9K), 22 SEER2"
     },
     "sku": {
       "url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-      "capturedAt": "2026-10-13T07:32:40+00:00",
+      "capturedAt": "2026-10-19T01:35:07+00:00",
       "status": "official_page_snapshot",
       "excerpt": "HAHEAC-TP3Z27K"
     },
     "brand": {
       "url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-      "capturedAt": "2026-10-13T07:32:40+00:00",
+      "capturedAt": "2026-10-19T01:35:07+00:00",
       "status": "official_page_snapshot",
       "excerpt": "COZEWARE"
     },
     "fitment": {
       "url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-      "capturedAt": "2026-10-13T07:32:40+00:00",
+      "capturedAt": "2026-10-19T01:35:07+00:00",
       "status": "missing",
       "excerpt": ""
     },
     "description": {
       "url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-      "capturedAt": "2026-10-13T07:32:40+00:00",
+      "capturedAt": "2026-10-19T01:35:07+00:00",
       "status": "official_page_snapshot",
       "excerpt": "27,000 BTU 3-Zone Cooling and Heating\n50-60% Energy Savings with 22 SEER2 and 9.5 HSPF2\nIndividual Room Control and Temperature Settings\nWhole-room 4D Airflow with Total 1350 Sq Ft Coverage Area\n30 dB Whisper-Quiet Operation in Sleep Mode\nClean Air with Pet-safe R32 Refrigerant\nSmart Control via Cozeware App or Voice\nENERGY STAR, AHRI and ETL Certified Performance"
     },
     "specifications": {
       "url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-      "capturedAt": "2026-10-13T07:32:40+00:00",
+      "capturedAt": "2026-10-19T01:35:07+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": {
         "BTU Cooling": "27,000 BTU (9K+9K+9K)",
@@ -870,8 +934,16 @@
             {
               "value": "1350 sq ft (450+450+450)",
               "source_url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-              "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64",
-              "location": "specifications.Fitting Area"
+              "sha256": "19b005a4a7986d05fd256440ae72b9eede5e23fb49495e868add446f3e8d7765",
+              "location": "specifications.Fitting Area",
+              "source_history": [
+                {
+                  "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64"
+                }
+              ],
+              "captured_at": "2026-10-19T01:35:07+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             }
           ],
           "handling": "preserve both; do not select or repair an official claim without model-specific clarification",
@@ -891,8 +963,16 @@
             {
               "value": "5 to 125 °F",
               "source_url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-              "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64",
-              "location": "specifications_or_identity"
+              "sha256": "19b005a4a7986d05fd256440ae72b9eede5e23fb49495e868add446f3e8d7765",
+              "location": "specifications_or_identity",
+              "source_history": [
+                {
+                  "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64"
+                }
+              ],
+              "captured_at": "2026-10-19T01:35:07+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             }
           ],
           "handling": "image vs table temperature difference; preserve both",
@@ -912,8 +992,16 @@
             {
               "value": "9.5",
               "source_url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-              "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64",
-              "location": "specifications_or_identity"
+              "sha256": "19b005a4a7986d05fd256440ae72b9eede5e23fb49495e868add446f3e8d7765",
+              "location": "specifications_or_identity",
+              "source_history": [
+                {
+                  "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64"
+                }
+              ],
+              "captured_at": "2026-10-19T01:35:07+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             }
           ],
           "handling": "EnergyGuide rating requires verification of exact matched system/coil; preserve differing values",
@@ -927,14 +1015,30 @@
             {
               "value": "5-Year Full Warranty; 7-Year Warranty on Compressor",
               "source_url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-              "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64",
-              "location": "specifications.Warranty"
+              "sha256": "19b005a4a7986d05fd256440ae72b9eede5e23fb49495e868add446f3e8d7765",
+              "location": "specifications.Warranty",
+              "source_history": [
+                {
+                  "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64"
+                }
+              ],
+              "captured_at": "2026-10-19T01:35:07+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             },
             {
               "value": "Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.",
               "source_url": "https://www.cozeware.com/article/warranty.html?aid=145",
-              "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947",
-              "location": "policy_warranty_definition_and_liability"
+              "sha256": "356f79b46e7d2ca22e494573c9004ba418858b9a11da6f69afae355ae765835d",
+              "location": "policy_warranty_definition_and_liability",
+              "source_history": [
+                {
+                  "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947"
+                }
+              ],
+              "captured_at": "2026-10-19T01:34:52+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             }
           ],
           "handling": "Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.",
@@ -947,8 +1051,16 @@
             {
               "value": "9.5",
               "source_url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-              "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64",
-              "location": "specifications.Energy Efficiency Ratio (HSPF2)"
+              "sha256": "19b005a4a7986d05fd256440ae72b9eede5e23fb49495e868add446f3e8d7765",
+              "location": "specifications.Energy Efficiency Ratio (HSPF2)",
+              "source_history": [
+                {
+                  "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64"
+                }
+              ],
+              "captured_at": "2026-10-19T01:35:07+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             },
             {
               "value": 10,
@@ -967,8 +1079,16 @@
             {
               "value": "27,000 BTU (9K+9K+9K)",
               "source_url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-              "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64",
-              "location": "specifications.BTU Cooling"
+              "sha256": "19b005a4a7986d05fd256440ae72b9eede5e23fb49495e868add446f3e8d7765",
+              "location": "specifications.BTU Cooling",
+              "source_history": [
+                {
+                  "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64"
+                }
+              ],
+              "captured_at": "2026-10-19T01:35:07+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             },
             {
               "value": 28000,
@@ -987,8 +1107,16 @@
             {
               "value": "27,000 BTU (9K+9K+9K)",
               "source_url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-              "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64",
-              "location": "specifications.BTU Heating"
+              "sha256": "19b005a4a7986d05fd256440ae72b9eede5e23fb49495e868add446f3e8d7765",
+              "location": "specifications.BTU Heating",
+              "source_history": [
+                {
+                  "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64"
+                }
+              ],
+              "captured_at": "2026-10-19T01:35:07+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             },
             {
               "value": 28000,
@@ -1005,7 +1133,7 @@
     },
     "variants": {
       "url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-      "capturedAt": "2026-10-13T07:32:40+00:00",
+      "capturedAt": "2026-10-19T01:35:07+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [
@@ -1072,7 +1200,7 @@
             "sku": "HAHEAC-TP4Z42K",
             "sku_id": "10289",
             "spu_id": "6954",
-            "option": "MultiCoze Pro | 4-Zone 42,000 BTU (9K+9K+12K+12K)",
+            "option": "MultiCoze Pro | 4-Zone 38,000 BTU (9K+9K+12K+12K)",
             "url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html"
           }
         ],
@@ -1081,7 +1209,7 @@
     },
     "price": {
       "url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-      "capturedAt": "2026-10-13T07:32:40+00:00",
+      "capturedAt": "2026-10-19T01:35:07+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "1,799.99",
@@ -1094,7 +1222,7 @@
     },
     "policies": {
       "url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-      "capturedAt": "2026-10-13T07:32:40+00:00",
+      "capturedAt": "2026-10-19T01:35:07+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": {
         "productWarranty": [
@@ -1122,14 +1250,30 @@
             {
               "value": "5-Year Full Warranty; 7-Year Warranty on Compressor",
               "source_url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-              "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64",
-              "location": "specifications.Warranty"
+              "sha256": "19b005a4a7986d05fd256440ae72b9eede5e23fb49495e868add446f3e8d7765",
+              "location": "specifications.Warranty",
+              "source_history": [
+                {
+                  "sha256": "92d665e500ceb7c3f28cba8e234d38beb2cd78740b46cf06a2a821b9fc4c2d64"
+                }
+              ],
+              "captured_at": "2026-10-19T01:35:07+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             },
             {
               "value": "Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.",
               "source_url": "https://www.cozeware.com/article/warranty.html?aid=145",
-              "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947",
-              "location": "policy_warranty_definition_and_liability"
+              "sha256": "356f79b46e7d2ca22e494573c9004ba418858b9a11da6f69afae355ae765835d",
+              "location": "policy_warranty_definition_and_liability",
+              "source_history": [
+                {
+                  "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947"
+                }
+              ],
+              "captured_at": "2026-10-19T01:34:52+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             }
           ],
           "handling": "Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.",
@@ -1144,5 +1288,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

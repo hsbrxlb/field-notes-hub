@@ -6,7 +6,7 @@
   "categoryId": "992",
   "name": "5.5FT Truck Bed FRP Hard Tri-fold Tonneau Cover for 2015-2026 Ford F-150 F150 5.5 feet Bed Cover",
   "url": "https://www.oedro.com/products/oedro-55ft-2015-2024-ford-f150-tonneau-cover-4007-p-6756.html",
-  "capturedAt": "2026-10-13T07:32:27+00:00",
+  "capturedAt": "2026-10-19T01:38:08+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -29,7 +29,7 @@
   "image_facts": [],
   "conflicts": [
     {
-      "captured_at": "2026-10-13T07:32:27+00:00",
+      "captured_at": "2026-10-19T01:38:08+00:00",
       "claims": [
         {
           "field": "specifications.Material",
@@ -257,12 +257,12 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/oedro-55ft-2015-2024-ford-f150-tonneau-cover-4007-p-6756.html",
-      "capturedAt": "2026-10-13T07:32:27+00:00",
+      "capturedAt": "2026-10-19T01:38:08+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": "5.5FT Truck Bed FRP Hard Tri-fold Tonneau Cover for 2015-2026 Ford F-150 F150 5.5 feet Bed Cover",
       "conflicts": [
         {
-          "captured_at": "2026-10-13T07:32:27+00:00",
+          "captured_at": "2026-10-19T01:38:08+00:00",
           "claims": [
             {
               "field": "specifications.Material",
@@ -294,30 +294,30 @@
     },
     "sku": {
       "url": "https://www.oedro.com/products/oedro-55ft-2015-2024-ford-f150-tonneau-cover-4007-p-6756.html",
-      "capturedAt": "2026-10-13T07:32:27+00:00",
+      "capturedAt": "2026-10-19T01:38:08+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEEPTC-4007"
     },
     "brand": {
       "url": "https://www.oedro.com/products/oedro-55ft-2015-2024-ford-f150-tonneau-cover-4007-p-6756.html",
-      "capturedAt": "2026-10-13T07:32:27+00:00",
+      "capturedAt": "2026-10-19T01:38:08+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEDRO"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/oedro-55ft-2015-2024-ford-f150-tonneau-cover-4007-p-6756.html",
-      "capturedAt": "2026-10-13T07:32:27+00:00",
+      "capturedAt": "2026-10-19T01:38:08+00:00",
       "status": "official_page_snapshot",
       "excerpt": "Compatible with 2015-2026 Ford F150 F-150 with 5.5 ft bed only."
     },
     "description": {
       "url": "https://www.oedro.com/products/oedro-55ft-2015-2024-ford-f150-tonneau-cover-4007-p-6756.html",
-      "capturedAt": "2026-10-13T07:32:27+00:00",
+      "capturedAt": "2026-10-19T01:38:08+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": "Enhance your truck's security and convenience with our premium hard Tri-Fold tonneau cover. Designed for effortless operation, it automatically latches into place when folded down—no manual locking required. Enjoy a sleek, durable design that protects your cargo while ensuring quick and easy access.\nFeatures\nSecure Fit with Added Convenience: This tonneau cover is engineered for a precise, secure fit and includes thoughtful upgrades. a complimentary LED light for improved nighttime visibility.\nSuperior Cargo Protection: Built with high-strength fiberglass (FRP) panels, this hard tri-fold tonneau cover offers exceptional protection against rain, snow, and road debris. It also resists impact and sharp objects, keeping your cargo safe and secure in all conditions.\nQuick, No-Drill Installation: Designed for hassle-free setup, this FRP hard tri-fold tonneau cover installs easily with clear instructions and requires no drilling. Get it mounted quickly and ready to use. (Note: Cargo racks must be removed prior to installation.)\nHeavy-Duty Durability You Can Trust: Reinforced fiberglass panels deliver long-lasting strength and impressive load-bearing capacity. A robust locking system keeps the cover firmly closed while driving, giving you confidence on every trip.\nSafe & Reliable Operation: Install the cover according to the included instructions and ensure all bolts are fully tightened before driving. For safety, do not drive with the tonneau cover partially open.\n1-year Warranty. For your safety, professional installation is Highly recommended\nFitment\nCompatible with 2015-2026 Ford F150 F-150 with 5.5 ft bed only.",
       "conflicts": [
         {
-          "captured_at": "2026-10-13T07:32:27+00:00",
+          "captured_at": "2026-10-19T01:38:08+00:00",
           "claims": [
             {
               "field": "specifications.Material",
@@ -349,7 +349,7 @@
     },
     "specifications": {
       "url": "https://www.oedro.com/products/oedro-55ft-2015-2024-ford-f150-tonneau-cover-4007-p-6756.html",
-      "capturedAt": "2026-10-13T07:32:27+00:00",
+      "capturedAt": "2026-10-19T01:38:08+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": {
         "Bed size": "5.5 ft",
@@ -364,7 +364,7 @@
       },
       "conflicts": [
         {
-          "captured_at": "2026-10-13T07:32:27+00:00",
+          "captured_at": "2026-10-19T01:38:08+00:00",
           "claims": [
             {
               "field": "specifications.Material",
@@ -397,7 +397,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/oedro-55ft-2015-2024-ford-f150-tonneau-cover-4007-p-6756.html",
-      "capturedAt": "2026-10-13T07:32:27+00:00",
+      "capturedAt": "2026-10-19T01:38:08+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [
@@ -505,7 +505,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/oedro-55ft-2015-2024-ford-f150-tonneau-cover-4007-p-6756.html",
-      "capturedAt": "2026-10-13T07:32:27+00:00",
+      "capturedAt": "2026-10-19T01:38:08+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "479.99",
@@ -518,7 +518,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/oedro-55ft-2015-2024-ford-f150-tonneau-cover-4007-p-6756.html",
-      "capturedAt": "2026-10-13T07:32:27+00:00",
+      "capturedAt": "2026-10-19T01:38:08+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -546,5 +546,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

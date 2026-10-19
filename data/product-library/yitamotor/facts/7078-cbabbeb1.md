@@ -2,7 +2,7 @@
 
 SKU: OE-YTEPRB-6007
 Source: https://www.oedro.com/products/-p-7078.html
-Captured: 2026-10-13T07:34:48+00:00
+Captured: 2026-10-19T01:39:34+00:00
 
 Prices, stock and campaign stage require a current source check before publication.
 
@@ -15,7 +15,7 @@ Prices, stock and campaign stage require a current source check before publicati
   "categoryId": "995",
   "name": "YITAMOTOR® Running Boards & Side Steps Compatible with 2015-2026 Ford F150, 2017-2026 F250 F350 Super Duty Supercrew Cab, Black Powder Coated Nerf Bars, Two-Stair for Roof Operation",
   "url": "https://www.oedro.com/products/-p-7078.html",
-  "capturedAt": "2026-10-13T07:34:48+00:00",
+  "capturedAt": "2026-10-19T01:39:34+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -188,37 +188,37 @@ Prices, stock and campaign stage require a current source check before publicati
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/-p-7078.html",
-      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "capturedAt": "2026-10-19T01:39:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR® Running Boards & Side Steps Compatible with 2015-2026 Ford F150, 2017-2026 F250 F350 Super Duty Supercrew Cab, Black Powder Coated Nerf Bars, Two-Stair for Roof Operation"
     },
     "sku": {
       "url": "https://www.oedro.com/products/-p-7078.html",
-      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "capturedAt": "2026-10-19T01:39:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OE-YTEPRB-6007"
     },
     "brand": {
       "url": "https://www.oedro.com/products/-p-7078.html",
-      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "capturedAt": "2026-10-19T01:39:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/-p-7078.html",
-      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "capturedAt": "2026-10-19T01:39:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": "2015-2026 Ford F150 Super Crew Cab\n2017-2026 Ford F250 F350 Super Duty Crew Cab"
     },
     "description": {
       "url": "https://www.oedro.com/products/-p-7078.html",
-      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "capturedAt": "2026-10-19T01:39:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR is one of the largest automotive running boards and vehicle accessories retailers in the United States. We take pride in our quality control to assuring that providing only the highest quality running boards and auto accessories to our customers.\nFitment\n2015-2026 Ford F150 Super Crew Cab\n2017-2026 Ford F250 F350 Super Duty Crew Cab\nFeatures\nCompatibility: YITAMOTOR side steps for 2015-2026 Ford F150, 2017-2026 F250 F350 Super Duty Supercrew Cab; Easy no-drill installation\nTwo-Stair Layout: Unique two-stair layout makes these running boards easy for all ages to step in and out of the vehicle; The raised center step offers convenience for placing luggage or items on the roof\nHeavy-Duty Carbon Steel: YITAMOTOR running boards are made from high-quality carbon steel to offer sturdiness, durability, and the ability to support up to 550 LBS without deformation\nNon-Slip Design: The hollow design prevents water and sediment accumulation, keeping the running boards dry and clean; This feature enhances safety and durability by reducing the risk of slipping\nWeather Resistant: The surface is covered with a dual-stage textured black powder that withstands heavy rain and snowstorms, offering exceptional rust and corrosion resistance\nProfessional installation recommended"
     },
     "specifications": {
       "url": "https://www.oedro.com/products/-p-7078.html",
-      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "capturedAt": "2026-10-19T01:39:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "YITAMOTOR",
@@ -234,7 +234,7 @@ Prices, stock and campaign stage require a current source check before publicati
     },
     "variants": {
       "url": "https://www.oedro.com/products/-p-7078.html",
-      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "capturedAt": "2026-10-19T01:39:34+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -289,7 +289,7 @@ Prices, stock and campaign stage require a current source check before publicati
     },
     "price": {
       "url": "https://www.oedro.com/products/-p-7078.html",
-      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "capturedAt": "2026-10-19T01:39:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "289.99",
@@ -302,7 +302,7 @@ Prices, stock and campaign stage require a current source check before publicati
     },
     "policies": {
       "url": "https://www.oedro.com/products/-p-7078.html",
-      "capturedAt": "2026-10-13T07:34:48+00:00",
+      "capturedAt": "2026-10-19T01:39:34+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -330,6 +330,6 @@ Prices, stock and campaign stage require a current source check before publicati
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }
 ```

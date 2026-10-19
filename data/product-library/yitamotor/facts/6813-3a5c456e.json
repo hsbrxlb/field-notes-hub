@@ -6,7 +6,7 @@
   "categoryId": "999",
   "name": "YITAMOTOR Manual Quick Implement Lift 1-Point Lift System for ATV/UTV With 2-inch Receiver",
   "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0122-p-6813.html",
-  "capturedAt": "2026-10-13T07:33:20+00:00",
+  "capturedAt": "2026-10-19T01:38:27+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -137,37 +137,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0122-p-6813.html",
-      "capturedAt": "2026-10-13T07:33:20+00:00",
+      "capturedAt": "2026-10-19T01:38:27+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR Manual Quick Implement Lift 1-Point Lift System for ATV/UTV With 2-inch Receiver"
     },
     "sku": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0122-p-6813.html",
-      "capturedAt": "2026-10-13T07:33:20+00:00",
+      "capturedAt": "2026-10-19T01:38:27+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OE-FRSSPF-0122-YITA"
     },
     "brand": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0122-p-6813.html",
-      "capturedAt": "2026-10-13T07:33:20+00:00",
+      "capturedAt": "2026-10-19T01:38:27+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0122-p-6813.html",
-      "capturedAt": "2026-10-13T07:33:20+00:00",
+      "capturedAt": "2026-10-19T01:38:27+00:00",
       "status": "official_page_snapshot",
       "excerpt": "It easily connects to your 2\" receiver.\nATV/UTV/SxS/Garden Tractor/Lawn Tractor. (Requires a 2\" hitch receiver (not included) installed on ATV/UTV)"
     },
     "description": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0122-p-6813.html",
-      "capturedAt": "2026-10-13T07:33:20+00:00",
+      "capturedAt": "2026-10-19T01:38:27+00:00",
       "status": "official_page_snapshot",
       "excerpt": "This ATV lift is perfect for quickly implementing changes that turn your ATV or UTV into a versatile work machine.\nFitment\nIt easily connects to your 2\" receiver.\nATV/UTV/SxS/Garden Tractor/Lawn Tractor. (Requires a 2\" hitch receiver (not included) installed on ATV/UTV)\nFeatures\nQuick and easy\nThis ATV lift is perfect for quickly implementing changes that turn your ATV or UTV into a versatile work machine.\nDurable and easy to install\nFeatures a sturdy &Heavy steel construction and minimalist aesthetics; easy to install; streamlined design greatly reduces the adverse effects of maneuverability\nAdjustable Height\nExtra gusset and mounting holes for greater height and angle adjustments\nOptimized design\nYou can manually lift the UTV lift with the removable handle."
     },
     "specifications": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0122-p-6813.html",
-      "capturedAt": "2026-10-13T07:33:20+00:00",
+      "capturedAt": "2026-10-19T01:38:27+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "YITAMOTOR",
@@ -181,7 +181,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0122-p-6813.html",
-      "capturedAt": "2026-10-13T07:33:20+00:00",
+      "capturedAt": "2026-10-19T01:38:27+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -214,7 +214,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0122-p-6813.html",
-      "capturedAt": "2026-10-13T07:33:20+00:00",
+      "capturedAt": "2026-10-19T01:38:27+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "209.99",
@@ -227,7 +227,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0122-p-6813.html",
-      "capturedAt": "2026-10-13T07:33:20+00:00",
+      "capturedAt": "2026-10-19T01:38:27+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -255,5 +255,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

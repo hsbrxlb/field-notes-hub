@@ -2,7 +2,7 @@
 
 SKU: OE-CTLAHL-1136-YITA
 Source: https://www.oedro.com/products/yitamotor-dodge-ram-led-head-lamp-1136-p-6179.html
-Captured: 2026-10-13T07:30:07+00:00
+Captured: 2026-10-19T01:36:44+00:00
 
 Prices, stock and campaign stage require a current source check before publication.
 
@@ -15,7 +15,7 @@ Prices, stock and campaign stage require a current source check before publicati
   "categoryId": "986",
   "name": "YITAMOTOR Headlight Assembly 2002-2005 Dodge Ram Pickup Truck Headlamps Chrome Housing with Clear Reflector Lens",
   "url": "https://www.oedro.com/products/yitamotor-dodge-ram-led-head-lamp-1136-p-6179.html",
-  "capturedAt": "2026-10-13T07:30:07+00:00",
+  "capturedAt": "2026-10-19T01:36:44+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -170,37 +170,37 @@ Prices, stock and campaign stage require a current source check before publicati
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/yitamotor-dodge-ram-led-head-lamp-1136-p-6179.html",
-      "capturedAt": "2026-10-13T07:30:07+00:00",
+      "capturedAt": "2026-10-19T01:36:44+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR Headlight Assembly 2002-2005 Dodge Ram Pickup Truck Headlamps Chrome Housing with Clear Reflector Lens"
     },
     "sku": {
       "url": "https://www.oedro.com/products/yitamotor-dodge-ram-led-head-lamp-1136-p-6179.html",
-      "capturedAt": "2026-10-13T07:30:07+00:00",
+      "capturedAt": "2026-10-19T01:36:44+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OE-CTLAHL-1136-YITA"
     },
     "brand": {
       "url": "https://www.oedro.com/products/yitamotor-dodge-ram-led-head-lamp-1136-p-6179.html",
-      "capturedAt": "2026-10-13T07:30:07+00:00",
+      "capturedAt": "2026-10-19T01:36:44+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/yitamotor-dodge-ram-led-head-lamp-1136-p-6179.html",
-      "capturedAt": "2026-10-13T07:30:07+00:00",
+      "capturedAt": "2026-10-19T01:36:44+00:00",
       "status": "official_page_snapshot",
       "excerpt": "2002-2005 Dodge Ram 1500 Pickup\n2003-2005 Dodge Ram 2500 Pickup\n2003-2005 Dodge Ram 3500 Pickup\nProfessional installation would be highly recommended"
     },
     "description": {
       "url": "https://www.oedro.com/products/yitamotor-dodge-ram-led-head-lamp-1136-p-6179.html",
-      "capturedAt": "2026-10-13T07:30:07+00:00",
+      "capturedAt": "2026-10-19T01:36:44+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR high-quality headlights will let all of the light through, allowing your headlights to work the way they were originally made to.\nFitment\n2002-2005 Dodge Ram 1500 Pickup\n2003-2005 Dodge Ram 2500 Pickup\n2003-2005 Dodge Ram 3500 Pickup\nProfessional installation would be highly recommended\nFeatures\nClear Visibility\nThe high-grade clear lens offers better visibility, and the replacement headlight assembly can light up the entire road as a much brighter alternative to dim, yellow headlights.\nWeather-sealed\nWeather-sealed means that our headlights prevent any water from seeping into your vehicle’s electrical system.\nSimplicity\nOur replacement headlights fit directly into your vehicle’s factory wiring harness for hassle-free installation. No additional modifications or drilling are required.\nExcellent Value & Durability\nYITAMOTOR headlights are of equal quality to the original manufacturer set at a lower price.YITAMOTOR’s headlights are made of ABS & PC, which are highly temperature and impact-resistant materials. YITAMOTOR headlights are both extremely durable and compact."
     },
     "specifications": {
       "url": "https://www.oedro.com/products/yitamotor-dodge-ram-led-head-lamp-1136-p-6179.html",
-      "capturedAt": "2026-10-13T07:30:07+00:00",
+      "capturedAt": "2026-10-19T01:36:44+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "YITAMOTOR",
@@ -222,7 +222,7 @@ Prices, stock and campaign stage require a current source check before publicati
     },
     "variants": {
       "url": "https://www.oedro.com/products/yitamotor-dodge-ram-led-head-lamp-1136-p-6179.html",
-      "capturedAt": "2026-10-13T07:30:07+00:00",
+      "capturedAt": "2026-10-19T01:36:44+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -277,7 +277,7 @@ Prices, stock and campaign stage require a current source check before publicati
     },
     "price": {
       "url": "https://www.oedro.com/products/yitamotor-dodge-ram-led-head-lamp-1136-p-6179.html",
-      "capturedAt": "2026-10-13T07:30:07+00:00",
+      "capturedAt": "2026-10-19T01:36:44+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "99.99",
@@ -290,7 +290,7 @@ Prices, stock and campaign stage require a current source check before publicati
     },
     "policies": {
       "url": "https://www.oedro.com/products/yitamotor-dodge-ram-led-head-lamp-1136-p-6179.html",
-      "capturedAt": "2026-10-13T07:30:07+00:00",
+      "capturedAt": "2026-10-19T01:36:44+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -318,6 +318,6 @@ Prices, stock and campaign stage require a current source check before publicati
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }
 ```

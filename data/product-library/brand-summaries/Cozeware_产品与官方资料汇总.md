@@ -1,10 +1,10 @@
 # Cozeware 产品与官方资料汇总
 
-事实版本：2026-10-13-341b61559e8f。来源实际采集区间：2026-10-13T07:29:41+00:00 至 2026-10-13T08:35:02+00:00。
+事实版本：2026-10-19-394e5303cf5e。来源实际采集区间：2026-10-13T07:34:25+00:00 至 2026-10-19T01:42:31+00:00。
 
 价格、库存、配送、促销与众筹阶段均为带日期的官网快照，引用前打开精确来源核实。营销措辞、认证图标和评价不等于独立验证；冲突原值保持并列。
 
-当前目录 27 个商品页，另有 90 条官网政策、支持、教育、分类和活动资料。280 个商品图片 URL 已实际审读；PDF 的文字提取与 OCR 属机器识别，没有完成全部页面的人工逐页校验。教育博客和首页其余装饰、推荐图片未逐张事实审读；视频未作全片审核。
+当前目录 27 个商品页，另有 90 条官网政策、支持、教育、分类和活动资料。281 个商品图片 URL 已实际审读；PDF 的文字提取与 OCR 属机器识别，没有完成全部页面的人工逐页校验。教育博客和首页其余装饰、推荐图片未逐张事实审读；视频未作全片审核。
 
 [完整事实版本清单](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/latest-manifest.json>)；[官方资料 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/policies.json>)
 
@@ -29,7 +29,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-CZ0018 · COZEWARE Visio Series 12000 BTU 20 SEER2 Ductless Mini Split AC with Heat Pump, 115V
 
 品牌：COZEWARE；主 SKU：HAHEAC-CZ0018；商品页 ID：8840。
-[官网商品页](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-13T07:33:32+00:00
+[官网商品页](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-19T01:35:32+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/8840-f5da85f6.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -77,8 +77,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-13T07:33:32+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-19T01:35:32+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -87,7 +87,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)
 
-价格与库存快照：售价：529.99；官网标示原价：670；币种：USD；折扣文字：-21%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:33:32+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：529.99；官网标示原价：670；币种：USD；折扣文字：-21%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:32+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -133,7 +133,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-CZ0020 · COZEWARE Visio Series 12000 BTU 20 SEER2 Ductless Mini Split AC with Heat Pump, 230V
 
 品牌：COZEWARE；主 SKU：HAHEAC-CZ0020；商品页 ID：8862。
-[官网商品页](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-13T07:33:31+00:00
+[官网商品页](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-19T01:35:30+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/8862-80b857f5.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -181,8 +181,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-13T07:33:31+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-19T01:35:30+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -191,7 +191,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)
 
-价格与库存快照：售价：499.99；官网标示原价：650；币种：USD；折扣文字：-23%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:33:31+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：499.99；官网标示原价：650；币种：USD；折扣文字：-23%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:30+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -239,7 +239,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-DC18K · COZEWARE Visio Series 18000 BTU 20 SEER2 Ductless Mini Split AC with Heat Pump, 230V
 
 品牌：COZEWARE；主 SKU：HAHEAC-DC18K；商品页 ID：9602。
-[官网商品页](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-13T07:32:48+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-19T01:35:13+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/9602-a727fc7c.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -287,8 +287,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-13T07:32:48+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-19T01:35:13+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -297,7 +297,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)
 
-价格与库存快照：售价：649.99；官网标示原价：900；币种：USD；折扣文字：-28%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:32:48+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：649.99；官网标示原价：900；币种：USD；折扣文字：-28%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:13+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -343,7 +343,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-DC24K · COZEWARE Visio Series 24000 BTU 20 SEER2 Ductless Mini Split AC with Heat Pump, 230V
 
 品牌：COZEWARE；主 SKU：HAHEAC-DC24K；商品页 ID：9607。
-[官网商品页](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-13T07:32:46+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-19T01:35:10+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/9607-5b1991f5.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -391,8 +391,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-13T07:32:46+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-19T01:35:10+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -401,7 +401,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)
 
-价格与库存快照：售价：899.99；官网标示原价：1,240；币种：USD；折扣文字：-27%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:32:46+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：899.99；官网标示原价：1,240；币种：USD；折扣文字：-27%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:10+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -447,7 +447,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-DC9K · COZEWARE Visio Series 9000 BTU 18 SEER2 Ductless Mini Split AC with Heat Pump, 115V
 
 品牌：COZEWARE；主 SKU：HAHEAC-DC9K；商品页 ID：9600。
-[官网商品页](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-13T07:32:50+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-19T01:35:14+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/9600-8af7972c.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -494,8 +494,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-13T07:32:50+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-19T01:35:14+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -504,7 +504,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)
 
-价格与库存快照：售价：399.99；官网标示原价：610；币种：USD；折扣文字：-34%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:32:50+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：399.99；官网标示原价：610；币种：USD；折扣文字：-34%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:14+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -555,7 +555,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-TS12K230V · COZEWARE 12000 BTU 20 SEER2 Mini Split Air Conditioner, 230V
 
 品牌：COZEWARE；主 SKU：HAHEAC-TS12K230V；商品页 ID：9450。
-[官网商品页](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-13T07:33:25+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-19T01:35:26+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/9450-fd065b7a.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -602,8 +602,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-13T07:33:25+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-19T01:35:26+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -612,7 +612,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)
 
-价格与库存快照：售价：499.99；官网标示原价：600；币种：USD；折扣文字：-17%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:33:25+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：499.99；官网标示原价：600；币种：USD；折扣文字：-17%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:26+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -654,7 +654,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-TS12K115V · COZEWARE 12000 BTU 20 SEER2 Mini Split Air Conditioner, 115V
 
 品牌：COZEWARE；主 SKU：HAHEAC-TS12K115V；商品页 ID：9368。
-[官网商品页](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-13T07:33:26+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-19T01:35:26+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/9368-ecb02939.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -701,8 +701,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-13T07:33:26+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-19T01:35:26+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -711,7 +711,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)
 
-价格与库存快照：售价：526.99；官网标示原价：620；币种：USD；折扣文字：-15%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:33:26+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：526.99；官网标示原价：620；币种：USD；折扣文字：-15%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:26+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -756,7 +756,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-VX34K · COZEWARE Built-In Series 34000 BTU 19 SEER2 Ducted Central AC System with Air Handler, 230V
 
 品牌：COZEWARE；主 SKU：HAHEAC-VX34K；商品页 ID：10179。
-[官网商品页](<https://www.cozeware.com/products/cozeware-34000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler-230v-p-10179.html>)；采集：2026-10-13T07:32:44+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-34000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler-230v-p-10179.html>)；采集：2026-10-19T01:35:10+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/10179-79761a9a.json>)。
 
@@ -803,7 +803,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 字段状态：documents：official_urls：4；invalid_placeholders：0；specifications：present；image_review：complete；dimensions_images：present；faq：present；conflicts：none_detected_in_reviewed_evidence
 当前选项：BTU：34000 BTU | 230V
 
-价格与库存快照：售价：2,599.99；官网标示原价：3,500；币种：USD；折扣文字：-26%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:32:44+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：2,599.99；官网标示原价：3,500；币种：USD；折扣文字：-26%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:10+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -851,7 +851,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-ZA12K115V · COZEWARE E-Save Series 12000 BTU 20 SEER2 & 10 HSPF2 Mini Split with AI Chip, 115V
 
 品牌：COZEWARE；主 SKU：HAHEAC-ZA12K115V；商品页 ID：9529。
-[官网商品页](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-13T07:33:24+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-19T01:35:24+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/9529-ecdf26b0.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -898,8 +898,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-13T07:33:24+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-19T01:35:24+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -908,7 +908,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)
 
-价格与库存快照：售价：559.99；官网标示原价：740；币种：USD；折扣文字：-24%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:33:24+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：559.99；官网标示原价：740；币种：USD；折扣文字：-24%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:24+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -952,7 +952,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-ZA12K230V · COZEWARE E-Save Series 12000 BTU 20 SEER2 & 10 HSPF2 Mini Split with AI Chip, 230V
 
 品牌：COZEWARE；主 SKU：HAHEAC-ZA12K230V；商品页 ID：9545。
-[官网商品页](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-13T07:33:22+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-19T01:35:22+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/9545-5f55938e.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -999,8 +999,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-13T07:33:22+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-19T01:35:22+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -1009,7 +1009,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)
 
-价格与库存快照：售价：549.99；官网标示原价：720；币种：USD；折扣文字：-24%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:33:22+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：549.99；官网标示原价：720；币种：USD；折扣文字：-24%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:22+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -1053,7 +1053,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-ZA18K · COZEWARE E-Save Series 18000 BTU 20 SEER2 & 10 HSPF2 Mini Split with AI Chip, 230V
 
 品牌：COZEWARE；主 SKU：HAHEAC-ZA18K；商品页 ID：9547。
-[官网商品页](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/9547-1a6cdc89.json>)。
 参数冲突待核：savings_chart_capacity_scope、warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -1101,11 +1101,11 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：savings_chart_capacity_scope**。状态：unresolved。
   - visually_read_official_image：Under18000BTUcoolingcapacity:cutbill$450/year;60%savinggraphic nevertheless labels12000BTUMiniSplit20SEER2;scope mismatch retained.；[来源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202604/65CF088E-77CA-DE39-BCB2-12E5132A08D9.jpg>)；采集：2026-10-13T07:56:17+00:00
-  - specifications_or_identity：COZEWARE E-Save Series 18000 BTU 20 SEER2 & 10 HSPF2 Mini Split with AI Chip, 230V；[来源](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00
+  - specifications_or_identity：COZEWARE E-Save Series 18000 BTU 20 SEER2 & 10 HSPF2 Mini Split with AI Chip, 230V；[来源](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00
   - 使用限制：image subtitle and chart capacity differ; cannot generalize saving to this exact model
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -1114,7 +1114,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)
 
-价格与库存快照：售价：729.99；官网标示原价：1,000；币种：USD；折扣文字：-27%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:33:20+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：729.99；官网标示原价：1,000；币种：USD；折扣文字：-27%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:21+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -1158,7 +1158,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-ZA24K · COZEWARE E-Save Series 24000 BTU 20 SEER2 & 9.5 HSPF2 Mini Split with AI Chip, 230V
 
 品牌：COZEWARE；主 SKU：HAHEAC-ZA24K；商品页 ID：9548。
-[官网商品页](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/9548-40eb4fc3.json>)。
 参数冲突待核：savings_chart_capacity_scope、warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -1206,11 +1206,11 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：savings_chart_capacity_scope**。状态：unresolved。
   - visually_read_official_image：Under24000BTUcoolingcapacity:cutbill$300/year;60%saving graphic nevertheless labels12000BTUMiniSplit20SEER2;scope mismatch retained,not silently repaired.；[来源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202604/43AE4694-C024-C8B5-B3B8-BF53FB7F39FA.jpg>)；采集：2026-10-13T07:56:08+00:00
-  - specifications_or_identity：COZEWARE E-Save Series 24000 BTU 20 SEER2 & 9.5 HSPF2 Mini Split with AI Chip, 230V；[来源](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00
+  - specifications_or_identity：COZEWARE E-Save Series 24000 BTU 20 SEER2 & 9.5 HSPF2 Mini Split with AI Chip, 230V；[来源](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00
   - 使用限制：image subtitle and chart capacity differ; cannot generalize saving to this exact model
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -1219,7 +1219,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)
 
-价格与库存快照：售价：999.99；官网标示原价：1,400；币种：USD；折扣文字：-29%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:33:16+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：999.99；官网标示原价：1,400；币种：USD；折扣文字：-29%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:20+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -1262,7 +1262,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-DT12K115V · COZEWARE Enduring Series 12000 BTU 20 SEER2 Mini Split Air Conditioner, 115V
 
 品牌：COZEWARE；主 SKU：HAHEAC-DT12K115V；商品页 ID：8977。
-[官网商品页](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-13T07:33:29+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-19T01:35:29+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/8977-c6d77cf2.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -1309,8 +1309,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-13T07:33:29+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-19T01:35:29+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -1319,7 +1319,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)
 
-价格与库存快照：售价：526.99；官网标示原价：620；币种：USD；折扣文字：-15%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:33:29+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：526.99；官网标示原价：620；币种：USD；折扣文字：-15%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:29+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -1361,7 +1361,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-DT12K230V · COZEWARE Enduring Series 12000 BTU 20 SEER2 Mini Split Air Conditioner, 230V
 
 品牌：COZEWARE；主 SKU：HAHEAC-DT12K230V；商品页 ID：8979。
-[官网商品页](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-13T07:33:28+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-19T01:35:28+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/8979-77691e2c.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -1408,8 +1408,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-13T07:33:28+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-19T01:35:28+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -1418,7 +1418,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)
 
-价格与库存快照：售价：499.99；官网标示原价：600；币种：USD；折扣文字：-17%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:33:28+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：499.99；官网标示原价：600；币种：USD；折扣文字：-17%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:28+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -1460,7 +1460,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-DT18K · COZEWARE Enduring Series 18000 BTU 20 SEER2 Mini Split Air Conditioner, 230V
 
 品牌：COZEWARE；主 SKU：HAHEAC-DT18K；商品页 ID：9580。
-[官网商品页](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-13T07:33:14+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-19T01:35:18+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/9580-455ae0ba.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -1507,8 +1507,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-13T07:33:14+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-19T01:35:18+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -1517,7 +1517,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)
 
-价格与库存快照：售价：649.99；官网标示原价：800；币种：USD；折扣文字：-19%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:33:14+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：649.99；官网标示原价：800；币种：USD；折扣文字：-19%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:18+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -1563,7 +1563,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-DT24K · COZEWARE Enduring Series 24000 BTU 20 SEER2 Mini Split Air Conditioner, 230V
 
 品牌：COZEWARE；主 SKU：HAHEAC-DT24K；商品页 ID：9581。
-[官网商品页](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-13T07:33:10+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-19T01:35:17+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/9581-8ef24e86.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -1610,8 +1610,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-13T07:33:10+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-19T01:35:17+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -1620,7 +1620,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)
 
-价格与库存快照：售价：919.99；官网标示原价：1,200；币种：USD；折扣文字：-23%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:33:10+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：919.99；官网标示原价：1,200；币种：USD；折扣文字：-23%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:17+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -1666,7 +1666,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-DT9K · COZEWARE Enduring Series 9000 BTU 18 SEER2 Mini Split Air Conditioner, 115V
 
 品牌：COZEWARE；主 SKU：HAHEAC-DT9K；商品页 ID：9582。
-[官网商品页](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-13T07:33:02+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-19T01:35:16+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/9582-8a8c0f54.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -1712,8 +1712,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-13T07:33:02+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-19T01:35:16+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -1722,7 +1722,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)
 
-价格与库存快照：售价：399.99；官网标示原价：570；币种：USD；折扣文字：-30%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:33:02+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：399.99；官网标示原价：570；币种：USD；折扣文字：-30%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:16+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -1769,7 +1769,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-TP2Z18K · COZEWARE MultiCoze Pro Series 18000 BTU 2-Zone Mini Split AC (9K+9K), 23 SEER2
 
 品牌：COZEWARE；主 SKU：HAHEAC-TP2Z18K；商品页 ID：10284。
-[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/10284-1dae5797.json>)。
 参数冲突待核：ambient_cooling_upper_bound、Energy Efficiency Ratio (SEER2)、Energy Efficiency Ratio (HSPF2)、warranty_scope、Energy Efficiency Ratio (SEER2)、Energy Efficiency Ratio (HSPF2)；双方原值与出处见本条记录，暂不采用统一值。
@@ -1818,26 +1818,26 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：ambient_cooling_upper_bound**。状态：unresolved。
   - visually_read_official_image：127°F；[来源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202607/15333CA7-E7A9-43CE-4CBD-81C1AE9D6D70.jpg>)；采集：2026-10-13T07:59:38+00:00
-  - specifications_or_identity：5 to 125 °F；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00
+  - specifications_or_identity：5 to 125 °F；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00
   - 使用限制：image vs table temperature difference; preserve both
 - **待核冲突：Energy Efficiency Ratio (SEER2)**。状态：unresolved。
   - visually_read_official_image：25.00；[来源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202607/BFC8D13C-02AF-7FAF-F92D-F637ED25DB39.jpg>)；采集：2026-10-13T08:03:23+00:00
-  - specifications_or_identity：23；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00
+  - specifications_or_identity：23；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00
   - 使用限制：EnergyGuide rating requires verification of exact matched system/coil; preserve differing values
 - **待核冲突：Energy Efficiency Ratio (HSPF2)**。状态：unresolved。
   - visually_read_official_image：10.00；[来源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202607/BFC8D13C-02AF-7FAF-F92D-F637ED25DB39.jpg>)；采集：2026-10-13T08:03:23+00:00
-  - specifications_or_identity：9.5；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00
+  - specifications_or_identity：9.5；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00
   - 使用限制：EnergyGuide rating requires verification of exact matched system/coil; preserve differing values
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 - **待核冲突：Energy Efficiency Ratio (SEER2)**。状态：unresolved。
-  - specifications.Energy Efficiency Ratio (SEER2)：23；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00
+  - specifications.Energy Efficiency Ratio (SEER2)：23；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00
   - document_image_facts.SEER2：25；[来源](<https://img.yitashop.com/doc_sku/cutfaurguo/CMBA18TP2AU-W.jpg>)；采集：2026-10-13T07:51:45+00:00
   - 使用限制：Keep both official sources. AHRI attachment has no indoor combination model listed; do not infer exact installed combination or choose one rating.
 - **待核冲突：Energy Efficiency Ratio (HSPF2)**。状态：unresolved。
-  - specifications.Energy Efficiency Ratio (HSPF2)：9.5；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00
+  - specifications.Energy Efficiency Ratio (HSPF2)：9.5；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00
   - document_image_facts.HSPF2：10；[来源](<https://img.yitashop.com/doc_sku/cutfaurguo/CMBA18TP2AU-W.jpg>)；采集：2026-10-13T07:51:45+00:00
   - 使用限制：Keep both official sources. AHRI attachment has no indoor combination model listed; do not infer exact installed combination or choose one rating.
 
@@ -1847,7 +1847,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)
 
-价格与库存快照：售价：1,299.99；官网标示原价：1,700；币种：USD；折扣文字：-24%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:32:42+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：1,299.99；官网标示原价：1,700；币种：USD；折扣文字：-24%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:08+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -1891,7 +1891,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-TP3Z27K · COZEWARE MultiCoze Pro Series 27000 BTU 3-Zone Mini Split AC (9K+9K+9K), 22 SEER2
 
 品牌：COZEWARE；主 SKU：HAHEAC-TP3Z27K；商品页 ID：10286。
-[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/10286-1bfdc0c4.json>)。
 参数冲突待核：fitting_area_breakdown、ambient_cooling_upper_bound、Energy Efficiency Ratio (HSPF2)、warranty_scope、Energy Efficiency Ratio (HSPF2)、BTU Cooling、BTU Heating；双方原值与出处见本条记录，暂不采用统一值。
@@ -1940,30 +1940,30 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：fitting_area_breakdown**。状态：unresolved。
   - visually_read_official_dimensions_image：1350SqFt (450+450+750)；[来源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202607/8F7BD62A-7927-54EC-CE74-EDF52A523AEF.jpg>)；采集：2026-10-13T07:36:58+00:00
-  - specifications.Fitting Area：1350 sq ft (450+450+450)；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00
+  - specifications.Fitting Area：1350 sq ft (450+450+450)；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00
   - 使用限制：preserve both; do not select or repair an official claim without model-specific clarification
 - **待核冲突：ambient_cooling_upper_bound**。状态：unresolved。
   - visually_read_official_image：127°F；[来源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202607/9E283EF9-7595-B1D2-21E0-97BD5A12EC69.jpg>)；采集：2026-10-13T08:03:11+00:00
-  - specifications_or_identity：5 to 125 °F；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00
+  - specifications_or_identity：5 to 125 °F；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00
   - 使用限制：image vs table temperature difference; preserve both
 - **待核冲突：Energy Efficiency Ratio (HSPF2)**。状态：unresolved。
   - visually_read_official_image：10.00；[来源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202607/9C0D4840-46A9-5D8B-0676-F8050BA2EC66.jpg>)；采集：2026-10-13T08:03:05+00:00
-  - specifications_or_identity：9.5；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00
+  - specifications_or_identity：9.5；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00
   - 使用限制：EnergyGuide rating requires verification of exact matched system/coil; preserve differing values
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 - **待核冲突：Energy Efficiency Ratio (HSPF2)**。状态：unresolved。
-  - specifications.Energy Efficiency Ratio (HSPF2)：9.5；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00
+  - specifications.Energy Efficiency Ratio (HSPF2)：9.5；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00
   - document_image_facts.HSPF2：10；[来源](<https://img.yitashop.com/doc_sku/lzcnqlxnxu/CMBA27TP2AU-W.jpg>)；采集：2026-10-13T07:51:50+00:00
   - 使用限制：Keep both official sources. AHRI attachment has no indoor combination model listed; do not infer exact installed combination or choose one rating.
 - **待核冲突：BTU Cooling**。状态：unresolved。
-  - specifications.BTU Cooling：27,000 BTU (9K+9K+9K)；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00
+  - specifications.BTU Cooling：27,000 BTU (9K+9K+9K)；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00
   - document_image_facts.cooling_capacity_btuh：28000；[来源](<https://img.yitashop.com/doc_sku/lzcnqlxnxu/CMBA27TP2AU-W.jpg>)；采集：2026-10-13T07:51:50+00:00
   - 使用限制：Keep both official sources. AHRI attachment has no indoor combination model listed; do not infer exact installed combination or choose one rating.
 - **待核冲突：BTU Heating**。状态：unresolved。
-  - specifications.BTU Heating：27,000 BTU (9K+9K+9K)；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00
+  - specifications.BTU Heating：27,000 BTU (9K+9K+9K)；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00
   - document_image_facts.heating_capacity_47F_btuh：28000；[来源](<https://img.yitashop.com/doc_sku/lzcnqlxnxu/CMBA27TP2AU-W.jpg>)；采集：2026-10-13T07:51:50+00:00
   - 使用限制：Keep both official sources. AHRI attachment has no indoor combination model listed; do not infer exact installed combination or choose one rating.
 
@@ -1973,7 +1973,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)
 
-价格与库存快照：售价：1,799.99；官网标示原价：2,350；币种：USD；折扣文字：-23%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:32:40+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：1,799.99；官网标示原价：2,350；币种：USD；折扣文字：-23%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:07+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -2017,7 +2017,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-TP3Z30K · COZEWARE MultiCoze Pro Series 28000 BTU 3-Zone Mini Split AC (9K+9K+12K), 22 SEER2
 
 品牌：COZEWARE；主 SKU：HAHEAC-TP3Z30K；商品页 ID：10288。
-[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/10288-b61d697a.json>)。
 参数冲突待核：ambient_cooling_upper_bound、Energy Efficiency Ratio (HSPF2)、warranty_scope、Energy Efficiency Ratio (HSPF2)；双方原值与出处见本条记录，暂不采用统一值。
@@ -2067,18 +2067,18 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：ambient_cooling_upper_bound**。状态：unresolved。
   - visually_read_official_image：127°F；[来源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202607/E5D0B516-3F71-5238-3769-64A0D59C8FC0.jpg>)；采集：2026-10-13T08:03:33+00:00
-  - specifications_or_identity：5 to 125 °F；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00
+  - specifications_or_identity：5 to 125 °F；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00
   - 使用限制：image vs table temperature difference; preserve both
 - **待核冲突：Energy Efficiency Ratio (HSPF2)**。状态：unresolved。
   - visually_read_official_image：10.00；[来源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202607/9C0D4840-46A9-5D8B-0676-F8050BA2EC66.jpg>)；采集：2026-10-13T08:03:05+00:00
-  - specifications_or_identity：9.5；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00
+  - specifications_or_identity：9.5；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00
   - 使用限制：EnergyGuide rating requires verification of exact matched system/coil; preserve differing values
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 - **待核冲突：Energy Efficiency Ratio (HSPF2)**。状态：unresolved。
-  - specifications.Energy Efficiency Ratio (HSPF2)：9.5；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00
+  - specifications.Energy Efficiency Ratio (HSPF2)：9.5；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00
   - document_image_facts.HSPF2：10；[来源](<https://img.yitashop.com/doc_sku/djlszuhyzs/CMBA27TP2AU-W.jpg>)；采集：2026-10-13T07:51:47+00:00
   - 使用限制：Keep both official sources. AHRI attachment has no indoor combination model listed; do not infer exact installed combination or choose one rating.
 
@@ -2088,7 +2088,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)
 
-价格与库存快照：售价：1,849.99；官网标示原价：2,400；币种：USD；折扣文字：-23%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:32:37+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：1,849.99；官网标示原价：2,400；币种：USD；折扣文字：-23%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:06+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -2132,7 +2132,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-TP4Z42K · COZEWARE MultiCoze Pro Series 38000 BTU 4-Zone Mini Split AC (9K+9K+12K+12K), 23 SEER2
 
 品牌：COZEWARE；主 SKU：HAHEAC-TP4Z42K；商品页 ID：10289。
-[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/10289-97d70120.json>)。
 参数冲突待核：ambient_cooling_upper_bound、Energy Efficiency Ratio (HSPF2)、warranty_scope、Energy Efficiency Ratio (HSPF2)；双方原值与出处见本条记录，暂不采用统一值。
@@ -2182,18 +2182,18 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：ambient_cooling_upper_bound**。状态：unresolved。
   - visually_read_official_image：127°F；[来源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202607/A4275659-C800-9C41-D68C-20FD6CCB61C4.jpg>)；采集：2026-10-13T08:03:14+00:00
-  - specifications_or_identity：5 to 125 °F；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00
+  - specifications_or_identity：5 to 125 °F；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00
   - 使用限制：image vs table temperature difference; preserve both
 - **待核冲突：Energy Efficiency Ratio (HSPF2)**。状态：unresolved。
   - visually_read_official_image：10.00；[来源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202607/0E842C1B-3DDE-27B0-3233-F99AF8366B1A.jpg>)；采集：2026-10-13T07:59:36+00:00
-  - specifications_or_identity：9.5；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00
+  - specifications_or_identity：9.5；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00
   - 使用限制：EnergyGuide rating requires verification of exact matched system/coil; preserve differing values
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 - **待核冲突：Energy Efficiency Ratio (HSPF2)**。状态：unresolved。
-  - specifications.Energy Efficiency Ratio (HSPF2)：9.5；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00
+  - specifications.Energy Efficiency Ratio (HSPF2)：9.5；[来源](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00
   - document_image_facts.HSPF2：10；[来源](<https://img.yitashop.com/doc_sku/kvuhvdrwfp/CMBA36TP2AU-W.jpg>)；采集：2026-10-13T07:51:48+00:00
   - 使用限制：Keep both official sources. AHRI attachment has no indoor combination model listed; do not infer exact installed combination or choose one rating.
 
@@ -2203,7 +2203,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)
 
-价格与库存快照：售价：2,699.99；官网标示原价：3,600；币种：USD；折扣文字：-25%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:32:34+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：2,699.99；官网标示原价：3,600；币种：USD；折扣文字：-25%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:05+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -2250,10 +2250,10 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-TP12K110V · COZEWARE MultiCoze Series 12000 BTU 24 SEER2 & 10 HSPF2 Mini Split, 110V
 
 品牌：COZEWARE；主 SKU：HAHEAC-TP12K110V；商品页 ID：10459。
-[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-13T07:32:27+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/10459-f330c50d.json>)。
-参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
+参数冲突待核：warranty_scope、voltage；双方原值与出处见本条记录，暂不采用统一值。
 
 规格原值：
 
@@ -2294,9 +2294,13 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-13T07:32:27+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
+- **待核冲突：voltage**。状态：unresolved。
+  - visually_read_official_dimensions_image：115V；[来源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/8AE2B3E6-EB46-4AA8-668C-E46F3A133601.jpg>)；采集：2026-10-19T01:36:59+00:00
+  - specifications.Voltage：110V；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00
+  - 使用限制：Keep official image 115V and exact product title/table 110V separately. Do not equate nominal voltages or select a value without model-specific clarification.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
 字段状态：documents：official_urls：2；invalid_placeholders：0；specifications：present；image_review：complete；dimensions_images：present；faq：present；conflicts：unresolved
@@ -2304,7 +2308,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)
 
-价格与库存快照：售价：739.99；官网标示原价：925；币种：USD；折扣文字：-20%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:32:27+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：739.99；官网标示原价：925；币种：USD；折扣文字：-20%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:01+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -2312,8 +2316,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
   - 适用限制：Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred.
 - [图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/E10FCECA-45ED-D7A6-39EF-96E4BCF5502A.jpg>)；采集：2026-10-13T08:07:36+00:00；Product/package photograph app/remote;no addedquantitativeparameterinferred.
   - 适用限制：Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred.
-- [图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/E1214705-C201-CCA1-2053-001D9692B5EB.jpg>)；采集：2026-10-13T08:07:37+00:00；MultiCoze23SEER2;12000cool/heatBTU;127°Fcooling/5°Fheating;750sqft;1ton.
-  - 适用限制：Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred.
+- [图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202610/D1F5630B-0298-E178-83B4-6F0E44263215.jpg>)；采集：2026-10-19T01:42:31+00:00；ENERGY STAR® 24 SEER2; ALL-CLIMATE PERFORMANCE; 12000 BTU cooling capacity; 12000 BTU heating capacity; 127°F Supreme Cooling; 5°F Extreme Heating; 750 Sq Ft; 1 Ton Heat Pump.
+  - 适用限制：Official marketing claims, not independent performance verification.；Only applies to attached exact product page; shared identical file does not authorize cross-model specification inheritance.；Image cooling/heating callouts do not define the entire operating-temperature envelope; preserve separate table Ambient Temperature Range (-13 to 140 °F).
 - [图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/02778CB8-44FF-B189-5DD2-52074F0F6A81.jpg>)；采集：2026-10-13T08:05:05+00:00；AHRIcertified/ETLlisted/ENERGYSTARlogos;independentmatchingverification notperformed.
   - 适用限制：Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred.
 - [图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/4751E183-E148-92B0-51C5-F5A5821B80A2.jpg>)；采集：2026-10-13T08:05:26+00:00；8modes:auto,cool,heat,dry,fan,sleep,care,ECO.
@@ -2344,7 +2348,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-TP12K230V · COZEWARE MultiCoze Series 12000 BTU 24 SEER2 & 10 HSPF2 Mini Split, 230V
 
 品牌：COZEWARE；主 SKU：HAHEAC-TP12K230V；商品页 ID：10460。
-[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-13T07:32:24+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-19T01:35:00+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/10460-3b5ee4ef.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -2388,8 +2392,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-13T07:32:24+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-19T01:35:00+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -2398,7 +2402,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)
 
-价格与库存快照：售价：719.99；官网标示原价：900；币种：USD；折扣文字：-20%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:32:24+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：719.99；官网标示原价：900；币种：USD；折扣文字：-20%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:00+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -2406,8 +2410,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
   - 适用限制：Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred.
 - [图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/E10FCECA-45ED-D7A6-39EF-96E4BCF5502A.jpg>)；采集：2026-10-13T08:07:36+00:00；Product/package photograph app/remote;no addedquantitativeparameterinferred.
   - 适用限制：Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred.
-- [图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/E1214705-C201-CCA1-2053-001D9692B5EB.jpg>)；采集：2026-10-13T08:07:37+00:00；MultiCoze23SEER2;12000cool/heatBTU;127°Fcooling/5°Fheating;750sqft;1ton.
-  - 适用限制：Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred.
+- [图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202610/4246E743-B510-ADF7-B232-2018263ED0AA.jpg>)；采集：2026-10-19T01:42:29+00:00；ENERGY STAR® 24 SEER2; ALL-CLIMATE PERFORMANCE; 12000 BTU cooling capacity; 12000 BTU heating capacity; 127°F Supreme Cooling; 5°F Extreme Heating; 750 Sq Ft; 1 Ton Heat Pump.
+  - 适用限制：Official marketing claims, not independent performance verification.；Only applies to attached exact product page; shared identical file does not authorize cross-model specification inheritance.；Image cooling/heating callouts do not define the entire operating-temperature envelope; preserve separate table Ambient Temperature Range (-13 to 140 °F).
 - [图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/02778CB8-44FF-B189-5DD2-52074F0F6A81.jpg>)；采集：2026-10-13T08:05:05+00:00；AHRIcertified/ETLlisted/ENERGYSTARlogos;independentmatchingverification notperformed.
   - 适用限制：Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred.
 - [图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/4751E183-E148-92B0-51C5-F5A5821B80A2.jpg>)；采集：2026-10-13T08:05:26+00:00；8modes:auto,cool,heat,dry,fan,sleep,care,ECO.
@@ -2438,7 +2442,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-TP18K · COZEWARE MultiCoze Series 18000 BTU 24 SEER2 & 10 HSPF2 Mini Split, 230V
 
 品牌：COZEWARE；主 SKU：HAHEAC-TP18K；商品页 ID：10461。
-[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-13T07:32:12+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-19T01:34:59+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/10461-ab74bc86.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -2482,8 +2486,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-13T07:32:12+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-19T01:34:59+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -2492,7 +2496,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)
 
-价格与库存快照：售价：999.99；官网标示原价：1,250；币种：USD；折扣文字：-20%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:32:12+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：999.99；官网标示原价：1,250；币种：USD；折扣文字：-20%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:34:59+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -2500,8 +2504,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
   - 适用限制：Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred.
 - [图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/E10FCECA-45ED-D7A6-39EF-96E4BCF5502A.jpg>)；采集：2026-10-13T08:07:36+00:00；Product/package photograph app/remote;no addedquantitativeparameterinferred.
   - 适用限制：Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred.
-- [图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/C410ED42-E136-B510-9E80-9D97278B5F26.jpg>)；采集：2026-10-13T08:07:21+00:00；MultiCoze23SEER2;18000cool/heatBTU;127°Fcooling/5°Fheating;1250sqft;1.5ton.
-  - 适用限制：Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred.
+- [图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202610/8E65B7FF-25AA-A329-2CAA-C1B362A17F19.jpg>)；采集：2026-10-19T01:42:30+00:00；ENERGY STAR® 24 SEER2; ALL-CLIMATE PERFORMANCE; 18000 BTU cooling capacity; 18000 BTU heating capacity; 127°F Supreme Cooling; 5°F Extreme Heating; 1250 Sq Ft; 1.5 Ton Heat Pump.
+  - 适用限制：Official marketing claims, not independent performance verification.；Only applies to attached exact product page; shared identical file does not authorize cross-model specification inheritance.；Image cooling/heating callouts do not define the entire operating-temperature envelope; preserve separate table Ambient Temperature Range (-13 to 140 °F).
 - [图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/02778CB8-44FF-B189-5DD2-52074F0F6A81.jpg>)；采集：2026-10-13T08:05:05+00:00；AHRIcertified/ETLlisted/ENERGYSTARlogos;independentmatchingverification notperformed.
   - 适用限制：Use only in exact attached source page scope. Official marketing is not independent performance verification; small unreadable text is not inferred.
 - [图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/4751E183-E148-92B0-51C5-F5A5821B80A2.jpg>)；采集：2026-10-13T08:05:26+00:00；8modes:auto,cool,heat,dry,fan,sleep,care,ECO.
@@ -2532,7 +2536,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-TP24K · COZEWARE MultiCoze Series 24000 BTU 23 SEER2 & 10 HSPF2 Mini Split, 230V
 
 品牌：COZEWARE；主 SKU：HAHEAC-TP24K；商品页 ID：10462。
-[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-13T07:32:04+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-19T01:34:57+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/10462-2f1fbdc3.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -2576,8 +2580,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-13T07:32:04+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-19T01:34:57+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -2586,7 +2590,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)
 
-价格与库存快照：售价：1,299.99；官网标示原价：1,600；币种：USD；折扣文字：-19%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:32:04+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：1,299.99；官网标示原价：1,600；币种：USD；折扣文字：-19%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:34:57+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -2626,7 +2630,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-TP9K230V · COZEWARE MultiCoze Series 9000 BTU 23 SEER2 & 9.5 HSPF2 Mini Split, 230V
 
 品牌：COZEWARE；主 SKU：HAHEAC-TP9K230V；商品页 ID：10458。
-[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/10458-5168ee79.json>)。
 参数冲突待核：voltage、warranty_scope、voltage；双方原值与出处见本条记录，暂不采用统一值。
@@ -2671,15 +2675,15 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：voltage**。状态：unresolved。
   - visually_read_official_dimensions_image：230V；[来源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/AA6E077B-968E-0C4B-940A-18ED16A788EB.jpg>)；采集：2026-10-13T07:37:18+00:00
-  - specifications.Voltage：110V；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00
+  - specifications.Voltage：110V；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00
   - 使用限制：preserve both; do not select or repair an official claim without model-specific clarification
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 - **待核冲突：voltage**。状态：unresolved。
-  - product_name：230V；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00
-  - specifications.Voltage：110V；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00
+  - product_name：230V；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00
+  - specifications.Voltage：110V；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00
   - 使用限制：do not select one value; requires official model clarification
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -2688,7 +2692,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)
 
-价格与库存快照：售价：639.99；官网标示原价：800；币种：USD；折扣文字：-20%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:32:30+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：639.99；官网标示原价：800；币种：USD；折扣文字：-20%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:02+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -2728,7 +2732,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 #### HAHEAC-TP9K110V · COZEWARE MultiCoze Series 9000 BTU 23 SEER2 & 10 HSPF2 Mini Split, 110V
 
 品牌：COZEWARE；主 SKU：HAHEAC-TP9K110V；商品页 ID：10456。
-[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-13T07:32:32+00:00
+[官网商品页](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-19T01:35:04+00:00
 
 完整字段与媒体：[事实 JSON](<https://hsbrxlb.github.io/field-notes-hub/data/product-library/cozeware/facts/10456-663cf4e4.json>)。
 参数冲突待核：warranty_scope；双方原值与出处见本条记录，暂不采用统一值。
@@ -2772,8 +2776,8 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 - [商品页运输政策](<https://www.cozeware.com/article/Shipping-Guide.html?aid=43>)
 - [商品页退换政策](<https://www.cozeware.com/article/Returns-&-Refunds.html?aid=42>)
 - **待核冲突：warranty_scope**。状态：needs_clarification。
-  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-13T07:32:32+00:00
-  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+  - specifications.Warranty：5-Year Full Warranty; 7-Year Warranty on Compressor；[来源](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-19T01:35:04+00:00
+  - policy_warranty_definition_and_liability：Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.；[来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
   - 使用限制：Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.
 
 官网缺口与限制：官网质保范围或期限需要复核；官网资料口径需要复核。
@@ -2782,7 +2786,7 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 
 关联型号（参数须查各自商品页）：[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)
 
-价格与库存快照：售价：659.99；官网标示原价：825；币种：USD；折扣文字：-20%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-13T07:32:32+00:00。免运费的适用条件以对应政策为准。
+价格与库存快照：售价：659.99；官网标示原价：825；币种：USD；折扣文字：-20%；库存或配送文字：Estimated Delivery in 3-5 Days；官网免运费标记：true；采集：2026-10-19T01:35:04+00:00。免运费的适用条件以对应政策为准。
 
 已读图片中的官网说明：
 
@@ -2828,14 +2832,14 @@ Cozeware 按商品页名称中明确写出的系列归类；没有明确系列�
 官网答复原文：Cozeware air conditioners deliver powerful and efficient cooling with 20 SEER2 efficiency (18 SEER2 for 9K BTU Models), significantly outperforming standard units (14-17 SEER2).
 Available in 9K, 12K, 18K and 24K capacities - suitable for 450, 750, 1,250 and 1,500 sq ft - a Cozeware mini split brings your space from hot to comfortable in minutes while keeping energy bills low.
 
-所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-13T07:33:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-13T07:33:31+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-13T07:33:25+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-13T07:33:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-13T07:33:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-13T07:33:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-13T07:33:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-13T07:33:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-13T07:33:14+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-13T07:33:10+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-13T07:33:02+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-13T07:32:27+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-13T07:32:24+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-13T07:32:12+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-13T07:32:04+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-13T07:32:32+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-13T07:32:48+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-13T07:32:46+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-13T07:32:50+00:00
+所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-19T01:35:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-19T01:35:30+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-19T01:35:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-19T01:35:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-19T01:35:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-19T01:35:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-19T01:35:18+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-19T01:35:17+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-19T01:35:16+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-19T01:35:00+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-19T01:34:59+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-19T01:34:57+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-19T01:35:04+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-19T01:35:13+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-19T01:35:10+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-19T01:35:14+00:00
 
 <a id="faq-2"></a>
 ### FAQ 2 · Is the online manual different from the printed one included in the box?
 
 官网答复原文：For the most updated product information, always refer to the online version of the manual available on our official website. The printed copy provides reliable core guidance, but we recommend checking the online manual for any potential updates.
 
-所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-13T07:33:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-13T07:33:31+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-13T07:33:25+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-13T07:33:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-13T07:33:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-13T07:33:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-13T07:33:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-13T07:33:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-13T07:33:14+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-13T07:33:10+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-13T07:33:02+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-13T07:32:27+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-13T07:32:24+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-13T07:32:12+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-13T07:32:04+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-13T07:32:32+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-13T07:32:48+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-13T07:32:46+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-13T07:32:50+00:00
+所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-19T01:35:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-19T01:35:30+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-19T01:35:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-19T01:35:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-19T01:35:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-19T01:35:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-19T01:35:18+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-19T01:35:17+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-19T01:35:16+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-19T01:35:00+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-19T01:34:59+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-19T01:34:57+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-19T01:35:04+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-19T01:35:13+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-19T01:35:10+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-19T01:35:14+00:00
 
 <a id="faq-3"></a>
 ### FAQ 3 · Do I need a circuit breaker for my split AC, and how do I size it correctly?
@@ -2843,7 +2847,7 @@ Available in 9K, 12K, 18K and 24K capacities - suitable for 450, 750, 1,250 and 
 官网答复原文：Yes, a dedicated circuit breaker is necessary. Size it according to the nameplate on the outdoor unit : the rating must be ≥ MCA (Minimum Circuit Ampacity) and ≤ MOP (Maximum Overcurrent Protection).
 For example, if MCA=15A and MOP=25A, a 20A breaker works. Below MCA causes nuisance tripping; above MOP offers no overcurrent protection. Also ensure the supply wiring has a current capacity ≥ MCA.
 
-所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-13T07:33:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-13T07:33:31+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-13T07:33:25+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-13T07:33:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-13T07:33:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-13T07:33:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-13T07:33:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-13T07:33:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-13T07:33:14+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-13T07:33:10+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-13T07:33:02+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-13T07:32:27+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-13T07:32:24+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-13T07:32:12+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-13T07:32:04+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-13T07:32:32+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-13T07:32:48+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-13T07:32:46+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-13T07:32:50+00:00
+所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-19T01:35:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-19T01:35:30+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-19T01:35:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-19T01:35:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-19T01:35:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-19T01:35:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-19T01:35:18+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-19T01:35:17+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-19T01:35:16+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-19T01:35:00+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-19T01:34:59+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-19T01:34:57+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-19T01:35:04+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-19T01:35:13+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-19T01:35:10+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-19T01:35:14+00:00
 
 <a id="faq-4"></a>
 ### FAQ 4 · Can I install the 230V option in my home? How do I know if I should choose 115V or 230V?
@@ -2853,7 +2857,7 @@ For example, if MCA=15A and MOP=25A, a 20A breaker works. Below MCA causes nuisa
 230V Option: Require a dedicated double-pole circuit breaker (similar to what is used for a dryer or oven). It offers higher efficiency and lower line loss.
 Our Strong Recommendation: Before purchasing, consult with a licensed HVAC installer or electrician to confirm if a dedicated 230V circuit is available.
 
-所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-13T07:33:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-13T07:33:31+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-13T07:33:25+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-13T07:33:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-13T07:33:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-13T07:33:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-13T07:33:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-13T07:33:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-13T07:33:14+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-13T07:33:10+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-13T07:33:02+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-13T07:32:27+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-13T07:32:24+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-13T07:32:12+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-13T07:32:04+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-13T07:32:32+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-13T07:32:48+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-13T07:32:46+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-13T07:32:50+00:00
+所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-19T01:35:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-19T01:35:30+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-19T01:35:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-19T01:35:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-19T01:35:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-19T01:35:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-19T01:35:18+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-19T01:35:17+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-19T01:35:16+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-19T01:35:00+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-19T01:34:59+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-19T01:34:57+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-19T01:35:04+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-19T01:35:13+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-19T01:35:10+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-19T01:35:14+00:00
 
 <a id="faq-5"></a>
 ### FAQ 5 · What refrigerant does the system use? Is it pre-charged?
@@ -2861,14 +2865,14 @@ Our Strong Recommendation: Before purchasing, consult with a licensed HVAC insta
 官网答复原文：Cozeware air conditioner uses R32 refrigerant, which has a ~70% lower Global Warming Potential (GWP), making it a more environmental choice (classified as A2L safety).
 Yes, the outdoor unit is fully pre-charged and sealed at the factory, ensuring optimal performance and easy installation. The indoor unit and suction line must be thoroughly evacuated to remove all air and moisture before opening the valves.
 
-所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-13T07:33:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-13T07:33:31+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-13T07:33:25+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-13T07:33:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-13T07:33:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-13T07:33:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-13T07:33:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-13T07:33:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-13T07:33:14+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-13T07:33:10+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-13T07:33:02+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-13T07:32:27+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-13T07:32:24+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-13T07:32:12+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-13T07:32:04+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-13T07:32:32+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-13T07:32:48+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-13T07:32:46+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-13T07:32:50+00:00
+所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-19T01:35:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-19T01:35:30+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-19T01:35:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-19T01:35:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-19T01:35:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-19T01:35:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-19T01:35:18+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-19T01:35:17+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-19T01:35:16+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-19T01:35:00+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-19T01:34:59+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-19T01:34:57+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-19T01:35:04+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-19T01:35:13+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-19T01:35:10+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-19T01:35:14+00:00
 
 <a id="faq-6"></a>
 ### FAQ 6 · How much will I actually save on my electricity bill?
 
 官网答复原文：Savings depend on your local electricity rates, usage patterns, and the efficiency of the system you're replacing. For example, replacing an old 10 SEER2 window unit with a Cozeware 20 SEER2 mini split unit could reduce your summer cooling costs by 40-50% or more.
 
-所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-13T07:33:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-13T07:33:31+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-13T07:33:25+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-13T07:33:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-13T07:33:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-13T07:33:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-13T07:33:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-13T07:33:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-13T07:33:14+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-13T07:33:10+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-13T07:33:02+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-13T07:32:27+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-13T07:32:24+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-13T07:32:12+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-13T07:32:04+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-13T07:32:32+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-13T07:32:48+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-13T07:32:46+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-13T07:32:50+00:00
+所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-19T01:35:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-19T01:35:30+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-19T01:35:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-19T01:35:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-19T01:35:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-19T01:35:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-19T01:35:18+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-19T01:35:17+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-19T01:35:16+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-19T01:35:00+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-19T01:34:59+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-19T01:34:57+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-19T01:35:04+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-19T01:35:13+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-19T01:35:10+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-19T01:35:14+00:00
 
 <a id="faq-7"></a>
 ### FAQ 7 · Is maintenance difficult? How do I clean the filters?
@@ -2877,14 +2881,14 @@ Yes, the outdoor unit is fully pre-charged and sealed at the factory, ensuring o
 Seasonly: Check and clean the reusable air filter in the indoor unit. Simply remove it, rinse with water, and let it dry completely before reinserting.
 Annually: Schedule a professional check-up with your HVAC technician, ensuring optimal performance and longevity.
 
-所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-13T07:33:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-13T07:33:31+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-13T07:33:25+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-13T07:33:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-13T07:33:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-13T07:33:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-13T07:33:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-13T07:33:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-13T07:33:14+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-13T07:33:10+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-13T07:33:02+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-13T07:32:27+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-13T07:32:24+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-13T07:32:12+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-13T07:32:04+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-13T07:32:32+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-13T07:32:48+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-13T07:32:46+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-13T07:32:50+00:00
+所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-19T01:35:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-19T01:35:30+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-19T01:35:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-19T01:35:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-19T01:35:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-19T01:35:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-19T01:35:18+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-19T01:35:17+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-19T01:35:16+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-19T01:35:00+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-19T01:34:59+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-19T01:34:57+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-19T01:35:04+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-19T01:35:13+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-19T01:35:10+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-19T01:35:14+00:00
 
 <a id="faq-8"></a>
 ### FAQ 8 · What control options are available across different models?
 
 官网答复原文：All models include a remote control. The 9,000 BTU model is remote-only, while 12,000 / 18,000 / 24,000 BTU models also support app control and voice assistants (Google Assistant & Alexa).
 
-所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-13T07:33:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-13T07:33:31+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-13T07:33:25+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-13T07:33:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-13T07:33:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-13T07:33:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-13T07:33:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-13T07:33:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-13T07:33:14+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-13T07:33:10+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-13T07:33:02+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-13T07:32:27+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-13T07:32:24+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-13T07:32:12+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-13T07:32:04+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-13T07:32:32+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-13T07:32:48+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-13T07:32:46+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-13T07:32:50+00:00
+所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-19T01:35:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-19T01:35:30+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-19T01:35:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-19T01:35:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-19T01:35:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-19T01:35:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-19T01:35:18+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-19T01:35:17+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-19T01:35:16+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-19T01:35:00+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-19T01:34:59+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-19T01:34:57+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-19T01:35:04+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-19T01:35:13+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-19T01:35:10+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-19T01:35:14+00:00
 
 <a id="faq-9"></a>
 ### FAQ 9 · Do you have the supplied lineset length?
@@ -2896,21 +2900,21 @@ Exception:
 1. Enduring 12,000 BTU model includes two 4.9 ft drain hoses instead.
 2. E-Save Series do not include the power cord.
 
-所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-13T07:33:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-13T07:33:31+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-13T07:33:25+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-13T07:33:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-13T07:33:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-13T07:33:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-13T07:33:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-13T07:33:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-13T07:33:14+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-13T07:33:10+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-13T07:33:02+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-13T07:32:27+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-13T07:32:24+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-13T07:32:12+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-13T07:32:04+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-13T07:32:32+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-13T07:32:48+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-13T07:32:46+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-13T07:32:50+00:00
+所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-19T01:35:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-19T01:35:30+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-19T01:35:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-19T01:35:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-19T01:35:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-19T01:35:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-19T01:35:18+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-19T01:35:17+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-19T01:35:16+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-19T01:35:00+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-19T01:34:59+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-19T01:34:57+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-19T01:35:04+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-19T01:35:13+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-19T01:35:10+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-19T01:35:14+00:00
 
 <a id="faq-10"></a>
 ### FAQ 10 · Is there still warranty for DIY install?
 
 官网答复原文：The warranty remains valid for defects in materials and workmanship of the unit itself. However, any damage resulting from the installation process-including improper handling, incorrect setup, use of non-standard parts, or exceeding specified limits such as the maximum pre-charged line set length-will void the warranty coverage for resulting issues.
 
-所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-13T07:33:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-13T07:33:31+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-13T07:33:25+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-13T07:33:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-13T07:33:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-13T07:33:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-13T07:33:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-13T07:33:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-13T07:33:14+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-13T07:33:10+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-13T07:33:02+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-13T07:32:27+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-13T07:32:24+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-13T07:32:12+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-13T07:32:04+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-13T07:32:32+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-13T07:32:48+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-13T07:32:46+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-13T07:32:50+00:00
+所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-19T01:35:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-19T01:35:30+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-19T01:35:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-19T01:35:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-19T01:35:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-19T01:35:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-19T01:35:18+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-19T01:35:17+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-19T01:35:16+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-19T01:35:00+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-19T01:34:59+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-19T01:34:57+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-19T01:35:04+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-19T01:35:13+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-19T01:35:10+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-19T01:35:14+00:00
 
 <a id="faq-11"></a>
 ### FAQ 11 · Why doesn't the ac stop running after reaching the set temperature in cooling or heating mode?
 
 官网答复原文：This is normal. The unit continues running at low power and low fan speed to maintain a stable room temperature. Avoiding frequent on/off cycles helps reduce noise, protect the compressor, extend service life and save more energy.
 
-所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-13T07:33:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-13T07:33:31+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-13T07:33:25+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-13T07:33:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-13T07:33:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-13T07:33:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-13T07:33:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-13T07:33:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-13T07:33:14+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-13T07:33:10+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-13T07:33:02+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-13T07:32:27+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-13T07:32:24+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-13T07:32:12+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-13T07:32:04+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-13T07:32:32+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-13T07:32:48+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-13T07:32:46+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-13T07:32:50+00:00
+所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-19T01:35:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-19T01:35:30+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-19T01:35:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-19T01:35:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-19T01:35:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-19T01:35:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-19T01:35:18+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-19T01:35:17+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-19T01:35:16+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-19T01:35:00+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-19T01:34:59+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-19T01:34:57+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-19T01:35:04+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-19T01:35:13+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-19T01:35:10+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-19T01:35:14+00:00
 
 <a id="faq-12"></a>
 ### FAQ 12 · What are Auto, ECO, IFEEL, and Care Modes, and how to choose?
@@ -2921,21 +2925,21 @@ IFEEL Mode: Uses intelligent ambient sensing to automatically adjust temperature
 Care Mode: Maintains a gentle, consistent temperature for steady, quiet comfort.
 Quick Tip: Start with Auto for fast cooling/heating, switch to ECO for energy saving. Use IFEEL for smart, adaptive comfort or Care for stable, gentle cooling.
 
-所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-13T07:33:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-13T07:33:31+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-13T07:33:25+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-13T07:33:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-13T07:33:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-13T07:33:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-13T07:33:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-13T07:33:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-13T07:33:14+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-13T07:33:10+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-13T07:33:02+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-13T07:32:27+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-13T07:32:24+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-13T07:32:12+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-13T07:32:04+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-13T07:32:32+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-13T07:32:48+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-13T07:32:46+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-13T07:32:50+00:00
+所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-19T01:35:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-19T01:35:30+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-19T01:35:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-19T01:35:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-19T01:35:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-19T01:35:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-19T01:35:18+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-19T01:35:17+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-19T01:35:16+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-19T01:35:00+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-19T01:34:59+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-19T01:34:57+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-19T01:35:04+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-19T01:35:13+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-19T01:35:10+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-19T01:35:14+00:00
 
 <a id="faq-13"></a>
 ### FAQ 13 · How should I handle and position the unit before installation?
 
 官网答复原文：Please handle the unit with care and keep it in the correct position shown on the packaging. Do not turn or place the unit upside down. Improper positioning may damage internal components. For the outdoor unit, take extra care to keep it upright to help prevent damage and potential refrigerant leaks.
 
-所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-13T07:33:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-13T07:33:31+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-13T07:33:25+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-13T07:33:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-13T07:33:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-13T07:33:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-13T07:33:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-13T07:33:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-13T07:33:14+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-13T07:33:10+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-13T07:33:02+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-13T07:32:27+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-13T07:32:24+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-13T07:32:12+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-13T07:32:04+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-13T07:32:32+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-13T07:32:48+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-13T07:32:46+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-13T07:32:50+00:00
+所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-19T01:35:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-19T01:35:30+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-19T01:35:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-19T01:35:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-19T01:35:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-19T01:35:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-19T01:35:18+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-19T01:35:17+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-19T01:35:16+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-19T01:35:00+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-19T01:34:59+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-19T01:34:57+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-19T01:35:04+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-19T01:35:13+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-19T01:35:10+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-19T01:35:14+00:00
 
 <a id="faq-14"></a>
 ### FAQ 14 · More FAQ
 
 官网答复原文：https://www.cozeware.com/help?id=118
 
-所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-13T07:33:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-13T07:33:31+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-13T07:33:25+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-13T07:33:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-13T07:33:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-13T07:33:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-13T07:33:20+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-13T07:33:16+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-13T07:33:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-13T07:33:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-13T07:33:14+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-13T07:33:10+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-13T07:33:02+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-13T07:32:42+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-13T07:32:40+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-13T07:32:37+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-13T07:32:34+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-13T07:32:27+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-13T07:32:24+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-13T07:32:12+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-13T07:32:04+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-13T07:32:30+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-13T07:32:32+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-13T07:32:48+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-13T07:32:46+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-13T07:32:50+00:00
+所附型号与出处：[HAHEAC-CZ0018](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html>)；采集：2026-10-19T01:35:32+00:00；[HAHEAC-CZ0020](<https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html>)；采集：2026-10-19T01:35:30+00:00；[HAHEAC-TS12K230V](<https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-TS12K115V](<https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html>)；采集：2026-10-19T01:35:26+00:00；[HAHEAC-ZA12K115V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html>)；采集：2026-10-19T01:35:24+00:00；[HAHEAC-ZA12K230V](<https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html>)；采集：2026-10-19T01:35:22+00:00；[HAHEAC-ZA18K](<https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html>)；采集：2026-10-19T01:35:21+00:00；[HAHEAC-ZA24K](<https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html>)；采集：2026-10-19T01:35:20+00:00；[HAHEAC-DT12K115V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html>)；采集：2026-10-19T01:35:29+00:00；[HAHEAC-DT12K230V](<https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html>)；采集：2026-10-19T01:35:28+00:00；[HAHEAC-DT18K](<https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html>)；采集：2026-10-19T01:35:18+00:00；[HAHEAC-DT24K](<https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html>)；采集：2026-10-19T01:35:17+00:00；[HAHEAC-DT9K](<https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html>)；采集：2026-10-19T01:35:16+00:00；[HAHEAC-TP2Z18K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html>)；采集：2026-10-19T01:35:08+00:00；[HAHEAC-TP3Z27K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html>)；采集：2026-10-19T01:35:07+00:00；[HAHEAC-TP3Z30K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html>)；采集：2026-10-19T01:35:06+00:00；[HAHEAC-TP4Z42K](<https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html>)；采集：2026-10-19T01:35:05+00:00；[HAHEAC-TP12K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html>)；采集：2026-10-19T01:35:01+00:00；[HAHEAC-TP12K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html>)；采集：2026-10-19T01:35:00+00:00；[HAHEAC-TP18K](<https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html>)；采集：2026-10-19T01:34:59+00:00；[HAHEAC-TP24K](<https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html>)；采集：2026-10-19T01:34:57+00:00；[HAHEAC-TP9K230V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html>)；采集：2026-10-19T01:35:02+00:00；[HAHEAC-TP9K110V](<https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html>)；采集：2026-10-19T01:35:04+00:00；[HAHEAC-DC18K](<https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html>)；采集：2026-10-19T01:35:13+00:00；[HAHEAC-DC24K](<https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html>)；采集：2026-10-19T01:35:10+00:00；[HAHEAC-DC9K](<https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html>)；采集：2026-10-19T01:35:14+00:00
 
 <a id="faq-15"></a>
 ### FAQ 15 · How well does it cool in summer?
@@ -2943,7 +2947,7 @@ Quick Tip: Start with Auto for fast cooling/heating, switch to ECO for energy sa
 官网答复原文：The Cozeware 34,000 BTU air handler delivers powerful whole-home cooling with 19 SEER2 efficiency, helping keep large spaces comfortable while using energy more efficiently than older, lower-efficiency HVAC systems.
 Its concealed ducted design distributes cooled air through multiple rooms, helping reduce hot and cold spots for more consistent comfort. Designed for large homes and multi-room applications up to 2,000 sq ft (coverage may vary depending on home layout, insulation, climate, and installation conditions), it provides quiet, efficient cooling throughout the summer.
 
-所附型号与出处：[HAHEAC-VX34K](<https://www.cozeware.com/products/cozeware-34000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler-230v-p-10179.html>)；采集：2026-10-13T07:32:44+00:00
+所附型号与出处：[HAHEAC-VX34K](<https://www.cozeware.com/products/cozeware-34000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler-230v-p-10179.html>)；采集：2026-10-19T01:35:10+00:00
 
 <a id="faq-16"></a>
 ### FAQ 16 · How much will I actually save on my electricity bill?
@@ -2951,7 +2955,7 @@ Its concealed ducted design distributes cooled air through multiple rooms, helpi
 官网答复原文：Energy savings depend on your local electricity rates, usage habits, home insulation, and the efficiency of your current HVAC system.
 With a 19 SEER2 rating, the Cozeware 34,000 BTU air handler is designed to deliver cooling more efficiently than many older, lower-efficiency systems, which may help reduce energy usage while maintaining comfortable indoor temperatures.
 
-所附型号与出处：[HAHEAC-VX34K](<https://www.cozeware.com/products/cozeware-34000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler-230v-p-10179.html>)；采集：2026-10-13T07:32:44+00:00
+所附型号与出处：[HAHEAC-VX34K](<https://www.cozeware.com/products/cozeware-34000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler-230v-p-10179.html>)；采集：2026-10-19T01:35:10+00:00
 
 <a id="faq-17"></a>
 ### FAQ 17 · What is the difference between an air handler and a wall-mounted mini split?
@@ -2960,7 +2964,7 @@ With a 19 SEER2 rating, the Cozeware 34,000 BTU air handler is designed to deliv
 A wall-mounted mini split is installed directly in the living space and provides targeted heating or cooling without requiring ductwork, making it a flexible solution for individual rooms or specific areas.
 The right choice depends on your home's layout, installation preferences, and comfort needs.
 
-所附型号与出处：[HAHEAC-VX34K](<https://www.cozeware.com/products/cozeware-34000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler-230v-p-10179.html>)；采集：2026-10-13T07:32:44+00:00
+所附型号与出处：[HAHEAC-VX34K](<https://www.cozeware.com/products/cozeware-34000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler-230v-p-10179.html>)；采集：2026-10-19T01:35:10+00:00
 
 <a id="faq-18"></a>
 ### FAQ 18 · What control options are available for the air handler system?
@@ -2968,7 +2972,7 @@ The right choice depends on your home's layout, installation preferences, and co
 官网答复原文：The Cozeware 34,000 BTU air handler offers flexible control options and is compatible with both RS485 wired controllers and standard 24V thermostats.
 Compatible controllers and thermostats can be selected separately based on your installation needs. (Controllers and thermostats are sold separately.)
 
-所附型号与出处：[HAHEAC-VX34K](<https://www.cozeware.com/products/cozeware-34000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler-230v-p-10179.html>)；采集：2026-10-13T07:32:44+00:00
+所附型号与出处：[HAHEAC-VX34K](<https://www.cozeware.com/products/cozeware-34000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler-230v-p-10179.html>)；采集：2026-10-19T01:35:10+00:00
 
 <a id="faq-19"></a>
 ### FAQ 19 · Can I install the air handler system myself?
@@ -2976,7 +2980,7 @@ Compatible controllers and thermostats can be selected separately based on your 
 官网答复原文：The Cozeware 34,000 BTU air handler is designed for professional installation by qualified HVAC technicians.
 Because a ducted air handler requires proper ductwork, electrical connections, refrigerant line installation, and system commissioning, professional installation helps ensure safe operation, reliable performance, and optimal efficiency.
 
-所附型号与出处：[HAHEAC-VX34K](<https://www.cozeware.com/products/cozeware-34000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler-230v-p-10179.html>)；采集：2026-10-13T07:32:44+00:00
+所附型号与出处：[HAHEAC-VX34K](<https://www.cozeware.com/products/cozeware-34000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler-230v-p-10179.html>)；采集：2026-10-19T01:35:10+00:00
 
 <a id="faq-20"></a>
 ### FAQ 20 · Does professional installation affect my warranty?
@@ -2984,7 +2988,7 @@ Because a ducted air handler requires proper ductwork, electrical connections, r
 官网答复原文：Professional installation by a qualified HVAC technician is recommended to ensure proper system performance and help maintain warranty coverage.
 The warranty covers defects in materials and workmanship of the unit. Issues caused by improper installation, incorrect setup, unauthorized modifications, or incompatible components are not covered.
 
-所附型号与出处：[HAHEAC-VX34K](<https://www.cozeware.com/products/cozeware-34000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler-230v-p-10179.html>)；采集：2026-10-13T07:32:44+00:00
+所附型号与出处：[HAHEAC-VX34K](<https://www.cozeware.com/products/cozeware-34000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler-230v-p-10179.html>)；采集：2026-10-19T01:35:10+00:00
 
 ## 官网政策与相关资料
 
@@ -2994,7 +2998,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Eco-Friendly Mini Split Air Conditioners | Affordable Heating & Cooling Solutions
 
-[官方来源](<https://www.cozeware.com>)；采集：2026-10-13T07:33:35+00:00
+[官方来源](<https://www.cozeware.com>)；采集：2026-10-19T01:35:37+00:00
 
 - 首页推荐和用户评价不作为型号参数；横幅活动内容属于带日期的官网声明。
 - 已读资料图片：FreshFlow: fresh outdoor air without opening windows; filtered fresh air, no wall renovation. Banner literally says NOW LIVE ON KICKSTARTER.；[图源](<https://img.yitashop.com/10006/banners/original/202609/E2F7826E-A8FC-CA36-BF29-92802335F713.jpg>)；采集：2026-10-13T08:35:02+00:00
@@ -3003,36 +3007,36 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 - 已读资料图片：White unit pictured: Quiet Cooling, Total Comfort; 4D airflow cooling reaches every corner. No numeric noise result.；[图源](<https://img.yitashop.com/10006/banners/original/202605/1DAE9288-DD54-8EBF-4432-B7C86E8CDBFE.jpg>)；采集：2026-10-13T08:34:43+00:00
 - 已读资料图片：Manufacturing and logistics montage: Built at Scale, Delivered with Confidence. No measured capacity or guaranteed delivery date.；[图源](<https://img.yitashop.com/10006/banners/original/202607/20536CC9-2FE8-9A5D-D5FC-12A7DD9441E5.jpg>)；采集：2026-10-13T08:34:48+00:00
 - 已读资料图片：Offline-event photo montage: Seen Offline, Trusted Everywhere. No quantified audience or independent endorsement.；[图源](<https://img.yitashop.com/10006/banners/original/202605/135BEDBD-25B8-EDBE-C49C-88A83BA7FAB4.jpg>)；采集：2026-10-13T08:34:42+00:00
-- 已读资料图片：Product photo; device display/phone UI are illustrative, no new specifications inferred.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/banners/original/202605/AED2C4F7-9E12-FB2C-F3F4-C7911B108182.jpg>)；采集：2026-10-13T07:34:25+00:00
-- 已读资料图片：Lifestyle product photo with app/remote depicted; no quantitative specification asserted.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/149BD27A-75AE-A16F-1E2D-116C47F01F6E.jpg>)；采集：2026-10-13T07:34:27+00:00
 - 已读资料图片：Product photograph app/remote depicted;no new quantitative specification.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/banners/original/202605/E2AC5FDC-E979-1E78-29C8-B98B360C7D44.jpg>)；采集：2026-10-13T07:52:27+00:00
 - 已读资料图片：Product photograph,nofactualtext.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/8B55195D-A594-2F0A-B881-CBF7CB713022.jpg>)；采集：2026-10-13T08:06:20+00:00
 - 已读资料图片：Product photograph;no factual text except illustrative display.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/banners/original/202606/5905719B-E9E9-A632-9729-E66C3D3F6598.jpg>)；采集：2026-10-13T07:52:32+00:00
 - 已读资料图片：Product/package photograph;no newquantitativeparameterinferred.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/59BB762D-54E8-642D-AEF4-418CFB26C4A3.jpg>)；采集：2026-10-13T08:05:38+00:00
+- 已读资料图片：Product photo; device display/phone UI are illustrative, no new specifications inferred.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/banners/original/202605/AED2C4F7-9E12-FB2C-F3F4-C7911B108182.jpg>)；采集：2026-10-13T07:34:25+00:00
+- 已读资料图片：Lifestyle product photo with app/remote depicted; no quantitative specification asserted.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/149BD27A-75AE-A16F-1E2D-116C47F01F6E.jpg>)；采集：2026-10-13T07:34:27+00:00
 - 已读资料图片：Product photograph with remote/app;no new quantitative specification.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/banners/original/202605/53151214-DFCB-977E-EB02-1C67CDB5BA3E.jpg>)；采集：2026-10-13T07:52:23+00:00
 - 已读资料图片：Product/package photograph app/remote;noquantitativeparameterinferred.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/2751B924-5195-00D2-0DB8-0597FAB64BC5.jpg>)；采集：2026-10-13T08:05:11+00:00
 - 已读资料图片：Product lifestyle photograph app/remote shown;UI temperatures illustrative.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/banners/original/202605/05F81D9B-271F-3C39-A1E4-A8822EA7FCC6.jpg>)；采集：2026-10-13T07:52:13+00:00
 - 已读资料图片：Product photograph,nofactualtext.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202609/D0B8F3B2-4026-4C67-E29D-EA3C22C5F402.jpg>)；采集：2026-10-13T08:07:26+00:00
 - 已读资料图片：Product photograph app/remote;no new quantitative specification.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202603/8CDC1FBE-6C84-8F73-5617-5B1260FBFCA9.jpg>)；采集：2026-10-13T07:54:01+00:00
 - 已读资料图片：Lifestyle photograph,no factual text.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202603/D7645D56-A94B-EBAF-DEE3-1BFD55318A74.jpg>)；采集：2026-10-13T07:54:18+00:00
-- 已读资料图片：Productphotograph;no addedquantitativeparameter.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202604/980F2CF1-F6F8-E8C7-C47E-79CB131714F5.jpg>)；采集：2026-10-13T07:57:07+00:00
-- 已读资料图片：Product/package photograph app/remote;no new quantitativeparameter.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202604/E5CB943A-7258-8455-E987-5D404B96AA4A.jpg>)；采集：2026-10-13T07:58:41+00:00
-- 已读资料图片：Product photograph app/remote;no added quantitative specification.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202603/4BC6276D-FC03-EC62-67C0-5E20478D71F4.jpg>)；采集：2026-10-13T07:53:45+00:00
-- 已读资料图片：Lifestyle product photograph,no factual text.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202603/51AF44E7-DD27-5068-887A-137848737C95.jpg>)；采集：2026-10-13T07:53:49+00:00
-- 已读资料图片：Productphotograph,no factual text.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202604/BFB08836-2FD0-C38E-8674-27FD2765E32E.jpg>)；采集：2026-10-13T07:58:10+00:00
-- 已读资料图片：Lifestyle photograph,no factual text.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202604/D7DD4A34-1E99-9330-71D6-86880CE95CC8.jpg>)；采集：2026-10-13T07:58:25+00:00
 - 已读资料图片：Product photograph remote,no quantitativeparameter inferred.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202606/4055A0A4-6DF2-A4A8-E0FD-74DAB60AB3AF.jpg>)；采集：2026-10-13T07:59:04+00:00
 - 已读资料图片：Product/package photograph remote;no quantitativeparameter inferred.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202606/240821BD-69F5-8C46-9841-30D3E6EE7BD5.jpg>)；采集：2026-10-13T07:59:00+00:00
+- 已读资料图片：Product photograph app/remote;no added quantitative specification.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202603/4BC6276D-FC03-EC62-67C0-5E20478D71F4.jpg>)；采集：2026-10-13T07:53:45+00:00
+- 已读资料图片：Lifestyle product photograph,no factual text.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202603/51AF44E7-DD27-5068-887A-137848737C95.jpg>)；采集：2026-10-13T07:53:49+00:00
+- 已读资料图片：Product photograph app/remote;no new quantitative specification.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202603/D5AC6D26-751E-F65B-9E5D-FD325A7F258D.jpg>)；采集：2026-10-13T07:54:14+00:00
+- 已读资料图片：Lifestyle photograph,no factual text.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202603/8E94E85F-1F5F-3322-C2EB-875371486826.jpg>)；采集：2026-10-13T07:54:03+00:00
 - 已读资料图片：Lifestyle product photograph;no factual text.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202603/27E19380-7C66-E231-6E73-86563B7F19E1.jpg>)；采集：2026-10-13T07:53:34+00:00
 - 已读资料图片：Product lifestyle photograph app/remote;noquantitative parameterinferred.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202607/626CCE87-AA1E-8157-375F-C870F4BEEE0F.jpg>)；采集：2026-10-13T08:00:52+00:00
 - 已读资料图片：Product/package photograph app/remote shown;no numerical specification inferred.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202601/58103B2F-A591-4753-2051-439C03C9FEEB.jpg>)；采集：2026-10-13T07:53:22+00:00
+- 已读资料图片：Productphotograph;no addedquantitativeparameter.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202604/980F2CF1-F6F8-E8C7-C47E-79CB131714F5.jpg>)；采集：2026-10-13T07:57:07+00:00
+- 已读资料图片：Product/package photograph app/remote;no new quantitativeparameter.；[图源](<https://img.yitashop.com/fit-in/800x800/10006/product/original/202604/E5CB943A-7258-8455-E987-5D404B96AA4A.jpg>)；采集：2026-10-13T07:58:41+00:00
 - 尚未读取的资料图片链接：27 个；详见对应资料 JSON。
 
 ### 售后、运输与退换政策
 
 #### PRIVACY POLICY
 
-[官方来源](<https://www.cozeware.com/article/Privacy-Policy.html?aid=136>)；采集：2026-10-13T07:29:45+00:00
+[官方来源](<https://www.cozeware.com/article/Privacy-Policy.html?aid=136>)；采集：2026-10-19T01:32:27+00:00
 
 - 正文线索：This Privacy Policy applies only to this website/mobile application(s) and does not necessarily apply to personal information we collect from you offline. Please see the section on Offline Collection, Use & Disclosure of Information details. We are not responsible for the content or privacy practices on any website other than to which we link or that links to us.
 - 正文线索：-Geolocation data, such as the location of your device or computer, shipping and billing address(es), your city, your country of residence/your organization's country of operation.
@@ -3045,7 +3049,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### TERMS & CONDITIONS
 
-[官方来源](<https://www.cozeware.com/article/Terms-And-Conditions.html?aid=137>)；采集：2026-10-13T07:29:44+00:00
+[官方来源](<https://www.cozeware.com/article/Terms-And-Conditions.html?aid=137>)；采集：2026-10-19T01:32:26+00:00
 
 - 正文线索：These terms govern your use of the Cozeware website, including all subdomains, mobile applications, services, tools, APIs, platforms, and any related features where these terms are referenced or incorporated (collectively, the "Site" or "Services"). Your access to and use of the Services—including but not limited to interactive features such as customer reviews, notifications, and widgets—are subject to the rules, guidelines, policies, and terms applicable to such services, which are incorporated into this Agreement by reference.
 - 正文线索：You warrant that your Submissions, in whole or in part, are clear and free of any IP right infringement, disputes, or third-party claims. Cozeware.com assumes no liability for any misuse of copyright or any other rights of third parties by you. You undertake to defend for and indemnify the Sponsor against any losses caused due to the use of the entries for any purposes.
@@ -3058,7 +3062,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### Cart Return & Delivery
 
-[官方来源](<https://www.cozeware.com/article/cart-return-delivery.html?aid=156>)；采集：2026-10-13T07:31:46+00:00
+[官方来源](<https://www.cozeware.com/article/cart-return-delivery.html?aid=156>)；采集：2026-10-19T01:34:42+00:00
 
 - 正文线索：Not satisfied? Return eligible items in new, unused condition within 30 days for a refund or exchange. Exclusions apply: clearance, final sale, or used items.
 - 正文线索：COZEWARE will refund the price difference if you find the same item on our website at a lower price within 30 days. Exclusions for bundle offers, clearance items.
@@ -3066,14 +3070,14 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### Cart Warranty
 
-[官方来源](<https://www.cozeware.com/article/cart-warranty.html?aid=157>)；采集：2026-10-13T07:31:44+00:00
+[官方来源](<https://www.cozeware.com/article/cart-warranty.html?aid=157>)；采集：2026-10-19T01:34:40+00:00
 
 - 正文线索：COZEWARE warrants that all our products is free from defects in materials and workmanship. We offer warranties of up to 5 years against manufacturing defects. Learn More
 - 正文线索：Items ship immediately upon availability. Orders deliver in 3-5 business days on average. Learn More
 
 #### Error Codes & Troubleshooting Guide
 
-[官方来源](<https://www.cozeware.com/article/error-codes-troubleshooting-guide.html?aid=183>)；采集：2026-10-13T07:31:39+00:00
+[官方来源](<https://www.cozeware.com/article/error-codes-troubleshooting-guide.html?aid=183>)；采集：2026-10-19T01:34:36+00:00
 
 - 正文线索：C0The WIFI module sends the result to the main control board after processing the production testWhen the detection fails, the indoor unit will first display "88" and then switch to show code C0.（1）After powering off and restarting the unit, the system will automatically recover./
 - 正文线索：C1The WIFI module sends the result to the main control board after processing the production testWhen the detection is successful, the indoor unit will first display "88" and then switch to show code CI.（1）After powering off and restarting the unit, the system will automatically recover./
@@ -3086,20 +3090,20 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### Find an Installer
 
-[官方来源](<https://www.cozeware.com/article/find-an-installer.html?aid=155>)；采集：2026-10-13T07:31:47+00:00
+[官方来源](<https://www.cozeware.com/article/find-an-installer.html?aid=155>)；采集：2026-10-19T01:34:43+00:00
 
 - 正文线索：New Air AC Installation and Repair Services HVAC
 
 #### INFORMATION SECURE UNDER LOCK AND KEY
 
-[官方来源](<https://www.cozeware.com/article/information-secure-under-lock-and-key.html?aid=151>)；采集：2026-10-13T07:31:49+00:00
+[官方来源](<https://www.cozeware.com/article/information-secure-under-lock-and-key.html?aid=151>)；采集：2026-10-19T01:34:45+00:00
 
 - 正文线索：When you are viewing a page that is requesting personal information, the URL in the address bar at the top of your browser will start with "https". This indicates your transaction session is secured through Secure Sockets Layer (SSL). Note that some browsers do not display the full URL. In this case, click the URL address field and arrow left to the beginning of that field.
 - 正文线索：If you are viewing a web page requesting personal information on our web site that does not start with "https", please contact COZEWARE at +1 877-801-8599 to complete your purchase.
 
 #### INSTALLATION GUIDE
 
-[官方来源](<https://www.cozeware.com/article/installation-guide.html?aid=147>)；采集：2026-10-13T07:31:55+00:00
+[官方来源](<https://www.cozeware.com/article/installation-guide.html?aid=147>)；采集：2026-10-19T01:34:50+00:00
 
 - 正文线索：TIP 1: SELECTION OF INSTALLATION LOCATION
 - 正文线索：-Air circulation: It should be installed at a position where the air can circulate throughout the room, avoiding the air outlet directly facing areas such as beds and sofas where people stay for a long time.
@@ -3114,7 +3118,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### Instruction Manuals
 
-[官方来源](<https://www.cozeware.com/article/instruction-manuals.html?aid=158>)；采集：2026-10-13T07:31:41+00:00
+[官方来源](<https://www.cozeware.com/article/instruction-manuals.html?aid=158>)；采集：2026-10-19T01:34:39+00:00
 
 - 正文线索：Download complete instruction manuals and documentation for your specific mini split model, including installation, operation, and smart control guides.
 - 正文线索：Enduring Series Air Conditioners User Manual (Including Installation Guide) - 115V & 230V
@@ -3122,7 +3126,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### INTELLECTUAL PROPERTY RIGHTS
 
-[官方来源](<https://www.cozeware.com/article/intellectual-property-rights.html?aid=150>)；采集：2026-10-13T07:31:51+00:00
+[官方来源](<https://www.cozeware.com/article/intellectual-property-rights.html?aid=150>)；采集：2026-10-19T01:34:46+00:00
 
 - 正文线索：Purchasers are granted a license for personal use within the United States. Without authorization, you may not copy, modify, reverse engineer, or use products for commercial resale. Authorized distributors must keep all product identifiers intact and must not bundle our products with infringing goods for sale.
 - 正文线索：We warrant that our products do not infringe valid third-party intellectual property rights in the United States. However, we are not liable for infringement claims arising from unauthorized modification or combination of our products with other devices.
@@ -3130,7 +3134,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### Mini Split Air Conditioner Sizing Guide
 
-[官方来源](<https://www.cozeware.com/article/mini-split-air-conditioner-sizing-guide.html?aid=159>)；采集：2026-10-13T07:31:41+00:00
+[官方来源](<https://www.cozeware.com/article/mini-split-air-conditioner-sizing-guide.html?aid=159>)；采集：2026-10-19T01:34:38+00:00
 
 - 正文线索：Mini split systems commonly range from 6,000 BTU to 24,000+ BTU.
 - 正文线索：150-4509,000 BUTsSmall bedroom, Studio workspace
@@ -3144,7 +3148,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### PRICE MATCH GUARANTEE
 
-[官方来源](<https://www.cozeware.com/article/price-match-guarantee.html?aid=146>)；采集：2026-10-13T07:31:56+00:00
+[官方来源](<https://www.cozeware.com/article/price-match-guarantee.html?aid=146>)；采集：2026-10-19T01:34:51+00:00
 
 - 正文线索：If you find the same item (must be identical in brand name, size, appearance, weight, color, and model number) at a lower price on another platform or sales channel, we'll be more than happy to match the price. Additionally, If our prices drop within 30 days of your purchase with us, we'll refund you the difference.
 - 正文线索：Item must be identical in brand name, size, weight, color, quantity, material, and model number.
@@ -3154,7 +3158,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### PRIVACY POLICY
 
-[官方来源](<https://www.cozeware.com/article/privacy-policy.html?aid=136>)；采集：2026-10-13T07:32:02+00:00
+[官方来源](<https://www.cozeware.com/article/privacy-policy.html?aid=136>)；采集：2026-10-19T01:34:56+00:00
 
 - 正文线索：This Privacy Policy applies only to this website/mobile application(s) and does not necessarily apply to personal information we collect from you offline. Please see the section on Offline Collection, Use & Disclosure of Information details. We are not responsible for the content or privacy practices on any website other than to which we link or that links to us.
 - 正文线索：-Geolocation data, such as the location of your device or computer, shipping and billing address(es), your city, your country of residence/your organization's country of operation.
@@ -3167,7 +3171,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### PROMOTION TERMS & CONDITIONS
 
-[官方来源](<https://www.cozeware.com/article/promotion-terms-and-conditions.html?aid=149>)；采集：2026-10-13T07:29:42+00:00
+[官方来源](<https://www.cozeware.com/article/promotion-terms-and-conditions.html?aid=149>)；采集：2026-10-19T01:32:25+00:00
 
 - 正文线索：Limited Time Offer pricing cannot be combined with a new-subscriber coupon code.
 - 正文线索：Discount does not apply to tax or shipping fees.
@@ -3180,7 +3184,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### PROMOTION TERMS & CONDITIONS
 
-[官方来源](<https://www.cozeware.com/article/promotion-terms-conditions.html?aid=149>)；采集：2026-10-13T07:31:52+00:00
+[官方来源](<https://www.cozeware.com/article/promotion-terms-conditions.html?aid=149>)；采集：2026-10-19T01:34:48+00:00
 
 - 正文线索：Limited Time Offer pricing cannot be combined with a new-subscriber coupon code.
 - 正文线索：Discount does not apply to tax or shipping fees.
@@ -3193,7 +3197,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### RETURNS & REFUNDS
 
-[官方来源](<https://www.cozeware.com/article/returns-refunds.html?aid=144>)；采集：2026-10-13T07:31:59+00:00
+[官方来源](<https://www.cozeware.com/article/returns-refunds.html?aid=144>)；采集：2026-10-19T01:34:53+00:00
 
 - 正文线索：We would like to assure our valued customers that every item sold by Cozeware undergoes rigorous quality control inspections, ensuring a topnotch product experience. Our commitment to providing excellent furniture products is further strengthened by our comprehensive warranty policy. Rest assured, all items purchased directly from Cozeware are covered by the following warranties.
 - 正文线索：(Please note that we will not take responsibility for purchases made through other websites selling Cozeware branded products.)
@@ -3206,7 +3210,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### SHIPPING & DELIVERY POLICY
 
-[官方来源](<https://www.cozeware.com/article/shipping-delivery-policy.html?aid=148>)；采集：2026-10-13T07:31:53+00:00
+[官方来源](<https://www.cozeware.com/article/shipping-delivery-policy.html?aid=148>)；采集：2026-10-19T01:34:49+00:00
 
 - 正文线索：At Cozeware, we are dedicated to providing a seamless and reliable shopping experience for every customer. To ensure faster delivery and higher satisfaction, we operate eight strategically located warehouses across the United States, enabling us to process and ship orders efficiently nationwide. Most regions within the U.S. enjoy Free Shipping, with the exception of the following locations: HI, PR, AK, GU, AE, VI, FM, MP and APO/FPO.
 - 正文线索：Notice: All orders are fulfilled by FedEx. Please note that deliveries may be subject to delays during holidays. We kindly ask customers not to provide P.O. Box addresses or locations classified as remote areas (including HI, PR, AK, GU, APO/FPO/AE, VI, FM, MP).
@@ -3217,13 +3221,13 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### Smart Start QR Code
 
-[官方来源](<https://www.cozeware.com/article/smart-start-qr-code.html?aid=154>)；采集：2026-10-13T07:31:49+00:00
+[官方来源](<https://www.cozeware.com/article/smart-start-qr-code.html?aid=154>)；采集：2026-10-19T01:34:44+00:00
 
 - 当前结构记录没有可归纳的正文；不推测内容。
 
 #### TERMS & CONDITIONS
 
-[官方来源](<https://www.cozeware.com/article/terms-conditions.html?aid=137>)；采集：2026-10-13T07:31:59+00:00
+[官方来源](<https://www.cozeware.com/article/terms-conditions.html?aid=137>)；采集：2026-10-19T01:34:55+00:00
 
 - 正文线索：These terms govern your use of the Cozeware website, including all subdomains, mobile applications, services, tools, APIs, platforms, and any related features where these terms are referenced or incorporated (collectively, the "Site" or "Services"). Your access to and use of the Services—including but not limited to interactive features such as customer reviews, notifications, and widgets—are subject to the rules, guidelines, policies, and terms applicable to such services, which are incorporated into this Agreement by reference.
 - 正文线索：You warrant that your Submissions, in whole or in part, are clear and free of any IP right infringement, disputes, or third-party claims. Cozeware.com assumes no liability for any misuse of copyright or any other rights of third parties by you. You undertake to defend for and indemnify the Sponsor against any losses caused due to the use of the entries for any purposes.
@@ -3236,7 +3240,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### WARRANTY
 
-[官方来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-13T07:31:57+00:00
+[官方来源](<https://www.cozeware.com/article/warranty.html?aid=145>)；采集：2026-10-19T01:34:52+00:00
 
 - 正文线索：Cozeware warrants that all our Air Conditioners is free from defective materials and workmanship. The warranty periods vary by product and begin from the date of delivery. Within the first 30 days after receipt, you will enjoy our Worry-Free Return Policy. Beyond that, we will still provide effective service within the warranty period.
 - 正文线索：If a product is found to be defective due to a manufacturing defect during the warranty period, Cozeware will offer a refund, a replacement of the affected part(s) or a comparable piece of equal value and similar style. This warranty covers the replacement or refund of any product or part that exhibits a manufacturing or material defect not resulting from normal wear and tear or inherent characteristics of the materials used.
@@ -3250,7 +3254,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | 5 Things to Know Before Installing a Mini Split
 
-[官方来源](<https://www.cozeware.com/blog-detail/5-things-you-must-know-before-installing-a-mini-split-b-71.html>)；采集：2026-10-13T07:31:18+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/5-things-you-must-know-before-installing-a-mini-split-b-71.html>)；采集：2026-10-19T01:33:39+00:00
 
 - 正文线索：COZEWARE | 5 Things to Know Before Installing a Mini Split
 - 正文线索：5 Things You Must Know Before Installing a Mini Split
@@ -3259,7 +3263,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | AC for Tiny Homes 2026 | Compact Cooling Guide
 
-[官方来源](<https://www.cozeware.com/blog-detail/ac-for-tiny-homes-2026--compact-cooling-solutions-for-modern-small-spaces-b-173.html>)；采集：2026-10-13T07:30:21+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/ac-for-tiny-homes-2026--compact-cooling-solutions-for-modern-small-spaces-b-173.html>)；采集：2026-10-19T01:32:58+00:00
 
 - 正文线索：COZEWARE | AC for Tiny Homes 2026 | Compact Cooling Guide
 - 正文线索：AC for Tiny Homes 2026: Compact Cooling Solutions for Modern Small Spaces
@@ -3268,7 +3272,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | AC Installation Process: What Homeowners Need to Know for Better Cooling
 
-[官方来源](<https://www.cozeware.com/blog-detail/ac-installation-process--what-homeowners-need-to-know-for-better-cooling-b-129.html>)；采集：2026-10-13T07:31:00+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/ac-installation-process--what-homeowners-need-to-know-for-better-cooling-b-129.html>)；采集：2026-10-19T01:33:22+00:00
 
 - 正文线索：COZEWARE | AC Installation Process: What Homeowners Need to Know for Better Cooling
 - 正文线索：AC Installation Process: What Homeowners Need to Know for Better Cooling
@@ -3277,7 +3281,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | AC Maintenance Guide: How to Clean Your Air Conditioner and Improve Efficiency
 
-[官方来源](<https://www.cozeware.com/blog-detail/ac-maintenance-guide--how-to-keep-your-air-conditioner-efficient-and-long-lasting-b-124.html>)；采集：2026-10-13T07:31:06+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/ac-maintenance-guide--how-to-keep-your-air-conditioner-efficient-and-long-lasting-b-124.html>)；采集：2026-10-19T01:33:25+00:00
 
 - 正文线索：COZEWARE | AC Maintenance Guide: How to Clean Your Air Conditioner and Improve Efficiency
 - 正文线索：AC Maintenance Guide: How to Keep Your Air Conditioner Efficient and Long-Lasting
@@ -3286,7 +3290,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | AC Running But Not Cooling? Easy Fix Guide
 
-[官方来源](<https://www.cozeware.com/blog-detail/ac-running-but-not-cooling--here-are-the-most-common-causes-and-fixes-b-133.html>)；采集：2026-10-13T07:30:49+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/ac-running-but-not-cooling--here-are-the-most-common-causes-and-fixes-b-133.html>)；采集：2026-10-19T01:33:16+00:00
 
 - 正文线索：COZEWARE | AC Running But Not Cooling? Easy Fix Guide
 - 正文线索：AC Running But Not Cooling? Here Are the Most Common Causes and Fixes
@@ -3295,7 +3299,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | AI Mini Split Systems: The Future of Smart Home Climate Control
 
-[官方来源](<https://www.cozeware.com/blog-detail/ai-mini-split-systems--the-future-of-smart-home-climate-control-b-182.html>)；采集：2026-10-13T07:30:04+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/ai-mini-split-systems--the-future-of-smart-home-climate-control-b-182.html>)；采集：2026-10-19T01:32:42+00:00
 
 - 正文线索：COZEWARE | AI Mini Split Systems: The Future of Smart Home Climate Control
 - 正文线索：AI Mini Split Systems: The Future of Smart Home Climate Control
@@ -3304,7 +3308,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | AI Temperature Control & Smart Mini Split Systems
 
-[官方来源](<https://www.cozeware.com/blog-detail/ai-temperature-control-and-smart-home-integration--br-the-future-of-mini-split-air-conditioners-b-75.html>)；采集：2026-10-13T07:31:14+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/ai-temperature-control-and-smart-home-integration--br-the-future-of-mini-split-air-conditioners-b-75.html>)；采集：2026-10-19T01:33:35+00:00
 
 - 正文线索：COZEWARE | AI Temperature Control & Smart Mini Split Systems
 - 正文线索：AI Temperature Control & Smart Home Integration:
@@ -3313,7 +3317,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Air Conditioner Filter Maintenance & Cleaning Guide
 
-[官方来源](<https://www.cozeware.com/blog-detail/air-conditioner-filter-maintenance--how-to-clean-it-and-improve-performance-b-135.html>)；采集：2026-10-13T07:30:42+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/air-conditioner-filter-maintenance--how-to-clean-it-and-improve-performance-b-135.html>)；采集：2026-10-19T01:33:14+00:00
 
 - 正文线索：COZEWARE | Air Conditioner Filter Maintenance & Cleaning Guide
 - 正文线索：Air Conditioner Filter Maintenance: How to Clean It & Improve Performance
@@ -3322,7 +3326,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Are Mini Splits Energy Efficient? Do They Shut Off Automatically
 
-[官方来源](<https://www.cozeware.com/blog-detail/are-mini-splits-energy-efficient--do-they-shut-off-at-set-temperature-b-123.html>)；采集：2026-10-13T07:31:08+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/are-mini-splits-energy-efficient--do-they-shut-off-at-set-temperature-b-123.html>)；采集：2026-10-19T01:33:26+00:00
 
 - 正文线索：COZEWARE | Are Mini Splits Energy Efficient? Do They Shut Off Automatically
 - 正文线索：Are Mini Splits Energy Efficient? Do They Shut Off at Set Temperature
@@ -3331,7 +3335,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Best 115V Mini Split for Efficient Home Cooling
 
-[官方来源](<https://www.cozeware.com/blog-detail/best-115v-mini-split--complete-guide-for-homeowners-b-187.html>)；采集：2026-10-13T07:29:55+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/best-115v-mini-split--complete-guide-for-homeowners-b-187.html>)；采集：2026-10-19T01:32:37+00:00
 
 - 正文线索：COZEWARE | Best 115V Mini Split for Efficient Home Cooling
 - 正文线索：Best 115V Mini Split: Complete Guide for Homeowners
@@ -3340,7 +3344,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Best AC for Home Office Productivity in 2026
 
-[官方来源](<https://www.cozeware.com/blog-detail/best-ac-for-home-office-productivity--stay-comfortable-and-focused-while-working-b-185.html>)；采集：2026-10-13T07:29:59+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/best-ac-for-home-office-productivity--stay-comfortable-and-focused-while-working-b-185.html>)；采集：2026-10-19T01:32:39+00:00
 
 - 正文线索：COZEWARE | Best AC for Home Office Productivity in 2026
 - 正文线索：Best AC for Home Office Productivity: Stay Comfortable and Focused While Working
@@ -3349,7 +3353,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Best Budget Mini Split Systems for 2026 | Cozeware
 
-[官方来源](<https://www.cozeware.com/blog-detail/best-budget-mini-split--affordable-cooling-and-heating-options-in-2026-b-163.html>)；采集：2026-10-13T07:30:30+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/best-budget-mini-split--affordable-cooling-and-heating-options-in-2026-b-163.html>)；采集：2026-10-19T01:33:04+00:00
 
 - 正文线索：COZEWARE | Best Budget Mini Split Systems for 2026 | Cozeware
 - 正文线索：Best Budget Mini Split: Affordable Cooling & Heating Options in 2026
@@ -3358,7 +3362,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Best Mini Split 2026: Top Efficient & Quiet Systems
 
-[官方来源](<https://www.cozeware.com/blog-detail/best-mini-split-2026--top-systems-for-efficient-and-quiet-cooling-b-157.html>)；采集：2026-10-13T07:30:38+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/best-mini-split-2026--top-systems-for-efficient-and-quiet-cooling-b-157.html>)；采集：2026-10-19T01:33:09+00:00
 
 - 正文线索：COZEWARE | Best Mini Split 2026: Top Efficient & Quiet Systems
 - 正文线索：Best Mini Split 2026: Top Systems for Efficient & Quiet Cooling
@@ -3367,7 +3371,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Best Mini Split for Each Home Space in 2026 Guide
 
-[官方来源](<https://www.cozeware.com/blog-detail/best-mini-split-for-each-home-space--smart-cooling-for-small-rooms-bedrooms-and-apartments-b-159.html>)；采集：2026-10-13T07:30:33+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/best-mini-split-for-each-home-space--smart-cooling-for-small-rooms-bedrooms-and-apartments-b-159.html>)；采集：2026-10-19T01:33:07+00:00
 
 - 正文线索：COZEWARE | Best Mini Split for Each Home Space in 2026 Guide
 - 正文线索：Best Mini Split for Each Home Space: Smart Cooling for Small Rooms, Bedrooms, and Apartments
@@ -3376,7 +3380,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Best Mini Split for Garage: Cooling Solutions for Every Space
 
-[官方来源](<https://www.cozeware.com/blog-detail/best-mini-split-for-garage--how-to-keep-your-garage-cool-and-comfortable-b-179.html>)；采集：2026-10-13T07:30:10+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/best-mini-split-for-garage--how-to-keep-your-garage-cool-and-comfortable-b-179.html>)；采集：2026-10-19T01:32:47+00:00
 
 - 正文线索：COZEWARE | Best Mini Split for Garage: Cooling Solutions for Every Space
 - 正文线索：Best Mini Split for Garage: How to Keep Your Garage Cool and Comfortable
@@ -3385,7 +3389,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | DIY Guide to Mini Split Installation Without Expensive Technicians
 
-[官方来源](<https://www.cozeware.com/blog-detail/diy-guide-to-mini-split-installation-without-expensive-technicians-b-128.html>)；采集：2026-10-13T07:31:03+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/diy-guide-to-mini-split-installation-without-expensive-technicians-b-128.html>)；采集：2026-10-19T01:33:23+00:00
 
 - 正文线索：COZEWARE | DIY Guide to Mini Split Installation Without Expensive Technicians
 - 正文线索：DIY Guide to Mini Split Installation Without Expensive Technicians
@@ -3394,7 +3398,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Do Mini Splits Need a Dedicated Circuit? 115V vs 230V Guide
 
-[官方来源](<https://www.cozeware.com/blog-detail/do-mini-splits-need-a-dedicated-circuit--complete-115v-vs-230v-guide_-b-132.html>)；采集：2026-10-13T07:30:52+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/do-mini-splits-need-a-dedicated-circuit--complete-115v-vs-230v-guide_-b-132.html>)；采集：2026-10-19T01:33:17+00:00
 
 - 正文线索：COZEWARE | Do Mini Splits Need a Dedicated Circuit? 115V vs 230V Guide
 - 正文线索：Do Mini Splits Need a Dedicated Circuit? Complete 115V vs 230V Guide.
@@ -3403,7 +3407,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Ductless Mini Split vs Central Air: Why Go Split?
 
-[官方来源](<https://www.cozeware.com/blog-detail/ductless-mini-split-vs-central-air---br--why-more-american-homes-are-going-split-b-51.html>)；采集：2026-10-13T07:31:38+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/ductless-mini-split-vs-central-air---br--why-more-american-homes-are-going-split-b-51.html>)；采集：2026-10-19T01:34:34+00:00
 
 - 正文线索：COZEWARE | Ductless Mini Split vs Central Air: Why Go Split?
 - 正文线索：Introduction: The Cooling Question Every Homeowner Faces
@@ -3412,7 +3416,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Energy-Saving Tips for Mini Split AC Systems
 
-[官方来源](<https://www.cozeware.com/blog-detail/energy-saving-tips--br-how-to-make-your-mini-split-more-efficient-b-73.html>)；采集：2026-10-13T07:31:17+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/energy-saving-tips--br-how-to-make-your-mini-split-more-efficient-b-73.html>)；采集：2026-10-19T01:33:37+00:00
 
 - 正文线索：COZEWARE | Energy-Saving Tips for Mini Split AC Systems
 - 正文线索：How to Make Your Mini Split More Efficient
@@ -3421,7 +3425,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Extend AC Lifespan | Smart HVAC Maintenance Tips
 
-[官方来源](<https://www.cozeware.com/blog-detail/extend-ac-lifespan--smart-maintenance-tips-for-better-cooling-efficiency-b-172.html>)；采集：2026-10-13T07:30:22+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/extend-ac-lifespan--smart-maintenance-tips-for-better-cooling-efficiency-b-172.html>)；采集：2026-10-19T01:33:00+00:00
 
 - 正文线索：COZEWARE | Extend AC Lifespan | Smart HVAC Maintenance Tips
 - 正文线索：Extend AC Lifespan: Smart Maintenance Tips for Better Cooling Efficiency
@@ -3430,7 +3434,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | AC Settings That Help Prevent Mold Growth
 
-[官方来源](<https://www.cozeware.com/blog-detail/from-musty-to-fresh--br-the-ac-settings-that-kill-mold-b-55.html>)；采集：2026-10-13T07:31:31+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/from-musty-to-fresh--br-the-ac-settings-that-kill-mold-b-55.html>)；采集：2026-10-19T01:34:08+00:00
 
 - 正文线索：COZEWARE | AC Settings That Help Prevent Mold Growth
 - 正文线索：There’s nothing worse than turning on your AC and getting hit with that musty, damp smell. Yep — that’s mold. The good news? Your air conditioner can actually help fight back against mold if you know which settings to use.
@@ -3439,7 +3443,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | How Smart Homes Improve Comfort & Efficiency
 
-[官方来源](<https://www.cozeware.com/blog-detail/from-smarter-tech-to-better-living--br-how-smart-homes-improve-daily-life-b-56.html>)；采集：2026-10-13T07:31:30+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/from-smarter-tech-to-better-living--br-how-smart-homes-improve-daily-life-b-56.html>)；采集：2026-10-19T01:33:56+00:00
 
 - 正文线索：COZEWARE | How Smart Homes Improve Comfort & Efficiency
 - 正文线索：Imagine coming home after a long day — the lights turn on automatically, your favorite playlist starts playing, and the temperature is just right. That’s not a scene from a sci-fi movie; it’s what smart homes can do for you today.
@@ -3448,7 +3452,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Cozeware Home Cooling Survey – Share Your Feedback & Win
 
-[官方来源](<https://www.cozeware.com/blog-detail/help-us-improve-our-ac-b-136.html>)；采集：2026-10-13T07:30:41+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/help-us-improve-our-ac-b-136.html>)；采集：2026-10-19T01:33:12+00:00
 
 - 正文线索：COZEWARE | Cozeware Home Cooling Survey – Share Your Feedback & Win
 - 正文线索：At Cozeware, we believe great comfort starts with listening.
@@ -3457,7 +3461,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | How AI Improves Air Conditioner Efficiency and Saves Energy
 
-[官方来源](<https://www.cozeware.com/blog-detail/how-ai-improves-air-conditioner-efficiency--smarter-cooling-lower-energy-bills-b-178.html>)；采集：2026-10-13T07:30:12+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/how-ai-improves-air-conditioner-efficiency--smarter-cooling-lower-energy-bills-b-178.html>)；采集：2026-10-19T01:32:48+00:00
 
 - 正文线索：COZEWARE | How AI Improves Air Conditioner Efficiency and Saves Energy
 - 正文线索：How AI Improves Air Conditioner Efficiency: Smarter Cooling, Lower Energy Bills
@@ -3466,7 +3470,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | How Many Watts Does a Mini Split Use at Home?
 
-[官方来源](<https://www.cozeware.com/blog-detail/how-many-watts-does-a-mini-split-use--tips-to-lower-your-electricity-bill-b-130.html>)；采集：2026-10-13T07:30:57+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/how-many-watts-does-a-mini-split-use--tips-to-lower-your-electricity-bill-b-130.html>)；采集：2026-10-19T01:33:20+00:00
 
 - 正文线索：COZEWARE | How Many Watts Does a Mini Split Use at Home?
 - 正文线索：How Many Watts Does a Mini Split Use? Tips to Lower Your Electricity Bill
@@ -3475,7 +3479,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | How Much Does a Mini Split Cost to Run? Full Guide
 
-[官方来源](<https://www.cozeware.com/blog-detail/how-much-does-a-mini-split-cost-to-run--a-complete-breakdown-b-183.html>)；采集：2026-10-13T07:30:02+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/how-much-does-a-mini-split-cost-to-run--a-complete-breakdown-b-183.html>)；采集：2026-10-19T01:32:41+00:00
 
 - 正文线索：COZEWARE | How Much Does a Mini Split Cost to Run? Full Guide
 - 正文线索：How Much Does a Mini Split Cost to Run? A Complete Breakdown
@@ -3484,7 +3488,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | How Much Does Mini Split Cost to Run Monthly?
 
-[官方来源](<https://www.cozeware.com/blog-detail/how-much-does-mini-split-cost-to-run--monthly-energy-guide-b-137.html>)；采集：2026-10-13T07:30:40+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/how-much-does-mini-split-cost-to-run--monthly-energy-guide-b-137.html>)；采集：2026-10-19T01:33:10+00:00
 
 - 正文线索：COZEWARE | How Much Does Mini Split Cost to Run Monthly?
 - 正文线索：How Much Does Mini Split Cost to Run? Monthly Energy Guide
@@ -3493,7 +3497,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | How Often Should You Clean a Mini Split?
 
-[官方来源](<https://www.cozeware.com/blog-detail/how-often-should-you-clean-a-mini-split---br-can-you-do-it-yourself--b-66.html>)；采集：2026-10-13T07:31:21+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/how-often-should-you-clean-a-mini-split---br-can-you-do-it-yourself--b-66.html>)；采集：2026-10-19T01:33:41+00:00
 
 - 正文线索：COZEWARE | How Often Should You Clean a Mini Split?
 - 正文线索：How Often Should You Clean a Mini Split?
@@ -3502,7 +3506,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | How to Choose SEER Rating for Home Efficiency
 
-[官方来源](<https://www.cozeware.com/blog-detail/how-to-choose-seer-rating-for-your-home-efficiently-b-131.html>)；采集：2026-10-13T07:30:55+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/how-to-choose-seer-rating-for-your-home-efficiently-b-131.html>)；采集：2026-10-19T01:33:19+00:00
 
 - 正文线索：COZEWARE | How to Choose SEER Rating for Home Efficiency
 - 正文线索：How to Choose SEER Rating for Your Home Efficiently
@@ -3511,7 +3515,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | How to Extend Your Mini Split’s Lifespan
 
-[官方来源](<https://www.cozeware.com/blog-detail/how-to-extend-the-lifespan-of-your-mini-split-system-b-63.html>)；采集：2026-10-13T07:31:23+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/how-to-extend-the-lifespan-of-your-mini-split-system-b-63.html>)；采集：2026-10-19T01:33:45+00:00
 
 - 正文线索：COZEWARE | How to Extend Your Mini Split’s Lifespan
 - 正文线索：How to Extend the Lifespan of Your Mini Split System
@@ -3520,7 +3524,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | How to Improve Indoor Air Quality at Home with Your AC
 
-[官方来源](<https://www.cozeware.com/blog-detail/how-to-improve-indoor-air-quality-at-home--why-your-air-conditioner-does-more-than-cool-b-174.html>)；采集：2026-10-13T07:30:19+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/how-to-improve-indoor-air-quality-at-home--why-your-air-conditioner-does-more-than-cool-b-174.html>)；采集：2026-10-19T01:32:55+00:00
 
 - 正文线索：COZEWARE | How to Improve Indoor Air Quality at Home with Your AC
 - 正文线索：How to Improve Indoor Air Quality at Home: Why Your Air Conditioner Does More Than Cool
@@ -3529,7 +3533,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | How to Install a Mini Split (DIY Mini Split Installation Guide)
 
-[官方来源](<https://www.cozeware.com/blog-detail/how-to-install-a-mini-split--diy-mini-split-installation--b-125.html>)；采集：2026-10-13T07:31:05+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/how-to-install-a-mini-split--diy-mini-split-installation--b-125.html>)；采集：2026-10-19T01:33:23+00:00
 
 - 正文线索：COZEWARE | How to Install a Mini Split (DIY Mini Split Installation Guide)
 - 正文线索：How to Install a Mini Split (DIY Mini Split Installation)
@@ -3538,7 +3542,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | How to Keep House Cool During Extreme Heat Efficiently
 
-[官方来源](<https://www.cozeware.com/blog-detail/how-to-keep-house-cool-during-extreme-heat--smart-strategies-for-a-more-comfortable-summer-b-186.html>)；采集：2026-10-13T07:29:57+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/how-to-keep-house-cool-during-extreme-heat--smart-strategies-for-a-more-comfortable-summer-b-186.html>)；采集：2026-10-19T01:32:38+00:00
 
 - 正文线索：COZEWARE | How to Keep House Cool During Extreme Heat Efficiently
 - 正文线索：How to Keep House Cool During Extreme Heat: Smart Strategies for a More Comfortable Summer
@@ -3547,7 +3551,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | How to Keep House Cool During Heat Wave Easily
 
-[官方来源](<https://www.cozeware.com/blog-detail/how-to-keep-house-cool-during-heat-wave--smart-ways-to-stay-comfortable-in-extreme-temperatures-b-176.html>)；采集：2026-10-13T07:30:16+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/how-to-keep-house-cool-during-heat-wave--smart-ways-to-stay-comfortable-in-extreme-temperatures-b-176.html>)；采集：2026-10-19T01:32:52+00:00
 
 - 正文线索：COZEWARE | How to Keep House Cool During Heat Wave Easily
 - 正文线索：How to Keep House Cool During Heat Wave: Smart Ways to Stay Comfortable in Extreme Temperatures
@@ -3556,7 +3560,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | How to Reduce AC Electricity Bill With Energy-Efficient Cooling
 
-[官方来源](<https://www.cozeware.com/blog-detail/how-to-reduce-ac-electricity-bill-without-sacrificing-comfort-b-171.html>)；采集：2026-10-13T07:30:23+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/how-to-reduce-ac-electricity-bill-without-sacrificing-comfort-b-171.html>)；采集：2026-10-19T01:33:01+00:00
 
 - 正文线索：COZEWARE | How to Reduce AC Electricity Bill With Energy-Efficient Cooling
 - 正文线索：How to Reduce AC Electricity Bill Without Sacrificing Comfort
@@ -3565,7 +3569,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | How to Reduce Indoor Humidity in Summer Effectively
 
-[官方来源](<https://www.cozeware.com/blog-detail/how-to-reduce-indoor-humidity-in-summer-for-a-cooler-and-healthier-home-b-181.html>)；采集：2026-10-13T07:30:05+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/how-to-reduce-indoor-humidity-in-summer-for-a-cooler-and-healthier-home-b-181.html>)；采集：2026-10-19T01:32:43+00:00
 
 - 正文线索：COZEWARE | How to Reduce Indoor Humidity in Summer Effectively
 - 正文线索：How to Reduce Indoor Humidity in Summer for a Cooler and Healthier Home
@@ -3574,7 +3578,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Is an AI Air Conditioner Worth It? Energy Savings Guide 2026
 
-[官方来源](<https://www.cozeware.com/blog-detail/is-an-ai-air-conditioner-worth-it--a-complete-guide-to-comfort-energy-savings-and-smart-cooling-in-2026-b-193.html>)；采集：2026-10-13T07:29:53+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/is-an-ai-air-conditioner-worth-it--a-complete-guide-to-comfort-energy-savings-and-smart-cooling-in-2026-b-193.html>)；采集：2026-10-19T01:32:35+00:00
 
 - 正文线索：COZEWARE | Is an AI Air Conditioner Worth It? Energy Savings Guide 2026
 - 正文线索：Is an AI Air Conditioner Worth It? A Complete Guide to Comfort, Energy Savings, and Smart Cooling in 2026
@@ -3583,7 +3587,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Mini Split AC Trends 2026 | Smart HVAC & Energy Saving
 
-[官方来源](<https://www.cozeware.com/blog-detail/mini-split-ac-trends-2026--smart-hvac-upgrades-and-energy-efficient-cooling-innovations-b-165.html>)；采集：2026-10-13T07:30:25+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/mini-split-ac-trends-2026--smart-hvac-upgrades-and-energy-efficient-cooling-innovations-b-165.html>)；采集：2026-10-19T01:33:02+00:00
 
 - 正文线索：COZEWARE | Mini Split AC Trends 2026 | Smart HVAC & Energy Saving
 - 正文线索：Mini Split AC Trends 2026: Smart HVAC Upgrades and Energy Efficient Cooling Innovations
@@ -3592,7 +3596,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Mini Split vs Central Air: Which AC Is Better?
 
-[官方来源](<https://www.cozeware.com/blog-detail/mini-split-ac-vs_-central-air--br-which-is-better-for-your-home--b-59.html>)；采集：2026-10-13T07:31:25+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/mini-split-ac-vs_-central-air--br-which-is-better-for-your-home--b-59.html>)；采集：2026-10-19T01:33:49+00:00
 
 - 正文线索：COZEWARE | Mini Split vs Central Air: Which AC Is Better?
 - 正文线索：If you’re a U.S. homeowner looking to stay cool through summer, you’ve likely faced the big question:
@@ -3601,7 +3605,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Mini Split Installation Cost: Complete Pricing Guide
 
-[官方来源](<https://www.cozeware.com/blog-detail/mini-split-installation-cost--what-you-need-to-know-before-you-buy-b-184.html>)；采集：2026-10-13T07:30:00+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/mini-split-installation-cost--what-you-need-to-know-before-you-buy-b-184.html>)；采集：2026-10-19T01:32:40+00:00
 
 - 正文线索：COZEWARE | Mini Split Installation Cost: Complete Pricing Guide
 - 正文线索：Mini Split Installation Cost: What You Need to Know Before You Buy
@@ -3610,7 +3614,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Mini Split Maintenance Guide: Clean & Service Tips
 
-[官方来源](<https://www.cozeware.com/blog-detail/mini-split-maintenance-guide--how-to-clean-service-and-extend-the-life-of-your-ductless-system-b-93.html>)；采集：2026-10-13T07:31:11+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/mini-split-maintenance-guide--how-to-clean-service-and-extend-the-life-of-your-ductless-system-b-93.html>)；采集：2026-10-19T01:33:32+00:00
 
 - 正文线索：COZEWARE | Mini Split Maintenance Guide: Clean & Service Tips
 - 正文线索：Mini Split Maintenance Guide: How to Clean, Service & Extend the Life of Your Ductless System
@@ -3619,7 +3623,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Mini Split Not Cooling Properly Troubleshooting Guide
 
-[官方来源](<https://www.cozeware.com/blog-detail/mini-split-not-cooling-properly--troubleshooting-and-fix-guide-b-134.html>)；采集：2026-10-13T07:30:45+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/mini-split-not-cooling-properly--troubleshooting-and-fix-guide-b-134.html>)；采集：2026-10-19T01:33:15+00:00
 
 - 正文线索：COZEWARE | Mini Split Not Cooling Properly Troubleshooting Guide
 - 正文线索：Mini Split Not Cooling Properly: Troubleshooting and Fix Guide
@@ -3628,7 +3632,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Mini Split vs Central Air: Cost, Pros & Which Is Better?
 
-[官方来源](<https://www.cozeware.com/blog-detail/mini-split-vs-central-air--pros-cons-cost-and-comfort-compared-b-92.html>)；采集：2026-10-13T07:31:12+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/mini-split-vs-central-air--pros-cons-cost-and-comfort-compared-b-92.html>)；采集：2026-10-19T01:33:33+00:00
 
 - 正文线索：COZEWARE | Mini Split vs Central Air: Cost, Pros & Which Is Better?
 - 正文线索：Mini-Split vs Central Air: Pros, Cons, Cost & Comfort Compared
@@ -3637,7 +3641,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Pre-Charged vs Traditional Mini Split: DIY Guide 2026
 
-[官方来源](<https://www.cozeware.com/blog-detail/pre-charged-vs_-traditional-installation--br-a-complete-diy-friendly-mini-split-buying-guide--2026-update--b-62.html>)；采集：2026-10-13T07:31:24+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/pre-charged-vs_-traditional-installation--br-a-complete-diy-friendly-mini-split-buying-guide--2026-update--b-62.html>)；采集：2026-10-19T01:33:47+00:00
 
 - 正文线索：COZEWARE | Pre-Charged vs Traditional Mini Split: DIY Guide 2026
 - 正文线索：Pre-Charged vs. Traditional Installation:
@@ -3646,7 +3650,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Quiet and Comfortable AC for Better Sleep and Comfort
 
-[官方来源](<https://www.cozeware.com/blog-detail/quiet-and-comfortable-ac--how-modern-cooling-creates-better-sleep-and-everyday-comfort-b-175.html>)；采集：2026-10-13T07:30:17+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/quiet-and-comfortable-ac--how-modern-cooling-creates-better-sleep-and-everyday-comfort-b-175.html>)；采集：2026-10-19T01:32:53+00:00
 
 - 正文线索：COZEWARE | Quiet and Comfortable AC for Better Sleep and Comfort
 - 正文线索：Quiet and Comfortable AC: How Modern Cooling Creates Better Sleep and Everyday Comfort
@@ -3655,7 +3659,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Quiet Mini Split System | Silent Bedroom AC Guide 2026
 
-[官方来源](<https://www.cozeware.com/blog-detail/quiet-mini-split-system--low-noise-mini-split-for-silent-air-conditioner-for-bedroom-comfort-b-162.html>)；采集：2026-10-13T07:30:32+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/quiet-mini-split-system--low-noise-mini-split-for-silent-air-conditioner-for-bedroom-comfort-b-162.html>)；采集：2026-10-19T01:33:06+00:00
 
 - 正文线索：COZEWARE | Quiet Mini Split System | Silent Bedroom AC Guide 2026
 - 正文线索：Quiet Mini Split System: Low Noise Mini Split for Silent Air Conditioner for Bedroom Comfort
@@ -3664,7 +3668,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | SEER, BTU, EER & HSPF Explained: Choose the Right AC
 
-[官方来源](<https://www.cozeware.com/blog-detail/seer-btu-eer-and-hspf-explained--br-what-they-mean-and-how-to-choose-the-right-ac-for-you-b-57.html>)；采集：2026-10-13T07:31:28+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/seer-btu-eer-and-hspf-explained--br-what-they-mean-and-how-to-choose-the-right-ac-for-you-b-57.html>)；采集：2026-10-19T01:33:52+00:00
 
 - 正文线索：COZEWARE | SEER, BTU, EER & HSPF Explained: Choose the Right AC
 - 正文线索：What They Mean and How to Choose the Right AC for You
@@ -3673,7 +3677,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | SEER vs EER: Understanding HVAC Efficiency Ratings for Smarter Cooling
 
-[官方来源](<https://www.cozeware.com/blog-detail/seer-vs-eer--understanding-hvac-efficiency-ratings-for-smarter-cooling-b-164.html>)；采集：2026-10-13T07:30:27+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/seer-vs-eer--understanding-hvac-efficiency-ratings-for-smarter-cooling-b-164.html>)；采集：2026-10-19T01:33:03+00:00
 
 - 正文线索：COZEWARE | SEER vs EER: Understanding HVAC Efficiency Ratings for Smarter Cooling
 - 正文线索：SEER vs EER: Understanding HVAC Efficiency Ratings for Smarter Cooling
@@ -3682,7 +3686,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Smart Air Conditioner Features for AI-Powered Comfort
 
-[官方来源](<https://www.cozeware.com/blog-detail/smart-air-conditioner-features--how-ai-is-transforming-personalized-home-comfort-b-180.html>)；采集：2026-10-13T07:30:07+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/smart-air-conditioner-features--how-ai-is-transforming-personalized-home-comfort-b-180.html>)；采集：2026-10-19T01:32:45+00:00
 
 - 正文线索：COZEWARE | Smart Air Conditioner Features for AI-Powered Comfort
 - 正文线索：Smart Air Conditioner Features: How AI Is Transforming Personalized Home Comfort
@@ -3691,7 +3695,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Overview: Ductless Air Conditioner Pros and Cons Tips
 
-[官方来源](<https://www.cozeware.com/blog-detail/smart-guide--ductless-air-conditioner-pros-and-cons-tips-b-158.html>)；采集：2026-10-13T07:30:35+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/smart-guide--ductless-air-conditioner-pros-and-cons-tips-b-158.html>)；采集：2026-10-19T01:33:08+00:00
 
 - 正文线索：COZEWARE | Overview: Ductless Air Conditioner Pros and Cons Tips
 - 正文线索：Smart Guide: Ductless Air Conditioner Pros and Cons Tips
@@ -3700,7 +3704,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Smart Heating & Cooling Solutions for Tiny Homes | Efficient Mini Split Guide
 
-[官方来源](<https://www.cozeware.com/blog-detail/smart-heating-and-cooling-solutions-for-tiny-houses-b-121.html>)；采集：2026-10-13T07:31:09+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/smart-heating-and-cooling-solutions-for-tiny-houses-b-121.html>)；采集：2026-10-19T01:33:28+00:00
 
 - 正文线索：COZEWARE | Smart Heating & Cooling Solutions for Tiny Homes | Efficient Mini Split Guide
 - 正文线索：Smart Heating and Cooling Solutions for Tiny Houses
@@ -3709,7 +3713,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | 5 Bad AC Habits That Shorten Your Air Conditioner’s Lifespan | AC Maintenance Tips
 
-[官方来源](<https://www.cozeware.com/blog-detail/stop-doing-this--5-habits-that-can-ruin-your-home-ac-b-119.html>)；采集：2026-10-13T07:31:10+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/stop-doing-this--5-habits-that-can-ruin-your-home-ac-b-119.html>)；采集：2026-10-19T01:33:29+00:00
 
 - 正文线索：COZEWARE | 5 Bad AC Habits That Shorten Your Air Conditioner’s Lifespan | AC Maintenance Tips
 - 正文线索：Stop Doing This! 5 Habits That Can Ruin Your Home AC
@@ -3718,7 +3722,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Mini Split AC Tips for Allergy Season
 
-[官方来源](<https://www.cozeware.com/blog-detail/stop-sneezing-start-chilling---br--ac-tips-for-allergy-season-b-54.html>)；采集：2026-10-13T07:31:33+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/stop-sneezing-start-chilling---br--ac-tips-for-allergy-season-b-54.html>)；采集：2026-10-19T01:34:17+00:00
 
 - 正文线索：COZEWARE | Mini Split AC Tips for Allergy Season
 - 正文线索：Spring and summer can be rough for allergy sufferers. Pollen, dust, and other allergens seem to sneak into every corner of your home. But your trusty air conditioner can be a secret weapon to keep your indoor air clean and your sneezes at bay. Let’s dive into some practical tips to make your AC allergy-friendly.
@@ -3727,7 +3731,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | The Invisible Comfort: How to Integrate Your Mini-Split AC into a High-End Minimalist Home
 
-[官方来源](<https://www.cozeware.com/blog-detail/the-invisible-comfort---br--how-to-integrate-your-mini-split-ac-into-a-high-end-minimalist-home-b-52.html>)；采集：2026-10-13T07:31:36+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/the-invisible-comfort---br--how-to-integrate-your-mini-split-ac-into-a-high-end-minimalist-home-b-52.html>)；采集：2026-10-19T01:34:30+00:00
 
 - 正文线索：COZEWARE | The Invisible Comfort: How to Integrate Your Mini-Split AC into a High-End Minimalist Home
 - 正文线索：How to Integrate Your Mini-Split AC into a High-End Minimalist Home
@@ -3736,7 +3740,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Mini Split Not Cooling? Troubleshooting Guide
 
-[官方来源](<https://www.cozeware.com/blog-detail/troubleshooting-mini-split-issues--br-not-cooling-leaking-water-and-no-airflow-b-69.html>)；采集：2026-10-13T07:31:20+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/troubleshooting-mini-split-issues--br-not-cooling-leaking-water-and-no-airflow-b-69.html>)；采集：2026-10-19T01:33:40+00:00
 
 - 正文线索：COZEWARE | Mini Split Not Cooling? Troubleshooting Guide
 - 正文线索：Not Cooling, Leaking Water, and No Airflow
@@ -3745,7 +3749,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Mini Split Components Explained: How It Works
 
-[官方来源](<https://www.cozeware.com/blog-detail/understanding-mini-split-components-and-how-they-work-b-64.html>)；采集：2026-10-13T07:31:22+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/understanding-mini-split-components-and-how-they-work-b-64.html>)；采集：2026-10-19T01:33:43+00:00
 
 - 正文线索：COZEWARE | Mini Split Components Explained: How It Works
 - 正文线索：Understanding Mini Split Components & How They Work
@@ -3754,7 +3758,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Best Mini Split for Small Rooms, Garages & Rentals
 
-[官方来源](<https://www.cozeware.com/blog-detail/which-mini-split-ac-is-best-for-br-small-spaces-rentals-garages-or-offices--b-58.html>)；采集：2026-10-13T07:31:27+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/which-mini-split-ac-is-best-for-br-small-spaces-rentals-garages-or-offices--b-58.html>)；采集：2026-10-19T01:33:50+00:00
 
 - 正文线索：COZEWARE | Best Mini Split for Small Rooms, Garages & Rentals
 - 正文线索：Small Spaces, Rentals, Garages, or Offices?
@@ -3763,7 +3767,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | AI Air Conditioner: The Future of Smart Home Cooling in 2026
 
-[官方来源](<https://www.cozeware.com/blog-detail/why-an-ai-air-conditioner-is-the-future-of-home-comfort-in-2026-b-177.html>)；采集：2026-10-13T07:30:14+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/why-an-ai-air-conditioner-is-the-future-of-home-comfort-in-2026-b-177.html>)；采集：2026-10-19T01:32:50+00:00
 
 - 正文线索：COZEWARE | AI Air Conditioner: The Future of Smart Home Cooling in 2026
 - 正文线索：Why an AI Air Conditioner Is the Future of Home Comfort in 2026
@@ -3772,7 +3776,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Why Families Are Switching to Ductless Mini Splits
 
-[官方来源](<https://www.cozeware.com/blog-detail/why-more-families-are-switching-to-ductless-mini-split-acs-b-53.html>)；采集：2026-10-13T07:31:35+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/why-more-families-are-switching-to-ductless-mini-split-acs-b-53.html>)；采集：2026-10-19T01:34:25+00:00
 
 - 正文线索：COZEWARE | Why Families Are Switching to Ductless Mini Splits
 - 正文线索：Why More Families Are Switching to Ductless Mini Split ACs
@@ -3781,7 +3785,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Using a Mini Split in Winter: Cold Weather Guide
 
-[官方来源](<https://www.cozeware.com/blog-detail/winter-usage-guide--br-how-to-keep-your-mini-split-running-smoothly-in-low-temperatures-b-74.html>)；采集：2026-10-13T07:31:16+00:00
+[官方来源](<https://www.cozeware.com/blog-detail/winter-usage-guide--br-how-to-keep-your-mini-split-running-smoothly-in-low-temperatures-b-74.html>)；采集：2026-10-19T01:33:36+00:00
 
 - 正文线索：COZEWARE | Using a Mini Split in Winter: Cold Weather Guide
 - 正文线索：How to Keep Your Mini Split Running Smoothly in Low Temperatures
@@ -3792,25 +3796,25 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### Air Conditioners | cozeware
 
-[官方来源](<https://www.cozeware.com/category/air-conditioners-c-1096.html>)；采集：2026-10-13T07:33:34+00:00
+[官方来源](<https://www.cozeware.com/category/air-conditioners-c-1096.html>)；采集：2026-10-19T01:35:35+00:00
 
 - 正文线索：PrivacyTermsPromo Terms\* Do Not Sell or Share My Personal Information
 
 #### Air Handers | cozeware
 
-[官方来源](<https://www.cozeware.com/category/air-handlers-c-1140.html>)；采集：2026-10-13T07:33:34+00:00
+[官方来源](<https://www.cozeware.com/category/air-handlers-c-1140.html>)；采集：2026-10-19T01:35:33+00:00
 
 - 正文线索：PrivacyTermsPromo Terms\* Do Not Sell or Share My Personal Information
 
 #### Cozeware | Best Sellers
 
-[官方来源](<https://www.cozeware.com/custompro/best-sellers-c-597.html>)；采集：2026-10-13T07:29:50+00:00
+[官方来源](<https://www.cozeware.com/custompro/best-sellers-c-597.html>)；采集：2026-10-19T01:32:32+00:00
 
 - 正文线索：PrivacyTermsPromo Terms\* Do Not Sell or Share My Personal Information
 
 #### Cozeware | New Arrivals
 
-[官方来源](<https://www.cozeware.com/custompro/new-arrivals-c-598.html>)；采集：2026-10-13T07:29:49+00:00
+[官方来源](<https://www.cozeware.com/custompro/new-arrivals-c-598.html>)；采集：2026-10-19T01:32:30+00:00
 
 - 正文线索：PrivacyTermsPromo Terms\* Do Not Sell or Share My Personal Information
 
@@ -3818,7 +3822,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Contact Us
 
-[官方来源](<https://www.cozeware.com/help>)；采集：2026-10-13T07:29:48+00:00
+[官方来源](<https://www.cozeware.com/help>)；采集：2026-10-19T01:32:29+00:00
 
 - 正文线索：MON - FRI: 9:00AM-6:00PM EDT (Except Holidays)
 - 正文线索：MON - FRI: 9:00AM-4:00PM EDT (Except Holidays)
@@ -3826,7 +3830,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | Contact Us
 
-[官方来源](<https://www.cozeware.com/help?id=118>)；采集：2026-10-13T07:29:46+00:00
+[官方来源](<https://www.cozeware.com/help?id=118>)；采集：2026-10-19T01:32:28+00:00
 
 - 正文线索：MON - FRI: 9:00AM-6:00PM EDT (Except Holidays)
 - 正文线索：MON - FRI: 9:00AM-4:00PM EDT (Except Holidays)
@@ -3836,7 +3840,7 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | promotion
 
-[官方来源](<https://www.cozeware.com/promo/business-cooperation-a-166.html>)；采集：2026-10-13T07:29:51+00:00
+[官方来源](<https://www.cozeware.com/promo/business-cooperation-a-166.html>)；采集：2026-10-19T01:32:33+00:00
 
 - 正文线索：PrivacyTermsPromo Terms\* Do Not Sell or Share My Personal Information
 - 阶段核对：官方页面快照不能确认当前众筹、上市、库存或履约。
@@ -3844,14 +3848,14 @@ The warranty covers defects in materials and workmanship of the unit. Issues cau
 
 #### COZEWARE | promotion
 
-[官方来源](<https://www.cozeware.com/promo/flash-deal-a-154.html>)；采集：2026-10-13T07:29:52+00:00
+[官方来源](<https://www.cozeware.com/promo/flash-deal-a-154.html>)；采集：2026-10-19T01:32:34+00:00
 
 - 正文线索：PrivacyTermsPromo Terms\* Do Not Sell or Share My Personal Information
 - 阶段核对：官方页面快照不能确认当前众筹、上市、库存或履约。
 
 #### COZEWARE | FreshFlow Early Access
 
-[官方来源](<https://www.cozeware.com/promo/freshflow-early-access-a-165.html>)；采集：2026-10-13T07:29:41+00:00
+[官方来源](<https://www.cozeware.com/promo/freshflow-early-access-a-165.html>)；采集：2026-10-19T01:32:23+00:00
 
 - 正文线索：PrivacyTermsPromo Terms\* Do Not Sell or Share My Personal Information
 - 阶段核对：官方页面快照不能确认当前众筹、上市、库存或履约。

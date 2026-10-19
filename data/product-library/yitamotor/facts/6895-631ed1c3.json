@@ -6,7 +6,7 @@
   "categoryId": "999",
   "name": "YITAMOTOR 20x8.00-8\" Lawn Mower Tires, Suitable for Lawnmowers, Motorcycles, Garden Tractors, Golf Carts, and Farm Equipment, 4Ply, Set of 2",
   "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-fork-tractors-1002-p-6895.html",
-  "capturedAt": "2026-10-13T07:33:50+00:00",
+  "capturedAt": "2026-10-19T01:38:50+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -180,37 +180,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-fork-tractors-1002-p-6895.html",
-      "capturedAt": "2026-10-13T07:33:50+00:00",
+      "capturedAt": "2026-10-19T01:38:50+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR 20x8.00-8\" Lawn Mower Tires, Suitable for Lawnmowers, Motorcycles, Garden Tractors, Golf Carts, and Farm Equipment, 4Ply, Set of 2"
     },
     "sku": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-fork-tractors-1002-p-6895.html",
-      "capturedAt": "2026-10-13T07:33:50+00:00",
+      "capturedAt": "2026-10-19T01:38:50+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OE-YTFRPF-1002"
     },
     "brand": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-fork-tractors-1002-p-6895.html",
-      "capturedAt": "2026-10-13T07:33:50+00:00",
+      "capturedAt": "2026-10-19T01:38:50+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-fork-tractors-1002-p-6895.html",
-      "capturedAt": "2026-10-13T07:33:50+00:00",
+      "capturedAt": "2026-10-19T01:38:50+00:00",
       "status": "official_page_snapshot",
       "excerpt": "These lawn mower tires are compatible with a variety of vehicles, including lawnmowers, riding lawnmowers, lawn tractors, and garden tractors."
     },
     "description": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-fork-tractors-1002-p-6895.html",
-      "capturedAt": "2026-10-13T07:33:50+00:00",
+      "capturedAt": "2026-10-19T01:38:50+00:00",
       "status": "official_page_snapshot",
       "excerpt": "Our lawn mower tires feature a unique tread pattern design that reduces lawn damage by increasing friction between the tire and the ground. Additionally, this design helps to reduce tire noise and enhances the tire’s cooling and drainage capability, improving overall vehicle handling.\nFitment\nThese lawn mower tires are compatible with a variety of vehicles, including lawnmowers, riding lawnmowers, lawn tractors, and garden tractors.\nFeatures\nSpecifications: Tire Size: 20x8.00-8\", Tire Load Range: B/4PR/4Ply, Side Wall: 2Ply, Tread Depth: 0.2\"/5.5mm, Rim Width: 7.0\", Section Width: 9.3\"/239mm, Outer Diameter: 19.85\"/500mm, Max Load: 965Lbs@22 psi\nHigh Performance: Unique tread pattern design reduces lawn damage by increasing friction between the tire and ground; Also reduces tire noise and enhances the tire's cooling and drainage capability to improve overall vehicle handling\nCompatibility: Our 20x8.00-8 lawn mower tires are compatible with lawn mowers, riding lawn mowers, lawn tractors, and garden tractors\nPackage: Includes set of 2 20x8.00-8\" lawn mower tires that are suitable for lawnmowers, motorcycles, garden tractors, golf carts, and farm equipment\nNote: Before purchasing, please check the size of your existing tire's sidewall, rim, and tread depth to ensure proper fit; Our team is ready to assist with any questions"
     },
     "specifications": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-fork-tractors-1002-p-6895.html",
-      "capturedAt": "2026-10-13T07:33:50+00:00",
+      "capturedAt": "2026-10-19T01:38:50+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "YITAMOTOR",
@@ -226,7 +226,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-fork-tractors-1002-p-6895.html",
-      "capturedAt": "2026-10-13T07:33:50+00:00",
+      "capturedAt": "2026-10-19T01:38:50+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -309,7 +309,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-fork-tractors-1002-p-6895.html",
-      "capturedAt": "2026-10-13T07:33:50+00:00",
+      "capturedAt": "2026-10-19T01:38:50+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "98.99",
@@ -322,7 +322,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-fork-tractors-1002-p-6895.html",
-      "capturedAt": "2026-10-13T07:33:50+00:00",
+      "capturedAt": "2026-10-19T01:38:50+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -345,5 +345,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

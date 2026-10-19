@@ -6,14 +6,12 @@
   "categoryId": "990",
   "name": "All-Weather TPE Floor Mats for 2015-2026 Ford F-150 SuperCrew Cab with 1st Row Bench Seats – Includes 1st & 2nd Row, Black Floor Liners",
   "url": "https://www.oedro.com/products/floor-mats-for-2015-2024-ford-f150-supercrew-cab-unique-black-tpe-all-weather-guard-full-set-liners-p-5465.html",
-  "capturedAt": "2026-10-13T07:26:33+00:00",
+  "capturedAt": "2026-10-19T01:33:38+00:00",
   "imageReview": {
-    "reviewed_urls": [
-      "https://img.yitashop.com/fit-in/1000x1000/10004/banners/original/202502/97E79583-516A-AF60-2443-8E2964A237CD.jpg",
-      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202608/38F07F9B-FB67-2046-FD57-CD24ECC1DEC5.jpg"
-    ],
+    "reviewed_urls": [],
     "unreviewed_urls": [
       "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202608/6E30B24F-1DA9-ECBE-0F4B-902CC916ACDC.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202608/38F07F9B-FB67-2046-FD57-CD24ECC1DEC5.jpg",
       "https://img.yitashop.com/fit-in/1000x1000/10004/banners/original/202601/42CADCE9-B635-A03D-DA11-566892803B0C.jpg",
       "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202505/AFC15ABB-00A5-95BF-E00E-BA97FAF1CB03.jpg",
       "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202608/CB1BE323-4954-7986-DA82-D13EDCD002FC.jpg",
@@ -40,40 +38,7 @@
       "https://img.yitashop.com/fit-in/1760x732/10004/banners/original/202610/3DFCA4F3-812E-9B87-9D30-8BDAD471FA60.jpg"
     ]
   },
-  "image_facts": [
-    {
-      "url": "https://img.yitashop.com/fit-in/1000x1000/10004/banners/original/202502/97E79583-516A-AF60-2443-8E2964A237CD.jpg",
-      "applies_to_urls": [
-        "https://www.oedro.com/products/floor-mats-for-2015-2024-ford-f150-supercrew-cab-unique-black-tpe-all-weather-guard-full-set-liners-p-5465.html"
-      ],
-      "captured_at": "2026-10-13T07:47:22+00:00",
-      "reviewed_at": "2026-10-13T08:03:40+00:00",
-      "classification": "product_visual",
-      "facts": [
-        ""
-      ],
-      "limitations": [
-        "Two-row floor-liner set shown; no readable model/year parameter."
-      ],
-      "status": "official_image_claim_not_independently_tested"
-    },
-    {
-      "url": "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202608/38F07F9B-FB67-2046-FD57-CD24ECC1DEC5.jpg",
-      "applies_to_urls": [
-        "https://www.oedro.com/products/floor-mats-for-2015-2024-ford-f150-supercrew-cab-unique-black-tpe-all-weather-guard-full-set-liners-p-5465.html"
-      ],
-      "captured_at": "2026-10-13T07:47:22+00:00",
-      "reviewed_at": "2026-10-13T08:03:40+00:00",
-      "classification": "fitment",
-      "facts": [
-        "Fits 2015-2026 Ford F-150 SuperCrew Cab with 1st Row Bench Seats. 4 FULL-SIZED DOORS. Regular Cab and Double Cab crossed out."
-      ],
-      "limitations": [
-        "Only EO1001W075. Original HTML also excludes Rear Under-Seat Fold-Flat Storage. The awkward primary-copilot caption is retained as image wording, not interpreted as a new technical condition."
-      ],
-      "status": "official_image_claim_not_independently_tested"
-    }
-  ],
+  "image_facts": [],
   "conflicts": [],
   "field_status": {
     "product_warranty": "unresolved_official_source_conflict",
@@ -251,37 +216,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/floor-mats-for-2015-2024-ford-f150-supercrew-cab-unique-black-tpe-all-weather-guard-full-set-liners-p-5465.html",
-      "capturedAt": "2026-10-13T07:26:33+00:00",
+      "capturedAt": "2026-10-19T01:33:38+00:00",
       "status": "official_page_snapshot",
       "excerpt": "All-Weather TPE Floor Mats for 2015-2026 Ford F-150 SuperCrew Cab with 1st Row Bench Seats – Includes 1st & 2nd Row, Black Floor Liners"
     },
     "sku": {
       "url": "https://www.oedro.com/products/floor-mats-for-2015-2024-ford-f150-supercrew-cab-unique-black-tpe-all-weather-guard-full-set-liners-p-5465.html",
-      "capturedAt": "2026-10-13T07:26:33+00:00",
+      "capturedAt": "2026-10-19T01:33:38+00:00",
       "status": "official_page_snapshot",
       "excerpt": "EO1001W075"
     },
     "brand": {
       "url": "https://www.oedro.com/products/floor-mats-for-2015-2024-ford-f150-supercrew-cab-unique-black-tpe-all-weather-guard-full-set-liners-p-5465.html",
-      "capturedAt": "2026-10-13T07:26:33+00:00",
+      "capturedAt": "2026-10-19T01:33:38+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEDRO"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/floor-mats-for-2015-2024-ford-f150-supercrew-cab-unique-black-tpe-all-weather-guard-full-set-liners-p-5465.html",
-      "capturedAt": "2026-10-13T07:26:33+00:00",
+      "capturedAt": "2026-10-19T01:33:38+00:00",
       "status": "official_page_snapshot",
       "excerpt": "Compatible for 2015-2026 Ford F-150 SuperCrew Cab with 1st Row Bench Seat\nWithout Rear Under-Seat Fold-Flat Storage."
     },
     "description": {
       "url": "https://www.oedro.com/products/floor-mats-for-2015-2024-ford-f150-supercrew-cab-unique-black-tpe-all-weather-guard-full-set-liners-p-5465.html",
-      "capturedAt": "2026-10-13T07:26:33+00:00",
+      "capturedAt": "2026-10-19T01:33:38+00:00",
       "status": "official_page_snapshot",
       "excerpt": "These eco-friendly, semi-flexible floor mats are made of an ultra-durable Polyethylene that offers a strong, rigid shape that's incredibly easy to clean. The high-quality design extends the lifespan of your carpets and the raised-lip design insures your interior will always be protected from mud, moisture, and more.\nFeatures\nPerfect fit. Made by unique precision digital laser scanning to protect the front and back Seat. Completely and accurately floor liners.\nAll-weather guard. Floor mats TPE composition ensures 100% safe, 100% odorless, and environmentally friendly in all weather (rain, fog, snow, etc).\nTough& Durable. Honda floor mats have 300% better temperature resistance than PVC. The high-density TPE material not only feels nice and is extremely wear-resistant, but also remains flexible in extremely cold weather.\nEasy to clean. Wipes down easily. OEDRO floor mats are used in the Y-shaped groove, which is capable of trap Liquid, Milk, Snow, Dirt, Sand, etc. And keep Your Car and Shoes Clean.\n2 years warranty. For your safety, professional installation is highly recommended.\nFitment\nCompatible for 2015-2026 Ford F-150 SuperCrew Cab with 1st Row Bench Seat\nWithout Rear Under-Seat Fold-Flat Storage."
     },
     "specifications": {
       "url": "https://www.oedro.com/products/floor-mats-for-2015-2024-ford-f150-supercrew-cab-unique-black-tpe-all-weather-guard-full-set-liners-p-5465.html",
-      "capturedAt": "2026-10-13T07:26:33+00:00",
+      "capturedAt": "2026-10-19T01:33:38+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "OEDRO",
@@ -294,7 +259,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/floor-mats-for-2015-2024-ford-f150-supercrew-cab-unique-black-tpe-all-weather-guard-full-set-liners-p-5465.html",
-      "capturedAt": "2026-10-13T07:26:33+00:00",
+      "capturedAt": "2026-10-19T01:33:38+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [
@@ -363,7 +328,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/floor-mats-for-2015-2024-ford-f150-supercrew-cab-unique-black-tpe-all-weather-guard-full-set-liners-p-5465.html",
-      "capturedAt": "2026-10-13T07:26:33+00:00",
+      "capturedAt": "2026-10-19T01:33:38+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "119.99",
@@ -376,7 +341,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/floor-mats-for-2015-2024-ford-f150-supercrew-cab-unique-black-tpe-all-weather-guard-full-set-liners-p-5465.html",
-      "capturedAt": "2026-10-13T07:26:33+00:00",
+      "capturedAt": "2026-10-19T01:33:38+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -404,5 +369,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

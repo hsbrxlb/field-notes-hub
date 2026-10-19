@@ -6,16 +6,15 @@
   "categoryId": "992",
   "name": "OEDRO FRP Hard Tri-fold Tonneau Cover Fold Truck Bed Covers Compatible with 2015-2026 Chevy Colorado/GMC Canyon with 5 Feet Bed",
   "url": "https://www.oedro.com/products/oedro-2015-2024-chevy-colorado-gmc-canyon-tri-fold-tonneau-cover-3015-p-5931.html",
-  "capturedAt": "2026-10-13T07:28:57+00:00",
+  "capturedAt": "2026-10-19T01:35:55+00:00",
   "imageReview": {
-    "reviewed_urls": [
-      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/2/_/2_47.jpg",
-      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/6/_/6__1_4.jpg",
-      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/8/_/8_29.jpg",
-      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/o/e/oetetc-3015_1.jpg"
-    ],
+    "reviewed_urls": [],
     "unreviewed_urls": [
       "https://img.yitashop.com/fit-in/1000x1000/10004/product/original/202506/8EAA164D-5460-9DB6-6702-6EC7450CE909.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/o/e/oetetc-3015_1.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/6/_/6__1_4.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/8/_/8_29.jpg",
+      "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/2/_/2_47.jpg",
       "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/7/_/7_34.jpg",
       "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/3/_/3_53.jpg",
       "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/6/_/6_47.jpg",
@@ -31,75 +30,10 @@
       "https://img.yitashop.com/fit-in/1920x800/10004/product/original/202608/0628C420-0648-E9B3-86B4-A932E975A52A.jpg"
     ]
   },
-  "image_facts": [
-    {
-      "url": "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/o/e/oetetc-3015_1.jpg",
-      "applies_to_urls": [
-        "https://www.oedro.com/products/oedro-2015-2024-chevy-colorado-gmc-canyon-tri-fold-tonneau-cover-3015-p-5931.html"
-      ],
-      "captured_at": "2026-10-13T07:47:23+00:00",
-      "reviewed_at": "2026-10-13T08:03:40+00:00",
-      "classification": "folding_visual",
-      "facts": [
-        ""
-      ],
-      "limitations": [
-        "Tri-fold bed cover shown in folded positions; cannot establish material from image."
-      ],
-      "status": "official_image_claim_not_independently_tested"
-    },
-    {
-      "url": "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/6/_/6__1_4.jpg",
-      "applies_to_urls": [
-        "https://www.oedro.com/products/oedro-2015-2024-chevy-colorado-gmc-canyon-tri-fold-tonneau-cover-3015-p-5931.html"
-      ],
-      "captured_at": "2026-10-13T07:47:24+00:00",
-      "reviewed_at": "2026-10-13T08:03:40+00:00",
-      "classification": "installation_exclusion",
-      "facts": [
-        "Not Suitable for the Above"
-      ],
-      "limitations": [
-        "Depicted configurations with cargo racks/headache racks/sport bars and bed toolbox are crossed out; maintain image evidence, avoid assuming compatibility for every named accessory outside these depictions."
-      ],
-      "status": "official_image_claim_not_independently_tested"
-    },
-    {
-      "url": "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/8/_/8_29.jpg",
-      "applies_to_urls": [
-        "https://www.oedro.com/products/oedro-2015-2024-chevy-colorado-gmc-canyon-tri-fold-tonneau-cover-3015-p-5931.html"
-      ],
-      "captured_at": "2026-10-13T07:47:24+00:00",
-      "reviewed_at": "2026-10-13T08:03:40+00:00",
-      "classification": "fitment_and_measurement",
-      "facts": [
-        "ONLY FIT 5 FT. Measure your cargo bed size before buying. Bed Length Inside from Bulk Head to Tailgate."
-      ],
-      "limitations": [
-        "Only OEEPTC-3015; retain 2015-2026 Colorado/Canyon Crew Cab from HTML."
-      ],
-      "status": "official_image_claim_not_independently_tested"
-    },
-    {
-      "url": "https://img.yitashop.com/fit-in/1000x1000/oe/media/catalog/product/2/_/2_47.jpg",
-      "applies_to_urls": [
-        "https://www.oedro.com/products/oedro-2015-2024-chevy-colorado-gmc-canyon-tri-fold-tonneau-cover-3015-p-5931.html"
-      ],
-      "captured_at": "2026-10-13T07:47:25+00:00",
-      "reviewed_at": "2026-10-13T08:03:40+00:00",
-      "classification": "promotional_weather_claim",
-      "facts": [
-        "UV Resistant; Waterproof; Snow-proof; Dust-proof"
-      ],
-      "limitations": [
-        "Image claims are not an independent ingress test. Current HTML uses more limited everyday-weather protection wording; avoid guarantee of zero leakage."
-      ],
-      "status": "official_image_claim_not_independently_tested"
-    }
-  ],
+  "image_facts": [],
   "conflicts": [
     {
-      "captured_at": "2026-10-13T07:28:57+00:00",
+      "captured_at": "2026-10-19T01:35:55+00:00",
       "claims": [
         {
           "field": "specifications.Material",
@@ -329,12 +263,12 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/oedro-2015-2024-chevy-colorado-gmc-canyon-tri-fold-tonneau-cover-3015-p-5931.html",
-      "capturedAt": "2026-10-13T07:28:57+00:00",
+      "capturedAt": "2026-10-19T01:35:55+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": "OEDRO FRP Hard Tri-fold Tonneau Cover Fold Truck Bed Covers Compatible with 2015-2026 Chevy Colorado/GMC Canyon with 5 Feet Bed",
       "conflicts": [
         {
-          "captured_at": "2026-10-13T07:28:57+00:00",
+          "captured_at": "2026-10-19T01:35:55+00:00",
           "claims": [
             {
               "field": "specifications.Material",
@@ -366,30 +300,30 @@
     },
     "sku": {
       "url": "https://www.oedro.com/products/oedro-2015-2024-chevy-colorado-gmc-canyon-tri-fold-tonneau-cover-3015-p-5931.html",
-      "capturedAt": "2026-10-13T07:28:57+00:00",
+      "capturedAt": "2026-10-19T01:35:55+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEEPTC-3015"
     },
     "brand": {
       "url": "https://www.oedro.com/products/oedro-2015-2024-chevy-colorado-gmc-canyon-tri-fold-tonneau-cover-3015-p-5931.html",
-      "capturedAt": "2026-10-13T07:28:57+00:00",
+      "capturedAt": "2026-10-19T01:35:55+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEDRO"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/oedro-2015-2024-chevy-colorado-gmc-canyon-tri-fold-tonneau-cover-3015-p-5931.html",
-      "capturedAt": "2026-10-13T07:28:57+00:00",
+      "capturedAt": "2026-10-19T01:35:55+00:00",
       "status": "official_page_snapshot",
       "excerpt": "Compatible with 2015-2026 Chevrolet Colorado Crew Cab with 5 Feet Bed\nCompatible with 2015-2026 GMC Canyon Crew Cab with 5 Feet Bed"
     },
     "description": {
       "url": "https://www.oedro.com/products/oedro-2015-2024-chevy-colorado-gmc-canyon-tri-fold-tonneau-cover-3015-p-5931.html",
-      "capturedAt": "2026-10-13T07:28:57+00:00",
+      "capturedAt": "2026-10-19T01:35:55+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": "Protect your cargo with a heavy-duty FRP hard tri-fold tonneau cover. Built for durability, easy no-drill installation, and everyday weather protection, its folding design provides convenient bed access.\nFeatures\nHeavy-Duty FRP Construction: Built with reinforced fiberglass (FRP) panels, this hard tri-fold tonneau cover delivers durable strength and reliable load-bearing performance for everyday truck bed use.\nQuick No-Drill Installation: Designed for a hassle-free setup, the FRP truck bed cover installs with included hardware and clear instructions—no drilling required. Note: Cargo racks must be removed before installation.\nAll-Weather Cargo Protection: The hard panels help shield your truck bed cargo from rain, snow, road debris, impacts, and sharp objects, providing dependable protection for everyday hauling and travel.\nTri-Fold Design for Easy Access: The folding truck bed cover opens and folds conveniently when you need access to your cargo, while allowing you to quickly cover the bed when cargo protection is needed.\nConvenient Nighttime Visibility: A complimentary LED light helps illuminate the truck bed after dark, making it easier to see and access your cargo in low-light conditions.\n1-Year Warranty | Professional installation is highly recommended for safety.\nFitment\nCompatible with 2015-2026 Chevrolet Colorado Crew Cab with 5 Feet Bed\nCompatible with 2015-2026 GMC Canyon Crew Cab with 5 Feet Bed",
       "conflicts": [
         {
-          "captured_at": "2026-10-13T07:28:57+00:00",
+          "captured_at": "2026-10-19T01:35:55+00:00",
           "claims": [
             {
               "field": "specifications.Material",
@@ -421,7 +355,7 @@
     },
     "specifications": {
       "url": "https://www.oedro.com/products/oedro-2015-2024-chevy-colorado-gmc-canyon-tri-fold-tonneau-cover-3015-p-5931.html",
-      "capturedAt": "2026-10-13T07:28:57+00:00",
+      "capturedAt": "2026-10-19T01:35:55+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": {
         "Automotive Fit Type": "Vehicle Specific Fit",
@@ -437,7 +371,7 @@
       },
       "conflicts": [
         {
-          "captured_at": "2026-10-13T07:28:57+00:00",
+          "captured_at": "2026-10-19T01:35:55+00:00",
           "claims": [
             {
               "field": "specifications.Material",
@@ -470,7 +404,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/oedro-2015-2024-chevy-colorado-gmc-canyon-tri-fold-tonneau-cover-3015-p-5931.html",
-      "capturedAt": "2026-10-13T07:28:57+00:00",
+      "capturedAt": "2026-10-19T01:35:55+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [
@@ -571,7 +505,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/oedro-2015-2024-chevy-colorado-gmc-canyon-tri-fold-tonneau-cover-3015-p-5931.html",
-      "capturedAt": "2026-10-13T07:28:57+00:00",
+      "capturedAt": "2026-10-19T01:35:55+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "489.99",
@@ -584,7 +518,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/oedro-2015-2024-chevy-colorado-gmc-canyon-tri-fold-tonneau-cover-3015-p-5931.html",
-      "capturedAt": "2026-10-13T07:28:57+00:00",
+      "capturedAt": "2026-10-19T01:35:55+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -612,5 +546,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

@@ -6,7 +6,7 @@
   "categoryId": "995",
   "name": "OEDRO 6 Inch Running Boards Compatible with 2019-2026 Dodge Ram 1500 Quad Cab New Body,Bolt-on Side Steps Steel Nerf Bar,Two Stairs Design",
   "url": "https://www.oedro.com/products/2019-2024-ram-1500-quad-cab-new-body-drop-running-boards-p-5798.html",
-  "capturedAt": "2026-10-13T07:28:06+00:00",
+  "capturedAt": "2026-10-19T01:35:18+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -152,37 +152,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/2019-2024-ram-1500-quad-cab-new-body-drop-running-boards-p-5798.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:18+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEDRO 6 Inch Running Boards Compatible with 2019-2026 Dodge Ram 1500 Quad Cab New Body,Bolt-on Side Steps Steel Nerf Bar,Two Stairs Design"
     },
     "sku": {
       "url": "https://www.oedro.com/products/2019-2024-ram-1500-quad-cab-new-body-drop-running-boards-p-5798.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:18+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEEPRB-0149"
     },
     "brand": {
       "url": "https://www.oedro.com/products/2019-2024-ram-1500-quad-cab-new-body-drop-running-boards-p-5798.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:18+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEDRO"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/2019-2024-ram-1500-quad-cab-new-body-drop-running-boards-p-5798.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:18+00:00",
       "status": "official_page_snapshot",
       "excerpt": "Compatible with 2019-2026 Dodge Ram 1500 Quad Cab New Body."
     },
     "description": {
       "url": "https://www.oedro.com/products/2019-2024-ram-1500-quad-cab-new-body-drop-running-boards-p-5798.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:18+00:00",
       "status": "official_page_snapshot",
       "excerpt": "No matter the challenge, OEDRO has you covered. These two-step drop side nerf bars combine bold off-road styling with a durable black powder-coated finish. The descending step design enhances grip and safety on tough terrain, making every climb secure and effortless. By reducing the stride needed to enter your truck, these steps not only save energy but also keep you ready for the road ahead. Rugged, practical, and built to impress—OEDRO delivers where it matters most.\nFeatures\n6-Inch Side Pedals: Features a two-step design for easier access, especially for vehicles with lift kits or oversized tires.\nThree-Tube Structure: Offers superior protection for the vehicle’s underside and sides, reducing the risk of damage from rocks or obstacles.\nBolt-On Installation: Welded brackets ensure extra durability with no need for cutting or drilling.\nStrong and Durable: A unique powder coating provides excellent rust and corrosion resistance, making it reliable in all driving conditions.\nEnhanced Grip: Laser-cut tread surfaces deliver superior anti-slip performance for safer footing.\nFitment\nCompatible with 2019-2026 Dodge Ram 1500 Quad Cab New Body."
     },
     "specifications": {
       "url": "https://www.oedro.com/products/2019-2024-ram-1500-quad-cab-new-body-drop-running-boards-p-5798.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:18+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "OEDRO",
@@ -194,7 +194,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/2019-2024-ram-1500-quad-cab-new-body-drop-running-boards-p-5798.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:18+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -227,7 +227,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/2019-2024-ram-1500-quad-cab-new-body-drop-running-boards-p-5798.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:18+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "379.99",
@@ -240,7 +240,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/2019-2024-ram-1500-quad-cab-new-body-drop-running-boards-p-5798.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:18+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -263,5 +263,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

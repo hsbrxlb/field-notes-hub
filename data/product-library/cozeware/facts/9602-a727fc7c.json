@@ -6,7 +6,7 @@
   "categoryId": "1096",
   "name": "COZEWARE Visio Series 18000 BTU 20 SEER2 Ductless Mini Split AC with Heat Pump, 230V",
   "url": "https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html",
-  "capturedAt": "2026-10-13T07:32:48+00:00",
+  "capturedAt": "2026-10-19T01:35:13+00:00",
   "imageReview": {
     "reviewed_urls": [
       "https://img.yitashop.com/fit-in/800x800/10006/banners/original/202605/E2AC5FDC-E979-1E78-29C8-B98B360C7D44.jpg",
@@ -360,14 +360,30 @@
         {
           "value": "5-Year Full Warranty; 7-Year Warranty on Compressor",
           "source_url": "https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html",
-          "sha256": "0346f013eceef88cfbc62a99e73a114586bbc7c6d2389759e3df11c1695880b1",
-          "location": "specifications.Warranty"
+          "sha256": "1754f1e2db94aaa26b4ad0373114d60152e324abfd19c6e211ea3b47fb1a4e63",
+          "location": "specifications.Warranty",
+          "source_history": [
+            {
+              "sha256": "0346f013eceef88cfbc62a99e73a114586bbc7c6d2389759e3df11c1695880b1"
+            }
+          ],
+          "captured_at": "2026-10-19T01:35:13+00:00",
+          "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+          "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
         },
         {
           "value": "Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.",
           "source_url": "https://www.cozeware.com/article/warranty.html?aid=145",
-          "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947",
-          "location": "policy_warranty_definition_and_liability"
+          "sha256": "356f79b46e7d2ca22e494573c9004ba418858b9a11da6f69afae355ae765835d",
+          "location": "policy_warranty_definition_and_liability",
+          "source_history": [
+            {
+              "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947"
+            }
+          ],
+          "captured_at": "2026-10-19T01:34:52+00:00",
+          "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+          "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
         }
       ],
       "handling": "Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.",
@@ -675,7 +691,7 @@
     "is_deposit": false,
     "presale_delivery_text": "",
     "presale_price_snapshot": "649.99",
-    "captured_at": "2026-10-13T07:32:48+00:00",
+    "captured_at": "2026-10-19T01:35:13+00:00",
     "interpretation": "official codes/text preserved; stage not inferred solely from campaign name"
   },
   "usage_conditions": {
@@ -697,37 +713,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html",
-      "capturedAt": "2026-10-13T07:32:48+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "official_page_snapshot",
       "excerpt": "COZEWARE Visio Series 18000 BTU 20 SEER2 Ductless Mini Split AC with Heat Pump, 230V"
     },
     "sku": {
       "url": "https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html",
-      "capturedAt": "2026-10-13T07:32:48+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "official_page_snapshot",
       "excerpt": "HAHEAC-DC18K"
     },
     "brand": {
       "url": "https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html",
-      "capturedAt": "2026-10-13T07:32:48+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "official_page_snapshot",
       "excerpt": "COZEWARE"
     },
     "fitment": {
       "url": "https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html",
-      "capturedAt": "2026-10-13T07:32:48+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "missing",
       "excerpt": ""
     },
     "description": {
       "url": "https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html",
-      "capturedAt": "2026-10-13T07:32:48+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "official_page_snapshot",
       "excerpt": "18,000 BTU Fast Cooling and Heating for 1250 Sq Ft\n4D Sweeping Wind, Every Corner Comfortable\nYour Peaceful Sleep, Guarded by 36 dB\n30–40% Energy Savings with High Efficiency (20 SEER2 / 8.5 HSPF2)\nRoom-by-Room Comfort with Lower Energy Costs\nAHRI and ETL Certified for Reliable Performance\nMore Climate-friendly R32 Refrigerant Powering Efficient AC\nAPP and Voice Control, Intelligent & Convenient"
     },
     "specifications": {
       "url": "https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html",
-      "capturedAt": "2026-10-13T07:32:48+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": {
         "BTU Cooling": "18,000 BTU",
@@ -761,14 +777,30 @@
             {
               "value": "5-Year Full Warranty; 7-Year Warranty on Compressor",
               "source_url": "https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html",
-              "sha256": "0346f013eceef88cfbc62a99e73a114586bbc7c6d2389759e3df11c1695880b1",
-              "location": "specifications.Warranty"
+              "sha256": "1754f1e2db94aaa26b4ad0373114d60152e324abfd19c6e211ea3b47fb1a4e63",
+              "location": "specifications.Warranty",
+              "source_history": [
+                {
+                  "sha256": "0346f013eceef88cfbc62a99e73a114586bbc7c6d2389759e3df11c1695880b1"
+                }
+              ],
+              "captured_at": "2026-10-19T01:35:13+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             },
             {
               "value": "Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.",
               "source_url": "https://www.cozeware.com/article/warranty.html?aid=145",
-              "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947",
-              "location": "policy_warranty_definition_and_liability"
+              "sha256": "356f79b46e7d2ca22e494573c9004ba418858b9a11da6f69afae355ae765835d",
+              "location": "policy_warranty_definition_and_liability",
+              "source_history": [
+                {
+                  "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947"
+                }
+              ],
+              "captured_at": "2026-10-19T01:34:52+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             }
           ],
           "handling": "Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.",
@@ -779,7 +811,7 @@
     },
     "variants": {
       "url": "https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html",
-      "capturedAt": "2026-10-13T07:32:48+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [
@@ -862,7 +894,7 @@
     },
     "price": {
       "url": "https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html",
-      "capturedAt": "2026-10-13T07:32:48+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "649.99",
@@ -875,7 +907,7 @@
     },
     "policies": {
       "url": "https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html",
-      "capturedAt": "2026-10-13T07:32:48+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": {
         "productWarranty": [
@@ -903,14 +935,30 @@
             {
               "value": "5-Year Full Warranty; 7-Year Warranty on Compressor",
               "source_url": "https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html",
-              "sha256": "0346f013eceef88cfbc62a99e73a114586bbc7c6d2389759e3df11c1695880b1",
-              "location": "specifications.Warranty"
+              "sha256": "1754f1e2db94aaa26b4ad0373114d60152e324abfd19c6e211ea3b47fb1a4e63",
+              "location": "specifications.Warranty",
+              "source_history": [
+                {
+                  "sha256": "0346f013eceef88cfbc62a99e73a114586bbc7c6d2389759e3df11c1695880b1"
+                }
+              ],
+              "captured_at": "2026-10-19T01:35:13+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             },
             {
               "value": "Policy: compressor7years;parts5years;labor,installation/reinstallation,removal and certaintransitfees excluded.",
               "source_url": "https://www.cozeware.com/article/warranty.html?aid=145",
-              "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947",
-              "location": "policy_warranty_definition_and_liability"
+              "sha256": "356f79b46e7d2ca22e494573c9004ba418858b9a11da6f69afae355ae765835d",
+              "location": "policy_warranty_definition_and_liability",
+              "source_history": [
+                {
+                  "sha256": "5527e64be13f027f914bc37edba569e4f263d46c5a04ae3dca07772ec0f99947"
+                }
+              ],
+              "captured_at": "2026-10-19T01:34:52+00:00",
+              "rechecked_at": "2026-10-19T01:38:21.696422+00:00",
+              "recheck_method": "exact_normalized_field_equality_with_hash_verified_current_official_snapshot"
             }
           ],
           "handling": "Full does not establish labor/installation coverage; preserve differing scope and policy exclusions. Do not claim blanket full warranty.",
@@ -925,5 +973,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

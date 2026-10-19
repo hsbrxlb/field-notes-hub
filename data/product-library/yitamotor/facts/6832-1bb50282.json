@@ -6,7 +6,7 @@
   "categoryId": "999",
   "name": "YITAMOTOR 32\" Tow Behind Lawn Aerator Tow Spike Aerator Tool",
   "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-aerator-0134-p-6832.html",
-  "capturedAt": "2026-10-13T07:33:27+00:00",
+  "capturedAt": "2026-10-19T01:38:33+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -140,37 +140,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-aerator-0134-p-6832.html",
-      "capturedAt": "2026-10-13T07:33:27+00:00",
+      "capturedAt": "2026-10-19T01:38:33+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR 32\" Tow Behind Lawn Aerator Tow Spike Aerator Tool"
     },
     "sku": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-aerator-0134-p-6832.html",
-      "capturedAt": "2026-10-13T07:33:27+00:00",
+      "capturedAt": "2026-10-19T01:38:33+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OE-FRSSPF-0134-YITA"
     },
     "brand": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-aerator-0134-p-6832.html",
-      "capturedAt": "2026-10-13T07:33:27+00:00",
+      "capturedAt": "2026-10-19T01:38:33+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-aerator-0134-p-6832.html",
-      "capturedAt": "2026-10-13T07:33:27+00:00",
+      "capturedAt": "2026-10-19T01:38:33+00:00",
       "status": "missing",
       "excerpt": ""
     },
     "description": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-aerator-0134-p-6832.html",
-      "capturedAt": "2026-10-13T07:33:27+00:00",
+      "capturedAt": "2026-10-19T01:38:33+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR Tow Behind Lawn Aerator, The 32-inch working width helps you quickly loosen the soil to a depth of 2 inches.\nFeatures\nUniversal Hitch.\nEasily attaches to every lawn tractor and most ztrs and ATVs. And double tow-behind bars are more durable and rigid for use.\nLoading Capacity.\nThe frame holds up to three concrete blocks of approximately 35 pounds; Weights up to 100 lbs can be secured to the frame using straps or other binding material.\nPowerful Function.\n8 steel spike disks provide soil aeration penetration of up to 2’’ in depth to create reservoirs that bring oxygen, fertilizer, and water into the root zone.\nRust Resistant Coating.\nAll steel design plus black rust-resistant coated finishing prevents rusting for continued use throughout the seasons.\nEfficient & Easy Assembly.\n8\" diameter spike disks rotate independently & continuously during tractor turns, resulting in fewer passes due to missed areas; All parts and instructions are included for assembly; Note: Pay attention to avoid injury during assembly and use."
     },
     "specifications": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-aerator-0134-p-6832.html",
-      "capturedAt": "2026-10-13T07:33:27+00:00",
+      "capturedAt": "2026-10-19T01:38:33+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "YITAMOTOR",
@@ -186,7 +186,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-aerator-0134-p-6832.html",
-      "capturedAt": "2026-10-13T07:33:27+00:00",
+      "capturedAt": "2026-10-19T01:38:33+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -219,7 +219,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-aerator-0134-p-6832.html",
-      "capturedAt": "2026-10-13T07:33:27+00:00",
+      "capturedAt": "2026-10-19T01:38:33+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "129.99",
@@ -232,7 +232,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/yitamotor-universal-tow-behind-lawn-aerator-0134-p-6832.html",
-      "capturedAt": "2026-10-13T07:33:27+00:00",
+      "capturedAt": "2026-10-19T01:38:33+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -260,5 +260,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

@@ -6,7 +6,7 @@
   "categoryId": "990",
   "name": "YITAMOTOR 2018-2025 Ford Expedition/Expedition Max with 2nd Row Bench Seat Floor Mats, Front 1st & 2nd 3rd Seat",
   "url": "https://www.oedro.com/products/yitamotor-ford-expedition-black-floor-mats-1148-p-6311.html",
-  "capturedAt": "2026-10-13T07:30:46+00:00",
+  "capturedAt": "2026-10-19T01:37:09+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -180,37 +180,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/yitamotor-ford-expedition-black-floor-mats-1148-p-6311.html",
-      "capturedAt": "2026-10-13T07:30:46+00:00",
+      "capturedAt": "2026-10-19T01:37:09+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR 2018-2025 Ford Expedition/Expedition Max with 2nd Row Bench Seat Floor Mats, Front 1st & 2nd 3rd Seat"
     },
     "sku": {
       "url": "https://www.oedro.com/products/yitamotor-ford-expedition-black-floor-mats-1148-p-6311.html",
-      "capturedAt": "2026-10-13T07:30:46+00:00",
+      "capturedAt": "2026-10-19T01:37:09+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OE-YTIPFM-1148"
     },
     "brand": {
       "url": "https://www.oedro.com/products/yitamotor-ford-expedition-black-floor-mats-1148-p-6311.html",
-      "capturedAt": "2026-10-13T07:30:46+00:00",
+      "capturedAt": "2026-10-19T01:37:09+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/yitamotor-ford-expedition-black-floor-mats-1148-p-6311.html",
-      "capturedAt": "2026-10-13T07:30:46+00:00",
+      "capturedAt": "2026-10-19T01:37:09+00:00",
       "status": "official_page_snapshot",
       "excerpt": "2018-2025 Ford Expedition/Expedition Max with 2nd Row Bench Seat\nDoes not fit vehicles with vinyl flooring.\nFor your safety, professional installation is highly recommended."
     },
     "description": {
       "url": "https://www.oedro.com/products/yitamotor-ford-expedition-black-floor-mats-1148-p-6311.html",
-      "capturedAt": "2026-10-13T07:30:46+00:00",
+      "capturedAt": "2026-10-19T01:37:09+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR floor mats completely line the interior carpet to provide all-encompassing protection. We are confident that our products will surpass your expectations and make you a happy customer!\nFitment\n2018-2025 Ford Expedition/Expedition Max with 2nd Row Bench Seat\nDoes not fit vehicles with vinyl flooring.\nFor your safety, professional installation is highly recommended.\nFeatures\nHigh-density TPE material\nMade with non-toxic and odorless TPE material, ensuring 100% safety even in extreme weather. Contains no latex, cadmium, lead, or any harmful PVCs.\nPrecision 3D laser measured\nAdvanced 3D laser technology offers a precise fit to your vehicle floor, ensuring a finished product that hugs the contours of the floor. No cutting, no trimming.\nLiner secured in place\nThe raised nib on the bottom provides maximum retention and secures the liner in place. Non-skid nib backing helps hold mats firmly in place. Specially designed fully adapt to vehicles for a secure fit.\nSpecially designed channels & raised edge\nEnsure the liner can effectively trap the liquid, snow, or sand to keep your car and shoes clean. The raised edge that runs along the door jamb will effectively protect your vehicle from all kinds of messes."
     },
     "specifications": {
       "url": "https://www.oedro.com/products/yitamotor-ford-expedition-black-floor-mats-1148-p-6311.html",
-      "capturedAt": "2026-10-13T07:30:46+00:00",
+      "capturedAt": "2026-10-19T01:37:09+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "YITAMOTOR",
@@ -225,7 +225,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/yitamotor-ford-expedition-black-floor-mats-1148-p-6311.html",
-      "capturedAt": "2026-10-13T07:30:46+00:00",
+      "capturedAt": "2026-10-19T01:37:09+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [
@@ -272,7 +272,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/yitamotor-ford-expedition-black-floor-mats-1148-p-6311.html",
-      "capturedAt": "2026-10-13T07:30:46+00:00",
+      "capturedAt": "2026-10-19T01:37:09+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "149.99",
@@ -285,7 +285,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/yitamotor-ford-expedition-black-floor-mats-1148-p-6311.html",
-      "capturedAt": "2026-10-13T07:30:46+00:00",
+      "capturedAt": "2026-10-19T01:37:09+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -313,5 +313,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

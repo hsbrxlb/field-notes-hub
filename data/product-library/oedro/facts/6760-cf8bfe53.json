@@ -6,7 +6,7 @@
   "categoryId": "992",
   "name": "5FT FRP Hard Tri-fold Tonneau Cover Fold Truck Bed Covers Fit for 2020-2026 Jeep Gladiator, Fleetside 5 Feet Bed",
   "url": "https://www.oedro.com/products/oedro-2020-2024-5ft-jeep-gladiator-tonneau-cover-4011-p-6760.html",
-  "capturedAt": "2026-10-13T07:32:35+00:00",
+  "capturedAt": "2026-10-19T01:38:10+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -27,7 +27,7 @@
   "image_facts": [],
   "conflicts": [
     {
-      "captured_at": "2026-10-13T07:32:35+00:00",
+      "captured_at": "2026-10-19T01:38:10+00:00",
       "claims": [
         {
           "field": "specifications.Material",
@@ -201,12 +201,12 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/oedro-2020-2024-5ft-jeep-gladiator-tonneau-cover-4011-p-6760.html",
-      "capturedAt": "2026-10-13T07:32:35+00:00",
+      "capturedAt": "2026-10-19T01:38:10+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": "5FT FRP Hard Tri-fold Tonneau Cover Fold Truck Bed Covers Fit for 2020-2026 Jeep Gladiator, Fleetside 5 Feet Bed",
       "conflicts": [
         {
-          "captured_at": "2026-10-13T07:32:35+00:00",
+          "captured_at": "2026-10-19T01:38:10+00:00",
           "claims": [
             {
               "field": "specifications.Material",
@@ -238,30 +238,30 @@
     },
     "sku": {
       "url": "https://www.oedro.com/products/oedro-2020-2024-5ft-jeep-gladiator-tonneau-cover-4011-p-6760.html",
-      "capturedAt": "2026-10-13T07:32:35+00:00",
+      "capturedAt": "2026-10-19T01:38:10+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEEPTC-4011"
     },
     "brand": {
       "url": "https://www.oedro.com/products/oedro-2020-2024-5ft-jeep-gladiator-tonneau-cover-4011-p-6760.html",
-      "capturedAt": "2026-10-13T07:32:35+00:00",
+      "capturedAt": "2026-10-19T01:38:10+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEDRO"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/oedro-2020-2024-5ft-jeep-gladiator-tonneau-cover-4011-p-6760.html",
-      "capturedAt": "2026-10-13T07:32:35+00:00",
+      "capturedAt": "2026-10-19T01:38:10+00:00",
       "status": "official_page_snapshot",
       "excerpt": "Compatible with 2020-2026 Jeep Gladiator with a 5ft truck bed."
     },
     "description": {
       "url": "https://www.oedro.com/products/oedro-2020-2024-5ft-jeep-gladiator-tonneau-cover-4011-p-6760.html",
-      "capturedAt": "2026-10-13T07:32:35+00:00",
+      "capturedAt": "2026-10-19T01:38:10+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": "The durable hard Tri-fold tonneau cover automatically latches into place when folded down, saving you the hassle of manual operation for enhanced security & convenience.\nFeatures\nSecure Fit with Added Convenience: This tonneau cover is engineered for a precise, secure fit and includes thoughtful upgrades. a complimentary LED light for improved nighttime visibility.\nSuperior Cargo Protection: Built with high-strength fiberglass (FRP) panels, this hard tri-fold tonneau cover offers exceptional protection against rain, snow, and road debris. It also resists impact and sharp objects, keeping your cargo safe and secure in all conditions.\nQuick, No-Drill Installation: Designed for hassle-free setup, this FRP hard tri-fold tonneau cover installs easily with clear instructions and requires no drilling. Get it mounted quickly and ready to use. (Note: Cargo racks must be removed prior to installation.)\nHeavy-Duty Durability You Can Trust: Reinforced fiberglass panels deliver long-lasting strength and impressive load-bearing capacity. A robust locking system keeps the cover firmly closed while driving, giving you confidence on every trip.\nSafe & Reliable Operation: Install the cover according to the included instructions and ensure all bolts are fully tightened before driving. For safety, do not drive with the tonneau cover partially open.\n1-year Warranty. For your safety, professional installation is highly recommended\nFitment\nCompatible with 2020-2026 Jeep Gladiator with a 5ft truck bed.",
       "conflicts": [
         {
-          "captured_at": "2026-10-13T07:32:35+00:00",
+          "captured_at": "2026-10-19T01:38:10+00:00",
           "claims": [
             {
               "field": "specifications.Material",
@@ -293,7 +293,7 @@
     },
     "specifications": {
       "url": "https://www.oedro.com/products/oedro-2020-2024-5ft-jeep-gladiator-tonneau-cover-4011-p-6760.html",
-      "capturedAt": "2026-10-13T07:32:35+00:00",
+      "capturedAt": "2026-10-19T01:38:10+00:00",
       "status": "unresolved_official_source_conflict",
       "excerpt": {
         "Bed size": "5 ft",
@@ -309,7 +309,7 @@
       },
       "conflicts": [
         {
-          "captured_at": "2026-10-13T07:32:35+00:00",
+          "captured_at": "2026-10-19T01:38:10+00:00",
           "claims": [
             {
               "field": "specifications.Material",
@@ -342,7 +342,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/oedro-2020-2024-5ft-jeep-gladiator-tonneau-cover-4011-p-6760.html",
-      "capturedAt": "2026-10-13T07:32:35+00:00",
+      "capturedAt": "2026-10-19T01:38:10+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -397,7 +397,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/oedro-2020-2024-5ft-jeep-gladiator-tonneau-cover-4011-p-6760.html",
-      "capturedAt": "2026-10-13T07:32:35+00:00",
+      "capturedAt": "2026-10-19T01:38:10+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "509.99",
@@ -410,7 +410,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/oedro-2020-2024-5ft-jeep-gladiator-tonneau-cover-4011-p-6760.html",
-      "capturedAt": "2026-10-13T07:32:35+00:00",
+      "capturedAt": "2026-10-19T01:38:10+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -438,5 +438,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

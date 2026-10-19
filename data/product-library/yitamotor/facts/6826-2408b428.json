@@ -6,7 +6,7 @@
   "categoryId": "999",
   "name": "YITAMOTOR 3 Point Quick Hitch for Category 1 Tractor, 3000 lbs 3-Pt Attachment with 2\" Receiver Trailer Hitch Adaptation with 5 Level Adjustable Bolt",
   "url": "https://www.oedro.com/products/yitamotor-universal-3-point-quick-hitch-0179-p-6826.html",
-  "capturedAt": "2026-10-13T07:33:26+00:00",
+  "capturedAt": "2026-10-19T01:38:32+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -177,37 +177,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/yitamotor-universal-3-point-quick-hitch-0179-p-6826.html",
-      "capturedAt": "2026-10-13T07:33:26+00:00",
+      "capturedAt": "2026-10-19T01:38:32+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR 3 Point Quick Hitch for Category 1 Tractor, 3000 lbs 3-Pt Attachment with 2\" Receiver Trailer Hitch Adaptation with 5 Level Adjustable Bolt"
     },
     "sku": {
       "url": "https://www.oedro.com/products/yitamotor-universal-3-point-quick-hitch-0179-p-6826.html",
-      "capturedAt": "2026-10-13T07:33:26+00:00",
+      "capturedAt": "2026-10-19T01:38:32+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OE-FRSSPF-0179-YITA"
     },
     "brand": {
       "url": "https://www.oedro.com/products/yitamotor-universal-3-point-quick-hitch-0179-p-6826.html",
-      "capturedAt": "2026-10-13T07:33:26+00:00",
+      "capturedAt": "2026-10-19T01:38:32+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/yitamotor-universal-3-point-quick-hitch-0179-p-6826.html",
-      "capturedAt": "2026-10-13T07:33:26+00:00",
+      "capturedAt": "2026-10-19T01:38:32+00:00",
       "status": "official_page_snapshot",
       "excerpt": "Compatible with CAT 1 3-Pt Tractor"
     },
     "description": {
       "url": "https://www.oedro.com/products/yitamotor-universal-3-point-quick-hitch-0179-p-6826.html",
-      "capturedAt": "2026-10-13T07:33:26+00:00",
+      "capturedAt": "2026-10-19T01:38:32+00:00",
       "status": "official_page_snapshot",
       "excerpt": "The 3-point quick tractor hitch is mainly suitable for Category 1. This allows you to easily connect your tractor to your 3 pt tractor within minutes saving you time and labor.\nFitment\nCompatible with CAT 1 3-Pt Tractor\nFeatures\n3 Point Connection: The 3 point quick hitch mainly suitable for Category 1 tractors. This allows you to easily connect your tractor to your 3 pt tractor within minutes saving you time and labor\n3000LBS Lifting & Towing Capacity: The heavy-duty reinforced 3 point hitch attachment is structurally stable and has 3000 lbs lifting capacity. The steel plates on both sides of the top hook are reinforced to a thickness of 0.16\"\nAdjustable 5 Level Bolt: No drilling required, the top hook of the quick hitch has 5 level adjustable position, whitch comes ready to attach directly to your Tractors 3-pt hitch without any modifications, bolting or welding required\nEasy Installation: You can quickly attach this 3 point hitch connector to the rear of a three point tractor; The pin hooks have a limit function on both sides for increased stability and safety\nWide Application: It is suitable for most three point hitch tractors and can be towed with a receiver or used as a ballast tank with weights to increase the stability of the rear of the tractor"
     },
     "specifications": {
       "url": "https://www.oedro.com/products/yitamotor-universal-3-point-quick-hitch-0179-p-6826.html",
-      "capturedAt": "2026-10-13T07:33:26+00:00",
+      "capturedAt": "2026-10-19T01:38:32+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "YITAMOTOR",
@@ -223,7 +223,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/yitamotor-universal-3-point-quick-hitch-0179-p-6826.html",
-      "capturedAt": "2026-10-13T07:33:26+00:00",
+      "capturedAt": "2026-10-19T01:38:32+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -292,7 +292,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/yitamotor-universal-3-point-quick-hitch-0179-p-6826.html",
-      "capturedAt": "2026-10-13T07:33:26+00:00",
+      "capturedAt": "2026-10-19T01:38:32+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "159.99",
@@ -305,7 +305,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/yitamotor-universal-3-point-quick-hitch-0179-p-6826.html",
-      "capturedAt": "2026-10-13T07:33:26+00:00",
+      "capturedAt": "2026-10-19T01:38:32+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -333,5 +333,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

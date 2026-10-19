@@ -6,7 +6,7 @@
   "categoryId": "999",
   "name": "YITAMOTOR 1600lbs Heavy Duty Drywall Sheet Cart with 4 Swivel Wheels Panel Cart",
   "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0143-p-6822.html",
-  "capturedAt": "2026-10-13T07:33:25+00:00",
+  "capturedAt": "2026-10-19T01:38:31+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -138,37 +138,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0143-p-6822.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:38:31+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR 1600lbs Heavy Duty Drywall Sheet Cart with 4 Swivel Wheels Panel Cart"
     },
     "sku": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0143-p-6822.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:38:31+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OE-FRSSPF-0143-YITA"
     },
     "brand": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0143-p-6822.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:38:31+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0143-p-6822.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:38:31+00:00",
       "status": "missing",
       "excerpt": ""
     },
     "description": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0143-p-6822.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:38:31+00:00",
       "status": "official_page_snapshot",
       "excerpt": "The panel cart dolly is perfect for moving, whether for households, warehouses, or workplaces. Also, suitable to carry wallboard, drywall, panel, plywood, and sheetrock.\nFeatures\n3,000-Pound Loading.\nThe YITAMOTOR drywall cart fully supports the daily work of a warehouse or factory; The 3,000 lb load-bearing device can move heavy objects safely without shaking the sturdy structure.\nHeavy Duty Steel & Corrosion Resistant.\nMade from high-quality heavy-duty carbon steel with amazing strength and won’t deform even under heavy loads; Powder coating on the surface can effectively prevent corrosion.\nQuick Loading.\nThe open angle of the drywall cart allows for quick loading, and the sloping allows drywall to lean against the armrest, preventing drywall from falling off during handling.\n4 swivel casters can move quickly in any direction.\nThey can be easily assembled or disassembled in a fraction of a second, then stored in a corner to take up almost no space.\nSpecifications.\nSuitable for carrying wallboard, plywood, and drywall, ideal for factory and warehouse; The drywall cart's total weight: 47.6 lbs, total length: 45.3\", total width: 22.4\", total height: 46\"."
     },
     "specifications": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0143-p-6822.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:38:31+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "YITAMOTOR",
@@ -182,7 +182,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0143-p-6822.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:38:31+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -215,7 +215,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0143-p-6822.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:38:31+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "129.99",
@@ -228,7 +228,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0143-p-6822.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:38:31+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -256,5 +256,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

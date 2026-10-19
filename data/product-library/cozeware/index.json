@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "brand": "COZEWARE",
   "brandKey": "cozeware",
-  "version": "2026-10-13-341b61559e8f",
+  "version": "2026-10-19-394e5303cf5e",
   "count": 27,
-  "sourceCapturedFrom": "2026-10-13T07:29:41+00:00",
-  "sourceCapturedUntil": "2026-10-13T08:35:02+00:00",
+  "sourceCapturedFrom": "2026-10-13T07:34:25+00:00",
+  "sourceCapturedUntil": "2026-10-19T01:42:31+00:00",
   "skuLookup": {
     "HAHEAC-CZ0018": [
       "8840-f5da85f6"
@@ -98,7 +98,7 @@
       "name": "COZEWARE Visio Series 12000 BTU 20 SEER2 Ductless Mini Split AC with Heat Pump, 115V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-115v-ac-p-8840.html",
-      "capturedAt": "2026-10-13T07:33:32+00:00",
+      "capturedAt": "2026-10-19T01:35:32+00:00",
       "json": "cozeware/facts/8840-f5da85f6.json",
       "markdown": "cozeware/facts/8840-f5da85f6.md",
       "warnings": [
@@ -114,7 +114,7 @@
       "name": "COZEWARE Visio Series 12000 BTU 20 SEER2 Ductless Mini Split AC with Heat Pump, 230V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/12000-btu-20-seer2-mini-split-air-conditioner-230v-ac-p-8862.html",
-      "capturedAt": "2026-10-13T07:33:31+00:00",
+      "capturedAt": "2026-10-19T01:35:30+00:00",
       "json": "cozeware/facts/8862-80b857f5.json",
       "markdown": "cozeware/facts/8862-80b857f5.md",
       "warnings": [
@@ -130,7 +130,7 @@
       "name": "COZEWARE 12000 BTU 20 SEER2 Mini Split Air Conditioner, 230V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-12000-btu-20-seer2-mini-split-air-conditioner-230v-p-9450.html",
-      "capturedAt": "2026-10-13T07:33:25+00:00",
+      "capturedAt": "2026-10-19T01:35:26+00:00",
       "json": "cozeware/facts/9450-fd065b7a.json",
       "markdown": "cozeware/facts/9450-fd065b7a.md",
       "warnings": [
@@ -146,7 +146,7 @@
       "name": "COZEWARE 12000 BTU 20 SEER2 Mini Split Air Conditioner, 115V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-12000-btu-mini-split-air-conditioner-with-heat-pump-115v-p-9368.html",
-      "capturedAt": "2026-10-13T07:33:26+00:00",
+      "capturedAt": "2026-10-19T01:35:26+00:00",
       "json": "cozeware/facts/9368-ecb02939.json",
       "markdown": "cozeware/facts/9368-ecb02939.md",
       "warnings": [
@@ -162,7 +162,7 @@
       "name": "COZEWARE Built-In Series 34000 BTU 19 SEER2 Ducted Central AC System with Air Handler, 230V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-34000-btu-19-seer2-ducted-central-air-conditioner-with-air-handler-230v-p-10179.html",
-      "capturedAt": "2026-10-13T07:32:44+00:00",
+      "capturedAt": "2026-10-19T01:35:10+00:00",
       "json": "cozeware/facts/10179-79761a9a.json",
       "markdown": "cozeware/facts/10179-79761a9a.md",
       "warnings": [],
@@ -175,7 +175,7 @@
       "name": "COZEWARE E-Save Series 12000 BTU 20 SEER2 & 10 HSPF2 Mini Split with AI Chip, 115V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-115v-p-9529.html",
-      "capturedAt": "2026-10-13T07:33:24+00:00",
+      "capturedAt": "2026-10-19T01:35:24+00:00",
       "json": "cozeware/facts/9529-ecdf26b0.json",
       "markdown": "cozeware/facts/9529-ecdf26b0.md",
       "warnings": [
@@ -191,7 +191,7 @@
       "name": "COZEWARE E-Save Series 12000 BTU 20 SEER2 & 10 HSPF2 Mini Split with AI Chip, 230V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-e-save-series-12000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9545.html",
-      "capturedAt": "2026-10-13T07:33:22+00:00",
+      "capturedAt": "2026-10-19T01:35:22+00:00",
       "json": "cozeware/facts/9545-5f55938e.json",
       "markdown": "cozeware/facts/9545-5f55938e.md",
       "warnings": [
@@ -207,7 +207,7 @@
       "name": "COZEWARE E-Save Series 18000 BTU 20 SEER2 & 10 HSPF2 Mini Split with AI Chip, 230V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-e-save-series-18000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9547.html",
-      "capturedAt": "2026-10-13T07:33:20+00:00",
+      "capturedAt": "2026-10-19T01:35:21+00:00",
       "json": "cozeware/facts/9547-1a6cdc89.json",
       "markdown": "cozeware/facts/9547-1a6cdc89.md",
       "warnings": [
@@ -223,7 +223,7 @@
       "name": "COZEWARE E-Save Series 24000 BTU 20 SEER2 & 9.5 HSPF2 Mini Split with AI Chip, 230V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-e-save-series-24000-btu-20-seer2-mini-split-air-conditioner-with-ai-chip-230v-p-9548.html",
-      "capturedAt": "2026-10-13T07:33:16+00:00",
+      "capturedAt": "2026-10-19T01:35:20+00:00",
       "json": "cozeware/facts/9548-40eb4fc3.json",
       "markdown": "cozeware/facts/9548-40eb4fc3.md",
       "warnings": [
@@ -239,7 +239,7 @@
       "name": "COZEWARE Enduring Series 12000 BTU 20 SEER2 Mini Split Air Conditioner, 115V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8977.html",
-      "capturedAt": "2026-10-13T07:33:29+00:00",
+      "capturedAt": "2026-10-19T01:35:29+00:00",
       "json": "cozeware/facts/8977-c6d77cf2.json",
       "markdown": "cozeware/facts/8977-c6d77cf2.md",
       "warnings": [
@@ -255,7 +255,7 @@
       "name": "COZEWARE Enduring Series 12000 BTU 20 SEER2 Mini Split Air Conditioner, 230V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-enduring-series-12000-btu-mini-split-air-conditioner-with-heat-pump-p-8979.html",
-      "capturedAt": "2026-10-13T07:33:28+00:00",
+      "capturedAt": "2026-10-19T01:35:28+00:00",
       "json": "cozeware/facts/8979-77691e2c.json",
       "markdown": "cozeware/facts/8979-77691e2c.md",
       "warnings": [
@@ -271,7 +271,7 @@
       "name": "COZEWARE Enduring Series 18000 BTU 20 SEER2 Mini Split Air Conditioner, 230V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-enduring-series-18000-btu-20-seer2-mini-split-air-conditioner-230v-p-9580.html",
-      "capturedAt": "2026-10-13T07:33:14+00:00",
+      "capturedAt": "2026-10-19T01:35:18+00:00",
       "json": "cozeware/facts/9580-455ae0ba.json",
       "markdown": "cozeware/facts/9580-455ae0ba.md",
       "warnings": [
@@ -287,7 +287,7 @@
       "name": "COZEWARE Enduring Series 24000 BTU 20 SEER2 Mini Split Air Conditioner, 230V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-enduring-series-24000-btu-20-seer2-mini-split-air-conditioner-230v-p-9581.html",
-      "capturedAt": "2026-10-13T07:33:10+00:00",
+      "capturedAt": "2026-10-19T01:35:17+00:00",
       "json": "cozeware/facts/9581-8ef24e86.json",
       "markdown": "cozeware/facts/9581-8ef24e86.md",
       "warnings": [
@@ -303,7 +303,7 @@
       "name": "COZEWARE Enduring Series 9000 BTU 18 SEER2 Mini Split Air Conditioner, 115V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-enduring-series-9000-btu-20-seer2-mini-split-air-conditioner-115v-p-9582.html",
-      "capturedAt": "2026-10-13T07:33:02+00:00",
+      "capturedAt": "2026-10-19T01:35:16+00:00",
       "json": "cozeware/facts/9582-8a8c0f54.json",
       "markdown": "cozeware/facts/9582-8a8c0f54.md",
       "warnings": [
@@ -319,7 +319,7 @@
       "name": "COZEWARE MultiCoze Pro Series 18000 BTU 2-Zone Mini Split AC (9K+9K), 23 SEER2",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-18000-btu-2-zone-mini-split-ac-9k9k-23-seer2-p-10284.html",
-      "capturedAt": "2026-10-13T07:32:42+00:00",
+      "capturedAt": "2026-10-19T01:35:08+00:00",
       "json": "cozeware/facts/10284-1dae5797.json",
       "markdown": "cozeware/facts/10284-1dae5797.md",
       "warnings": [
@@ -335,7 +335,7 @@
       "name": "COZEWARE MultiCoze Pro Series 27000 BTU 3-Zone Mini Split AC (9K+9K+9K), 22 SEER2",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-27000-btu-3-zone-mini-split-ac-9k9k9k-22-seer2-p-10286.html",
-      "capturedAt": "2026-10-13T07:32:40+00:00",
+      "capturedAt": "2026-10-19T01:35:07+00:00",
       "json": "cozeware/facts/10286-1bfdc0c4.json",
       "markdown": "cozeware/facts/10286-1bfdc0c4.md",
       "warnings": [
@@ -351,7 +351,7 @@
       "name": "COZEWARE MultiCoze Pro Series 28000 BTU 3-Zone Mini Split AC (9K+9K+12K), 22 SEER2",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-28000-btu-3-zone-mini-split-ac-9k9k12k-22-seer2-p-10288.html",
-      "capturedAt": "2026-10-13T07:32:37+00:00",
+      "capturedAt": "2026-10-19T01:35:06+00:00",
       "json": "cozeware/facts/10288-b61d697a.json",
       "markdown": "cozeware/facts/10288-b61d697a.md",
       "warnings": [
@@ -367,7 +367,7 @@
       "name": "COZEWARE MultiCoze Pro Series 38000 BTU 4-Zone Mini Split AC (9K+9K+12K+12K), 23 SEER2",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-multicoze-pro-series-38000-btu-4-zone-mini-split-ac-9k9k12k12k-23-seer2-p-10289.html",
-      "capturedAt": "2026-10-13T07:32:34+00:00",
+      "capturedAt": "2026-10-19T01:35:05+00:00",
       "json": "cozeware/facts/10289-97d70120.json",
       "markdown": "cozeware/facts/10289-97d70120.md",
       "warnings": [
@@ -383,7 +383,7 @@
       "name": "COZEWARE MultiCoze Series 12000 BTU 24 SEER2 & 10 HSPF2 Mini Split, 110V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-110v-p-10459.html",
-      "capturedAt": "2026-10-13T07:32:27+00:00",
+      "capturedAt": "2026-10-19T01:35:01+00:00",
       "json": "cozeware/facts/10459-f330c50d.json",
       "markdown": "cozeware/facts/10459-f330c50d.md",
       "warnings": [
@@ -399,7 +399,7 @@
       "name": "COZEWARE MultiCoze Series 12000 BTU 24 SEER2 & 10 HSPF2 Mini Split, 230V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-multicoze-series-12000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10460.html",
-      "capturedAt": "2026-10-13T07:32:24+00:00",
+      "capturedAt": "2026-10-19T01:35:00+00:00",
       "json": "cozeware/facts/10460-3b5ee4ef.json",
       "markdown": "cozeware/facts/10460-3b5ee4ef.md",
       "warnings": [
@@ -415,7 +415,7 @@
       "name": "COZEWARE MultiCoze Series 18000 BTU 24 SEER2 & 10 HSPF2 Mini Split, 230V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-multicoze-series-18000-btu-24-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10461.html",
-      "capturedAt": "2026-10-13T07:32:12+00:00",
+      "capturedAt": "2026-10-19T01:34:59+00:00",
       "json": "cozeware/facts/10461-ab74bc86.json",
       "markdown": "cozeware/facts/10461-ab74bc86.md",
       "warnings": [
@@ -431,7 +431,7 @@
       "name": "COZEWARE MultiCoze Series 24000 BTU 23 SEER2 & 10 HSPF2 Mini Split, 230V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-multicoze-series-24000-btu-23-seer2-and-10-hspf2-mini-split-air-conditioner-230v-p-10462.html",
-      "capturedAt": "2026-10-13T07:32:04+00:00",
+      "capturedAt": "2026-10-19T01:34:57+00:00",
       "json": "cozeware/facts/10462-2f1fbdc3.json",
       "markdown": "cozeware/facts/10462-2f1fbdc3.md",
       "warnings": [
@@ -447,7 +447,7 @@
       "name": "COZEWARE MultiCoze Series 9000 BTU 23 SEER2 & 9.5 HSPF2 Mini Split, 230V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-and-95-hspf2-mini-split-air-conditioner-230v-p-10458.html",
-      "capturedAt": "2026-10-13T07:32:30+00:00",
+      "capturedAt": "2026-10-19T01:35:02+00:00",
       "json": "cozeware/facts/10458-5168ee79.json",
       "markdown": "cozeware/facts/10458-5168ee79.md",
       "warnings": [
@@ -463,7 +463,7 @@
       "name": "COZEWARE MultiCoze Series 9000 BTU 23 SEER2 & 10 HSPF2 Mini Split, 110V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-multicoze-series-9000-btu-23-seer2-mini-split-air-conditioner-115v-p-10456.html",
-      "capturedAt": "2026-10-13T07:32:32+00:00",
+      "capturedAt": "2026-10-19T01:35:04+00:00",
       "json": "cozeware/facts/10456-663cf4e4.json",
       "markdown": "cozeware/facts/10456-663cf4e4.md",
       "warnings": [
@@ -479,7 +479,7 @@
       "name": "COZEWARE Visio Series 18000 BTU 20 SEER2 Ductless Mini Split AC with Heat Pump, 230V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-visio-series-18000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9602.html",
-      "capturedAt": "2026-10-13T07:32:48+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "json": "cozeware/facts/9602-a727fc7c.json",
       "markdown": "cozeware/facts/9602-a727fc7c.md",
       "warnings": [
@@ -495,7 +495,7 @@
       "name": "COZEWARE Visio Series 24000 BTU 20 SEER2 Ductless Mini Split AC with Heat Pump, 230V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-visio-series-24000-btu-20-seer2-ductless-mini-split-ac-with-heat-pump-230v-p-9607.html",
-      "capturedAt": "2026-10-13T07:32:46+00:00",
+      "capturedAt": "2026-10-19T01:35:10+00:00",
       "json": "cozeware/facts/9607-5b1991f5.json",
       "markdown": "cozeware/facts/9607-5b1991f5.md",
       "warnings": [
@@ -511,7 +511,7 @@
       "name": "COZEWARE Visio Series 9000 BTU 18 SEER2 Ductless Mini Split AC with Heat Pump, 115V",
       "brand": "COZEWARE",
       "url": "https://www.cozeware.com/products/cozeware-visio-series-9000-btu-18-seer2-ductless-mini-split-ac-with-heat-pump-115v-p-9600.html",
-      "capturedAt": "2026-10-13T07:32:50+00:00",
+      "capturedAt": "2026-10-19T01:35:14+00:00",
       "json": "cozeware/facts/9600-8af7972c.json",
       "markdown": "cozeware/facts/9600-8af7972c.md",
       "warnings": [
@@ -527,7 +527,7 @@
       "title": "COZEWARE | Eco-Friendly Mini Split Air Conditioners | Affordable Heating & Cooling Solutions",
       "kind": "home",
       "url": "https://www.cozeware.com",
-      "capturedAt": "2026-10-13T07:33:35+00:00",
+      "capturedAt": "2026-10-19T01:35:37+00:00",
       "json": "cozeware/resources/08e30329c8cb5364.json",
       "searchTerms": [
         "FreshFlow"
@@ -538,7 +538,7 @@
       "title": "PRIVACY POLICY",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/Privacy-Policy.html?aid=136",
-      "capturedAt": "2026-10-13T07:29:45+00:00",
+      "capturedAt": "2026-10-19T01:32:27+00:00",
       "json": "cozeware/resources/0765ef09d6bf2e27.json",
       "searchTerms": []
     },
@@ -547,7 +547,7 @@
       "title": "TERMS & CONDITIONS",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/Terms-And-Conditions.html?aid=137",
-      "capturedAt": "2026-10-13T07:29:44+00:00",
+      "capturedAt": "2026-10-19T01:32:26+00:00",
       "json": "cozeware/resources/3928c0ceac5f4e3c.json",
       "searchTerms": []
     },
@@ -556,7 +556,7 @@
       "title": "Cart Return & Delivery",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/cart-return-delivery.html?aid=156",
-      "capturedAt": "2026-10-13T07:31:46+00:00",
+      "capturedAt": "2026-10-19T01:34:42+00:00",
       "json": "cozeware/resources/c42d8f86db356c90.json",
       "searchTerms": []
     },
@@ -565,7 +565,7 @@
       "title": "Cart Warranty",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/cart-warranty.html?aid=157",
-      "capturedAt": "2026-10-13T07:31:44+00:00",
+      "capturedAt": "2026-10-19T01:34:40+00:00",
       "json": "cozeware/resources/798f26e0b2f22e42.json",
       "searchTerms": []
     },
@@ -574,7 +574,7 @@
       "title": "Error Codes & Troubleshooting Guide",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/error-codes-troubleshooting-guide.html?aid=183",
-      "capturedAt": "2026-10-13T07:31:39+00:00",
+      "capturedAt": "2026-10-19T01:34:36+00:00",
       "json": "cozeware/resources/320fd4d0b36ea250.json",
       "searchTerms": []
     },
@@ -583,7 +583,7 @@
       "title": "Find an Installer",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/find-an-installer.html?aid=155",
-      "capturedAt": "2026-10-13T07:31:47+00:00",
+      "capturedAt": "2026-10-19T01:34:43+00:00",
       "json": "cozeware/resources/11a038573a9024a0.json",
       "searchTerms": []
     },
@@ -592,7 +592,7 @@
       "title": "INFORMATION SECURE UNDER LOCK AND KEY",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/information-secure-under-lock-and-key.html?aid=151",
-      "capturedAt": "2026-10-13T07:31:49+00:00",
+      "capturedAt": "2026-10-19T01:34:45+00:00",
       "json": "cozeware/resources/31c0e8c844e512d4.json",
       "searchTerms": []
     },
@@ -601,7 +601,7 @@
       "title": "INSTALLATION GUIDE",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/installation-guide.html?aid=147",
-      "capturedAt": "2026-10-13T07:31:55+00:00",
+      "capturedAt": "2026-10-19T01:34:50+00:00",
       "json": "cozeware/resources/d9a7001c80450be0.json",
       "searchTerms": []
     },
@@ -610,7 +610,7 @@
       "title": "Instruction Manuals",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/instruction-manuals.html?aid=158",
-      "capturedAt": "2026-10-13T07:31:41+00:00",
+      "capturedAt": "2026-10-19T01:34:39+00:00",
       "json": "cozeware/resources/c4506a0b5b1cef47.json",
       "searchTerms": []
     },
@@ -619,7 +619,7 @@
       "title": "INTELLECTUAL PROPERTY RIGHTS",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/intellectual-property-rights.html?aid=150",
-      "capturedAt": "2026-10-13T07:31:51+00:00",
+      "capturedAt": "2026-10-19T01:34:46+00:00",
       "json": "cozeware/resources/21ed0dbccfd76428.json",
       "searchTerms": []
     },
@@ -628,7 +628,7 @@
       "title": "Mini Split Air Conditioner Sizing Guide",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/mini-split-air-conditioner-sizing-guide.html?aid=159",
-      "capturedAt": "2026-10-13T07:31:41+00:00",
+      "capturedAt": "2026-10-19T01:34:38+00:00",
       "json": "cozeware/resources/0be08edc79f139b6.json",
       "searchTerms": []
     },
@@ -637,7 +637,7 @@
       "title": "PRICE MATCH GUARANTEE",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/price-match-guarantee.html?aid=146",
-      "capturedAt": "2026-10-13T07:31:56+00:00",
+      "capturedAt": "2026-10-19T01:34:51+00:00",
       "json": "cozeware/resources/114d8bbb5bd1057f.json",
       "searchTerms": []
     },
@@ -646,7 +646,7 @@
       "title": "PRIVACY POLICY",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/privacy-policy.html?aid=136",
-      "capturedAt": "2026-10-13T07:32:02+00:00",
+      "capturedAt": "2026-10-19T01:34:56+00:00",
       "json": "cozeware/resources/f37e6d409d12b0bc.json",
       "searchTerms": []
     },
@@ -655,7 +655,7 @@
       "title": "PROMOTION TERMS & CONDITIONS",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/promotion-terms-and-conditions.html?aid=149",
-      "capturedAt": "2026-10-13T07:29:42+00:00",
+      "capturedAt": "2026-10-19T01:32:25+00:00",
       "json": "cozeware/resources/3d9203df553f1281.json",
       "searchTerms": []
     },
@@ -664,7 +664,7 @@
       "title": "PROMOTION TERMS & CONDITIONS",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/promotion-terms-conditions.html?aid=149",
-      "capturedAt": "2026-10-13T07:31:52+00:00",
+      "capturedAt": "2026-10-19T01:34:48+00:00",
       "json": "cozeware/resources/eb6a90511d206432.json",
       "searchTerms": []
     },
@@ -673,7 +673,7 @@
       "title": "RETURNS & REFUNDS",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/returns-refunds.html?aid=144",
-      "capturedAt": "2026-10-13T07:31:59+00:00",
+      "capturedAt": "2026-10-19T01:34:53+00:00",
       "json": "cozeware/resources/881bc2f38ac6a645.json",
       "searchTerms": []
     },
@@ -682,7 +682,7 @@
       "title": "SHIPPING & DELIVERY POLICY",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/shipping-delivery-policy.html?aid=148",
-      "capturedAt": "2026-10-13T07:31:53+00:00",
+      "capturedAt": "2026-10-19T01:34:49+00:00",
       "json": "cozeware/resources/f936455ae1ae9a6a.json",
       "searchTerms": []
     },
@@ -691,7 +691,7 @@
       "title": "Smart Start QR Code",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/smart-start-qr-code.html?aid=154",
-      "capturedAt": "2026-10-13T07:31:49+00:00",
+      "capturedAt": "2026-10-19T01:34:44+00:00",
       "json": "cozeware/resources/d328dbe2e58a6a38.json",
       "searchTerms": []
     },
@@ -700,7 +700,7 @@
       "title": "TERMS & CONDITIONS",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/terms-conditions.html?aid=137",
-      "capturedAt": "2026-10-13T07:31:59+00:00",
+      "capturedAt": "2026-10-19T01:34:55+00:00",
       "json": "cozeware/resources/43ccad278064401b.json",
       "searchTerms": []
     },
@@ -709,7 +709,7 @@
       "title": "WARRANTY",
       "kind": "policy",
       "url": "https://www.cozeware.com/article/warranty.html?aid=145",
-      "capturedAt": "2026-10-13T07:31:57+00:00",
+      "capturedAt": "2026-10-19T01:34:52+00:00",
       "json": "cozeware/resources/a7d90dcf2c94ea11.json",
       "searchTerms": []
     },
@@ -718,7 +718,7 @@
       "title": "COZEWARE | 5 Things to Know Before Installing a Mini Split",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/5-things-you-must-know-before-installing-a-mini-split-b-71.html",
-      "capturedAt": "2026-10-13T07:31:18+00:00",
+      "capturedAt": "2026-10-19T01:33:39+00:00",
       "json": "cozeware/resources/99ea83496577ad02.json",
       "searchTerms": []
     },
@@ -727,7 +727,7 @@
       "title": "COZEWARE | AC for Tiny Homes 2026 | Compact Cooling Guide",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/ac-for-tiny-homes-2026--compact-cooling-solutions-for-modern-small-spaces-b-173.html",
-      "capturedAt": "2026-10-13T07:30:21+00:00",
+      "capturedAt": "2026-10-19T01:32:58+00:00",
       "json": "cozeware/resources/694495b6da6e63a3.json",
       "searchTerms": []
     },
@@ -736,7 +736,7 @@
       "title": "COZEWARE | AC Installation Process: What Homeowners Need to Know for Better Cooling",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/ac-installation-process--what-homeowners-need-to-know-for-better-cooling-b-129.html",
-      "capturedAt": "2026-10-13T07:31:00+00:00",
+      "capturedAt": "2026-10-19T01:33:22+00:00",
       "json": "cozeware/resources/6da0bdebc6e66550.json",
       "searchTerms": []
     },
@@ -745,7 +745,7 @@
       "title": "COZEWARE | AC Maintenance Guide: How to Clean Your Air Conditioner and Improve Efficiency",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/ac-maintenance-guide--how-to-keep-your-air-conditioner-efficient-and-long-lasting-b-124.html",
-      "capturedAt": "2026-10-13T07:31:06+00:00",
+      "capturedAt": "2026-10-19T01:33:25+00:00",
       "json": "cozeware/resources/de07d1d56a953ad0.json",
       "searchTerms": []
     },
@@ -754,7 +754,7 @@
       "title": "COZEWARE | AC Running But Not Cooling? Easy Fix Guide",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/ac-running-but-not-cooling--here-are-the-most-common-causes-and-fixes-b-133.html",
-      "capturedAt": "2026-10-13T07:30:49+00:00",
+      "capturedAt": "2026-10-19T01:33:16+00:00",
       "json": "cozeware/resources/3fc0d933bf3e3745.json",
       "searchTerms": []
     },
@@ -763,7 +763,7 @@
       "title": "COZEWARE | AI Mini Split Systems: The Future of Smart Home Climate Control",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/ai-mini-split-systems--the-future-of-smart-home-climate-control-b-182.html",
-      "capturedAt": "2026-10-13T07:30:04+00:00",
+      "capturedAt": "2026-10-19T01:32:42+00:00",
       "json": "cozeware/resources/a27148e7da01715c.json",
       "searchTerms": []
     },
@@ -772,7 +772,7 @@
       "title": "COZEWARE | AI Temperature Control & Smart Mini Split Systems",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/ai-temperature-control-and-smart-home-integration--br-the-future-of-mini-split-air-conditioners-b-75.html",
-      "capturedAt": "2026-10-13T07:31:14+00:00",
+      "capturedAt": "2026-10-19T01:33:35+00:00",
       "json": "cozeware/resources/dce3c769ef330214.json",
       "searchTerms": []
     },
@@ -781,7 +781,7 @@
       "title": "COZEWARE | Air Conditioner Filter Maintenance & Cleaning Guide",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/air-conditioner-filter-maintenance--how-to-clean-it-and-improve-performance-b-135.html",
-      "capturedAt": "2026-10-13T07:30:42+00:00",
+      "capturedAt": "2026-10-19T01:33:14+00:00",
       "json": "cozeware/resources/829008ab79871320.json",
       "searchTerms": []
     },
@@ -790,7 +790,7 @@
       "title": "COZEWARE | Are Mini Splits Energy Efficient? Do They Shut Off Automatically",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/are-mini-splits-energy-efficient--do-they-shut-off-at-set-temperature-b-123.html",
-      "capturedAt": "2026-10-13T07:31:08+00:00",
+      "capturedAt": "2026-10-19T01:33:26+00:00",
       "json": "cozeware/resources/a8cbc2617009727d.json",
       "searchTerms": []
     },
@@ -799,7 +799,7 @@
       "title": "COZEWARE | Best 115V Mini Split for Efficient Home Cooling",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/best-115v-mini-split--complete-guide-for-homeowners-b-187.html",
-      "capturedAt": "2026-10-13T07:29:55+00:00",
+      "capturedAt": "2026-10-19T01:32:37+00:00",
       "json": "cozeware/resources/a02f2ec4232440e0.json",
       "searchTerms": []
     },
@@ -808,7 +808,7 @@
       "title": "COZEWARE | Best AC for Home Office Productivity in 2026",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/best-ac-for-home-office-productivity--stay-comfortable-and-focused-while-working-b-185.html",
-      "capturedAt": "2026-10-13T07:29:59+00:00",
+      "capturedAt": "2026-10-19T01:32:39+00:00",
       "json": "cozeware/resources/308485074f85c8fa.json",
       "searchTerms": []
     },
@@ -817,7 +817,7 @@
       "title": "COZEWARE | Best Budget Mini Split Systems for 2026 | Cozeware",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/best-budget-mini-split--affordable-cooling-and-heating-options-in-2026-b-163.html",
-      "capturedAt": "2026-10-13T07:30:30+00:00",
+      "capturedAt": "2026-10-19T01:33:04+00:00",
       "json": "cozeware/resources/3392c6ec4dedf5aa.json",
       "searchTerms": []
     },
@@ -826,7 +826,7 @@
       "title": "COZEWARE | Best Mini Split 2026: Top Efficient & Quiet Systems",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/best-mini-split-2026--top-systems-for-efficient-and-quiet-cooling-b-157.html",
-      "capturedAt": "2026-10-13T07:30:38+00:00",
+      "capturedAt": "2026-10-19T01:33:09+00:00",
       "json": "cozeware/resources/0521b5acecd90a43.json",
       "searchTerms": []
     },
@@ -835,7 +835,7 @@
       "title": "COZEWARE | Best Mini Split for Each Home Space in 2026 Guide",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/best-mini-split-for-each-home-space--smart-cooling-for-small-rooms-bedrooms-and-apartments-b-159.html",
-      "capturedAt": "2026-10-13T07:30:33+00:00",
+      "capturedAt": "2026-10-19T01:33:07+00:00",
       "json": "cozeware/resources/d1498b66dcc18327.json",
       "searchTerms": []
     },
@@ -844,7 +844,7 @@
       "title": "COZEWARE | Best Mini Split for Garage: Cooling Solutions for Every Space",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/best-mini-split-for-garage--how-to-keep-your-garage-cool-and-comfortable-b-179.html",
-      "capturedAt": "2026-10-13T07:30:10+00:00",
+      "capturedAt": "2026-10-19T01:32:47+00:00",
       "json": "cozeware/resources/bbc2b250bb3b9b52.json",
       "searchTerms": []
     },
@@ -853,7 +853,7 @@
       "title": "COZEWARE | DIY Guide to Mini Split Installation Without Expensive Technicians",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/diy-guide-to-mini-split-installation-without-expensive-technicians-b-128.html",
-      "capturedAt": "2026-10-13T07:31:03+00:00",
+      "capturedAt": "2026-10-19T01:33:23+00:00",
       "json": "cozeware/resources/ba27e18746ba2015.json",
       "searchTerms": []
     },
@@ -862,7 +862,7 @@
       "title": "COZEWARE | Do Mini Splits Need a Dedicated Circuit? 115V vs 230V Guide",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/do-mini-splits-need-a-dedicated-circuit--complete-115v-vs-230v-guide_-b-132.html",
-      "capturedAt": "2026-10-13T07:30:52+00:00",
+      "capturedAt": "2026-10-19T01:33:17+00:00",
       "json": "cozeware/resources/c205cf15f04c2243.json",
       "searchTerms": []
     },
@@ -871,7 +871,7 @@
       "title": "COZEWARE | Ductless Mini Split vs Central Air: Why Go Split?",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/ductless-mini-split-vs-central-air---br--why-more-american-homes-are-going-split-b-51.html",
-      "capturedAt": "2026-10-13T07:31:38+00:00",
+      "capturedAt": "2026-10-19T01:34:34+00:00",
       "json": "cozeware/resources/ddbe52f3a9451e1c.json",
       "searchTerms": []
     },
@@ -880,7 +880,7 @@
       "title": "COZEWARE | Energy-Saving Tips for Mini Split AC Systems",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/energy-saving-tips--br-how-to-make-your-mini-split-more-efficient-b-73.html",
-      "capturedAt": "2026-10-13T07:31:17+00:00",
+      "capturedAt": "2026-10-19T01:33:37+00:00",
       "json": "cozeware/resources/541af872fab1d948.json",
       "searchTerms": []
     },
@@ -889,7 +889,7 @@
       "title": "COZEWARE | Extend AC Lifespan | Smart HVAC Maintenance Tips",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/extend-ac-lifespan--smart-maintenance-tips-for-better-cooling-efficiency-b-172.html",
-      "capturedAt": "2026-10-13T07:30:22+00:00",
+      "capturedAt": "2026-10-19T01:33:00+00:00",
       "json": "cozeware/resources/fe7e35a8ce5bf4c2.json",
       "searchTerms": []
     },
@@ -898,7 +898,7 @@
       "title": "COZEWARE | AC Settings That Help Prevent Mold Growth",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/from-musty-to-fresh--br-the-ac-settings-that-kill-mold-b-55.html",
-      "capturedAt": "2026-10-13T07:31:31+00:00",
+      "capturedAt": "2026-10-19T01:34:08+00:00",
       "json": "cozeware/resources/17d52a5f2552e9e8.json",
       "searchTerms": []
     },
@@ -907,7 +907,7 @@
       "title": "COZEWARE | How Smart Homes Improve Comfort & Efficiency",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/from-smarter-tech-to-better-living--br-how-smart-homes-improve-daily-life-b-56.html",
-      "capturedAt": "2026-10-13T07:31:30+00:00",
+      "capturedAt": "2026-10-19T01:33:56+00:00",
       "json": "cozeware/resources/c9557a9592f69b00.json",
       "searchTerms": []
     },
@@ -916,7 +916,7 @@
       "title": "COZEWARE | Cozeware Home Cooling Survey – Share Your Feedback & Win",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/help-us-improve-our-ac-b-136.html",
-      "capturedAt": "2026-10-13T07:30:41+00:00",
+      "capturedAt": "2026-10-19T01:33:12+00:00",
       "json": "cozeware/resources/aae89400de1c3ebb.json",
       "searchTerms": []
     },
@@ -925,7 +925,7 @@
       "title": "COZEWARE | How AI Improves Air Conditioner Efficiency and Saves Energy",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/how-ai-improves-air-conditioner-efficiency--smarter-cooling-lower-energy-bills-b-178.html",
-      "capturedAt": "2026-10-13T07:30:12+00:00",
+      "capturedAt": "2026-10-19T01:32:48+00:00",
       "json": "cozeware/resources/f8fce4e3772d9770.json",
       "searchTerms": []
     },
@@ -934,7 +934,7 @@
       "title": "COZEWARE | How Many Watts Does a Mini Split Use at Home?",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/how-many-watts-does-a-mini-split-use--tips-to-lower-your-electricity-bill-b-130.html",
-      "capturedAt": "2026-10-13T07:30:57+00:00",
+      "capturedAt": "2026-10-19T01:33:20+00:00",
       "json": "cozeware/resources/51dcc5ced4a3fb5d.json",
       "searchTerms": []
     },
@@ -943,7 +943,7 @@
       "title": "COZEWARE | How Much Does a Mini Split Cost to Run? Full Guide",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/how-much-does-a-mini-split-cost-to-run--a-complete-breakdown-b-183.html",
-      "capturedAt": "2026-10-13T07:30:02+00:00",
+      "capturedAt": "2026-10-19T01:32:41+00:00",
       "json": "cozeware/resources/8897504cf2a8c545.json",
       "searchTerms": []
     },
@@ -952,7 +952,7 @@
       "title": "COZEWARE | How Much Does Mini Split Cost to Run Monthly?",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/how-much-does-mini-split-cost-to-run--monthly-energy-guide-b-137.html",
-      "capturedAt": "2026-10-13T07:30:40+00:00",
+      "capturedAt": "2026-10-19T01:33:10+00:00",
       "json": "cozeware/resources/bc6b8731df9fcb42.json",
       "searchTerms": []
     },
@@ -961,7 +961,7 @@
       "title": "COZEWARE | How Often Should You Clean a Mini Split?",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/how-often-should-you-clean-a-mini-split---br-can-you-do-it-yourself--b-66.html",
-      "capturedAt": "2026-10-13T07:31:21+00:00",
+      "capturedAt": "2026-10-19T01:33:41+00:00",
       "json": "cozeware/resources/3eba5276ea68a154.json",
       "searchTerms": []
     },
@@ -970,7 +970,7 @@
       "title": "COZEWARE | How to Choose SEER Rating for Home Efficiency",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/how-to-choose-seer-rating-for-your-home-efficiently-b-131.html",
-      "capturedAt": "2026-10-13T07:30:55+00:00",
+      "capturedAt": "2026-10-19T01:33:19+00:00",
       "json": "cozeware/resources/3a07b87ef76a2de5.json",
       "searchTerms": []
     },
@@ -979,7 +979,7 @@
       "title": "COZEWARE | How to Extend Your Mini Split’s Lifespan",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/how-to-extend-the-lifespan-of-your-mini-split-system-b-63.html",
-      "capturedAt": "2026-10-13T07:31:23+00:00",
+      "capturedAt": "2026-10-19T01:33:45+00:00",
       "json": "cozeware/resources/d4ea42a2c5bdfb9f.json",
       "searchTerms": []
     },
@@ -988,7 +988,7 @@
       "title": "COZEWARE | How to Improve Indoor Air Quality at Home with Your AC",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/how-to-improve-indoor-air-quality-at-home--why-your-air-conditioner-does-more-than-cool-b-174.html",
-      "capturedAt": "2026-10-13T07:30:19+00:00",
+      "capturedAt": "2026-10-19T01:32:55+00:00",
       "json": "cozeware/resources/3b5ab99bd1497a22.json",
       "searchTerms": []
     },
@@ -997,7 +997,7 @@
       "title": "COZEWARE | How to Install a Mini Split (DIY Mini Split Installation Guide)",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/how-to-install-a-mini-split--diy-mini-split-installation--b-125.html",
-      "capturedAt": "2026-10-13T07:31:05+00:00",
+      "capturedAt": "2026-10-19T01:33:23+00:00",
       "json": "cozeware/resources/6b0d17d3fae8c0b5.json",
       "searchTerms": []
     },
@@ -1006,7 +1006,7 @@
       "title": "COZEWARE | How to Keep House Cool During Extreme Heat Efficiently",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/how-to-keep-house-cool-during-extreme-heat--smart-strategies-for-a-more-comfortable-summer-b-186.html",
-      "capturedAt": "2026-10-13T07:29:57+00:00",
+      "capturedAt": "2026-10-19T01:32:38+00:00",
       "json": "cozeware/resources/54b5dad9147ffe9c.json",
       "searchTerms": []
     },
@@ -1015,7 +1015,7 @@
       "title": "COZEWARE | How to Keep House Cool During Heat Wave Easily",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/how-to-keep-house-cool-during-heat-wave--smart-ways-to-stay-comfortable-in-extreme-temperatures-b-176.html",
-      "capturedAt": "2026-10-13T07:30:16+00:00",
+      "capturedAt": "2026-10-19T01:32:52+00:00",
       "json": "cozeware/resources/4e09d384e89a7bd4.json",
       "searchTerms": []
     },
@@ -1024,7 +1024,7 @@
       "title": "COZEWARE | How to Reduce AC Electricity Bill With Energy-Efficient Cooling",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/how-to-reduce-ac-electricity-bill-without-sacrificing-comfort-b-171.html",
-      "capturedAt": "2026-10-13T07:30:23+00:00",
+      "capturedAt": "2026-10-19T01:33:01+00:00",
       "json": "cozeware/resources/dfbad85f50d1e39d.json",
       "searchTerms": []
     },
@@ -1033,7 +1033,7 @@
       "title": "COZEWARE | How to Reduce Indoor Humidity in Summer Effectively",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/how-to-reduce-indoor-humidity-in-summer-for-a-cooler-and-healthier-home-b-181.html",
-      "capturedAt": "2026-10-13T07:30:05+00:00",
+      "capturedAt": "2026-10-19T01:32:43+00:00",
       "json": "cozeware/resources/1b79e9eb6258f6c1.json",
       "searchTerms": []
     },
@@ -1042,7 +1042,7 @@
       "title": "COZEWARE | Is an AI Air Conditioner Worth It? Energy Savings Guide 2026",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/is-an-ai-air-conditioner-worth-it--a-complete-guide-to-comfort-energy-savings-and-smart-cooling-in-2026-b-193.html",
-      "capturedAt": "2026-10-13T07:29:53+00:00",
+      "capturedAt": "2026-10-19T01:32:35+00:00",
       "json": "cozeware/resources/27725e5d2eb97539.json",
       "searchTerms": []
     },
@@ -1051,7 +1051,7 @@
       "title": "COZEWARE | Mini Split AC Trends 2026 | Smart HVAC & Energy Saving",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/mini-split-ac-trends-2026--smart-hvac-upgrades-and-energy-efficient-cooling-innovations-b-165.html",
-      "capturedAt": "2026-10-13T07:30:25+00:00",
+      "capturedAt": "2026-10-19T01:33:02+00:00",
       "json": "cozeware/resources/57b5b12a334becda.json",
       "searchTerms": []
     },
@@ -1060,7 +1060,7 @@
       "title": "COZEWARE | Mini Split vs Central Air: Which AC Is Better?",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/mini-split-ac-vs_-central-air--br-which-is-better-for-your-home--b-59.html",
-      "capturedAt": "2026-10-13T07:31:25+00:00",
+      "capturedAt": "2026-10-19T01:33:49+00:00",
       "json": "cozeware/resources/5f546ef9b7a9950d.json",
       "searchTerms": []
     },
@@ -1069,7 +1069,7 @@
       "title": "COZEWARE | Mini Split Installation Cost: Complete Pricing Guide",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/mini-split-installation-cost--what-you-need-to-know-before-you-buy-b-184.html",
-      "capturedAt": "2026-10-13T07:30:00+00:00",
+      "capturedAt": "2026-10-19T01:32:40+00:00",
       "json": "cozeware/resources/5bb9f317e52bcc09.json",
       "searchTerms": []
     },
@@ -1078,7 +1078,7 @@
       "title": "COZEWARE | Mini Split Maintenance Guide: Clean & Service Tips",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/mini-split-maintenance-guide--how-to-clean-service-and-extend-the-life-of-your-ductless-system-b-93.html",
-      "capturedAt": "2026-10-13T07:31:11+00:00",
+      "capturedAt": "2026-10-19T01:33:32+00:00",
       "json": "cozeware/resources/9e92dd13175c3c56.json",
       "searchTerms": []
     },
@@ -1087,7 +1087,7 @@
       "title": "COZEWARE | Mini Split Not Cooling Properly Troubleshooting Guide",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/mini-split-not-cooling-properly--troubleshooting-and-fix-guide-b-134.html",
-      "capturedAt": "2026-10-13T07:30:45+00:00",
+      "capturedAt": "2026-10-19T01:33:15+00:00",
       "json": "cozeware/resources/b9d8987e3d637743.json",
       "searchTerms": []
     },
@@ -1096,7 +1096,7 @@
       "title": "COZEWARE | Mini Split vs Central Air: Cost, Pros & Which Is Better?",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/mini-split-vs-central-air--pros-cons-cost-and-comfort-compared-b-92.html",
-      "capturedAt": "2026-10-13T07:31:12+00:00",
+      "capturedAt": "2026-10-19T01:33:33+00:00",
       "json": "cozeware/resources/dbc79242bfbf25f4.json",
       "searchTerms": []
     },
@@ -1105,7 +1105,7 @@
       "title": "COZEWARE | Pre-Charged vs Traditional Mini Split: DIY Guide 2026",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/pre-charged-vs_-traditional-installation--br-a-complete-diy-friendly-mini-split-buying-guide--2026-update--b-62.html",
-      "capturedAt": "2026-10-13T07:31:24+00:00",
+      "capturedAt": "2026-10-19T01:33:47+00:00",
       "json": "cozeware/resources/bf8cea8478087522.json",
       "searchTerms": []
     },
@@ -1114,7 +1114,7 @@
       "title": "COZEWARE | Quiet and Comfortable AC for Better Sleep and Comfort",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/quiet-and-comfortable-ac--how-modern-cooling-creates-better-sleep-and-everyday-comfort-b-175.html",
-      "capturedAt": "2026-10-13T07:30:17+00:00",
+      "capturedAt": "2026-10-19T01:32:53+00:00",
       "json": "cozeware/resources/11a44b7fecac953c.json",
       "searchTerms": []
     },
@@ -1123,7 +1123,7 @@
       "title": "COZEWARE | Quiet Mini Split System | Silent Bedroom AC Guide 2026",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/quiet-mini-split-system--low-noise-mini-split-for-silent-air-conditioner-for-bedroom-comfort-b-162.html",
-      "capturedAt": "2026-10-13T07:30:32+00:00",
+      "capturedAt": "2026-10-19T01:33:06+00:00",
       "json": "cozeware/resources/0b2f3b323c9dcfc9.json",
       "searchTerms": []
     },
@@ -1132,7 +1132,7 @@
       "title": "COZEWARE | SEER, BTU, EER & HSPF Explained: Choose the Right AC",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/seer-btu-eer-and-hspf-explained--br-what-they-mean-and-how-to-choose-the-right-ac-for-you-b-57.html",
-      "capturedAt": "2026-10-13T07:31:28+00:00",
+      "capturedAt": "2026-10-19T01:33:52+00:00",
       "json": "cozeware/resources/939d1cc2fb554050.json",
       "searchTerms": []
     },
@@ -1141,7 +1141,7 @@
       "title": "COZEWARE | SEER vs EER: Understanding HVAC Efficiency Ratings for Smarter Cooling",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/seer-vs-eer--understanding-hvac-efficiency-ratings-for-smarter-cooling-b-164.html",
-      "capturedAt": "2026-10-13T07:30:27+00:00",
+      "capturedAt": "2026-10-19T01:33:03+00:00",
       "json": "cozeware/resources/f05dae14ba80ab15.json",
       "searchTerms": []
     },
@@ -1150,7 +1150,7 @@
       "title": "COZEWARE | Smart Air Conditioner Features for AI-Powered Comfort",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/smart-air-conditioner-features--how-ai-is-transforming-personalized-home-comfort-b-180.html",
-      "capturedAt": "2026-10-13T07:30:07+00:00",
+      "capturedAt": "2026-10-19T01:32:45+00:00",
       "json": "cozeware/resources/085993a2443c04e5.json",
       "searchTerms": []
     },
@@ -1159,7 +1159,7 @@
       "title": "COZEWARE | Overview: Ductless Air Conditioner Pros and Cons Tips",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/smart-guide--ductless-air-conditioner-pros-and-cons-tips-b-158.html",
-      "capturedAt": "2026-10-13T07:30:35+00:00",
+      "capturedAt": "2026-10-19T01:33:08+00:00",
       "json": "cozeware/resources/2ff9c6660d20651a.json",
       "searchTerms": []
     },
@@ -1168,7 +1168,7 @@
       "title": "COZEWARE | Smart Heating & Cooling Solutions for Tiny Homes | Efficient Mini Split Guide",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/smart-heating-and-cooling-solutions-for-tiny-houses-b-121.html",
-      "capturedAt": "2026-10-13T07:31:09+00:00",
+      "capturedAt": "2026-10-19T01:33:28+00:00",
       "json": "cozeware/resources/e0b3133ee680270b.json",
       "searchTerms": []
     },
@@ -1177,7 +1177,7 @@
       "title": "COZEWARE | 5 Bad AC Habits That Shorten Your Air Conditioner’s Lifespan | AC Maintenance Tips",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/stop-doing-this--5-habits-that-can-ruin-your-home-ac-b-119.html",
-      "capturedAt": "2026-10-13T07:31:10+00:00",
+      "capturedAt": "2026-10-19T01:33:29+00:00",
       "json": "cozeware/resources/067a20e6a69f1862.json",
       "searchTerms": []
     },
@@ -1186,7 +1186,7 @@
       "title": "COZEWARE | Mini Split AC Tips for Allergy Season",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/stop-sneezing-start-chilling---br--ac-tips-for-allergy-season-b-54.html",
-      "capturedAt": "2026-10-13T07:31:33+00:00",
+      "capturedAt": "2026-10-19T01:34:17+00:00",
       "json": "cozeware/resources/2b2a29e724df237d.json",
       "searchTerms": []
     },
@@ -1195,7 +1195,7 @@
       "title": "COZEWARE | The Invisible Comfort: How to Integrate Your Mini-Split AC into a High-End Minimalist Home",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/the-invisible-comfort---br--how-to-integrate-your-mini-split-ac-into-a-high-end-minimalist-home-b-52.html",
-      "capturedAt": "2026-10-13T07:31:36+00:00",
+      "capturedAt": "2026-10-19T01:34:30+00:00",
       "json": "cozeware/resources/10bfc813abc346d3.json",
       "searchTerms": []
     },
@@ -1204,7 +1204,7 @@
       "title": "COZEWARE | Mini Split Not Cooling? Troubleshooting Guide",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/troubleshooting-mini-split-issues--br-not-cooling-leaking-water-and-no-airflow-b-69.html",
-      "capturedAt": "2026-10-13T07:31:20+00:00",
+      "capturedAt": "2026-10-19T01:33:40+00:00",
       "json": "cozeware/resources/58357c8795a82e4b.json",
       "searchTerms": []
     },
@@ -1213,7 +1213,7 @@
       "title": "COZEWARE | Mini Split Components Explained: How It Works",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/understanding-mini-split-components-and-how-they-work-b-64.html",
-      "capturedAt": "2026-10-13T07:31:22+00:00",
+      "capturedAt": "2026-10-19T01:33:43+00:00",
       "json": "cozeware/resources/e3c6f666e918936d.json",
       "searchTerms": []
     },
@@ -1222,7 +1222,7 @@
       "title": "COZEWARE | Best Mini Split for Small Rooms, Garages & Rentals",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/which-mini-split-ac-is-best-for-br-small-spaces-rentals-garages-or-offices--b-58.html",
-      "capturedAt": "2026-10-13T07:31:27+00:00",
+      "capturedAt": "2026-10-19T01:33:50+00:00",
       "json": "cozeware/resources/8088ae59f52617f7.json",
       "searchTerms": []
     },
@@ -1231,7 +1231,7 @@
       "title": "COZEWARE | AI Air Conditioner: The Future of Smart Home Cooling in 2026",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/why-an-ai-air-conditioner-is-the-future-of-home-comfort-in-2026-b-177.html",
-      "capturedAt": "2026-10-13T07:30:14+00:00",
+      "capturedAt": "2026-10-19T01:32:50+00:00",
       "json": "cozeware/resources/578a857ef806bf77.json",
       "searchTerms": []
     },
@@ -1240,7 +1240,7 @@
       "title": "COZEWARE | Why Families Are Switching to Ductless Mini Splits",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/why-more-families-are-switching-to-ductless-mini-split-acs-b-53.html",
-      "capturedAt": "2026-10-13T07:31:35+00:00",
+      "capturedAt": "2026-10-19T01:34:25+00:00",
       "json": "cozeware/resources/9af27bd0b1887da5.json",
       "searchTerms": []
     },
@@ -1249,7 +1249,7 @@
       "title": "COZEWARE | Using a Mini Split in Winter: Cold Weather Guide",
       "kind": "education",
       "url": "https://www.cozeware.com/blog-detail/winter-usage-guide--br-how-to-keep-your-mini-split-running-smoothly-in-low-temperatures-b-74.html",
-      "capturedAt": "2026-10-13T07:31:16+00:00",
+      "capturedAt": "2026-10-19T01:33:36+00:00",
       "json": "cozeware/resources/029a33a496a8fee3.json",
       "searchTerms": []
     },
@@ -1258,7 +1258,7 @@
       "title": "Air Conditioners | cozeware",
       "kind": "category",
       "url": "https://www.cozeware.com/category/air-conditioners-c-1096.html",
-      "capturedAt": "2026-10-13T07:33:34+00:00",
+      "capturedAt": "2026-10-19T01:35:35+00:00",
       "json": "cozeware/resources/ec74819224856b51.json",
       "searchTerms": []
     },
@@ -1267,7 +1267,7 @@
       "title": "Air Handers | cozeware",
       "kind": "category",
       "url": "https://www.cozeware.com/category/air-handlers-c-1140.html",
-      "capturedAt": "2026-10-13T07:33:34+00:00",
+      "capturedAt": "2026-10-19T01:35:33+00:00",
       "json": "cozeware/resources/564925fa0eac906c.json",
       "searchTerms": []
     },
@@ -1276,7 +1276,7 @@
       "title": "Cozeware | Best Sellers",
       "kind": "category",
       "url": "https://www.cozeware.com/custompro/best-sellers-c-597.html",
-      "capturedAt": "2026-10-13T07:29:50+00:00",
+      "capturedAt": "2026-10-19T01:32:32+00:00",
       "json": "cozeware/resources/260b1ea2c9507a88.json",
       "searchTerms": []
     },
@@ -1285,7 +1285,7 @@
       "title": "Cozeware | New Arrivals",
       "kind": "category",
       "url": "https://www.cozeware.com/custompro/new-arrivals-c-598.html",
-      "capturedAt": "2026-10-13T07:29:49+00:00",
+      "capturedAt": "2026-10-19T01:32:30+00:00",
       "json": "cozeware/resources/bcec59974eb2fa89.json",
       "searchTerms": []
     },
@@ -1294,7 +1294,7 @@
       "title": "COZEWARE | Contact Us",
       "kind": "faq",
       "url": "https://www.cozeware.com/help",
-      "capturedAt": "2026-10-13T07:29:48+00:00",
+      "capturedAt": "2026-10-19T01:32:29+00:00",
       "json": "cozeware/resources/a0dc1e70a9598ef9.json",
       "searchTerms": []
     },
@@ -1303,7 +1303,7 @@
       "title": "COZEWARE | Contact Us",
       "kind": "faq",
       "url": "https://www.cozeware.com/help?id=118",
-      "capturedAt": "2026-10-13T07:29:46+00:00",
+      "capturedAt": "2026-10-19T01:32:28+00:00",
       "json": "cozeware/resources/380de915504a5650.json",
       "searchTerms": []
     },
@@ -1312,7 +1312,7 @@
       "title": "COZEWARE | promotion",
       "kind": "campaign",
       "url": "https://www.cozeware.com/promo/business-cooperation-a-166.html",
-      "capturedAt": "2026-10-13T07:29:51+00:00",
+      "capturedAt": "2026-10-19T01:32:33+00:00",
       "json": "cozeware/resources/c3a01c70f4dc38b6.json",
       "searchTerms": []
     },
@@ -1321,7 +1321,7 @@
       "title": "COZEWARE | promotion",
       "kind": "campaign",
       "url": "https://www.cozeware.com/promo/flash-deal-a-154.html",
-      "capturedAt": "2026-10-13T07:29:52+00:00",
+      "capturedAt": "2026-10-19T01:32:34+00:00",
       "json": "cozeware/resources/d30bb5c3a58ff3d9.json",
       "searchTerms": []
     },
@@ -1330,7 +1330,7 @@
       "title": "COZEWARE | FreshFlow Early Access",
       "kind": "campaign",
       "url": "https://www.cozeware.com/promo/freshflow-early-access-a-165.html",
-      "capturedAt": "2026-10-13T07:29:41+00:00",
+      "capturedAt": "2026-10-19T01:32:23+00:00",
       "json": "cozeware/resources/a624372a3ac1c5eb.json",
       "searchTerms": [
         "FreshFlow"

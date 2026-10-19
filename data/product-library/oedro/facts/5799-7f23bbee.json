@@ -6,7 +6,7 @@
   "categoryId": "995",
   "name": "OEDRO 6 Inch Running Boards Compatible with 2019-2026 Chevy Silverado/GMC Sierra 1500 Double Cab; 2020-2026 Silverado/Sierra 2500HD 3500HD,Bolt-on Side Steps Steel Nerf Bar,Two Stairs Design",
   "url": "https://www.oedro.com/products/oedro-2019-2024-silverado-sierra-double-cab-running-boards-0150-p-5799.html",
-  "capturedAt": "2026-10-13T07:28:06+00:00",
+  "capturedAt": "2026-10-19T01:35:19+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -190,37 +190,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/oedro-2019-2024-silverado-sierra-double-cab-running-boards-0150-p-5799.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:19+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEDRO 6 Inch Running Boards Compatible with 2019-2026 Chevy Silverado/GMC Sierra 1500 Double Cab; 2020-2026 Silverado/Sierra 2500HD 3500HD,Bolt-on Side Steps Steel Nerf Bar,Two Stairs Design"
     },
     "sku": {
       "url": "https://www.oedro.com/products/oedro-2019-2024-silverado-sierra-double-cab-running-boards-0150-p-5799.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:19+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEEPRB-0150"
     },
     "brand": {
       "url": "https://www.oedro.com/products/oedro-2019-2024-silverado-sierra-double-cab-running-boards-0150-p-5799.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:19+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEDRO"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/oedro-2019-2024-silverado-sierra-double-cab-running-boards-0150-p-5799.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:19+00:00",
       "status": "official_page_snapshot",
       "excerpt": "Compatible with 2019-2026 Chevy Silverado/ GMC Sierra 1500 Double Cab;\nCompatible with 2020-2026 Chevy Silverado/ Sierra 2500HD 3500HD Double Cab."
     },
     "description": {
       "url": "https://www.oedro.com/products/oedro-2019-2024-silverado-sierra-double-cab-running-boards-0150-p-5799.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:19+00:00",
       "status": "official_page_snapshot",
       "excerpt": "No matter the challenge, OEDRO has you covered. These two-step drop side nerf bars combine bold off-road styling with a durable black powder-coated finish. The lowered step design enhances grip and safety in tough conditions while reducing fatigue. By shortening the step-up distance, they make getting in and out of your truck easier, saving energy for the job ahead.\nFeatures\n6-Inch Side Steps – The dual-level design offers added convenience for vehicles with lift kits and oversized tires.\nReinforced Three-Tube Structure – Enhances protection for the vehicle’s undercarriage and sides while preventing snags on rockers or obstacles.\nBolt-On Installation – Welded brackets provide extra strength with no cutting or drilling required.\nStrong & Durable – A unique powder-coated finish resists rust and corrosion, ensuring reliable performance in all conditions.\nPrecision Laser-Cut Tread – Enhanced step surface with anti-slip grip for improved safety.\n1-Year Warranty – Professional installation is recommended for optimal performance and security.\nFitment\nCompatible with 2019-2026 Chevy Silverado/ GMC Sierra 1500 Double Cab;\nCompatible with 2020-2026 Chevy Silverado/ Sierra 2500HD 3500HD Double Cab."
     },
     "specifications": {
       "url": "https://www.oedro.com/products/oedro-2019-2024-silverado-sierra-double-cab-running-boards-0150-p-5799.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:19+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "OEDRO",
@@ -232,7 +232,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/oedro-2019-2024-silverado-sierra-double-cab-running-boards-0150-p-5799.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:19+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [
@@ -295,7 +295,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/oedro-2019-2024-silverado-sierra-double-cab-running-boards-0150-p-5799.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:19+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "339.99",
@@ -308,7 +308,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/oedro-2019-2024-silverado-sierra-double-cab-running-boards-0150-p-5799.html",
-      "capturedAt": "2026-10-13T07:28:06+00:00",
+      "capturedAt": "2026-10-19T01:35:19+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -331,5 +331,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

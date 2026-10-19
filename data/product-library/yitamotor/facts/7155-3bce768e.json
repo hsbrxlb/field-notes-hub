@@ -6,7 +6,7 @@
   "categoryId": "999",
   "name": "YITAMOTOR® Double Folding Security Gate, 85\" H x 150\" W, Steel Accordion Design, 360° Rolling, Barricade Gate with Keys, Aluminium Mesh",
   "url": "https://www.oedro.com/products/-p-7155.html",
-  "capturedAt": "2026-10-13T07:35:20+00:00",
+  "capturedAt": "2026-10-19T01:39:59+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -163,37 +163,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/-p-7155.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:59+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR® Double Folding Security Gate, 85\" H x 150\" W, Steel Accordion Design, 360° Rolling, Barricade Gate with Keys, Aluminium Mesh"
     },
     "sku": {
       "url": "https://www.oedro.com/products/-p-7155.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:59+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OE-YTFRPF-0246"
     },
     "brand": {
       "url": "https://www.oedro.com/products/-p-7155.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:59+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/-p-7155.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:59+00:00",
       "status": "missing",
       "excerpt": ""
     },
     "description": {
       "url": "https://www.oedro.com/products/-p-7155.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:59+00:00",
       "status": "official_page_snapshot",
       "excerpt": "This security gate features a double folding design with a retractable door width structure, offering versatility and adaptability. The gate expands to 85\" in height and 150\" in width, providing extensive coverage for entrances and doorways.\nFeatures\nDouble Folding Design: The security gate features a double folding design with a retractable door width structure, offering versatility and adaptability; The gate expands to 85\" in height and 150\" in width, providing extensive coverage for entrances and doorways\nDurable Construction: Our security gate is crafted from heavy-duty steel with a black powder finish, ensuring durability and longevity; The unique non-interference design effectively safeguards your property and prevents unwanted intrusions\n360° Rolling Casters: This security gate is equipped with rolling casters at the bottom, allowing the gate to swing up to 360 degrees; The casters also feature a lock design to secure the gate's position, ensuring both mobility and stability\nAluminium Mesh and Anti-Theft Bolts: The gate incorporates an aluminium mesh with a 15x15mm square tube and a 1.0mm thickness, offering lightweight yet robust protection; The mesh is secured with anti-theft bolts, enhancing the gate's security features\nEasy Lock & Installation: The gate includes a padlock for easy locking and a set of mounting tools for effortless installation; Fit for use at home or in industrial settings, enhancing security in basements, garages, storefronts, and more"
     },
     "specifications": {
       "url": "https://www.oedro.com/products/-p-7155.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:59+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "YITAMOTOR",
@@ -208,7 +208,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/-p-7155.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:59+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -263,7 +263,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/-p-7155.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:59+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "239.99",
@@ -276,7 +276,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/-p-7155.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:59+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -304,5 +304,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

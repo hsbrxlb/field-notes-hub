@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
-  "version": "2026-10-13-341b61559e8f",
-  "generatedAt": "2026-10-13T09:00:55.725813+00:00",
-  "capturedAt": "2026-10-13T08:35:02+00:00",
-  "sourceCapturedFrom": "2026-10-13T07:25:59+00:00",
-  "sourceCapturedUntil": "2026-10-13T08:35:02+00:00",
+  "version": "2026-10-19-394e5303cf5e",
+  "generatedAt": "2026-10-19T02:00:29.813171+00:00",
+  "capturedAt": "2026-10-19T01:43:15+00:00",
+  "sourceCapturedFrom": "2026-10-13T07:34:25+00:00",
+  "sourceCapturedUntil": "2026-10-19T01:43:15+00:00",
   "publicOnly": true,
   "brands": {
     "oedro": {
       "name": "OEDRO",
-      "count": 442,
+      "count": 438,
       "index": "oedro/index.json",
       "policyFile": "oedro/policies.json"
     },
     "yitamotor": {
       "name": "YITAMOTOR",
-      "count": 790,
+      "count": 785,
       "index": "yitamotor/index.json",
       "policyFile": "yitamotor/policies.json"
     },
@@ -35,51 +35,51 @@
   "sourceCoverage": {
     "oedro": {
       "discovery": {
-        "all_urls": 1334,
-        "unique_urls": 1334,
+        "all_urls": 1333,
+        "unique_urls": 1333,
         "duplicate_urls": 0,
-        "product_urls": 1273,
-        "unique_product_urls": 1273,
-        "catalog_api_reported_products": 1236,
-        "catalog_api_rows": 1191,
-        "catalog_api_unique_urls": 1191,
-        "catalog_api_reported_minus_rows": 45,
-        "catalog_api_only_urls": 1,
-        "sitemap_only_product_urls": 83,
+        "product_urls": 1272,
+        "unique_product_urls": 1272,
+        "catalog_api_reported_products": 1227,
+        "catalog_api_rows": 1185,
+        "catalog_api_unique_urls": 1185,
+        "catalog_api_reported_minus_rows": 42,
+        "catalog_api_only_urls": 0,
+        "sitemap_only_product_urls": 87,
         "catalog_api_error": "",
         "catalog_api_brand_counts": {
-          "OEDRO": 440,
-          "YITAMOTOR": 745,
+          "OEDRO": 436,
+          "YITAMOTOR": 743,
           "OEDRO PRO": 6
         },
-        "run_target_product_urls": 1274
+        "run_target_product_urls": 1272
       },
       "results": {
-        "fetch_attempted": 1274,
-        "downloaded_or_refreshed": 1274,
+        "fetch_attempted": 1272,
+        "downloaded_or_refreshed": 1272,
         "reused_recent_snapshots": 0,
         "reused_uncovered_snapshots": 0,
-        "normalized_success": 1238,
-        "failed_or_uncovered": 36,
-        "verified_invalid_urls": 36,
+        "normalized_success": 1229,
+        "failed_or_uncovered": 43,
+        "verified_invalid_urls": 43,
         "true_failed_or_unresolved": 0,
-        "accounted_url_count": 1274,
-        "failures_this_run": 36,
+        "accounted_url_count": 1272,
+        "failures_this_run": 43,
         "policy_pages_saved": 6,
         "normalized_policy_records": 6,
-        "parse_warning_pages": 1238,
-        "uncovered_redirects": 36,
-        "unique_normalized_product_page_ids": 1237,
+        "parse_warning_pages": 1229,
+        "uncovered_redirects": 43,
+        "unique_normalized_product_page_ids": 1228,
         "duplicate_or_alias_product_records": 1
       },
       "parser_warning_counts": {
-        "invalid_document_url_placeholder": 88,
-        "warranty_popup_external_brand_domain": 1238,
-        "warranty_conflict_on_official_product_page": 256,
+        "invalid_document_url_placeholder": 87,
+        "warranty_popup_external_brand_domain": 1229,
+        "warranty_conflict_on_official_product_page": 257,
         "fitment_section_not_found": 44,
         "material_conflict_on_official_product_page": 23
       },
-      "finished_at": "2026-10-13T07:39:38+00:00"
+      "finished_at": "2026-10-19T01:43:15+00:00"
     },
     "cozeware": {
       "discovery": {
@@ -96,11 +96,11 @@
           "product_url_references": 391,
           "reviewed_references": 391,
           "unreviewed_references": 0,
-          "unique_scoped_product_urls": 280
+          "unique_scoped_product_urls": 281
         }
       },
       "parser_warning_counts": {},
-      "finished_at": "2026-10-13T08:39:21+00:00"
+      "finished_at": "2026-10-19T01:47:12+00:00"
     }
   },
   "usage": {

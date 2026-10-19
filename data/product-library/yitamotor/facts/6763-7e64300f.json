@@ -6,7 +6,7 @@
   "categoryId": "999",
   "name": "YITAMOTOR 3 Point Trailer Hitch with 2 Inch Receiver, 49\" Hay Bale Spear & 2 Stabilizer Spears with Trailer Gooseneck Ball Drawbar for Category 1 Tractor, 3000 lbs Capacity",
   "url": "https://www.oedro.com/products/yitamotor-spear-trailer-hitch-receiver-cat-0051-p-6763.html",
-  "capturedAt": "2026-10-13T07:32:37+00:00",
+  "capturedAt": "2026-10-19T01:38:11+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -168,37 +168,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/yitamotor-spear-trailer-hitch-receiver-cat-0051-p-6763.html",
-      "capturedAt": "2026-10-13T07:32:37+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR 3 Point Trailer Hitch with 2 Inch Receiver, 49\" Hay Bale Spear & 2 Stabilizer Spears with Trailer Gooseneck Ball Drawbar for Category 1 Tractor, 3000 lbs Capacity"
     },
     "sku": {
       "url": "https://www.oedro.com/products/yitamotor-spear-trailer-hitch-receiver-cat-0051-p-6763.html",
-      "capturedAt": "2026-10-13T07:32:37+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OE-FRSSPF-0051-YITA"
     },
     "brand": {
       "url": "https://www.oedro.com/products/yitamotor-spear-trailer-hitch-receiver-cat-0051-p-6763.html",
-      "capturedAt": "2026-10-13T07:32:37+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/yitamotor-spear-trailer-hitch-receiver-cat-0051-p-6763.html",
-      "capturedAt": "2026-10-13T07:32:37+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "official_page_snapshot",
       "excerpt": "Fit for Category 1 Tractor\nWidely used in heavy-duty work of industrial and construction.\nFor your safety, professional installation recommended."
     },
     "description": {
       "url": "https://www.oedro.com/products/yitamotor-spear-trailer-hitch-receiver-cat-0051-p-6763.html",
-      "capturedAt": "2026-10-13T07:32:37+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "official_page_snapshot",
       "excerpt": "Not only a trailer hitch, but it can also serve as a farm tool. As needed, you can install hay spears and stabilizer spears to help move hay bales or easily perform a myriad of other activities.\nFitment\nFit for Category 1 Tractor\nWidely used in heavy-duty work of industrial and construction.\nFor your safety, professional installation recommended.\nFeatures\nMax capacity up to 3000lbs.\nDesigned for category 1 tractors.\nStandard 2\" receiver hitch and trailer ball drawbar.\nDurable red powder-coated finish, anti-rust, and corrosion.\nMade from 0.3\" thick heavy-duty durable sturdy steel construction.\nIncluded top gooseneck ball, and top, and bottom pins."
     },
     "specifications": {
       "url": "https://www.oedro.com/products/yitamotor-spear-trailer-hitch-receiver-cat-0051-p-6763.html",
-      "capturedAt": "2026-10-13T07:32:37+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Bottom Hole Diameter": "1.26\"",
@@ -219,7 +219,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/yitamotor-spear-trailer-hitch-receiver-cat-0051-p-6763.html",
-      "capturedAt": "2026-10-13T07:32:37+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -252,7 +252,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/yitamotor-spear-trailer-hitch-receiver-cat-0051-p-6763.html",
-      "capturedAt": "2026-10-13T07:32:37+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "220.99",
@@ -265,7 +265,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/yitamotor-spear-trailer-hitch-receiver-cat-0051-p-6763.html",
-      "capturedAt": "2026-10-13T07:32:37+00:00",
+      "capturedAt": "2026-10-19T01:38:11+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -293,5 +293,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

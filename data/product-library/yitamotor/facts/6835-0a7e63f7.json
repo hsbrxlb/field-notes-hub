@@ -6,7 +6,7 @@
   "categoryId": "999",
   "name": "YITAMOTOR 10 Cubic Feet Dump Cart Steel Dump Trailer",
   "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0137-p-6835.html",
-  "capturedAt": "2026-10-13T07:33:29+00:00",
+  "capturedAt": "2026-10-19T01:38:34+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -156,37 +156,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0137-p-6835.html",
-      "capturedAt": "2026-10-13T07:33:29+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR 10 Cubic Feet Dump Cart Steel Dump Trailer"
     },
     "sku": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0137-p-6835.html",
-      "capturedAt": "2026-10-13T07:33:29+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OE-FRSSPF-0137-YITA"
     },
     "brand": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0137-p-6835.html",
-      "capturedAt": "2026-10-13T07:33:29+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0137-p-6835.html",
-      "capturedAt": "2026-10-13T07:33:29+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "missing",
       "excerpt": ""
     },
     "description": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0137-p-6835.html",
-      "capturedAt": "2026-10-13T07:33:29+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": "The 10 Cu. Ft. (500 LB) Dump Cart by YITAMOTOR is Ideal for hauling tools, animal feed, landscaping material, and yard clean-up.\nFeatures\n500 Pound Capacity.\nThis compact and reliable dump trailer enables convenient carting of everything from mulch, firewood, gravel, and animal feed, to other common landscape materials.\nQuick Release.\nThe mower car features a pedal release mechanism and a detachable tailgate to achieve effortless loading and unloading.\nFree Mobility.\nOur steel dump cart can carry large loads for easy relocation around the house, farm, or other places you need.\nStrong Wheels.\nBoasts good elasticity, noise reduction, and impact resistance for enhanced maneuvering on any rough terrain.\nUniversal Hitch.\nConveniently attaches to any lawn tractors, or most ZTRs or ATVs."
     },
     "specifications": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0137-p-6835.html",
-      "capturedAt": "2026-10-13T07:33:29+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "YITAMOTOR",
@@ -203,7 +203,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0137-p-6835.html",
-      "capturedAt": "2026-10-13T07:33:29+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -251,7 +251,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0137-p-6835.html",
-      "capturedAt": "2026-10-13T07:33:29+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "230.99",
@@ -264,7 +264,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/yitamotor-universal-hitch-pallet-forks-cart-0137-p-6835.html",
-      "capturedAt": "2026-10-13T07:33:29+00:00",
+      "capturedAt": "2026-10-19T01:38:34+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -292,5 +292,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

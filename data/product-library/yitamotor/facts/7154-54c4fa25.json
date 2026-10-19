@@ -6,7 +6,7 @@
   "categoryId": "999",
   "name": "YITAMOTOR 1500lbs ATV Trailer Dump Cart Tow Behind, 15 Cubic Feet, Heavy Duty Yard Garden Trailer Pull Behind Dump Trailer for Lawn Mower Tractor ",
   "url": "https://www.oedro.com/products/-p-7154.html",
-  "capturedAt": "2026-10-13T07:35:20+00:00",
+  "capturedAt": "2026-10-19T01:39:58+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -162,37 +162,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/-p-7154.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:58+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR 1500lbs ATV Trailer Dump Cart Tow Behind, 15 Cubic Feet, Heavy Duty Yard Garden Trailer Pull Behind Dump Trailer for Lawn Mower Tractor "
     },
     "sku": {
       "url": "https://www.oedro.com/products/-p-7154.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:58+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OE-YTFRPF-0231"
     },
     "brand": {
       "url": "https://www.oedro.com/products/-p-7154.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:58+00:00",
       "status": "official_page_snapshot",
       "excerpt": "YITAMOTOR"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/-p-7154.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:58+00:00",
       "status": "missing",
       "excerpt": ""
     },
     "description": {
       "url": "https://www.oedro.com/products/-p-7154.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:58+00:00",
       "status": "official_page_snapshot",
       "excerpt": "The 1500lbs 15 Cubic Feet ATV Trailer Dump Cart by YITAMOTOR is Ideal for hauling tools, animal feed, landscaping material, and yard clean-up.\nFeatures\nLOAD CAPACITY:Capable of hauling up to 1500 lb; 15 cubic feet of spacious storage Easily carry everything you want.\nUNIVERSAL HITCH:Enjoy the seamless compatibility of the YITAMOTOR utility trailer. Simply connect the hitch to your existing tractors, lawnmowers, ATVs, UTVs, and more. Transform your yard work into a breeze.\nHIGH CAPACITY TRAILER:Our ATV dump trailer features added railings on three sides, providing a 15 cubic foot capacity for yard waste. Collect more wood, soil, or garbage in a single trip, reducing the need for frequent hauls. Handle your yard work efficiently with our high-capacity trailer.\nREINFORCED STEEL CONSTRUCTION:Unlike many dump trailers, the YITAMOTOR dump cart can carry up to 1500 pounds with enhanced durability. The side plates are thickened to 0.04\", and the side reinforcement is doubly secured, improving the overall load-bearing capacity and effectively preventing deformation.\nTWO METHODS for QUICK RELEASE:Say goodbye to the strain of manual handling. Our garden trailer boasts a user-friendly dump feature, allowing you to clear debris swiftly with a simple hand-pull or foot-step and a quick opening of the rear gate. Make your yard work less work and more comfortable."
     },
     "specifications": {
       "url": "https://www.oedro.com/products/-p-7154.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:58+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "YITAMOTOR",
@@ -207,7 +207,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/-p-7154.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:58+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -255,7 +255,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/-p-7154.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:58+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "329.99",
@@ -268,7 +268,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/-p-7154.html",
-      "capturedAt": "2026-10-13T07:35:20+00:00",
+      "capturedAt": "2026-10-19T01:39:58+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -296,5 +296,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }

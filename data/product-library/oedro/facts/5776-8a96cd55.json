@@ -6,7 +6,7 @@
   "categoryId": "995",
   "name": "Running Boards for 2007-2018 Chevy Silverado/GMC Sierra 1500 Crew Cab & 2007-2019 Chevy Silverado / GMC Sierra 2500/3500HD,  Black and Red Side Steps",
   "url": "https://www.oedro.com/products/2007-2018-chevy-silverado-gmc-sierra-crew-cab-running-boards-p-5776.html",
-  "capturedAt": "2026-10-13T07:28:00+00:00",
+  "capturedAt": "2026-10-19T01:35:13+00:00",
   "imageReview": {
     "reviewed_urls": [],
     "unreviewed_urls": [
@@ -158,37 +158,37 @@
   "fieldEvidence": {
     "name": {
       "url": "https://www.oedro.com/products/2007-2018-chevy-silverado-gmc-sierra-crew-cab-running-boards-p-5776.html",
-      "capturedAt": "2026-10-13T07:28:00+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "official_page_snapshot",
       "excerpt": "Running Boards for 2007-2018 Chevy Silverado/GMC Sierra 1500 Crew Cab & 2007-2019 Chevy Silverado / GMC Sierra 2500/3500HD,  Black and Red Side Steps"
     },
     "sku": {
       "url": "https://www.oedro.com/products/2007-2018-chevy-silverado-gmc-sierra-crew-cab-running-boards-p-5776.html",
-      "capturedAt": "2026-10-13T07:28:00+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEEPRB-0147"
     },
     "brand": {
       "url": "https://www.oedro.com/products/2007-2018-chevy-silverado-gmc-sierra-crew-cab-running-boards-p-5776.html",
-      "capturedAt": "2026-10-13T07:28:00+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEDRO"
     },
     "fitment": {
       "url": "https://www.oedro.com/products/2007-2018-chevy-silverado-gmc-sierra-crew-cab-running-boards-p-5776.html",
-      "capturedAt": "2026-10-13T07:28:00+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "official_page_snapshot",
       "excerpt": "Compatible with 2007-2018 Chevy Silverado/GMC Sierra 1500 Crew Cab\nCompatible with 2007-2019 Chevy Silverad/ GMC Sierra 2500HD 3500HD Crew Cab."
     },
     "description": {
       "url": "https://www.oedro.com/products/2007-2018-chevy-silverado-gmc-sierra-crew-cab-running-boards-p-5776.html",
-      "capturedAt": "2026-10-13T07:28:00+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "official_page_snapshot",
       "excerpt": "OEDRO running boards welded brackets and all-steel construction provide immense strength and maximum protection to the rocker panel; Quick and easy to assemble with minimum accessories needed; No cutting or drilling is required.\nFeatures\nAnti-rust. Coated with a unique powder coating, suitable for carbon steel anti-rust.\nEasy to clean. The geometric plate panel prevents mud splashing and is easy to clean.\nPre-welded bracket. Contains the minimum parts required for quick and easy installation. No need to cut and drill.\nUnique Drop step design. The black + red design of the running board has a 3.5-inch drop, which provides better convenience for the elderly and children.\n1-years warranty. For your safety, professional installation is recommended.\nFitment\nCompatible with 2007-2018 Chevy Silverado/GMC Sierra 1500 Crew Cab\nCompatible with 2007-2019 Chevy Silverad/ GMC Sierra 2500HD 3500HD Crew Cab."
     },
     "specifications": {
       "url": "https://www.oedro.com/products/2007-2018-chevy-silverado-gmc-sierra-crew-cab-running-boards-p-5776.html",
-      "capturedAt": "2026-10-13T07:28:00+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "Brand": "OEDRO",
@@ -203,7 +203,7 @@
     },
     "variants": {
       "url": "https://www.oedro.com/products/2007-2018-chevy-silverado-gmc-sierra-crew-cab-running-boards-p-5776.html",
-      "capturedAt": "2026-10-13T07:28:00+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "related_option_references",
       "excerpt": {
         "options": [],
@@ -236,7 +236,7 @@
     },
     "price": {
       "url": "https://www.oedro.com/products/2007-2018-chevy-silverado-gmc-sierra-crew-cab-running-boards-p-5776.html",
-      "capturedAt": "2026-10-13T07:28:00+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "official_page_snapshot",
       "excerpt": {
         "sale": "319.99",
@@ -249,7 +249,7 @@
     },
     "policies": {
       "url": "https://www.oedro.com/products/2007-2018-chevy-silverado-gmc-sierra-crew-cab-running-boards-p-5776.html",
-      "capturedAt": "2026-10-13T07:28:00+00:00",
+      "capturedAt": "2026-10-19T01:35:13+00:00",
       "status": "requires_scope_verification",
       "excerpt": {
         "productWarranty": [
@@ -277,5 +277,5 @@
     "stage"
   ],
   "missingFields": [],
-  "libraryVersion": "2026-10-13-341b61559e8f"
+  "libraryVersion": "2026-10-19-394e5303cf5e"
 }
