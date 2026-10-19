@@ -1,90 +1,29 @@
-name: Deploy GitHub Pages
-
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
+name: Hub delivery diagnostic
+on: workflow_dispatch
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  measure:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Render mascot page
-        run: node scripts/build-mascot-page.js
-      - name: Test public user voice boundary
+      - name: Measure public resource delivery from GitHub runner
         run: |
-          node scripts/test-public-user-voice-check.js
-          node scripts/check-content-pipeline-tests.js
-          node scripts/test-content-pipeline-records.js
-          node scripts/check-public-pages.js
-          node scripts/check-fakesite.js
-          node scripts/check-anti-slop.js
-          node scripts/check-field-books.js
-          node scripts/check-products.js
-          node scripts/check-product-library.js
-      - name: Test public demand radar boundary
-        run: |
-          node scripts/check-demand-radar.js
-          node scripts/test-demand-radar-check.js
-          node scripts/test-mention-batch.js
-          python scripts/test_daily_demand_radar.py
-      - name: Validate static work records
-        run: |
-          node scripts/check-brand-plans.js
-          node scripts/check-outreach-pages.js
-          node scripts/check-outreach-users.js
-          node scripts/check-email-templates.js
-          node scripts/check-newsletter.js
-          node scripts/check-content-studio.js
-          node scripts/test-hub-navigation.js
-          node scripts/test-user-voice-render.js
-          node scripts/test-content-automation.js
-          node scripts/test-customer-analytics-render.js
-          python3 scripts/test-customer-analytics.py
-          node scripts/check-content-pipeline-tests.js
-          node scripts/check-mascot-page.js
-          node scripts/test-mascot-loading.js
-          python3 scripts/test-update-hub-record.py
-      - name: Build public artifact
-        run: |
-          mkdir public-dist
-          cp .nojekyll *.html *.js *.css public-dist/
-          cp -R assets data preview experiences fakesite public-dist/
-      - name: Validate complete public artifact
-        run: |
-          PUBLIC_SITE_ROOT=public-dist python3 scripts/test-customer-analytics.py
-          PUBLIC_SITE_ROOT=public-dist node scripts/check-public-user-voice.js
-          PUBLIC_SITE_ROOT=public-dist node scripts/check-demand-radar.js
-          PUBLIC_SITE_ROOT=public-dist node scripts/check-mascot-page.js
-          PUBLIC_SITE_ROOT=public-dist node scripts/check-content-pipeline-tests.js
-          PUBLIC_SITE_ROOT=public-dist node scripts/check-public-pages.js
-          PUBLIC_SITE_ROOT=public-dist node scripts/check-outreach-pages.js
-          PUBLIC_SITE_ROOT=public-dist node scripts/check-outreach-users.js
-          PUBLIC_SITE_ROOT=public-dist node scripts/check-fakesite.js
-          PUBLIC_SITE_ROOT=public-dist node scripts/check-anti-slop.js
-          PUBLIC_SITE_ROOT=public-dist node scripts/check-field-books.js
-          PUBLIC_SITE_ROOT=public-dist node scripts/check-products.js
-          PUBLIC_SITE_ROOT=public-dist node scripts/check-product-library.js
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-      - name: Upload static site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: public-dist
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+          python3 - <<'PYCODE'
+          import json, subprocess
+          targets = {
+              'page': 'https://hsbrxlb.github.io/field-notes-hub/mascot.html',
+              'first-image': 'https://hsbrxlb.github.io/field-notes-hub/assets/mascot-evolution/bull-v2/BULL-V2-01.webp',
+              'background': 'https://hsbrxlb.github.io/field-notes-hub/assets/background.png',
+              'cloudflare-250k': 'https://speed.cloudflare.com/__down?bytes=250000'
+          }
+          failed = False
+          for name, url in targets.items():
+              result = subprocess.run(['curl', '--silent', '--show-error', '--compressed', '--connect-timeout', '7', '--max-time', '20', '--output', '/dev/null', '--write-out', '%{json}', url], capture_output=True, text=True, timeout=24)
+              raw = json.loads(result.stdout or '{}')
+              row = {key: raw.get(key) for key in ['http_code','size_download','speed_download','time_namelookup','time_connect','time_appconnect','time_starttransfer','time_total','http_version']}
+              row.update(target=name, exit=result.returncode)
+              print(json.dumps(row), flush=True)
+              failed |= result.returncode != 0 or raw.get('http_code') != 200
+          raise SystemExit(failed)
+          PYCODE
