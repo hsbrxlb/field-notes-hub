@@ -133,3 +133,14 @@ async function checkDownload() {
 }
 
 checkDownload().then(() => console.log('Hub navigation, inline works and workflow download checks passed'));
+
+const sema = read('sema-plan.html');
+assert.ok(sema.includes('2026年10月28日23:59 PDT'));
+assert.ok(sema.includes('2026年10月29日19:00 PDT'));
+assert.ok(sema.includes('北京时间10月29日14:59'));
+assert.ok(sema.includes('北京时间10月30日10:00'));
+assert.ok(sema.includes('Threads · 三帖串'));
+assert.ok(!/10月18日|10月20日|尚未开放报名|480美元|160美元|130美元/.test(sema));
+for (const id of ['De01IcCGzi-', '2113503944228176169', 'De00kkSFKAY', '1563065916839698453', '1563066592613367838', '1562787604284444672']) assert.ok(sema.includes(id));
+assert.ok(sema.includes('https://discord.gg/CXM9tuFqG7'));
+assert.ok(!sema.includes('docs.google.com'), 'internal planning sheet stays out of public page');
