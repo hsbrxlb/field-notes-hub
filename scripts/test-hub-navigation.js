@@ -6,6 +6,22 @@ const root = path.resolve(__dirname, '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const nav = JSON.parse(read('data/content.json')).nav;
 
+const home = read('index.html');
+assert.ok(home.includes('data-page="home"'));
+assert.ok(!/http-equiv=["']refresh|location\.(?:replace|assign)|location\s*=/.test(home), 'home must not redirect to a topic');
+assert.ok(home.includes('<h1>OEDRO 工作台</h1>'));
+assert.ok(home.includes('id="breadcrumb-page">首页</strong>'));
+assert.ok(read('app.js').includes("const staticContentPage = ['home',"), 'homepage remains readable if data loading fails');
+assert.ok(read('app.js').includes("page === 'home' ? '首页'"));
+const homeMain = home.match(/<main[^>]*>([\s\S]*?)<\/main>/)[1];
+for (const item of nav.filter(item => !item.parent)) {
+  assert.ok(homeMain.includes('href="' + item.file + '"'), 'homepage links to ' + item.id);
+}
+assert.equal((homeMain.match(/<h2 /g) || []).length, 4);
+assert.ok(home.includes('base.css') && home.includes('theme.css'), 'keep existing visual system');
+assert.ok(home.includes('class="menu-button"') && home.includes('class="skip-link"'));
+
+
 for (const [id, label] of Object.entries({
   'discord-community': 'Discord频道设计', research: 'AI问卷',
   voice: 'OEDRO讨论全网捕捉', 'brand-voice-system': 'Oedro persona',

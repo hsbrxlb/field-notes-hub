@@ -51,7 +51,7 @@ function renderShell(data) {
       <span>${escapeHtml(item.label)}</span>${item.external ? '<span aria-hidden="true">↗</span>' : ''}
     </a>`).join('');
   const current = data.nav.find((item) => item.id === activePage);
-  document.querySelector('#breadcrumb-page').textContent = current?.label || (page === 'topics' ? '资料索引' : '');
+  document.querySelector('#breadcrumb-page').textContent = current?.label || (page === 'home' ? '首页' : page === 'topics' ? '资料索引' : '');
 }
 
 
@@ -510,7 +510,7 @@ async function init() {
 }
 
 const mainContent = document.querySelector('#content');
-const staticContentPage = ['customer-analytics', 'mascot-workflow', 'social-brand', 'merch-plan', 'first-outreach', 'discord-invite-plan', 'ugc-activity', 'sema-plan'].includes(page);
+const staticContentPage = ['home', 'customer-analytics', 'mascot-workflow', 'social-brand', 'merch-plan', 'first-outreach', 'discord-invite-plan', 'ugc-activity', 'sema-plan'].includes(page);
 if (page === 'mascot') {
   if (!document.querySelector('#nav-list').querySelector('a')) initMascotNavigation();
 } else {
