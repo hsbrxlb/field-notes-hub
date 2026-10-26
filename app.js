@@ -258,11 +258,9 @@ function renderUserVoice(data, voice, radar) {
     });
     const ordered = [];
     while (known.length) {
-      const latestDate = known.reduce((date, record) => record.item.publication.date > date ? record.item.publication.date : date, known[0].item.publication.date);
-      const sameDate = known.filter((record) => record.item.publication.date === latestDate);
-      const latestStart = sameDate.reduce((latest, record) => record.start > latest ? record.start : latest, sameDate[0].start);
-      // Within a source date, retain uncertainty without inventing a publication time.
-      const nextIndex = known.findIndex((record) => record.item.publication.date === latestDate && record.end >= latestStart);
+      const latestStart = known.reduce((latest, record) => record.start > latest ? record.start : latest, known[0].start);
+      // Preserve unknown date-only order only where their time intervals overlap.
+      const nextIndex = known.findIndex((record) => record.end >= latestStart);
       ordered.push(known.splice(nextIndex, 1)[0].item);
     }
     return ordered.concat(unknown);

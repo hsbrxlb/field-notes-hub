@@ -370,12 +370,22 @@ check('render date-only text survives timezone changes and HTML is escaped', () 
   assert(html.includes('<time datetime="2026-10-10">2026-10-10</time>')); assert(html.includes('&lt;example&gt; &amp;'));
   assert(!html.includes('<example>'));
 });
-check('source dates descend even when date-only timezone uncertainty overlaps the prior day', () => {
-  const dated = mention('sep6', '2026-09-06T12:45:06.407Z');
-  const nextDate = { ...mention('sep7'), publication: { date:'2026-09-07', published_at:null, precision:'date', source_timezone:null } };
-  assert.deepEqual(orderMentionIntervals([dated, nextDate]), [nextDate, dated]);
-  const candidate = fixture(); candidate.batch.items=[]; candidate.history=[dated, nextDate];
-  assert(render(candidate).indexOf(nextDate.summary) < render(candidate).indexOf(dated.summary));
+check('cross-timezone instants use true chronology across displayed source dates', () => {
+  const a=mention('zonea','2026-07-02T00:00:00+14:00');
+  const b=mention('zoneb','2026-07-01T23:00:00-10:00');
+  assert.deepEqual(orderMentionIntervals([a,b]),[b,a]);
+  assert.deepEqual(orderMentionIntervals([b,a]),[b,a]);
+  const candidate=fixture();candidate.batch.items=[];candidate.history=[a,b];
+  assert(render(candidate).indexOf(b.summary)<render(candidate).indexOf(a.summary));
+});
+check('date-only overlap keeps uncertainty while disjoint dates retain chronology', () => {
+  const dated=mention('sep6','2026-09-06T12:45:06.407Z');
+  const nextDate={...mention('sep7'),publication:{date:'2026-09-07',published_at:null,precision:'date',source_timezone:null}};
+  assert.deepEqual(orderMentionIntervals([dated,nextDate]),[dated,nextDate]);
+  assert.deepEqual(orderMentionIntervals([nextDate,dated]),[nextDate,dated]);
+  const disjoint=mention('sep8','2026-09-08T22:00:00Z');
+  const mixed=orderMentionIntervals([dated,nextDate,disjoint]);
+  assert.equal(mixed[0],disjoint);
 });
 check('same-date overlapping intervals preserve uncertainty without inventing a time', () => {
   const older = mention('older', '2026-10-08T03:00:00.123456789Z');
