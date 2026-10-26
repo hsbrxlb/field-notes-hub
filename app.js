@@ -199,6 +199,11 @@ function renderUserVoice(data, voice, radar) {
       return onDomain('trustpilot.com') && !!review && matchesId(review[1]);
     }
     if (platform === '媒体文章') {
+      if (onDomain('thedrive.com')) {
+        return ['/news/save-20-on-bolt-on-running-boards-for-gm-trucks-and-jeep-wranglers',
+          '/news/summer-scores-short-money-truck-mods-that-punch-above-their-price'].includes(url.pathname)
+          && matchesId(`thedrive.com:${url.pathname}`);
+      }
       return host === 'mycarquest.com'
         && url.pathname === '/2026/08/a-practical-upgrade-for-everyday-vehicle-protection-with-oedro-floor-mats.html'
         && matchesId(`mycarquest.com:${url.pathname}`);
@@ -306,7 +311,7 @@ function renderUserVoice(data, voice, radar) {
     </section>
     <section class="section voice-discussions" aria-labelledby="history-mentions-heading">
       <div class="section-head"><h2 id="history-mentions-heading">历史提及</h2></div>
-      <p class="voice-coverage">检索仍有覆盖缺口；无法访问或日期未核实的页面不计入已核实记录。</p>
+      <p class="voice-coverage">检索仍有覆盖缺口；无法访问、原帖身份或日期未核实的线索不计入已核实记录。</p>
       ${historyMentions.length ? renderMentions(historyMentions) : '<p class="empty-state">暂无历史提及</p>'}
     </section>
     <section class="section voice-discussions" aria-labelledby="unverified-mentions-heading">

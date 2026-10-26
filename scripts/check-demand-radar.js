@@ -205,6 +205,11 @@ function safeMentionLink(value, platform, objectId) {
     return onDomain('trustpilot.com') && !!review && matchesId(review[1]);
   }
   if (platform === '媒体文章') {
+    if (onDomain('thedrive.com')) {
+      return ['/news/save-20-on-bolt-on-running-boards-for-gm-trucks-and-jeep-wranglers',
+        '/news/summer-scores-short-money-truck-mods-that-punch-above-their-price'].includes(url.pathname)
+        && matchesId(`thedrive.com:${url.pathname}`);
+    }
     return host === 'mycarquest.com'
       && url.pathname === '/2026/08/a-practical-upgrade-for-everyday-vehicle-protection-with-oedro-floor-mats.html'
       && matchesId(`mycarquest.com:${url.pathname}`);

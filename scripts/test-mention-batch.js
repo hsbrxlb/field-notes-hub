@@ -185,6 +185,34 @@ check('MyCarQuest sponsored article binds only the verified host, path and ident
     publication:{date:'2026-08-24',published_at:null,precision:'date',source_timezone:null}});
   assert.deepEqual(validateMentions(candidate), []);
 });
+check('The Drive permits only two verified paths with a normalized native identity', () => {
+  const paths = ['/news/save-20-on-bolt-on-running-boards-for-gm-trucks-and-jeep-wranglers',
+    '/news/summer-scores-short-money-truck-mods-that-punch-above-their-price'];
+  for (const articlePath of paths) {
+    const link = `https://www.thedrive.com${articlePath}`;
+    const id = `thedrive.com:${articlePath}`;
+    assert(safeMentionLink(link, '媒体文章', id));
+    assert(safeMentionLink(`https://thedrive.com${articlePath}`, '媒体文章', id));
+    for (const [url, objectId] of [
+      [link.replace('https:', 'http:'), id],
+      [link.replace('www.thedrive.com', 'thedrive.com.evil.test'), id],
+      [link.replace('www.thedrive.com', 'news.thedrive.com'), id],
+      [link.replace('www.thedrive.com', 'thedrive-news.com'), id],
+      [link.replace('https://', 'https://reader:password@'), id],
+      [link + '/', id], [link + '/comments', id],
+      [link + '?utm_source=feed', id], [link + '#comments', id],
+      [link, `www.${id}`], [link, id.replace('com:/', 'com/')],
+      [link, `thedrive.com:${paths.find(path => path !== articlePath)}`],
+      ['https://www.thedrive.com/news/unverified-oedro-article', 'thedrive.com:/news/unverified-oedro-article']
+    ]) assert.equal(safeMentionLink(url, '媒体文章', objectId), false, url);
+    assert.equal(safeMentionLink(link, '汽车论坛', id), false);
+    const candidate = fixture();
+    candidate.history.push({platform:'媒体文章', object_id:id, source_link:link,
+      summary:'The Drive导购文章披露联盟佣金关系，属于推广提及。',
+      publication:{date:'2026-08-21', published_at:null, precision:'date', source_timezone:'UTC-04:00'}});
+    assert.deepEqual(validateMentions(candidate), []);
+  }
+});
 check('date-only uncertainty is wholly enclosed without inventing time', () => {
   const day = { date: '2026-10-10', published_at: null, precision: 'date', source_timezone: null };
   for (const zone of [null, 'America/Los_Angeles', '-07:00', 'UTC+08:00']) {
@@ -287,6 +315,37 @@ check('sponsored media stays visibly distinct from forum and user feedback', () 
   assert(html.includes('媒体文章') && html.includes(article.summary) && html.includes(article.source_link));
   candidate.history[0].object_id='mycarquest.com:/2026/08/another-article.html';
   assert(!render(candidate).includes(article.summary), 'article identity mismatch stays hidden');
+});
+check('The Drive media labels, own dates and promotional disclosure survive rendering', () => {
+  const paths = ['/news/save-20-on-bolt-on-running-boards-for-gm-trucks-and-jeep-wranglers',
+    '/news/summer-scores-short-money-truck-mods-that-punch-above-their-price'];
+  const candidate = fixture(); candidate.batch.items=[];
+  candidate.history = paths.map((articlePath, index) => ({platform:'媒体文章',
+    object_id:`thedrive.com:${articlePath}`, source_link:`https://www.thedrive.com${articlePath}`,
+    summary:`The Drive导购推广文章${index}披露联盟佣金关系，不能当独立车主测评。`,
+    publication:{date:index ? '2026-08-21' : '2026-10-21', published_at:null, precision:'date', source_timezone:'UTC-04:00'}}));
+  const html = render(candidate);
+  for (const article of candidate.history) {
+    assert(html.includes(article.summary) && html.includes(article.source_link));
+    assert(html.includes(`<time datetime="${article.publication.date}">${article.publication.date}</time>`));
+  }
+  assert.equal((html.match(/voice-thread-category">媒体文章/g) || []).length, 2);
+  candidate.history[0].object_id = candidate.history[1].object_id;
+  assert(!render(candidate).includes(candidate.history[0].summary), 'an article cannot borrow the other article identity');
+  candidate.history[1].source_link='https://www.thedrive.com/news/another-article';
+  candidate.history[1].object_id='thedrive.com:/news/another-article';
+  assert(!render(candidate).includes(candidate.history[1].summary), 'matching an unverified path and ID cannot broaden the renderer');
+});
+check('native Reddit comments under one thread remain separate from each other and the parent', () => {
+  const candidate = fixture(); candidate.batch.items=[];
+  const thread = 'https://www.reddit.com/r/kiacarnivals/comments/1vqy78m/';
+  candidate.history = [
+    { ...mention('parent'), object_id:'t3_1vqy78m', source_link:thread },
+    ...['p4lbkq9','p4mzvgd'].map(id => ({...mention(id), object_id:`t1_${id}`, source_link:`${thread}comment/${id}/`}))
+  ];
+  assert.deepEqual(validateMentions(candidate), []);
+  const html=render(candidate);
+  for (const item of candidate.history) assert.equal(html.split(item.summary).length - 1, 1);
 });
 check('render empty state is exact and malformed current dates stay outside current section', () => {
   const html = render();

@@ -178,6 +178,18 @@
         }
       },
       {
+        "platform": "媒体文章",
+        "object_id": "thedrive.com:/news/save-20-on-bolt-on-running-boards-for-gm-trucks-and-jeep-wranglers",
+        "source_link": "https://www.thedrive.com/news/save-20-on-bolt-on-running-boards-for-gm-trucks-and-jeep-wranglers",
+        "summary": "The Drive介绍OEDRO侧踏板优惠，并转述一名Wrangler车主的好评；文章披露联盟佣金关系，不能当独立车主测评。",
+        "publication": {
+          "date": "2026-10-21",
+          "published_at": null,
+          "precision": "date",
+          "source_timezone": "UTC-04:00"
+        }
+      },
+      {
         "platform": "Reddit",
         "object_id": "t3_1x7o7uf",
         "source_link": "https://www.reddit.com/r/OnTheRoadAgain/comments/1x7o7uf/four_weeks_of_hardware_runs_with_the_oedro_soft/",
@@ -286,6 +298,18 @@
         }
       },
       {
+        "platform": "Reddit",
+        "object_id": "t1_pb8bmnx",
+        "source_link": "https://www.reddit.com/r/ChryslerPacifica/comments/1wmihin/comment/pb8bmnx/",
+        "summary": "在未标品牌的脚垫体验帖下，一位评论者补充品牌是OEDRO；这是品牌辨认信息，不是该评论者的使用评价。",
+        "publication": {
+          "date": "2026-09-21",
+          "published_at": null,
+          "precision": "date",
+          "source_timezone": null
+        }
+      },
+      {
         "platform": "Bluesky",
         "object_id": "did:plc:p4txbuh27jx6yfhvmrqued4k/3mvenc65zdk2s",
         "source_link": "https://bsky.app/profile/did:plc:p4txbuh27jx6yfhvmrqued4k/post/3mvenc65zdk2s",
@@ -383,9 +407,57 @@
       },
       {
         "platform": "Reddit",
+        "object_id": "t1_p50qjij",
+        "source_link": "https://www.reddit.com/r/hondaridgeline/comments/1vu14xh/comment/p50qjij/",
+        "summary": "一位Ridgeline用户分享OEDRO硬三折货箱盖链接，称多次下雨未见漏水，并提到邮件订阅优惠；商业关系未核实。",
+        "publication": {
+          "date": "2026-08-21",
+          "published_at": null,
+          "precision": "date",
+          "source_timezone": null
+        }
+      },
+      {
+        "platform": "媒体文章",
+        "object_id": "thedrive.com:/news/summer-scores-short-money-truck-mods-that-punch-above-their-price",
+        "source_link": "https://www.thedrive.com/news/summer-scores-short-money-truck-mods-that-punch-above-their-price",
+        "summary": "The Drive的卡车升级优惠汇总提及OEDRO脚垫与座椅下储物箱。文章披露联盟佣金关系，属于导购推广。",
+        "publication": {
+          "date": "2026-08-21",
+          "published_at": null,
+          "precision": "date",
+          "source_timezone": "UTC-04:00"
+        }
+      },
+      {
+        "platform": "Reddit",
         "object_id": "t1_p4mzj7g",
         "source_link": "https://www.reddit.com/r/4Runner_6Gen/comments/1vnc9n1/comment/p4mzj7g/",
         "summary": "在脚垫推荐讨论中，一位用户提到使用过OEDRO与另一品牌全天候脚垫，并表示适配良好。",
+        "publication": {
+          "date": "2026-08-19",
+          "published_at": null,
+          "precision": "date",
+          "source_timezone": null
+        }
+      },
+      {
+        "platform": "Reddit",
+        "object_id": "t1_p4lbkq9",
+        "source_link": "https://www.reddit.com/r/kiacarnivals/comments/1vqy78m/comment/p4lbkq9/",
+        "summary": "一位评论者称同时使用WeatherTech和OEDRO脚垫，认为两者都值得购买；商业关系未核实。",
+        "publication": {
+          "date": "2026-08-19",
+          "published_at": null,
+          "precision": "date",
+          "source_timezone": null
+        }
+      },
+      {
+        "platform": "Reddit",
+        "object_id": "t1_p4mzvgd",
+        "source_link": "https://www.reddit.com/r/kiacarnivals/comments/1vqy78m/comment/p4mzvgd/",
+        "summary": "一位评论者称自己的两辆车分别使用3W和OEDRO脚垫，认为贴合良好；商业关系未核实。",
         "publication": {
           "date": "2026-08-19",
           "published_at": null,
