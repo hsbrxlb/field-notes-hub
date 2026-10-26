@@ -204,8 +204,18 @@ function safeMentionLink(value, platform, objectId) {
     const review = /^\/reviews\/([a-f0-9]+)\/?$/i.exec(url.pathname);
     return onDomain('trustpilot.com') && !!review && matchesId(review[1]);
   }
-  const forumId = /^\/(?:threads|posts)\/(?:[^/]*[.-])?(\d+)\/?$/i.exec(url.pathname)?.[1]
-    || /^\/f\d+\/[^/]+-(\d+)\/?$/i.exec(url.pathname)?.[1];
+  const forumHost = host.replace(/^www\./, '');
+  if (platform === '汽车论坛' && ['ram-rho.com', 'f150lightningforum.com'].includes(forumHost)) {
+    const replyPattern = forumHost === 'ram-rho.com'
+      ? /^\/threads\/[^/]+\.\d+\/post-(\d+)\/?$/i
+      : /^\/forum\/threads\/[^/]+\.\d+\/post-(\d+)\/?$/i;
+    const reply = replyPattern.exec(url.pathname);
+    return !!reply && matchesId(`${forumHost}:${reply[1]}`);
+  }
+  const forumPath = onDomain('mavericktruckclub.com')
+    ? url.pathname.replace(/^\/forum(?=\/threads\/)/, '') : url.pathname;
+  const forumId = /^\/(?:threads|posts)\/(?:[^/]*[.-])?(\d+)\/?$/i.exec(forumPath)?.[1]
+    || /^\/f\d+\/[^/]+-(\d+)\/?$/i.exec(forumPath)?.[1];
   return platform === '汽车论坛' && forumDomains.some((domain) => host === domain || host.endsWith(`.${domain}`))
     && !!forumId && !blockedPathPattern.test(url.pathname) && matchesId(`${host.replace(/^www\./, '')}:${forumId}`);
 }

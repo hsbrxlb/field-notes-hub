@@ -198,8 +198,18 @@ function renderUserVoice(data, voice, radar) {
       const review = /^\/reviews\/([a-f0-9]+)\/?$/i.exec(url.pathname);
       return onDomain('trustpilot.com') && !!review && matchesId(review[1]);
     }
-    const forumId = /^\/(?:threads|posts)\/(?:[^/]*[.-])?(\d+)\/?$/i.exec(url.pathname)?.[1]
-      || /^\/f\d+\/[^/]+-(\d+)\/?$/i.exec(url.pathname)?.[1];
+    const forumHost = host.replace(/^www\./, '');
+    if (platform === '汽车论坛' && ['ram-rho.com', 'f150lightningforum.com'].includes(forumHost)) {
+      const replyPattern = forumHost === 'ram-rho.com'
+        ? /^\/threads\/[^/]+\.\d+\/post-(\d+)\/?$/i
+        : /^\/forum\/threads\/[^/]+\.\d+\/post-(\d+)\/?$/i;
+      const reply = replyPattern.exec(url.pathname);
+      return !!reply && matchesId(`${forumHost}:${reply[1]}`);
+    }
+    const forumPath = onDomain('mavericktruckclub.com')
+      ? url.pathname.replace(/^\/forum(?=\/threads\/)/, '') : url.pathname;
+    const forumId = /^\/(?:threads|posts)\/(?:[^/]*[.-])?(\d+)\/?$/i.exec(forumPath)?.[1]
+      || /^\/f\d+\/[^/]+-(\d+)\/?$/i.exec(forumPath)?.[1];
     return platform === '汽车论坛' && forumDomains.some((domain) => host === domain || host.endsWith(`.${domain}`))
       && !!forumId && !blockedPathPattern.test(url.pathname) && matchesId(`${host.replace(/^www\./, '')}:${forumId}`);
   }
@@ -261,17 +271,20 @@ function renderUserVoice(data, voice, radar) {
     return bounds !== null && bounds[0] >= windowStart && bounds[1] < windowEnd;
   }));
   const currentKeys = new Set(currentMentions.map(mentionKey));
-  const historyMentions = orderMentionIntervals(uniqueMentions(visibleMentions(mentions?.history)).filter((item) => !currentKeys.has(mentionKey(item))));
-  const knownMentions = [...currentMentions, ...historyMentions];
+  const storedHistory = uniqueMentions(visibleMentions(mentions?.history));
+  const historyMentions = orderMentionIntervals(storedHistory.filter((item) =>
+    item.publication.precision !== 'unknown' && !currentKeys.has(mentionKey(item))));
+  const undatedMentions = storedHistory.filter((item) => item.publication.precision === 'unknown');
+  const knownMentions = [...currentMentions, ...historyMentions, ...undatedMentions];
   const legacyItems = radarItems.filter((item) => !knownMentions.some((known) =>
     safeMentionLink(item.source_link, known.platform, known.object_id)));
   const currentEmptyText = !mentions || radar?.method === 'verified_mention_history_migration'
     ? '三天批次尚待首次定时采集。'
     : '最近3天暂无日期和原文均已核实的OEDRO提及。';
-  const renderMentions = (items) => `<div class="voice-card-grid">${items.map((item) => `<article class="voice-thread voice-mention" data-searchable>
-    <div class="voice-thread-top"><span class="voice-thread-category">${escapeHtml(item.platform)}</span>${item.publication.date ? `<time datetime="${escapeHtml(item.publication.published_at || item.publication.date)}">${escapeHtml(item.publication.date)}</time>` : '<span>日期不明</span>'}</div>
-    <p>${escapeHtml(item.summary)}</p>
-    <div class="voice-thread-bottom"><a href="${escapeHtml(item.source_link)}" target="_blank" rel="noopener noreferrer">查看原帖 <span aria-hidden="true">↗</span></a></div>
+  const renderMentions = (items) => `<div class="voice-thread-list">${items.map((item) => `<article class="voice-thread voice-mention" data-searchable>
+    <div class="voice-thread-meta">${item.publication.date ? `<time datetime="${escapeHtml(item.publication.published_at || item.publication.date)}">${escapeHtml(item.publication.date)}</time>` : '<span class="voice-thread-undated">日期不明 · 待核实</span>'}<span class="voice-thread-category">${escapeHtml(item.platform)}</span></div>
+    <p class="voice-thread-summary">${escapeHtml(item.summary)}</p>
+    <a class="voice-thread-link" href="${escapeHtml(item.source_link)}" target="_blank" rel="noopener noreferrer">查看原帖 <span aria-hidden="true">↗</span></a>
   </article>`).join('')}</div>`;
   document.title = `${copy.title || '问题与反馈'}｜${data.site.title}`;
   document.querySelector('meta[name="description"]').content = 'OEDRO 货箱盖、脚踏板与车型相关的公开讨论和原帖。';
@@ -285,20 +298,20 @@ function renderUserVoice(data, voice, radar) {
       <div class="section-head"><h2 id="history-mentions-heading">历史提及</h2></div>
       ${historyMentions.length ? renderMentions(historyMentions) : '<p class="empty-state">暂无历史提及</p>'}
     </section>
-    <section class="voice-discussions" aria-label="公开讨论">
-      <div class="section-head"><h2>待核实的历史线索</h2></div>
-      <div class="voice-card-grid">
-        ${legacyItems.map((item, index) => {
+    <section class="section voice-discussions" aria-labelledby="unverified-mentions-heading">
+      <div class="section-head"><h2 id="unverified-mentions-heading">待核实的历史线索</h2></div>
+      ${undatedMentions.length ? renderMentions(undatedMentions) : ''}
+      ${legacyItems.length ? `<div class="voice-thread-list">
+        ${legacyItems.map((item) => {
           const thread = voiceThreadContext(item);
           return `<article class="voice-thread" data-searchable>
-            <div class="voice-thread-top"><span class="voice-thread-category">${escapeHtml(thread.category)}</span><span class="voice-thread-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span></div>
-            <h2>${escapeHtml(thread.heading)}</h2>
-            <p class="voice-thread-community">${escapeHtml(thread.community)}</p>
-            <div class="voice-thread-bottom"><span>${escapeHtml(sourceLabels[item.source_family] || item.source_family)}</span><a href="${escapeHtml(item.source_link)}" target="_blank" rel="noopener noreferrer" aria-label="查看原帖：${escapeHtml(thread.heading)}">查看原帖 <span aria-hidden="true">↗</span></a></div>
+            <div class="voice-thread-meta"><span class="voice-thread-undated">日期未核实</span><span class="voice-thread-category">${escapeHtml(sourceLabels[item.source_family] || item.source_family)}</span></div>
+            <div class="voice-thread-summary"><h2>${escapeHtml(thread.heading)}</h2><p class="voice-thread-community">${escapeHtml(thread.community)}</p></div>
+            <a class="voice-thread-link" href="${escapeHtml(item.source_link)}" target="_blank" rel="noopener noreferrer" aria-label="查看原帖：${escapeHtml(thread.heading)}">查看原帖 <span aria-hidden="true">↗</span></a>
           </article>`;
         }).join('')}
-      </div>
-      ${legacyItems.length ? '' : '<p class="empty-state">暂无公开问题记录</p>'}
+      </div>` : ''}
+      ${legacyItems.length || undatedMentions.length ? '' : '<p class="empty-state">暂无公开问题记录</p>'}
     </section>
     ${insights.length ? `<section class="section user-voice-surface">
       <div class="section-head"><h2>已确认的洞察与行动</h2></div>

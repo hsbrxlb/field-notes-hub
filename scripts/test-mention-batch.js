@@ -128,6 +128,9 @@ check('platform IDs bind posts, specific comments, actor scopes and forum hosts'
     ['Bluesky', 'https://bsky.app/profile/driver.test/post/3abc123', 'driver.test/3abc123'],
     ['汽车论坛', 'https://www.tacomaworld.com/threads/oedro.12345/', 'tacomaworld.com:12345'],
     ['汽车论坛', 'https://www.f150forum.com/f118/oedro-587129/', 'f150forum.com:587129'],
+    ['汽车论坛', 'https://www.ram-rho.com/threads/oedro-running-boards.4173/post-83009', 'ram-rho.com:83009'],
+    ['汽车论坛', 'https://www.f150lightningforum.com/forum/threads/triplealiners-floor-mats-review.37804/post-710136', 'f150lightningforum.com:710136'],
+    ['汽车论坛', 'https://www.mavericktruckclub.com/forum/threads/oedro-low-profile-tri-fold-tonneau-cover.83529/', 'mavericktruckclub.com:83529'],
     ['X', 'https://x.com/driver/status/123456789', '123456789'],
     ['Trustpilot', 'https://trustpilot.com/reviews/6988abacd3525cdd90dd0f7a', '6988abacd3525cdd90dd0f7a']
   ];
@@ -141,6 +144,20 @@ check('platform IDs bind posts, specific comments, actor scopes and forum hosts'
   assert.equal(safeMentionLink(valid[3][1], 'YouTube', 'abcdefghijk:Ugx123'), false);
   assert.equal(safeMentionLink(valid[5][1], 'Bluesky', 'other.test/3abc123'), false);
   assert.equal(safeMentionLink(valid[6][1], '汽车论坛', 'f150forum.com:12345'), false);
+  const invalidForumObjects = [
+    ['https://www.ram-rho.com/threads/oedro-running-boards.4173/post-83009', 'ram-rho.com:4173'],
+    ['https://www.f150lightningforum.com/forum/threads/triplealiners-floor-mats-review.37804/post-710136', 'f150lightningforum.com:37804'],
+    ['https://www.ram-rho.com.evil.test/threads/oedro-running-boards.4173/post-83009', 'ram-rho.com:83009'],
+    ['https://unknown.ram-rho.com/threads/oedro-running-boards.4173/post-83009', 'unknown.ram-rho.com:83009'],
+    ['https://www.ram-rho.com/threads/oedro-running-boards.4173/', 'ram-rho.com:4173'],
+    ['https://www.ram-rho.com/forum/threads/oedro-running-boards.4173/post-83009', 'ram-rho.com:83009'],
+    ['https://www.f150lightningforum.com/threads/triplealiners-floor-mats-review.37804/post-710136', 'f150lightningforum.com:710136'],
+    ['https://www.f150lightningforum.com/forum/threads/triplealiners-floor-mats-review.37804/post-710136/extra', 'f150lightningforum.com:710136'],
+    ['https://www.mavericktruckclub.com/forum/users/example.83529/', 'mavericktruckclub.com:83529'],
+    ['https://www.mavericktruckclub.com.evil.test/forum/threads/oedro.83529/', 'mavericktruckclub.com:83529']
+  ];
+  for (const [link, id] of invalidForumObjects) assert.equal(safeMentionLink(link, '汽车论坛', id), false, link);
+
 });
 check('date-only uncertainty is wholly enclosed without inventing time', () => {
   const day = { date: '2026-10-10', published_at: null, precision: 'date', source_timezone: null };
@@ -207,8 +224,30 @@ check('rendered sections sort publication, remove cross-batch duplicates, and pr
   assert(html.indexOf('安装讨论 oldpost') < html.indexOf('安装讨论 unknown'));
   assert(html.includes('<time datetime="2026-10-08">2026-10-08</time>')); assert(html.includes('日期不明'));
   assert(html.indexOf('历史提及') < html.indexOf('待核实的历史线索'));
+  const historySection = html.split('id="history-mentions-heading"')[1].split('</section>')[0];
+  const unverifiedSection = html.split('id="unverified-mentions-heading"')[1].split('</section>')[0];
+  assert(!historySection.includes('安装讨论 unknown'), 'undated mentions stay outside verified history');
+  assert(unverifiedSection.includes('安装讨论 unknown'));
+  assert(unverifiedSection.includes('日期不明 · 待核实'));
+  assert(!unverifiedSection.includes('<time'), 'undated and legacy clues never acquire collection dates');
   assert(html.includes('已确认的洞察与行动')); assert(html.includes('常见问题'));
   assert.equal((html.match(/voice-thread(?: voice-mention)?" data-searchable/g) || []).length, legacy.items.length + 5);
+});
+check('new forum replies render only with their own reply identity', () => {
+  const candidate = fixture(); candidate.batch.items = [];
+  candidate.history = [
+    { ...mention('rho'), platform: '汽车论坛', object_id: 'ram-rho.com:83009',
+      source_link: 'https://www.ram-rho.com/threads/oedro-running-boards.4173/post-83009' },
+    { ...mention('lightning'), platform: '汽车论坛', object_id: 'f150lightningforum.com:710136',
+      source_link: 'https://www.f150lightningforum.com/forum/threads/triplealiners-floor-mats-review.37804/post-710136' },
+    { ...mention('maverick'), platform: '汽车论坛', object_id: 'mavericktruckclub.com:83529',
+      source_link: 'https://www.mavericktruckclub.com/forum/threads/oedro-low-profile-tri-fold-tonneau-cover.83529/' }
+  ];
+  assert.deepEqual(validateMentions(candidate), []);
+  const html = render(candidate);
+  for (const item of candidate.history) assert(html.includes(item.summary) && html.includes(item.source_link));
+  candidate.history[1].object_id = 'f150lightningforum.com:37804';
+  assert(!render(candidate).includes('安装讨论 lightning'), 'thread identity cannot stand in for a linked reply');
 });
 check('render empty state is exact and malformed current dates stay outside current section', () => {
   const html = render();
