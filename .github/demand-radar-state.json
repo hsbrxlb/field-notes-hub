@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-10T03:54:08+00:00",
+  "updated_at": "2026-10-26T01:38:37.000Z",
   "query_plan_revision": "d5cd081d257b0cbc2cafe477722847086a253283",
   "cursors": {
     "query-plan:tavily:full|bluesky_brand": 0,
@@ -3372,8 +3372,8 @@
   },
   "mention_batch": {
     "schema_version": 1,
-    "batch_id": "OEDRO-72H-20261014",
-    "window_start": "2026-10-11T01:36:24.000Z",
-    "window_end": "2026-10-14T01:36:24.000Z"
+    "batch_id": "OEDRO-72H-2026-10-26",
+    "window_start": "2026-10-23T01:38:37.000Z",
+    "window_end": "2026-10-26T01:38:37.000Z"
   }
 }

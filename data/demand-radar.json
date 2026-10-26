@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-10T03:54:08+00:00",
-  "last_attempt_at": "2026-10-10T03:53:11+00:00",
-  "last_success_at": "2026-10-10T03:54:08+00:00",
+  "generated_at": "2026-10-26T01:38:37.000Z",
+  "last_attempt_at": "2026-10-26T01:38:37.000Z",
+  "last_success_at": "2026-10-26T01:38:37.000Z",
   "method": "verified_mention_72h_cloud_batch",
   "status": "success",
   "stale_after_hours": 96,
@@ -146,12 +146,37 @@
   "mentions": {
     "schema_version": 1,
     "batch": {
-      "id": "OEDRO-72H-20261014",
-      "window_start": "2026-10-11T01:36:24.000Z",
-      "window_end": "2026-10-14T01:36:24.000Z",
-      "items": []
+      "id": "OEDRO-72H-2026-10-26",
+      "window_start": "2026-10-23T01:38:37.000Z",
+      "window_end": "2026-10-26T01:38:37.000Z",
+      "items": [
+        {
+          "platform": "Bluesky",
+          "object_id": "at://did:plc:p4txbuh27jx6yfhvmrqued4k/app.bsky.feed.post/3myjpltfhss26",
+          "source_link": "https://bsky.app/profile/did:plc:p4txbuh27jx6yfhvmrqued4k/post/3myjpltfhss26",
+          "summary": "一则公开推广帖介绍OEDRO汽车配件可用于车辆升级及户外越野场景。",
+          "publication": {
+            "date": "2026-10-23",
+            "published_at": "2026-10-23T08:01:34.942Z",
+            "precision": "fractional_second",
+            "source_timezone": "UTC"
+          }
+        }
+      ]
     },
     "history": [
+      {
+        "platform": "Bluesky",
+        "object_id": "at://did:plc:p4txbuh27jx6yfhvmrqued4k/app.bsky.feed.post/3myjpltfhss26",
+        "source_link": "https://bsky.app/profile/did:plc:p4txbuh27jx6yfhvmrqued4k/post/3myjpltfhss26",
+        "summary": "一则公开推广帖介绍OEDRO汽车配件可用于车辆升级及户外越野场景。",
+        "publication": {
+          "date": "2026-10-23",
+          "published_at": "2026-10-23T08:01:34.942Z",
+          "precision": "fractional_second",
+          "source_timezone": "UTC"
+        }
+      },
       {
         "platform": "Reddit",
         "object_id": "t1_ofbf3yp",
