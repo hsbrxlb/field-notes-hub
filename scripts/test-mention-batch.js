@@ -129,6 +129,7 @@ check('platform IDs bind posts, specific comments, actor scopes and forum hosts'
     ['汽车论坛', 'https://www.tacomaworld.com/threads/oedro.12345/', 'tacomaworld.com:12345'],
     ['汽车论坛', 'https://www.f150forum.com/f118/oedro-587129/', 'f150forum.com:587129'],
     ['汽车论坛', 'https://www.ram-rho.com/threads/oedro-running-boards.4173/post-83009', 'ram-rho.com:83009'],
+    ['汽车论坛', 'https://www.ram-rho.com/threads/oedro-running-boards.4173/', 'ram-rho.com:4173'],
     ['汽车论坛', 'https://www.f150lightningforum.com/forum/threads/triplealiners-floor-mats-review.37804/post-710136', 'f150lightningforum.com:710136'],
     ['汽车论坛', 'https://www.mavericktruckclub.com/forum/threads/oedro-low-profile-tri-fold-tonneau-cover.83529/', 'mavericktruckclub.com:83529'],
     ['X', 'https://x.com/driver/status/123456789', '123456789'],
@@ -149,7 +150,7 @@ check('platform IDs bind posts, specific comments, actor scopes and forum hosts'
     ['https://www.f150lightningforum.com/forum/threads/triplealiners-floor-mats-review.37804/post-710136', 'f150lightningforum.com:37804'],
     ['https://www.ram-rho.com.evil.test/threads/oedro-running-boards.4173/post-83009', 'ram-rho.com:83009'],
     ['https://unknown.ram-rho.com/threads/oedro-running-boards.4173/post-83009', 'unknown.ram-rho.com:83009'],
-    ['https://www.ram-rho.com/threads/oedro-running-boards.4173/', 'ram-rho.com:4173'],
+    ['https://www.ram-rho.com/threads/oedro-running-boards.4173/', 'ram-rho.com:83009'],
     ['https://www.ram-rho.com/forum/threads/oedro-running-boards.4173/post-83009', 'ram-rho.com:83009'],
     ['https://www.f150lightningforum.com/threads/triplealiners-floor-mats-review.37804/post-710136', 'f150lightningforum.com:710136'],
     ['https://www.f150lightningforum.com/forum/threads/triplealiners-floor-mats-review.37804/post-710136/extra', 'f150lightningforum.com:710136'],
@@ -158,6 +159,31 @@ check('platform IDs bind posts, specific comments, actor scopes and forum hosts'
   ];
   for (const [link, id] of invalidForumObjects) assert.equal(safeMentionLink(link, '汽车论坛', id), false, link);
 
+});
+check('MyCarQuest sponsored article binds only the verified host, path and identity', () => {
+  const link = 'https://mycarquest.com/2026/08/a-practical-upgrade-for-everyday-vehicle-protection-with-oedro-floor-mats.html';
+  const id = 'mycarquest.com:/2026/08/a-practical-upgrade-for-everyday-vehicle-protection-with-oedro-floor-mats.html';
+  assert(safeMentionLink(link, '媒体文章', id));
+  for (const [url, objectId] of [
+    [link.replace('https:', 'http:'), id],
+    [link.replace('mycarquest.com', 'mycarquest.com.evil.test'), id],
+    [link.replace('mycarquest.com', 'unknown.mycarquest.com'), id],
+    [link.replace('mycarquest.com', 'www.mycarquest.com'), id],
+    [link.replace('/08/', '/13/'), id.replace('/08/', '/13/')],
+    [link.replace('/2026/08/', '/category/'), id],
+    [link.replace('.html', ''), id],
+    [link.replace('floor-mats', 'another-product'), id.replace('floor-mats', 'another-product')],
+    [link, id.replace('com:/', 'com/')],
+    [link + '?token=private', id],
+    [link + '#comments', id],
+    [link, id.replace('floor-mats', 'running-boards')]
+  ]) assert.equal(safeMentionLink(url, '媒体文章', objectId), false, url);
+  assert.equal(safeMentionLink(link, '汽车论坛', id), false, 'media cannot masquerade as a forum object');
+  const candidate = fixture();
+  candidate.history.push({platform:'媒体文章', object_id:id, source_link:link,
+    summary:'一篇标注为赞助内容的文章介绍OEDRO脚垫；不作为独立车主评价。',
+    publication:{date:'2026-08-24',published_at:null,precision:'date',source_timezone:null}});
+  assert.deepEqual(validateMentions(candidate), []);
 });
 check('date-only uncertainty is wholly enclosed without inventing time', () => {
   const day = { date: '2026-10-10', published_at: null, precision: 'date', source_timezone: null };
@@ -249,6 +275,19 @@ check('new forum replies render only with their own reply identity', () => {
   candidate.history[1].object_id = 'f150lightningforum.com:37804';
   assert(!render(candidate).includes('安装讨论 lightning'), 'thread identity cannot stand in for a linked reply');
 });
+check('sponsored media stays visibly distinct from forum and user feedback', () => {
+  const candidate = fixture(); candidate.batch.items=[];
+  const article={platform:'媒体文章',
+    object_id:'mycarquest.com:/2026/08/a-practical-upgrade-for-everyday-vehicle-protection-with-oedro-floor-mats.html',
+    source_link:'https://mycarquest.com/2026/08/a-practical-upgrade-for-everyday-vehicle-protection-with-oedro-floor-mats.html',
+    summary:'一篇标注为赞助内容的文章介绍OEDRO脚垫；不作为独立车主评价。',
+    publication:{date:'2026-08-24',published_at:null,precision:'date',source_timezone:null}};
+  candidate.history=[article];
+  const html=render(candidate);
+  assert(html.includes('媒体文章') && html.includes(article.summary) && html.includes(article.source_link));
+  candidate.history[0].object_id='mycarquest.com:/2026/08/another-article.html';
+  assert(!render(candidate).includes(article.summary), 'article identity mismatch stays hidden');
+});
 check('render empty state is exact and malformed current dates stay outside current section', () => {
   const html = render();
   assert(html.includes('三天批次尚待首次定时采集。'));
@@ -272,7 +311,14 @@ check('render date-only text survives timezone changes and HTML is escaped', () 
   assert(html.includes('<time datetime="2026-10-10">2026-10-10</time>')); assert(html.includes('&lt;example&gt; &amp;'));
   assert(!html.includes('<example>'));
 });
-check('overlapping intervals preserve uncertainty but never invert definite chronology', () => {
+check('source dates descend even when date-only timezone uncertainty overlaps the prior day', () => {
+  const dated = mention('sep6', '2026-09-06T12:45:06.407Z');
+  const nextDate = { ...mention('sep7'), publication: { date:'2026-09-07', published_at:null, precision:'date', source_timezone:null } };
+  assert.deepEqual(orderMentionIntervals([dated, nextDate]), [nextDate, dated]);
+  const candidate = fixture(); candidate.batch.items=[]; candidate.history=[dated, nextDate];
+  assert(render(candidate).indexOf(nextDate.summary) < render(candidate).indexOf(dated.summary));
+});
+check('same-date overlapping intervals preserve uncertainty without inventing a time', () => {
   const older = mention('older', '2026-10-08T03:00:00.123456789Z');
   const first = mention('first', '2026-10-10T08:00:00.123456789Z');
   const day = { ...mention('day'), publication: { date: '2026-10-10', published_at: null, precision: 'date', source_timezone: null } };

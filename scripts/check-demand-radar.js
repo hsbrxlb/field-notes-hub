@@ -141,7 +141,7 @@ function validateDemandRadar(candidate) {
 
 const mentionFields = new Set(['platform', 'object_id', 'source_link', 'summary', 'publication']);
 const publicationFields = new Set(['date', 'published_at', 'precision', 'source_timezone']);
-const platforms = new Set(['Reddit', '汽车论坛', 'YouTube', 'Bluesky', 'X', 'Trustpilot']);
+const platforms = new Set(['Reddit', '汽车论坛', 'YouTube', 'Bluesky', 'X', 'Trustpilot', '媒体文章']);
 const forumDomains = ['f150forum.com', 'mavericktruckclub.com', 'tacomaworld.com', 'tundras.com',
   'ramforum.com', 'silveradosierra.com', 'jeepforum.com', 'jlwranglerforums.com', 'jeepgladiatorforum.com', 'coloradofans.com'];
 const awareIsoPattern = /^\d{4}-\d{2}-\d{2}T(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d(?:\.\d{1,9})?(?:Z|[+-](?:0\d|1[0-4]):[0-5]\d)$/;
@@ -204,13 +204,21 @@ function safeMentionLink(value, platform, objectId) {
     const review = /^\/reviews\/([a-f0-9]+)\/?$/i.exec(url.pathname);
     return onDomain('trustpilot.com') && !!review && matchesId(review[1]);
   }
+  if (platform === '媒体文章') {
+    return host === 'mycarquest.com'
+      && url.pathname === '/2026/08/a-practical-upgrade-for-everyday-vehicle-protection-with-oedro-floor-mats.html'
+      && matchesId(`mycarquest.com:${url.pathname}`);
+  }
   const forumHost = host.replace(/^www\./, '');
   if (platform === '汽车论坛' && ['ram-rho.com', 'f150lightningforum.com'].includes(forumHost)) {
     const replyPattern = forumHost === 'ram-rho.com'
       ? /^\/threads\/[^/]+\.\d+\/post-(\d+)\/?$/i
       : /^\/forum\/threads\/[^/]+\.\d+\/post-(\d+)\/?$/i;
     const reply = replyPattern.exec(url.pathname);
-    return !!reply && matchesId(`${forumHost}:${reply[1]}`);
+    const thread = forumHost === 'ram-rho.com'
+      ? /^\/threads\/[^/]+\.(\d+)\/?$/i.exec(url.pathname) : null;
+    const nativeId = reply?.[1] || thread?.[1];
+    return !!nativeId && matchesId(`${forumHost}:${nativeId}`);
   }
   const forumPath = onDomain('mavericktruckclub.com')
     ? url.pathname.replace(/^\/forum(?=\/threads\/)/, '') : url.pathname;
@@ -251,9 +259,11 @@ function orderMentionIntervals(items) {
   });
   const ordered = [];
   while (known.length) {
-    const latestStart = known.reduce((latest, record) => record.start > latest ? record.start : latest, known[0].start);
-    // Only incomparable intervals retain input order; definite chronology always wins.
-    const nextIndex = known.findIndex((record) => record.end >= latestStart);
+    const latestDate = known.reduce((date, record) => record.item.publication.date > date ? record.item.publication.date : date, known[0].item.publication.date);
+    const sameDate = known.filter((record) => record.item.publication.date === latestDate);
+    const latestStart = sameDate.reduce((latest, record) => record.start > latest ? record.start : latest, sameDate[0].start);
+    // Within a source date, retain uncertainty without inventing a publication time.
+    const nextIndex = known.findIndex((record) => record.item.publication.date === latestDate && record.end >= latestStart);
     ordered.push(known.splice(nextIndex, 1)[0].item);
   }
   return ordered.concat(unknown);

@@ -198,13 +198,21 @@ function renderUserVoice(data, voice, radar) {
       const review = /^\/reviews\/([a-f0-9]+)\/?$/i.exec(url.pathname);
       return onDomain('trustpilot.com') && !!review && matchesId(review[1]);
     }
+    if (platform === '媒体文章') {
+      return host === 'mycarquest.com'
+        && url.pathname === '/2026/08/a-practical-upgrade-for-everyday-vehicle-protection-with-oedro-floor-mats.html'
+        && matchesId(`mycarquest.com:${url.pathname}`);
+    }
     const forumHost = host.replace(/^www\./, '');
     if (platform === '汽车论坛' && ['ram-rho.com', 'f150lightningforum.com'].includes(forumHost)) {
       const replyPattern = forumHost === 'ram-rho.com'
         ? /^\/threads\/[^/]+\.\d+\/post-(\d+)\/?$/i
         : /^\/forum\/threads\/[^/]+\.\d+\/post-(\d+)\/?$/i;
       const reply = replyPattern.exec(url.pathname);
-      return !!reply && matchesId(`${forumHost}:${reply[1]}`);
+      const thread = forumHost === 'ram-rho.com'
+        ? /^\/threads\/[^/]+\.(\d+)\/?$/i.exec(url.pathname) : null;
+      const nativeId = reply?.[1] || thread?.[1];
+      return !!nativeId && matchesId(`${forumHost}:${nativeId}`);
     }
     const forumPath = onDomain('mavericktruckclub.com')
       ? url.pathname.replace(/^\/forum(?=\/threads\/)/, '') : url.pathname;
@@ -245,9 +253,11 @@ function renderUserVoice(data, voice, radar) {
     });
     const ordered = [];
     while (known.length) {
-      const latestStart = known.reduce((latest, record) => record.start > latest ? record.start : latest, known[0].start);
-      // Only incomparable intervals retain input order; definite chronology always wins.
-      const nextIndex = known.findIndex((record) => record.end >= latestStart);
+      const latestDate = known.reduce((date, record) => record.item.publication.date > date ? record.item.publication.date : date, known[0].item.publication.date);
+      const sameDate = known.filter((record) => record.item.publication.date === latestDate);
+      const latestStart = sameDate.reduce((latest, record) => record.start > latest ? record.start : latest, sameDate[0].start);
+      // Within a source date, retain uncertainty without inventing a publication time.
+      const nextIndex = known.findIndex((record) => record.item.publication.date === latestDate && record.end >= latestStart);
       ordered.push(known.splice(nextIndex, 1)[0].item);
     }
     return ordered.concat(unknown);
@@ -296,6 +306,7 @@ function renderUserVoice(data, voice, radar) {
     </section>
     <section class="section voice-discussions" aria-labelledby="history-mentions-heading">
       <div class="section-head"><h2 id="history-mentions-heading">历史提及</h2></div>
+      <p class="voice-coverage">检索仍有覆盖缺口；无法访问或日期未核实的页面不计入已核实记录。</p>
       ${historyMentions.length ? renderMentions(historyMentions) : '<p class="empty-state">暂无历史提及</p>'}
     </section>
     <section class="section voice-discussions" aria-labelledby="unverified-mentions-heading">
