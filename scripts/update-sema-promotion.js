@@ -35,9 +35,9 @@ function merge(records, incoming) {
 function build(records) {
   const timestamp = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
   const entries = [...records].sort((a, b) => Date.parse(b.published_at) - Date.parse(a.published_at)).map(record => `<article class="promotion-record">
-          <div class="promotion-meta"><time datetime="${escape(record.published_at)}">${timestamp.format(new Date(record.published_at))} 上海</time><h2>${escape(record.channel)}</h2><span class="promotion-status" data-status="${record.status}">${record.status}</span></div>
+          <div class="promotion-meta"><time datetime="${escape(record.published_at)}">${timestamp.format(new Date(record.published_at))} 上海</time><h2>${escape(record.channel)}</h2><span class="promotion-status" data-status="${record.status}">${record.status === 'pending' ? '已提交，待站方审核' : 'live'}</span></div>
           <p class="promotion-text" lang="en">${escape(record.text)}</p>
-          <div class="promotion-links"><a href="${escape(record.url)}" target="_blank" rel="noopener noreferrer">查看原帖 ↗</a>${record.destination_url ? `<a href="${escape(record.destination_url)}" target="_blank" rel="noopener noreferrer">帖内活动链接 ↗</a>` : ''}</div>
+          <div class="promotion-links"><a href="${escape(record.url)}" target="_blank" rel="noopener noreferrer">${record.status === 'pending' ? '查看提交位置' : '查看原帖'} ↗</a>${record.destination_url ? `<a href="${escape(record.destination_url)}" target="_blank" rel="noopener noreferrer">帖内活动链接 ↗</a>` : ''}</div>
         </article>`).join('\n        ');
   const template = fs.readFileSync(path.join(root, 'sema-plan.html'), 'utf8');
   return template.replaceAll('sema-plan', 'sema-promotion').replaceAll('SEMA门票活动', 'SEMA宣传记录')
