@@ -1,0 +1,11 @@
+.promotion-list { border-top: 2px solid var(--accent); }
+.promotion-record { padding: var(--space-5) 0; border-bottom: 1px solid var(--border-strong); }
+.promotion-meta { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-5); align-items: baseline; margin-bottom: var(--space-3); }
+.promotion-meta time { color: var(--accent); font-variant-numeric: tabular-nums; }
+.promotion-record h2 { display: inline; margin: 0; font-size: var(--type-body); }
+.promotion-status { color: var(--status-active); }
+.promotion-status[data-status="pending"] { color: var(--status-pending); }
+.promotion-text { max-width: 80ch; margin: 0 0 var(--space-3); white-space: pre-wrap; overflow-wrap: anywhere; }
+.promotion-links { display: flex; flex-wrap: wrap; gap: var(--space-5); }
+.promotion-links a { display: inline-flex; align-items: center; min-height: var(--touch-size); color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 600px) { .promotion-meta { gap: var(--space-2) var(--space-4); } .promotion-meta time { flex-basis: 100%; } }

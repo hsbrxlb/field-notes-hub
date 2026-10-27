@@ -6,6 +6,8 @@
 
 ## 当前页面
 
+- `sema-promotion.html`：SEMA宣传记录，按上海时间倒序展示实际外发的原文、渠道、链接和 live/pending 状态。数据为 `data/sema-promotion.json`；追加公开字段记录：`node scripts/update-sema-promotion.js --input <记录.json>`，同渠道帖子 ID 或 URL 与文案散列去重，pending 可更新为 live。保留原帖时间；候选和未提交内容不记为 live。`node scripts/update-sema-promotion.js --check` 核对静态页面。
+
 - `newsletter.html`：The Glovebox Newsletter，完整首期邮件、桌面／手机预览及逐段中英对照。沿用已选浅色刊物与摄影，正文涵盖冷天胎压变化、车辆标签、检查步骤及系统故障判断。Hub 默认不展示准备中、待发送、已发送或归档等流程状态，只有用户明确要求时才添加。
 - `ugc-activity.html`：Garage Stories 投稿条件、独立奖励规则、活动与帮助入口、完整英文邮件桌面／手机预览及中文对照。
 

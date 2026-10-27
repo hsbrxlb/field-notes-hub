@@ -31,7 +31,7 @@ for (const [id, label] of Object.entries({
 assert.deepEqual(nav.map(item => item.id), [
   'fakesite', 'customer-analytics', 'first-outreach', 'email-templates', 'newsletter', 'discord-invite-plan', 'ugc-activity', 'sema-plan',
   'studio', 'voice', 'products', 'research', 'discord-community', 'seo-geo',
-  'social-brand', 'brand-voice-system', 'mascot', 'mascot-applications', 'merch-plan', 'mascot-workflow', 'flipbooks'
+  'social-brand', 'brand-voice-system', 'mascot', 'mascot-applications', 'merch-plan', 'mascot-workflow', 'flipbooks', 'sema-promotion'
 ]);
 for (const id of ['first-outreach', 'discord-invite-plan', 'ugc-activity']) {
   assert.ok(read(`${id}.html`).includes(`data-page="${id}"`));

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "channel": "Contest Corner · Sweepstakes Saturday",
+      "post_id": "sweepstakes-saturday-865:3",
+      "published_at": "2026-10-27T11:38:00Z",
+      "text": "OEDRO: Win a SEMA Friday ticket (US OEDRO buyers, 18 or older; ends 10/28 PDT)",
+      "url": "https://www.contest-corner.com/sweepstakes-saturday-865/",
+      "destination_url": "https://discord.gg/CXM9tuFqG7",
+      "status": "live"
+    },
+    {
+      "channel": "Versatileer · Saturday Showdown",
+      "post_id": "28Aug2022:14",
+      "published_at": "2026-10-27T11:48:00Z",
+      "text": "OEDRO: Win a SEMA Friday ticket (US OEDRO buyers, 18 or older; ends 10/28 PDT)",
+      "url": "https://www.blenza.com/linkies/links.php?owner=Versatileer&postid=28Aug2022",
+      "destination_url": "https://discord.gg/CXM9tuFqG7",
+      "status": "live"
+    }
+  ]
+}

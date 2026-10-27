@@ -110,6 +110,11 @@
       "id": "flipbooks",
       "label": "Flip Book Demo",
       "file": "flipbooks.html"
+    },
+    {
+      "id": "sema-promotion",
+      "label": "SEMA宣传记录",
+      "file": "sema-promotion.html"
     }
   ],
   "flipbooks": {
