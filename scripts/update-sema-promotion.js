@@ -4,7 +4,7 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
 const dataPath = path.join(root, 'data/sema-promotion.json');
-const allowed = ['channel', 'post_id', 'published_at', 'text', 'url', 'destination_url', 'status', 'first_verified_live_at'];
+const allowed = ['channel', 'post_id', 'published_at', 'text', 'url', 'destination_url', 'status', 'first_verified_live_at', 'entry_url'];
 const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
 function validate(record) {
   if (!record || Object.keys(record).some(key => !allowed.includes(key))) throw new Error('Unexpected public record field');
@@ -17,8 +17,8 @@ function validate(record) {
     if (!/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:Z|[+-]\d\d:\d\d)$/.test(record[key]) || !Number.isFinite(Date.parse(record[key]))) throw new Error('An explicit timestamp with timezone is required');
   }
   if (record.first_verified_live_at && (record.status !== 'live' || Date.parse(record.first_verified_live_at) < Date.parse(record.published_at))) throw new Error('Live verification must follow submission');
-  for (const key of ['url', 'destination_url']) {
-    if (record[key] === undefined && key === 'destination_url') continue;
+  for (const key of ['url', 'destination_url', 'entry_url']) {
+    if (record[key] === undefined && key !== 'url') continue;
     const url = new URL(record[key]);
     if (url.protocol !== 'https:' || url.username || [...url.searchParams.keys()].some(key => /token|delete|edit|auth/i.test(key)) || /(?:delete|manage|admin)/i.test(url.pathname)) throw new Error('Use a public HTTPS post link');
   }
@@ -42,7 +42,7 @@ function build(records) {
           <div class="promotion-meta"><time datetime="${escape(record.published_at)}">${timestamp.format(new Date(record.published_at))} 上海</time><h2>${escape(record.channel)}</h2><span class="promotion-status" data-status="${record.status}">${record.status === 'pending' ? '已提交，待站方审核' : 'live'}</span></div>
           ${record.first_verified_live_at ? `<p class="promotion-verification">首次核实公开：<time datetime="${escape(record.first_verified_live_at)}">${timestamp.format(new Date(record.first_verified_live_at))} 上海</time></p>` : ''}
           <p class="promotion-text" lang="en">${escape(record.text)}</p>
-          <div class="promotion-links"><a href="${escape(record.url)}" target="_blank" rel="noopener noreferrer">${record.status === 'pending' ? '查看提交位置' : '查看原帖'} ↗</a>${record.destination_url ? `<a href="${escape(record.destination_url)}" target="_blank" rel="noopener noreferrer">帖内活动链接 ↗</a>` : ''}</div>
+          <div class="promotion-links"><a href="${escape(record.url)}" target="_blank" rel="noopener noreferrer">${record.status === 'pending' ? '查看提交位置' : '查看原帖'} ↗</a>${record.entry_url ? `<a href="${escape(record.entry_url)}" target="_blank" rel="noopener noreferrer">查看条目 ↗</a>` : ''}${record.destination_url ? `<a href="${escape(record.destination_url)}" target="_blank" rel="noopener noreferrer">帖内活动链接 ↗</a>` : ''}</div>
         </article>`).join('\n        ');
   const template = fs.readFileSync(path.join(root, 'sema-plan.html'), 'utf8');
   return template.replaceAll('sema-plan', 'sema-promotion').replaceAll('SEMA门票活动', 'SEMA宣传记录')
