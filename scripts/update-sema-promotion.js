@@ -4,7 +4,7 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
 const dataPath = path.join(root, 'data/sema-promotion.json');
-const allowed = ['channel', 'post_id', 'published_at', 'text', 'url', 'destination_url', 'status', 'first_verified_live_at', 'entry_url'];
+const allowed = ['channel', 'post_id', 'published_at', 'text', 'url', 'destination_url', 'status', 'first_verified_live_at', 'entry_url', 'publication_window_end'];
 const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
 function validate(record) {
   if (!record || Object.keys(record).some(key => !allowed.includes(key))) throw new Error('Unexpected public record field');
@@ -12,10 +12,11 @@ function validate(record) {
     if (typeof record[key] !== 'string' || !record[key].trim()) throw new Error(`Missing ${key}`);
   }
   if (!['live', 'pending'].includes(record.status)) throw new Error('Status must be live or pending');
-  for (const key of ['published_at', 'first_verified_live_at']) {
-    if (key === 'first_verified_live_at' && record[key] === undefined) continue;
+  for (const key of ['published_at', 'first_verified_live_at', 'publication_window_end']) {
+    if (key !== 'published_at' && record[key] === undefined) continue;
     if (!/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:Z|[+-]\d\d:\d\d)$/.test(record[key]) || !Number.isFinite(Date.parse(record[key]))) throw new Error('An explicit timestamp with timezone is required');
   }
+  if (record.publication_window_end && Date.parse(record.publication_window_end) < Date.parse(record.published_at)) throw new Error('Publication window must follow its start');
   if (record.first_verified_live_at && (record.status !== 'live' || Date.parse(record.first_verified_live_at) < Date.parse(record.published_at))) throw new Error('Live verification must follow submission');
   for (const key of ['url', 'destination_url', 'entry_url']) {
     if (record[key] === undefined && key !== 'url') continue;
@@ -39,7 +40,7 @@ function merge(records, incoming) {
 function build(records) {
   const timestamp = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
   const entries = [...records].sort((a, b) => Date.parse(b.published_at) - Date.parse(a.published_at)).map(record => `<article class="promotion-record">
-          <div class="promotion-meta"><time datetime="${escape(record.published_at)}">${timestamp.format(new Date(record.published_at))} 上海</time><h2>${escape(record.channel)}</h2><span class="promotion-status" data-status="${record.status}">${record.status === 'pending' ? '已提交，待站方审核' : 'live'}</span></div>
+          <div class="promotion-meta"><time datetime="${escape(record.published_at)}">${timestamp.format(new Date(record.published_at))}${record.publication_window_end ? `–${timestamp.format(new Date(record.publication_window_end)).slice(11)}` : ''} 上海</time><h2>${escape(record.channel)}</h2><span class="promotion-status" data-status="${record.status}">${record.status === 'pending' ? '已提交，待站方审核' : 'live'}</span></div>
           ${record.first_verified_live_at ? `<p class="promotion-verification">首次核实公开：<time datetime="${escape(record.first_verified_live_at)}">${timestamp.format(new Date(record.first_verified_live_at))} 上海</time></p>` : ''}
           <p class="promotion-text" lang="en">${escape(record.text)}</p>
           <div class="promotion-links"><a href="${escape(record.url)}" target="_blank" rel="noopener noreferrer">${record.status === 'pending' ? '查看提交位置' : '查看原帖'} ↗</a>${record.entry_url ? `<a href="${escape(record.entry_url)}" target="_blank" rel="noopener noreferrer">查看条目 ↗</a>` : ''}${record.destination_url ? `<a href="${escape(record.destination_url)}" target="_blank" rel="noopener noreferrer">帖内活动链接 ↗</a>` : ''}</div>
