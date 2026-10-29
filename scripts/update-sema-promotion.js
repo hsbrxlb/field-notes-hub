@@ -4,7 +4,7 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
 const dataPath = path.join(root, 'data/sema-promotion.json');
-const allowed = ['channel', 'post_id', 'published_at', 'text', 'url', 'destination_url', 'status', 'first_verified_live_at', 'entry_url', 'publication_window_end'];
+const allowed = ['channel', 'post_id', 'published_at', 'text', 'url', 'destination_url', 'status', 'first_verified_live_at', 'entry_url', 'publication_window_end', 'update_note'];
 const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
 function validate(record) {
   if (!record || Object.keys(record).some(key => !allowed.includes(key))) throw new Error('Unexpected public record field');
@@ -24,6 +24,7 @@ function validate(record) {
     if (url.protocol !== 'https:' || url.username || [...url.searchParams.keys()].some(key => /token|delete|edit|auth/i.test(key)) || /(?:delete|manage|admin)/i.test(url.pathname)) throw new Error('Use a public HTTPS post link');
   }
   if (record.post_id !== undefined && typeof record.post_id !== 'string') throw new Error('Invalid post_id');
+  if (record.update_note !== undefined && (typeof record.update_note !== 'string' || !record.update_note.trim())) throw new Error('Invalid update_note');
   return record;
 }
 const identity = record => `${record.channel.trim().toLowerCase()}|${record.post_id || record.url.replace(/\/$/, '')}`;
@@ -42,7 +43,7 @@ function build(records) {
   const entries = [...records].sort((a, b) => Date.parse(b.published_at) - Date.parse(a.published_at)).map(record => `<article class="promotion-record">
           <div class="promotion-meta"><time datetime="${escape(record.published_at)}">${timestamp.format(new Date(record.published_at))}${record.publication_window_end ? `–${timestamp.format(new Date(record.publication_window_end)).slice(11)}` : ''} 上海</time><h2>${escape(record.channel)}</h2><span class="promotion-status" data-status="${record.status}">${record.status === 'pending' ? '已提交，待站方审核' : 'live'}</span></div>
           ${record.first_verified_live_at ? `<p class="promotion-verification">首次核实公开：<time datetime="${escape(record.first_verified_live_at)}">${timestamp.format(new Date(record.first_verified_live_at))} 上海</time></p>` : ''}
-          <p class="promotion-text" lang="en">${escape(record.text)}</p>
+          <p class="promotion-text" lang="en">${escape(record.text)}</p>${record.update_note ? `\n          <p class="promotion-verification">${escape(record.update_note)}</p>` : ''}
           <div class="promotion-links"><a href="${escape(record.url)}" target="_blank" rel="noopener noreferrer">${record.status === 'pending' ? '查看提交位置' : '查看原帖'} ↗</a>${record.entry_url ? `<a href="${escape(record.entry_url)}" target="_blank" rel="noopener noreferrer">查看条目 ↗</a>` : ''}${record.destination_url ? `<a href="${escape(record.destination_url)}" target="_blank" rel="noopener noreferrer">帖内活动链接 ↗</a>` : ''}</div>
         </article>`).join('\n        ');
   const template = fs.readFileSync(path.join(root, 'sema-plan.html'), 'utf8');
