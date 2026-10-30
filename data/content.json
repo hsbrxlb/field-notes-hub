@@ -41,11 +41,6 @@
       "file": "ugc-activity.html"
     },
     {
-      "id": "sema-plan",
-      "label": "SEMA门票活动",
-      "file": "sema-plan.html"
-    },
-    {
       "id": "studio",
       "label": "社媒内容自动化生产",
       "file": "content-studio.html"
@@ -110,11 +105,6 @@
       "id": "flipbooks",
       "label": "Flip Book Demo",
       "file": "flipbooks.html"
-    },
-    {
-      "id": "sema-promotion",
-      "label": "SEMA宣传记录",
-      "file": "sema-promotion.html"
     }
   ],
   "flipbooks": {

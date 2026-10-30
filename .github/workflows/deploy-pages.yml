@@ -26,7 +26,6 @@ jobs:
       - name: Render mascot page
         run: |
           node scripts/build-mascot-page.js
-          node scripts/update-sema-promotion.js --check
       - name: Test public user voice boundary
         run: |
           node scripts/test-public-user-voice-check.js

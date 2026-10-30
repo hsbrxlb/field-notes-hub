@@ -6,12 +6,8 @@
 
 ## 当前页面
 
-- `sema-promotion.html`：SEMA宣传记录，按上海时间倒序展示实际外发的原文、渠道、链接和 live/pending 状态。数据为 `data/sema-promotion.json`；追加公开字段记录：`node scripts/update-sema-promotion.js --input <记录.json>`，同渠道帖子 ID 或 URL 与文案散列去重，pending 可更新为 live。保留原帖时间；候选和未提交内容不记为 live。`node scripts/update-sema-promotion.js --check` 核对静态页面。
-
 - `newsletter.html`：The Glovebox Newsletter，完整首期邮件、桌面／手机预览及逐段中英对照。沿用已选浅色刊物与摄影，正文涵盖冷天胎压变化、车辆标签、检查步骤及系统故障判断。Hub 默认不展示准备中、待发送、已发送或归档等流程状态，只有用户明确要求时才添加。
 - `ugc-activity.html`：Garage Stories 投稿条件、独立奖励规则、活动与帮助入口、完整英文邮件桌面／手机预览及中文对照。
-
-- `sema-plan.html`：SEMA门票活动，记录2026年10月23日已发布的 Instagram Feed、X、Threads 和 Discord 两频道内容，附原帖、报名入口及当前截止／抽选时间。保留现有页面网址；不把 Story、Facebook、YouTube 或邮件草稿计入已发布记录，不公开内部预算。
 
 - `customer-analytics.html`：切换全体客户与首批触达样本，查看购买次数、历史累计订单金额分布和邮件订阅状态；首批另有订阅与购买交叉、名单来源重叠。图表可点选查看人数和占比，分母随范围切换。新增 JSON 只含聚合人数，不含客户明细或财务总额；样本不能外推全体，无日期字段不展示趋势。
 

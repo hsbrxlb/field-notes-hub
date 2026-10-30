@@ -29,9 +29,9 @@ for (const [id, label] of Object.entries({
   products: '产品知识库', 'mascot-workflow': '吉祥物设计的skill', 'ugc-activity': '投稿活动'
 })) assert.equal(nav.find(item => item.id === id)?.label, label);
 assert.deepEqual(nav.map(item => item.id), [
-  'fakesite', 'customer-analytics', 'first-outreach', 'email-templates', 'newsletter', 'discord-invite-plan', 'ugc-activity', 'sema-plan',
+  'fakesite', 'customer-analytics', 'first-outreach', 'email-templates', 'newsletter', 'discord-invite-plan', 'ugc-activity',
   'studio', 'voice', 'products', 'research', 'discord-community', 'seo-geo',
-  'social-brand', 'brand-voice-system', 'mascot', 'mascot-applications', 'merch-plan', 'mascot-workflow', 'flipbooks', 'sema-promotion'
+  'social-brand', 'brand-voice-system', 'mascot', 'mascot-applications', 'merch-plan', 'mascot-workflow', 'flipbooks'
 ]);
 for (const id of ['first-outreach', 'discord-invite-plan', 'ugc-activity']) {
   assert.ok(read(`${id}.html`).includes(`data-page="${id}"`));
@@ -134,13 +134,8 @@ async function checkDownload() {
 
 checkDownload().then(() => console.log('Hub navigation, inline works and workflow download checks passed'));
 
-const sema = read('sema-plan.html');
-assert.ok(sema.includes('2026年10月31日23:59 PDT'));
-assert.ok(sema.includes('2026年11月1日19:00 PST'));
-assert.ok(sema.includes('北京时间11月1日14:59'));
-assert.ok(sema.includes('北京时间11月2日11:00'));
-assert.ok(sema.includes('Threads · 三帖串'));
-assert.ok(!/10月18日|10月20日|尚未开放报名|480美元|160美元|130美元/.test(sema));
-for (const id of ['De01IcCGzi-', '2113503944228176169', 'De00kkSFKAY', '1563065916839698453', '1563066592613367838', '1562787604284444672']) assert.ok(sema.includes(id));
-assert.ok(sema.includes('https://discord.gg/CXM9tuFqG7'));
-assert.ok(!sema.includes('docs.google.com'), 'internal planning sheet stays out of public page');
+for (const file of ['sema-plan.html', 'sema-promotion.html', 'data/sema-promotion.json']) {
+  assert.ok(!fs.existsSync(path.join(root, file)), 'withdrawn public content remains absent: ' + file);
+}
+assert.ok(!nav.some(item => /^sema-/.test(item.id)));
+assert.ok(!/href="sema-/.test(home));

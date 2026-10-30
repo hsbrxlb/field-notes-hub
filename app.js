@@ -537,7 +537,7 @@ async function init() {
 }
 
 const mainContent = document.querySelector('#content');
-const staticContentPage = ['home', 'customer-analytics', 'mascot-workflow', 'social-brand', 'merch-plan', 'first-outreach', 'discord-invite-plan', 'ugc-activity', 'sema-plan', 'sema-promotion'].includes(page);
+const staticContentPage = ['home', 'customer-analytics', 'mascot-workflow', 'social-brand', 'merch-plan', 'first-outreach', 'discord-invite-plan', 'ugc-activity'].includes(page);
 if (page === 'mascot') {
   if (!document.querySelector('#nav-list').querySelector('a')) initMascotNavigation();
 } else {
