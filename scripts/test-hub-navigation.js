@@ -30,7 +30,7 @@ for (const [id, label] of Object.entries({
 })) assert.equal(nav.find(item => item.id === id)?.label, label);
 assert.deepEqual(nav.map(item => item.id), [
   'fakesite', 'customer-analytics', 'first-outreach', 'email-templates', 'newsletter', 'discord-invite-plan', 'ugc-activity',
-  'studio', 'voice', 'products', 'research', 'discord-community', 'seo-geo',
+  'studio', 'voice', 'products', 'competitor-experience', 'research', 'discord-community', 'seo-geo',
   'social-brand', 'brand-voice-system', 'mascot', 'mascot-applications', 'merch-plan', 'mascot-workflow', 'flipbooks'
 ]);
 for (const id of ['first-outreach', 'discord-invite-plan', 'ugc-activity']) {

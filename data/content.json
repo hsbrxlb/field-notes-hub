@@ -56,6 +56,11 @@
       "file": "products.html"
     },
     {
+      "id": "competitor-experience",
+      "label": "汽配竞品体验报告",
+      "file": "competitor-experience.html"
+    },
+    {
       "id": "research",
       "label": "AI问卷",
       "file": "research.html"
