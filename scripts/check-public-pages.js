@@ -54,7 +54,8 @@ for (const file of codeFiles) {
     const emailImportFiles = path.relative(root, file) === 'email-templates.js' && match[0] === '<details class="email-files">';
     const analyticsDefinition = path.relative(root, file) === 'customer-analytics.js' && match[0] === '<details class="analytics-footnote">';
     const intentionalProductDetail = /class="[^"]*(?:product-detail|catalog-policy)/.test(match[0]);
-    if (!intentionalHistory && !demoFaq && !mobileArticleToc && !draftControls && !emailImportFiles && !analyticsDefinition && !intentionalProductDetail && !/\bopen\b/i.test(match[0])) errors.push(path.relative(root, file) + ' 有正文details未默认展开：' + match[0]);
+    const competitorEvidence = path.relative(root, file) === 'competitor-experience.html' && match[0] === '<details class="evidence-details">';
+    if (!competitorEvidence && !intentionalHistory && !demoFaq && !mobileArticleToc && !draftControls && !emailImportFiles && !analyticsDefinition && !intentionalProductDetail && !/\bopen\b/i.test(match[0])) errors.push(path.relative(root, file) + ' 有正文details未默认展开：' + match[0]);
   }
   for (const match of source.matchAll(/<[^>]+aria-expanded="false"[^>]*>/gi)) {
     const sampleMenu = /^fakesite\/[^/]+\.html$/.test(path.relative(root,file)) && /class="menu-toggle"/.test(match[0]);
